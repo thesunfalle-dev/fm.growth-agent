@@ -32,6 +32,15 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Docs: `homepage-patterns.md`; responsive notes in `responsive-rules.md`
 - Actor: agent + user
 
+### 2026-08-12 — Landing composition recipes
+
+- BrokerChooser D/M: `29987:337918` / `29987:342224`
+- TradingView Promo AU D/M: `29987:338113` / `29987:342421`
+- TradingView platform D/M: `29987:340524` / `29987:342673`
+- Role: campaign landing stacks + shared modules vs homepage
+- Docs: `landing-patterns.md`
+- Actor: agent + user
+
 ### 2026-08-12 — Cards
 
 - File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15166-10610

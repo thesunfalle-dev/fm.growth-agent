@@ -187,6 +187,30 @@
       "figmaHomepage": "27873:296438"
     },
     {
+      "type": "review-rail",
+      "status": "planned",
+      "description": "Trustpilot header + review cards (avatar, stars, quote) horizontal rail",
+      "figmaLanding": "29987:337918 BrokerChooser"
+    },
+    {
+      "type": "tier-cards",
+      "status": "planned",
+      "description": "Promo plan/tier content cards (icon + title + body); e.g. TV Essentials/Plus/Premium",
+      "figmaLanding": "29987:338113 TV Promo"
+    },
+    {
+      "type": "download-bar",
+      "status": "planned",
+      "description": "Full-bleed OS/platform download strip under hero (TV for Windows/iOS/…)",
+      "figmaLanding": "29987:340524 TradingView"
+    },
+    {
+      "type": "checklist-feature",
+      "status": "planned",
+      "description": "Image + headline + check rows + dual CTA",
+      "figmaLanding": "29987:340524 TradingView"
+    },
+    {
       "type": "stats",
       "status": "planned",
       "description": "Key metrics strip"
@@ -194,7 +218,7 @@
     {
       "type": "testimonials",
       "status": "planned",
-      "description": "Quotes / review proof"
+      "description": "Quotes / review proof (alias of review-rail patterns)"
     }
   ]
 }

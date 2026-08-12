@@ -4,14 +4,18 @@
 
 1. Drop brief into `briefs/` (optional) or paste into the task — **no fixed brief schema** for MVP.
 2. Choose slug (`kebab-case`).
-3. Optional: skim `design-system/homepage-patterns.md` for section order / adaptive patterns.
+3. Optional: skim `design-system/landing-patterns.md` (campaign recipes) and/or `homepage-patterns.md`.
 4. Create `landings/{slug}/content.ts` using only **ready** block types from `design-system/block-inventory.json`.
 5. Register in `lib/landings.ts`.
 6. `npm run validate:design && npm run build`
 7. Commit + push + `npm run deploy`
 8. Share `https://fm.growth-agent.org/{slug}/`
 
-Default MVP stack (subset of homepage): `hero` → `features` (usp) → `steps` → optional `faq` / `table` → footer CTA.
+Default MVP stacks (see `landing-patterns.md`):
+
+- **Trust/award:** `hero` → `features` usp → optional `faq` → footer  
+- **Promo offer:** `hero` (+ legal) → `steps` → `features` usp → footer  
+- **Platform:** `hero` → `features` usp → `steps` → `faq` → footer
 
 ## Change the design system
 

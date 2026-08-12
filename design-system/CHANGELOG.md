@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Landing composition recipes
+
+- Documented 3 campaign landings (BrokerChooser, TV Promo, TradingView) desktop + mobile.
+- Docs: `landing-patterns.md` — stacks, shared DNA, adaptive, map to ready/planned blocks.
+- Sources: Figma `29987:337918`…`342673`. Composition only (no new components).
+
 ## 2026-08-12 — Homepage composition reference
 
 - Documented AU Desktop + Mobile homepage section map and reuse patterns.

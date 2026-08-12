@@ -129,6 +129,7 @@ Skip until needed: marquee funding, full platform accordion, TV spreads rail, aw
 
 ## Related docs
 
+- **Campaign landings (3 recipes):** `landing-patterns.md`  
 - Spacing: `spacing-layout.md`  
 - Responsive: `responsive-rules.md`  
 - Cards / USP: `cards.md`  
