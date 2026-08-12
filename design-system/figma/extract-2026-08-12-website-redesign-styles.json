@@ -1,0 +1,80 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263",
+    "page": { "id": "14082:6958", "name": "Design System" }
+  },
+  "frames": {
+    "typography": "14711:15263",
+    "color": "14749:6364",
+    "spacingLayout": "14765:7184",
+    "buttons": "14765:9245",
+    "cards": "15166:10610",
+    "sections": "15313:11090"
+  },
+  "authorityNotes": {
+    "typographyCanvas": "Frame Typography documents Noto Sans (display/headings/CTA) + Roboto (body/caption).",
+    "publishedTextStyles": "Local published styles still include Plus Jakarta Sans heading styles — treat as legacy/alternate. Implementation SoT for marketing site = Typography frame labels (Noto Sans + Roboto).",
+    "previousWrongSource": "Fusion Client Hub Design System (JRZk7VKq09NfBamSFcmAst) — Lato — superseded for this project."
+  },
+  "typographyFromFrame": {
+    "display": {
+      "display1Desktop": { "family": "Noto Sans", "size": 72, "weight": 600, "lineHeight": "110%", "lineHeightPx": 79 },
+      "display2Mobile": { "family": "Noto Sans", "size": 40, "weight": 600, "lineHeight": "120%", "lineHeightPx": 58 }
+    },
+    "heading": {
+      "h1": { "family": "Noto Sans", "size": 56, "weight": 600, "lineHeight": "120%", "lineHeightPx": 67 },
+      "h2Light": { "family": "Noto Sans", "size": 32, "weight": 300, "lineHeight": "130%", "lineHeightPx": 42 },
+      "h2Medium": { "family": "Noto Sans", "size": 32, "weight": 500, "lineHeight": "130%", "lineHeightPx": 42 },
+      "h2Semibold": { "family": "Noto Sans", "size": 32, "weight": 600, "lineHeight": "130%", "lineHeightPx": 42 },
+      "h2Bold": { "family": "Noto Sans", "size": 32, "weight": 700, "lineHeight": "130%", "lineHeightPx": 42 },
+      "h3Medium": { "family": "Noto Sans", "size": 24, "weight": 500, "lineHeight": "120%", "lineHeightPx": 29 },
+      "h3Bold": { "family": "Noto Sans", "size": 24, "weight": 700, "lineHeight": "120%", "lineHeightPx": 29 },
+      "h4Medium": { "family": "Noto Sans", "size": 20, "weight": 500, "lineHeight": "120%", "lineHeightPx": 24 },
+      "h4Semibold": { "family": "Noto Sans", "size": 20, "weight": 600, "lineHeight": "120%", "lineHeightPx": 24 },
+      "h4Bold": { "family": "Noto Sans", "size": 20, "weight": 700, "lineHeight": "120%", "lineHeightPx": 24 }
+    },
+    "body": {
+      "b1": { "family": "Roboto", "size": 24, "weights": [300, 400, 500, 600, 700], "lineHeight": "150%", "lineHeightPx": 36 },
+      "b2": { "family": "Roboto", "size": 20, "weights": [300, 400, 500, 600, 700], "lineHeight": "150%", "lineHeightPx": 30 },
+      "b3": { "family": "Roboto", "size": 16, "weights": [300, 400, 500, 700], "lineHeight": "150%", "lineHeightPx": 24 }
+    },
+    "caption": {
+      "c1": { "family": "Roboto", "size": 14, "weights": [400, 700], "lineHeight": "150%", "lineHeightPx": 21 },
+      "c2": { "family": "Roboto", "size": 12, "weights": [400, 700], "lineHeight": "150%", "lineHeightPx": 18 }
+    },
+    "cta": {
+      "large": { "family": "Noto Sans", "size": 20, "weight": 600, "lineHeight": "120%", "lineHeightPx": 24 },
+      "medium": { "family": "Noto Sans", "size": 16, "weight": 600, "lineHeight": "120%", "lineHeightPx": 19 },
+      "small": { "family": "Noto Sans", "size": 14, "weight": 600, "lineHeight": "120%", "lineHeightPx": 17 }
+    }
+  },
+  "spacingLayout": {
+    "baseMultiples": [4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64],
+    "desktop": {
+      "contentWidth": "1280px",
+      "betweenSections": "120px",
+      "h1ToDescription": "24px",
+      "descriptionToContent": "40px"
+    },
+    "mobile": {
+      "sidePadding": "16px",
+      "betweenSections": "60px",
+      "h1ToDescription": "32px",
+      "descriptionToContent": "24px"
+    }
+  },
+  "paintStyles": "See extract-website-redesign-paints.json",
+  "keyColors": {
+    "Blue/500 (Text)": "#0D1350",
+    "Purple/500 (Accent)": "#742CCE",
+    "Gray/0 (White)": "#FFFFFF",
+    "Gray/200": "#F5F6F7",
+    "Gray/500": "#93979F",
+    "Gray/900": "#191B1F",
+    "Gradient/Primary": ["#742CCE", "#6B4AFF"],
+    "Gradient/Secondary": ["#742CCE", "#1811A2"]
+  }
+}

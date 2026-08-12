@@ -6,9 +6,9 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 | Source | URL / location | Status | Notes |
 |--------|----------------|--------|-------|
-| Fusion Client Hub Design System | https://www.figma.com/design/JRZk7VKq09NfBamSFcmAst/Fusion-Client-Hub-Design-System?node-id=32-9 | **active SoT (partial)** | File key `JRZk7VKq09NfBamSFcmAst`, page `HUB Design System` |
-| Marketing website redesign Figma | _pending_ | not linked | May differ from Client Hub — confirm |
-| Live site (legacy reference only) | https://fusionmarkets.com/ | active | Next.js + MUI; **not** SoT |
+| **Website Redesign FM 2.0** | https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263 | **active SoT** | Marketing site DS. File key `5PQJiXq7xZNGCqV1XNvKro` |
+| Fusion Client Hub Design System | https://www.figma.com/design/JRZk7VKq09NfBamSFcmAst/… | superseded for landings | Hub product UI (Lato) — not marketing site |
+| Live site | https://fusionmarkets.com/ | legacy | Not redesign SoT |
 
 ## Implementation sources in this repo
 
@@ -16,23 +16,22 @@ Everything visual should be traceable. When you change tokens or inventories, no
 |----------|------|
 | `design-tokens.json` | Authoritative token values for code |
 | `generated/tokens.css` | Build output for runtime CSS variables |
-| `generated/tokens.ts` | Token name unions for TypeScript |
-| `figma/extract-2026-08-12-styles.json` | Raw Figma extract (paint + text styles) |
-| `typography-styles.md` | Human map of Figma text styles |
-| `component-inventory.json` | Allowed UI primitives |
-| `block-inventory.json` | Allowed landing sections for agents |
-| `CHANGELOG.md` | History of DS changes |
+| `figma/extract-2026-08-12-website-redesign-styles.json` | Typography + spacing extract |
+| `figma/extract-website-redesign-paints.json` | Paint + gradient styles |
+| `typography-styles.md` | Human map of type scale |
+| `CHANGELOG.md` | History |
 
 ## Current token provenance
 
-`meta.status = figma-partial-sync` (as of 2026-08-12)
+`meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
-### 2026-08-12 — Figma sync (styles first)
+### 2026-08-12 — Correct SoT: Website Redesign
 
-- File: https://www.figma.com/design/JRZk7VKq09NfBamSFcmAst/Fusion-Client-Hub-Design-System?node-id=32-9
-- Page/frames: Typography (`32:9`), Colors (`32:8111`), Spacing & Layout (`34:9470`), paint/text styles via Plugin API
-- What changed: full light palette, Lato type scale, 4px spacing grid, button gradients, layout max 1440
-- Ambiguities: this is **Client Hub** DS — confirm if marketing landings should use same or Website Redesign FM 2.0; Shadows frame not mapped yet; no H5 Regular text style in file
+- File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263
+- Frames: Typography, Color, Spacing & Layout (+ paint styles via Plugin API)
+- Fonts: **Noto Sans** (display/heading/CTA) + **Roboto** (body/caption)
+- Note: published text styles still include Plus Jakarta Sans — ignored in favor of Typography frame
+- Supersedes Client Hub / Lato ingest from earlier the same day
 - Actor: agent + user
 
 ## How to record a Figma sync
@@ -45,5 +44,3 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Ambiguities: link to OPEN_QUESTIONS
 - Actor: <name or agent>
 ```
-
-Append that block here and a matching entry in `CHANGELOG.md`.

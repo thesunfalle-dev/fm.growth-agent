@@ -17,16 +17,17 @@ Enable **fast, on-brand marketing landings** assembled from registered blocks, n
 
 ## Modes
 
-- **Current:** light **Fusion Client Hub** system (`figma-partial-sync`).
-- **Note:** Marketing website redesign may use a related but separate library (Website Redesign FM 2.0). Confirm before pixel-chasing marketing comps.
+- **Current:** light **Website Redesign FM 2.0** (`figma-partial-sync`).
+- Client Hub Figma is a different product surface (not this SoT).
 
-## Visual system (Client Hub, from Figma)
+## Visual system (Website Redesign, from Figma)
 
-- Light canvas (`White/Main`), soft gray surfaces (`Gray/Lightest`)
-- Primary text navy (`Blue/Main - Text` `#0D1350`)
-- Actions purple (`Purple/Main` + `Gradients/Main - Button`)
-- Type: **Lato**, headings 120% LH, body 140% LH
-- Spacing: **4px** base grid; container max **1440px**
+- Light canvas (`Gray/0`), soft surfaces (`Gray/100–200`)
+- Primary text navy (`Blue/500 (Text)` `#0D1350`)
+- Accent purple (`Purple/500` `#742CCE` + `Gradient/Primary`)
+- Type: **Noto Sans** (display/headings/CTA) + **Roboto** (body/caption)
+- Heading LH ~120–130%; body/caption LH **150%**
+- Spacing: multiples of **4**; content width **1280px**; section gaps **120px** desktop / **60px** mobile
 - Section rhythm via space tokens, not magic numbers in components
 
 ## Handoff files

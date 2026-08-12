@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Lato } from "next/font/google";
+import { Noto_Sans, Roboto } from "next/font/google";
 import { SiteHeader } from "@/components/ui/SiteHeader";
 import "./globals.css";
 
-const lato = Lato({
+const notoSans = Noto_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "700"],
-  variable: "--font-lato",
+  weight: ["300", "500", "600", "700"],
+  variable: "--font-noto-sans",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -29,8 +36,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={lato.variable}>
-      <body className={lato.className}>
+    <html lang="en" className={`${notoSans.variable} ${roboto.variable}`}>
+      <body className={roboto.className}>
         <SiteHeader />
         <main>{children}</main>
       </body>

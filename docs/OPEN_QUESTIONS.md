@@ -4,15 +4,14 @@ Track unknowns instead of inventing answers. Resolve → move summary into `DECI
 
 ## Design / Figma
 
-- [x] Official Figma design-system file URL(s) for the global redesign → Client Hub DS linked (confirm marketing Website Redesign FM 2.0 separately)
-- [x] Primary brand color(s), neutrals, semantic status colors from Figma → paint styles ingested
-- [x] Typefaces (display/body) and licensing for web use → Lato 400/700 via Google Fonts (confirm license OK for prod)
-- [x] Grid, container max width, section vertical rhythm → 4px grid, 1440 max, gutters documented
+- [x] Official Figma DS for marketing site → **Website Redesign FM 2.0**
+- [x] Colors / gradients from paint styles
+- [x] Typefaces → Noto Sans + Roboto (Typography frame); ignore Plus Jakarta Sans published styles unless design reverts
+- [x] Grid / layout → 4px multiples, 1280 content, section 120/60
 - [ ] Motion language (page transitions, scroll reveals, reduced-motion policy)
-- [ ] Confirm: marketing landings use **Client Hub** DS or **Website Redesign FM 2.0** library?
-- [ ] Map Shadows frame + Button component variants 1:1
-- [ ] Component set already drawn in Figma (buttons, cards, nav, forms…) — frames exist; not fully coded
-- [ ] Is H5 Regular intentionally missing from text styles?
+- [ ] Map Buttons / Cards / Sections frames 1:1 into components
+- [ ] Confirm whether any marketing pages still intentionally use Plus Jakarta Sans
+- [ ] Roboto has no official 600 weight in Google Fonts — map SemiBold body to 500 or 700?
 
 
 ## Product / process

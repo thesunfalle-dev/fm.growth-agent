@@ -4,13 +4,21 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 ---
 
-## 2026-08-12 — Client Hub Figma as interim style SoT
+## 2026-08-12 — Website Redesign FM 2.0 is marketing SoT
+
+**Context:** Client Hub Figma was provided first by mistake. Correct marketing DS is Website Redesign FM 2.0. Typography frame documents Noto Sans + Roboto; published styles still list Plus Jakarta Sans for some headings.
+
+**Decision:** Marketing landings use **Website Redesign FM 2.0**. Typography SoT is the **Typography frame** (Noto Sans + Roboto), not legacy Plus Jakarta published styles. Colors from local paint styles in that file.
+
+**Consequences:** Tokens/fonts switched away from Client Hub / Lato. Agents must not re-ingest Hub Lato as brand.
+
+## 2026-08-12 — Client Hub Figma as interim style SoT (superseded)
 
 **Context:** User provided Fusion Client Hub Design System Figma for styles (type + colors). Marketing website redesign may differ.
 
-**Decision:** Until a marketing-specific file is confirmed, implement landings against **Client Hub** paint styles, Lato text styles, 4px spacing, and purple action gradients. Record status as `figma-partial-sync`.
+**Decision:** ~~Until a marketing-specific file is confirmed, implement landings against Client Hub.~~ **Superseded** same day by Website Redesign decision above.
 
-**Consequences:** Landings look like Hub light UI (navy text, purple CTAs), not the old provisional dark shell. Revisit if Website Redesign FM 2.0 is the true marketing source.
+**Consequences:** Brief wrong-path implementation; corrected immediately.
 
 ---
 
