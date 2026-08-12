@@ -2501,6 +2501,8 @@ a {
   width: var(--component-card-usp-min-width); /* 276 */
   min-width: var(--component-card-usp-min-width);
   max-width: var(--component-card-usp-max-width); /* 296 */
+  /* Equal-height row: stretch cross-axis; do NOT use height:100% (breaks stretch) */
+  align-self: stretch;
   height: auto;
   min-height: var(--component-card-usp-min-height); /* 364 */
   scroll-snap-align: start;
@@ -2509,39 +2511,49 @@ a {
 .ui-usp-carousel__nav {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-4); /* 16 between arrows */
+  gap: var(--space-6); /* 24 between plain arrows (Figma) */
 }
 
+/* Figma 29987:341441 — plain arrows only, no circular fill */
 .ui-usp-carousel__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: auto;
+  min-width: 24px;
+  min-height: 24px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-pill);
-  background: var(--primitive-color-purple500);
-  color: var(--primitive-color-gray0);
+  border-radius: 0;
+  background: transparent;
+  color: var(--primitive-color-purple500);
   cursor: pointer;
-  transition:
-    background var(--motion-duration-fast) var(--motion-easing-standard),
-    opacity var(--motion-duration-fast) var(--motion-easing-standard);
+  transition: color var(--motion-duration-fast) var(--motion-easing-standard);
 }
 
 .ui-usp-carousel__btn:hover:not(:disabled) {
-  background: var(--primitive-color-purple600);
+  background: transparent;
+  color: var(--primitive-color-purple600);
 }
 
 .ui-usp-carousel__btn:disabled {
-  background: var(--primitive-color-gray300);
-  color: var(--primitive-color-gray500);
+  background: transparent;
+  color: var(--primitive-color-gray400);
   cursor: default;
 }
 
 .ui-usp-carousel__btn:focus-visible {
   outline: 2px solid var(--color-border-focus);
-  outline-offset: 2px;
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.ui-usp-carousel__btn .ui-icon,
+.ui-usp-carousel__btn .material-symbols-outlined {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .ui-card {
@@ -2575,7 +2587,8 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  /* height:auto + parent align-items:stretch → equal card row */
+  height: auto;
   min-height: var(--component-card-usp-min-height);
   padding: 0;
   border: 0;
@@ -2718,7 +2731,7 @@ a {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* Fill brand band completely — avoid side crop gutters */
+  /* Full-bleed fill of brand band (asset cropped of white margins) */
   width: 100%;
   height: 100%;
   min-width: 100%;
@@ -2738,9 +2751,14 @@ a {
   position: relative;
   overflow: hidden;
   color: var(--color-text-on-accent);
-  /* Solid purple under art so edges never flash white if image crops */
+  /*
+   * Full-bleed brand band: solid purple under decorative art
+   * (art PNG has transparent edges after crop — no white gutters).
+   */
   background-color: var(--primitive-color-purple600);
   width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 
 .ui-section--brand-bg .ui-container {

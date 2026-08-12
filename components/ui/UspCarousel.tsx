@@ -75,7 +75,7 @@ export function UspCarousel({ children }: UspCarouselProps) {
           disabled={!canPrev}
           aria-label="Previous cards"
         >
-          <Icon name="west" size={20} />
+          <Icon name="west" size={24} />
         </button>
         <button
           type="button"
@@ -84,7 +84,7 @@ export function UspCarousel({ children }: UspCarouselProps) {
           disabled={!canNext}
           aria-label="Next cards"
         >
-          <Icon name="east" size={20} />
+          <Icon name="east" size={24} />
         </button>
       </div>
     </div>
