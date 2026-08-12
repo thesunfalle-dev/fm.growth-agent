@@ -29,7 +29,8 @@ Page-level building blocks for structured layouts. Spacing between main sections
 | Title ↔ answer (open) | 20 | 16 |
 | Icons | Material `expand_more` / `expand_less` 24 | same |
 
-Implementation: native **`<details>` / `<summary>`** (static export, no client JS).
+Implementation: native **`<details>` / `<summary>`** (static export, no client JS).  
+Icons use self-hosted Material Symbols (`app/material-icons.css` + `public/fonts/`) — do not rely on Google Fonts CSS `@import` after token CSS (browsers ignore late imports).
 
 ```tsx
 // Block content

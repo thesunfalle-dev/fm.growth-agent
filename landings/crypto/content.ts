@@ -87,24 +87,22 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— 3. Instruments table (M1 Our … instruments; not homepage spread-cards) ——
+    // —— 3. Instruments table (M1 / Markets DataTable — symbol + meta row pattern) ——
     {
       type: "table",
       title: "Our crypto CFD instruments",
       subtitle:
         "Sample pairs from the campaign brief. Confirm live pricing in the Client Hub or Spreads Tool.",
       columns: [
-        { id: "pair", header: "Pair", width: "28%" },
-        { id: "name", header: "Name", width: "28%" },
-        { id: "spread", header: "From", width: "22%" },
-        { id: "hours", header: "Hours", width: "22%" },
+        { id: "symbol", header: "Pair", width: "40%" },
+        { id: "spread", header: "From", width: "30%" },
+        { id: "hours", header: "Hours", width: "30%" },
       ],
       rows: [
         {
           id: "btcusd",
           cells: {
-            pair: "BTC/USD",
-            name: "Bitcoin",
+            symbol: { title: "BTC/USD", meta: "Bitcoin" },
             spread: "0.04%",
             hours: "24/7",
           },
@@ -112,8 +110,7 @@ const landing: LandingDocument = {
         {
           id: "ethusd",
           cells: {
-            pair: "ETH/USD",
-            name: "Ethereum",
+            symbol: { title: "ETH/USD", meta: "Ethereum" },
             spread: "0.09%",
             hours: "24/7",
           },
@@ -121,8 +118,7 @@ const landing: LandingDocument = {
         {
           id: "dogeusd",
           cells: {
-            pair: "DOGE/USD",
-            name: "Dogecoin",
+            symbol: { title: "DOGE/USD", meta: "Dogecoin" },
             spread: "See live",
             hours: "24/7",
           },
@@ -130,8 +126,7 @@ const landing: LandingDocument = {
         {
           id: "solusd",
           cells: {
-            pair: "SOL/USD",
-            name: "Solana",
+            symbol: { title: "SOL/USD", meta: "Solana" },
             spread: "See live",
             hours: "24/7",
           },
@@ -139,8 +134,7 @@ const landing: LandingDocument = {
         {
           id: "adausd",
           cells: {
-            pair: "ADA/USD",
-            name: "Cardano",
+            symbol: { title: "ADA/USD", meta: "Cardano" },
             spread: "See live",
             hours: "24/7",
           },

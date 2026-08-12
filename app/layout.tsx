@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Noto_Sans, Roboto } from "next/font/google";
 import { SiteFooter } from "@/components/ui/SiteFooter";
 import { SiteHeader } from "@/components/ui/SiteHeader";
+import "./material-icons.css";
 import "./globals.css";
 
 // Design system fonts only (Website Redesign Typography frame).

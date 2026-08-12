@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-12 — Shared blocks visual pass (FAQ / Steps / Table)
+
+- Self-host Material Symbols (`public/fonts` + `app/material-icons.css`) — fixes broken FAQ expand icons (late CSS `@import` was ignored after token inline).
+- FAQ: Figma Sections spacing (title 20 Medium / answer Light 16 / icon 24 / no extra inter-item gap).
+- Steps: vertical light rhythm (connector, body padding, no double gap after lead).
+- Markets table: sticky header bg, row height 78, symbol+meta cells, last-row divider rule.
+- Crypto instruments content uses Markets symbol cell pattern.
+
 ## 2026-08-12 — Crypto market landing desktop (M1-aligned)
 
 - `landings/crypto`: stack → hero brand BG → USP → instruments table → compare → steps → FAQ → disclaimer; removed duplicate mid/end `cta` (footer CTAFooter).
