@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useMemo, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 
@@ -36,9 +38,15 @@ type DataTableProps = {
   /** Show sticky header + max-height scroll shell (Figma: 600px) */
   scrollable?: boolean;
   caption?: string;
-  /** Show Symbol-column search field in header (decorative for static export). */
+  /** Live filter on symbol/title/meta/id as user types. */
   showSearch?: boolean;
 };
+
+function cellSearchText(value: TableCellValue | undefined): string {
+  if (value == null) return "";
+  if (typeof value === "string") return value;
+  return [value.title, value.meta, value.lines?.join(" ")].filter(Boolean).join(" ");
+}
 
 function CellContent({ value }: { value: TableCellValue }) {
   if (typeof value === "string") {
@@ -77,9 +85,7 @@ function CellContent({ value }: { value: TableCellValue }) {
       {hasIcon ? (
         <span
           className={
-            dual
-              ? "ui-table__icons ui-table__icons--dual"
-              : "ui-table__icons"
+            dual ? "ui-table__icons ui-table__icons--dual" : "ui-table__icons"
           }
           aria-hidden="true"
         >
@@ -122,8 +128,20 @@ export function DataTable({
   caption,
   showSearch = false,
 }: DataTableProps) {
+  const [query, setQuery] = useState("");
   const hasAction = rows.some((r) => r.action);
   const firstColId = columns[0]?.id;
+
+  const filteredRows = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return rows;
+    return rows.filter((row) => {
+      if (row.id.toLowerCase().includes(q)) return true;
+      return columns.some((col) =>
+        cellSearchText(row.cells[col.id]).toLowerCase().includes(q)
+      );
+    });
+  }, [rows, columns, query]);
 
   return (
     <div
@@ -150,12 +168,18 @@ export function DataTable({
                   {isFirst && showSearch ? (
                     <span className="ui-table__header-symbol">
                       <span className="ui-table__header-label">{col.header}</span>
-                      <span className="ui-table__search" aria-hidden="true">
+                      <label className="ui-table__search">
                         <Icon name="search" size={16} />
-                        <span className="ui-table__search-placeholder">
-                          Search
-                        </span>
-                      </span>
+                        <span className="ui-table__sr-only">Search instruments</span>
+                        <input
+                          type="search"
+                          className="ui-table__search-input"
+                          placeholder="Search"
+                          value={query}
+                          onChange={(e) => setQuery(e.target.value)}
+                          autoComplete="off"
+                        />
+                      </label>
                     </span>
                   ) : (
                     col.header
@@ -174,49 +198,60 @@ export function DataTable({
           </tr>
         </thead>
         <tbody className="ui-table__body">
-          {rows.map((row, index) => {
-            const isLast = index === rows.length - 1;
-            return (
-              <tr
-                key={row.id}
-                className={
-                  isLast
-                    ? "ui-table__row ui-table__row--body ui-table__row--last"
-                    : "ui-table__row ui-table__row--body"
-                }
+          {filteredRows.length === 0 ? (
+            <tr className="ui-table__row ui-table__row--body ui-table__row--last">
+              <td
+                className="ui-table__cell ui-table__cell--empty"
+                colSpan={columns.length + (hasAction ? 1 : 0)}
               >
-                {columns.map((col, colIndex) => {
-                  const isFirst = col.id === firstColId;
-                  const align =
-                    col.align ?? (colIndex === 0 ? "left" : "center");
-                  return (
-                    <td
-                      key={col.id}
-                      className={`ui-table__cell ui-table__cell--${align}${
-                        isFirst ? " ui-table__cell--symbol" : ""
-                      }`}
-                      style={col.width ? { width: col.width } : undefined}
-                    >
-                      <CellContent value={row.cells[col.id] ?? "—"} />
-                    </td>
-                  );
-                })}
-                {hasAction ? (
-                  <td className="ui-table__cell ui-table__cell--action">
-                    {row.action ? (
-                      <Button
-                        href={row.action.href}
-                        variant="secondary"
-                        size="sm"
+                <span className="ui-table__value">No instruments match “{query.trim()}”.</span>
+              </td>
+            </tr>
+          ) : (
+            filteredRows.map((row, index) => {
+              const isLast = index === filteredRows.length - 1;
+              return (
+                <tr
+                  key={row.id}
+                  className={
+                    isLast
+                      ? "ui-table__row ui-table__row--body ui-table__row--last"
+                      : "ui-table__row ui-table__row--body"
+                  }
+                >
+                  {columns.map((col, colIndex) => {
+                    const isFirst = col.id === firstColId;
+                    const align =
+                      col.align ?? (colIndex === 0 ? "left" : "center");
+                    return (
+                      <td
+                        key={col.id}
+                        className={`ui-table__cell ui-table__cell--${align}${
+                          isFirst ? " ui-table__cell--symbol" : ""
+                        }`}
+                        style={col.width ? { width: col.width } : undefined}
                       >
-                        {row.action.label}
-                      </Button>
-                    ) : null}
-                  </td>
-                ) : null}
-              </tr>
-            );
-          })}
+                        <CellContent value={row.cells[col.id] ?? "—"} />
+                      </td>
+                    );
+                  })}
+                  {hasAction ? (
+                    <td className="ui-table__cell ui-table__cell--action">
+                      {row.action ? (
+                        <Button
+                          href={row.action.href}
+                          variant="secondary"
+                          size="sm"
+                        >
+                          {row.action.label}
+                        </Button>
+                      ) : null}
+                    </td>
+                  ) : null}
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
     </div>

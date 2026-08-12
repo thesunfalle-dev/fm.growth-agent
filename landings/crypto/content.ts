@@ -173,9 +173,101 @@ const landing: LandingDocument = {
             avgSpread: "See live",
           },
         },
+        // Extra example rows so the instruments table scrolls (demo data)
+        {
+          id: "xrpusd",
+          cells: {
+            symbol: {
+              title: "XRP",
+              meta: "XRP/USD",
+              iconSrc: "/images/markets/xrp.svg",
+            },
+            hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
+          },
+        },
+        {
+          id: "ltcusd",
+          cells: {
+            symbol: {
+              title: "Litecoin",
+              meta: "LTC/USD",
+              iconSrc: "/images/markets/ltc.svg",
+            },
+            hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
+          },
+        },
+        {
+          id: "avaxusd",
+          cells: {
+            symbol: {
+              title: "Avalanche",
+              meta: "AVAX/USD",
+              iconSrc: "/images/markets/avax.svg",
+            },
+            hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
+          },
+        },
+        {
+          id: "dotusd",
+          cells: {
+            symbol: {
+              title: "Polkadot",
+              meta: "DOT/USD",
+              iconSrc: "/images/markets/dot.svg",
+            },
+            hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
+          },
+        },
+        {
+          id: "linkusd",
+          cells: {
+            symbol: {
+              title: "Chainlink",
+              meta: "LINK/USD",
+              iconSrc: "/images/markets/link.svg",
+            },
+            hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
+          },
+        },
+        {
+          id: "maticusd",
+          cells: {
+            symbol: {
+              title: "Polygon",
+              meta: "MATIC/USD",
+              iconSrc: "/images/markets/matic.svg",
+            },
+            hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
+          },
+        },
+        {
+          id: "bnbusd",
+          cells: {
+            symbol: {
+              title: "BNB",
+              meta: "BNB/USD",
+              iconSrc: "/images/markets/bnb.svg",
+            },
+            hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
+          },
+        },
       ],
       footnote:
-        "Sample pairs from the campaign brief. Confirm live pricing in the Client Hub or Spreads Tool.",
+        "Sample pairs for this campaign preview. Confirm live pricing in the Client Hub or Spreads Tool.",
     },
 
     // —— 4. Compare matrix structure; columns/rows from TZ (not Figma sample competitors) ——

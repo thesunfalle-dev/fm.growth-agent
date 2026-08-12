@@ -6,6 +6,7 @@ import { Illustration } from "@/components/ui/Illustration";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { UspCard } from "@/components/ui/UspCard";
+import { UspCarousel } from "@/components/ui/UspCarousel";
 import {
   isIllustration,
   type IllustrationName,
@@ -15,7 +16,7 @@ import type { LandingCta } from "@/lib/types";
 type FeaturesProps = {
   title?: string;
   /**
-   * usp — “Why Fusion…” USP Cards row (Figma 23570:105076)
+   * usp — “Why Fusion…” USP Cards row (Figma 23570:105076 / 29987:341441)
    * feature — simpler product/benefit cards
    */
   variant?: "usp" | "feature";
@@ -30,7 +31,7 @@ type FeaturesProps = {
 
 /**
  * USP / features section.
- * Why Trade… SoT: Figma Final Pages `23570:105076` — soft purple band + 4 USP cards.
+ * Why Trade… SoT: soft purple band + USP carousel (max 4 visible, edge-bleed + arrows).
  */
 export function Features({
   title,
@@ -38,6 +39,38 @@ export function Features({
   items,
 }: FeaturesProps) {
   const useUsp = variant === "usp";
+
+  const cards = items.map((item) => {
+    if (useUsp) {
+      return (
+        <UspCard
+          key={item.title}
+          title={item.title}
+          description={item.description}
+          illustration={item.illustration}
+          imageSrc={item.imageSrc}
+          learnMore={item.learnMore}
+        />
+      );
+    }
+
+    const illo =
+      item.illustration && isIllustration(item.illustration)
+        ? (item.illustration as IllustrationName)
+        : null;
+
+    return (
+      <Card key={item.title} variant="feature">
+        {illo ? (
+          <div className="ui-card__media">
+            <Illustration name={illo} size="md" framed />
+          </div>
+        ) : null}
+        <h3 className="ui-card__title">{item.title}</h3>
+        <Text variant="muted">{item.description}</Text>
+      </Card>
+    );
+  });
 
   return (
     <Section
@@ -53,42 +86,13 @@ export function Features({
             {title}
           </Heading>
         ) : null}
-        <CardGrid
-          variant={useUsp ? "usp" : "feature"}
-          maxVisible={useUsp ? 4 : 0}
-        >
-          {items.map((item) => {
-            if (useUsp) {
-              return (
-                <UspCard
-                  key={item.title}
-                  title={item.title}
-                  description={item.description}
-                  illustration={item.illustration}
-                  imageSrc={item.imageSrc}
-                  learnMore={item.learnMore}
-                />
-              );
-            }
-
-            const illo =
-              item.illustration && isIllustration(item.illustration)
-                ? (item.illustration as IllustrationName)
-                : null;
-
-            return (
-              <Card key={item.title} variant="feature">
-                {illo ? (
-                  <div className="ui-card__media">
-                    <Illustration name={illo} size="md" framed />
-                  </div>
-                ) : null}
-                <h3 className="ui-card__title">{item.title}</h3>
-                <Text variant="muted">{item.description}</Text>
-              </Card>
-            );
-          })}
-        </CardGrid>
+        {useUsp ? (
+          <UspCarousel>{cards}</UspCarousel>
+        ) : (
+          <CardGrid variant="feature" maxVisible={0}>
+            {cards}
+          </CardGrid>
+        )}
       </Container>
     </Section>
   );

@@ -1,3 +1,6 @@
+"use client";
+
+import { useId, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 
 type FaqItemProps = {
@@ -9,24 +12,46 @@ type FaqItemProps = {
 
 /**
  * FAQ row — Website Redesign Sections frame 15313:11090.
- * Static-export friendly: native details/summary (no client JS).
+ * Client accordion for smooth open/close (grid 0fr → 1fr).
  * Icons: Material expand_more / expand_less.
  */
-export function FaqItem({ question, answer, defaultOpen = false }: FaqItemProps) {
+export function FaqItem({
+  question,
+  answer,
+  defaultOpen = false,
+}: FaqItemProps) {
+  const [open, setOpen] = useState(defaultOpen);
+  const panelId = useId();
+  const buttonId = useId();
+
   return (
-    <details className="ui-faq" open={defaultOpen || undefined}>
-      <summary className="ui-faq__summary">
+    <div className={open ? "ui-faq ui-faq--open" : "ui-faq"}>
+      <button
+        type="button"
+        id={buttonId}
+        className="ui-faq__summary"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={() => setOpen((v) => !v)}
+      >
         <span className="ui-faq__question">{question}</span>
-        <span className="ui-faq__icon ui-faq__icon--closed" aria-hidden="true">
-          <Icon name="expand_more" size={24} />
+        <span className="ui-faq__icon" aria-hidden="true">
+          <Icon name={open ? "expand_less" : "expand_more"} size={24} />
         </span>
-        <span className="ui-faq__icon ui-faq__icon--open" aria-hidden="true">
-          <Icon name="expand_less" size={24} />
-        </span>
-      </summary>
-      <div className="ui-faq__answer">
-        <p>{answer}</p>
+      </button>
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        className="ui-faq__panel"
+        aria-hidden={!open}
+      >
+        <div className="ui-faq__panel-inner">
+          <div className="ui-faq__answer">
+            <p>{answer}</p>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
   );
 }
