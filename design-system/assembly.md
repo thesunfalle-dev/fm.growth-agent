@@ -90,11 +90,13 @@ Registered props (keep inventory + `lib/types.ts` + `Hero.tsx` aligned):
 | Reviews | `review-rail` (planned) | **skip** (or one line in hero `subtitle`) |
 | Footer | chrome | `SiteFooter` |
 
-**Default market MVP stack:**
+**Default market MVP stack (aligned to recipe M1, ready-only):**
 
 ```text
-hero → table (spreads) → features (usp) → cta → table (compare, optional) → steps → faq → cta → disclaimer
+hero (brandBackground) → features (usp) → table (instruments) → table (compare, optional) → steps (optional) → faq → disclaimer
 ```
+
+End conversion band is **SiteFooter CTAFooter** — do not stack mid/end `cta` blocks unless the campaign needs an extra mid-page band.
 
 ### Award / trust (BrokerChooser `29987:337918`)
 

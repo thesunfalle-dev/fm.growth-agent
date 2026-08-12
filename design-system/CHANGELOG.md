@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Crypto market landing desktop (M1-aligned)
+
+- `landings/crypto`: stack → hero brand BG → USP → instruments table → compare → steps → FAQ → disclaimer; removed duplicate mid/end `cta` (footer CTAFooter).
+- Button `primaryLight` (Figma Primary/Light); Hero auto-uses it when `brandBackground`.
+- Docs: assembly market MVP, landing-patterns D, WORKFLOW market stack, buttons.md.
+
 ## 2026-08-12 — Page batch Compare + About + Careers + Blog
 
 - Recipes T5 (Broker Comparison Tool), A6 Who We Are, A7 Why Fusion, A8 social proof, A9 Careers, A10 Blog homepage.

@@ -153,7 +153,7 @@
       "status": "ready",
       "path": "components/ui/Button.tsx",
       "figma": "14765:9245",
-      "variants": ["primary", "secondary", "text"],
+      "variants": ["primary", "primaryLight", "secondary", "text"],
       "sizes": ["lg", "md", "sm"],
       "requiredStates": ["default", "hover", "active", "focusVisible"],
       "tokenDependencies": [
@@ -161,7 +161,7 @@
         "semantic.color.action",
         "typography.fontFamily.heading"
       ],
-      "notes": "Website Redesign Buttons frame. Static export uses <a>. Optional arrow prop. Download/store & BuySell toggles not implemented."
+      "notes": "Website Redesign Buttons frame. Static export uses <a>. primaryLight = Figma Primary/Light for brand/dark heroes. Optional arrow prop. Download/store & BuySell toggles not implemented."
     },
     {
       "name": "Container",

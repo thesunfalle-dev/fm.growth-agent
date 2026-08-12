@@ -16,7 +16,7 @@ Default MVP stacks (see `landing-patterns.md`):
 - **Trust/award:** `hero` → `features` usp → optional `faq` → footer  
 - **Promo offer:** `hero` (+ legal) → `steps` → `features` usp → footer  
 - **Platform:** `hero` → `features` usp → `steps` → `faq` → footer  
-- **Market (e.g. Gold):** `hero` → `features` usp → `table` (accounts) → `steps` → footer
+- **Market (e.g. Crypto / Gold):** `hero` (brand BG) → `features` usp → `table` (instruments) → optional compare/steps → `faq` → footer
 
 ## Change the design system
 

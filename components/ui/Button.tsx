@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Icon } from "@/components/ui/Icon";
 
-export type ButtonVariant = "primary" | "secondary" | "text";
+export type ButtonVariant = "primary" | "primaryLight" | "secondary" | "text";
 export type ButtonSize = "lg" | "md" | "sm";
 
 type ButtonProps = {

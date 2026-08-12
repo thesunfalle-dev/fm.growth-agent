@@ -277,7 +277,8 @@ See **`assembly.md`** for Figma section → substitute map. Do **not** nest a ta
 `hero` → `features` usp → `steps` → `faq` → `cta` → `disclaimer`  
 (download bar / checklist = planned → skip)
 
-**D. Market / instrument** (Gold-like / crypto)  
-`hero` (+ optional `brandBackground`, no chart) → `table` (spreads) → `features` usp → `cta` → optional `table` (compare) → `steps` → `faq` → `cta` → `disclaimer`  
+**D. Market / instrument** (M1 Forex template / Gold / crypto)  
+`hero` (`brandBackground`, Primary/Light primary, no chart) → `features` usp → `table` (instruments) → optional `table` (compare) → optional `steps` → `faq` → `disclaimer`  
+Footer CTAFooter covers “Ready to start” (skip duplicate end `cta`).
 
 Reference implementation: `landings/crypto/content.ts`.

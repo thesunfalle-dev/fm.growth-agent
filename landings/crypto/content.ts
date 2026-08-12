@@ -2,14 +2,18 @@ import type { LandingDocument } from "@/lib/types";
 
 /**
  * Crypto CFDs — USER STORY “Crypto LP”.
- * Assembled from inventory blocks only (design-system/assembly.md).
- * Recipe: market MVP — hero → table → features → cta → table → steps → faq → cta → disclaimer.
- * Figma tables: Crypto CFDs + How we Compare (15276:11158); USP Cards; Step by Steps; FAQ.
+ * Desktop stack aligned to market recipe M1 (Forex template) + campaign extras.
+ * Ready-only blocks (design-system/assembly.md, page-recipes.md M1).
+ *
+ * M1 ideal: market-hero → education-split → features usp → instruments table → faq → footer CTA
+ * Ready now:  hero brandBackground (Primary/Light) → features usp → table →
+ *             optional compare table + steps → faq → disclaimer
+ *             (end CTA = SiteFooter CTAFooter — no mid/end `cta` blocks)
  */
 const landing: LandingDocument = {
   slug: "crypto",
   name: "Crypto CFDs",
-  note: "Market recipe, ready-only blocks. No nested hero table.",
+  note: "M1 market desktop: brand hero + USP → instruments → compare → steps → FAQ. Footer CTA.",
   listed: true,
   status: "draft",
   createdAt: "2026-08-12",
@@ -20,17 +24,14 @@ const landing: LandingDocument = {
       "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more. Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
   },
   blocks: [
-    // —— Hero (TZ §1 pitch; Figma Market Header content subset, no chart) ——
+    // —— 1. Market header substitute (M1 market-hero planned; no TV chart yet) ——
     {
       type: "hero",
       brandBackground: true,
       eyebrow: "Crypto CFDs",
       title: "Trade Crypto CFDs No Commission",
-      bullets: [
-        "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more",
-        "Bitcoin spreads from 0.04% and 0.09% for ETH",
-        "No deposit fees and no minimum account size",
-      ],
+      subtitle:
+        "CFDs on Bitcoin, Ethereum, Dogecoin and more — Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
       primaryCta: {
         label: "Start trading",
         href: "https://hub.fusionmarkets.com/auth/sign-up",
@@ -41,10 +42,55 @@ const landing: LandingDocument = {
       },
     },
 
-    // —— Spreads (separate table block; Figma Markets - Crypto CFDs) ——
+    // —— 2. Why trade (M1 USP rail; education-split planned → skip) ——
+    {
+      type: "features",
+      variant: "usp",
+      title: "Why trade Crypto CFDs with Fusion Markets?",
+      items: [
+        {
+          title: "No Commission",
+          illustration: "bitcoin",
+          description:
+            "As part of our mission to keep our fees low, we charge 0.04% as opposed to 1%+ on Aussie Crypto exchanges.",
+        },
+        {
+          title: "$0 Minimum Account Size",
+          illustration: "hand",
+          description:
+            "We don’t believe in teasing you with lower costs and then making you pay more later. With Fusion Markets, you can start with as much or as little as you’d like.",
+        },
+        {
+          title: "$0 Deposit Fees",
+          illustration: "deposit",
+          description:
+            "We cover all deposit fees on all of our 20+ methods of funding including Visa, MasterCard, PayPal and more.",
+        },
+        {
+          title: "Easy sign-up",
+          illustration: "user-auth",
+          description:
+            "The majority of our clients open, fund and start trading all within five minutes.",
+        },
+        {
+          title: "Go Long and Short",
+          illustration: "trade",
+          description:
+            "With our Crypto CFDs, you can capitalise on all price movements by being able to go both long or short.",
+        },
+        {
+          title: "Leverage your Trades",
+          illustration: "chart",
+          description:
+            "Get 1:2 leverage as a Retail Client or 1:10 as a Pro Client with Fusion Markets and increase your buying power with leverage and get increased exposure on your trades.",
+        },
+      ],
+    },
+
+    // —— 3. Instruments table (M1 Our … instruments; not homepage spread-cards) ——
     {
       type: "table",
-      title: "Crypto CFD spreads",
+      title: "Our crypto CFD instruments",
       subtitle:
         "Sample pairs from the campaign brief. Confirm live pricing in the Client Hub or Spreads Tool.",
       columns: [
@@ -102,65 +148,7 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— USP (TZ §2; Cards USP / Why Fusion) ——
-    {
-      type: "features",
-      variant: "usp",
-      title: "Why trade Crypto CFDs with Fusion Markets?",
-      items: [
-        {
-          title: "No Commission",
-          illustration: "bitcoin",
-          description:
-            "As part of our mission to keep our fees low, we charge 0.04% as opposed to 1%+ on Aussie Crypto exchanges.",
-        },
-        {
-          title: "$0 Minimum Account Size",
-          illustration: "hand",
-          description:
-            "We don’t believe in teasing you with lower costs and then making you pay more later. With Fusion Markets, you can start with as much or as little as you’d like.",
-        },
-        {
-          title: "$0 Deposit Fees",
-          illustration: "deposit",
-          description:
-            "We cover all deposit fees on all of our 20+ methods of funding including Visa, MasterCard, PayPal and more.",
-        },
-        {
-          title: "Easy sign-up",
-          illustration: "user-auth",
-          description:
-            "The majority of our clients open, fund and start trading all within five minutes.",
-        },
-        {
-          title: "Go Long and Short",
-          illustration: "trade",
-          description:
-            "With our Crypto CFDs, you can capitalise on all price movements by being able to go both long or short.",
-        },
-        {
-          title: "Leverage your Trades",
-          illustration: "chart",
-          description:
-            "Get 1:2 leverage as a Retail Client or 1:10 as a Pro Client with Fusion Markets and increase your buying power with leverage and get increased exposure on your trades.",
-        },
-      ],
-    },
-    {
-      type: "cta",
-      title: "Ready to trade Crypto CFDs?",
-      subtitle: "Open a live account or practise risk-free on a free demo.",
-      primaryCta: {
-        label: "Start trading",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
-      secondaryCta: {
-        label: "Try a free demo",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
-    },
-
-    // —— Compare (Figma Markets - Crypto CFDs - How we Compare → flat table) ——
+    // —— 4. Campaign compare (flat table until comparison-table is ready) ——
     {
       type: "table",
       title: "How we compare against other crypto providers",
@@ -230,7 +218,7 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— How it works (Sections Step by Steps) ——
+    // —— 5. How it works (conversion; Gold/accounts family — optional on pure M1) ——
     {
       type: "steps",
       title: "How it works",
@@ -255,7 +243,7 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— FAQ (Sections FAQ) ——
+    // —— 6. FAQ (M1) ——
     {
       type: "faq",
       title: "Crypto CFDs FAQ",
@@ -289,19 +277,7 @@ const landing: LandingDocument = {
       ],
     },
 
-    {
-      type: "cta",
-      title: "Ready to start trading?",
-      subtitle: "Get a live account or try a free demo — no minimum account size.",
-      primaryCta: {
-        label: "Start trading",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
-      secondaryCta: {
-        label: "Try a free demo",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
-    },
+    // —— 7. Disclaimer only — Ready to start = SiteFooter CTAFooter ——
     {
       type: "disclaimer",
       text: "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money. Crypto CFDs are especially volatile. This is an internal Growth Agent preview on fm.growth-agent.org and is not an official Fusion Markets publication. Spreads, leverage and product availability depend on entity and client classification — verify on the live site and legal documents before trading.",

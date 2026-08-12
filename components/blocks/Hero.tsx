@@ -51,7 +51,11 @@ export function Hero({
           {(primaryCta || secondaryCta) && (
             <div className="ui-cta-row">
               {primaryCta ? (
-                <Button href={primaryCta.href} variant="primary" size="lg">
+                <Button
+                  href={primaryCta.href}
+                  variant={brandBackground ? "primaryLight" : "primary"}
+                  size="lg"
+                >
                   {primaryCta.label}
                 </Button>
               ) : null}

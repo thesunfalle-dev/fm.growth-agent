@@ -834,6 +834,23 @@ a {
   filter: brightness(0.96);
 }
 
+/* Primary/Light — solid light fill for brand/dark heroes (Figma Primary/Light) */
+.ui-btn--primaryLight {
+  background: var(--color-background-canvas);
+  color: var(--color-action-primary-default);
+  border-color: transparent;
+}
+
+.ui-btn--primaryLight:hover {
+  background: var(--color-background-surface);
+  color: var(--color-action-primary-hover);
+}
+
+.ui-btn--primaryLight:active {
+  background: var(--color-background-surface-muted);
+  color: var(--color-action-primary-active);
+}
+
 /* Secondary — gradient border + label; soft fill on hover */
 .ui-btn--secondary {
   background: var(--color-background-canvas);

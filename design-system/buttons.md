@@ -12,8 +12,11 @@ Component: `components/ui/Button.tsx`
 | Variant | Default | Hover / Pressed |
 |---------|---------|-----------------|
 | **Primary** | Fill `Gradient/Primary` (`#742CCE` → `#6B4AFF`), text `Gray/200` | Fill `Gradient/Tertiary` (`#640CD2` → `#06007A`) |
+| **Primary/Light** | Fill canvas white, text `Purple/500` | Surface fill, purple hover/active |
 | **Secondary** | Transparent fill, border `Gradient/Primary`, label gradient Primary | Fill `Gradient/Secondary Button`, border Primary; pressed label uses Tertiary gradient |
 | **Text / Link** | Text only, Noto SemiBold 14–16, optional icon gap **4px** | Darker / pressed purple |
+
+**When:** Use **Primary/Light** on brand/dark heroes (`brandBackground`, planned `market-hero`). `Hero` auto-selects it for the primary CTA when `brandBackground` is true.
 
 ## Sizes (guidelines + component measurements)
 
@@ -29,13 +32,14 @@ Guideline note: minimum padding — give text enough horizontal space so the con
 
 ```tsx
 <Button href="..." variant="primary" size="lg">Start Trading</Button>
+<Button href="..." variant="primaryLight" size="lg">Start Trading</Button>
 <Button href="..." variant="secondary" size="md">Learn more</Button>
 <Button href="..." variant="text" size="sm" arrow>Start Trading</Button>
 ```
 
 | Prop | Values | Default |
 |------|--------|---------|
-| `variant` | `primary` \| `secondary` \| `text` | `primary` |
+| `variant` | `primary` \| `primaryLight` \| `secondary` \| `text` | `primary` |
 | `size` | `lg` \| `md` \| `sm` | `md` |
 | `arrow` | boolean | `false` |
 | `href` | string | required (static export) |
