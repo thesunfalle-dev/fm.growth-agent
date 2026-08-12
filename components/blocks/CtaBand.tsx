@@ -19,11 +19,11 @@ export function CtaBand({ title, subtitle, primaryCta, secondaryCta }: CtaBandPr
         <Heading variant="section">{title}</Heading>
         {subtitle ? <Text variant="lead">{subtitle}</Text> : null}
         <div className="ui-cta-row ui-cta-row--center">
-          <Button href={primaryCta.href} variant="primary">
+          <Button href={primaryCta.href} variant="primary" size="lg">
             {primaryCta.label}
           </Button>
           {secondaryCta ? (
-            <Button href={secondaryCta.href} variant="secondary">
+            <Button href={secondaryCta.href} variant="secondary" size="lg">
               {secondaryCta.label}
             </Button>
           ) : null}

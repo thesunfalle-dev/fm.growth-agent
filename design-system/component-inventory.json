@@ -9,18 +9,18 @@
     {
       "name": "Button",
       "category": "actions",
-      "status": "provisional",
+      "status": "ready",
       "path": "components/ui/Button.tsx",
-      "variants": ["primary", "secondary"],
-      "sizes": ["md"],
-      "requiredStates": ["default", "hover", "active", "focusVisible", "disabled"],
+      "figma": "14765:9245",
+      "variants": ["primary", "secondary", "text"],
+      "sizes": ["lg", "md", "sm"],
+      "requiredStates": ["default", "hover", "active", "focusVisible"],
       "tokenDependencies": [
+        "component.button",
         "semantic.color.action",
-        "radius.pill",
-        "typography.fontWeight.semibold",
-        "motion.duration.fast"
+        "typography.fontFamily.heading"
       ],
-      "notes": "Maps to CTA links for static export; prefer <a> styled as button when href is present."
+      "notes": "Website Redesign Buttons frame. Static export uses <a>. Optional arrow prop. Download/store & BuySell toggles not implemented."
     },
     {
       "name": "Container",

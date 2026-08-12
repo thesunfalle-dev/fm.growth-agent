@@ -9,7 +9,8 @@ Track unknowns instead of inventing answers. Resolve → move summary into `DECI
 - [x] Typefaces → Noto Sans + Roboto (Website Redesign Typography)
 - [x] Grid / layout → Spacing & Layout frame (4px scale, 1280, 80/16 gutters, section 120/60, type rhythm 24/32 & 40/24)
 - [ ] Motion language (page transitions, scroll reveals, reduced-motion policy)
-- [ ] Map Buttons / Cards / Sections frames 1:1 into components
+- [x] Buttons frame → Primary/Secondary/Text + sizes (Download/BuySell later)
+- [ ] Map Cards / Sections frames 1:1 into components
 
 
 ## Product / process

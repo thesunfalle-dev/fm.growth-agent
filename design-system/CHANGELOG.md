@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-12 — Buttons from Figma
+
+- Ingested Buttons frame `14765:9245`: Primary / Secondary / Text, sizes lg/md/sm, hover/pressed.
+- Primary uses Gradient/Primary → Tertiary; Secondary gradient border + soft fill.
+- Component tokens `component.button.*`; docs `buttons.md` + extract JSON.
+- Inventory status Button → `ready`.
+
 ## 2026-08-12 — Spacing & Layout from Figma
 
 - Ingested frame `14765:7184`: 4px scale, content 1280, desktop margin 80, section 120/60.

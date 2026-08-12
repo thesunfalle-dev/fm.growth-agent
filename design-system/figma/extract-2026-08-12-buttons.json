@@ -1,0 +1,52 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14765-9245",
+    "frame": { "id": "14765:9245", "name": "Buttons" }
+  },
+  "guidelines": {
+    "primaryLarge": {
+      "font": "Noto Sans SemiBold 20 / 120%",
+      "padding": "36px horizontal, 14px vertical",
+      "radius": "12px"
+    },
+    "secondaryMedium": {
+      "font": "Noto Sans SemiBold 16 / 120%",
+      "padding": "28px horizontal, 10px vertical",
+      "radius": "10px"
+    },
+    "tertiarySmall": {
+      "font": "Noto Sans SemiBold 14 / 120%",
+      "padding": "24px horizontal, 10px vertical",
+      "radius": "8px"
+    },
+    "textLink": {
+      "font": "Noto Sans SemiBold 14–16 / 120%",
+      "iconGap": "4px"
+    }
+  },
+  "primary": {
+    "defaultFill": "Gradient/Primary #742CCE → #6B4AFF",
+    "hoverFill": "Gradient/Tertiary #640CD2 → #06007A",
+    "pressedFill": "Gradient/Tertiary #640CD2 → #06007A",
+    "label": "#F5F6F7 (Gray/200)",
+    "sizes": {
+      "Large": { "padding": { "t": 14, "r": 40, "b": 14, "l": 40 }, "radius": 12, "fontSize": 20, "h": 54 },
+      "Medium": { "padding": { "t": 10, "r": 32, "b": 10, "l": 32 }, "radius": 10, "fontSize": 16, "h": 44 },
+      "Small": { "padding": { "t": 8, "r": 24, "b": 8, "l": 24 }, "radius": 8, "fontSize": 14, "h": 36 }
+    }
+  },
+  "secondary": {
+    "default": { "fill": "none", "stroke": "Gradient/Primary", "label": "Gradient/Primary" },
+    "hover": { "fill": "Gradient/Secondary Button #E3D9FF → #D8E7FF", "stroke": "Gradient/Primary", "label": "Gradient/Primary" },
+    "pressed": { "fill": "Gradient/Secondary Button", "stroke": "Gradient/Primary", "label": "Gradient/Tertiary" },
+    "sizes": {
+      "Large": { "padding": { "t": 14, "r": 36, "b": 14, "l": 36 }, "radius": 12, "fontSize": 20, "h": 54 },
+      "Medium": { "padding": { "t": 10, "r": 28, "b": 10, "l": 28 }, "radius": 10, "fontSize": 16, "h": 44 },
+      "Small": { "padding": { "t": 8, "r": 24, "b": 8, "l": 24 }, "radius": 8, "fontSize": 14, "h": 36 }
+    }
+  },
+  "runtimeFont": "Noto Sans (Typography frame SoT; component instances may still show Plus Jakarta in Figma)"
+}

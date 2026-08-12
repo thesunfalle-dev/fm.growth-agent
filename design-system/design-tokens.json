@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.3.2",
+    "version": "0.4.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14765-7184",
-    "notes": "Fonts: Typography. Colors: paint styles. Spacing: frame 14765:7184 (4px grid, 1280 content, section 120/60)."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14765-9245",
+    "notes": "Fonts/colors/spacing from earlier frames. Buttons: frame 14765:9245 (Primary/Secondary sizes + states)."
   },
   "primitive": {
     "color": {
@@ -231,7 +231,43 @@
     "md": "8px",
     "lg": "12px",
     "xl": "16px",
+    "buttonSm": "8px",
+    "buttonMd": "10px",
+    "buttonLg": "12px",
     "pill": "999px"
+  },
+  "component": {
+    "button": {
+      "lg": {
+        "fontSize": "20px",
+        "lineHeight": "1.2",
+        "paddingY": "14px",
+        "paddingX": "36px",
+        "radius": "12px",
+        "minHeight": "52px",
+        "gap": "4px"
+      },
+      "md": {
+        "fontSize": "16px",
+        "lineHeight": "1.2",
+        "paddingY": "10px",
+        "paddingX": "28px",
+        "radius": "10px",
+        "minHeight": "44px",
+        "gap": "4px"
+      },
+      "sm": {
+        "fontSize": "14px",
+        "lineHeight": "1.2",
+        "paddingY": "10px",
+        "paddingX": "24px",
+        "radius": "8px",
+        "minHeight": "36px",
+        "gap": "4px"
+      },
+      "textOnPrimary": "{primitive.color.gray200}",
+      "iconGap": "4px"
+    }
   },
   "border": {
     "width": {
