@@ -24,12 +24,12 @@ export function Hero({ eyebrow, title, subtitle, primaryCta, secondaryCta }: Her
         {(primaryCta || secondaryCta) && (
           <div className="ui-cta-row">
             {primaryCta ? (
-              <Button href={primaryCta.href} variant="primary">
+              <Button href={primaryCta.href} variant="primary" size="lg">
                 {primaryCta.label}
               </Button>
             ) : null}
             {secondaryCta ? (
-              <Button href={secondaryCta.href} variant="secondary">
+              <Button href={secondaryCta.href} variant="secondary" size="lg">
                 {secondaryCta.label}
               </Button>
             ) : null}
