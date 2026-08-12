@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "name": "Fusion Markets Landing Design Tokens",
+    "mode": "dark",
+    "version": "0.1.0",
+    "status": "provisional-shell",
+    "updatedAt": "2026-08-12",
+    "notes": "Bootstrap shell for agentic pipeline. Replace from Figma redesign; do not treat as brand-approved."
+  },
+  "primitive": {
+    "color": {
+      "neutral0": "#0b0f14",
+      "neutral10": "#121821",
+      "neutral20": "#1a2230",
+      "neutral30": "#243041",
+      "textPrimary": "#eef2f7",
+      "textSecondary": "#c5d0de",
+      "textMuted": "#9aa8bc",
+      "accent": "#3d8bfd",
+      "accentHover": "#5c9fff",
+      "accentActive": "#2f78e6",
+      "accentOn": "#ffffff",
+      "borderSubtle": "rgba(255, 255, 255, 0.06)",
+      "borderDefault": "rgba(255, 255, 255, 0.08)",
+      "borderStrong": "rgba(255, 255, 255, 0.16)",
+      "focusRing": "rgba(61, 139, 253, 0.35)",
+      "success": "#3ecf8e",
+      "warning": "#f5c542",
+      "danger": "#f07178",
+      "glowCool": "#1a2740",
+      "glowDeep": "#142033"
+    }
+  },
+  "semantic": {
+    "color": {
+      "background": {
+        "canvas": "{primitive.color.neutral0}",
+        "surface": "{primitive.color.neutral10}",
+        "surfaceRaised": "{primitive.color.neutral20}",
+        "surfaceHover": "{primitive.color.neutral30}",
+        "glowPrimary": "{primitive.color.glowCool}",
+        "glowSecondary": "{primitive.color.glowDeep}"
+      },
+      "text": {
+        "primary": "{primitive.color.textPrimary}",
+        "secondary": "{primitive.color.textSecondary}",
+        "muted": "{primitive.color.textMuted}",
+        "onAccent": "{primitive.color.accentOn}",
+        "eyebrow": "{primitive.color.accent}",
+        "link": "{primitive.color.accent}"
+      },
+      "border": {
+        "subtle": "{primitive.color.borderSubtle}",
+        "default": "{primitive.color.borderDefault}",
+        "strong": "{primitive.color.borderStrong}",
+        "focus": "{primitive.color.accent}"
+      },
+      "action": {
+        "primaryDefault": "{primitive.color.accent}",
+        "primaryHover": "{primitive.color.accentHover}",
+        "primaryActive": "{primitive.color.accentActive}",
+        "primaryOn": "{primitive.color.accentOn}",
+        "secondaryDefault": "transparent",
+        "secondaryHover": "rgba(255, 255, 255, 0.03)",
+        "secondaryBorder": "{primitive.color.borderDefault}",
+        "secondaryBorderHover": "{primitive.color.borderStrong}"
+      },
+      "status": {
+        "success": "{primitive.color.success}",
+        "warning": "{primitive.color.warning}",
+        "danger": "{primitive.color.danger}"
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+    },
+    "fontSize": {
+      "xs": "0.78rem",
+      "sm": "0.85rem",
+      "md": "0.95rem",
+      "base": "1rem",
+      "lg": "1.1rem",
+      "xl": "1.5rem",
+      "2xl": "2rem",
+      "3xl": "2.4rem",
+      "4xl": "3.25rem"
+    },
+    "fontWeight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 650
+    },
+    "lineHeight": {
+      "tight": 1.1,
+      "snug": 1.2,
+      "body": 1.55,
+      "relaxed": 1.65
+    },
+    "letterSpacing": {
+      "display": "-0.03em",
+      "heading": "-0.02em",
+      "label": "0.04em",
+      "eyebrow": "0.04em",
+      "normal": "0"
+    }
+  },
+  "space": {
+    "1": "0.5rem",
+    "2": "1rem",
+    "3": "1.5rem",
+    "4": "2.5rem",
+    "5": "4rem",
+    "6": "6rem"
+  },
+  "radius": {
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "pill": "999px"
+  },
+  "border": {
+    "width": {
+      "default": "1px"
+    }
+  },
+  "shadow": {
+    "none": "none",
+    "header": "0 1px 0 {semantic.color.border.default}"
+  },
+  "layout": {
+    "container": {
+      "max": "1080px",
+      "narrow": "720px",
+      "gutter": "2rem"
+    },
+    "header": {
+      "height": "3.5rem"
+    }
+  },
+  "breakpoint": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px"
+  },
+  "motion": {
+    "duration": {
+      "fast": "150ms",
+      "default": "200ms"
+    },
+    "easing": {
+      "standard": "ease"
+    }
+  },
+  "zIndex": {
+    "base": 0,
+    "sticky": 10,
+    "header": 10
+  },
+  "opacity": {
+    "disabled": 0.5
+  }
+}

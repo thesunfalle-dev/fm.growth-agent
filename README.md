@@ -8,6 +8,25 @@ Internal preview host for **Fusion Markets** marketing landings.
 
 This is **not** the main Growth Agent app (`growth-agent.org`). Separate project, separate deploy.
 
+## For agents & contributors
+
+Start with **`AGENTS.md`**, then:
+
+| Doc | Purpose |
+|-----|---------|
+| `docs/WORKFLOW.md` | How we ship landings & DS changes |
+| `docs/DECISIONS.md` | Why things are the way they are |
+| `docs/OPEN_QUESTIONS.md` | Unknowns (don’t invent answers) |
+| `design-system/DESIGN.md` | Design policy |
+| `design-system/design-tokens.json` | Visual source of truth |
+| `design-system/block-inventory.json` | Allowed landing sections |
+
+```bash
+npm run generate:tokens
+npm run validate:design
+npm run deploy
+```
+
 ---
 
 ## Production-first workflow

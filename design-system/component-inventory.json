@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "name": "FM Landings Component Inventory",
+    "version": "0.1.0",
+    "status": "provisional-shell",
+    "updatedAt": "2026-08-12"
+  },
+  "components": [
+    {
+      "name": "Button",
+      "category": "actions",
+      "status": "provisional",
+      "path": "components/ui/Button.tsx",
+      "variants": ["primary", "secondary"],
+      "sizes": ["md"],
+      "requiredStates": ["default", "hover", "active", "focusVisible", "disabled"],
+      "tokenDependencies": [
+        "semantic.color.action",
+        "radius.pill",
+        "typography.fontWeight.semibold",
+        "motion.duration.fast"
+      ],
+      "notes": "Maps to CTA links for static export; prefer <a> styled as button when href is present."
+    },
+    {
+      "name": "Container",
+      "category": "layout",
+      "status": "provisional",
+      "path": "components/ui/Container.tsx",
+      "variants": ["default", "narrow"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["layout.container"]
+    },
+    {
+      "name": "Section",
+      "category": "layout",
+      "status": "provisional",
+      "path": "components/ui/Section.tsx",
+      "variants": ["default", "hero", "cta", "disclaimer"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["space.5", "space.3", "space.4"]
+    },
+    {
+      "name": "Card",
+      "category": "surfaces",
+      "status": "provisional",
+      "path": "components/ui/Card.tsx",
+      "variants": ["feature"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": [
+        "semantic.color.background.surface",
+        "semantic.color.background.surfaceRaised",
+        "semantic.color.border.default",
+        "radius.md"
+      ]
+    },
+    {
+      "name": "Eyebrow",
+      "category": "typography",
+      "status": "provisional",
+      "path": "components/ui/Eyebrow.tsx",
+      "variants": ["default"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": [
+        "semantic.color.text.eyebrow",
+        "typography.fontSize.sm",
+        "typography.letterSpacing.eyebrow"
+      ]
+    },
+    {
+      "name": "Heading",
+      "category": "typography",
+      "status": "provisional",
+      "path": "components/ui/Heading.tsx",
+      "variants": ["display", "section"],
+      "sizes": ["lg", "md"],
+      "requiredStates": ["default"],
+      "tokenDependencies": [
+        "typography.fontSize",
+        "typography.letterSpacing",
+        "typography.lineHeight"
+      ]
+    },
+    {
+      "name": "Text",
+      "category": "typography",
+      "status": "provisional",
+      "path": "components/ui/Text.tsx",
+      "variants": ["lead", "body", "muted", "disclaimer"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["semantic.color.text", "typography.fontSize", "typography.lineHeight"]
+    },
+    {
+      "name": "SiteHeader",
+      "category": "navigation",
+      "status": "provisional",
+      "path": "components/ui/SiteHeader.tsx",
+      "variants": ["preview"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": [
+        "semantic.color.border.default",
+        "semantic.color.background.canvas",
+        "zIndex.header"
+      ],
+      "notes": "Internal preview chrome; not a Fusion marketing nav."
+    },
+    {
+      "name": "Pill",
+      "category": "status",
+      "status": "provisional",
+      "path": "components/ui/Pill.tsx",
+      "variants": ["neutral"],
+      "sizes": ["sm"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["semantic.color.text.muted", "semantic.color.border.default", "radius.pill"]
+    }
+  ]
+}

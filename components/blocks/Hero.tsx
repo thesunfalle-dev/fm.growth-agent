@@ -1,0 +1,41 @@
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Heading } from "@/components/ui/Heading";
+import { Section } from "@/components/ui/Section";
+import { Text } from "@/components/ui/Text";
+import type { LandingCta } from "@/lib/types";
+
+type HeroProps = {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  primaryCta?: LandingCta;
+  secondaryCta?: LandingCta;
+};
+
+export function Hero({ eyebrow, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
+  return (
+    <Section variant="hero">
+      <Container>
+        {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
+        <Heading variant="display">{title}</Heading>
+        {subtitle ? <Text variant="lead">{subtitle}</Text> : null}
+        {(primaryCta || secondaryCta) && (
+          <div className="ui-cta-row">
+            {primaryCta ? (
+              <Button href={primaryCta.href} variant="primary">
+                {primaryCta.label}
+              </Button>
+            ) : null}
+            {secondaryCta ? (
+              <Button href={secondaryCta.href} variant="secondary">
+                {secondaryCta.label}
+              </Button>
+            ) : null}
+          </div>
+        )}
+      </Container>
+    </Section>
+  );
+}

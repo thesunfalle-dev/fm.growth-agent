@@ -10,7 +10,10 @@
     "lint": "next lint",
     "preview": "npx serve out",
     "deploy": "npm run build && wrangler pages deploy out --project-name=fm-growth-agent --branch=main",
-    "ship": "npm run deploy"
+    "ship": "npm run deploy",
+    "generate:tokens": "node scripts/generate-tokens.mjs",
+    "validate:design": "node scripts/validate-design.mjs",
+    "prebuild": "npm run generate:tokens"
   },
   "dependencies": {
     "next": "^15.5.2",

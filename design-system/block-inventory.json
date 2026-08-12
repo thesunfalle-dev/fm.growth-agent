@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "name": "FM Landings Block Inventory",
+    "version": "0.1.0",
+    "status": "provisional-shell",
+    "updatedAt": "2026-08-12",
+    "notes": "Agents may only assemble landings from these block types until inventory expands."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "status": "provisional",
+      "description": "Primary above-the-fold pitch with optional dual CTAs.",
+      "component": "components/blocks/Hero.tsx",
+      "props": {
+        "eyebrow": { "type": "string", "required": false },
+        "title": { "type": "string", "required": true },
+        "subtitle": { "type": "string", "required": false },
+        "primaryCta": { "type": "cta", "required": false },
+        "secondaryCta": { "type": "cta", "required": false }
+      },
+      "contentRules": [
+        "Title should be one clear promise; avoid stacking multiple claims.",
+        "If performance/cost claims appear, compliance must allow them."
+      ],
+      "tokenDependencies": ["space", "typography", "semantic.color.text", "semantic.color.action"]
+    },
+    {
+      "type": "features",
+      "status": "provisional",
+      "description": "Grid of benefit cards (title + description).",
+      "component": "components/blocks/Features.tsx",
+      "props": {
+        "title": { "type": "string", "required": false },
+        "items": {
+          "type": "array",
+          "required": true,
+          "item": {
+            "title": { "type": "string", "required": true },
+            "description": { "type": "string", "required": true }
+          },
+          "minItems": 2,
+          "maxItems": 6
+        }
+      },
+      "contentRules": [
+        "Prefer 3 items for balance; 2–6 allowed.",
+        "Keep descriptions scannable (1–3 sentences)."
+      ],
+      "tokenDependencies": ["semantic.color.background", "radius.md", "space"]
+    },
+    {
+      "type": "cta",
+      "status": "provisional",
+      "description": "Mid or end conversion band.",
+      "component": "components/blocks/CtaBand.tsx",
+      "props": {
+        "title": { "type": "string", "required": true },
+        "subtitle": { "type": "string", "required": false },
+        "primaryCta": { "type": "cta", "required": true },
+        "secondaryCta": { "type": "cta", "required": false }
+      },
+      "contentRules": ["One dominant action; secondary is optional and quieter."],
+      "tokenDependencies": ["semantic.color.action", "typography", "space"]
+    },
+    {
+      "type": "disclaimer",
+      "status": "provisional",
+      "description": "Legal / risk footer text. Strongly recommended on every marketing landing.",
+      "component": "components/blocks/Disclaimer.tsx",
+      "props": {
+        "text": { "type": "string", "required": true }
+      },
+      "contentRules": [
+        "Prefer approved disclaimer language from brand/compliance.md when available.",
+        "Do not omit on campaign pages intended for external sharing."
+      ],
+      "tokenDependencies": ["semantic.color.text.muted", "typography.fontSize.xs"]
+    }
+  ],
+  "sharedTypes": {
+    "cta": {
+      "label": { "type": "string", "required": true },
+      "href": { "type": "string", "required": true }
+    }
+  },
+  "planned": [
+    {
+      "type": "logo-cloud",
+      "status": "planned",
+      "description": "Social proof logos / partners"
+    },
+    {
+      "type": "stats",
+      "status": "planned",
+      "description": "Key metrics strip"
+    },
+    {
+      "type": "faq",
+      "status": "planned",
+      "description": "Accordion FAQ"
+    },
+    {
+      "type": "pricing-compare",
+      "status": "planned",
+      "description": "Cost comparison table"
+    },
+    {
+      "type": "how-it-works",
+      "status": "planned",
+      "description": "3-step process"
+    },
+    {
+      "type": "platforms",
+      "status": "planned",
+      "description": "Trading platform showcase"
+    },
+    {
+      "type": "testimonials",
+      "status": "planned",
+      "description": "Quotes / Trustpilot-style proof"
+    }
+  ]
+}

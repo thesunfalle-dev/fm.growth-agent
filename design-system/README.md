@@ -1,16 +1,23 @@
 # Design system
 
-Source of truth will be the **new Figma redesign**, not the live fusionmarkets.com UI.
+**Status:** `provisional-shell` — pipeline ready, brand Figma not yet ingested.
 
-## Planned contents
+## Start here
 
-| Path | Purpose |
-|------|---------|
-| `tokens.json` | colors, type scale, spacing, radii, shadows |
-| `components.md` | buttons, cards, inputs, nav rules |
-| `assets/` | logos, icons exported from Figma |
+1. `DESIGN.md` — policy
+2. `design-tokens.json` — values
+3. `block-inventory.json` — what agents may build
+4. `implementation-contract.md` — how code must look
+5. `sources.md` — Figma / provenance
+6. `CHANGELOG.md` — history
 
-## Until Figma arrives
+## Commands
 
-Landings use neutral CSS variables in `app/globals.css` (`--color-*`, spacing).  
-When tokens land, map them 1:1 into those variables so existing blocks pick up the brand without rewrites.
+```bash
+npm run generate:tokens
+npm run validate:design
+```
+
+## Figma
+
+Add links in `sources.md`. Do not silently overwrite tokens without changelog + provenance.

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BlockRenderer } from "@/components/blocks";
+import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { getAllSlugs, getLanding } from "@/lib/landings";
 
 type PageProps = {
