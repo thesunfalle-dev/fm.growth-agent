@@ -42,47 +42,35 @@ const landing: LandingDocument = {
       },
     },
 
-    // —— 2. Why trade (M1 USP rail; education-split planned → skip) ——
+    // —— 2. Why Trade… USP (Figma 23570:105076 — exactly 4 cards) ——
     {
       type: "features",
       variant: "usp",
-      title: "Why trade Crypto CFDs with Fusion Markets?",
+      title: "Why Trade Crypto CFDs with Fusion",
       items: [
         {
-          title: "No Commission",
+          title: "Zero Commissions",
           illustration: "bitcoin",
           description:
-            "As part of our mission to keep our fees low, we charge 0.04% as opposed to 1%+ on Aussie Crypto exchanges.",
+            "We offer some of the lowest fees in the market, tight spreads and charge A$0 in commissions.\n\nSee our comparison table and compare us against other providers.",
         },
         {
-          title: "$0 Minimum Account Size",
-          illustration: "hand",
-          description:
-            "We don’t believe in teasing you with lower costs and then making you pay more later. With Fusion Markets, you can start with as much or as little as you’d like.",
-        },
-        {
-          title: "$0 Deposit Fees",
-          illustration: "deposit",
-          description:
-            "We cover all deposit fees on all of our 20+ methods of funding including Visa, MasterCard, PayPal and more.",
-        },
-        {
-          title: "Easy sign-up",
-          illustration: "user-auth",
-          description:
-            "The majority of our clients open, fund and start trading all within five minutes.",
-        },
-        {
-          title: "Go Long and Short",
+          title: "Go long or short",
           illustration: "trade",
           description:
-            "With our Crypto CFDs, you can capitalise on all price movements by being able to go both long or short.",
+            "Our Crypto CFDs allow you to go both long or short, so you can take advantage of any price movements.",
         },
         {
-          title: "Leverage your Trades",
+          title: "No Minimum Account size",
+          illustration: "user-auth",
+          description:
+            "Unlike other brokers who charge fees to deposit, we want to make trading accessible to everyone.\n\nThat’s why we have no minimum deposit requirements or deposit fees.",
+        },
+        {
+          title: "Trade with Leverage",
           illustration: "chart",
           description:
-            "Get 1:2 leverage as a Retail Client or 1:10 as a Pro Client with Fusion Markets and increase your buying power with leverage and get increased exposure on your trades.",
+            "Increase your buying power with leverage and get greater exposure on your trades.\n\nGet 1:2 leverage as a Retail Client or 1:10 as a Pro Client on Fusion Markets.",
         },
       ],
     },

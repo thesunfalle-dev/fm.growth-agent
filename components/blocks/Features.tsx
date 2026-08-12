@@ -15,7 +15,7 @@ import type { LandingCta } from "@/lib/types";
 type FeaturesProps = {
   title?: string;
   /**
-   * usp — “Why Fusion…” cards (Cards frame USP)
+   * usp — “Why Fusion…” USP Cards row (Figma 23570:105076)
    * feature — simpler product/benefit cards
    */
   variant?: "usp" | "feature";
@@ -28,6 +28,10 @@ type FeaturesProps = {
   }>;
 };
 
+/**
+ * USP / features section.
+ * Why Trade… SoT: Figma Final Pages `23570:105076` — soft purple band + 4 USP cards.
+ */
 export function Features({
   title,
   variant = "feature",
@@ -36,9 +40,19 @@ export function Features({
   const useUsp = variant === "usp";
 
   return (
-    <Section id="features">
-      <Container>
-        {title ? <Heading variant="section">{title}</Heading> : null}
+    <Section
+      id="features"
+      className={useUsp ? "ui-section--usp" : undefined}
+    >
+      <Container className={useUsp ? "ui-features-band" : undefined}>
+        {title ? (
+          <Heading
+            variant="section"
+            className={useUsp ? "ui-features-band__title" : undefined}
+          >
+            {title}
+          </Heading>
+        ) : null}
         <CardGrid
           variant={useUsp ? "usp" : "feature"}
           maxVisible={useUsp ? 4 : 0}

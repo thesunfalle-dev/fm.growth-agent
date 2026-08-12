@@ -2255,27 +2255,61 @@ a {
   }
 }
 
-/* Cards (Figma Cards 15166:10610) */
+/* Cards (Figma Cards 15166:10610) + Why USP band 23570:105076 */
+
+/* Soft purple Why… band (Figma purple50 / Gray-ish surface) */
+.ui-section--usp {
+  background: var(--primitive-color-purple50);
+}
+
+.ui-features-band {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-section-mobile); /* 60px Figma title → cards */
+  width: 100%;
+}
+
+.ui-features-band__title {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  text-align: left; /* Figma Why section is left-aligned */
+  font-size: var(--layout-footer-heading-size);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.ui-section--usp > .ui-container {
+  align-items: stretch;
+}
 
 .ui-card-grid {
   display: grid;
-  gap: var(--space-6);
-  margin-top: var(--layout-spacing-description-to-content-desktop);
+  gap: var(--space-6); /* 24px Figma */
+  margin-top: 0;
   align-items: stretch;
+  width: 100%;
 }
 
 .ui-card-grid--feature {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: var(--layout-spacing-description-to-content-desktop);
 }
 
-/* USP: up to 4 equal columns; overflow scroll if more */
+/*
+ * USP row — Figma 23570:105076: 4 × 276 cards, gap 24, equal height.
+ * More than 4 → horizontal scroll (homepage rail rule).
+ */
 .ui-card-grid--usp {
-  grid-template-columns: repeat(4, minmax(0, var(--component-card-usp-max-width)));
-  justify-content: start;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-6);
+  justify-content: stretch;
+  width: 100%;
 }
 
-.ui-card-grid--usp.ui-card-grid--max-4 {
-  /* When more than 4 children, allow horizontal scroll */
+.ui-card-grid--usp.ui-card-grid--max-4:has(> :nth-child(5)) {
   grid-auto-flow: column;
   grid-auto-columns: minmax(
     var(--component-card-usp-min-width),
@@ -2286,24 +2320,15 @@ a {
   scroll-snap-type: x mandatory;
   padding-bottom: var(--space-2);
   -webkit-overflow-scrolling: touch;
+  justify-content: start;
 }
 
 .ui-card-grid--usp > * {
   scroll-snap-align: start;
   height: 100%;
   min-height: var(--component-card-usp-min-height);
-}
-
-/* ≤4 items: fixed 4-col track without forcing empty columns on small sets */
-.ui-card-grid--usp:not(.ui-card-grid--max-4),
-.ui-card-grid--usp.ui-card-grid--max-4:has(> :nth-child(-n + 4):last-child) {
-  grid-auto-flow: row;
-  grid-auto-columns: unset;
-  overflow-x: visible;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(var(--component-card-usp-min-width), var(--component-card-usp-max-width))
-  );
+  max-width: none;
+  width: 100%;
 }
 
 .ui-card {
@@ -2332,12 +2357,12 @@ a {
   padding: var(--component-card-padding);
 }
 
-/* USP card shell */
+/* USP card shell — Figma USP Cards Desktop */
 .ui-card--usp {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: var(--component-card-usp-max-width);
+  max-width: none;
   min-height: var(--component-card-usp-min-height);
   padding: 0;
   border: 0;
@@ -2356,9 +2381,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--component-card-usp-media-height);
+  height: var(--component-card-usp-media-height); /* 180 */
   margin: 0;
-  background: var(--component-card-media-bg);
+  background: var(--primitive-color-gray100); /* Figma illustration tile */
   border: var(--component-card-border-width) solid var(--component-card-border);
   border-bottom: 0;
   border-radius: var(--component-card-radius) var(--component-card-radius) 0 0;
@@ -2648,8 +2673,17 @@ a {
   .ui-section--default .ui-heading--section:not([class*="__title"]),
   .ui-markets-band__title,
   .ui-faq-band__title,
-  .ui-steps-band__title {
+  .ui-steps-band__title,
+  .ui-features-band__title {
     font-size: var(--layout-footer-heading-size-mobile);
+  }
+
+  .ui-features-band {
+    gap: var(--space-10);
+  }
+
+  .ui-card-grid--usp {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .ui-text--lead {

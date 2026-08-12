@@ -1,5 +1,10 @@
 # Design system changelog
 
+## 2026-08-12 — Why USP band (Figma 23570:105076)
+
+- USP section: soft purple band, title + **exactly 4** cards (not 6), Figma copy + illustrations.
+- Grid: 4 equal columns gap 24; horizontal scroll only when >4.
+
 ## 2026-08-12 — How We Compare matrix (Figma 23570:105086)
 
 - New `CompareTable` + `table.variant: "compare"`: side labels, provider columns, multi-line fees, TrustPilot image row.

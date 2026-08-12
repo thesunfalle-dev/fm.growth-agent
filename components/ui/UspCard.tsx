@@ -56,7 +56,19 @@ export function UspCard({
       <div className="ui-card__body">
         <div className="ui-card__copy">
           <h3 className="ui-card__title ui-card__title--usp">{title}</h3>
-          <p className="ui-card__desc">{description}</p>
+          <p className="ui-card__desc">
+            {description.split("\n\n").map((para, i, arr) => (
+              <span key={para.slice(0, 24)} className="ui-card__desc-p">
+                {para}
+                {i < arr.length - 1 ? (
+                  <>
+                    <br />
+                    <br />
+                  </>
+                ) : null}
+              </span>
+            ))}
+          </p>
         </div>
         {learnMore ? (
           <div className="ui-card__footer">
