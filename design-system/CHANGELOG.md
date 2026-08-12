@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Page batch Copy trading + Funding + Conditions
+
+- Recipes T1 (Fusion+ Copier/Master), F1 (Deposit/Withdrawal), C1 (Trading Conditions hub + commission table).
+- Patterns: funding-card-grid, accordion-table, savings-calculator, leaderboard; steps with Tabs_Text; logo-marquee on funding heroes.
+- Docs only — inventory planned entries + page-recipes + pattern-catalog.
+
 ## 2026-08-12 — Page batch Platforms + ATS (6 Figma screens)
 
 - Recipes P1–P4: MT5 Overview, MT5 Desktop/Mobile/Web (one device recipe), MAM, DupliTrade.

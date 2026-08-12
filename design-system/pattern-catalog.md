@@ -14,7 +14,7 @@ When a new screen is shared, agents **do not only “look”** — they **regist
 
 Related: `page-recipes.md` (full page stacks), `homepage-patterns.md`, `landing-patterns.md`, `assembly.md`.
 
-**Last page batches:** Markets + Accounts; Platforms + ATS (MT5 Overview/Desktop/Mobile/Web, MAM, DupliTrade) → see `page-recipes.md`.
+**Last page batches:** Markets + Accounts; Platforms + ATS; **Copy trading + Funding + Trading conditions** → see `page-recipes.md`.
 
 ---
 
@@ -101,7 +101,7 @@ Copy when adding a pattern:
 | **Structure (fixed)** | H2 + lead + **Step** instances (number + title + body). Homepage desktop: **split** (copy left, steps + dual CTA right) + optional side visual. Horizontal steps on some market pages (Gold). |
 | **Content (props)** | `title`, `subtitle`, `items[]`, `orientation`, `mode`, optional CTAs / image later |
 | **Canonical Figma** | Homepage [How it Works - 5 `31517:366918`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31517-366918); Sections frame Step by Steps `15313:11090` |
-| **Also seen on** | Zero / Demo how-to; MT5 Overview “MT5 steps block”; DupliTrade “Open an DupliTrade Account” (4 steps + image); TV Promo |
+| **Also seen on** | Zero / Demo how-to; MT5 Overview steps; DupliTrade open account; **Fusion+ How it Works** (steps + Tabs_Text + device mock — Copier/Master pages) |
 | **Rules** | One `steps` type; change **content** and `orientation`, not a new “how-it-works-v2” block. |
 | **Adaptive** | Horizontal desktop may collapse to vertical on mobile. |
 
@@ -148,9 +148,9 @@ Copy when adding a pattern:
 | **Intent** | Tabular markets rows or flat comparison grids. |
 | **Structure (fixed)** | Header + rows (DataTable), optional title/subtitle, scroll rules from Tables frame. |
 | **Content (props)** | `title`, `subtitle`, `columns`, `rows` |
-| **Canonical Figma** | Tables `15276:11158`; page use: Forex “Our Forex Trading Instruments” `23570:104166` |
-| **Also seen on** | All Markets AU/EN product pages (Metals, Indices, Energy, Crypto, US Share) with matching table type |
-| **Rules** | **Different pattern from `spread-cards`.** Markets instruments = `table` + optional Tabs_Text. Quote cards = `spread-cards`. Account Classic vs Zero = `comparison-table`, not this. |
+| **Canonical Figma** | Tables `15276:11158`; page use: Forex instruments; **Commission Rates on Zero** `25234:235840` |
+| **Also seen on** | Market product pages; Trading Conditions tab panels (session time, contract spec, commissions…) |
+| **Rules** | **Different from `spread-cards`.** Markets instruments = `table` + optional tabs. Account compare = `comparison-table`. Conditions hub may wrap tables in accordion → `accordion-table`. |
 | **Adaptive** | Sticky header / max height scroll; mobile layouts planned for specialized tables. |
 
 ---
@@ -165,7 +165,7 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Eyebrow? + H1 + lead/bullets + primary/secondary CTA; optional brand BG. Market hero may add chart later (`market-hero` planned). |
 | **Content (props)** | `eyebrow`, `title`, `subtitle`, `bullets`, CTAs, `brandBackground` |
 | **Canonical Figma** | Homepage hero; account heroes; platform device heroes |
-| **Also seen on** | Accounts; Premium; Products overview; **MT5 Overview / Desktop / Mobile / Web**; MAM; DupliTrade |
+| **Also seen on** | Accounts; Premium; Products; MT5 pages; MAM; DupliTrade; **Fusion+**; **Deposit/Withdrawal**; **Trading Conditions** hub |
 | **Rules** | Market pages with BG + chart → `market-hero`. Platform device heroes may include **Store download button** row (content: OS targets) or Icon+Text+Arrow web CTA — same `hero` type, optional props. No nested table. |
 | **Adaptive** | Desktop split with media when present; mobile reorders (title → visual → CTA → lead on home). |
 
@@ -345,7 +345,64 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Full-width muted text band (~1–3 lines), not the long footer legal mass. |
 | **Content (props)** | `text` |
 | **Canonical Figma** | DupliTrade notice under hero `31099:361441` |
+| **Also seen on** | Withdrawal hero notes; Fusion+ fee footnotes (may be inline in hero) |
 | **Rules** | Distinct from `disclaimer` (long risk) and footer legal. Use for product-specific short notices. |
+
+---
+
+### `funding-card-grid` — Deposit / withdrawal method cards
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `funding-card-grid` |
+| **Intent** | Browse funding methods with fees, times, limits. |
+| **Structure (fixed)** | Section title + lead + multi-row grid of **Desktop Funding** cards (logo, method name, metadata rows, optional expand). |
+| **Content (props)** | `title`, `subtitle`, `items[]` (logo, name, fields…), deposit vs withdrawal mode |
+| **Canonical Figma** | Deposit “Explore our Deposit options” `24400:154073`; Withdrawal options grid |
+| **Rules** | Not USP cards. Not instrument tiles. Same card component for deposit and withdrawal; content differs. |
+
+---
+
+### `accordion-table` — Expandable category + nested markets table
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `accordion-table` |
+| **Intent** | Group large instrument tables by market under expanders. |
+| **Structure (fixed)** | Accordion chrome (FAQ-Desktop expand) + embedded **DataTable** (Forex-Desktop rows) when open; sibling categories collapsed. |
+| **Content (props)** | `title`, `subtitle`, `tabs?`, `sections[]` (label, columns, rows) |
+| **Canonical Figma** | Trading Conditions All Trading Products `25136:208578` |
+| **Rules** | Reuse table row atoms. Not a free-form FAQ of text only. Tabs above switch condition domain (products vs commissions…). |
+
+---
+
+### `savings-calculator` — Compare fees / savings widget
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `savings-calculator` |
+| **Intent** | Interactive or static volume/country savings vs competitors. |
+| **Structure (fixed)** | Title + inputs (volume, country) + results (you’d save / commissions / spreads compare). |
+| **Content (props)** | Labels, default volume, competitor names, result copy |
+| **Canonical Figma** | Premium calculator; Fusion+ Copier “See Our Trading Fees vs. Other Brokers” `31099:370675` region |
+| **Rules** | One calculator pattern; hide when campaign doesn’t need it. |
+
+---
+
+### `leaderboard` — Ranked traders / signal masters
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `leaderboard` |
+| **Intent** | Show Fusion+ signal masters or ranked performance. |
+| **Structure (fixed)** | Section title + cards/table of traders (return, risk, equity, copiers…). |
+| **Content (props)** | `title`, `items[]` metrics |
+| **Canonical Figma** | Fusion+ “Fusion+ Leaderboard” / Signal Master Metrics |
+| **Rules** | Product-specific; don’t reuse as generic USP. |
 
 ---
 
@@ -354,12 +411,11 @@ Copy when adding a pattern:
 | type | Intent sketch | Typical Figma |
 |------|---------------|---------------|
 | `ratings-strip` | Trustpilot / TV / Google row | Homepage social proof |
-| `logo-marquee` | Funding methods logos | Homepage funding |
+| `logo-marquee` | Funding methods logos | Homepage funding; **also Deposit/Withdrawal hero logo row** |
 | `review-rail` | Review cards rail | BrokerChooser / home reviews |
 | `media-carousel` | Video / awards carousel | Homepage mobile |
-| `stats` | Key metrics strip | — |
-| `savings-calculator` | Volume/country savings widget | Premium “Calculate Your Savings” (register when reused) |
-| `platform-crossnav` | “Explore our other Platforms” | MT5 device pages (may be instrument-grid or link row) |
+| `stats` | Key metrics strip | Signal Master Metrics may overlap |
+| `platform-crossnav` | “Explore our other Platforms” | MT5 device pages |
 
 ---
 
@@ -382,11 +438,18 @@ Copy when adding a pattern:
 | Image + check rows + CTA | `checklist-feature` |
 | Material icon feature mosaic | `icon-feature-grid` |
 | Short legal under hero | `notice-band` |
-| Numbered how-to | `steps` |
+| Deposit/withdrawal method cards | `funding-card-grid` |
+| Conditions accordion + instruments table | `accordion-table` |
+| Fees savings widget | `savings-calculator` |
+| Copy-trading leaderboard | `leaderboard` |
+| Numbered how-to (+ optional tabs) | `steps` |
 | Q&A accordion | `faq` |
 | Ready to start trading | `cta` |
 | Risk line | `disclaimer` |
-| Platform overview vs Desktop/Mobile/Web | recipes **P1** / **P2** in `page-recipes.md` |
+| Platform overview vs device | recipes **P1** / **P2** |
+| Fusion+ Copier/Master | recipe **T1** |
+| Deposit/Withdrawal | recipe **F1** |
+| Trading Conditions hub | recipe **C1** |
 
 If intent is missing → add pattern (don’t freestyle a one-off).
 

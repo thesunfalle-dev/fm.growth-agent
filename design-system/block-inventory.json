@@ -158,8 +158,9 @@
     {
       "type": "logo-marquee",
       "status": "planned",
-      "description": "Funding / partner logo strip (homepage funding methods)",
-      "figmaHomepage": "27873:297355"
+      "description": "Funding / partner logo strip (homepage funding methods; also Deposit/Withdrawal hero logo row).",
+      "figmaHomepage": "27873:297355",
+      "figmaPages": ["24400:153845 Deposit hero logos", "24400:157463 Withdrawal hero logos"]
     },
     {
       "type": "spread-cards",
@@ -277,6 +278,39 @@
       "status": "planned",
       "description": "Short mid-page legal/advisory strip (e.g. under DupliTrade hero). Not full disclaimer/footer legal.",
       "figmaPages": ["31099:361441 DupliTrade notice"]
+    },
+    {
+      "type": "funding-card-grid",
+      "status": "planned",
+      "description": "Grid of Desktop Funding cards (deposit/withdrawal methods). Same shell; content = method metadata.",
+      "figmaPages": [
+        "24400:154073 Deposit Explore options",
+        "24400:157450 Withdrawal options"
+      ]
+    },
+    {
+      "type": "accordion-table",
+      "status": "planned",
+      "description": "FAQ-style accordion embedding markets DataTable per category (Trading Conditions All Products).",
+      "figmaPages": ["25136:208578 Trading Conditions All Trading Products"]
+    },
+    {
+      "type": "savings-calculator",
+      "status": "planned",
+      "description": "Volume/country savings vs competitors widget (Premium, Fusion+ Copier fees compare).",
+      "figmaPages": [
+        "31099:370675 Fusion+ Copier fees/savings",
+        "26258:280335 Premium Calculate Your Savings"
+      ]
+    },
+    {
+      "type": "leaderboard",
+      "status": "planned",
+      "description": "Fusion+ signal master / copier leaderboard or metrics cards.",
+      "figmaPages": [
+        "31099:370675 Fusion+ Leaderboard",
+        "31099:369917 Signal Master Metrics"
+      ]
     }
   ]
 }

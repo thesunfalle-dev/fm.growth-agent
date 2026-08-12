@@ -256,6 +256,104 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 
 ---
 
+## Batch 2026-08-12 — Copy trading + Funding + Trading conditions
+
+| # | Page | Node | URL |
+|---|------|------|-----|
+| 1 | **Fusion+ Copy Trading - For Copier** | `31099:370675` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31099-370675) |
+| 2 | **Fusion+ Copy Trading - For Signal Master** | `31099:369917` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31099-369917) |
+| 3 | **Deposit Options - Desktop** | `24400:153833` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=24400-153833) |
+| 4 | **Withdrawal Options - All Collapsed** | `24400:157450` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=24400-157450) |
+| 5 | **Trading Conditions / All Trading Products** | `25136:208578` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=25136-208578) |
+| 6 | **Trading Conditions / Commission Rates on Zero** | `25234:235840` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=25234-235840) |
+
+---
+
+### Recipe T1 — Fusion+ audience page (Copier / Signal Master)
+
+**Figma:** Copier `31099:370675`, Master `31099:369917`  
+**One recipe, two content personas** (same chrome; tabs/copy/steps differ).
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Product hero | `hero` | H1 “Fusion+ Copy Trading” + body + footnote microcopy + dual CTA + illustration |
+| 2 | How it works (tabbed) | `steps` + **Tabs_Text** | Title + audience tabs + long lead + vertical **step** instances + device mock (desktop+phone) |
+| 3 | Leaderboard / metrics | `leaderboard` (planned) or content hero | “Fusion+ Leaderboard” / Signal Master Metrics cards |
+| 4 | Feature / education bands | `education-split` / `checklist-feature` | Extra Hero frames (tools list, analyst views) |
+| 5 | Fees vs brokers / savings | `savings-calculator` (planned) | “See Our Trading Fees vs. Other Brokers” / savings widget (Copier) |
+| 6 | How to choose master (optional) | `faq` or accordion content | Collapse sections on Copier |
+| 7 | Key features / device band | `bento-usp` / `icon-feature-grid` | Master: Device/WebTrader style metrics |
+| 8 | FAQs | `faq` | |
+| 9 | Footer | `cta` / footer | |
+
+**Rules:**  
+- Copier vs Master = **content + tab default**, not two block systems.  
+- How-it-works **with Tabs_Text** is still `steps` (optional `tabs` prop) — do not invent `steps-v2`.  
+- Savings/calculator only when Figma shows the widget; otherwise skip.
+
+---
+
+### Recipe F1 — Funding methods (Deposit / Withdrawal)
+
+**Figma:** Deposit `24400:153833`, Withdrawal `24400:157450`  
+**Same structure; content + card set differs.**
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Funding hero | `hero` + **funding logos** | H1 (“Our Deposit/Withdrawal Methods”) + multi-paragraph body + note lines + **Deposit & Withdrawals logo row** + Primary CTA + illustration |
+| 2 | Explore options | `funding-card-grid` (planned) | Title + lead + multi-row **Desktop Funding** cards (method logo, limits, time, notes) |
+| 3 | Process note (withdrawal) | `education-split` or short `notice-band` | “Simple & Secure Process” when present |
+| 4 | Information / FAQ | `faq` | “Information about Deposits/Withdrawals” |
+| 5 | Optional mid CTA | `cta` | |
+| 6 | Footer | `cta` / footer | |
+
+**Rules:**  
+- Funding **cards** ≠ USP cards ≠ instrument tiles. Component: Desktop Funding.  
+- Hero logos = same family as homepage **logo-marquee** / deposit icons (content: method set).  
+- Deposit vs Withdrawal share recipe F1; only copy + card data change. Collapsed/expanded card state is UI, not a new type.
+
+---
+
+### Recipe C1 — Trading conditions hub / tabbed tables
+
+**Figma:** All Trading Products `25136:208578`, Commission Rates on Zero `25234:235840`  
+**Also applies to:** Session Time, Contract Spec, Margins, Spreads tool pages (same hub chrome).
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Conditions hero | `hero` | “Trading Conditions” + multi-paragraph + links to Spreads Tool / Broker Comparison + illustration |
+| 2 | Explore conditions | **Tabs_Text** + content | Title + lead + **tabs** for condition category |
+| 2a | All products variant | `accordion-table` (planned) | Accordion rows (Forex, Metals, …) each embedding markets **`table`** (Forex-Desktop rows) |
+| 2b | Single table variant | `table` | e.g. Commission Rates on Zero — flat header+rows + footnote |
+| 3 | Footer | `cta` / footer | |
+
+**Rules:**  
+- **Same hub hero + tabs** for every Trading Conditions subpage.  
+- Accordion-wrapping-table is **not** plain `faq` (though it reuses FAQ-Desktop chrome for expand). Prefer pattern `accordion-table` = FAQ shell + nested DataTable.  
+- Commission/session/spec tables = `table` with different column schemas (already in Tables frame).  
+- Do not rebuild a new conditions layout per tab.
+
+---
+
+## Pattern frequency — this batch
+
+| Pattern | T1 Fusion+ | F1 Funding | C1 Conditions |
+|---------|------------|------------|---------------|
+| `hero` | ✅ | ✅ + logos | ✅ |
+| `steps` (+ tabs) | ✅ | — | — |
+| `leaderboard` / metrics | ✅ | — | — |
+| `savings-calculator` | ✅ Copier | — | — |
+| `checklist-feature` / education | ✅ | ~ | — |
+| `funding-card-grid` | — | ✅ | — |
+| `logo-marquee` / funding logos | — | ✅ hero | — |
+| `faq` | ✅ | ✅ | — |
+| `table` | — | — | ✅ |
+| `accordion-table` | — | — | ✅ All products |
+| Tabs as section switcher | How it works / audience | — | Conditions categories |
+| `cta` / footer | ✅ | ✅ | ✅ |
+
+---
+
 ## How to extend this file
 
 When the next batch of screens arrives:

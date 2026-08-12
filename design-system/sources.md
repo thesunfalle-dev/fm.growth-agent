@@ -30,6 +30,21 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Decision: `docs/DECISIONS.md` “Figma screens register reusable patterns”
 - Actor: agent + user
 
+### 2026-08-12 — Page batch: Copy trading + Funding + Conditions (6 screens)
+
+| Page | Node |
+|------|------|
+| Fusion+ Copy Trading - For Copier | `31099:370675` |
+| Fusion+ Copy Trading - For Signal Master | `31099:369917` |
+| Deposit Options - Desktop | `24400:153833` |
+| Withdrawal Options - All Collapsed | `24400:157450` |
+| Trading Conditions / All Trading Products | `25136:208578` |
+| Trading Conditions / Commission Rates on Zero | `25234:235840` |
+
+- Recipes: T1 (Fusion+), F1 (funding), C1 (conditions hub) in `page-recipes.md`
+- New planned: `funding-card-grid`, `accordion-table`, `savings-calculator`, `leaderboard`; steps+tabs; logo-marquee on funding heroes
+- Actor: agent + user
+
 ### 2026-08-12 — Page batch: Platforms + ATS (6 screens)
 
 | Page | Node |
