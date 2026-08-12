@@ -4,8 +4,8 @@
 
 1. Drop brief into `briefs/` (optional) or paste into the task — **no fixed brief schema** for MVP.
 2. Choose slug (`kebab-case`).
-3. Optional: skim `design-system/landing-patterns.md` (campaign recipes) and/or `homepage-patterns.md`.
-4. Create `landings/{slug}/content.ts` using only **ready** block types from `design-system/block-inventory.json`.
+3. Optional: skim `design-system/pattern-catalog.md` (reuse map), `landing-patterns.md`, `homepage-patterns.md`.
+4. Create `landings/{slug}/content.ts` using only registered block types from `block-inventory.json` — **same patterns as catalog**, different content.
 5. Register in `lib/landings.ts`.
 6. `npm run validate:design && npm run build`
 7. Commit + push + `npm run deploy`
@@ -29,15 +29,38 @@ Default MVP stacks (see `landing-patterns.md`):
 7. Deploy if visual output should go live.
 8. If the decision is structural, add `docs/DECISIONS.md` entry.
 
-## Ingest Figma (when links arrive)
+## Ingest Figma screens (patterns / blocks — default when user shares links)
+
+**Goal:** Fix **reusable** patterns, rules, and blocks — not a one-off reading of the screen.
+
+For each shared frame/section:
+
+1. **Decompose** into sections (intent labels: spreads, how it works, CTA…).
+2. **Match or register** in `design-system/pattern-catalog.md`  
+   - same structure → add under **Also seen on**  
+   - new structure → new pattern entry (template in that file)
+3. **Structure vs content:** document fixed layout + content props only.
+4. **Rules:** when to use / not use; what must not be substituted (e.g. spreads ≠ markets table).
+5. **Inventory:** update `block-inventory.json` (`type`, props, status, figma node).
+6. **Code** only if shipping now: types + component + BlockRenderer (see “Add a new block type”).
+7. **Provenance:** `sources.md` + `CHANGELOG.md`.
+8. **Reuse check:** next landing with same intent must use the registered `type`, different content only.
+
+Canonical teaching examples (homepage):
+
+- Our spreads → `spread-cards` (`27873:297368`)
+- Ready to start trading? → `cta` / footer (`27873:297571`)
+- How it works → `steps` (`31517:366918`)
+
+## Ingest Figma tokens (foundations)
 
 1. Add Figma URLs + access notes to `design-system/sources.md`.
 2. Extract primitives (color, type, space, radius, elevation, motion).
 3. Map to semantic roles (canvas, surface, text, action, border…).
 4. Update tokens; set `meta.status` to `figma-synced` (or partial status with notes).
-5. Update component + block inventories to match real sections.
+5. Update component inventories for atoms if needed.
 6. Changelog + open questions for anything ambiguous.
-7. Rebuild demo landings against new tokens; deploy.
+7. Rebuild; deploy if visual output should go live.
 
 ## Add a new block type
 

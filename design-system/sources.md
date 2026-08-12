@@ -24,6 +24,12 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-12 — Pattern catalog (reuse registry)
+
+- Doc: `pattern-catalog.md` — every shared Figma screen registers patterns/rules/blocks
+- Decision: `docs/DECISIONS.md` “Figma screens register reusable patterns”
+- Actor: agent + user
+
 ### 2026-08-12 — Homepage composition (AU) reference
 
 - Desktop: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297355 (`27873:297355`)
@@ -33,7 +39,7 @@ Everything visual should be traceable. When you change tokens or inventories, no
   - Ready to start / CTAFooter: `27873:297571` → footer CTA / `cta`
   - How it works: `31517:366918` → `steps` (split + CTAs)
 - Role: primary reuse catalog for landings
-- Docs: `homepage-patterns.md`, `assembly.md`
+- Docs: `pattern-catalog.md`, `homepage-patterns.md`, `assembly.md`
 - Actor: agent + user
 
 ### 2026-08-12 — Ready-only assembly (Figma → inventory)

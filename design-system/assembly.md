@@ -2,7 +2,7 @@
 
 **Purpose:** Campaign pages are **reuses of homepage / shared Figma blocks** with different content — not new layouts per slug. Code: ordered list of types from `block-inventory.json`.
 
-**Related:** `homepage-patterns.md` (canonical blocks), `block-inventory.json`, `landing-patterns.md`, `sections.md`, `tables.md`, `cards.md`.
+**Related:** `pattern-catalog.md` (**register patterns here** when screens arrive), `homepage-patterns.md`, `block-inventory.json`, `landing-patterns.md`, `sections.md`, `tables.md`, `cards.md`.
 
 ---
 

@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Pattern catalog + screen ingest workflow
+
+- New `pattern-catalog.md`: living registry of reusable patterns (structure, props, rules, Figma canons, also-seen-on).
+- Seeded: `spread-cards`, `cta`, `steps`, `features`, `faq`, `table`, `hero`, `disclaimer` + planned list.
+- Workflow: sharing Figma screens → register patterns (not only view). `docs/WORKFLOW.md`, `docs/DECISIONS.md`, `Agents.md`.
+
 ## 2026-08-12 — Structure vs content (homepage canonical blocks)
 
 - Principle: repeating Figma sections = **one design block**; text/images/pairs = **content props**.

@@ -13,13 +13,16 @@ Primary workflow: **edit → commit → push → deploy to production**. Do not 
 5. `design-system/design-tokens.json`
 6. `design-system/component-inventory.json`
 7. `design-system/block-inventory.json`
-8. `design-system/assembly.md` (**ready-only composition** — Figma → inventory; no nested/invented blocks)
-9. `design-system/homepage-patterns.md` (site home assembly + adaptive)
-10. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
-11. `design-system/responsive-rules.md`
-12. `design-system/implementation-contract.md`
-13. `design-system/sources.md`
-14. `brand/compliance.md` (before publishing marketing copy)
+8. `design-system/pattern-catalog.md` (**reusable patterns** — every shared Figma screen updates this)
+9. `design-system/assembly.md` (compose from inventory; structure vs content)
+10. `design-system/homepage-patterns.md` (site home assembly + adaptive)
+11. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
+12. `design-system/responsive-rules.md`
+13. `design-system/implementation-contract.md`
+14. `design-system/sources.md`
+15. `brand/compliance.md` (before publishing marketing copy)
+
+When the user shares Figma screens: **register patterns** (catalog + inventory + sources/changelog). Do not only “remember” them.
 
 If Figma links exist in `design-system/sources.md`, treat them as **upstream design intent**. Repo tokens/blocks remain the **implementation source of truth** until synced and recorded in `design-system/CHANGELOG.md`.
 

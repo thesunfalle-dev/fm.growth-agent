@@ -4,6 +4,19 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 ---
 
+## 2026-08-12 — Figma screens register reusable patterns
+
+**Context:** New Figma links are not for casual visual memory. Marketing pages share the same section designs with different content; agents must not invent parallel layouts.
+
+**Decision:**
+
+1. Every shared screen is **ingested** into `design-system/pattern-catalog.md` (match existing pattern or add entry: structure, content props, rules, Figma canons).
+2. `block-inventory.json` stays the machine contract (`type` + props + status).
+3. Landings only **fill content** for registered types; they do not invent new section chrome.
+4. Workflow: `docs/WORKFLOW.md` → “Ingest Figma screens”.
+
+**Consequences:** More documentation when screens arrive; reusable blocks accumulate instead of per-slug freestyle.
+
 ## 2026-08-12 — Website Redesign FM 2.0 is marketing SoT
 
 **Context:** Client Hub Figma was provided first by mistake. Correct marketing DS is Website Redesign FM 2.0. Typography frame documents Noto Sans + Roboto.
