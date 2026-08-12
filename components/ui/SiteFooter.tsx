@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/Button";
-import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/ui/Logo";
 import {
   footerContact,
@@ -116,48 +115,83 @@ export function SiteFooter() {
           </div>
 
           <aside className="ui-mkt-footer__help">
+            {/* Need help? — Figma 15861:21881: center stack, Secondary sm full width */}
             <div className="ui-mkt-footer__help-card ui-mkt-footer__help-card--center">
-              <p className="ui-mkt-footer__help-title">Need help?</p>
-              <Button
-                href="https://fusionmarkets.com/"
-                variant="secondary"
-                size="sm"
-              >
-                View our FAQs
-              </Button>
+              <div className="ui-mkt-footer__help-inner">
+                <p className="ui-mkt-footer__help-title">Need help?</p>
+                <Button
+                  href="https://fusionmarkets.com/"
+                  variant="secondary"
+                  size="sm"
+                  className="ui-mkt-footer__help-cta"
+                >
+                  View our FAQs
+                </Button>
+              </div>
             </div>
+
+            {/*
+              Contact us — Figma 15861:21889
+              Vertical centered rows: icon 24 → text 14 (gap 16), rows gap 32
+            */}
             <div className="ui-mkt-footer__help-card ui-mkt-footer__help-card--contact">
-              <a
-                className="ui-mkt-footer__help-link"
-                href={`mailto:${footerContact.email}`}
-              >
-                <Icon name="mail_outline" size={20} />
-                <span>{footerContact.email}</span>
-              </a>
-              <a
-                className="ui-mkt-footer__help-link"
-                href={`tel:${footerContact.phone.replace(/\s/g, "")}`}
-              >
-                <Icon name="call" size={20} />
-                <span>{footerContact.phone}</span>
-              </a>
-              <div className="ui-mkt-footer__address-block">
-                <Icon name="room" size={20} />
-                <div>
-                  {footerContact.addressLines.map((line) => (
-                    <p key={line} className="ui-mkt-footer__address">
-                      {line}
-                    </p>
-                  ))}
+              <div className="ui-mkt-footer__contact">
+                <a
+                  className="ui-mkt-footer__contact-row"
+                  href={`mailto:${footerContact.email}`}
+                >
+                  <img
+                    className="ui-mkt-footer__contact-icon"
+                    src="/brand/icons/mail.svg"
+                    alt=""
+                    width={24}
+                    height={24}
+                  />
+                  <span className="ui-mkt-footer__contact-text">
+                    {footerContact.email}
+                  </span>
+                </a>
+
+                <a
+                  className="ui-mkt-footer__contact-row"
+                  href={`tel:${footerContact.phone.replace(/\s/g, "")}`}
+                >
+                  <img
+                    className="ui-mkt-footer__contact-icon"
+                    src="/brand/icons/call.svg"
+                    alt=""
+                    width={24}
+                    height={24}
+                  />
+                  <span className="ui-mkt-footer__contact-text">
+                    {footerContact.phone}
+                  </span>
+                </a>
+
+                <div className="ui-mkt-footer__contact-row ui-mkt-footer__contact-row--address">
+                  <img
+                    className="ui-mkt-footer__contact-icon"
+                    src="/brand/icons/room.svg"
+                    alt=""
+                    width={24}
+                    height={24}
+                  />
+                  <div className="ui-mkt-footer__contact-address">
+                    {footerContact.addressLines.map((line) => (
+                      <p key={line} className="ui-mkt-footer__contact-text">
+                        {line}
+                      </p>
+                    ))}
+                    <img
+                      className="ui-mkt-footer__flag"
+                      src="/brand/flags/au.svg"
+                      alt="Australia"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
                 </div>
               </div>
-              <img
-                className="ui-mkt-footer__flag"
-                src="/brand/flags/au.svg"
-                alt="Australia"
-                width={24}
-                height={24}
-              />
             </div>
           </aside>
         </div>
