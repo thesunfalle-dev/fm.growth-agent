@@ -7,6 +7,63 @@
   },
   "components": [
     {
+      "name": "Field",
+      "category": "inputs",
+      "status": "ready",
+      "path": "components/ui/Field.tsx",
+      "figma": "14382:8478",
+      "variants": ["default", "error", "disabled"],
+      "sizes": ["md"],
+      "requiredStates": ["default", "hover", "focus", "error", "disabled"],
+      "tokenDependencies": ["component.input"],
+      "notes": "Field/Standard: label + control + hint. Text+Image and Selectors planned."
+    },
+    {
+      "name": "SearchInput",
+      "category": "inputs",
+      "status": "ready",
+      "path": "components/ui/SearchInput.tsx",
+      "figma": "14382:8478",
+      "variants": ["default", "withIcon"],
+      "sizes": ["md", "sm"],
+      "requiredStates": ["default", "hover", "focus"],
+      "tokenDependencies": ["component.input"]
+    },
+    {
+      "name": "Tabs",
+      "category": "navigation",
+      "status": "provisional",
+      "path": "components/ui/Tabs.tsx",
+      "figma": "14382:8478",
+      "variants": ["white", "purple"],
+      "sizes": ["md"],
+      "requiredStates": ["active", "inactive"],
+      "tokenDependencies": ["component.tab"],
+      "notes": "Text tabs foundation. Icon tabs / multi-surface BGs planned."
+    },
+    {
+      "name": "LabelChip",
+      "category": "status",
+      "status": "provisional",
+      "path": "components/ui/LabelChip.tsx",
+      "figma": "14382:8478",
+      "variants": ["onMedia", "soft"],
+      "sizes": ["lg", "sm"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.chip"]
+    },
+    {
+      "name": "Toggle",
+      "category": "inputs",
+      "status": "ready",
+      "path": "components/ui/Toggle.tsx",
+      "figma": "14382:8478",
+      "variants": ["on", "off"],
+      "sizes": ["md"],
+      "requiredStates": ["default", "disabled"],
+      "tokenDependencies": ["component.toggle"]
+    },
+    {
       "name": "DataTable",
       "category": "data",
       "status": "provisional",

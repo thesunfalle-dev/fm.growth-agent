@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Inputs & Labels from Figma
+
+- Ingested frame `14382:8478`: Field/Standard states, Search, Tabs, chips, Toggle.
+- Components: `Field`, `SearchInput`, `Tabs`, `LabelChip`, `Toggle` + tokens `component.input|tab|chip|toggle`.
+- Docs: `inputs-labels.md` + extract JSON. Selectors / currency / carousel planned.
+
 ## 2026-08-12 — Tables foundation from Figma
 
 - Ingested Tables frame `15276:11158`: rules (600 max height, sticky header 54, row min 78, pad 24).

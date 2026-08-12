@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15276-11158",
-    "notes": "Fonts, colors, spacing, buttons. Tables: frame 15276:11158 rules + Forex header/row styles."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14382-8478",
+    "notes": "Inputs & Labels frame 14382:8478: Field, Search, Tabs, chips, Toggle."
   },
   "primitive": {
     "color": {
@@ -286,6 +286,60 @@
       "metaFontSize": "14px",
       "cellGap": "28px",
       "symbolGap": "12px"
+    },
+    "input": {
+      "height": "48px",
+      "heightSm": "34px",
+      "radius": "10px",
+      "paddingY": "12px",
+      "paddingX": "16px",
+      "paddingYSm": "5px",
+      "paddingXSm": "12px",
+      "gap": "4px",
+      "labelSize": "12px",
+      "valueSize": "16px",
+      "hintSize": "12px",
+      "labelColor": "{primitive.color.gray500}",
+      "placeholderColor": "{primitive.color.gray500}",
+      "valueColor": "{primitive.color.blue500}",
+      "hintColor": "{primitive.color.gray500}",
+      "errorColor": "{primitive.color.red500}",
+      "bg": "{primitive.color.gray0}",
+      "border": "{primitive.color.gray300}",
+      "borderHover": "{primitive.color.blue200}",
+      "borderFocus": "#99B1E5",
+      "borderFocusWidth": "1.5px",
+      "borderError": "{primitive.color.red500}",
+      "borderFilled": "#EAECF0"
+    },
+    "tab": {
+      "height": "44px",
+      "paddingY": "8px",
+      "paddingX": "24px",
+      "radius": "28px",
+      "fontSize": "16px",
+      "activeBg": "{primitive.color.purple200}",
+      "activeText": "{primitive.color.purple600}",
+      "inactiveBg": "{primitive.color.gray100}",
+      "inactiveText": "{primitive.color.gray600}",
+      "inactiveBgPurple": "{primitive.color.purple100}"
+    },
+    "chip": {
+      "paddingY": "8px",
+      "paddingX": "20px",
+      "radius": "50px",
+      "fontSizeLg": "20px",
+      "fontSizeSm": "16px",
+      "bg": "rgba(255, 255, 255, 0.2)",
+      "text": "{primitive.color.gray0}"
+    },
+    "toggle": {
+      "width": "51px",
+      "height": "31px",
+      "knob": "27px",
+      "onBg": "{primitive.color.purple500}",
+      "offBg": "rgba(120, 120, 128, 0.16)",
+      "knobBg": "{primitive.color.gray0}"
     }
   },
   "border": {
@@ -296,7 +350,8 @@
   "shadow": {
     "none": "none",
     "header": "0 1px 0 {semantic.color.border.default}",
-    "card": "0 8px 24px rgba(13, 19, 80, 0.06)"
+    "card": "0 8px 24px rgba(13, 19, 80, 0.06)",
+    "knob": "0 1px 2px rgba(13, 19, 80, 0.12)"
   },
   "layout": {
     "container": {

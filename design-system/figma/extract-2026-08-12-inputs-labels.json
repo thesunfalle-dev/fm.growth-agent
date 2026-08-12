@@ -1,0 +1,68 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14382-8478",
+    "frame": { "id": "14382:8478", "name": "Inputs & Labels" }
+  },
+  "fieldStandard": {
+    "stackGap": 4,
+    "control": {
+      "height": 48,
+      "padding": { "t": 12, "r": 16, "b": 12, "l": 16 },
+      "radius": 10,
+      "bg": "#FFFFFF",
+      "borderDefault": "#E4E6E9",
+      "borderHover": "#C4C7E4",
+      "borderActive": "#99B1E5",
+      "borderActiveWidth": 1.5,
+      "borderError": "#C70101"
+    },
+    "label": { "font": "Roboto Regular", "size": 12, "color": "#93979F" },
+    "placeholder": { "font": "Roboto Regular", "size": 16, "color": "#93979F" },
+    "value": { "font": "Roboto Regular", "size": 16, "color": "#0D1350" },
+    "hint": { "font": "Roboto Regular", "size": 12, "color": "#93979F" },
+    "hintError": { "color": "#C70101" },
+    "states": ["Default", "Hover", "Active", "Error", "Disabled"],
+    "content": ["Empty", "Filled"]
+  },
+  "search": {
+    "default": { "height": 48, "padding": { "t": 12, "r": 16, "b": 12, "l": 16 }, "radius": 10 },
+    "small": { "height": 34, "padding": { "t": 5, "r": 12, "b": 5, "l": 12 }, "radius": 10 },
+    "borderDefault": "#E4E6E9",
+    "borderFocus": "#99B1E5",
+    "borderFocusWidth": 1.5
+  },
+  "tabsTextWhite": {
+    "active": { "bg": "#E0CFF5", "text": "#5B23A0", "font": "Roboto Bold 16" },
+    "inactive": { "bg": "#FAFAFA", "text": "#555A66", "font": "Roboto Regular 16" },
+    "padding": { "t": 8, "r": 24, "b": 8, "l": 24 },
+    "radius": 28,
+    "height": 44
+  },
+  "tabsTextPurpleSurface": {
+    "active": { "bg": "#E0CFF5", "text": "#5B23A0", "font": "Roboto Bold 16" },
+    "inactive": { "bg": "#F1EBFB", "text": "#93979F", "font": "Roboto Bold 16" }
+  },
+  "blogChip": {
+    "large": { "fontSize": 20, "padding": { "t": 8, "r": 20, "b": 8, "l": 20 }, "radius": 50 },
+    "small": { "fontSize": 16, "padding": { "t": 8, "r": 20, "b": 8, "l": 20 }, "radius": 50 },
+    "onMedia": { "bg": "rgba(255,255,255,0.2)", "text": "#FFFFFF" }
+  },
+  "toggle": {
+    "size": { "w": 51, "h": 31, "knob": 27 },
+    "on": "#742CCE",
+    "off": "rgba(120,120,128,0.16)",
+    "knob": "#FFFFFF"
+  },
+  "alsoInFrame": [
+    "Field / Text + Image",
+    "Selectors / Standard",
+    "Selectors / Image + Text",
+    "Currency labels",
+    "Navigation carousel bars",
+    "Scroll bar",
+    "Blog tags"
+  ]
+}
