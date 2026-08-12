@@ -41,67 +41,102 @@ a {
 
 /* Layout — content max 1280 (Website Redesign) */
 
-.ui-container {
-  width: min(100% - var(--layout-container-gutter), var(--layout-container-max));
-  margin-inline: auto;
+/*
+ * Page content column.
+ * Keep ALL sizing props on one selector (minifiers were splitting/dropping pieces).
+ * Use !important on max-width so nested flex/band rules cannot force full viewport.
+ */
+.ui-container,
+.ui-container--narrow {
+  display: block;
+  width: 100% !important;
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .ui-container--narrow {
-  width: min(100% - var(--layout-container-gutter), var(--layout-container-narrow));
+  max-width: 720px !important;
+}
+
+@media (min-width: 768px) {
+  .ui-container,
+  .ui-container--narrow {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .ui-container,
+  .ui-container--narrow {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Section layouts that need flex — override display only, not width */
+.ui-section--default > .ui-container {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.ui-section--hero > .ui-container {
+  display: block !important;
 }
 
 .ui-section {
   padding: var(--layout-spacing-section-desktop) 0;
+  /* Contain children that would otherwise blow out document width */
+  overflow-x: clip;
 }
 
 /*
- * Page-wide marketing layout (Final Pages):
- * default sections center titles + content stacks.
+ * Page-wide marketing layout:
+ * section titles centered; content stacks full container width.
  * Hero stays left-aligned (market brand pitch).
  */
-.ui-section--default > .ui-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ui-section--default .ui-heading--section:not([class*="__title"]) {
+.ui-section--default .ui-heading--section {
   width: 100%;
   text-align: center;
-  font-size: var(--layout-footer-heading-size);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  /* Prefer H2 token over always-48 — long titles wrap cleanly */
+  font-size: var(--typography-font-size-h2);
+  line-height: var(--typography-line-height-heading-loose);
+  letter-spacing: var(--typography-letter-spacing-heading);
   margin-bottom: var(--layout-spacing-heading-to-description-desktop);
+  max-width: 28ch;
+  margin-inline: auto;
 }
 
-.ui-section--default .ui-text--lead:not([class*="__subtitle"]) {
+.ui-section--default .ui-text--lead {
   text-align: center;
   max-width: 52ch;
   margin-inline: auto;
 }
 
-.ui-section--default .ui-card-grid {
-  justify-content: center;
-  width: 100%;
-}
-
+.ui-section--default .ui-card-grid,
 .ui-section--default .ui-table-shell,
 .ui-section--default .ui-faq-list,
 .ui-section--default .ui-steps,
 .ui-section--default .ui-markets-band,
 .ui-section--default .ui-faq-band,
-.ui-section--default .ui-steps-band {
+.ui-section--default .ui-steps-band,
+.ui-section--default .ui-features-band,
+.ui-section--default .ui-compare-shell {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .ui-section--hero {
   padding-top: var(--space-16);
   padding-bottom: var(--layout-spacing-section-desktop);
-}
-
-.ui-section--hero > .ui-container {
-  display: block;
-  align-items: stretch;
+  overflow-x: clip;
 }
 
 /* Hero copy + optional campaign bullets (no nested table — use block type table) */
@@ -1259,20 +1294,21 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-4);
   text-align: center;
   max-width: 768px;
   width: 100%;
+  min-width: 0;
 }
 
 .ui-markets-band__title {
-  margin: 0;
-  max-width: none;
+  margin: 0 auto var(--layout-spacing-heading-to-description-desktop);
+  max-width: 28ch;
   width: 100%;
   text-align: center;
-  font-size: var(--layout-footer-heading-size);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: var(--typography-font-size-h2);
+  line-height: var(--typography-line-height-heading-loose);
+  letter-spacing: var(--typography-letter-spacing-heading);
 }
 
 .ui-markets-band__subtitle {
@@ -1516,8 +1552,8 @@ a {
 }
 
 /*
- * How We Compare matrix — Figma Crypto `23570:105086`
- * Side labels + provider columns; TrustPilot image row
+ * How We Compare matrix — Figma structure, flexible column count
+ * Side labels + provider columns; optional TrustPilot image row
  */
 .ui-compare-shell {
   width: 100%;
@@ -1526,11 +1562,12 @@ a {
   overflow-x: auto;
   border-radius: var(--radius-lg);
   background: var(--color-background-canvas);
+  min-width: 0;
 }
 
 .ui-compare {
   width: 100%;
-  min-width: 1000px;
+  min-width: 0;
   border-collapse: separate;
   border-spacing: 0;
   table-layout: fixed;
@@ -1541,8 +1578,8 @@ a {
 }
 
 .ui-compare__corner {
-  width: 200px;
-  min-width: 180px;
+  width: 28%;
+  max-width: 280px;
   height: var(--component-table-header-height);
   background: var(--component-table-header-bg);
   border-top-left-radius: var(--radius-lg);
@@ -1550,7 +1587,6 @@ a {
 }
 
 .ui-compare__provider {
-  width: 200px;
   height: var(--component-table-header-height);
   padding: 0 var(--space-3);
   font-family: var(--typography-font-family-body);
@@ -1568,8 +1604,8 @@ a {
 }
 
 .ui-compare__label {
-  width: 200px;
-  min-width: 180px;
+  width: 28%;
+  max-width: 280px;
   padding: var(--space-4) var(--component-table-padding-x);
   font-family: var(--typography-font-family-body);
   font-size: var(--component-table-header-font-size);
@@ -1594,7 +1630,6 @@ a {
 }
 
 .ui-compare__cell {
-  width: 200px;
   padding: var(--space-3) var(--space-3);
   vertical-align: middle;
   text-align: center;
@@ -1700,13 +1735,13 @@ a {
 }
 
 .ui-faq-band__title {
-  margin: 0;
-  max-width: none;
+  margin: 0 auto;
+  max-width: 28ch;
   width: 100%;
   text-align: center;
-  font-size: var(--layout-footer-heading-size); /* 48 — Figma H2 */
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: var(--typography-font-size-h2);
+  line-height: var(--typography-line-height-heading-loose);
+  letter-spacing: var(--typography-letter-spacing-heading);
 }
 
 .ui-faq-list {
@@ -1979,13 +2014,13 @@ a {
 
 /* Figma H2 48 SemiBold centered (token: footer heading size) */
 .ui-steps-band__title {
-  margin: 0;
-  max-width: none;
+  margin: 0 auto;
+  max-width: 28ch;
   width: 100%;
   text-align: center;
-  font-size: var(--layout-footer-heading-size);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: var(--typography-font-size-h2);
+  line-height: var(--typography-line-height-heading-loose);
+  letter-spacing: var(--typography-letter-spacing-heading);
 }
 
 /* Figma B2 Light 20 centered */
@@ -2257,7 +2292,7 @@ a {
 
 /* Cards (Figma Cards 15166:10610) + Why USP band 23570:105076 */
 
-/* Soft purple Why… band (Figma purple50 / Gray-ish surface) */
+/* Soft purple Why… band */
 .ui-section--usp {
   background: var(--primitive-color-purple50);
 }
@@ -2266,30 +2301,35 @@ a {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: var(--space-section-mobile); /* 60px Figma title → cards */
+  gap: var(--space-10);
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .ui-features-band__title {
-  margin: 0;
-  max-width: none;
+  margin: 0 auto;
+  max-width: 28ch;
   width: 100%;
-  text-align: left; /* Figma Why section is left-aligned */
-  font-size: var(--layout-footer-heading-size);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  text-align: center;
+  font-size: var(--typography-font-size-h2);
+  line-height: var(--typography-line-height-heading-loose);
+  letter-spacing: var(--typography-letter-spacing-heading);
 }
 
 .ui-section--usp > .ui-container {
   align-items: stretch;
+  min-width: 0;
 }
 
 .ui-card-grid {
   display: grid;
-  gap: var(--space-6); /* 24px Figma */
+  gap: var(--space-6);
   margin-top: 0;
   align-items: stretch;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .ui-card-grid--feature {
@@ -2298,37 +2338,38 @@ a {
 }
 
 /*
- * USP row — Figma 23570:105076: 4 × 276 cards, gap 24, equal height.
- * More than 4 → horizontal scroll (homepage rail rule).
+ * USP cards — wrap grid (no page-expanding horizontal rail).
+ * 3 columns on desktop; 4 equal only when exactly 4 children.
  */
 .ui-card-grid--usp {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-6);
   justify-content: stretch;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: visible;
 }
 
-.ui-card-grid--usp.ui-card-grid--max-4:has(> :nth-child(5)) {
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(
-    var(--component-card-usp-min-width),
-    var(--component-card-usp-max-width)
-  );
-  grid-template-columns: none;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--space-2);
-  -webkit-overflow-scrolling: touch;
-  justify-content: start;
+/* Canonical Figma Why band: exactly 4 cards → 4 columns */
+.ui-card-grid--usp:has(> :nth-child(4):last-child) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* 1–2 cards */
+.ui-card-grid--usp:has(> :nth-child(1):last-child),
+.ui-card-grid--usp:has(> :nth-child(2):last-child) {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 296px));
+  justify-content: center;
 }
 
 .ui-card-grid--usp > * {
-  scroll-snap-align: start;
   height: 100%;
-  min-height: var(--component-card-usp-min-height);
+  min-height: 0;
   max-width: none;
   width: 100%;
+  min-width: 0;
 }
 
 .ui-card {
@@ -2363,7 +2404,8 @@ a {
   flex-direction: column;
   width: 100%;
   max-width: none;
-  min-height: var(--component-card-usp-min-height);
+  min-height: 0;
+  height: 100%;
   padding: 0;
   border: 0;
   box-shadow: none;
@@ -2468,17 +2510,21 @@ a {
 
 @media (max-width: 1024px) {
   .ui-card-grid--usp,
-  .ui-card-grid--usp.ui-card-grid--max-4,
-  .ui-card-grid--usp.ui-card-grid--max-4:has(> :nth-child(-n + 4):last-child) {
-    grid-auto-flow: column;
-    grid-auto-columns: var(--component-card-usp-mobile-width);
-    grid-template-columns: none;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+  .ui-card-grid--usp:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: row;
+    overflow-x: visible;
   }
 
   .ui-card--usp {
-    max-width: var(--component-card-usp-mobile-width);
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .ui-card-grid--usp,
+  .ui-card-grid--usp:has(> :nth-child(4):last-child) {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2543,14 +2589,16 @@ a {
   color: var(--color-text-on-accent);
 }
 
-/* Secondary CTA on brand purple: light fill for contrast */
+/* Secondary CTA on brand purple: translucent fill + white label (readable) */
 .ui-section--brand-bg .ui-btn--secondary {
-  background-image:
-    linear-gradient(
-      color-mix(in oklab, var(--color-text-on-accent) 12%, transparent),
-      color-mix(in oklab, var(--color-text-on-accent) 12%, transparent)
-    ),
-    var(--color-action-gradient-primary);
+  background-image: none;
+  background-color: color-mix(in oklab, var(--color-text-on-accent) 16%, transparent);
+  border: var(--border-width-default) solid color-mix(in oklab, var(--color-text-on-accent) 55%, transparent);
+  color: var(--color-text-on-accent);
+}
+
+.ui-section--brand-bg .ui-btn--secondary:hover {
+  background-color: color-mix(in oklab, var(--color-text-on-accent) 24%, transparent);
 }
 
 .ui-section--brand-bg .ui-btn--secondary .ui-btn__label {
@@ -2648,14 +2696,6 @@ a {
 
 /* breakpoint.md — 768px */
 @media (max-width: 768px) {
-  .ui-container,
-  .ui-container--narrow {
-    width: min(
-      100% - var(--layout-container-gutter-mobile),
-      var(--layout-container-max)
-    );
-  }
-
   .ui-section {
     padding: var(--layout-spacing-section-mobile) 0;
   }
@@ -2670,20 +2710,17 @@ a {
     margin-bottom: var(--layout-spacing-heading-to-description-mobile);
   }
 
-  .ui-section--default .ui-heading--section:not([class*="__title"]),
+  .ui-section--default .ui-heading--section,
   .ui-markets-band__title,
   .ui-faq-band__title,
   .ui-steps-band__title,
   .ui-features-band__title {
     font-size: var(--layout-footer-heading-size-mobile);
+    max-width: none;
   }
 
   .ui-features-band {
-    gap: var(--space-10);
-  }
-
-  .ui-card-grid--usp {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8);
   }
 
   .ui-text--lead {
