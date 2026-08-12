@@ -180,6 +180,8 @@
   --space-12: 48px;
   --space-14: 56px;
   --space-16: 64px;
+  --space-20: 80px;
+  --space-30: 120px;
   --space-section: 120px;
   --space-section-mobile: 60px;
   --radius-sm: 4px;
@@ -193,9 +195,17 @@
   --shadow-card: 0 8px 24px rgba(13, 19, 80, 0.06);
   --layout-container-max: 1280px;
   --layout-container-narrow: 720px;
-  --layout-container-gutter: 32px;
+  --layout-container-gutter: 80px;
   --layout-container-gutter-mobile: 16px;
   --layout-header-height: 72px;
+  --layout-spacing-section-desktop: 120px;
+  --layout-spacing-section-mobile: 60px;
+  --layout-spacing-heading-to-description-desktop: 24px;
+  --layout-spacing-heading-to-description-mobile: 32px;
+  --layout-spacing-description-to-content-desktop: 40px;
+  --layout-spacing-description-to-content-mobile: 24px;
+  --layout-spacing-page-margin-desktop: 80px;
+  --layout-spacing-page-margin-mobile: 16px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;

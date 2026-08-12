@@ -11,15 +11,17 @@
 
 Media queries must reference these values (literal match + comment) until a CSS `@custom-media` pipeline exists.
 
-## Layout behavior
+## Layout behavior (from Spacing & Layout frame)
 
 | Element | Mobile | Desktop |
 |---------|--------|---------|
-| Container | full width minus gutter token | max-width `layout.container.max` |
-| Hero title | fluid clamp using type tokens | display size |
-| Feature grid | 1 column | auto-fit min ~220px |
-| CTA row | wrap, full-width buttons OK | inline row |
-| Header | compact brand + pill | same |
+| Container | fluid + **16px** side padding | content **1280px**, side margin **80px** |
+| Between sections | **60px** | **120px** |
+| H1 → description | **32px** | **24px** |
+| Description → content | **24px** | **40px** |
+| Hero title | fluid clamp (type tokens) | H1 / Display |
+| Feature grid | 1 column | auto-fit min ~240px |
+| CTA row | wrap | inline row |
 
 ## Rules for agents
 

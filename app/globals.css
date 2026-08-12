@@ -50,12 +50,12 @@ a {
 }
 
 .ui-section {
-  padding: var(--space-section) 0;
+  padding: var(--layout-spacing-section-desktop) 0;
 }
 
 .ui-section--hero {
   padding-top: var(--space-16);
-  padding-bottom: var(--space-section);
+  padding-bottom: var(--layout-spacing-section-desktop);
 }
 
 .ui-section--cta {
@@ -126,7 +126,7 @@ a {
 
 .ui-heading {
   font-family: var(--typography-font-family-heading);
-  margin: 0 0 var(--space-6);
+  margin: 0;
   letter-spacing: var(--typography-letter-spacing-heading);
   color: var(--color-text-primary);
   font-weight: var(--typography-font-weight-semibold);
@@ -137,13 +137,15 @@ a {
   font-size: clamp(var(--typography-font-size-display2), 5vw, var(--typography-font-size-h1));
   line-height: var(--typography-line-height-heading);
   max-width: 16ch;
+  /* Desktop: H1 → description 24px */
+  margin-bottom: var(--layout-spacing-heading-to-description-desktop);
 }
 
 /* Heading 2 Semibold — 32 / 600 / 130% */
 .ui-heading--section {
   font-size: var(--typography-font-size-h2);
   line-height: var(--typography-line-height-heading-loose);
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--layout-spacing-heading-to-description-desktop);
 }
 
 .ui-text {
@@ -157,7 +159,8 @@ a {
   font-size: var(--typography-font-size-b3);
   line-height: var(--typography-line-height-body);
   max-width: 52ch;
-  margin: 0 0 var(--space-10);
+  /* Desktop: description → next content 40px */
+  margin: 0 0 var(--layout-spacing-description-to-content-desktop);
 }
 
 .ui-section--cta .ui-text--lead {
@@ -281,7 +284,7 @@ a {
 /* Index */
 
 .index {
-  padding: var(--space-section) 0;
+  padding: var(--layout-spacing-section-desktop) 0;
 }
 
 .index h1 {
@@ -367,15 +370,31 @@ a {
 @media (max-width: 768px) {
   .ui-container,
   .ui-container--narrow {
-    width: min(100% - var(--layout-container-gutter-mobile), var(--layout-container-max));
+    width: min(
+      100% - var(--layout-container-gutter-mobile),
+      var(--layout-container-max)
+    );
   }
 
   .ui-section {
-    padding: var(--space-section-mobile) 0;
+    padding: var(--layout-spacing-section-mobile) 0;
   }
 
   .ui-section--hero {
     padding-top: var(--space-10);
-    padding-bottom: var(--space-section-mobile);
+    padding-bottom: var(--layout-spacing-section-mobile);
+  }
+
+  .ui-heading--display,
+  .ui-heading--section {
+    margin-bottom: var(--layout-spacing-heading-to-description-mobile);
+  }
+
+  .ui-text--lead {
+    margin-bottom: var(--layout-spacing-description-to-content-mobile);
+  }
+
+  .index {
+    padding: var(--layout-spacing-section-mobile) 0;
   }
 }

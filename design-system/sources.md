@@ -24,6 +24,14 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-12 — Spacing & Layout
+
+- File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14765-7184
+- Frame: **Spacing & Layout** `14765:7184`
+- 4px grid; desktop content 1280 / margin 80; section 120/60; H1→desc 24/32; desc→content 40/24
+- Docs: `spacing-layout.md`, extract `figma/extract-2026-08-12-spacing-layout.json`
+- Actor: agent + user
+
 ### 2026-08-12 — Colors (paint styles + Color frame)
 
 - File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14749-6364

@@ -7,7 +7,7 @@ Track unknowns instead of inventing answers. Resolve → move summary into `DECI
 - [x] Official Figma DS for marketing site → **Website Redesign FM 2.0**
 - [x] Colors / gradients from Color frame + paint styles (60 solids + 10 gradients, hex verified)
 - [x] Typefaces → Noto Sans + Roboto (Website Redesign Typography)
-- [x] Grid / layout → 4px multiples, 1280 content, section 120/60
+- [x] Grid / layout → Spacing & Layout frame (4px scale, 1280, 80/16 gutters, section 120/60, type rhythm 24/32 & 40/24)
 - [ ] Motion language (page transitions, scroll reveals, reduced-motion policy)
 - [ ] Map Buttons / Cards / Sections frames 1:1 into components
 

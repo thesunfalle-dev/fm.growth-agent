@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14749-6364",
-    "notes": "Fonts: Typography 14711:15263 (Noto Sans + Roboto). Colors: Color frame 14749:6364 + Figma paint styles (exact hex match)."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14765-7184",
+    "notes": "Fonts: Typography. Colors: paint styles. Spacing: frame 14765:7184 (4px grid, 1280 content, section 120/60)."
   },
   "primitive": {
     "color": {
@@ -221,6 +221,8 @@
     "12": "48px",
     "14": "56px",
     "16": "64px",
+    "20": "80px",
+    "30": "120px",
     "section": "120px",
     "sectionMobile": "60px"
   },
@@ -245,11 +247,21 @@
     "container": {
       "max": "1280px",
       "narrow": "720px",
-      "gutter": "32px",
+      "gutter": "80px",
       "gutterMobile": "16px"
     },
     "header": {
       "height": "72px"
+    },
+    "spacing": {
+      "sectionDesktop": "120px",
+      "sectionMobile": "60px",
+      "headingToDescriptionDesktop": "24px",
+      "headingToDescriptionMobile": "32px",
+      "descriptionToContentDesktop": "40px",
+      "descriptionToContentMobile": "24px",
+      "pageMarginDesktop": "80px",
+      "pageMarginMobile": "16px"
     }
   },
   "breakpoint": {

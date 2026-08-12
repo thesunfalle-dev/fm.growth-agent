@@ -180,6 +180,8 @@ export const tokenNames = [
   "--space-12",
   "--space-14",
   "--space-16",
+  "--space-20",
+  "--space-30",
   "--space-section",
   "--space-section-mobile",
   "--radius-sm",
@@ -196,6 +198,14 @@ export const tokenNames = [
   "--layout-container-gutter",
   "--layout-container-gutter-mobile",
   "--layout-header-height",
+  "--layout-spacing-section-desktop",
+  "--layout-spacing-section-mobile",
+  "--layout-spacing-heading-to-description-desktop",
+  "--layout-spacing-heading-to-description-mobile",
+  "--layout-spacing-description-to-content-desktop",
+  "--layout-spacing-description-to-content-mobile",
+  "--layout-spacing-page-margin-desktop",
+  "--layout-spacing-page-margin-mobile",
   "--breakpoint-sm",
   "--breakpoint-md",
   "--breakpoint-lg",
@@ -213,11 +223,11 @@ export type TokenName = (typeof tokenNames)[number];
 export const designTokenMeta = {
   "name": "Fusion Markets Landing Design Tokens",
   "mode": "light",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "status": "figma-partial-sync",
   "updatedAt": "2026-08-12",
   "source": "Website Redesign FM 2.0",
   "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14749-6364",
-  "notes": "Fonts: Typography 14711:15263 (Noto Sans + Roboto). Colors: Color frame 14749:6364 + Figma paint styles (exact hex match)."
+  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14765-7184",
+  "notes": "Fonts: Typography. Colors: paint styles. Spacing: frame 14765:7184 (4px grid, 1280 content, section 120/60)."
 } as const;

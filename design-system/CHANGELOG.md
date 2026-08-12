@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Spacing & Layout from Figma
+
+- Ingested frame `14765:7184`: 4px scale, content 1280, desktop margin 80, section 120/60.
+- Added semantic `layout.spacing.*` tokens; wired section/hero/lead gaps in CSS.
+- Docs: `spacing-layout.md` + extract JSON.
+
 ## 2026-08-12 — Colors locked to Figma paint styles
 
 - Ingested Color frame `14749:6364` + all local solid/gradient paint styles.

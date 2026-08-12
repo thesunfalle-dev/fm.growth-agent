@@ -28,7 +28,9 @@ Enable **fast, on-brand marketing landings** assembled from registered blocks, n
 - Accent purple (`Purple/500 (Accent)` `#742CCE` + `Gradient/Primary`)
 - Type: **Noto Sans** (display/headings/CTA) + **Roboto** (body/caption)
 - Heading LH ~120–130%; body/caption LH **150%**
-- Spacing: multiples of **4**; content width **1280px**; section gaps **120px** desktop / **60px** mobile
+- Spacing: multiples of **4** — see `spacing-layout.md` (frame `14765:7184`)
+- Content **1280px**; page margin **80** desktop / **16** mobile; sections **120 / 60**
+- H1→description **24 / 32**; description→content **40 / 24**
 - Section rhythm via space tokens, not magic numbers in components
 
 ## Handoff files
