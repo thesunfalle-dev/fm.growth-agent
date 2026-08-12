@@ -6,11 +6,11 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 ## 2026-08-12 — Website Redesign FM 2.0 is marketing SoT
 
-**Context:** Client Hub Figma was provided first by mistake. Correct marketing DS is Website Redesign FM 2.0. Typography frame documents Noto Sans + Roboto; published styles still list Plus Jakarta Sans for some headings.
+**Context:** Client Hub Figma was provided first by mistake. Correct marketing DS is Website Redesign FM 2.0. Typography frame documents Noto Sans + Roboto.
 
-**Decision:** Marketing landings use **Website Redesign FM 2.0**. Typography SoT is the **Typography frame** (Noto Sans + Roboto), not legacy Plus Jakarta published styles. Colors from local paint styles in that file.
+**Decision:** Marketing landings use **Website Redesign FM 2.0**. Fonts: **Noto Sans** (headings/CTA) + **Roboto** (body) only. No Plus Jakarta, no Lato.
 
-**Consequences:** Tokens/fonts switched away from Client Hub / Lato. Agents must not re-ingest Hub Lato as brand.
+**Consequences:** Two font families only; load minimal weights used in CSS.
 
 ## 2026-08-12 — Client Hub Figma as interim style SoT (superseded)
 

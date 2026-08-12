@@ -202,5 +202,5 @@ export const designTokenMeta = {
   "source": "Website Redesign FM 2.0",
   "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
   "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263",
-  "notes": "Marketing website DS. Typography frame SoT: Noto Sans (display/headings/CTA) + Roboto (body/caption). Published text styles still list Plus Jakarta Sans for some headings — not used. Supersedes Client Hub / Lato ingest."
+  "notes": "Marketing website DS. Fonts: Noto Sans (display/headings/CTA) + Roboto (body/caption) only. Plus Jakarta / Lato are not part of this system."
 } as const;

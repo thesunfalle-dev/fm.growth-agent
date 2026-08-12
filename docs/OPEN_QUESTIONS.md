@@ -6,12 +6,10 @@ Track unknowns instead of inventing answers. Resolve → move summary into `DECI
 
 - [x] Official Figma DS for marketing site → **Website Redesign FM 2.0**
 - [x] Colors / gradients from paint styles
-- [x] Typefaces → Noto Sans + Roboto (Typography frame); ignore Plus Jakarta Sans published styles unless design reverts
+- [x] Typefaces → **Noto Sans + Roboto only** (no Plus Jakarta, no Lato)
 - [x] Grid / layout → 4px multiples, 1280 content, section 120/60
 - [ ] Motion language (page transitions, scroll reveals, reduced-motion policy)
 - [ ] Map Buttons / Cards / Sections frames 1:1 into components
-- [ ] Confirm whether any marketing pages still intentionally use Plus Jakarta Sans
-- [ ] Roboto has no official 600 weight in Google Fonts — map SemiBold body to 500 or 700?
 
 
 ## Product / process

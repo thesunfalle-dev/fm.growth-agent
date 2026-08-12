@@ -29,9 +29,8 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 - File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263
 - Frames: Typography, Color, Spacing & Layout (+ paint styles via Plugin API)
-- Fonts: **Noto Sans** (display/heading/CTA) + **Roboto** (body/caption)
-- Note: published text styles still include Plus Jakarta Sans — ignored in favor of Typography frame
-- Supersedes Client Hub / Lato ingest from earlier the same day
+- Fonts: **Noto Sans** + **Roboto** only (weights loaded: Noto 600/700, Roboto 400/700)
+- Supersedes Client Hub / Lato; Plus Jakarta not used
 - Actor: agent + user
 
 ## How to record a Figma sync

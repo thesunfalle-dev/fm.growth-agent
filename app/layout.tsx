@@ -4,16 +4,18 @@ import { Noto_Sans, Roboto } from "next/font/google";
 import { SiteHeader } from "@/components/ui/SiteHeader";
 import "./globals.css";
 
+// Website Redesign Typography frame: Noto Sans = display/heading/CTA, Roboto = body/caption.
+// Only weights used in CSS — no Plus Jakarta, no Hub Lato.
 const notoSans = Noto_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "500", "600", "700"],
+  weight: ["600", "700"],
   variable: "--font-noto-sans",
   display: "swap",
 });
 
 const roboto = Roboto({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["400", "700"],
   variable: "--font-roboto",
   display: "swap",
 });

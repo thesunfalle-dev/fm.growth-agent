@@ -1,9 +1,14 @@
 # Typography styles — Website Redesign FM 2.0
 
 **SoT:** Figma frame `Typography` (`14711:15263`)  
-**System:** Noto Sans (display / headings / CTA) + Roboto (body / caption)
+**System (only these two):**
 
-> Published local text styles in the same file still include **Plus Jakarta Sans** heading names. Do **not** use those for marketing landings unless design explicitly reverts. Canvas documentation is authoritative.
+| Role | Font |
+|------|------|
+| Display / Heading / CTA | **Noto Sans** |
+| Body / Caption | **Roboto** |
+
+Do not load or use Plus Jakarta Sans, Lato, or other families.
 
 Full extract: `figma/extract-2026-08-12-website-redesign-styles.json`
 
