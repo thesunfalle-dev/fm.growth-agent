@@ -980,19 +980,19 @@ a {
   font-weight: var(--typography-font-weight-semibold);
 }
 
-/* Heading 1 — 56 / 600 / 120% (fluid down toward Display 2 on small screens) */
+/* Heading 1 — Plus Jakarta Sans 60 / 600 / 110% (Deposit Options Figma). */
 .ui-heading--display {
   font-size: clamp(var(--typography-font-size-display2), 5vw, var(--typography-font-size-h1));
-  line-height: var(--typography-line-height-heading);
+  line-height: var(--typography-line-height-display);
   max-width: 16ch;
   /* Desktop: H1 → description 24px */
   margin-bottom: var(--layout-spacing-heading-to-description-desktop);
 }
 
-/* Heading 2 Semibold — 32 / 600 / 130% */
+/* Section title — Plus Jakarta Sans 48 / 600 / 110% (Footer + market bands). */
 .ui-heading--section {
   font-size: var(--typography-font-size-h2);
-  line-height: var(--typography-line-height-heading-loose);
+  line-height: var(--typography-line-height-display);
   margin-bottom: var(--layout-spacing-heading-to-description-desktop);
 }
 
@@ -1001,10 +1001,11 @@ a {
   font-family: var(--typography-font-family-body);
 }
 
-/* Body 3 Regular as default marketing lead/body */
+/* Marketing lead — Roboto Light 20 / 150% (Deposit Options Figma). */
 .ui-text--lead {
   color: var(--color-text-muted);
-  font-size: var(--typography-font-size-b3);
+  font-size: var(--typography-font-size-b2);
+  font-weight: var(--typography-font-weight-light);
   line-height: var(--typography-line-height-body);
   max-width: 52ch;
   /* Desktop: description → next content 40px */

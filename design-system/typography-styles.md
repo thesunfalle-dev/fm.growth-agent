@@ -19,8 +19,8 @@
 
 | Style | Size | Weight | Line-height |
 |-------|------|--------|-------------|
-| Heading 1 | 56 | 600 | 120% |
-| Heading 2 | 32 | 300–700* | 130% |
+| Heading 1 | 60 | 600 | 110% |
+| Heading 2 / section title | 48 | 600 | 110% |
 | Heading 3 | 24 | 500 / 700* | 120% |
 | Heading 4 | 20 | 500–700* | 120% |
 
@@ -48,3 +48,16 @@
 | CTA Large | 20 | 600 | 120% |
 | CTA Medium | 16 | 600 | 120% |
 | CTA Small | 14 | 600 | 120% |
+
+## Shared landing baseline
+
+| Role | Family / style | Used by |
+|------|----------------|---------|
+| Hero H1 | Plus Jakarta Sans SemiBold, 60 / 110% | `hero` |
+| Section H2 | Plus Jakarta Sans SemiBold, 48 / 110% | features, tables, steps, FAQ, footer CTA |
+| Lead | Roboto Light, 20 / 150% | hero and section lead copy |
+| Body | Roboto Light, 16–20 / 150% | descriptions and FAQ answers |
+| UI data / links | Roboto Regular, 12–16 / 150% | tables, footer links, metadata |
+| CTA / nav | Plus Jakarta Sans SemiBold | buttons, navigation, labels |
+
+Every landing must compose these shared roles through common components; content files may vary strings and block order, but not typography, colours, spacing, or component styling.

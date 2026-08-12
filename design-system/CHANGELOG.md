@@ -5,6 +5,7 @@
 - Re-read Deposit Options Desktop `24400:153833`, including hero text and Footer CTA, with Figma design context.
 - Corrected display, heading, navigation and CTA family from Noto Sans to **Plus Jakarta Sans** (Medium/SemiBold/Bold); body remains **Roboto** (Light for B2/B3 copy, Regular for links/tables).
 - Equity Indices now relies on the shared footer CTA (`SiteFooter`) rather than adding a second, structurally different `cta` block before it. This matches the established market landing composition and shared CTAFooter pattern.
+- Established shared landing text baseline from the same source: H1 60/110%, section title 48/110%, lead 20/150% Light. These are token values consumed by every shared block.
 
 ## 2026-08-12 — Implementation playbook + chrome parity lessons
 

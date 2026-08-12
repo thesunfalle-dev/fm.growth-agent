@@ -68,7 +68,6 @@ const landing: LandingDocument = {
       primaryCta: { label: "Try a free demo", href: "https://hub.fusionmarkets.com/auth/sign-up" },
       secondaryCta: { label: "Get a live account", href: "https://hub.fusionmarkets.com/auth/sign-up" },
     },
-    { type: "disclaimer", text: "CFDs are complex financial instruments. Ensure you understand the risks before trading." },
   ],
 };
 
