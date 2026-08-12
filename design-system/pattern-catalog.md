@@ -14,7 +14,7 @@ When a new screen is shared, agents **do not only “look”** — they **regist
 
 Related: `page-recipes.md` (full page stacks), `homepage-patterns.md`, `landing-patterns.md`, `assembly.md`.
 
-**Last page batches:** Markets + Accounts; Platforms + ATS; **Copy trading + Funding + Trading conditions** → see `page-recipes.md`.
+**Last page batches:** … + **Conditions variants + Client tools** (margins, session, contract, calculators, spreads tool, hub tools) → `page-recipes.md`.
 
 ---
 
@@ -148,9 +148,9 @@ Copy when adding a pattern:
 | **Intent** | Tabular markets rows or flat comparison grids. |
 | **Structure (fixed)** | Header + rows (DataTable), optional title/subtitle, scroll rules from Tables frame. |
 | **Content (props)** | `title`, `subtitle`, `columns`, `rows` |
-| **Canonical Figma** | Tables `15276:11158`; page use: Forex instruments; **Commission Rates on Zero** `25234:235840` |
-| **Also seen on** | Market product pages; Trading Conditions tab panels (session time, contract spec, commissions…) |
-| **Rules** | **Different from `spread-cards`.** Markets instruments = `table` + optional tabs. Account compare = `comparison-table`. Conditions hub may wrap tables in accordion → `accordion-table`. |
+| **Canonical Figma** | Tables `15276:11158`; Commission Zero; **Margins & Leverage** `25317:260703`; **Contract Spec** `25136:201435` |
+| **Also seen on** | Market product pages; all Trading Conditions tab panels |
+| **Rules** | **Different from `spread-cards` / `spreads-tool`.** Expandable margin rows = table row variants (dropdown), not a new type. Stack multiple tables on one panel when Figma does (retail + pro). Wrap in accordion → `accordion-table`. |
 | **Adaptive** | Sticky header / max height scroll; mobile layouts planned for specialized tables. |
 
 ---
@@ -373,8 +373,9 @@ Copy when adding a pattern:
 | **Intent** | Group large instrument tables by market under expanders. |
 | **Structure (fixed)** | Accordion chrome (FAQ-Desktop expand) + embedded **DataTable** (Forex-Desktop rows) when open; sibling categories collapsed. |
 | **Content (props)** | `title`, `subtitle`, `tabs?`, `sections[]` (label, columns, rows) |
-| **Canonical Figma** | Trading Conditions All Trading Products `25136:208578` |
-| **Rules** | Reuse table row atoms. Not a free-form FAQ of text only. Tabs above switch condition domain (products vs commissions…). |
+| **Canonical Figma** | Trading Conditions All Products `25136:208578`; **Session Time** `25136:208357` |
+| **Also seen on** | Other conditions tabs that nest tables under expanders |
+| **Rules** | Reuse table row atoms. Not free-form FAQ. Hub tabs switch domain (products / commissions / margins / session / contract…). |
 
 ---
 
@@ -403,6 +404,48 @@ Copy when adding a pattern:
 | **Content (props)** | `title`, `items[]` metrics |
 | **Canonical Figma** | Fusion+ “Fusion+ Leaderboard” / Signal Master Metrics |
 | **Rules** | Product-specific; don’t reuse as generic USP. |
+
+---
+
+### `calculator-tool` — Trading calculators workspace
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `calculator-tool` |
+| **Intent** | Margin / pip / profit / converter calculators. |
+| **Structure (fixed)** | Tabs_Text (calc type) + title + lead + form grid (Selectors, Field) + Primary CTA + results card (key/value rows). |
+| **Content (props)** | `tabs`, active tab fields schema, labels, result fields |
+| **Canonical Figma** | Trading Calculators - Margin `27868:291901` |
+| **Rules** | One tool pattern for all calculator types; atoms from Inputs frame. Not a marketing USP section. |
+
+---
+
+### `spreads-tool` — Live & historical spreads product UI
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `spreads-tool` |
+| **Intent** | Full Spreads Tool: live quote + history chart + filters. |
+| **Structure (fixed)** | Live pair header (symbol, bid, ask, spread) + selectors (instrument, period) + metric chips (avg/min/max) + chart + optional list. |
+| **Content (props)** | Default symbol, periods, copy |
+| **Canonical Figma** | Live & Historical Spreads `25136:207926` |
+| **Rules** | **Not** homepage `spread-cards` (marketing rail). **Not** conditions markets `table`. Linked from conditions hero / homepage CTA. |
+
+---
+
+### `tool-cards` — Tools directory grid
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `tool-cards` |
+| **Intent** | Link cards to calculators, spreads, calendar, hub tools. |
+| **Structure (fixed)** | Title + grid of tool cards (icon/image + name + short desc + link). May share shell with content/instrument cards. |
+| **Content (props)** | `items[]` (title, description, href, icon) |
+| **Canonical Figma** | Client Hub Tools overview `25136:205792` (directory portion) |
+| **Rules** | Overview routing surface; deep tools use T2/T3. |
 
 ---
 
@@ -449,7 +492,10 @@ Copy when adding a pattern:
 | Platform overview vs device | recipes **P1** / **P2** |
 | Fusion+ Copier/Master | recipe **T1** |
 | Deposit/Withdrawal | recipe **F1** |
-| Trading Conditions hub | recipe **C1** |
+| Trading Conditions hub (all tabs) | recipe **C1** |
+| Trading calculators | recipe **T2** / `calculator-tool` |
+| Live & historical spreads | recipe **T3** / `spreads-tool` |
+| Client Hub tools overview | recipe **T4** / `tool-cards` |
 
 If intent is missing → add pattern (don’t freestyle a one-off).
 

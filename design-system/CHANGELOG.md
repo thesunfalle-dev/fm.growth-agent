@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Page batch Conditions variants + Client tools
+
+- Confirmed C1 for Margins & Leverage, Session Time, Contract Spec (table / accordion-table variants).
+- Recipes T2 (calculators), T3 (live & historical spreads tool), T4 (Client Hub Tools).
+- Planned: `calculator-tool`, `spreads-tool`, `tool-cards`. Docs only.
+
 ## 2026-08-12 — Page batch Copy trading + Funding + Conditions
 
 - Recipes T1 (Fusion+ Copier/Master), F1 (Deposit/Withdrawal), C1 (Trading Conditions hub + commission table).

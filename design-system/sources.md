@@ -30,6 +30,21 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Decision: `docs/DECISIONS.md` “Figma screens register reusable patterns”
 - Actor: agent + user
 
+### 2026-08-12 — Page batch: Conditions variants + Client tools (6 screens)
+
+| Page | Node |
+|------|------|
+| Trading Conditions / Margins & Leverage - AU Retail | `25317:260703` |
+| Trading Conditions / Session Time | `25136:208357` |
+| Trading Conditions / Contract Specification | `25136:201435` |
+| Trading Calculators - Margin | `27868:291901` |
+| Live & Historical Spreads - Desktop | `25136:207926` |
+| Client Hub Tools - Desktop | `25136:205792` |
+
+- C1 variants confirmed (margins expandable tables, session accordion, contract table+note)
+- Recipes T2 calculator-tool, T3 spreads-tool, T4 hub tools
+- Actor: agent + user
+
 ### 2026-08-12 — Page batch: Copy trading + Funding + Conditions (6 screens)
 
 | Page | Node |

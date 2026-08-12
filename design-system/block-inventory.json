@@ -291,8 +291,11 @@
     {
       "type": "accordion-table",
       "status": "planned",
-      "description": "FAQ-style accordion embedding markets DataTable per category (Trading Conditions All Products).",
-      "figmaPages": ["25136:208578 Trading Conditions All Trading Products"]
+      "description": "FAQ-style accordion embedding DataTable per category (All Products, Session Time, etc.).",
+      "figmaPages": [
+        "25136:208578 All Trading Products",
+        "25136:208357 Session Time"
+      ]
     },
     {
       "type": "savings-calculator",
@@ -311,6 +314,24 @@
         "31099:370675 Fusion+ Leaderboard",
         "31099:369917 Signal Master Metrics"
       ]
+    },
+    {
+      "type": "calculator-tool",
+      "status": "planned",
+      "description": "Trading calculators workspace: tabs + form (selectors/fields) + results card. Margin/pip/etc via tab content.",
+      "figmaPages": ["27868:291901 Trading Calculators Margin"]
+    },
+    {
+      "type": "spreads-tool",
+      "status": "planned",
+      "description": "Live & historical spreads product UI (quote header + filters + chart). Not marketing spread-cards rail.",
+      "figmaPages": ["25136:207926 Live & Historical Spreads"]
+    },
+    {
+      "type": "tool-cards",
+      "status": "planned",
+      "description": "Directory grid of client tools (calculators, spreads, calendar…). Client Hub Tools overview.",
+      "figmaPages": ["25136:205792 Client Hub Tools"]
     }
   ]
 }

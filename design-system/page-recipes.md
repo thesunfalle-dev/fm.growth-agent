@@ -354,6 +354,104 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 
 ---
 
+## Batch 2026-08-12 — Conditions variants + Client tools
+
+| # | Page | Node | URL |
+|---|------|------|-----|
+| 1 | **Trading Conditions / Margins & Leverage - AU Retail** | `25317:260703` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=25317-260703) |
+| 2 | **Trading Conditions / Session Time** | `25136:208357` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=25136-208357) |
+| 3 | **Trading Conditions / Contract Specification** | `25136:201435` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=25136-201435) |
+| 4 | **Trading Calculators - Margin** | `27868:291901` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27868-291901) |
+| 5 | **Live & Historical Spreads - Desktop** | `25136:207926` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=25136-207926) |
+| 6 | **Client Hub Tools - Desktop** | `25136:205792` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=25136-205792) |
+
+---
+
+### Recipe C1 (confirmed variants) — Trading Conditions hub
+
+**Same chrome on every conditions subpage:**
+
+1. **Conditions hero** — H1 “Trading Conditions” + multi-paragraph + links (Spreads Tool / Broker Comparison) + illustration  
+2. **Explore Our Trading Conditions** — title + lead + **Tabs_Text** (category switcher)  
+3. **Tab panel body** (varies — see below)  
+4. **Footer**
+
+| Tab / page | Panel body pattern | Figma notes |
+|------------|-------------------|-------------|
+| All trading products | `accordion-table` | FAQ expanders + nested markets tables |
+| Commission rates on Zero | `table` | Flat Commission Rates table + footnote |
+| **Margins & leverage** | `table` (expandable rows) | Margin and Leverage - Desktop; may stack **two tables** (e.g. retail + ASIC Pro) |
+| **Session time** | `accordion-table` | Expanders (DST etc.) + Session Time-desktop rows |
+| **Contract specification** | `table` + optional `notice-band` | ContractSpec-desktop + note under table |
+
+**Rules:** Do **not** invent a new page layout per tab. Entity variants (AU Retail vs VFSC) = content / table data, same C1. Expandable leverage rows = table row state from Tables frame, not a new block type.
+
+---
+
+### Recipe T2 — Trading Calculators hub
+
+**Figma:** Trading Calculators - Margin `27868:291901`  
+**Reuse for:** Pip, profit, currency converter, etc. (tab content swap).
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Tool hub hero | `hero` | “Trading Calculators” + short pitch + illustration (no dual CTA required) |
+| 2 | Calculator workspace | `calculator-tool` (planned) | **Tabs_Text** (calculator type) + title/lead for active calc + **form** (Selectors / Field) + Primary CTA + **results card** |
+| 3 | Footer | `cta` / footer | |
+
+**Rules:** One `calculator-tool` pattern; Margin vs Pip vs others = tab + field schema content. Form atoms from Inputs frame (already DS). Results card is part of the tool, not a separate marketing block.
+
+---
+
+### Recipe T3 — Live & Historical Spreads tool
+
+**Figma:** `25136:207926`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Tool hero | `hero` | Centered/wide “Live & Historical Spreads” + proof copy |
+| 2 | Spreads workspace | `spreads-tool` (planned) | Live quote header (pair, bid/ask/spread) + instrument/period **selectors** + metric toggles (avg/min/max) + **historical chart** + optional instrument list/table below |
+| 3 | Footer | `cta` / footer | |
+
+**Rules:**  
+- Related to homepage `spread-cards` (quote language) but **not the same block** — this is the full Spreads Tool product UI.  
+- Do not substitute markets `table` alone for this page.  
+- Chart + filters = interactive tool surface; content = default pair/period.
+
+---
+
+### Recipe T4 — Client Hub Tools overview
+
+**Figma:** `25136:205792`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Tools hub hero | `hero` | “Client Hub Tools” + pitch + illustration |
+| 2 | Feature / checklist bands | `checklist-feature` | “Analyst Views” style: image + headline + icon rows (repeatable) |
+| 3 | Tools directory | `tool-cards` / `instrument-grid` shell | Cards/links to calculators, spreads, calendar, hub tools… |
+| 4 | Footer | `cta` / footer | |
+
+**Rules:** Overview page that **routes** into T2/T3 and other tools. Reuse checklist + card shells; don’t one-off each tool promo.
+
+---
+
+## Pattern frequency — this batch
+
+| Pattern | C1 variants | T2 Calculators | T3 Spreads tool | T4 Hub tools |
+|---------|-------------|----------------|-----------------|--------------|
+| Conditions hero + tabs | ✅ | — | — | — |
+| `table` / expandable rows | ✅ margins, contract | — | — | — |
+| `accordion-table` | ✅ session, all products | — | — | — |
+| `notice-band` | ✅ under contract table | — | — | — |
+| `hero` | ✅ | ✅ | ✅ | ✅ |
+| `calculator-tool` | — | ✅ | — | — |
+| `spreads-tool` | — | — | ✅ | — |
+| `checklist-feature` | — | — | — | ✅ |
+| `tool-cards` / directory | — | — | — | ✅ |
+| `cta` / footer | ✅ | ✅ | ✅ | ✅ |
+
+---
+
 ## How to extend this file
 
 When the next batch of screens arrives:
