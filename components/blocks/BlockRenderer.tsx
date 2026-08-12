@@ -2,6 +2,7 @@ import { CtaBand } from "@/components/blocks/CtaBand";
 import { Disclaimer } from "@/components/blocks/Disclaimer";
 import { Features } from "@/components/blocks/Features";
 import { Hero } from "@/components/blocks/Hero";
+import { MarketsTable } from "@/components/blocks/MarketsTable";
 import type { LandingBlock } from "@/lib/types";
 
 export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
@@ -22,6 +23,17 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
             );
           case "features":
             return <Features key={index} title={block.title} items={block.items} />;
+          case "table":
+            return (
+              <MarketsTable
+                key={index}
+                title={block.title}
+                subtitle={block.subtitle}
+                columns={block.columns}
+                rows={block.rows}
+                scrollable={block.scrollable}
+              />
+            );
           case "cta":
             return (
               <CtaBand

@@ -50,6 +50,50 @@ const landing: LandingDocument = {
       ],
     },
     {
+      type: "table",
+      title: "Markets — Forex (demo)",
+      subtitle: "Sample DataTable using Website Redesign table rules (header 54px, row 78px, sticky scroll).",
+      columns: [
+        { id: "symbol", header: "Symbol", width: "40%" },
+        { id: "min", header: "Minimum Spread", width: "30%" },
+        { id: "avg", header: "Average Spread", width: "30%" },
+      ],
+      rows: [
+        {
+          id: "usdjpy",
+          cells: {
+            symbol: { title: "USDJPY", meta: "US dollar / Japanese Yen" },
+            min: "0.64139",
+            avg: "0.64139",
+          },
+        },
+        {
+          id: "eurusd",
+          cells: {
+            symbol: { title: "EURUSD", meta: "Euro / US dollar" },
+            min: "0.00",
+            avg: "0.12",
+          },
+        },
+        {
+          id: "gbpusd",
+          cells: {
+            symbol: { title: "GBPUSD", meta: "British Pound / US dollar" },
+            min: "0.10",
+            avg: "0.35",
+          },
+        },
+        {
+          id: "audusd",
+          cells: {
+            symbol: { title: "AUDUSD", meta: "Australian Dollar / US dollar" },
+            min: "0.20",
+            avg: "0.41",
+          },
+        },
+      ],
+    },
+    {
       type: "cta",
       title: "Ready for real briefs",
       subtitle: "Drop a brief → generate 2–3 slugs → push → live URLs.",

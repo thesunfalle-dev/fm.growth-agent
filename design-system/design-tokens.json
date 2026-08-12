@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14765-9245",
-    "notes": "Fonts/colors/spacing from earlier frames. Buttons: frame 14765:9245 (Primary/Secondary sizes + states)."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15276-11158",
+    "notes": "Fonts, colors, spacing, buttons. Tables: frame 15276:11158 rules + Forex header/row styles."
   },
   "primitive": {
     "color": {
@@ -267,6 +267,25 @@
       },
       "textOnPrimary": "{primitive.color.gray200}",
       "iconGap": "4px"
+    },
+    "table": {
+      "width": "1280px",
+      "maxHeight": "600px",
+      "paddingX": "24px",
+      "headerHeight": "54px",
+      "rowMinHeight": "78px",
+      "rowPaddingY": "16px",
+      "headerBg": "{primitive.color.gray200}",
+      "headerText": "{primitive.color.gray600}",
+      "rowText": "{primitive.color.blue500}",
+      "rowMetaText": "{primitive.color.gray600}",
+      "rowDivider": "{primitive.color.gray200}",
+      "rowHoverBg": "{primitive.color.purple50}",
+      "headerFontSize": "14px",
+      "cellFontSize": "16px",
+      "metaFontSize": "14px",
+      "cellGap": "28px",
+      "symbolGap": "12px"
     }
   },
   "border": {

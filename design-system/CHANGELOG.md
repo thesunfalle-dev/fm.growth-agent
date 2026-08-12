@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-12 — Tables foundation from Figma
+
+- Ingested Tables frame `15276:11158`: rules (600 max height, sticky header 54, row min 78, pad 24).
+- Measured Forex header/row colors and type; tokens `component.table.*`.
+- `DataTable` + landing block `table`; demo markets sample on `/demo`.
+- Catalog of specialized market/comparison tables documented as planned.
+
 ## 2026-08-12 — Buttons from Figma
 
 - Ingested Buttons frame `14765:9245`: Primary / Secondary / Text, sizes lg/md/sm, hover/pressed.

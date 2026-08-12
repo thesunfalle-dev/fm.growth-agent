@@ -7,6 +7,18 @@
   },
   "components": [
     {
+      "name": "DataTable",
+      "category": "data",
+      "status": "provisional",
+      "path": "components/ui/DataTable.tsx",
+      "figma": "15276:11158",
+      "variants": ["markets"],
+      "sizes": ["desktop"],
+      "requiredStates": ["default", "hover"],
+      "tokenDependencies": ["component.table"],
+      "notes": "Foundation markets table: sticky header, 600px scroll, 54/78 heights. Mobile layouts & comparison tables planned."
+    },
+    {
       "name": "Button",
       "category": "actions",
       "status": "ready",

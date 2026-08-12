@@ -1,0 +1,64 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15276-11158",
+    "frame": { "id": "15276:11158", "name": "Tables" }
+  },
+  "rules": {
+    "general": {
+      "maxVisibleHeightPx": 600,
+      "scrollWithStickyHeader": true,
+      "horizontalPaddingPx": 24,
+      "defaultWidthPx": 1280,
+      "hideBottomDividerWhenShortOrLastRow": true
+    },
+    "header": {
+      "heightPx": 54,
+      "alwaysVisibleOnScroll": true,
+      "actionColumnReservedWithoutLabel": true
+    },
+    "rows": {
+      "minHeightPx": 78,
+      "bottomDividerExceptLastOrShortTable": true,
+      "actionButtonAlign": "right"
+    }
+  },
+  "forexDesktopMeasured": {
+    "header": {
+      "id": "15279:15405",
+      "height": 54,
+      "fill": "#F5F6F7",
+      "paddingX": 24,
+      "label": { "font": "Roboto Regular", "size": 14, "lineHeight": "150%", "color": "#555A66" }
+    },
+    "rowDefault": {
+      "id": "15279:15404",
+      "height": 78,
+      "padding": { "t": 16, "r": 24, "b": 16, "l": 24 },
+      "itemSpacing": 28,
+      "stroke": "#F5F6F7",
+      "value": { "font": "Roboto Regular", "size": 16, "lineHeight": "150%", "color": "#0D1350" }
+    },
+    "rowHover": {
+      "id": "23049:7175",
+      "fill": "#F7F6FC"
+    }
+  },
+  "catalog": [
+    "Forex-Desktop / Forex-Mobile",
+    "Metals-desktop / Metals-mobile",
+    "Indices-desktop / Indices-mobile",
+    "Energy-desktop / Energy-mobile",
+    "Crypto-desktop / Crypto-mobile",
+    "Crypto_2 / US Share",
+    "Commission Rates on Zero",
+    "Session Time",
+    "Contract Specification",
+    "Margin & Leverage (dropdown rows)",
+    "Comparison Table (Zero vs Classic)",
+    "Retail vs Pro / Become a Pro",
+    "Partner charts"
+  ]
+}

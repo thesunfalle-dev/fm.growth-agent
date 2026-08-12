@@ -3,6 +3,26 @@ export type LandingCta = {
   href: string;
 };
 
+export type TableColumnSpec = {
+  id: string;
+  header: string;
+  width?: string;
+  align?: "left" | "right" | "center";
+};
+
+export type TableCellSpec =
+  | string
+  | {
+      title: string;
+      meta?: string;
+    };
+
+export type TableRowSpec = {
+  id: string;
+  cells: Record<string, TableCellSpec>;
+  action?: LandingCta;
+};
+
 export type LandingBlock =
   | {
       type: "hero";
@@ -19,6 +39,14 @@ export type LandingBlock =
         title: string;
         description: string;
       }>;
+    }
+  | {
+      type: "table";
+      title?: string;
+      subtitle?: string;
+      columns: TableColumnSpec[];
+      rows: TableRowSpec[];
+      scrollable?: boolean;
     }
   | {
       type: "cta";

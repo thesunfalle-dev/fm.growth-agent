@@ -50,6 +50,25 @@
       "tokenDependencies": ["semantic.color.background", "radius.md", "space"]
     },
     {
+      "type": "table",
+      "status": "provisional",
+      "description": "Markets-style data table (header + rows) per Tables frame rules.",
+      "component": "components/blocks/MarketsTable.tsx",
+      "figma": "15276:11158",
+      "props": {
+        "title": { "type": "string", "required": false },
+        "subtitle": { "type": "string", "required": false },
+        "columns": { "type": "array", "required": true },
+        "rows": { "type": "array", "required": true },
+        "scrollable": { "type": "boolean", "required": false }
+      },
+      "contentRules": [
+        "Use for spreads/markets lists. Comparison and accordion tables are separate planned types.",
+        "Prefer symbol cells as { title, meta } for pair name + description."
+      ],
+      "tokenDependencies": ["component.table", "semantic.color"]
+    },
+    {
       "type": "cta",
       "status": "provisional",
       "description": "Mid or end conversion band.",
