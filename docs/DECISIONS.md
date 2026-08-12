@@ -4,6 +4,16 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 ---
 
+## 2026-08-12 — Client Hub Figma as interim style SoT
+
+**Context:** User provided Fusion Client Hub Design System Figma for styles (type + colors). Marketing website redesign may differ.
+
+**Decision:** Until a marketing-specific file is confirmed, implement landings against **Client Hub** paint styles, Lato text styles, 4px spacing, and purple action gradients. Record status as `figma-partial-sync`.
+
+**Consequences:** Landings look like Hub light UI (navy text, purple CTAs), not the old provisional dark shell. Revisit if Website Redesign FM 2.0 is the true marketing source.
+
+---
+
 ## 2026-08-12 — Production-first delivery
 
 **Context:** Previews are for marketing stakeholders; local servers are optional.

@@ -4,13 +4,16 @@ Track unknowns instead of inventing answers. Resolve → move summary into `DECI
 
 ## Design / Figma
 
-- [ ] Official Figma design-system file URL(s) for the global redesign
-- [ ] Primary brand color(s), neutrals, semantic status colors from Figma
-- [ ] Typefaces (display/body) and licensing for web use
-- [ ] Grid, container max width, section vertical rhythm
+- [x] Official Figma design-system file URL(s) for the global redesign → Client Hub DS linked (confirm marketing Website Redesign FM 2.0 separately)
+- [x] Primary brand color(s), neutrals, semantic status colors from Figma → paint styles ingested
+- [x] Typefaces (display/body) and licensing for web use → Lato 400/700 via Google Fonts (confirm license OK for prod)
+- [x] Grid, container max width, section vertical rhythm → 4px grid, 1440 max, gutters documented
 - [ ] Motion language (page transitions, scroll reveals, reduced-motion policy)
-- [ ] Dark-only vs light vs both for marketing landings
-- [ ] Component set already drawn in Figma (buttons, cards, nav, forms…)
+- [ ] Confirm: marketing landings use **Client Hub** DS or **Website Redesign FM 2.0** library?
+- [ ] Map Shadows frame + Button component variants 1:1
+- [ ] Component set already drawn in Figma (buttons, cards, nav, forms…) — frames exist; not fully coded
+- [ ] Is H5 Regular intentionally missing from text styles?
+
 
 ## Product / process
 

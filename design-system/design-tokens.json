@@ -1,125 +1,184 @@
 {
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
-    "mode": "dark",
-    "version": "0.1.0",
-    "status": "provisional-shell",
+    "mode": "light",
+    "version": "0.2.0",
+    "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
-    "notes": "Bootstrap shell for agentic pipeline. Replace from Figma redesign; do not treat as brand-approved."
+    "source": "Fusion Client Hub Design System",
+    "sourceFileKey": "JRZk7VKq09NfBamSFcmAst",
+    "sourceUrl": "https://www.figma.com/design/JRZk7VKq09NfBamSFcmAst/Fusion-Client-Hub-Design-System?node-id=32-9",
+    "notes": "Ingested Typography + Colors + Spacing rules + Button gradients from HUB Design System page. Shadows/components not fully mapped yet. This is Client Hub DS (light). Marketing website redesign may differ — confirm with user if needed."
   },
   "primitive": {
     "color": {
-      "neutral0": "#0b0f14",
-      "neutral10": "#121821",
-      "neutral20": "#1a2230",
-      "neutral30": "#243041",
-      "textPrimary": "#eef2f7",
-      "textSecondary": "#c5d0de",
-      "textMuted": "#9aa8bc",
-      "accent": "#3d8bfd",
-      "accentHover": "#5c9fff",
-      "accentActive": "#2f78e6",
-      "accentOn": "#ffffff",
-      "borderSubtle": "rgba(255, 255, 255, 0.06)",
-      "borderDefault": "rgba(255, 255, 255, 0.08)",
-      "borderStrong": "rgba(255, 255, 255, 0.16)",
-      "focusRing": "rgba(61, 139, 253, 0.35)",
-      "success": "#3ecf8e",
-      "warning": "#f5c542",
-      "danger": "#f07178",
-      "glowCool": "#1a2740",
-      "glowDeep": "#142033"
+      "blueMainText": "#0D1350",
+      "blueLight": "#40397D",
+      "blueLighter": "#6E63AD",
+      "blueLightest": "#9F91DF",
+      "blueDark": "#080C34",
+      "blueDarker": "#050821",
+      "blueDarkest": "#01020C",
+      "purpleMain": "#742CCE",
+      "purpleLight": "#C1A0EB",
+      "purpleLighter": "#E0CFF5",
+      "purpleLightest": "#F1EBFB",
+      "purpleDark": "#411973",
+      "purpleDarker": "#260F45",
+      "purpleDarkest": "#0D0517",
+      "grayMain": "#9EA1B9",
+      "grayLight": "#CCCEDA",
+      "grayLighter": "#DFE0E8",
+      "grayLightest": "#F4F5F7",
+      "grayDark": "#727699",
+      "grayDarkerIcon": "#515581",
+      "grayDarkest": "#303242",
+      "greenMain": "#51B56D",
+      "greenLight": "#8BCE9E",
+      "greenLighter": "#C5E6CE",
+      "greenLightest": "#ECF7EF",
+      "greenDark": "#3D8F54",
+      "greenDarker": "#2B663C",
+      "greenDarkest": "#1A3D24",
+      "redMain": "#FE6B6B",
+      "redLight": "#FE9C9C",
+      "redLighter": "#FFBDBD",
+      "redLightest": "#FFDEDE",
+      "redDark": "#FD1C1C",
+      "redDarker": "#C70101",
+      "redDarkest": "#780101",
+      "whiteMain": "#FFFFFF",
+      "whiteDark": "#FBFBFB",
+      "whiteDarker": "#EAEAEF",
+      "whiteDarkest": "#DADFEC",
+      "orangeMain": "#FF9100",
+      "orangeLight": "#FFB655",
+      "orangeLighter": "#FFCE8E",
+      "orangeLightest": "#FFE7C6",
+      "orangeDark": "#C67100",
+      "orangeDarker": "#8E5100",
+      "orangeDarkest": "#714000",
+      "gradientButtonStart": "#742CCE",
+      "gradientButtonEnd": "#1510A1",
+      "gradientDarkStart": "#620BCE",
+      "gradientDarkEnd": "#060086",
+      "gradientLightStart": "#8D59CD",
+      "gradientLightEnd": "#251FA7",
+      "gradientBlackPurpleStart": "#1B022F",
+      "gradientBlackPurpleEnd": "#4B11A2"
     }
   },
   "semantic": {
     "color": {
       "background": {
-        "canvas": "{primitive.color.neutral0}",
-        "surface": "{primitive.color.neutral10}",
-        "surfaceRaised": "{primitive.color.neutral20}",
-        "surfaceHover": "{primitive.color.neutral30}",
-        "glowPrimary": "{primitive.color.glowCool}",
-        "glowSecondary": "{primitive.color.glowDeep}"
+        "canvas": "{primitive.color.whiteMain}",
+        "surface": "{primitive.color.whiteDark}",
+        "surfaceRaised": "{primitive.color.grayLightest}",
+        "surfaceHover": "{primitive.color.whiteDarker}",
+        "surfaceMuted": "{primitive.color.grayLightest}",
+        "glowPrimary": "{primitive.color.purpleLightest}",
+        "glowSecondary": "{primitive.color.whiteDarker}"
       },
       "text": {
-        "primary": "{primitive.color.textPrimary}",
-        "secondary": "{primitive.color.textSecondary}",
-        "muted": "{primitive.color.textMuted}",
-        "onAccent": "{primitive.color.accentOn}",
-        "eyebrow": "{primitive.color.accent}",
-        "link": "{primitive.color.accent}"
+        "primary": "{primitive.color.blueMainText}",
+        "secondary": "{primitive.color.blueLight}",
+        "muted": "{primitive.color.grayDark}",
+        "subtle": "{primitive.color.grayMain}",
+        "onAccent": "{primitive.color.whiteMain}",
+        "eyebrow": "{primitive.color.purpleMain}",
+        "link": "{primitive.color.purpleMain}",
+        "inverse": "{primitive.color.whiteMain}"
       },
       "border": {
-        "subtle": "{primitive.color.borderSubtle}",
-        "default": "{primitive.color.borderDefault}",
-        "strong": "{primitive.color.borderStrong}",
-        "focus": "{primitive.color.accent}"
+        "subtle": "{primitive.color.grayLighter}",
+        "default": "{primitive.color.grayLight}",
+        "strong": "{primitive.color.grayMain}",
+        "focus": "{primitive.color.purpleMain}"
       },
       "action": {
-        "primaryDefault": "{primitive.color.accent}",
-        "primaryHover": "{primitive.color.accentHover}",
-        "primaryActive": "{primitive.color.accentActive}",
-        "primaryOn": "{primitive.color.accentOn}",
-        "secondaryDefault": "transparent",
-        "secondaryHover": "rgba(255, 255, 255, 0.03)",
-        "secondaryBorder": "{primitive.color.borderDefault}",
-        "secondaryBorderHover": "{primitive.color.borderStrong}"
+        "primaryDefault": "{primitive.color.purpleMain}",
+        "primaryHover": "{primitive.color.purpleDark}",
+        "primaryActive": "{primitive.color.purpleDarker}",
+        "primaryOn": "{primitive.color.whiteMain}",
+        "primaryDisabled": "{primitive.color.purpleLightest}",
+        "secondaryDefault": "{primitive.color.whiteMain}",
+        "secondaryHover": "{primitive.color.grayLightest}",
+        "secondaryBorder": "{primitive.color.grayLight}",
+        "secondaryBorderHover": "{primitive.color.grayMain}",
+        "gradientButton": "linear-gradient(90deg, {primitive.color.gradientButtonStart} 0%, {primitive.color.gradientButtonEnd} 100%)"
       },
       "status": {
-        "success": "{primitive.color.success}",
-        "warning": "{primitive.color.warning}",
-        "danger": "{primitive.color.danger}"
+        "success": "{primitive.color.greenMain}",
+        "successSoft": "{primitive.color.greenLightest}",
+        "warning": "{primitive.color.orangeMain}",
+        "warningSoft": "{primitive.color.orangeLightest}",
+        "danger": "{primitive.color.redMain}",
+        "dangerSoft": "{primitive.color.redLightest}",
+        "info": "{primitive.color.blueLighter}"
       }
     }
   },
   "typography": {
     "fontFamily": {
-      "sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "sans": "var(--font-lato), \"Lato\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
       "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
     },
     "fontSize": {
-      "xs": "0.78rem",
-      "sm": "0.85rem",
-      "md": "0.95rem",
-      "base": "1rem",
-      "lg": "1.1rem",
-      "xl": "1.5rem",
-      "2xl": "2rem",
-      "3xl": "2.4rem",
-      "4xl": "3.25rem"
+      "b3": "12px",
+      "b2": "14px",
+      "b1": "16px",
+      "h5": "16px",
+      "h4": "20px",
+      "h3": "22px",
+      "h2": "24px",
+      "h1": "32px",
+      "xs": "12px",
+      "sm": "14px",
+      "md": "16px",
+      "base": "16px",
+      "lg": "20px",
+      "xl": "22px",
+      "2xl": "24px",
+      "3xl": "32px",
+      "4xl": "32px"
     },
     "fontWeight": {
       "regular": 400,
+      "bold": 700,
       "medium": 500,
-      "semibold": 600,
-      "bold": 650
+      "semibold": 700
     },
     "lineHeight": {
-      "tight": 1.1,
+      "heading": 1.2,
+      "body": 1.4,
+      "tight": 1.2,
       "snug": 1.2,
-      "body": 1.55,
-      "relaxed": 1.65
+      "relaxed": 1.4
     },
     "letterSpacing": {
-      "display": "-0.03em",
-      "heading": "-0.02em",
-      "label": "0.04em",
+      "display": "0",
+      "heading": "0",
+      "label": "0",
       "eyebrow": "0.04em",
       "normal": "0"
     }
   },
+
   "space": {
-    "1": "0.5rem",
-    "2": "1rem",
-    "3": "1.5rem",
-    "4": "2.5rem",
-    "5": "4rem",
-    "6": "6rem"
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "24px",
+    "6": "32px",
+    "8": "48px",
+    "10": "64px",
+    "12": "96px"
   },
   "radius": {
-    "sm": "8px",
-    "md": "12px",
-    "lg": "16px",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "12px",
     "pill": "999px"
   },
   "border": {
@@ -129,23 +188,25 @@
   },
   "shadow": {
     "none": "none",
-    "header": "0 1px 0 {semantic.color.border.default}"
+    "header": "0 1px 0 {semantic.color.border.default}",
+    "card": "0 8px 24px rgba(13, 19, 80, 0.06)"
   },
   "layout": {
     "container": {
-      "max": "1080px",
+      "max": "1440px",
       "narrow": "720px",
-      "gutter": "2rem"
+      "gutter": "32px",
+      "gutterMobile": "16px"
     },
     "header": {
-      "height": "3.5rem"
+      "height": "64px"
     }
   },
   "breakpoint": {
     "sm": "640px",
     "md": "768px",
     "lg": "1024px",
-    "xl": "1280px"
+    "xl": "1440px"
   },
   "motion": {
     "duration": {

@@ -1,5 +1,16 @@
 # Design system changelog
 
+## 2026-08-12 — Figma styles ingest (Client Hub)
+
+- Linked Fusion Client Hub Design System Figma (`JRZk7VKq09NfBamSFcmAst`).
+- Ingested **Typography** (Lato H1–H5 / B1–B3) and full **paint styles** (Blue/Purple/Gray/Green/Red/Orange/White + button gradients).
+- Applied **4px spacing grid** and layout rules (max 1440, gutters 32/16).
+- Switched runtime theme from provisional dark shell → **light Client Hub**.
+- Stored raw extract in `figma/extract-2026-08-12-styles.json` + `typography-styles.md`.
+- Loaded Lato via `next/font/google` (400/700).
+
+**Status after change:** `figma-partial-sync` — colors/type/spacing foundation; components (Buttons frame, Shadows, Cards) still to map.
+
 ## 2026-08-12 — Bootstrap agentic DS contract
 
 - Added token file (`design-tokens.json`) with **provisional-shell** neutrals migrated from the early hardcoded CSS shell.

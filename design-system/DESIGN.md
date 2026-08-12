@@ -17,14 +17,16 @@ Enable **fast, on-brand marketing landings** assembled from registered blocks, n
 
 ## Modes
 
-- **Current:** dark provisional shell for pipeline demos.
-- **Target:** Fusion redesign (Figma). When synced, update `meta.status` and this section.
+- **Current:** light **Fusion Client Hub** system (`figma-partial-sync`).
+- **Note:** Marketing website redesign may use a related but separate library (Website Redesign FM 2.0). Confirm before pixel-chasing marketing comps.
 
-## Visual system (provisional)
+## Visual system (Client Hub, from Figma)
 
-- Dark canvas, raised surfaces, restrained borders
-- Single accent for primary actions and emphasis
-- Large readable marketing type scale; calm motion
+- Light canvas (`White/Main`), soft gray surfaces (`Gray/Lightest`)
+- Primary text navy (`Blue/Main - Text` `#0D1350`)
+- Actions purple (`Purple/Main` + `Gradients/Main - Button`)
+- Type: **Lato**, headings 120% LH, body 140% LH
+- Spacing: **4px** base grid; container max **1440px**
 - Section rhythm via space tokens, not magic numbers in components
 
 ## Handoff files

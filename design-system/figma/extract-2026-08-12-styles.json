@@ -1,0 +1,200 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Fusion Client Hub Design System",
+    "key": "JRZk7VKq09NfBamSFcmAst",
+    "url": "https://www.figma.com/design/JRZk7VKq09NfBamSFcmAst/Fusion-Client-Hub-Design-System?node-id=32-9",
+    "page": { "id": "26:147", "name": "HUB Design System" }
+  },
+  "frames": {
+    "typography": "32:9",
+    "colors": "32:8111",
+    "shadows": "34:9101",
+    "spacingLayout": "34:9470",
+    "buttons": "34:9442"
+  },
+  "textStyles": [
+    {
+      "name": "Heading/H1-32-Bold",
+      "fontFamily": "Lato",
+      "fontStyle": "Bold",
+      "fontSize": 32,
+      "fontWeight": 700,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H1-32-Regular",
+      "fontFamily": "Lato",
+      "fontStyle": "Regular",
+      "fontSize": 32,
+      "fontWeight": 400,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H2-24-Bold",
+      "fontFamily": "Lato",
+      "fontStyle": "Bold",
+      "fontSize": 24,
+      "fontWeight": 700,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H2-24-Regular",
+      "fontFamily": "Lato",
+      "fontStyle": "Regular",
+      "fontSize": 24,
+      "fontWeight": 400,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H3-22-Bold",
+      "fontFamily": "Lato",
+      "fontStyle": "Bold",
+      "fontSize": 22,
+      "fontWeight": 700,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H3-22-Regular",
+      "fontFamily": "Lato",
+      "fontStyle": "Regular",
+      "fontSize": 22,
+      "fontWeight": 400,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H4-20-Bold",
+      "fontFamily": "Lato",
+      "fontStyle": "Bold",
+      "fontSize": 20,
+      "fontWeight": 700,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H4-20-Regular",
+      "fontFamily": "Lato",
+      "fontStyle": "Regular",
+      "fontSize": 20,
+      "fontWeight": 400,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Heading/H5-16-Bold",
+      "fontFamily": "Lato",
+      "fontStyle": "Bold",
+      "fontSize": 16,
+      "fontWeight": 700,
+      "lineHeight": "120%"
+    },
+    {
+      "name": "Body/B1-16-Regular",
+      "fontFamily": "Lato",
+      "fontStyle": "Regular",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Body/B2-14-Bold",
+      "fontFamily": "Lato",
+      "fontStyle": "Bold",
+      "fontSize": 14,
+      "fontWeight": 700,
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Body/B2-14-Regular",
+      "fontFamily": "Lato",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Body/B3-12-Bold",
+      "fontFamily": "Lato",
+      "fontStyle": "Bold",
+      "fontSize": 12,
+      "fontWeight": 700,
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Body/B3-12-Regular",
+      "fontFamily": "Lato",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "lineHeight": "140%"
+    }
+  ],
+  "paintStyles": {
+    "Blue/Main - Text": "#0D1350",
+    "Blue/Light": "#40397D",
+    "Blue/Lighter": "#6E63AD",
+    "Blue/Lightest": "#9F91DF",
+    "Blue/Dark": "#080C34",
+    "Blue/Darker": "#050821",
+    "Blue/Darkest": "#01020C",
+    "Purple/Main": "#742CCE",
+    "Purple/Light": "#C1A0EB",
+    "Purple/Lighter": "#E0CFF5",
+    "Purple/Lightest - Disabled": "#F1EBFB",
+    "Purple/Dark": "#411973",
+    "Purple/Darker": "#260F45",
+    "Purple/Darkest": "#0D0517",
+    "Gray/Main": "#9EA1B9",
+    "Gray/Light": "#CCCEDA",
+    "Gray/Lighter": "#DFE0E8",
+    "Gray/Lightest": "#F4F5F7",
+    "Gray/Dark": "#727699",
+    "Gray/Darker - Icon": "#515581",
+    "Gray/Darkest": "#303242",
+    "Green/Main": "#51B56D",
+    "Green/Light": "#8BCE9E",
+    "Green/Lighter": "#C5E6CE",
+    "Green/Lightest": "#ECF7EF",
+    "Green/Dark": "#3D8F54",
+    "Green/Darker": "#2B663C",
+    "Green/Darkest": "#1A3D24",
+    "Red/Main": "#FE6B6B",
+    "Red/Light": "#FE9C9C",
+    "Red/Lighter": "#FFBDBD",
+    "Red/Lightest": "#FFDEDE",
+    "Red/Dark": "#FD1C1C",
+    "Red/Darker": "#C70101",
+    "Red/Darkest": "#780101",
+    "White/Main": "#FFFFFF",
+    "White/Dark": "#FBFBFB",
+    "White/Darker": "#EAEAEF",
+    "White/Darkest": "#DADFEC",
+    "Orange/Main": "#FF9100",
+    "Orange/Light": "#FFB655",
+    "Orange/Lighter": "#FFCE8E",
+    "Orange/Lightest": "#FFE7C6",
+    "Orange/Dark": "#C67100",
+    "Orange/Darker": "#8E5100",
+    "Orange/Darkest": "#714000"
+  },
+  "gradients": {
+    "Gradients/Main - Button": ["#742CCE", "#1510A1"],
+    "Gradients/Dark": ["#620BCE", "#060086"],
+    "Gradients/Light": ["#8D59CD", "#251FA7"],
+    "Gradients/Black Purple": ["#1B022F", "#4B11A2"]
+  },
+  "spacingLayoutNotes": {
+    "baseUnit": "4px",
+    "desktop": {
+      "maxWidth": "1440px",
+      "sideMargins": "24px or 32px",
+      "betweenCards": "24px",
+      "headerToContent": "16px",
+      "tableCellPadding": "8px or 12px"
+    },
+    "mobile": {
+      "sidePadding": "16px",
+      "betweenSections": "32px",
+      "headerToContent": "16px",
+      "componentPadding": "12px or 16px"
+    }
+  }
+}
