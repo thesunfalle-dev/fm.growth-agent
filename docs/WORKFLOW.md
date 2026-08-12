@@ -4,19 +4,24 @@
 
 1. Drop brief into `briefs/` (optional) or paste into the task — **no fixed brief schema** for MVP.
 2. Choose slug (`kebab-case`).
-3. Optional: skim `design-system/pattern-catalog.md` (reuse map), `landing-patterns.md`, `homepage-patterns.md`.
-4. Create `landings/{slug}/content.ts` using only registered block types from `block-inventory.json` — **same patterns as catalog**, different content.
-5. Register in `lib/landings.ts`.
-6. `npm run validate:design && npm run build`
-7. Commit + push + `npm run deploy`
-8. Share `https://fm.growth-agent.org/{slug}/`
+3. **Read `docs/IMPLEMENTATION_PLAYBOOK.md`** (process, Figma 1:1, anti-patterns).
+4. Optional: skim `design-system/pattern-catalog.md`, `landing-patterns.md`, `homepage-patterns.md`.
+5. Create `landings/{slug}/content.ts` using only registered block types from `block-inventory.json` — **same patterns as catalog**, different content (**TZ only**, never Figma sample copy).
+6. Register in `lib/landings.ts`.
+7. Implement / reuse blocks per playbook Phase B–D.
+8. Verify per playbook Phase E (measure Figma, not only screenshot).
+9. `npm run validate:design && npm run build`
+10. Commit + push (GitHub Actions → Cloudflare Pages) or `npm run deploy`
+11. Share `https://fm.growth-agent.org/{slug}/` and **hard-refresh** check
 
 Default MVP stacks (see `landing-patterns.md`):
 
 - **Trust/award:** `hero` → `features` usp → optional `faq` → footer  
 - **Promo offer:** `hero` (+ legal) → `steps` → `features` usp → footer  
 - **Platform:** `hero` → `features` usp → `steps` → `faq` → footer  
-- **Market (e.g. Crypto / Gold):** `hero` (brand BG) → `features` usp → `table` (instruments) → optional compare/steps → `faq` → footer
+- **Market (e.g. Crypto / Gold):** `hero` (brand BG) → `features` usp → `table` (instruments) → optional compare/steps → `faq` → footer  
+
+Global chrome (`SiteHeader` / `SiteFooter`) wraps every page — do not re-implement per landing.
 
 ## Change the design system
 
@@ -28,6 +33,7 @@ Default MVP stacks (see `landing-patterns.md`):
 6. `npm run validate:design && npm run build`
 7. Deploy if visual output should go live.
 8. If the decision is structural, add `docs/DECISIONS.md` entry.
+9. If a new failure mode was discovered, append **anti-patterns** in `docs/IMPLEMENTATION_PLAYBOOK.md`.
 
 ## Ingest Figma screens (patterns / blocks — default when user shares links)
 
@@ -44,7 +50,8 @@ For each shared frame/section:
    **Figma = structure only.** Never paste Figma sample copy into landings — content from TZ/brief.
 5. **Rules:** when to use / not use; what must not be substituted (e.g. spreads ≠ markets table).
 6. **Inventory:** update `block-inventory.json` (`type`, props, status, figma node).
-7. **Code** only if shipping now: types + component + BlockRenderer (see “Add a new block type”).
+7. **Code** only if shipping now: types + component + BlockRenderer (see “Add a new block type”).  
+   Use MCP `get_design_context` + download assets — see playbook §3 and §7.
 8. **Provenance:** `sources.md` + `CHANGELOG.md`.
 9. **Reuse check:** next landing with same intent must use the registered `type`, different content only.
 
@@ -53,6 +60,8 @@ Canonical teaching examples (homepage):
 - Our spreads → `spread-cards` (`27873:297368`)
 - Ready to start trading? → `cta` / footer (`27873:297571`)
 - How it works → `steps` (`31517:366918`)
+
+Footer AU mega chrome: `24400:154127` — see `header-footer.md` + playbook §5.
 
 ## Ingest Figma tokens (foundations)
 
@@ -77,5 +86,18 @@ Canonical teaching examples (homepage):
 
 1. Add to `component-inventory.json`.
 2. Implement under `components/ui/`.
-3. Use only semantic tokens.
+3. Use only semantic tokens (or document Figma-parity exceptions).
 4. Changelog + mark status honestly (`draft` / `ready`).
+
+## Visual QA gate (before claiming done)
+
+Mandatory when the task is UI / Figma parity:
+
+1. **Figma node open** (same node user linked).
+2. **Measure** gaps, widths, type, fills — not eye-ball only.
+3. **Assets** from Figma MCP committed under `public/`.
+4. **CSS cascade** check (generic rules vs specific variants).
+5. **Content** is TZ (no Figma sample competitors/copy).
+6. **Prod** hard-refresh after deploy.
+
+Details and anti-patterns: `docs/IMPLEMENTATION_PLAYBOOK.md` §§2–9.

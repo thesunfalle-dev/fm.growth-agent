@@ -4,12 +4,14 @@
 
 ## Start here
 
-1. `DESIGN.md` — policy
-2. `design-tokens.json` — values
-3. `block-inventory.json` — what agents may build
-4. `implementation-contract.md` — how code must look
-5. `sources.md` — Figma / provenance
-6. `CHANGELOG.md` — history
+1. `../docs/IMPLEMENTATION_PLAYBOOK.md` — **agent process, Figma 1:1, anti-patterns**
+2. `DESIGN.md` — policy
+3. `design-tokens.json` — values
+4. `block-inventory.json` — what agents may build
+5. `implementation-contract.md` — how code must look
+6. `header-footer.md` — SiteHeader / SiteFooter
+7. `sources.md` — Figma / provenance
+8. `CHANGELOG.md` — history
 
 ## Commands
 

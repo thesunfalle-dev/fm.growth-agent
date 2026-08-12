@@ -19,6 +19,8 @@
 Titles, body, table cells, FAQ Q&A, competitor names, spreads → always from **TZ / brief**.  
 If TZ is silent, use a short neutral placeholder and flag it — never invent from Figma lorem.
 
+**Process:** Full agent process, verification, and anti-patterns → `docs/IMPLEMENTATION_PLAYBOOK.md`.
+
 Examples from homepage (same design everywhere, data changes):
 
 | Intent on any page | Canonical Figma | Inventory |

@@ -22,7 +22,9 @@ Track unknowns instead of inventing answers. Resolve → move summary into `DECI
 - [ ] Who approves copy/claims before a slug is shared outside the team?
 - [ ] Should `listed: true` index stay public on `/` or become private later?
 - [ ] Preferred slug naming convention for campaigns (date prefix? market code?)
-- [ ] When to enable GitHub Actions auto-deploy secrets
+- [x] GitHub Actions auto-deploy — secrets configured; ship via push to `main`
+- [ ] Official TikTok URL (Figma footer has icon; fusionmarkets.com main footer had no TikTok link as of 2026-08-12)
+- [x] Agent process docs — `docs/IMPLEMENTATION_PLAYBOOK.md` (required orientation)
 
 ## Content / compliance
 

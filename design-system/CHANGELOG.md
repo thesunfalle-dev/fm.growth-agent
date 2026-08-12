@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-12 — Implementation playbook + chrome parity lessons
+
+- Added `docs/IMPLEMENTATION_PLAYBOOK.md`: Figma→code process, measure checklist, asset workflow, ship pipeline, **anti-patterns** from Crypto LP.
+- Orientation: `AGENTS.md` + `docs/WORKFLOW.md` require playbook for UI work.
+- Decisions: live social hrefs; Figma SVGs for chrome icons (language, social, TV).
+- Header: Language icon = Figma SVG (purple gradient), not Material `language`.
+- Footer AU 1:1: 3×215 stacks, purple social icons, contact icon-above-text, live social URLs.
+
 ## 2026-08-12 — Content from TZ only (Figma structure)
 
 - Hard rule restated: Figma = block structure; landings content only from TZ/brief.

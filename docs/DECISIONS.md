@@ -4,6 +4,41 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 ---
 
+## 2026-08-12 — Implementation playbook is mandatory agent process
+
+**Context:** Crypto LP iteration exposed repeated process failures: Figma copy used as content, wrong chrome assets (Material vs Figma SVG), invented social URLs, flat footer instead of 3-stack mega layout, CSS cascade gaps, “done” without measuring Figma.
+
+**Decision:**
+
+1. Agents must follow `docs/IMPLEMENTATION_PLAYBOOK.md` for any landing / chrome / Figma UI work.
+2. Anti-patterns in that playbook are a **pre-merge self-review** list (not optional lore).
+3. New failure modes discovered in production must be **appended** to the playbook anti-patterns + CHANGELOG when DS-related.
+4. `AGENTS.md` orientation list includes the playbook.
+
+**Consequences:** Slightly more reading before coding; fewer multi-round “fix alignment” loops.
+
+---
+
+## 2026-08-12 — Live site owns public social hrefs
+
+**Context:** Footer social links were invented (`facebook.com/FusionMarkets`, generic handles). Live `fusionmarkets.com` uses AU-specific pages and channel IDs.
+
+**Decision:** Social **URLs** come from the live Fusion marketing site footer (or explicit product list). Figma owns **icon art and layout** only. If a network (e.g. TikTok) is in Figma but absent on the live footer, keep the icon for layout parity and document the best-known public handle until product confirms.
+
+**Consequences:** Scrape or check live site when adding/updating social chrome.
+
+---
+
+## 2026-08-12 — Figma brand assets over Material for chrome icons
+
+**Context:** Header language used Material `language`; Figma Header_Desktop uses a custom Language SVG with primary purple gradient. Footer social fills are purple gradient, not text navy.
+
+**Decision:** For marketing chrome (header language, footer social, TV badge, contact row icons when Figma provides them), **prefer Figma-exported SVG** under `public/brand/`. Material Symbols remain the default for generic UI (FAQ chevrons, search, menu) when Figma specifies Material / system icons.
+
+**Consequences:** More assets in `public/brand/`; fewer “looks almost like Figma” mismatches.
+
+---
+
 ## 2026-08-12 — Figma = structure only; TZ = content
 
 **Context:** Agents were filling USP/compare/etc. with Figma sample marketing copy (Coinbase, “Zero Commissions” placeholder text). Figma Final Pages are **composition reference**, not campaign copy.

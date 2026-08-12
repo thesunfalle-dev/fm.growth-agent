@@ -7,21 +7,23 @@ Primary workflow: **edit → commit → push → deploy to production**. Do not 
 ## Required orientation (read before changing UI or design)
 
 1. `AGENTS.md` (this file)
-2. `docs/DECISIONS.md`
-3. `docs/WORKFLOW.md`
-4. `design-system/DESIGN.md`
-5. `design-system/design-tokens.json`
-6. `design-system/component-inventory.json`
-7. `design-system/block-inventory.json`
-8. `design-system/pattern-catalog.md` (**reusable patterns** — every shared Figma screen updates this)
-9. `design-system/page-recipes.md` (full page stacks → pattern order)
-10. `design-system/assembly.md` (compose from inventory; structure vs content)
-11. `design-system/homepage-patterns.md` (site home assembly + adaptive)
-12. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
-13. `design-system/responsive-rules.md`
-14. `design-system/implementation-contract.md`
-15. `design-system/sources.md`
-16. `brand/compliance.md` (before publishing marketing copy)
+2. `docs/IMPLEMENTATION_PLAYBOOK.md` (**process, Figma 1:1, anti-patterns — required for UI work**)
+3. `docs/DECISIONS.md`
+4. `docs/WORKFLOW.md`
+5. `design-system/DESIGN.md`
+6. `design-system/design-tokens.json`
+7. `design-system/component-inventory.json`
+8. `design-system/block-inventory.json`
+9. `design-system/pattern-catalog.md` (**reusable patterns** — every shared Figma screen updates this)
+10. `design-system/page-recipes.md` (full page stacks → pattern order)
+11. `design-system/assembly.md` (compose from inventory; structure vs content)
+12. `design-system/homepage-patterns.md` (site home assembly + adaptive)
+13. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
+14. `design-system/header-footer.md` (SiteHeader / SiteFooter chrome)
+15. `design-system/responsive-rules.md`
+16. `design-system/implementation-contract.md`
+17. `design-system/sources.md`
+18. `brand/compliance.md` (before publishing marketing copy)
 
 When the user shares Figma screens: **register patterns** (catalog + inventory + sources/changelog). Do not only “remember” them.
 
@@ -81,22 +83,32 @@ Do **not** invent a full Fusion brand system from the live site without recordin
 
 Before calling UI/design work done:
 
+1. Follow **Definition of done** in `docs/IMPLEMENTATION_PLAYBOOK.md` §11 (Figma measure + TZ content + cascade + prod).
+2. Commands:
+
 ```bash
 npm run generate:tokens
 npm run validate:design
 npm run build
 ```
 
-Production ship (default):
+Production ship (default): commit + push (GitHub Actions) or:
 
 ```bash
 npm run deploy
 ```
 
+Then hard-refresh `https://fm.growth-agent.org/{slug}/`.
+
 ## What not to do
 
+- Do not paste **Figma sample copy** into landings (structure only; content from TZ) — see playbook §1 / anti-patterns.
+- Do not invent section layouts outside `block-inventory.json`.
+- Do not invent social URLs — scrape live `fusionmarkets.com` (playbook §5).
+- Do not replace Figma chrome SVGs with Material “lookalikes” without checking the node.
 - Do not hardcode Fusion claims without `brand/compliance.md` checks.
 - Do not remove `noindex` / robots protections without an explicit product decision.
 - Do not connect paid ads to preview URLs without an explicit decision.
 - Do not edit `design-system/generated/*` by hand.
 - Do not expand scope into a multi-tenant product platform in this repo without a decision record.
+- Do not call UI done from a single screenshot without measuring Figma gaps/assets.

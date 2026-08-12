@@ -94,10 +94,16 @@ Use **`Logo`** + **`Icon`** (Material Symbols only). See `logos-icons.md`.
 | language / search / menu | Material: `language`, `search`, `menu` |
 | Footer contact | Material: `mail_outline`, `call`, `room` |
 
-## Out of scope for landings v0.8
+## Out of scope / later
 
-- Full mega-footer every sub-link from AU/EN legal PDFs
-- Country flag switcher UI
+- Country flag **switcher** UI (flag mark in contact is shipped)
 - Nav Bar active purple underline component
 - Mobile accordion footer sections
-- Official social brand SVGs (text labels for now)
+- Full EN legal variant (`23377:111177`)
+
+## Agent notes (do not regress)
+
+- Language control: **`public/brand/language.svg`** (Figma), not Material `language`.
+- Social icons: Figma purple **gradient** SVGs; hrefs from **live** fusionmarkets.com (see `lib/navigation.ts`).
+- Contact card: icon **above** text, centered (not horizontal Material row).
+- Full process: `docs/IMPLEMENTATION_PLAYBOOK.md` §5 and anti-patterns #10–14.
