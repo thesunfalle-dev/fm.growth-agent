@@ -1,19 +1,18 @@
 import type { LandingDocument } from "@/lib/types";
 
 /**
- * Crypto CFDs — USER STORY “Crypto LP”.
- * Desktop stack aligned to market recipe M1 (Forex template) + campaign extras.
- * Ready-only blocks (design-system/assembly.md, page-recipes.md M1).
+ * Crypto CFDs — USER STORY / TZ “Crypto LP”.
  *
- * M1 ideal: market-hero → education-split → features usp → instruments table → faq → footer CTA
- * Ready now:  hero brandBackground (Primary/Light) → features usp → table →
- *             optional compare table + steps → faq → disclaimer
- *             (end CTA = SiteFooter CTAFooter — no mid/end `cta` blocks)
+ * Structure (layout, block types): Figma DS / recipes only.
+ * Content (copy, numbers, which rows/cards): TZ / user story only — never Figma placeholder text.
+ *
+ * Stack (ready-only): hero brand BG → features usp → instruments table →
+ * compare matrix → steps → faq → disclaimer (footer CTAFooter).
  */
 const landing: LandingDocument = {
   slug: "crypto",
   name: "Crypto CFDs",
-  note: "M1 market desktop: brand hero + USP → instruments → compare → steps → FAQ. Footer CTA.",
+  note: "M1 structure + TZ content. Figma = layout only.",
   listed: true,
   status: "draft",
   createdAt: "2026-08-12",
@@ -24,14 +23,14 @@ const landing: LandingDocument = {
       "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more. Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
   },
   blocks: [
-    // —— 1. Market header substitute (M1 market-hero planned; no TV chart yet) ——
+    // —— 1. Market hero structure; pitch from TZ ——
     {
       type: "hero",
       brandBackground: true,
       eyebrow: "Crypto CFDs",
       title: "Trade Crypto CFDs No Commission",
       subtitle:
-        "CFDs on Bitcoin, Ethereum, Dogecoin and more — Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
+        "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more. Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
       primaryCta: {
         label: "Start trading",
         href: "https://hub.fusionmarkets.com/auth/sign-up",
@@ -42,43 +41,55 @@ const landing: LandingDocument = {
       },
     },
 
-    // —— 2. Why Trade… USP (Figma 23570:105076 — exactly 4 cards) ——
+    // —— 2. USP card structure (Figma); 6 points from TZ ——
     {
       type: "features",
       variant: "usp",
-      title: "Why Trade Crypto CFDs with Fusion",
+      title: "Why trade Crypto CFDs with Fusion Markets?",
       items: [
         {
-          title: "Zero Commissions",
+          title: "No Commission",
           illustration: "bitcoin",
           description:
-            "We offer some of the lowest fees in the market, tight spreads and charge A$0 in commissions.\n\nSee our comparison table and compare us against other providers.",
+            "As part of our mission to keep our fees low, we charge 0.04% as opposed to 1%+ on Aussie Crypto exchanges.",
         },
         {
-          title: "Go long or short",
-          illustration: "trade",
+          title: "$0 Minimum Account Size",
+          illustration: "hand",
           description:
-            "Our Crypto CFDs allow you to go both long or short, so you can take advantage of any price movements.",
+            "We don’t believe in teasing you with lower costs and then making you pay more later. With Fusion Markets, you can start with as much or as little as you’d like.",
         },
         {
-          title: "No Minimum Account size",
+          title: "$0 Deposit Fees",
+          illustration: "deposit",
+          description:
+            "We cover all deposit fees on all of our 20+ methods of funding including Visa, MasterCard, PayPal and more.",
+        },
+        {
+          title: "Easy sign-up",
           illustration: "user-auth",
           description:
-            "Unlike other brokers who charge fees to deposit, we want to make trading accessible to everyone.\n\nThat’s why we have no minimum deposit requirements or deposit fees.",
+            "The majority of our clients open, fund and start trading all within five minutes.",
         },
         {
-          title: "Trade with Leverage",
+          title: "Go Long and Short",
+          illustration: "trade",
+          description:
+            "With our Crypto CFDs, you can capitalise on all price movements by being able to go both long or short.",
+        },
+        {
+          title: "Leverage your Trades",
           illustration: "chart",
           description:
-            "Increase your buying power with leverage and get greater exposure on your trades.\n\nGet 1:2 leverage as a Retail Client or 1:10 as a Pro Client on Fusion Markets.",
+            "Get 1:2 leverage as a Retail Client or 1:10 as a Pro Client with Fusion Markets and increase your buying power with leverage and get increased exposure on your trades.",
         },
       ],
     },
 
-    // —— 3. Instruments (Figma Crypto_2 + Pricing section 23570:104166 layout) ——
+    // —— 3. Markets table structure; instruments/spreads from TZ ——
     {
       type: "table",
-      title: "Our Crypto Trading Instruments",
+      title: "Our crypto CFD instruments",
       showSearch: true,
       columns: [
         { id: "symbol", header: "Symbol", width: "400px", align: "left" },
@@ -102,7 +113,7 @@ const landing: LandingDocument = {
           cells: {
             symbol: {
               title: "Bitcoin",
-              meta: "Bitcoin / US Dollar",
+              meta: "BTC/USD",
               iconSrc: "/images/markets/btc.png",
             },
             hours: "24/7",
@@ -115,7 +126,7 @@ const landing: LandingDocument = {
           cells: {
             symbol: {
               title: "Ethereum",
-              meta: "Ethereum / US Dollar",
+              meta: "ETH/USD",
               iconSrc: "/images/markets/eth.svg",
             },
             hours: "24/7",
@@ -128,7 +139,7 @@ const landing: LandingDocument = {
           cells: {
             symbol: {
               title: "Dogecoin",
-              meta: "Dogecoin / US Dollar",
+              meta: "DOGE/USD",
               iconSrc: "/images/markets/doge.svg",
             },
             hours: "24/7",
@@ -141,7 +152,7 @@ const landing: LandingDocument = {
           cells: {
             symbol: {
               title: "Solana",
-              meta: "Solana / US Dollar",
+              meta: "SOL/USD",
               iconSrc: "/images/markets/sol.svg",
             },
             hours: "24/7",
@@ -154,7 +165,7 @@ const landing: LandingDocument = {
           cells: {
             symbol: {
               title: "Cardano",
-              meta: "Cardano / US Dollar",
+              meta: "ADA/USD",
               iconSrc: "/images/markets/ada.svg",
             },
             hours: "24/7",
@@ -164,108 +175,78 @@ const landing: LandingDocument = {
         },
       ],
       footnote:
-        "Indicative spreads for this internal preview. Confirm live pricing in the Client Hub or Spreads Tool. Cryptocurrency spreads are not measured in pips.",
+        "Sample pairs from the campaign brief. Confirm live pricing in the Client Hub or Spreads Tool.",
     },
 
-    // —— 4. How We Compare (Figma Crypto 23570:105086) ——
+    // —— 4. Compare matrix structure; columns/rows from TZ (not Figma sample competitors) ——
     {
       type: "table",
       variant: "compare",
-      title: "How We Compare",
-      subtitle: "See why we have an edge over other Crypto Providers",
+      title: "How we compare against other crypto providers",
+      subtitle:
+        "Indicative comparison for this campaign. Always verify live fees and conditions before trading.",
       showSearch: false,
       columns: [
         { id: "feature", header: "" },
         { id: "fusion", header: "Fusion Markets" },
-        { id: "coinbase", header: "Coinbase" },
-        { id: "coinspot", header: "CoinSpot" },
-        { id: "gemini", header: "Gemini" },
-        { id: "binance", header: "Binance" },
+        { id: "exchange", header: "Typical AU exchange" },
       ],
       rows: [
         {
           id: "min",
           cells: {
-            feature: "Minimum Deposit",
+            feature: "Minimum deposit",
             fusion: "$0",
-            coinbase: "$50",
-            coinspot: "$1",
-            gemini: "$0",
-            binance: "$0 or $50",
-          },
-        },
-        {
-          id: "demo",
-          cells: {
-            feature: "Demo Account",
-            fusion: "Yes",
-            coinbase: "No",
-            coinspot: "No",
-            gemini: "No",
-            binance: "No",
+            exchange: "Often $50+",
           },
         },
         {
           id: "fees",
           cells: {
-            feature: "Bitcoin Trading Fees",
-            fusion: "0.06%",
-            coinbase: {
-              lines: ["0.4%/0.6%", "(Maker/Taker)"],
-            },
-            coinspot: "0.1%",
-            gemini: {
-              lines: ["0.2%/0.4%", "(Maker/Taker)"],
-            },
-            binance: {
-              lines: ["0.1%/0.1%", "(Maker/Taker)"],
-            },
+            feature: "Trading cost (BTC)",
+            fusion: "From 0.04%",
+            exchange: "Often 1%+",
+          },
+        },
+        {
+          id: "commission",
+          cells: {
+            feature: "Commission",
+            fusion: "$0",
+            exchange: "Varies",
+          },
+        },
+        {
+          id: "direction",
+          cells: {
+            feature: "Go long & short",
+            fusion: "Yes",
+            exchange: "Usually long only",
           },
         },
         {
           id: "leverage",
           cells: {
-            feature: "Leverage Available",
-            fusion: "Yes",
-            coinbase: "No",
-            coinspot: "No",
-            gemini: "No",
-            binance: "No",
+            feature: "Leverage",
+            fusion: "Retail 1:2 / Pro 1:10",
+            exchange: "Typically none",
           },
         },
         {
-          id: "trust",
+          id: "deposit-fees",
           cells: {
-            feature: "TrustPilot Score",
-            fusion: {
-              imageSrc: "/images/compare/fusion-trust.png",
-              meta: "Fusion Markets on Trustpilot",
-            },
-            coinbase: {
-              imageSrc: "/images/compare/coinbase-trust.png",
-              meta: "Coinbase on Trustpilot",
-            },
-            coinspot: {
-              imageSrc: "/images/compare/coinspot-trust.png",
-              meta: "CoinSpot on Trustpilot",
-            },
-            gemini: {
-              imageSrc: "/images/compare/gemini-trust.png",
-              meta: "Gemini on Trustpilot",
-            },
-            binance: {
-              imageSrc: "/images/compare/binance-trust.png",
-              meta: "Binance on Trustpilot",
-            },
+            feature: "Deposit fees",
+            fusion: "$0",
+            exchange: "Often charged",
           },
         },
       ],
     },
 
-    // —— 5. How it works (Figma process 29987:339011 — horizontal + dual CTA) ——
+    // —— 5. Steps process structure; onboarding copy for this campaign ——
     {
       type: "steps",
-      title: "How It Works",
+      title: "How it works",
       subtitle: "Opening a trading account with Fusion Markets is simple:",
       orientation: "horizontal",
       items: [
@@ -278,13 +259,13 @@ const landing: LandingDocument = {
         {
           title: "Verify your identity",
           description:
-            "Confirm your ID electronically or with two forms of ID documentation. 90% of new accounts are approved within the hour.",
+            "We need to confirm your ID. This can be done electronically or by submitting two forms of ID Documentation. 90% of new accounts are approved within the hour.",
           active: false,
         },
         {
           title: "Fund and trade crypto CFDs",
           description:
-            "Deposit with no deposit fees and start trading Bitcoin, Ethereum and other crypto CFDs on MT4, MT5, TradingView or cTrader.",
+            "Deposit with your preferred method (no deposit fees) and start trading Bitcoin, Ethereum and other crypto CFDs on MT4, MT5, TradingView or cTrader.",
           active: false,
         },
       ],
@@ -298,10 +279,10 @@ const landing: LandingDocument = {
       },
     },
 
-    // —— 6. FAQ (M1) ——
+    // —— 6. FAQ structure; Q&A from TZ ——
     {
       type: "faq",
-      title: "FAQs",
+      title: "Crypto CFDs FAQ",
       openFirst: true,
       items: [
         {
@@ -332,7 +313,6 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— 7. Disclaimer only — Ready to start = SiteFooter CTAFooter ——
     {
       type: "disclaimer",
       text: "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money. Crypto CFDs are especially volatile. This is an internal Growth Agent preview on fm.growth-agent.org and is not an official Fusion Markets publication. Spreads, leverage and product availability depend on entity and client classification — verify on the live site and legal documents before trading.",

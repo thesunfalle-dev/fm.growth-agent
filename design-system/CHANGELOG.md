@@ -1,5 +1,10 @@
 # Design system changelog
 
+## 2026-08-12 — Content from TZ only (Figma structure)
+
+- Hard rule restated: Figma = block structure; landings content only from TZ/brief.
+- Crypto: restored TZ USP (6 points), TZ compare (Fusion vs AU exchange), TZ titles/FAQ.
+
 ## 2026-08-12 — Why USP band (Figma 23570:105076)
 
 - USP section: soft purple band, title + **exactly 4** cards (not 6), Figma copy + illustrations.

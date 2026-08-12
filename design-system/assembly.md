@@ -11,8 +11,13 @@
 | | Structure | Content |
 |--|-----------|---------|
 | **What** | Layout, components, spacing, interaction pattern | Strings, numbers, images, hrefs, which rows/cards |
-| **Source** | Homepage (or shared DS) Figma section | Brief / TZ / locale |
+| **Source** | Homepage (or shared DS) Figma section | **Brief / TZ / user story only** |
 | **When shipping** | Reuse one inventory block | Fill props only |
+
+**Hard rule:** Figma shows **how blocks are built** (composition, spacing, card anatomy).  
+**Do not copy Figma placeholder / sample marketing copy** into `landings/*/content.ts`.  
+Titles, body, table cells, FAQ Q&A, competitor names, spreads → always from **TZ / brief**.  
+If TZ is silent, use a short neutral placeholder and flag it — never invent from Figma lorem.
 
 Examples from homepage (same design everywhere, data changes):
 

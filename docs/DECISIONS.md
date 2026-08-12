@@ -4,6 +4,19 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 ---
 
+## 2026-08-12 — Figma = structure only; TZ = content
+
+**Context:** Agents were filling USP/compare/etc. with Figma sample marketing copy (Coinbase, “Zero Commissions” placeholder text). Figma Final Pages are **composition reference**, not campaign copy.
+
+**Decision:**  
+- **Figma / DS:** block structure, spacing, variants, which pattern.  
+- **TZ / user story / brief:** all user-facing strings, numbers, product claims, competitor lists.  
+- Never ship Figma lorem or sample competitor tables as if they were the campaign.
+
+**Consequences:** Crypto and future landings keep Figma layouts; content always reverts to TZ when they diverge.
+
+---
+
 ## 2026-08-12 — Figma screens register reusable patterns
 
 **Context:** New Figma links are not for casual visual memory. Marketing pages share the same section designs with different content; agents must not invent parallel layouts.

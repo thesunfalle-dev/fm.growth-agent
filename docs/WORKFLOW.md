@@ -40,7 +40,8 @@ For each shared frame/section:
    - same structure → add under **Also seen on**  
    - new structure → new pattern entry (template in that file)
 3. If a **full page** was shared: add/update stack in `design-system/page-recipes.md` (section → pattern).
-4. **Structure vs content:** document fixed layout + content props only.
+4. **Structure vs content:** document fixed layout + content props only.  
+   **Figma = structure only.** Never paste Figma sample copy into landings — content from TZ/brief.
 5. **Rules:** when to use / not use; what must not be substituted (e.g. spreads ≠ markets table).
 6. **Inventory:** update `block-inventory.json` (`type`, props, status, figma node).
 7. **Code** only if shipping now: types + component + BlockRenderer (see “Add a new block type”).
