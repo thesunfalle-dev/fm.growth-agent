@@ -32,10 +32,23 @@ export type LandingBlock =
       eyebrow?: string;
       title: string;
       subtitle?: string;
+      /** Bullet points under H1 (market / offer heroes). */
+      bullets?: string[];
+      /** Small line under CTAs (e.g. Trustpilot note). */
+      proofNote?: string;
       primaryCta?: LandingCta;
       secondaryCta?: LandingCta;
       /** Use shared brand purple background art (Images frame). */
       brandBackground?: boolean;
+      /**
+       * Optional right-column table (e.g. crypto spreads preview).
+       * Desktop: split with copy; mobile: stacks under CTAs.
+       */
+      table?: {
+        title?: string;
+        columns: TableColumnSpec[];
+        rows: TableRowSpec[];
+      };
     }
   | {
       type: "features";

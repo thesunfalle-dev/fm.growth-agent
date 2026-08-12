@@ -19,9 +19,12 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 eyebrow={block.eyebrow}
                 title={block.title}
                 subtitle={block.subtitle}
+                bullets={block.bullets}
+                proofNote={block.proofNote}
                 primaryCta={block.primaryCta}
                 secondaryCta={block.secondaryCta}
                 brandBackground={block.brandBackground}
+                table={block.table}
               />
             );
           case "features":

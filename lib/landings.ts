@@ -1,4 +1,5 @@
 import type { LandingDocument, LandingMeta } from "@/lib/types";
+import crypto from "@/landings/crypto/content";
 import demo from "@/landings/demo/content";
 import demoB from "@/landings/demo-b/content";
 
@@ -6,7 +7,7 @@ import demoB from "@/landings/demo-b/content";
  * Register every landing here.
  * Add a folder under /landings/{slug}/content.ts and import it.
  */
-const registry: LandingDocument[] = [demo, demoB];
+const registry: LandingDocument[] = [demo, demoB, crypto];
 
 function assertUniqueSlugs(items: LandingDocument[]) {
   const seen = new Set<string>();
