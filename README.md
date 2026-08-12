@@ -10,53 +10,34 @@ This is **not** the main Growth Agent app (`growth-agent.org`). Separate project
 
 ---
 
-## Quick start
+## Production-first workflow
+
+We **don’t rely on local preview**. Source of truth is GitHub + Cloudflare Pages.
+
+| URL | Status |
+|-----|--------|
+| https://fm-growth-agent.pages.dev/ | live now |
+| https://fm-growth-agent.pages.dev/demo/ | live now |
+| https://fm.growth-agent.org/{slug}/ | after DNS CNAME (see below) |
+
+### Ship a change
 
 ```bash
-npm install
-npm run dev
+# edit landings / code
+git add . && git commit -m "Add landing …"
+git push
+npm run deploy   # build + wrangler pages deploy → production
 ```
 
-- Index: http://localhost:3000/
-- Demo: http://localhost:3000/demo/
-- Demo B: http://localhost:3000/demo-b/
+Or: push to `main` and let GitHub Actions deploy (needs secrets once — see Deploy).
 
-```bash
-npm run build    # writes static site to out/
-npm run preview  # optional local static server
-```
+### Add a landing (`/slug`)
 
----
-
-## Add a landing (`/slug`)
-
-1. Copy a folder:
-
-   ```bash
-   cp -R landings/demo landings/my-campaign-a
-   ```
-
-2. Edit `landings/my-campaign-a/content.ts`:
-   - set `slug: "my-campaign-a"` (must match folder name by convention)
-   - fill `seo`, `blocks`, status
-
-3. Register it in `lib/landings.ts`:
-
-   ```ts
-   import myCampaignA from "@/landings/my-campaign-a/content";
-   // ...
-   const registry = [demo, demoB, myCampaignA];
-   ```
-
-4. Run locally, then ship:
-
-   ```bash
-   npm run build
-   git add . && git commit -m "Add landing my-campaign-a"
-   git push
-   ```
-
-Live URL after Pages deploy: `https://fm.growth-agent.org/my-campaign-a/`
+1. Copy a folder: `cp -R landings/demo landings/my-campaign-a`
+2. Edit `landings/my-campaign-a/content.ts` (`slug`, `seo`, `blocks`)
+3. Register import in `lib/landings.ts`
+4. Commit, push, `npm run deploy`
+5. Share: `https://fm.growth-agent.org/my-campaign-a/` (or `*.pages.dev` until DNS is ready)
 
 ### Slug rules
 
@@ -84,64 +65,37 @@ public/              # robots, _headers for CF Pages
 
 ---
 
-## Deploy: Cloudflare Pages + Git (recommended)
+## Deploy (already set up)
 
-### 1. Create GitHub/GitLab repo
+- **Pages project:** `fm-growth-agent`
+- **GitHub:** https://github.com/thesunfalle-dev/fm.growth-agent
+- **Production deploy command:** `npm run deploy` (uses logged-in wrangler)
 
-```bash
-git init
-git add .
-git commit -m "Initial FM landings scaffold"
-# create empty remote, then:
-git remote add origin git@github.com:<you>/fm-landings.git
-git branch -M main
-git push -u origin main
-```
+### Custom domain DNS (one-time, manual)
 
-### 2. Cloudflare Pages project
+Custom domain is registered on the Pages project, but DNS write needs a click in the dashboard (API token has no zone edit):
 
-1. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → Connect git
-2. Settings:
+1. Cloudflare → zone **growth-agent.org** → **DNS**
+2. Add record:
 
-   | Setting | Value |
-   |---------|--------|
-   | Framework preset | Next.js (or None) |
-   | Build command | `npm run build` |
-   | Build output directory | `out` |
-   | Root directory | `/` (repo root) |
-   | Node version | `22` (or `20`) |
+   | Type | Name | Target | Proxy |
+   |------|------|--------|-------|
+   | CNAME | `fm` | `fm-growth-agent.pages.dev` | Proxied |
 
-3. Deploy once → you get `*.pages.dev`.
+3. Wait 1–2 minutes → https://fm.growth-agent.org/demo/
 
-### 3. Custom domain `fm.growth-agent.org`
+### Optional: auto-deploy on every `git push`
 
-1. Pages project → **Custom domains** → `fm.growth-agent.org`
-2. Cloudflare will add the DNS record on zone `growth-agent.org` (or add manually):
+Workflow: `.github/workflows/deploy.yml`
 
-   | Type | Name | Target |
-   |------|------|--------|
-   | CNAME | `fm` | `<your-project>.pages.dev` |
+Add repo secrets:
 
-   Proxy status: **Proxied** (orange cloud).
+| Secret | Value |
+|--------|--------|
+| `CLOUDFLARE_ACCOUNT_ID` | `9158da08ff0d2f68f183250a5ab55808` |
+| `CLOUDFLARE_API_TOKEN` | API Token with **Cloudflare Pages — Edit** |
 
-3. Wait for SSL (usually minutes).
-
-### 4. Everyday workflow
-
-```
-brief → edit landings/{slug}/content.ts → commit → push → live /{slug}/
-```
-
-Preview deployments: every PR/branch can get a unique `*.pages.dev` URL if enabled.
-
-### Manual deploy (optional, no git hook)
-
-```bash
-npm run build
-npx wrangler pages deploy out --project-name=fm-landings
-```
-
-(Requires `wrangler` login and an existing Pages project.)
+Until secrets exist, use `npm run deploy` after push (same result).
 
 ---
 
