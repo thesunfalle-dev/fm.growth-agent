@@ -15,10 +15,10 @@ Fonts in code: **Noto Sans** (nav, CTAs, titles) + **Roboto** (footer links, bod
 | Header_Mobile Nav Bar close/return | `16373:19318` / `16373:19336` | planned |
 | Nav Bar On/Off indicator | `16370:19277` | planned (active underline) |
 | Mobile Menu Dropdown | `15781:20623` | partial (`details` panel) |
-| Footer desktop AU | `15866:27010` | **ready** foundation (`SiteFooter`) |
+| Footer desktop AU | `15866:27010` / `24400:154127` | **ready** 1:1 stacks (`SiteFooter`) |
 | Footer desktop EN | `23377:111177` | planned (legal content variant) |
 | Footer mobile AU/EN | `15977:21970` / `23368:105447` | responsive layout ready; full accordion planned |
-| Social icon set + TV badge | in footer | partial (text links) |
+| Social icon set + TV badge | in footer | **ready** (SVG icons + TV badge) |
 
 ## Desktop header rules (frame)
 
@@ -51,14 +51,19 @@ Fonts in code: **Noto Sans** (nav, CTAs, titles) + **Roboto** (footer links, bod
 | Spec | Value |
 |------|--------|
 | Placement | always **below** “Ready to start trading?” CTA band |
-| Main block height (rules) | 545px (content-driven in code) |
 | Vertical padding | **60px** |
 | Horizontal padding | **80px** |
-| CTA title | 48px Noto Sans SemiBold, “Ready to start trading?” |
+| CTA title | 48px Noto Sans SemiBold `#0D1350`, tracking −0.02em |
 | CTA actions gap | **24px** (Start trading · or · Try a free demo) |
-| Column titles | 20px SemiBold |
-| Column links | Roboto 14 Regular, gap 8 |
-| Help cards | bordered 12px radius (Need help? + Contact us) |
+| Brand → links gap | **40px** |
+| Social | Follow us Light 16 · icons 24 · icon gap **24** · label gap **28** · TV badge 143×40 |
+| Link columns | **3 stacks × 215px**, column gap **100**, group stack gap **56** |
+| Group title → links | **12px** |
+| Column titles | 20px SemiBold / 130% `#0D1350` |
+| Column links | Roboto 14 Regular / 150% `#0D1350`, gap **8** |
+| Help cards | width **332**, border blue100, radius **12**, Need help? + contact |
+| Bar | copyright 16 + Privacy/Terms SemiBold 16 |
+| Legal | 12px Gray/600 stack |
 
 ## Mobile footer rules (frame)
 

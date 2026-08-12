@@ -10,6 +10,19 @@ export type SocialItem = {
   iconSrc: string;
 };
 
+/** One titled link group (Figma: title 20 + links 14, gap 12 / 8). */
+export type FooterLinkGroup = {
+  title: string;
+  links: NavItem[];
+};
+
+/**
+ * Desktop mega-footer — Figma Footer AU `24400:154127` / `15866:27010`.
+ * Three vertical stacks (gap 56 between groups), then help cards.
+ * Column width 215px, stack gap 100px between columns.
+ */
+export type FooterStack = FooterLinkGroup[];
+
 /** Default marketing site nav — Website Redesign Header_Desktop */
 export const primaryNav: NavItem[] = [
   { label: "Trading", href: "https://fusionmarkets.com/Trading/Forex" },
@@ -20,95 +33,154 @@ export const primaryNav: NavItem[] = [
   { label: "Help", href: "https://fusionmarkets.com/" },
 ];
 
-/**
- * Footer link groups — Figma Footer AU `24400:154127` / `15866:27010`.
- * Column order mirrors desktop mega-footer (simplified link set for landings).
- */
-export const footerColumns: Array<{ title: string; links: NavItem[] }> = [
+const fm = "https://fusionmarkets.com";
+const hub = "https://hub.fusionmarkets.com";
+
+/** Column 1 — Accounts / Markets / Tools / Conditions & Funding */
+export const footerStack1: FooterStack = [
   {
     title: "Accounts",
     links: [
-      { label: "Zero Account", href: "https://fusionmarkets.com/" },
-      { label: "Classic Account", href: "https://fusionmarkets.com/" },
-      { label: "Demo Account", href: "https://hub.fusionmarkets.com/auth/sign-up" },
-      { label: "Swap Free Accounts", href: "https://fusionmarkets.com/" },
+      { label: "Zero Account", href: `${fm}/` },
+      { label: "Classic Account", href: `${fm}/` },
+      { label: "Demo Account", href: `${hub}/auth/sign-up` },
+      { label: "Swap Free Accounts", href: `${fm}/` },
     ],
   },
   {
     title: "Markets",
     links: [
-      { label: "Forex", href: "https://fusionmarkets.com/Trading/Forex" },
-      { label: "Metals", href: "https://fusionmarkets.com/" },
-      { label: "Indices", href: "https://fusionmarkets.com/Trading/Equity-Indices-CFD" },
-      {
-        label: "Energy & Soft Commodities",
-        href: "https://fusionmarkets.com/Trading/Energy-and-soft-commodities",
-      },
-      { label: "Cryptocurrency", href: "https://fusionmarkets.com/Trading/Crypto-CFD" },
-      { label: "US Share CFDs", href: "https://fusionmarkets.com/" },
+      { label: "Forex", href: `${fm}/Trading/Forex` },
+      { label: "Metals", href: `${fm}/` },
+      { label: "Indices", href: `${fm}/Trading/Equity-Indices-CFD` },
+      { label: "Energy & Soft Commodities", href: `${fm}/Trading/Energy-and-soft-commodities` },
+      { label: "Cryptocurrency", href: `${fm}/Trading/Crypto-CFD` },
+      { label: "US Share CFDs", href: `${fm}/` },
     ],
   },
   {
     title: "Tools",
     links: [
-      { label: "Trading Calculators", href: "https://fusionmarkets.com/" },
-      { label: "Economic Calendar", href: "https://fusionmarkets.com/" },
-      { label: "Live & Historical Spreads", href: "https://fusionmarkets.com/" },
-      { label: "Client Hub Trading Tools", href: "https://hub.fusionmarkets.com/" },
+      { label: "Trading Calculators", href: `${fm}/` },
+      { label: "Economic Calendar", href: `${fm}/` },
+      { label: "Live & Historical Spreads", href: `${fm}/` },
+      { label: "Client Hub Trading Tools", href: `${hub}/` },
     ],
   },
   {
     title: "Conditions & Funding",
     links: [
-      { label: "Trading Conditions", href: "https://fusionmarkets.com/" },
-      { label: "Deposit Options", href: "https://fusionmarkets.com/" },
-      { label: "Withdrawal options", href: "https://fusionmarkets.com/" },
+      { label: "Trading Conditions", href: `${fm}/` },
+      { label: "Deposit Options", href: `${fm}/` },
+      { label: "Withdrawal options", href: `${fm}/` },
     ],
   },
+];
+
+/** Column 2 — Platforms (TV / MT5 / MT4 / cTrader) + Automated Trading Systems */
+export const footerStack2: FooterStack = [
   {
     title: "Platforms",
     links: [
-      { label: "TradingView", href: "https://fusionmarkets.com/Platforms/TradingView" },
-      { label: "MetaTrader 5", href: "https://fusionmarkets.com/Platforms/Metatrader-5" },
-      { label: "MetaTrader 4", href: "https://fusionmarkets.com/Platforms/Metatrader-4" },
-      { label: "cTrader", href: "https://fusionmarkets.com/Platforms/cTrader" },
+      { label: "TradingView", href: `${fm}/Platforms/TradingView` },
+      { label: "TradingView Desktop", href: `${fm}/Platforms/TradingView` },
+      { label: "TradingView Mobile", href: `${fm}/Platforms/TradingView` },
     ],
   },
   {
+    title: "MetaTrader 5",
+    links: [
+      { label: "MT5 Desktop", href: `${fm}/Platforms/Metatrader-5` },
+      { label: "MT5 Mobile", href: `${fm}/Platforms/Metatrader-5` },
+      { label: "Webtrader for MT5", href: `${fm}/Platforms/Metatrader-5` },
+    ],
+  },
+  {
+    title: "MetaTrader 4",
+    links: [
+      { label: "MT4 Desktop", href: `${fm}/Platforms/Metatrader-4` },
+      { label: "MT4 Mobile", href: `${fm}/Platforms/Metatrader-4` },
+      { label: "WebTrader for MT4", href: `${fm}/Platforms/Metatrader-4` },
+    ],
+  },
+  {
+    title: "cTrader",
+    links: [
+      { label: "cTrader Desktop", href: `${fm}/Platforms/cTrader` },
+      { label: "cTrader Mobile", href: `${fm}/Platforms/cTrader` },
+      { label: "cTrader Web", href: `${fm}/Platforms/cTrader` },
+    ],
+  },
+  {
+    title: "Automated Trading Systems",
+    links: [
+      { label: "Multi Account Manager", href: `${fm}/` },
+      { label: "Duplitrade", href: `${fm}/` },
+      { label: "Fusion+ Copy Trading", href: `${fm}/` },
+      { label: "Sponsored VPS", href: `${fm}/` },
+    ],
+  },
+];
+
+/** Column 3 — Partner / Learn / Trading Updates / About / Legal */
+export const footerStack3: FooterStack = [
+  {
     title: "Partner with Us",
     links: [
-      { label: "Partners Overview", href: "https://fusionmarkets.com/" },
-      { label: "Introducing Brokers", href: "https://fusionmarkets.com/" },
-      { label: "Affiliate", href: "https://fusionmarkets.com/" },
-      { label: "Refer a Friend", href: "https://fusionmarkets.com/" },
-      { label: "Partners Login", href: "https://fusionmarkets.com/" },
+      { label: "Partners Overview", href: `${fm}/` },
+      { label: "Introducing Brokers", href: `${fm}/` },
+      { label: "Affiliate", href: `${fm}/` },
+      { label: "Refer a Friend", href: `${fm}/` },
+      { label: "Partners Login", href: `${fm}/` },
     ],
   },
   {
     title: "Learn",
     links: [
-      { label: "Learn Overview", href: "https://fusionmarkets.com/" },
-      { label: "Market Analysis", href: "https://fusionmarkets.com/" },
-      { label: "Learn Forex Courses", href: "https://fusionmarkets.com/" },
-      { label: "Trading Tips", href: "https://fusionmarkets.com/" },
-      { label: "How-tos", href: "https://fusionmarkets.com/" },
+      { label: "Learn Overview", href: `${fm}/` },
+      { label: "Market Analysis", href: `${fm}/` },
+      { label: "Learn Forex Courses", href: `${fm}/` },
+      { label: "Trading Tips", href: `${fm}/` },
+      { label: "How-tos", href: `${fm}/` },
+    ],
+  },
+  {
+    title: "Trading Updates",
+    links: [
+      { label: "Market News", href: `${fm}/` },
+      { label: "New Promotions / Programmes", href: `${fm}/` },
+      { label: "Holiday Hours", href: `${fm}/` },
+      { label: "Dividend updates", href: `${fm}/` },
     ],
   },
   {
     title: "About Us",
     links: [
-      { label: "Who We Are", href: "https://fusionmarkets.com/" },
-      { label: "Why Fusion", href: "https://fusionmarkets.com/" },
-      { label: "What Others Say", href: "https://fusionmarkets.com/" },
+      { label: "Who We Are", href: `${fm}/` },
+      { label: "Why Fusion", href: `${fm}/` },
+      { label: "What Others Say", href: `${fm}/` },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Regulations and Legal Documents", href: "https://fusionmarkets.com/" },
-      { label: "ID Documentation", href: "https://fusionmarkets.com/" },
+      { label: "Regulations and Legal Documents", href: `${fm}/` },
+      { label: "ID Documentation", href: `${fm}/` },
     ],
   },
+];
+
+export const footerStacks: FooterStack[] = [
+  footerStack1,
+  footerStack2,
+  footerStack3,
+];
+
+/** @deprecated use footerStacks — kept for any residual imports */
+export const footerColumns: FooterLinkGroup[] = [
+  ...footerStack1,
+  ...footerStack2,
+  ...footerStack3,
 ];
 
 export const footerContact = {
@@ -120,7 +192,7 @@ export const footerContact = {
   ],
 };
 
-/** Social icons — Figma Footer AU brand row */
+/** Social icons — Figma Footer AU brand row (FB / IG / YT / TG / TikTok) */
 export const footerSocial: SocialItem[] = [
   {
     label: "Facebook",
@@ -156,11 +228,14 @@ export const footerTradingViewBadge = {
 };
 
 export const footerLegalLinks: NavItem[] = [
-  { label: "Privacy Policy", href: "https://fusionmarkets.com/" },
-  { label: "Terms and Conditions", href: "https://fusionmarkets.com/" },
+  { label: "Privacy Policy", href: `${fm}/` },
+  { label: "Terms and Conditions", href: `${fm}/` },
 ];
 
-/** Bottom legal stack — structure from Figma Footer AU (shortened for landings). */
+/**
+ * Bottom legal stack — Figma Footer AU (verbatim structure).
+ * Links to FSG/PDS left as plain text names in paragraph (official URLs on live site).
+ */
 export const footerLegalParagraphs: string[] = [
   "*Based on a spread comparison of 40+ global FX/CFD brokers with a Tier-1 licence conducted by ForexBenchmark as of 1 January 2026.",
   "**Based on research conducted by CompareForexBrokers on Market Order execution speed verified on 1 January 2026.",
