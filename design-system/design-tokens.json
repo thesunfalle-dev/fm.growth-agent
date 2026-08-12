@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.11.0",
+    "version": "0.12.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15313-11090",
-    "notes": "Sections 15313:11090 — FAQ accordion + Step by Steps (vertical/horizontal, light)."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15166-10610",
+    "notes": "Cards 15166:10610 — USP cards foundation + catalog; content/blog/platform/instrument planned."
   },
   "primitive": {
     "color": {
@@ -327,6 +327,36 @@
       "textOnActive": "{primitive.color.gray0}",
       "shadowHorizontal": "0 8px 20px -8px rgba(116, 44, 206, 0.55)"
     },
+    "card": {
+      "radius": "16px",
+      "border": "{primitive.color.gray300}",
+      "borderWidth": "0.5px",
+      "bg": "{primitive.color.gray0}",
+      "mediaBg": "{primitive.color.gray100}",
+      "padding": "24px",
+      "gap": "16px",
+      "footerGap": "16px",
+      "bottomPadding": "24px",
+      "usp": {
+        "minWidth": "276px",
+        "maxWidth": "296px",
+        "minHeight": "364px",
+        "mediaHeight": "180px",
+        "mobileWidth": "250px",
+        "titleSize": "24px",
+        "bodySize": "16px",
+        "maxVisible": 4
+      },
+      "feature": {
+        "radius": "12px",
+        "padding": "24px"
+      },
+      "instrument": {
+        "width": "200px",
+        "height": "240px",
+        "mobileSize": "165px"
+      }
+    },
     "table": {
       "width": "1280px",
       "maxHeight": "600px",
@@ -411,6 +441,7 @@
     "header": "0 10px 20px rgba(234, 219, 255, 0.2)",
     "headerMobile": "0 8px 12px rgba(234, 219, 255, 0.2)",
     "card": "0 8px 24px rgba(13, 19, 80, 0.06)",
+    "cardHover": "0 10px 40px rgba(99, 70, 211, 0.1)",
     "knob": "0 1px 2px rgba(13, 19, 80, 0.12)"
   },
   "layout": {

@@ -27,27 +27,32 @@
     },
     {
       "type": "features",
-      "status": "provisional",
-      "description": "Grid of benefit cards (title + description).",
+      "status": "ready",
+      "description": "USP (Why Fusion) or simple feature cards from Cards frame.",
       "component": "components/blocks/Features.tsx",
+      "figma": "15166:10610",
       "props": {
         "title": { "type": "string", "required": false },
+        "variant": { "type": "string", "required": false },
         "items": {
           "type": "array",
           "required": true,
           "item": {
             "title": { "type": "string", "required": true },
-            "description": { "type": "string", "required": true }
+            "description": { "type": "string", "required": true },
+            "illustration": { "type": "string", "required": false },
+            "learnMore": { "type": "cta", "required": false }
           },
           "minItems": 2,
-          "maxItems": 6
+          "maxItems": 8
         }
       },
       "contentRules": [
-        "Prefer 3 items for balance; 2–6 allowed.",
+        "variant usp only for Fusion unique selling points (Figma rule).",
+        "USP: prefer 3–4 items; >4 scrolls horizontally.",
         "Keep descriptions scannable (1–3 sentences)."
       ],
-      "tokenDependencies": ["semantic.color.background", "radius.md", "space"]
+      "tokenDependencies": ["component.card", "component.illustration"]
     },
     {
       "type": "table",

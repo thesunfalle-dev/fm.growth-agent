@@ -31,25 +31,35 @@ const landing: LandingDocument = {
     },
     {
       type: "features",
-      title: "How this will work",
+      variant: "usp",
+      title: "Why this pipeline",
       items: [
         {
           title: "Brief in",
           illustration: "build",
           description:
             "Marketing brief → structured content + block order for the page.",
+          learnMore: { label: "Learn more", href: "#steps" },
         },
         {
           title: "Variants out",
           illustration: "rocket",
           description:
             "Same day: /campaign-a, /campaign-b — share links, not Figma handoffs.",
+          learnMore: { label: "Learn more", href: "#faq" },
         },
         {
           title: "Design system later",
           illustration: "chart",
           description:
-            "Tokens + blocks from the new Figma redesign. Until then: neutral shell.",
+            "Tokens + blocks from the new Figma redesign. Cards and sections are live.",
+          learnMore: { label: "Learn more", href: "#features" },
+        },
+        {
+          title: "$0 commissions style USP",
+          illustration: "coin",
+          description:
+            "USP cards are only for Fusion unique selling points — illustration + title + body + optional Learn more.",
         },
       ],
     },

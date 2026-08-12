@@ -40,11 +40,15 @@ export type LandingBlock =
   | {
       type: "features";
       title?: string;
+      /** usp = Why Fusion USP cards; feature = simple benefit cards */
+      variant?: "usp" | "feature";
       items: Array<{
         title: string;
         description: string;
         /** Optional isometric illustration name (Images catalog). */
         illustration?: IllustrationKey;
+        imageSrc?: string;
+        learnMore?: LandingCta;
       }>;
     }
   | {

@@ -1620,7 +1620,207 @@ a {
   }
 }
 
-/* Cards */
+/* Cards (Figma Cards 15166:10610) */
+
+.ui-card-grid {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--layout-spacing-description-to-content-desktop);
+  align-items: stretch;
+}
+
+.ui-card-grid--feature {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* USP: up to 4 equal columns; overflow scroll if more */
+.ui-card-grid--usp {
+  grid-template-columns: repeat(4, minmax(0, var(--component-card-usp-max-width)));
+  justify-content: start;
+}
+
+.ui-card-grid--usp.ui-card-grid--max-4 {
+  /* When more than 4 children, allow horizontal scroll */
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(
+    var(--component-card-usp-min-width),
+    var(--component-card-usp-max-width)
+  );
+  grid-template-columns: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-2);
+  -webkit-overflow-scrolling: touch;
+}
+
+.ui-card-grid--usp > * {
+  scroll-snap-align: start;
+  height: 100%;
+  min-height: var(--component-card-usp-min-height);
+}
+
+/* ≤4 items: fixed 4-col track without forcing empty columns on small sets */
+.ui-card-grid--usp:not(.ui-card-grid--max-4),
+.ui-card-grid--usp.ui-card-grid--max-4:has(> :nth-child(-n + 4):last-child) {
+  grid-auto-flow: row;
+  grid-auto-columns: unset;
+  overflow-x: visible;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--component-card-usp-min-width), var(--component-card-usp-max-width))
+  );
+}
+
+.ui-card {
+  border: var(--border-width-default) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  background: var(--color-background-surface);
+}
+
+.ui-card--feature {
+  background: var(--color-background-surface);
+}
+
+.ui-card--content {
+  border-radius: var(--component-card-radius);
+  padding: var(--component-card-padding);
+  background: var(--component-card-bg);
+  border-color: var(--component-card-border);
+}
+
+.ui-card--instrument {
+  width: var(--component-card-instrument-width);
+  min-height: var(--component-card-instrument-height);
+  border-radius: var(--component-card-radius);
+  padding: var(--component-card-padding);
+}
+
+/* USP card shell */
+.ui-card--usp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--component-card-usp-max-width);
+  min-height: var(--component-card-usp-min-height);
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  border-radius: var(--component-card-radius);
+  overflow: hidden;
+  transition: box-shadow var(--motion-duration-default) var(--motion-easing-standard);
+}
+
+.ui-card--usp:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.ui-card__media--usp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--component-card-usp-media-height);
+  margin: 0;
+  background: var(--component-card-media-bg);
+  border: var(--component-card-border-width) solid var(--component-card-border);
+  border-bottom: 0;
+  border-radius: var(--component-card-radius) var(--component-card-radius) 0 0;
+  overflow: hidden;
+}
+
+.ui-card__media--usp .ui-illustration {
+  width: 180px;
+  height: 180px;
+}
+
+.ui-card__media--usp .ui-illustration__img,
+.ui-card__media-img {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.ui-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-card-footer-gap);
+  padding: var(--component-card-padding);
+  background: var(--component-card-bg);
+  border: var(--component-card-border-width) solid var(--component-card-border);
+  border-top: 0;
+  border-radius: 0 0 var(--component-card-radius) var(--component-card-radius);
+}
+
+.ui-card__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-card-gap);
+  flex: 1;
+}
+
+.ui-card__title--usp {
+  font-size: var(--component-card-usp-title-size);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: var(--typography-line-height-heading);
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.ui-card__desc {
+  margin: 0;
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-card-usp-body-size);
+  font-weight: var(--typography-font-weight-light);
+  line-height: var(--typography-line-height-body);
+  color: var(--color-text-primary);
+}
+
+.ui-card__footer {
+  margin-top: auto;
+  padding-top: 0;
+}
+
+.ui-card__learn-more {
+  /* Text + east arrow (Button text variant) */
+  font-size: var(--typography-font-size-cta-md);
+}
+
+.ui-card__media {
+  margin: 0 0 var(--space-5);
+}
+
+.ui-card__title {
+  font-family: var(--typography-font-family-heading);
+  margin: 0 0 var(--space-2);
+  font-size: var(--typography-font-size-h4);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: var(--typography-line-height-heading);
+  color: var(--color-text-primary);
+}
+
+.ui-card .ui-text {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .ui-card-grid--usp,
+  .ui-card-grid--usp.ui-card-grid--max-4,
+  .ui-card-grid--usp.ui-card-grid--max-4:has(> :nth-child(-n + 4):last-child) {
+    grid-auto-flow: column;
+    grid-auto-columns: var(--component-card-usp-mobile-width);
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .ui-card--usp {
+    max-width: var(--component-card-usp-mobile-width);
+  }
+}
 
 /* Illustrations + Background Image (Figma Images 15235:13486) */
 
@@ -1699,41 +1899,6 @@ a {
   -webkit-background-clip: border-box;
   color: var(--color-text-on-accent);
   -webkit-text-fill-color: var(--color-text-on-accent);
-}
-
-.ui-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-6);
-}
-
-.ui-card {
-  border: var(--border-width-default) solid var(--color-border-default);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-card);
-}
-
-.ui-card--feature {
-  background: var(--color-background-surface);
-}
-
-.ui-card__media {
-  margin: 0 0 var(--space-5);
-}
-
-/* Heading 4 Semibold */
-.ui-card__title {
-  font-family: var(--typography-font-family-heading);
-  margin: 0 0 var(--space-2);
-  font-size: var(--typography-font-size-h4);
-  font-weight: var(--typography-font-weight-semibold);
-  line-height: var(--typography-line-height-heading);
-  color: var(--color-text-primary);
-}
-
-.ui-card .ui-text {
-  margin: 0;
 }
 
 /* Index */

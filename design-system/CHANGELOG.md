@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-12 — Cards from Figma
+
+- Ingested frame `15166:10610`: USP “Why Fusion…” cards (learn more on/off, hover, max 4 + scroll).
+- Components: `UspCard`, `CardGrid`, `Card` variants usp/feature/content/instrument.
+- Features block supports `variant: "usp"` + `learnMore` + illustrations.
+- Catalog of content/blog/platform/TV/deposit/accordion/instrument documented as planned.
+- Docs: `cards.md` + extract JSON.
+
 ## 2026-08-12 — Sections from Figma
 
 - Ingested frame `15313:11090`: FAQ accordion + Step by Steps (vertical/horizontal, light/dark).

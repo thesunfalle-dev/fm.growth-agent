@@ -25,7 +25,14 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
               />
             );
           case "features":
-            return <Features key={index} title={block.title} items={block.items} />;
+            return (
+              <Features
+                key={index}
+                title={block.title}
+                variant={block.variant}
+                items={block.items}
+              />
+            );
           case "table":
             return (
               <MarketsTable

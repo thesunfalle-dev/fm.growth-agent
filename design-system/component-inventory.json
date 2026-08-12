@@ -186,17 +186,38 @@
     {
       "name": "Card",
       "category": "surfaces",
-      "status": "provisional",
+      "status": "ready",
       "path": "components/ui/Card.tsx",
-      "variants": ["feature"],
+      "figma": "15166:10610",
+      "variants": ["usp", "feature", "content", "instrument"],
+      "sizes": [],
+      "requiredStates": ["default", "hover"],
+      "tokenDependencies": ["component.card", "shadow.cardHover"],
+      "notes": "USP foundation ready. Prefer UspCard for Why Fusion cards."
+    },
+    {
+      "name": "UspCard",
+      "category": "surfaces",
+      "status": "ready",
+      "path": "components/ui/UspCard.tsx",
+      "figma": "15166:10610",
+      "variants": ["learnMore", "noLearnMore"],
+      "sizes": ["desktop", "mobile"],
+      "requiredStates": ["default", "hover"],
+      "tokenDependencies": ["component.card", "component.illustration"],
+      "notes": "Only for Fusion USP selling points per Figma rule."
+    },
+    {
+      "name": "CardGrid",
+      "category": "layout",
+      "status": "ready",
+      "path": "components/ui/CardGrid.tsx",
+      "figma": "15166:10610",
+      "variants": ["usp", "feature"],
       "sizes": [],
       "requiredStates": ["default"],
-      "tokenDependencies": [
-        "semantic.color.background.surface",
-        "semantic.color.background.surfaceRaised",
-        "semantic.color.border.default",
-        "radius.md"
-      ]
+      "tokenDependencies": ["component.card"],
+      "notes": "USP max 4 visible then horizontal scroll."
     },
     {
       "name": "Eyebrow",

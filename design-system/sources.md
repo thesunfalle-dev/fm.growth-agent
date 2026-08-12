@@ -24,6 +24,14 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-12 — Cards
+
+- File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15166-10610
+- Frame: **Cards** `15166:10610`
+- USP foundation ready; remaining card families planned
+- Docs: `cards.md`, extract `figma/extract-2026-08-12-cards.json`
+- Actor: agent + user
+
 ### 2026-08-12 — Sections
 
 - File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15313-11090

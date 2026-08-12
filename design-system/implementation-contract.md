@@ -41,7 +41,7 @@ Never hand-edit `design-system/generated/*`.
 | Button | `components/ui/Button.tsx` | primary / secondary; link-friendly |
 | Container | `components/ui/Container.tsx` | default / narrow |
 | Section | `components/ui/Section.tsx` | section chrome |
-| Card | `components/ui/Card.tsx` | feature cards |
+| Card / UspCard / CardGrid | `components/ui/*` | Cards frame USP + shells |
 | Eyebrow / Heading / Text | `components/ui/*` | typography primitives |
 | SiteHeader / SiteFooter | `components/ui/*` | marketing chrome (Figma Header & Footer) |
 | Icon | `components/ui/Icon.tsx` | **Material Symbols only** for base UI |

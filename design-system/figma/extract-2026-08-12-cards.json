@@ -1,0 +1,54 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15166-10610",
+    "frame": { "id": "15166:10610", "name": "Cards" }
+  },
+  "groups": [
+    {
+      "name": "USP Why Fusion",
+      "rule": "These cards are used to present Fusion’s Unique Selling Points. do not use for other benefits.",
+      "status": "ready",
+      "desktop": {
+        "learnMoreOn": "15238:10731",
+        "learnMoreOff": "15238:12217",
+        "hoverOn": "18406:57964",
+        "widthMin": 276,
+        "widthMax": 296,
+        "heightMin": 364,
+        "mediaHeight": 180,
+        "radius": 16,
+        "padding": 24,
+        "gap": 16,
+        "maxVisible": 4,
+        "scrollIfMore": true,
+        "hoverShadow": "0 10px 40px rgba(99,70,211,0.1)"
+      },
+      "mobileWidth": 250
+    },
+    { "name": "Content cards", "status": "foundation", "rule": "product features of platforms/apps" },
+    { "name": "Content Cards 4+ USPs", "status": "planned" },
+    { "name": "FAQ cards", "status": "planned", "rule": "FAQs page only" },
+    { "name": "Blog cards", "status": "planned", "rule": "Blog sections only" },
+    { "name": "Platform Card", "status": "planned", "rule": "Other Platform sections" },
+    { "name": "Trading Chart card with Trade Button", "status": "planned" },
+    { "name": "Deposit/Withdrawal Cards", "status": "planned" },
+    { "name": "TradingView Chart cards", "status": "planned" },
+    { "name": "Accordion card", "status": "planned" },
+    {
+      "name": "Instrument Cards",
+      "status": "foundation",
+      "desktop": { "width": 200, "height": 240 },
+      "mobile": { "size": 165 }
+    }
+  ],
+  "implementation": {
+    "Card": "components/ui/Card.tsx",
+    "UspCard": "components/ui/UspCard.tsx",
+    "CardGrid": "components/ui/CardGrid.tsx",
+    "block": "features + variant usp|feature",
+    "tokens": ["component.card", "shadow.cardHover"]
+  }
+}
