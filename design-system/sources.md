@@ -28,8 +28,12 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 - Desktop: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297355 (`27873:297355`)
 - Mobile: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-296438 (`27873:296438`)
-- Role: page-level section order + adaptive patterns (not a new token frame)
-- Docs: `homepage-patterns.md`; responsive notes in `responsive-rules.md`
+- Canonical blocks (structure fixed, content varies):
+  - Our spreads: `27873:297368` → planned `spread-cards` (TV_Card + tabs)
+  - Ready to start / CTAFooter: `27873:297571` → footer CTA / `cta`
+  - How it works: `31517:366918` → `steps` (split + CTAs)
+- Role: primary reuse catalog for landings
+- Docs: `homepage-patterns.md`, `assembly.md`
 - Actor: agent + user
 
 ### 2026-08-12 — Ready-only assembly (Figma → inventory)

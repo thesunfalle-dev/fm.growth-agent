@@ -1,7 +1,6 @@
 # Homepage composition patterns (AU)
 
-**Purpose:** Reference for how Website Redesign assembles a real page — section order, reuse of DS pieces, desktop vs mobile.  
-**Not** a landing content schema. Landings may use a **subset** of these sections.
+**Purpose:** Homepage is the **primary catalog of reusable page blocks**. Landings re-use the same section patterns with different content — they do not invent parallel designs.
 
 **Figma SoT (composition):**
 
@@ -14,6 +13,57 @@ DS atoms (buttons, USP cards, steps, tabs, header/footer…) still live in their
 
 ---
 
+## Core idea: structure vs content
+
+| Layer | Changes per page? | Examples |
+|-------|-------------------|----------|
+| **Structure (design block)** | No — same Figma component / same layout recipe | Title + lead + Tabs + TV_Card rail; CTAFooter dual CTA; How it works split + steps |
+| **Content (data)** | Yes | Copy, which market tabs, which pairs on cards, step titles, CTA labels/hrefs, side image |
+| **Optional layout mode** | Sometimes | Desktop split vs mobile stack; rail vs stack — still **one** block type |
+
+**Wrong:** “This landing needs spreads, so invent a markets `table` that looks different.”  
+**Right:** “This is the **Our spreads** homepage block with crypto/forex **data**.”
+
+When you see the same intent on a market/promo page, map it back to the homepage (or shared) frame first.
+
+---
+
+## Canonical homepage blocks (start here)
+
+These three are the teaching examples for “same block, different content”:
+
+### 1. Our spreads → planned block `spread-cards`
+
+| | |
+|--|--|
+| **Figma (home)** | [`27873:297368`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) — frame “Spreads” |
+| **Structure** | H2 + lead → `Tabs_Text` (market switcher) → horizontal **TV_Card-Desktop** rail (bid/ask/spread + Trade) → footer link to Spreads Tool |
+| **Content knobs** | Title/lead text; tab labels + default tab; card symbols/prices/spreads; link label/href |
+| **Also on** | BrokerChooser, TV Promo, Gold (sometimes single-instrument), crypto TZ “our spreads” |
+| **Repo** | `spread-cards` **planned**. Do **not** substitute a full markets `table` and call it the same block — different DS piece (Tables frame vs TV cards). Temporary substitute only with explicit note. |
+
+### 2. Ready to start trading? → `cta` / footer CTA band
+
+| | |
+|--|--|
+| **Figma (home)** | [`27873:297571`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297571) — **Footer** instance → **CTAFooter-Desktop** (top band) |
+| **Structure** | Light surface band; title left; Primary + “or” + Secondary right (desktop); stack on mobile |
+| **Content knobs** | Title (default “Ready to start trading?”); primary/secondary labels + hrefs |
+| **Also on** | Almost every marketing page (end conversion) + mid-page CTA variants |
+| **Repo** | Global in `SiteFooter`; mid-page via block `cta` (`CtaBand`). Prefer matching **CTAFooter** layout (row: title \| actions), not a one-off centered stack when Figma is the footer band. |
+
+### 3. How it works → block `steps`
+
+| | |
+|--|--|
+| **Figma (home)** | [`31517:366918`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31517-366918) — “How it Works - 5” |
+| **Structure** | Desktop **split**: left H2 + lead; right vertical **step** instances + dual CTA under steps; optional large side visual |
+| **Content knobs** | Title/lead; 3 step title+body; CTA labels; image asset |
+| **Also on** | TV Promo, platform pages, market landings, crypto TZ |
+| **Repo** | `steps` ready (step atoms). Gap: full homepage **split + side image + CTAs under steps** as one composed band — still one block, richer props/layout, not a new type. |
+
+---
+
 ## Section map (same story both viewports)
 
 | # | Section (intent) | Figma pieces | Repo today | Reuse notes |
@@ -21,17 +71,17 @@ DS atoms (buttons, USP cards, steps, tabs, header/footer…) still live in their
 | 0 | Chrome | Header_Desktop / Header_Mobile | `SiteHeader` | Sticky; Material menu/search on mobile |
 | 1 | Hero | H1 + lead + primary CTA + hero visual/animation | `hero` + optional `brandBackground` | **Mobile reorders** (see below) |
 | 2 | Social proof | Trustpilot / TV / Google ratings; video/award tiles | — | `ratings-strip`, media carousel planned |
-| 3 | Spreads | Tabs + TV_Card row / mobile stack | partial `table` only | Need quote/TV cards + tabs strip |
+| 3 | **Our spreads** | Tabs + TV_Card row / mobile stack | `spread-cards` planned | Canonical: `27873:297368` — **not** markets table |
 | 4 | Why different | USP cards rail | `features` + `variant: "usp"` | Desktop scroll if >4; mobile **carousel + dots** |
-| 5 | How it works | Title + vertical steps + dual CTAs + device visual | `steps` | Desktop **split** (copy \| steps); mobile stack + full-width CTAs |
+| 5 | **How it works** | Title + vertical steps + dual CTAs + device visual | `steps` | Canonical: `31517:366918` split |
 | 6 | Funding methods | Logo marquee | — | `logo-marquee` planned |
 | 7 | Markets / lowest cost | Instrument cards row | instrument sizes only | `instrument` cards planned |
 | 8 | Platforms | Tabs + copy + Accordion cards + mock | — | accordion + platform section planned |
 | 9 | Download / apps | Store / platform downloads | — | planned |
 | 10 | Reviews / video | Awards, video, social | — | planned |
-| 11 | Footer CTA + footer | Ready to start + mega footer | `SiteFooter` | Already global |
+| 11 | **Ready to start** + footer | CTAFooter + mega footer | `SiteFooter` + `cta` | Canonical CTA: top of Footer instance |
 
-Entity/AU copy and legal variants are **content**, not new block types.
+Copy, entity (AU/EN), and which instruments appear are **content**, not new block types.
 
 ---
 

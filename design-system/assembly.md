@@ -1,19 +1,40 @@
 # Landing assembly contract (ready-only)
 
-**Purpose:** Stop inventing one-off layouts. Every campaign page is an **ordered list of registered blocks** from `block-inventory.json`. Figma page frames show **target** composition; until a module is `ready` / `provisional` in inventory, **substitute** with a ready block or **skip**.
+**Purpose:** Campaign pages are **reuses of homepage / shared Figma blocks** with different content — not new layouts per slug. Code: ordered list of types from `block-inventory.json`.
 
-**Related:** `block-inventory.json`, `landing-patterns.md`, `homepage-patterns.md`, `sections.md`, `tables.md`, `cards.md`.
+**Related:** `homepage-patterns.md` (canonical blocks), `block-inventory.json`, `landing-patterns.md`, `sections.md`, `tables.md`, `cards.md`.
+
+---
+
+## Structure vs content (read this first)
+
+| | Structure | Content |
+|--|-----------|---------|
+| **What** | Layout, components, spacing, interaction pattern | Strings, numbers, images, hrefs, which rows/cards |
+| **Source** | Homepage (or shared DS) Figma section | Brief / TZ / locale |
+| **When shipping** | Reuse one inventory block | Fill props only |
+
+Examples from homepage (same design everywhere, data changes):
+
+| Intent on any page | Canonical Figma | Inventory |
+|--------------------|-----------------|-----------|
+| “Our / here’s our / tight spreads” | [Our spreads](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) tabs + TV_Card rail | `spread-cards` (planned) — **not** invent a different table layout |
+| “Ready to start trading?” | [CTAFooter](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297571) on Footer | `cta` / footer band |
+| “How it works” | [How it Works - 5](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31517-366918) split + steps | `steps` |
+
+More screens will extend this map; the rule stays: **spot the repeating block → reuse → swap content.**
 
 ---
 
 ## Hard rules for agents
 
-1. **Compose, don’t invent.** Only `type` values listed under `blocks` in `block-inventory.json` may appear in `landings/*/content.ts`.
-2. **No nested blocks.** Do not embed a `table` (or any other section) inside `hero`. Sequence separate blocks instead: `hero` → `table`.
-3. **Props stay in inventory.** If content needs a field the inventory does not declare, either fold into an existing prop (`subtitle`) **or** extend inventory + types + component + changelog **before** using it. Never silent one-off props.
-4. **Planned ≠ shippable.** Items under `planned` in inventory are Figma-aware gaps. Do not implement them ad-hoc inside a landing file.
-5. **Recipes are stacks of types**, not free CSS. Visual polish lives in `components/blocks/*` + tokens.
-6. **Figma is intent; inventory is authority for code.** When they disagree, update inventory (with source note) — don’t freestyle the page.
+1. **Homepage first.** Before designing a section, find the same intent on homepage (or Final Pages reuse of that component). Copy that structure.
+2. **Compose, don’t invent.** Only `type` values listed under `blocks` in `block-inventory.json` may appear in `landings/*/content.ts`.
+3. **No nested blocks.** Do not embed a `table` (or any other section) inside `hero`. Sequence separate blocks instead.
+4. **Props stay in inventory.** Content goes in props; if a prop is missing, extend inventory — don’t freestyle CSS in content files.
+5. **Planned ≠ shippable.** Gaps (e.g. TV spread rail) stay planned until built; temporary substitutes must be labeled as substitutes, not “the same block”.
+6. **Recipes are stacks of types**, not free CSS. Visual polish lives in `components/blocks/*` + tokens.
+7. **Figma structure + inventory code.** Structure from Figma; shippable types from inventory.
 
 ---
 
@@ -65,7 +86,7 @@ Registered props (keep inventory + `lib/types.ts` + `Hero.tsx` aligned):
 | Why trade [market] USP rail | USP cards | `features` usp |
 | Education split / checklist Hero | `education-split` / `checklist-feature` | **skip** or short `cta` |
 | Start trading steps | Step by Steps | `steps` |
-| Live spreads (TV card) | `spread-cards` (planned) | `table` (markets-style rows; Figma **Crypto CFDs** table types) |
+| Live / our spreads (TV cards) | `spread-cards` (planned) — **same as homepage Our spreads** | Until built: skip or **labeled** temporary substitute; do not pretend markets `table` is the same pattern |
 | Reviews | `review-rail` (planned) | **skip** (or one line in hero `subtitle`) |
 | Footer | chrome | `SiteFooter` |
 

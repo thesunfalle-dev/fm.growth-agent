@@ -164,8 +164,9 @@
     {
       "type": "spread-cards",
       "status": "planned",
-      "description": "Tabs + TV/spread quote cards rail (desktop) / stack (mobile)",
-      "figmaHomepage": "27873:297355"
+      "description": "Homepage «Our spreads»: H2 + lead + Tabs_Text + TV_Card rail (desktop) / stack (mobile) + Spreads Tool link. Content varies (pairs/tabs); structure is fixed. Same block on promo/market landings.",
+      "figmaHomepage": "27873:297368",
+      "figmaNotes": "Not the same as Markets DataTable (type table). Do not implement as a one-off table in content."
     },
     {
       "type": "instrument-grid",

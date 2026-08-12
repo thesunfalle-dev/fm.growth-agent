@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Structure vs content (homepage canonical blocks)
+
+- Principle: repeating Figma sections = **one design block**; text/images/pairs = **content props**.
+- Homepage canons: Our spreads `27873:297368` → `spread-cards`; CTAFooter `27873:297571` → `cta`/footer; How it works `31517:366918` → `steps`.
+- Docs: `homepage-patterns.md`, `assembly.md`; inventory `spread-cards` points at spreads frame (not whole homepage).
+
 ## 2026-08-12 — Ready-only assembly contract
 
 - New `assembly.md`: hard rules — compose inventory blocks only; **no nested table in hero**; Figma section → ready substitutes for market / award / promo / platform.
