@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Page batch Compare + About + Careers + Blog
+
+- Recipes T5 (Broker Comparison Tool), A6 Who We Are, A7 Why Fusion, A8 social proof, A9 Careers, A10 Blog homepage.
+- Patterns: review-rail, awards-strip, media-carousel, blog-card, newsletter-cta, jobs-list, stats; savings-calculator ties to Broker Comparison Tool.
+- Docs only.
+
 ## 2026-08-12 — Page batch Conditions variants + Client tools
 
 - Confirmed C1 for Margins & Leverage, Session Time, Contract Spec (table / accordion-table variants).

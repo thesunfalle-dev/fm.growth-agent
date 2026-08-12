@@ -14,7 +14,7 @@ When a new screen is shared, agents **do not only “look”** — they **regist
 
 Related: `page-recipes.md` (full page stacks), `homepage-patterns.md`, `landing-patterns.md`, `assembly.md`.
 
-**Last page batches:** … + **Conditions variants + Client tools** (margins, session, contract, calculators, spreads tool, hub tools) → `page-recipes.md`.
+**Last page batches:** … + Conditions/tools + **Compare tool, About, Proof, Careers, Blog** → `page-recipes.md`.
 
 ---
 
@@ -388,8 +388,9 @@ Copy when adding a pattern:
 | **Intent** | Interactive or static volume/country savings vs competitors. |
 | **Structure (fixed)** | Title + inputs (volume, country) + results (you’d save / commissions / spreads compare). |
 | **Content (props)** | Labels, default volume, competitor names, result copy |
-| **Canonical Figma** | Premium calculator; Fusion+ Copier “See Our Trading Fees vs. Other Brokers” `31099:370675` region |
-| **Rules** | One calculator pattern; hide when campaign doesn’t need it. |
+| **Canonical Figma** | **Broker Comparison Tool** `29369:318747`; Premium calculator; Fusion+ Copier fees |
+| **Also seen on** | Any “See Your Savings” / competitor compare UI |
+| **Rules** | One compare/savings tool pattern; page shell is hero + tool + optional chart. Hide when campaign doesn’t need it. |
 
 ---
 
@@ -449,16 +450,112 @@ Copy when adding a pattern:
 
 ---
 
+### `review-rail` — Trustpilot / review cards
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `review-rail` |
+| **Intent** | Social proof quotes from traders. |
+| **Structure (fixed)** | Trustpilot (or similar) summary + horizontal **review cards** (avatar, name, date, stars, quote) + arrows. |
+| **Content (props)** | Summary metrics, `items[]` reviews |
+| **Canonical Figma** | What others say `29665:153626`; BrokerChooser; homepage reviews |
+| **Rules** | Same rail on award landings and about/proof pages. |
+
+---
+
+### `awards-strip` — Award crests / badges row
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `awards-strip` |
+| **Intent** | Show industry awards as a logo/crest row or spotlight carousel. |
+| **Structure (fixed)** | Horizontal award marks; optional larger award card with year tabs + link. |
+| **Content (props)** | Award names, years, images, links |
+| **Canonical Figma** | What others say awards row + spotlight `29665:153626` |
+| **Rules** | Behavior like marquee/rail; content is awards not funding methods. |
+
+---
+
+### `media-carousel` — Image / video carousel
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `media-carousel` |
+| **Intent** | Multi-image story (careers office photos, awards, homepage media). |
+| **Structure (fixed)** | Full-bleed or section carousel + Navigate dots/arrows. |
+| **Content (props)** | `slides[]` (image, caption) |
+| **Canonical Figma** | Careers hero carousel `29637:142845`; homepage mobile media |
+| **Rules** | Presentation only; not a content card grid. |
+
+---
+
+### `blog-card` / `blog-featured` — Editorial cards
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `blog-card` (+ featured variant) |
+| **Intent** | Blog listing and featured article. |
+| **Structure (fixed)** | Image + category label + title + excerpt + tags + read time; featured = larger split layout + dots. |
+| **Content (props)** | Post fields, labels from Blog labels component |
+| **Canonical Figma** | Fusion Blog Homepage `29653:147180` |
+| **Rules** | Cards frame “blog cards” family — not USP. |
+
+---
+
+### `newsletter-cta` — Email subscribe band
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `newsletter-cta` |
+| **Intent** | Capture email for blog/newsletter. |
+| **Structure (fixed)** | Title + lead + Field + Primary + terms microcopy + optional illustration. |
+| **Content (props)** | Copy, form action, legal line |
+| **Canonical Figma** | Blog homepage CTA / 28 `29653:147342` |
+| **Rules** | Form CTA; distinct from dual-button Ready-to-trade `cta`. |
+
+---
+
+### `jobs-list` — Open roles
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `jobs-list` |
+| **Intent** | List career openings + apply path. |
+| **Structure (fixed)** | Section title + role rows/cards + apply CTA or email. |
+| **Content (props)** | Roles, locations, links |
+| **Canonical Figma** | Careers “open roles” `29637:142831` |
+| **Rules** | Careers-only content module. |
+
+---
+
+### `stats` — Key metrics strip
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `stats` |
+| **Intent** | Big numbers (years, offices, clients…). |
+| **Structure (fixed)** | Row of metric value + label. |
+| **Content (props)** | `items[]` (value, label) |
+| **Canonical Figma** | Careers stats strip; may appear on About |
+| **Rules** | Not a calculator result card. |
+
+---
+
 ## Planned (named, not fully detailed yet)
 
 | type | Intent sketch | Typical Figma |
 |------|---------------|---------------|
-| `ratings-strip` | Trustpilot / TV / Google row | Homepage social proof |
-| `logo-marquee` | Funding methods logos | Homepage funding; **also Deposit/Withdrawal hero logo row** |
-| `review-rail` | Review cards rail | BrokerChooser / home reviews |
-| `media-carousel` | Video / awards carousel | Homepage mobile |
-| `stats` | Key metrics strip | Signal Master Metrics may overlap |
+| `ratings-strip` | Trustpilot / TV / Google compact row | Homepage social proof (lighter than full review-rail) |
+| `logo-marquee` | Funding methods logos | Homepage funding; Deposit/Withdrawal heroes |
 | `platform-crossnav` | “Explore our other Platforms” | MT5 device pages |
+| `expert-ratings` | Third-party review site scores | What others say “Reviews from the Experts” |
 
 ---
 
@@ -496,6 +593,12 @@ Copy when adding a pattern:
 | Trading calculators | recipe **T2** / `calculator-tool` |
 | Live & historical spreads | recipe **T3** / `spreads-tool` |
 | Client Hub tools overview | recipe **T4** / `tool-cards` |
+| Broker comparison / savings | recipe **T5** / `savings-calculator` |
+| Who We Are | recipe **A6** |
+| Why Fusion | recipe **A7** |
+| What others say | recipe **A8** / `review-rail` + `awards-strip` |
+| Careers | recipe **A9** |
+| Blog homepage | recipe **A10** / `blog-card` + `newsletter-cta` |
 
 If intent is missing → add pattern (don’t freestyle a one-off).
 

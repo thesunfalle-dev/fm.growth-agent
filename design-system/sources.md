@@ -30,6 +30,20 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Decision: `docs/DECISIONS.md` “Figma screens register reusable patterns”
 - Actor: agent + user
 
+### 2026-08-12 — Page batch: Compare + About + Careers + Blog (6 screens)
+
+| Page | Node |
+|------|------|
+| Broker Comparison Tool - Desktop | `29369:318747` |
+| Who We Are | `29665:152363` |
+| Why Fusion | `29665:152206` |
+| What others say / Testimonial | `29665:153626` |
+| Career Desktop | `29637:142831` |
+| Fusion Blog / Homepage | `29653:147180` |
+
+- Recipes: T5, A6–A10; patterns review-rail, awards-strip, media-carousel, blog-card, newsletter-cta, jobs-list, stats
+- Actor: agent + user
+
 ### 2026-08-12 — Page batch: Conditions variants + Client tools (6 screens)
 
 | Page | Node |

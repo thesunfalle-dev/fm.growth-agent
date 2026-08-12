@@ -452,6 +452,140 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 
 ---
 
+## Batch 2026-08-12 — Compare tool + About + Careers + Blog
+
+| # | Page | Node | URL |
+|---|------|------|-----|
+| 1 | **Broker Comparison Tool - Desktop** | `29369:318747` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29369-318747) |
+| 2 | **Who We Are** | `29665:152363` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29665-152363) |
+| 3 | **Why Fusion** | `29665:152206` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29665-152206) |
+| 4 | **What others say / Testimonial** | `29665:153626` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29665-153626) |
+| 5 | **Career Desktop** | `29637:142831` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29637-142831) |
+| 6 | **Fusion Blog / Homepage** | `29653:147180` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29653-147180) |
+
+---
+
+### Recipe T5 — Broker Comparison Tool
+
+**Figma:** `29369:318747`  
+**Related:** `savings-calculator` on Premium / Fusion+ (same “See Your Savings” family).
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Tool hero | `hero` | Centered H1 + lead (no CTA required) |
+| 2 | Comparison workspace | `savings-calculator` / `broker-compare-tool` | Selectors (instrument, account) + competitor pick + logos + Calculate CTA + **Results** card (you’d save %) + FM vs competitor fee rows |
+| 3 | Spreads chart compare | chart band | “Compare Average Spreads” historical chart (same tool surface) |
+| 4 | Optional mid content / CTA | `cta` / education | |
+| 5 | Footer | `cta` / footer | |
+
+**Rules:** Same savings/compare **tool pattern** as Premium calculator and Fusion+ fees widget — one implementation, different defaults. Not a marketing `table` page.
+
+---
+
+### Recipe A6 — Who We Are (brand story)
+
+**Figma:** `29665:152363`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Brand hero | `hero` | H1 + origin story + illustration |
+| 2 | Story / quote bands | `education-split` | Multi Hero options (copy + image) |
+| 3 | Mission | `education-split` or centered content | “Our Mission” |
+| 4 | More story / timeline / people | education / media | Options 3–6 in file |
+| 5 | FAQs (optional) | `faq` | |
+| 6 | Footer | `cta` / footer | |
+
+**Rules:** Story pages stack **education-split** + hero variants; don’t invent free-form layouts.
+
+---
+
+### Recipe A7 — Why Fusion (brand USP)
+
+**Figma:** `29665:152206`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Brand hero | `hero` | H1 “Why Fusion Markets” + long pitch + image |
+| 2 | Feature bento | `bento-usp` | Large feature USP + grid (“Trade Anytime…” style) |
+| 3 | Trust / regulation | `features` or trust strip | e.g. ASIC mention |
+| 4 | Footer | `cta` / footer | |
+
+**Rules:** Equal rail on other pages = `features` usp; this page’s unequal grid = `bento-usp`. Same USP card atoms.
+
+---
+
+### Recipe A8 — Social proof / What others say
+
+**Figma:** `29665:153626`  
+**Also:** homepage reviews, BrokerChooser review rail.
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Proof hero | `hero` | “What Others Say…” + pitch + visual |
+| 2 | Awards marquee | `awards-strip` / `logo-marquee` | Award crests row (BrokerChooser, etc.) |
+| 3 | Awards spotlight | `media-carousel` + award cards | Badge carousel + partner detail card (tabs by year) |
+| 4 | Reviews from real traders | `review-rail` | Trustpilot header + review cards + arrows |
+| 5 | Reviews from experts | `rating-cards` / trust row | Expert site ratings (BrokerChooser, CFB, FXEmpire…) |
+| 6 | Footer | `cta` / footer | |
+
+**Rules:** `review-rail` is the same pattern as BrokerChooser landing. Awards strip ≠ funding logo marquee content, may share marquee behavior.
+
+---
+
+### Recipe A9 — Careers
+
+**Figma:** `29637:142831`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Careers hero | `hero` (brand BG) | Centered H1 + body + Primary/Light + **media-carousel** under hero |
+| 2 | Employee quote | `testimonials` / quote band | Quote + avatars + attribution |
+| 3 | Stats strip | `stats` | Big numbers (offices, people…) |
+| 4 | Our Values | `features` usp | USP Cards carousel/rail |
+| 5 | Life with us | `checklist-feature` + Tabs | Tabs (locations/themes) + icon checklist + image |
+| 6 | Locations / more story | education / cards | |
+| 7 | Open roles | `jobs-list` (planned) | Role list + apply CTA / email |
+| 8 | Footer | `cta` / footer | |
+
+**Rules:** Reuse USP + checklist + carousel; jobs list is the careers-specific content module.
+
+---
+
+### Recipe A10 — Blog homepage
+
+**Figma:** `29653:147180`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Featured / recommends | `blog-featured` (planned) | Brand BG + featured article card (image, labels, title, tags, read time, dots) |
+| 2 | Filters | Tabs_Text (categories) + Search | Inputs/Labels already in DS |
+| 3 | Post grid | `blog-card` grid | 3-col Blog Card rows + sort selectors + pagination Navigate |
+| 4 | Newsletter CTA | `newsletter-cta` (planned) | Subscribe form (Field + Primary) + legal microcopy + illustration |
+| 5 | Footer | `cta` / footer | |
+
+**Rules:** Blog cards ≠ USP cards (Cards frame “blog cards” family). Newsletter is a form CTA, not generic `cta` dual-button band (though can sit in similar section chrome).
+
+---
+
+## Pattern frequency — this batch
+
+| Pattern | T5 Compare | A6 Who | A7 Why | A8 Proof | A9 Careers | A10 Blog |
+|---------|------------|--------|--------|----------|------------|----------|
+| `hero` | ✅ | ✅ | ✅ | ✅ | ✅ + carousel | featured |
+| `savings-calculator` / compare tool | ✅ | — | — | — | — | — |
+| `education-split` | — | ✅ | — | — | ~ | — |
+| `bento-usp` / `features` | — | — | ✅ | — | values usp | — |
+| `review-rail` / awards | — | — | — | ✅ | quote | — |
+| `media-carousel` | — | — | — | awards | ✅ hero | featured dots |
+| `checklist-feature` | — | — | — | — | ✅ | — |
+| `stats` | — | — | — | — | ✅ | — |
+| `jobs-list` | — | — | — | — | ✅ | — |
+| `blog-card` / featured | — | — | — | — | — | ✅ |
+| `newsletter-cta` | — | — | — | — | — | ✅ |
+| `cta` / footer | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+---
+
 ## How to extend this file
 
 When the next batch of screens arrives:
