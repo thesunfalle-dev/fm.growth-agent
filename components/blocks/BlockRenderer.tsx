@@ -45,6 +45,7 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 rows={block.rows}
                 scrollable={block.scrollable}
                 showSearch={block.showSearch}
+                variant={block.variant}
               />
             );
           case "steps":

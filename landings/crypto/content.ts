@@ -179,77 +179,96 @@ const landing: LandingDocument = {
         "Indicative spreads for this internal preview. Confirm live pricing in the Client Hub or Spreads Tool. Cryptocurrency spreads are not measured in pips.",
     },
 
-    // —— 4. Campaign compare (flat table until comparison-table is ready) ——
+    // —— 4. How We Compare (Figma Crypto 23570:105086) ——
     {
       type: "table",
-      title: "How we compare against other crypto providers",
-      subtitle:
-        "Indicative comparison for illustration on this internal preview. Always verify live fees and conditions before trading.",
+      variant: "compare",
+      title: "How We Compare",
+      subtitle: "See why we have an edge over other Crypto Providers",
       showSearch: false,
       columns: [
-        { id: "feature", header: "Feature", width: "34%", align: "left" },
-        { id: "fusion", header: "Fusion Markets", width: "22%", align: "center" },
-        {
-          id: "exchange",
-          header: "Typical AU exchange",
-          width: "22%",
-          align: "center",
-        },
-        { id: "notes", header: "Notes", width: "22%", align: "center" },
+        { id: "feature", header: "" },
+        { id: "fusion", header: "Fusion Markets" },
+        { id: "coinbase", header: "Coinbase" },
+        { id: "coinspot", header: "CoinSpot" },
+        { id: "gemini", header: "Gemini" },
+        { id: "binance", header: "Binance" },
       ],
       rows: [
         {
           id: "min",
           cells: {
-            feature: "Minimum deposit",
+            feature: "Minimum Deposit",
             fusion: "$0",
-            exchange: "Often $50+",
-            notes: "Start with any amount",
+            coinbase: "$50",
+            coinspot: "$1",
+            gemini: "$0",
+            binance: "$0 or $50",
+          },
+        },
+        {
+          id: "demo",
+          cells: {
+            feature: "Demo Account",
+            fusion: "Yes",
+            coinbase: "No",
+            coinspot: "No",
+            gemini: "No",
+            binance: "No",
           },
         },
         {
           id: "fees",
           cells: {
-            feature: "Trading cost (BTC)",
-            fusion: "From 0.04%",
-            exchange: "Often 1%+",
-            notes: "Per TZ / low-fee mission",
-          },
-        },
-        {
-          id: "commission",
-          cells: {
-            feature: "Commission",
-            fusion: "$0",
-            exchange: "Varies",
-            notes: "No commission crypto CFDs",
-          },
-        },
-        {
-          id: "direction",
-          cells: {
-            feature: "Go long & short",
-            fusion: "Yes",
-            exchange: "Usually long only",
-            notes: "CFD structure",
+            feature: "Bitcoin Trading Fees",
+            fusion: "0.06%",
+            coinbase: {
+              lines: ["0.4%/0.6%", "(Maker/Taker)"],
+            },
+            coinspot: "0.1%",
+            gemini: {
+              lines: ["0.2%/0.4%", "(Maker/Taker)"],
+            },
+            binance: {
+              lines: ["0.1%/0.1%", "(Maker/Taker)"],
+            },
           },
         },
         {
           id: "leverage",
           cells: {
-            feature: "Leverage",
-            fusion: "Retail 1:2 / Pro 1:10",
-            exchange: "Typically none",
-            notes: "Client classification applies",
+            feature: "Leverage Available",
+            fusion: "Yes",
+            coinbase: "No",
+            coinspot: "No",
+            gemini: "No",
+            binance: "No",
           },
         },
         {
-          id: "deposit-fees",
+          id: "trust",
           cells: {
-            feature: "Deposit fees",
-            fusion: "$0",
-            exchange: "Often charged",
-            notes: "20+ methods covered",
+            feature: "TrustPilot Score",
+            fusion: {
+              imageSrc: "/images/compare/fusion-trust.png",
+              meta: "Fusion Markets on Trustpilot",
+            },
+            coinbase: {
+              imageSrc: "/images/compare/coinbase-trust.png",
+              meta: "Coinbase on Trustpilot",
+            },
+            coinspot: {
+              imageSrc: "/images/compare/coinspot-trust.png",
+              meta: "CoinSpot on Trustpilot",
+            },
+            gemini: {
+              imageSrc: "/images/compare/gemini-trust.png",
+              meta: "Gemini on Trustpilot",
+            },
+            binance: {
+              imageSrc: "/images/compare/binance-trust.png",
+              meta: "Binance on Trustpilot",
+            },
           },
         },
       ],

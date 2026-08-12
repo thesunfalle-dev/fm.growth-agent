@@ -1,5 +1,10 @@
 # Design system changelog
 
+## 2026-08-12 — How We Compare matrix (Figma 23570:105086)
+
+- New `CompareTable` + `table.variant: "compare"`: side labels, provider columns, multi-line fees, TrustPilot image row.
+- Crypto content uses real Figma compare rows (Fusion / Coinbase / CoinSpot / Gemini / Binance).
+
 ## 2026-08-12 — Markets table + page-wide section centering
 
 - Markets instruments table matches Figma Crypto_2 / Pricing: icon + symbol/meta, Trading Hours / Min / Avg columns, header search, sticky shell, centered section title + footnote.

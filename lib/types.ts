@@ -13,11 +13,15 @@ export type TableColumnSpec = {
 export type TableCellSpec =
   | string
   | {
-      title: string;
+      title?: string;
       meta?: string;
       /** Market icon under /public (crypto logo, etc.) */
       iconSrc?: string;
       iconSrcSecondary?: string;
+      /** Compare matrix image cell (e.g. TrustPilot badge) */
+      imageSrc?: string;
+      /** Multi-line value for compare cells */
+      lines?: string[];
     };
 
 export type TableRowSpec = {
@@ -68,6 +72,11 @@ export type LandingBlock =
       scrollable?: boolean;
       /** Markets header search (default true for instruments tables). */
       showSearch?: boolean;
+      /**
+       * markets — instruments DataTable
+       * compare — How We Compare matrix (Figma 23570:105086)
+       */
+      variant?: "markets" | "compare";
     }
   | {
       type: "cta";

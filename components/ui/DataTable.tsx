@@ -13,12 +13,14 @@ export type TableColumn = {
 export type TableCellValue =
   | string
   | {
-      title: string;
+      title?: string;
       meta?: string;
       /** Market icon path under /public (crypto logo, flag, etc.) */
       iconSrc?: string;
       /** Overlapping dual icons (Forex flags); iconSrc is primary when single. */
       iconSrcSecondary?: string;
+      imageSrc?: string;
+      lines?: string[];
     };
 
 export type TableRow = {
@@ -41,6 +43,30 @@ type DataTableProps = {
 function CellContent({ value }: { value: TableCellValue }) {
   if (typeof value === "string") {
     return <span className="ui-table__value">{value}</span>;
+  }
+
+  if (value.imageSrc) {
+    return (
+      <img
+        className="ui-compare__badge"
+        src={value.imageSrc}
+        alt={value.meta ?? ""}
+        width={144}
+        height={76}
+      />
+    );
+  }
+
+  if (value.lines && value.lines.length > 0) {
+    return (
+      <span className="ui-table__value ui-compare__value--stack">
+        {value.lines.map((line) => (
+          <span key={line} className="ui-compare__line">
+            {line}
+          </span>
+        ))}
+      </span>
+    );
   }
 
   const hasIcon = Boolean(value.iconSrc);
@@ -78,9 +104,11 @@ function CellContent({ value }: { value: TableCellValue }) {
         </span>
       ) : null}
       <span className="ui-table__symbol">
-        <span className="ui-table__value ui-table__value--medium">
-          {value.title}
-        </span>
+        {value.title ? (
+          <span className="ui-table__value ui-table__value--medium">
+            {value.title}
+          </span>
+        ) : null}
         {value.meta ? <span className="ui-table__meta">{value.meta}</span> : null}
       </span>
     </span>

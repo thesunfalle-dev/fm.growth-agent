@@ -1515,6 +1515,140 @@ a {
   text-align: left;
 }
 
+/*
+ * How We Compare matrix — Figma Crypto `23570:105086`
+ * Side labels + provider columns; TrustPilot image row
+ */
+.ui-compare-shell {
+  width: 100%;
+  max-width: var(--component-table-width);
+  margin-inline: auto;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  background: var(--color-background-canvas);
+}
+
+.ui-compare {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.ui-compare__row--header {
+  background: var(--component-table-header-bg);
+}
+
+.ui-compare__corner {
+  width: 200px;
+  min-width: 180px;
+  height: var(--component-table-header-height);
+  background: var(--component-table-header-bg);
+  border-top-left-radius: var(--radius-lg);
+  padding: 0 var(--component-table-padding-x);
+}
+
+.ui-compare__provider {
+  width: 200px;
+  height: var(--component-table-header-height);
+  padding: 0 var(--space-3);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-table-header-font-size);
+  font-weight: var(--typography-font-weight-regular);
+  line-height: var(--typography-line-height-body);
+  color: var(--component-table-header-text);
+  text-align: center;
+  vertical-align: middle;
+  background: var(--component-table-header-bg);
+}
+
+.ui-compare__row--header .ui-compare__provider:last-child {
+  border-top-right-radius: var(--radius-lg);
+}
+
+.ui-compare__label {
+  width: 200px;
+  min-width: 180px;
+  padding: var(--space-4) var(--component-table-padding-x);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-table-header-font-size);
+  font-weight: var(--typography-font-weight-regular);
+  line-height: var(--typography-line-height-body);
+  color: var(--component-table-header-text);
+  text-align: left;
+  vertical-align: middle;
+  background: var(--component-table-header-bg);
+}
+
+.ui-compare__row--body .ui-compare__label {
+  height: 54px;
+}
+
+.ui-compare__row--tall .ui-compare__label {
+  height: 76px;
+}
+
+.ui-compare__row--last .ui-compare__label {
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.ui-compare__cell {
+  width: 200px;
+  padding: var(--space-3) var(--space-3);
+  vertical-align: middle;
+  text-align: center;
+  background: var(--color-background-canvas);
+}
+
+.ui-compare__row--body .ui-compare__cell {
+  height: 54px;
+}
+
+.ui-compare__row--tall .ui-compare__cell {
+  height: 76px;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+.ui-compare__value {
+  display: block;
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-table-header-font-size); /* 14 — Figma compare body */
+  font-weight: var(--typography-font-weight-regular);
+  line-height: var(--typography-line-height-body);
+  color: var(--component-table-header-text);
+  text-align: center;
+}
+
+.ui-compare__value--stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.ui-compare__line {
+  display: block;
+  line-height: 1.5;
+}
+
+.ui-compare__badge {
+  display: block;
+  width: 144px;
+  max-width: 100%;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+/* Subtle horizontal rules between body rows (Figma uses spacing; we use light dividers) */
+.ui-compare__row--body:not(.ui-compare__row--last) .ui-compare__cell,
+.ui-compare__row--body:not(.ui-compare__row--last) .ui-compare__label {
+  border-bottom: var(--border-width-default) solid var(--component-table-row-divider);
+}
+
 .ui-table__sr-only {
   position: absolute;
   width: 1px;
