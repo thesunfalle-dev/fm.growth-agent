@@ -40,16 +40,21 @@ export function Steps({
 
   return (
     <ol className={classes}>
-      {items.map((item, index) => (
-        <Step
-          key={`${item.title}-${index}`}
-          number={item.number ?? index + 1}
-          title={item.title}
-          description={item.description}
-          active={item.active ?? true}
-          last={index === items.length - 1}
-        />
-      ))}
+      {items.map((item, index) => {
+        // Horizontal process (Figma): first step active (purple), rest inactive (gray)
+        const defaultActive =
+          orientation === "horizontal" ? index === 0 : true;
+        return (
+          <Step
+            key={`${item.title}-${index}`}
+            number={item.number ?? index + 1}
+            title={item.title}
+            description={item.description}
+            active={item.active ?? defaultActive}
+            last={index === items.length - 1}
+          />
+        );
+      })}
     </ol>
   );
 }

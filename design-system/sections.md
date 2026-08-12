@@ -12,10 +12,11 @@ Page-level building blocks for structured layouts. Spacing between main sections
 |-------|-------|----------------|
 | FAQ Desktop Open=off/on | `15162:14217` / `24824:12478` | **ready** (`FaqItem` / block `faq`) |
 | FAQ Mobile Open=Off/On | `15429:11358` / `15429:11359` | **ready** (responsive styles) |
-| Step by Steps vertical light | e.g. `18545:48950` | **ready** (`Steps` / block `steps`) |
+| Step by Steps vertical light | e.g. `18545:48950` | **ready** (`orientation="vertical"`) |
 | Step vertical dark | e.g. `18549:82142` | **ready** foundation (`mode="dark"`) |
-| Step horizontal light | e.g. `28358:173515` | **ready** (`orientation="horizontal"`) |
-| Step Off (inactive) | various | **ready** (`active={false}`) |
+| **How It Works process (horizontal)** | **`29987:339011`** (canonical marketing) | **ready** default (`orientation="horizontal"` + optional dual CTA) |
+| Step horizontal atom | e.g. `28358:173515` | **ready** |
+| Step Off (inactive) | various | **ready** (`active={false}`; default on steps 2+ when horizontal) |
 
 ## FAQ
 
@@ -74,15 +75,19 @@ Icons use self-hosted Material Symbols (`app/material-icons.css` + `public/fonts
 Section surface Purple/500; number disc white with purple digit; body text on-accent.
 
 ```tsx
+// Canonical marketing How it works (Final Pages)
 {
   type: "steps",
-  title: "Get started",
-  orientation: "vertical", // or "horizontal"
-  mode: "light",           // or "dark"
+  title: "How It Works",
+  subtitle: "Opening an account is simple:",
+  orientation: "horizontal", // default
   items: [
-    { title: "Create your account", description: "…" },
-    { title: "Verify your identity", description: "…" },
+    { title: "Create your account", description: "…", active: true },
+    { title: "Verify your identity", description: "…", active: false },
+    { title: "Fund and trade", description: "…", active: false },
   ],
+  primaryCta: { label: "Start trading", href: "…" },
+  secondaryCta: { label: "Try a free demo", href: "…" },
 }
 ```
 

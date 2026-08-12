@@ -85,8 +85,12 @@ export type LandingBlock =
         number?: number | string;
         active?: boolean;
       }>;
+      /** Default horizontal = marketing How it works (Figma 29987:339011). */
       orientation?: "vertical" | "horizontal";
       mode?: "light" | "dark";
+      /** Dual CTAs under process (common on Final Pages). */
+      primaryCta?: LandingCta;
+      secondaryCta?: LandingCta;
     }
   | {
       type: "disclaimer";

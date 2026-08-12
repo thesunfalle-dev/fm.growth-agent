@@ -1632,56 +1632,186 @@ a {
   color: var(--color-text-on-accent);
 }
 
-/* Horizontal steps */
+/*
+ * Horizontal process — Figma Final Pages “How It Works”
+ * node 29987:339011 (Hiring Process / Step by Steps horizontal)
+ * Structure: centered header → 3×250px columns with number + line → dual CTA
+ */
+.ui-steps-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-section-mobile); /* 60px Figma gap */
+}
+
+.ui-steps-band__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6); /* 24px */
+  text-align: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.ui-steps-band__header-plain {
+  width: 100%;
+}
+
+/* Figma H2 48 SemiBold centered (token: footer heading size) */
+.ui-steps-band__title {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  font-size: var(--layout-footer-heading-size);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Figma B2 Light 20 centered */
+.ui-steps-band__subtitle {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  font-size: var(--typography-font-size-b2);
+  font-weight: var(--typography-font-weight-light);
+  line-height: var(--typography-line-height-body);
+  color: var(--color-text-primary);
+}
+
+.ui-steps-band__actions {
+  gap: var(--space-6); /* 24px Figma */
+}
+
 .ui-steps--horizontal {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 0;
-  max-width: none;
+  width: 100%;
+  max-width: 750px; /* 3 × 250 */
+  margin: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .ui-steps--horizontal .ui-step {
+  flex: 0 0 250px;
+  width: 250px;
+  max-width: 250px;
   flex-direction: column;
   align-items: center;
-  flex: 1 1 180px;
-  max-width: 220px;
   position: relative;
   text-align: center;
+  gap: 0;
+  padding-bottom: var(--space-6);
 }
 
 .ui-steps--horizontal .ui-step__indicator {
-  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--component-step-number-size-horizontal);
   padding: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-.ui-steps--horizontal .ui-step__number {
-  width: var(--component-step-number-size-horizontal);
-  height: var(--component-step-number-size-horizontal);
-  font-size: var(--component-step-number-font-size-horizontal);
-  box-shadow: var(--component-step-shadow-horizontal);
-}
-
+/* Hide vertical connector node — horizontal line via ::after */
 .ui-steps--horizontal .ui-step__connector {
   display: none;
 }
 
+.ui-steps--horizontal .ui-step__number {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  position: relative;
+  z-index: 4;
+  box-shadow: none;
+}
+
+/* Active = purple disc + soft purple shadow (step 1 in Figma) */
+.ui-steps--horizontal.ui-steps--light .ui-step--active .ui-step__number {
+  width: var(--component-step-number-size-horizontal);
+  height: var(--component-step-number-size-horizontal);
+  font-size: var(--component-step-number-font-size-horizontal);
+  background: var(--component-step-active-bg);
+  color: var(--primitive-color-purple50);
+  box-shadow: var(--component-step-shadow-horizontal);
+}
+
+/* Inactive = Gray/300 fill + Gray/500 digit (Figma steps 2–3) */
+.ui-steps--horizontal.ui-steps--light .ui-step--inactive .ui-step__number {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  background: var(--primitive-color-gray300);
+  color: var(--primitive-color-gray500);
+  box-shadow: none;
+}
+
+/* Segment line from circle center to next step */
 .ui-steps--horizontal .ui-step:not(.ui-step--last)::after {
   content: "";
   position: absolute;
-  top: calc(var(--component-step-number-size-horizontal) / 2 - 1px);
-  left: calc(50% + var(--component-step-number-size-horizontal) / 2);
-  width: calc(100% - var(--component-step-number-size-horizontal));
+  top: 20px; /* mid of 40px disc; active 44≈22 — optical mid works */
+  left: 50%;
+  width: 50%;
   height: var(--component-step-connector-width);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ui-steps--horizontal .ui-step:not(.ui-step--last)::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 50%;
+  width: 50%;
+  height: var(--component-step-connector-width);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* First step: only outbound purple line (no inbound) */
+.ui-steps--horizontal .ui-step:first-child::before {
+  display: none;
+}
+
+/* Last step: only inbound (no outbound) */
+.ui-steps--horizontal .ui-step--last::after {
+  display: none;
+}
+
+.ui-steps--horizontal.ui-steps--light .ui-step--active:not(.ui-step--last)::after {
   background: var(--component-step-active-bg);
-  z-index: 0;
+}
+
+.ui-steps--horizontal.ui-steps--light .ui-step--inactive:not(.ui-step--last)::after,
+.ui-steps--horizontal.ui-steps--light .ui-step--inactive::before {
+  background: var(--primitive-color-gray300);
+}
+
+/* First inactive after active still gets gray inbound via ::before */
+.ui-steps--horizontal.ui-steps--light .ui-step--active + .ui-step--inactive::before {
+  background: var(--component-step-active-bg);
 }
 
 .ui-steps--horizontal .ui-step__body {
-  padding: var(--space-5) var(--space-2) 0;
+  width: 200px;
+  max-width: 200px;
+  padding: var(--space-5) 0 0; /* 20px Figma pt */
   align-items: center;
+  gap: var(--component-step-title-body-gap);
+}
+
+.ui-steps--horizontal .ui-step--last .ui-step__body {
+  padding-bottom: 0;
 }
 
 .ui-steps--horizontal .ui-step__title {
@@ -1689,10 +1819,13 @@ a {
   font-size: var(--component-step-title-size-horizontal);
   font-weight: var(--typography-font-weight-medium);
   line-height: var(--typography-line-height-body);
+  text-align: center;
 }
 
 .ui-steps--horizontal .ui-step__desc {
+  max-width: 180px;
   font-size: var(--component-step-body-size-horizontal);
+  font-weight: var(--typography-font-weight-light);
   text-align: center;
 }
 
@@ -1712,24 +1845,42 @@ a {
     margin-top: var(--component-faq-open-gap-mobile);
   }
 
+  .ui-steps-band {
+    gap: var(--space-10);
+  }
+
+  .ui-steps-band__title {
+    font-size: var(--layout-footer-heading-size-mobile);
+  }
+
+  /* Mobile: collapse to vertical timeline */
   .ui-steps--horizontal {
     flex-direction: column;
     align-items: stretch;
+    max-width: 100%;
   }
 
   .ui-steps--horizontal .ui-step {
+    flex: 1 1 auto;
+    width: 100%;
     max-width: none;
     flex-direction: row;
+    align-items: stretch;
     text-align: left;
+    gap: var(--space-4);
+    padding-bottom: 0;
   }
 
-  .ui-steps--horizontal .ui-step:not(.ui-step--last)::after {
-    display: none;
+  .ui-steps--horizontal .ui-step::before,
+  .ui-steps--horizontal .ui-step::after {
+    display: none !important;
   }
 
   .ui-steps--horizontal .ui-step__indicator {
     width: var(--component-step-indicator-width);
-    padding-inline: var(--space-6);
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .ui-steps--horizontal .ui-step__connector {
@@ -1737,19 +1888,43 @@ a {
   }
 
   .ui-steps--horizontal .ui-step__body {
+    width: auto;
+    max-width: none;
     align-items: flex-start;
-    padding: var(--space-1) var(--space-2) var(--space-5);
+    padding: 6px 0 var(--space-8);
   }
 
   .ui-steps--horizontal .ui-step__title {
     font-family: var(--typography-font-family-heading);
     font-size: var(--component-step-title-size-vertical);
     font-weight: var(--typography-font-weight-semibold);
+    text-align: left;
   }
 
   .ui-steps--horizontal .ui-step__desc {
+    max-width: 52ch;
     text-align: left;
     font-size: var(--component-step-body-size-vertical);
+  }
+
+  .ui-steps--horizontal.ui-steps--light .ui-step--active .ui-step__number,
+  .ui-steps--horizontal.ui-steps--light .ui-step--inactive .ui-step__number {
+    width: var(--component-step-number-size);
+    height: var(--component-step-number-size);
+    font-size: var(--component-step-number-font-size);
+  }
+
+  .ui-steps--horizontal.ui-steps--light .ui-step--inactive .ui-step__number {
+    background: var(--component-step-inactive-bg);
+    color: var(--component-step-inactive-text);
+  }
+
+  .ui-steps--horizontal.ui-steps--light .ui-step--active .ui-step__connector {
+    background: var(--component-step-active-bg);
+  }
+
+  .ui-steps--horizontal.ui-steps--light .ui-step--inactive .ui-step__connector {
+    background: var(--component-step-inactive-bg);
   }
 }
 

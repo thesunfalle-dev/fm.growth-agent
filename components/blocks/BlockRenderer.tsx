@@ -54,6 +54,8 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 items={block.items}
                 orientation={block.orientation}
                 mode={block.mode}
+                primaryCta={block.primaryCta}
+                secondaryCta={block.secondaryCta}
               />
             );
           case "faq":

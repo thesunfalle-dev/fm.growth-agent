@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — How it works = horizontal process (Figma 29987:339011)
+
+- Fixed `steps` to match Final Pages process: centered H2 48 + B2 lead, 3-column numbered row (active purple + gray inactive), segment connectors, optional dual CTAs.
+- Default orientation for StepsBand is **horizontal** (was vertical timeline — wrong for marketing pages).
+- Crypto content updated to horizontal + CTAs.
+
 ## 2026-08-12 — Shared blocks visual pass (FAQ / Steps / Table)
 
 - Self-host Material Symbols (`public/fonts` + `app/material-icons.css`) — fixes broken FAQ expand icons (late CSS `@import` was ignored after token inline).

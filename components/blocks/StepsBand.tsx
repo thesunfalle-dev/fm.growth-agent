@@ -1,36 +1,94 @@
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Steps, type StepItem } from "@/components/ui/Steps";
 import { Text } from "@/components/ui/Text";
+import type { LandingCta } from "@/lib/types";
 
 type StepsBandProps = {
   title?: string;
   subtitle?: string;
   items: StepItem[];
+  /**
+   * horizontal — marketing “How it works” process (Figma 29987:339011)
+   * vertical — left timeline (Sections vertical light)
+   */
   orientation?: "vertical" | "horizontal";
   mode?: "light" | "dark";
+  /** Optional dual CTAs under steps (Figma process section). */
+  primaryCta?: LandingCta;
+  secondaryCta?: LandingCta;
 };
 
 /**
- * How-it-works / Step by Steps section — Sections frame 15313:11090.
+ * How-it-works / Step by Steps — Figma Sections + Final Pages process band.
+ * Canonical marketing layout: centered H2 + lead + horizontal steps + dual CTA
+ * @see https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-339011
  */
 export function StepsBand({
   title,
   subtitle,
   items,
-  orientation = "vertical",
+  orientation = "horizontal",
   mode = "light",
+  primaryCta,
+  secondaryCta,
 }: StepsBandProps) {
+  const isProcess = orientation === "horizontal";
+
   return (
     <Section
       id="steps"
-      className={mode === "dark" ? "ui-section--steps-dark" : undefined}
+      className={[
+        mode === "dark" ? "ui-section--steps-dark" : "",
+        isProcess ? "ui-section--steps-process" : "",
+      ]
+        .filter(Boolean)
+        .join(" ") || undefined}
     >
-      <Container>
-        {title ? <Heading variant="section">{title}</Heading> : null}
-        {subtitle ? <Text variant="lead">{subtitle}</Text> : null}
+      <Container className={isProcess ? "ui-steps-band" : undefined}>
+        {title || subtitle ? (
+          <div
+            className={
+              isProcess ? "ui-steps-band__header" : "ui-steps-band__header-plain"
+            }
+          >
+            {title ? (
+              <Heading
+                variant="section"
+                className={isProcess ? "ui-steps-band__title" : undefined}
+              >
+                {title}
+              </Heading>
+            ) : null}
+            {subtitle ? (
+              <Text
+                variant="lead"
+                className={isProcess ? "ui-steps-band__subtitle" : undefined}
+              >
+                {subtitle}
+              </Text>
+            ) : null}
+          </div>
+        ) : null}
+
         <Steps items={items} orientation={orientation} mode={mode} />
+
+        {primaryCta || secondaryCta ? (
+          <div className="ui-cta-row ui-cta-row--center ui-steps-band__actions">
+            {primaryCta ? (
+              <Button href={primaryCta.href} variant="primary" size="lg">
+                {primaryCta.label}
+              </Button>
+            ) : null}
+            {secondaryCta ? (
+              <Button href={secondaryCta.href} variant="secondary" size="lg">
+                {secondaryCta.label}
+              </Button>
+            ) : null}
+          </div>
+        ) : null}
       </Container>
     </Section>
   );

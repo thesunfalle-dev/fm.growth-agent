@@ -212,29 +212,40 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— 5. How it works (conversion; Gold/accounts family — optional on pure M1) ——
+    // —— 5. How it works (Figma process 29987:339011 — horizontal + dual CTA) ——
     {
       type: "steps",
-      title: "How it works",
+      title: "How It Works",
       subtitle: "Opening a trading account with Fusion Markets is simple:",
-      orientation: "vertical",
+      orientation: "horizontal",
       items: [
         {
           title: "Create your account",
           description:
             "Fill in your personal details in our secure online application. It only takes a few minutes.",
+          active: true,
         },
         {
           title: "Verify your identity",
           description:
-            "We need to confirm your ID. This can be done electronically or by submitting two forms of ID Documentation. 90% of new accounts are approved within the hour.",
+            "Confirm your ID electronically or with two forms of ID documentation. 90% of new accounts are approved within the hour.",
+          active: false,
         },
         {
           title: "Fund and trade crypto CFDs",
           description:
-            "Deposit with your preferred method (no deposit fees) and start trading Bitcoin, Ethereum and other crypto CFDs on MT4, MT5, TradingView or cTrader.",
+            "Deposit with no deposit fees and start trading Bitcoin, Ethereum and other crypto CFDs on MT4, MT5, TradingView or cTrader.",
+          active: false,
         },
       ],
+      primaryCta: {
+        label: "Start trading",
+        href: "https://hub.fusionmarkets.com/auth/sign-up",
+      },
+      secondaryCta: {
+        label: "Try a free demo",
+        href: "https://hub.fusionmarkets.com/auth/sign-up",
+      },
     },
 
     // —— 6. FAQ (M1) ——

@@ -81,9 +81,9 @@
     {
       "type": "steps",
       "status": "ready",
-      "description": "Step by Steps / how-it-works process (Sections frame).",
+      "description": "How it works process — default horizontal (Final Pages 29987:339011); vertical timeline optional.",
       "component": "components/blocks/StepsBand.tsx",
-      "figma": "15313:11090",
+      "figma": "29987:339011",
       "props": {
         "title": { "type": "string", "required": false },
         "subtitle": { "type": "string", "required": false },
@@ -94,13 +94,16 @@
           "maxItems": 6
         },
         "orientation": { "type": "string", "required": false },
-        "mode": { "type": "string", "required": false }
+        "mode": { "type": "string", "required": false },
+        "primaryCta": { "type": "cta", "required": false },
+        "secondaryCta": { "type": "cta", "required": false }
       },
       "contentRules": [
-        "Prefer 3 steps; keep titles short and descriptions scannable.",
-        "Use orientation horizontal only for short titles on desktop."
+        "Default orientation is horizontal (centered H2 + 3 columns + dual CTA).",
+        "Prefer 3 steps; short titles; first step active purple, rest inactive gray.",
+        "Vertical only when Figma shows left timeline."
       ],
-      "tokenDependencies": ["component.step", "layout.spacing"]
+      "tokenDependencies": ["component.step", "layout.spacing", "semantic.color.action"]
     },
     {
       "type": "faq",
