@@ -1,0 +1,96 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15192-11125",
+    "frame": { "id": "15192:11125", "name": "Header & Footer" }
+  },
+  "guidelines": {
+    "desktopHeader": {
+      "height": 80,
+      "paddingX": 80,
+      "navItemGap": 40,
+      "actionsGap": 16,
+      "menuCentered": true,
+      "shadow": "0 10px 20px rgba(234,219,255,0.2)",
+      "bg": "#FFFFFF",
+      "nav": {
+        "items": ["Trading", "Platforms", "Resources", "For Partners", "About", "Help"],
+        "font": "Noto Sans SemiBold 16 / 130%",
+        "color": "#0D1350"
+      },
+      "actions": ["Log In (gradient text)", "Start Trading (Primary md)", "Language icon 24"]
+    },
+    "mobileHeader": {
+      "height": 57,
+      "paddingX": 16,
+      "icons": ["search", "menu"],
+      "shadow": "0 8px 12px rgba(234,219,255,0.2)"
+    },
+    "desktopFooter": {
+      "placement": "Below Ready to start trading? section",
+      "heightRule": 545,
+      "paddingY": 60,
+      "paddingX": 80,
+      "ctaTitle": {
+        "text": "Ready to start trading?",
+        "font": "Noto Sans SemiBold 48 / 110%",
+        "color": "#0D1350"
+      },
+      "ctaActionsGap": 24,
+      "columnTitle": "Noto Sans SemiBold 20",
+      "columnLink": "Roboto Regular 14 / 150%",
+      "linkGap": 8,
+      "groupGap": 100
+    },
+    "mobileFooter": {
+      "paddingY": 60,
+      "paddingX": 16
+    }
+  },
+  "components": {
+    "Header_Desktop": "15086:11710",
+    "Header_Mobile_Default": "15366:10884",
+    "Header_Mobile_NavBarClose": "16373:19318",
+    "Header_Mobile_NavBarReturn": "16373:19336",
+    "Footer_AU": "15866:27010",
+    "Footer_EN": "23377:111177",
+    "Footer_Mobile_AU": "15977:21970",
+    "Footer_Mobile_EN": "23368:105447",
+    "MobileMenuDropdown": "15781:20623",
+    "NavBar_On": "16370:19277",
+    "NavBar_Off": "16370:19288"
+  },
+  "footerStructureAU": {
+    "cta": ["Start trading", "or", "Try a free demo"],
+    "brandRow": ["logo", "Follow us", "social icons", "TV badge"],
+    "columns": [
+      "Accounts",
+      "Markets",
+      "Tools",
+      "Conditions & Funding",
+      "Platforms / MT5 / MT4 / cTrader / ATS",
+      "Partner with Us",
+      "Learn",
+      "Trading Updates",
+      "About Us",
+      "Legal"
+    ],
+    "help": ["Need help? View our FAQs", "Contact us email/phone/address"],
+    "bar": ["Fusion Markets YYYY. All rights reserved", "Privacy Policy", "Terms and Conditions"],
+    "legal": "AU regulatory disclaimer + FSG/PDS links"
+  },
+  "tokensMapped": {
+    "layout.header.*": true,
+    "layout.footer.*": true,
+    "shadow.header": "0 10px 20px rgba(234, 219, 255, 0.2)",
+    "shadow.headerMobile": "0 8px 12px rgba(234, 219, 255, 0.2)"
+  },
+  "implementationNotes": [
+    "Plus Jakarta Sans in Figma ignored; use Noto Sans + Roboto per Typography frame.",
+    "Landings use simplified footer column set; full mega-footer catalog documented in header-footer.md.",
+    "Mobile menu: details/summary for static export (no client JS).",
+    "Logo/icons exported to public/brand/*.svg from Figma MCP assets."
+  ]
+}

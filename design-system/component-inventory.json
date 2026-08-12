@@ -167,17 +167,34 @@
     {
       "name": "SiteHeader",
       "category": "navigation",
-      "status": "provisional",
+      "status": "ready",
       "path": "components/ui/SiteHeader.tsx",
-      "variants": ["preview"],
+      "variants": ["desktop", "mobile"],
       "sizes": [],
       "requiredStates": ["default"],
       "tokenDependencies": [
-        "semantic.color.border.default",
-        "semantic.color.background.canvas",
-        "zIndex.header"
+        "layout.header",
+        "shadow.header",
+        "shadow.headerMobile",
+        "zIndex.header",
+        "color.action.gradient.primary"
       ],
-      "notes": "Internal preview chrome; not a Fusion marketing nav."
+      "notes": "Website Redesign Header_Desktop/Mobile. Mobile menu via details/summary."
+    },
+    {
+      "name": "SiteFooter",
+      "category": "navigation",
+      "status": "ready",
+      "path": "components/ui/SiteFooter.tsx",
+      "variants": ["cta", "columns", "help", "legal"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": [
+        "layout.footer",
+        "component.button",
+        "color.action.gradient.primary"
+      ],
+      "notes": "Website Redesign footer foundation; simplified columns vs full mega-footer AU/EN."
     },
     {
       "name": "Pill",

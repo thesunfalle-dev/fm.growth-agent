@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Noto_Sans, Roboto } from "next/font/google";
+import { SiteFooter } from "@/components/ui/SiteFooter";
 import { SiteHeader } from "@/components/ui/SiteHeader";
 import "./globals.css";
 
@@ -14,7 +15,7 @@ const notoSans = Noto_Sans({
 
 const roboto = Roboto({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "700"],
   variable: "--font-roboto",
   display: "swap",
 });
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={roboto.className}>
         <SiteHeader />
         <main>{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

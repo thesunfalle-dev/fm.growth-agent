@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-12 — Header & Footer from Figma
+
+- Ingested frame `15192:11125`: Header_Desktop (80), Header_Mobile (57), Footer AU structure, CTA band.
+- Tokens `layout.header.*` / `layout.footer.*`, shadows `shadow.header` / `shadow.headerMobile`.
+- Components: marketing `SiteHeader` + `SiteFooter` in root layout; nav data in `lib/navigation.ts`.
+- Brand assets under `public/brand/` (logo mark/wordmark, language/search/menu icons).
+- Docs: `header-footer.md` + extract JSON. Full mega-footer / AU·EN legal variants planned.
+
 ## 2026-08-12 — Inputs & Labels from Figma
 
 - Ingested frame `14382:8478`: Field/Standard states, Search, Tabs, chips, Toggle.

@@ -43,7 +43,8 @@ Never hand-edit `design-system/generated/*`.
 | Section | `components/ui/Section.tsx` | section chrome |
 | Card | `components/ui/Card.tsx` | feature cards |
 | Eyebrow / Heading / Text | `components/ui/*` | typography primitives |
-| SiteHeader / Pill | `components/ui/*` | preview chrome |
+| SiteHeader / SiteFooter | `components/ui/*` | marketing chrome (Figma Header & Footer) |
+| Pill | `components/ui/Pill.tsx` | preview chip |
 | Block renderer | `components/blocks/BlockRenderer.tsx` | switches on `type` |
 | hero / features / cta / disclaimer | `components/blocks/*.tsx` | section blocks |
 

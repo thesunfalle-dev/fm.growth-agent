@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.6.0",
+    "version": "0.8.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14382-8478",
-    "notes": "Inputs & Labels frame 14382:8478: Field, Search, Tabs, chips, Toggle."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15192-11125",
+    "notes": "Header & Footer frame 15192:11125 — Header_Desktop 80, Header_Mobile 57, Footer AU/EN, CTA band."
   },
   "primitive": {
     "color": {
@@ -349,7 +349,8 @@
   },
   "shadow": {
     "none": "none",
-    "header": "0 1px 0 {semantic.color.border.default}",
+    "header": "0 10px 20px rgba(234, 219, 255, 0.2)",
+    "headerMobile": "0 8px 12px rgba(234, 219, 255, 0.2)",
     "card": "0 8px 24px rgba(13, 19, 80, 0.06)",
     "knob": "0 1px 2px rgba(13, 19, 80, 0.12)"
   },
@@ -361,7 +362,37 @@
       "gutterMobile": "16px"
     },
     "header": {
-      "height": "72px"
+      "height": "80px",
+      "heightMobile": "57px",
+      "paddingX": "80px",
+      "paddingXMobile": "16px",
+      "navGap": "40px",
+      "actionsGap": "16px",
+      "bg": "{primitive.color.gray0}",
+      "border": "{primitive.color.blue500}",
+      "navText": "{primitive.color.blue500}",
+      "navActive": "{primitive.color.purple500}",
+      "navFontSize": "16px",
+      "logoHeight": "48px",
+      "logoHeightMobile": "33px"
+    },
+    "footer": {
+      "paddingY": "60px",
+      "paddingX": "80px",
+      "paddingXMobile": "16px",
+      "bg": "{primitive.color.gray0}",
+      "linkColor": "{primitive.color.blue500}",
+      "mutedColor": "{primitive.color.gray600}",
+      "columnGap": "40px",
+      "groupGap": "100px",
+      "stackGap": "56px",
+      "titleSize": "20px",
+      "linkSize": "14px",
+      "linkGap": "8px",
+      "headingSize": "48px",
+      "headingSizeMobile": "32px",
+      "ctaActionsGap": "24px",
+      "socialGap": "24px"
     },
     "spacing": {
       "sectionDesktop": "120px",
