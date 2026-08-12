@@ -198,7 +198,13 @@ a {
 
 .ui-section--disclaimer {
   padding: var(--space-6) 0 var(--space-8);
-  border-top: var(--border-width-default) solid var(--color-border-default);
+  /* No divider lines between landing blocks / footer */
+  border-top: 0;
+}
+
+/* How we compare — Gray/100 band */
+.ui-section--compare {
+  background: var(--primitive-color-gray100);
 }
 
 /* Logos & Icons (Figma 14994:6445) — Material Symbols only for base UI */
@@ -461,11 +467,13 @@ a {
 
 .ui-mkt-footer {
   background: var(--layout-footer-bg);
-  border-top: var(--border-width-default) solid var(--color-border-default);
+  /* No horizontal rule between page content and footer CTA */
+  border-top: 0;
 }
 
 .ui-mkt-footer__cta {
-  border-bottom: var(--border-width-default) solid var(--color-border-default);
+  /* Soft separation via spacing only — no line between blocks */
+  border-bottom: 0;
 }
 
 .ui-mkt-footer__cta-inner {
@@ -1812,6 +1820,11 @@ a {
 
 .ui-faq:first-child {
   padding-top: var(--space-2);
+}
+
+/* Last FAQ row: no bottom divider (Figma) */
+.ui-faq:last-child {
+  border-bottom: 0;
 }
 
 .ui-faq__summary {

@@ -7,7 +7,7 @@ import type { LandingDocument } from "@/lib/types";
  * Content (copy, numbers, which rows/cards): TZ / user story only — never Figma placeholder text.
  *
  * Stack (ready-only): hero brand BG → features usp → instruments table →
- * compare matrix → steps → faq → disclaimer (footer CTAFooter).
+ * compare matrix → steps → faq (site footer CTA below).
  */
 const landing: LandingDocument = {
   slug: "crypto",
@@ -403,11 +403,6 @@ const landing: LandingDocument = {
             "Yes. Open a free demo from the Client Hub to practise crypto CFD trading without risking real funds before you go live.",
         },
       ],
-    },
-
-    {
-      type: "disclaimer",
-      text: "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money. Crypto CFDs are especially volatile. This is an internal Growth Agent preview on fm.growth-agent.org and is not an official Fusion Markets publication. Spreads, leverage and product availability depend on entity and client classification — verify on the live site and legal documents before trading.",
     },
   ],
 };
