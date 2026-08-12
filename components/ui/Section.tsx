@@ -7,6 +7,7 @@ type SectionProps = {
   variant?: SectionVariant;
   id?: string;
   as?: "section" | "footer" | "div";
+  className?: string;
 };
 
 export function Section({
@@ -14,9 +15,14 @@ export function Section({
   variant = "default",
   id,
   as: Tag = "section",
+  className = "",
 }: SectionProps) {
+  const classes = ["ui-section", `ui-section--${variant}`, className]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <Tag className={`ui-section ui-section--${variant}`} id={id}>
+    <Tag className={classes} id={id}>
       {children}
     </Tag>
   );

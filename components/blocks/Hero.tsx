@@ -1,3 +1,4 @@
+import { BackgroundImage } from "@/components/ui/BackgroundImage";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -12,11 +13,24 @@ type HeroProps = {
   subtitle?: string;
   primaryCta?: LandingCta;
   secondaryCta?: LandingCta;
+  /** Shared purple brand art from Images frame (most site backgrounds). */
+  brandBackground?: boolean;
 };
 
-export function Hero({ eyebrow, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
+export function Hero({
+  eyebrow,
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  brandBackground = false,
+}: HeroProps) {
   return (
-    <Section variant="hero">
+    <Section
+      variant="hero"
+      className={brandBackground ? "ui-section--brand-bg" : undefined}
+    >
+      {brandBackground ? <BackgroundImage variant="decorative" /> : null}
       <Container>
         {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
         <Heading variant="display">{title}</Heading>

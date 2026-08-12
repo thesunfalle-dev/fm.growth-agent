@@ -19,6 +19,7 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 subtitle={block.subtitle}
                 primaryCta={block.primaryCta}
                 secondaryCta={block.secondaryCta}
+                brandBackground={block.brandBackground}
               />
             );
           case "features":

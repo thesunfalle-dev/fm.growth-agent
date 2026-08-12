@@ -227,6 +227,14 @@ export const tokenNames = [
   "--component-logo-desktop-height",
   "--component-logo-mobile-width",
   "--component-logo-mobile-height",
+  "--component-illustration-size-sm",
+  "--component-illustration-size-md",
+  "--component-illustration-size-lg",
+  "--component-illustration-size-xl",
+  "--component-illustration-tile-bg",
+  "--component-illustration-default-size",
+  "--component-background-image-src",
+  "--component-background-image-note",
   "--component-table-width",
   "--component-table-max-height",
   "--component-table-padding-x",
@@ -354,11 +362,11 @@ export type TokenName = (typeof tokenNames)[number];
 export const designTokenMeta = {
   "name": "Fusion Markets Landing Design Tokens",
   "mode": "light",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "status": "figma-partial-sync",
   "updatedAt": "2026-08-12",
   "source": "Website Redesign FM 2.0",
   "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14994-6445",
-  "notes": "Logos & Icons 14994:6445 — base UI icons = Material Symbols only; FM logos desktop/mobile."
+  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15235-13486",
+  "notes": "Images 15235:13486 — 31 isometric illustrations 180px + shared brand background."
 } as const;

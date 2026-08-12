@@ -23,6 +23,9 @@ export type TableRowSpec = {
   action?: LandingCta;
 };
 
+/** Brand illustration key from lib/illustrations.ts (Images frame). */
+export type IllustrationKey = string;
+
 export type LandingBlock =
   | {
       type: "hero";
@@ -31,6 +34,8 @@ export type LandingBlock =
       subtitle?: string;
       primaryCta?: LandingCta;
       secondaryCta?: LandingCta;
+      /** Use shared brand purple background art (Images frame). */
+      brandBackground?: boolean;
     }
   | {
       type: "features";
@@ -38,6 +43,8 @@ export type LandingBlock =
       items: Array<{
         title: string;
         description: string;
+        /** Optional isometric illustration name (Images catalog). */
+        illustration?: IllustrationKey;
       }>;
     }
   | {

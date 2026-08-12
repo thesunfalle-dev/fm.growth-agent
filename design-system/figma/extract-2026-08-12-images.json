@@ -1,0 +1,67 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15235-13486",
+    "frame": { "id": "15235:13486", "name": "Images" }
+  },
+  "guidelines": {
+    "illustrations": {
+      "componentSet": "14624:5240",
+      "tileSize": 180,
+      "tileBg": "#FAFAFA",
+      "style": "Isometric purple brand illustrations"
+    },
+    "backgroundImage": {
+      "title": "Background Image",
+      "note": "Using this image consistently for most of the backgrounds",
+      "node": "15389:11177",
+      "size": { "width": 1211, "height": 743 }
+    }
+  },
+  "illustrations": [
+    { "name": "build", "node": "14624:5227" },
+    { "name": "deposit", "node": "14624:5215" },
+    { "name": "trade", "node": "14624:5239" },
+    { "name": "coin", "node": "14624:5230" },
+    { "name": "envelop", "node": "14624:5234" },
+    { "name": "shield", "node": "14624:5231" },
+    { "name": "safe-box", "node": "14624:5232" },
+    { "name": "transfer", "node": "14624:5233" },
+    { "name": "bitcoin", "node": "14624:5237" },
+    { "name": "cloud-transfer", "node": "14624:5216" },
+    { "name": "profile", "node": "14624:5238" },
+    { "name": "speed", "node": "14624:5224" },
+    { "name": "secure-eye", "node": "14624:5229" },
+    { "name": "trend-down", "node": "14624:5220" },
+    { "name": "lock", "node": "14624:5226" },
+    { "name": "shield-bullet", "node": "14624:5235" },
+    { "name": "award", "node": "14624:5221" },
+    { "name": "smile", "node": "27605:176521" },
+    { "name": "shield-podium", "node": "14624:5218" },
+    { "name": "secure-file", "node": "14624:5217" },
+    { "name": "cog", "node": "14624:5228" },
+    { "name": "box", "node": "14624:5223" },
+    { "name": "dashboard", "node": "14624:5214" },
+    { "name": "signature", "node": "14624:5222" },
+    { "name": "chart", "node": "14624:5225" },
+    { "name": "rocket", "node": "14624:5213" },
+    { "name": "support", "node": "14624:5212" },
+    { "name": "user-auth", "node": "14624:5211" },
+    { "name": "user-search", "node": "14624:5210" },
+    { "name": "search", "node": "14624:5236" },
+    { "name": "hand", "node": "14624:5219" }
+  ],
+  "assets": {
+    "illustrationsDir": "public/images/illustrations",
+    "background": "public/images/backgrounds/bg-default.png",
+    "exportScale": 2
+  },
+  "implementation": {
+    "Illustration": "components/ui/Illustration.tsx",
+    "BackgroundImage": "components/ui/BackgroundImage.tsx",
+    "catalog": "lib/illustrations.ts",
+    "tokens": ["component.illustration", "component.backgroundImage"]
+  }
+}

@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-12 — Images from Figma
+
+- Ingested frame `15235:13486`: 31 isometric illustrations (180px) + shared Background Image.
+- `Illustration` + `BackgroundImage` components; catalog `lib/illustrations.ts`.
+- Assets: `public/images/illustrations/*.png`, `public/images/backgrounds/bg-default.png`.
+- Demo hero uses `brandBackground`; feature cards can set `illustration`.
+- Docs: `images.md` + extract JSON. Reminder: UI chrome stays Material Icons.
+
 ## 2026-08-12 — Logos & Icons from Figma
 
 - Ingested frame `14994:6445`. **Hard rule:** base UI icons = **Material Symbols only**.

@@ -31,6 +31,30 @@
       "notes": "FM_Logo_Desktop / FM_Logo_Mobile from Logos & Icons frame."
     },
     {
+      "name": "Illustration",
+      "category": "media",
+      "status": "ready",
+      "path": "components/ui/Illustration.tsx",
+      "figma": "15235:13486",
+      "variants": ["framed", "plain"],
+      "sizes": ["sm", "md", "lg", "xl"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.illustration"],
+      "notes": "Isometric brand illustrations (not Material). Catalog: lib/illustrations.ts."
+    },
+    {
+      "name": "BackgroundImage",
+      "category": "media",
+      "status": "ready",
+      "path": "components/ui/BackgroundImage.tsx",
+      "figma": "15235:13486",
+      "variants": ["decorative", "band", "inline"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.backgroundImage"],
+      "notes": "Shared purple background — use consistently for most backgrounds."
+    },
+    {
       "name": "Field",
       "category": "inputs",
       "status": "ready",

@@ -227,6 +227,14 @@
   --component-logo-desktop-height: 48px;
   --component-logo-mobile-width: 24px;
   --component-logo-mobile-height: 28px;
+  --component-illustration-size-sm: 80px;
+  --component-illustration-size-md: 120px;
+  --component-illustration-size-lg: 180px;
+  --component-illustration-size-xl: 240px;
+  --component-illustration-tile-bg: var(--primitive-color-gray100);
+  --component-illustration-default-size: 180px;
+  --component-background-image-src: /images/backgrounds/bg-default.png;
+  --component-background-image-note: Shared brand purple art — use consistently for most backgrounds;
   --component-table-width: 1280px;
   --component-table-max-height: 600px;
   --component-table-padding-x: 24px;

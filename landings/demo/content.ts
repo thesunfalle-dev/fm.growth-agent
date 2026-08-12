@@ -15,6 +15,7 @@ const landing: LandingDocument = {
   blocks: [
     {
       type: "hero",
+      brandBackground: true,
       eyebrow: "Fusion Markets · internal preview",
       title: "Landing pipeline is live",
       subtitle:
@@ -34,16 +35,19 @@ const landing: LandingDocument = {
       items: [
         {
           title: "Brief in",
+          illustration: "build",
           description:
             "Marketing brief → structured content + block order for the page.",
         },
         {
           title: "Variants out",
+          illustration: "rocket",
           description:
             "Same day: /campaign-a, /campaign-b — share links, not Figma handoffs.",
         },
         {
           title: "Design system later",
+          illustration: "chart",
           description:
             "Tokens + blocks from the new Figma redesign. Until then: neutral shell.",
         },

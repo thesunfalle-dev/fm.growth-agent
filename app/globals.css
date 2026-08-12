@@ -1296,6 +1296,85 @@ a {
 
 /* Cards */
 
+/* Illustrations + Background Image (Figma Images 15235:13486) */
+
+.ui-illustration {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ui-illustration--framed {
+  background: var(--component-illustration-tile-bg);
+  border-radius: var(--radius-lg);
+}
+
+.ui-illustration__img {
+  display: block;
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+}
+
+.ui-bg-image--decorative {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ui-bg-image--band,
+.ui-bg-image--inline {
+  display: block;
+  width: 100%;
+  max-width: var(--layout-container-max);
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
+.ui-section--brand-bg {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text-on-accent);
+}
+
+.ui-section--brand-bg .ui-container {
+  position: relative;
+  z-index: 1;
+}
+
+.ui-section--brand-bg .ui-eyebrow {
+  color: color-mix(in oklab, var(--color-text-on-accent) 85%, transparent);
+}
+
+.ui-section--brand-bg .ui-heading,
+.ui-section--brand-bg .ui-text--lead {
+  color: var(--color-text-on-accent);
+}
+
+/* Secondary CTA on brand purple: light fill for contrast */
+.ui-section--brand-bg .ui-btn--secondary {
+  background-image:
+    linear-gradient(
+      color-mix(in oklab, var(--color-text-on-accent) 12%, transparent),
+      color-mix(in oklab, var(--color-text-on-accent) 12%, transparent)
+    ),
+    var(--color-action-gradient-primary);
+}
+
+.ui-section--brand-bg .ui-btn--secondary .ui-btn__label {
+  background-image: none;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  color: var(--color-text-on-accent);
+  -webkit-text-fill-color: var(--color-text-on-accent);
+}
+
 .ui-feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1311,6 +1390,10 @@ a {
 
 .ui-card--feature {
   background: var(--color-background-surface);
+}
+
+.ui-card__media {
+  margin: 0 0 var(--space-5);
 }
 
 /* Heading 4 Semibold */

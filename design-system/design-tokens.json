@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.9.0",
+    "version": "0.10.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14994-6445",
-    "notes": "Logos & Icons 14994:6445 — base UI icons = Material Symbols only; FM logos desktop/mobile."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15235-13486",
+    "notes": "Images 15235:13486 — 31 isometric illustrations 180px + shared brand background."
   },
   "primitive": {
     "color": {
@@ -283,6 +283,18 @@
       "desktopHeight": "48px",
       "mobileWidth": "24px",
       "mobileHeight": "28px"
+    },
+    "illustration": {
+      "sizeSm": "80px",
+      "sizeMd": "120px",
+      "sizeLg": "180px",
+      "sizeXl": "240px",
+      "tileBg": "{primitive.color.gray100}",
+      "defaultSize": "180px"
+    },
+    "backgroundImage": {
+      "src": "/images/backgrounds/bg-default.png",
+      "note": "Shared brand purple art — use consistently for most backgrounds"
     },
     "table": {
       "width": "1280px",

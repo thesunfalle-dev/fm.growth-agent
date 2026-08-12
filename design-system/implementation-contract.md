@@ -46,6 +46,8 @@ Never hand-edit `design-system/generated/*`.
 | SiteHeader / SiteFooter | `components/ui/*` | marketing chrome (Figma Header & Footer) |
 | Icon | `components/ui/Icon.tsx` | **Material Symbols only** for base UI |
 | Logo | `components/ui/Logo.tsx` | FM desktop / mobile |
+| Illustration | `components/ui/Illustration.tsx` | isometric brand art (Images frame) |
+| BackgroundImage | `components/ui/BackgroundImage.tsx` | shared purple BG art |
 | Pill | `components/ui/Pill.tsx` | preview chip |
 | Block renderer | `components/blocks/BlockRenderer.tsx` | switches on `type` |
 | hero / features / cta / disclaimer | `components/blocks/*.tsx` | section blocks |
