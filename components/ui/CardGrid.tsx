@@ -13,7 +13,9 @@ type CardGridProps = {
 };
 
 /**
- * Card layout helper — USP: equal-height row, max 4 then scroll.
+ * Card layout helper.
+ * USP (cards.md / Figma): horizontal row, max ~4 visible, MORE → horizontal scroll
+ * (never wrap to a second row).
  */
 export function CardGrid({
   children,
@@ -30,5 +32,9 @@ export function CardGrid({
     .filter(Boolean)
     .join(" ");
 
-  return <div className={classes}>{children}</div>;
+  return (
+    <div className={classes} data-max-visible={maxVisible || undefined}>
+      {children}
+    </div>
+  );
 }
