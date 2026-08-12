@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Colors locked to Figma paint styles
+
+- Ingested Color frame `14749:6364` + all local solid/gradient paint styles.
+- 60 solids match tokens 1:1; added remaining gradient tokens (Gold, Card Light, Mint, overlays…).
+- Documented map Figma style name → token in `color-styles.md` + extract JSON.
+
 ## 2026-08-12 — Fonts: design-system only
 
 - Runtime fonts: **Noto Sans** + **Roboto** only (Website Redesign Typography).

@@ -24,11 +24,19 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-12 — Colors (paint styles + Color frame)
+
+- File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14749-6364
+- Frame: **Color** `14749:6364`
+- 60 solid paint styles + 10 gradients → tokens (hex verified 1:1)
+- Docs: `color-styles.md`, extract `figma/extract-2026-08-12-color-styles.json`
+- Actor: agent + user
+
 ### 2026-08-12 — Correct SoT: Website Redesign
 
-- File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263
-- Frames: Typography, Color, Spacing & Layout (+ paint styles via Plugin API)
-- Fonts: **Noto Sans** + **Roboto** (design system only)
+- File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0
+- Frames: Typography, Color, Spacing & Layout
+- Fonts: **Noto Sans** + **Roboto**
 - Actor: agent + user
 
 ## How to record a Figma sync

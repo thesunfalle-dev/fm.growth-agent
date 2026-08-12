@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263",
-    "notes": "Website Redesign FM 2.0. Fonts from Typography frame: Noto Sans + Roboto only."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14749-6364",
+    "notes": "Fonts: Typography 14711:15263 (Noto Sans + Roboto). Colors: Color frame 14749:6364 + Figma paint styles (exact hex match)."
   },
   "primitive": {
     "color": {
@@ -79,7 +79,18 @@
       "gradientTertiaryStart": "#640CD2",
       "gradientTertiaryEnd": "#06007A",
       "gradientSecondaryButtonStart": "#E3D9FF",
-      "gradientSecondaryButtonEnd": "#D8E7FF"
+      "gradientSecondaryButtonEnd": "#D8E7FF",
+      "gradientGoldStart": "#A97D2C",
+      "gradientGoldMid": "#F8CC79",
+      "gradientGoldEnd": "#A97D2C",
+      "gradientCardLight": "#6B4AFF",
+      "gradientMintStart": "#A5F1B9",
+      "gradientMintEnd": "#F0E7FA",
+      "gradientLightPurpleStart": "#F3EAFF",
+      "gradientLightPurpleEnd": "#FFFFFF",
+      "gradientPurpleGreenStart": "#8FFFB5",
+      "gradientPurpleGreenEnd": "#6B4AFF",
+      "gradientPurpleOverlay": "#540EAB"
     }
   },
   "semantic": {
@@ -121,7 +132,14 @@
         "secondaryBorderHover": "{primitive.color.gray400}",
         "gradientPrimary": "linear-gradient(90deg, {primitive.color.gradientPrimaryStart} 0%, {primitive.color.gradientPrimaryEnd} 100%)",
         "gradientSecondary": "linear-gradient(90deg, {primitive.color.gradientSecondaryStart} 0%, {primitive.color.gradientSecondaryEnd} 100%)",
-        "gradientSecondaryButton": "linear-gradient(90deg, {primitive.color.gradientSecondaryButtonStart} 0%, {primitive.color.gradientSecondaryButtonEnd} 100%)"
+        "gradientTertiary": "linear-gradient(90deg, {primitive.color.gradientTertiaryStart} 0%, {primitive.color.gradientTertiaryEnd} 100%)",
+        "gradientSecondaryButton": "linear-gradient(90deg, {primitive.color.gradientSecondaryButtonStart} 0%, {primitive.color.gradientSecondaryButtonEnd} 100%)",
+        "gradientGold": "linear-gradient(90deg, {primitive.color.gradientGoldStart} 0%, {primitive.color.gradientGoldMid} 50%, {primitive.color.gradientGoldEnd} 100%)",
+        "gradientCardLight": "linear-gradient(180deg, color-mix(in oklab, {primitive.color.gradientCardLight} 3%, transparent) 0%, color-mix(in oklab, {primitive.color.gradientCardLight} 5%, transparent) 100%)",
+        "gradientMint": "linear-gradient(90deg, color-mix(in oklab, {primitive.color.gradientMintStart} 20%, transparent) 0%, color-mix(in oklab, {primitive.color.gradientMintEnd} 5%, transparent) 100%)",
+        "gradientLightPurple": "linear-gradient(90deg, color-mix(in oklab, {primitive.color.gradientLightPurpleStart} 40%, transparent) 0%, color-mix(in oklab, {primitive.color.gradientLightPurpleEnd} 20%, transparent) 100%)",
+        "gradientPurpleGreen": "linear-gradient(90deg, color-mix(in oklab, {primitive.color.gradientPurpleGreenStart} 20%, transparent) 0%, color-mix(in oklab, {primitive.color.gradientPurpleGreenEnd} 10%, transparent) 100%)",
+        "gradientPurpleOverlay": "linear-gradient(180deg, color-mix(in oklab, {primitive.color.gradientPurpleOverlay} 70%, transparent) 0%, transparent 100%)"
       },
       "status": {
         "success": "{primitive.color.green500}",

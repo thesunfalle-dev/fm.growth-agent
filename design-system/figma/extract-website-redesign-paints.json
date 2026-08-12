@@ -1,25 +1,7 @@
 {
+  "extractedAt": "2026-08-12",
+  "source": "Website Redesign paint styles",
   "paints": {
-    "Gray/0 (White)": "#FFFFFF",
-    "Gray/100": "#FAFAFA",
-    "Gray/200": "#F5F6F7",
-    "Gray/300": "#E4E6E9",
-    "Gray/400": "#D1D5DA",
-    "Gray/500": "#93979F",
-    "Gray/600": "#555A66",
-    "Gray/700": "#3F434C",
-    "Gray/800": "#2B2E34",
-    "Gray/900": "#191B1F",
-    "Purple/50": "#F7F6FC",
-    "Purple/100": "#F1EBFB",
-    "Purple/200": "#E0CFF5",
-    "Purple/300": "#DAC3FF",
-    "Purple/400": "#985EFF",
-    "Purple/500 (Accent)": "#742CCE",
-    "Purple/600": "#5B23A0",
-    "Purple/700": "#471B75",
-    "Purple/800": "#331448",
-    "Purple/900": "#1F0E2D",
     "Blue/50": "#F3F5FF",
     "Blue/100": "#E5EAFF",
     "Blue/200": "#C4C7E4",
@@ -30,16 +12,26 @@
     "Blue/700": "#080D38",
     "Blue/800": "#050A2C",
     "Blue/900": "#030620",
-    "Green/50": "#E9FCF2",
-    "Green/100": "#E8F5EC",
-    "Green/200": "#C8EAD3",
-    "Green/300": "#A5F1B9",
-    "Green/400": "#8FFFB5",
-    "Green/500": "#28A44B",
-    "Green/600": "#218C40",
-    "Green/700": "#197234",
-    "Green/800": "#135A2A",
-    "Green/900": "#0C3F1D",
+    "Purple/50": "#F7F6FC",
+    "Purple/100": "#F1EBFB",
+    "Purple/200": "#E0CFF5",
+    "Purple/300": "#DAC3FF",
+    "Purple/400": "#985EFF",
+    "Purple/500 (Accent)": "#742CCE",
+    "Purple/600": "#5B23A0",
+    "Purple/700": "#471B75",
+    "Purple/800": "#331448",
+    "Purple/900": "#1F0E2D",
+    "Gray/0 (White)": "#FFFFFF",
+    "Gray/100": "#FAFAFA",
+    "Gray/200": "#F5F6F7",
+    "Gray/300": "#E4E6E9",
+    "Gray/400": "#D1D5DA",
+    "Gray/500": "#93979F",
+    "Gray/600": "#555A66",
+    "Gray/700": "#3F434C",
+    "Gray/800": "#2B2E34",
+    "Gray/900": "#191B1F",
     "Orange/50": "#FFF8F2",
     "Orange/100": "#FFF4E9",
     "Orange/200": "#FFE2C2",
@@ -50,6 +42,16 @@
     "Orange/700": "#C6520B",
     "Orange/800": "#9E4108",
     "Orange/900": "#6B2C05",
+    "Green/50": "#E9FCF2",
+    "Green/100": "#E8F5EC",
+    "Green/200": "#C8EAD3",
+    "Green/300": "#A5F1B9",
+    "Green/400": "#8FFFB5",
+    "Green/500": "#28A44B",
+    "Green/600": "#218C40",
+    "Green/700": "#197234",
+    "Green/800": "#135A2A",
+    "Green/900": "#0C3F1D",
     "Red/50": "#FFF1F1",
     "Red/100": "#FDEAEA",
     "Red/200": "#FFCCCC",
@@ -61,391 +63,80 @@
     "Red/800": "#6A0101",
     "Red/900": "#490000"
   },
-  "gradients": [
-    {
-      "name": "Gradient/Primary",
-      "type": "GRADIENT_LINEAR",
+  "gradients": {
+    "Gradient/Primary": {
+      "token": "semantic.color.action.gradientPrimary",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#742CCE",
-          "opacity": 1
-        },
-        {
-          "position": 1,
-          "hex": "#6B4AFF",
-          "opacity": 1
-        }
+        "#742CCE",
+        "#6B4AFF"
       ]
     },
-    {
-      "name": "Gradient/Secondary",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Secondary": {
+      "token": "semantic.color.action.gradientSecondary",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#742CCE",
-          "opacity": 1
-        },
-        {
-          "position": 1,
-          "hex": "#1811A2",
-          "opacity": 1
-        }
+        "#742CCE",
+        "#1811A2"
       ]
     },
-    {
-      "name": "Gradient/Tertiary",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Tertiary": {
+      "token": "semantic.color.action.gradientTertiary",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#640CD2",
-          "opacity": 1
-        },
-        {
-          "position": 1,
-          "hex": "#06007A",
-          "opacity": 1
-        }
+        "#640CD2",
+        "#06007A"
       ]
     },
-    {
-      "name": "Gradient/Card (Light)",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Secondary Button": {
+      "token": "semantic.color.action.gradientSecondaryButton",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#6B4AFF",
-          "opacity": 0.029999999329447746
-        },
-        {
-          "position": 1,
-          "hex": "#6B4AFF",
-          "opacity": 0.05000000074505806
-        }
+        "#E3D9FF",
+        "#D8E7FF"
       ]
     },
-    {
-      "name": "Gradient/Purple-Green Gradient",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Gold": {
+      "token": "semantic.color.action.gradientGold",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#8FFFB5",
-          "opacity": 0.20000000298023224
-        },
-        {
-          "position": 1,
-          "hex": "#6B4AFF",
-          "opacity": 0.10000000149011612
-        }
+        "#A97D2C",
+        "#F8CC79",
+        "#A97D2C"
       ]
     },
-    {
-      "name": "Gradient/Mint Gradient",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Card (Light)": {
+      "token": "semantic.color.action.gradientCardLight",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#A5F1B9",
-          "opacity": 0.20000000298023224
-        },
-        {
-          "position": 1,
-          "hex": "#F0E7FA",
-          "opacity": 0.05000000074505806
-        }
+        "#6B4AFF@3%",
+        "#6B4AFF@5%"
       ]
     },
-    {
-      "name": "Gradient/Light Purple Gradient",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Mint Gradient": {
+      "token": "semantic.color.action.gradientMint",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#F3EAFF",
-          "opacity": 0.4000000059604645
-        },
-        {
-          "position": 1,
-          "hex": "#FFFFFF",
-          "opacity": 0.20000000298023224
-        }
+        "#A5F1B9@20%",
+        "#F0E7FA@5%"
       ]
     },
-    {
-      "name": "Gradient/Secondary Button",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Light Purple Gradient": {
+      "token": "semantic.color.action.gradientLightPurple",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#E3D9FF",
-          "opacity": 1
-        },
-        {
-          "position": 1,
-          "hex": "#D8E7FF",
-          "opacity": 1
-        }
+        "#F3EAFF@40%",
+        "#FFFFFF@20%"
       ]
     },
-    {
-      "name": "Gradient/Purple overlay",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Purple-Green Gradient": {
+      "token": "semantic.color.action.gradientPurpleGreen",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#540EAB",
-          "opacity": 0.699999988079071
-        },
-        {
-          "position": 1,
-          "hex": "#540EAB",
-          "opacity": 0
-        }
+        "#8FFFB5@20%",
+        "#6B4AFF@10%"
       ]
     },
-    {
-      "name": "Gradient/Gold",
-      "type": "GRADIENT_LINEAR",
+    "Gradient/Purple overlay": {
+      "token": "semantic.color.action.gradientPurpleOverlay",
       "stops": [
-        {
-          "position": 0,
-          "hex": "#A97D2C",
-          "opacity": 1
-        },
-        {
-          "position": 0.5,
-          "hex": "#F8CC79",
-          "opacity": 1
-        },
-        {
-          "position": 1,
-          "hex": "#A97D2C",
-          "opacity": 1
-        }
+        "#540EAB@70%",
+        "transparent"
       ]
     }
-  ],
-  "page": {
-    "id": "14082:6958",
-    "name": "Design System"
   },
-  "topLevel": [
-    {
-      "id": "14381:8343",
-      "name": "card/Up/Down",
-      "type": "FRAME"
-    },
-    {
-      "id": "14381:8373",
-      "name": "card/Up/Down",
-      "type": "FRAME"
-    },
-    {
-      "id": "14380:4074",
-      "name": "card",
-      "type": "FRAME"
-    },
-    {
-      "id": "14381:8123",
-      "name": "card",
-      "type": "FRAME"
-    },
-    {
-      "id": "14382:8478",
-      "name": "Inputs & Labels",
-      "type": "FRAME"
-    },
-    {
-      "id": "14115:4855",
-      "name": "Nav Bar",
-      "type": "FRAME"
-    },
-    {
-      "id": "14711:15263",
-      "name": "Typography ",
-      "type": "FRAME"
-    },
-    {
-      "id": "14787:7834",
-      "name": "Changelog",
-      "type": "FRAME"
-    },
-    {
-      "id": "14765:7184",
-      "name": "Spacing & Layout",
-      "type": "FRAME"
-    },
-    {
-      "id": "14765:9245",
-      "name": "Buttons",
-      "type": "FRAME"
-    },
-    {
-      "id": "14994:6445",
-      "name": "Logos & Icons",
-      "type": "FRAME"
-    },
-    {
-      "id": "25103:143848",
-      "name": "Index/Variant30",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143850",
-      "name": "Index/Variant29",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143852",
-      "name": "Index/Variant28",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143854",
-      "name": "Index/Variant27",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143856",
-      "name": "Index/Variant26",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143858",
-      "name": "Index/Variant25",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143860",
-      "name": "Index/Variant24",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143862",
-      "name": "Index/Variant23",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143864",
-      "name": "Index/Variant22",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143866",
-      "name": "Index/Variant21",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143868",
-      "name": "Index/Variant20",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143870",
-      "name": "Index/Variant19",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143872",
-      "name": "Index/Variant18",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143874",
-      "name": "Index/Variant17",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "25103:143876",
-      "name": "Index/Variant16",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "15166:10610",
-      "name": "Cards",
-      "type": "FRAME"
-    },
-    {
-      "id": "18744:57730",
-      "name": "Desktop Funding/Deposit/on/on",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "19762:62275",
-      "name": "Desktop Funding/Deposit/on/off",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "19756:59206",
-      "name": "Desktop Funding/Withdrawal/on/on",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "19762:61654",
-      "name": "Desktop Funding/Withdrawal/on/off",
-      "type": "COMPONENT"
-    },
-    {
-      "id": "15276:11158",
-      "name": "Tables",
-      "type": "FRAME"
-    },
-    {
-      "id": "15313:11090",
-      "name": "Sections",
-      "type": "FRAME"
-    },
-    {
-      "id": "15235:13486",
-      "name": "Images",
-      "type": "FRAME"
-    },
-    {
-      "id": "32576:9551",
-      "name": "Component 9",
-      "type": "INSTANCE"
-    },
-    {
-      "id": "15192:11125",
-      "name": "Header & Footer",
-      "type": "FRAME"
-    },
-    {
-      "id": "14749:6364",
-      "name": "Color",
-      "type": "FRAME"
-    },
-    {
-      "id": "14750:6753",
-      "name": "Cover",
-      "type": "FRAME"
-    },
-    {
-      "id": "26311:161471",
-      "name": "Swap-Free Table",
-      "type": "TEXT"
-    },
-    {
-      "id": "27603:11161",
-      "name": "Bento box grid variations",
-      "type": "SECTION"
-    },
-    {
-      "id": "28658:9361",
-      "name": "EN Bank Transfer Local Transfer SWIFT SEPA FPS Visa Mastercard ApplePay Paypal Crypto FPX ThaiQR Duitnow Durianpay Neteller Skrill BinancePay Interac GCash Pix Mpesa Mifinity FasaPay icash.one",
-      "type": "TEXT"
-    },
-    {
-      "id": "28676:9378",
-      "name": "AU Bank Transfer PayID Crypto Visa Mastercard Paypal Neteller Skrill BinancePay Jetonbank ApplePay",
-      "type": "TEXT"
-    }
-  ],
   "fontsInDesignSystem": {
-    "authoritative": "Typography frame 14711:15263",
     "families": [
       "Noto Sans",
       "Roboto"
@@ -453,10 +144,6 @@
     "roles": {
       "Noto Sans": "display, heading, CTA",
       "Roboto": "body, caption"
-    },
-    "notInSystem": [
-      "Plus Jakarta Sans",
-      "Lato"
-    ]
+    }
   }
 }

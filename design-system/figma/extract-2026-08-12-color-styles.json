@@ -1,0 +1,452 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14749-6364",
+    "frame": {
+      "id": "14749:6364",
+      "name": "Color"
+    }
+  },
+  "source": "Figma local paint styles (authoritative hex) + Color frame swatches",
+  "solidCount": 60,
+  "paintStyles": {
+    "Blue/50": "#F3F5FF",
+    "Blue/100": "#E5EAFF",
+    "Blue/200": "#C4C7E4",
+    "Blue/300": "#9DA4D1",
+    "Blue/400": "#6C75B8",
+    "Blue/500 (Text)": "#0D1350",
+    "Blue/600": "#0A1044",
+    "Blue/700": "#080D38",
+    "Blue/800": "#050A2C",
+    "Blue/900": "#030620",
+    "Purple/50": "#F7F6FC",
+    "Purple/100": "#F1EBFB",
+    "Purple/200": "#E0CFF5",
+    "Purple/300": "#DAC3FF",
+    "Purple/400": "#985EFF",
+    "Purple/500 (Accent)": "#742CCE",
+    "Purple/600": "#5B23A0",
+    "Purple/700": "#471B75",
+    "Purple/800": "#331448",
+    "Purple/900": "#1F0E2D",
+    "Gray/0 (White)": "#FFFFFF",
+    "Gray/100": "#FAFAFA",
+    "Gray/200": "#F5F6F7",
+    "Gray/300": "#E4E6E9",
+    "Gray/400": "#D1D5DA",
+    "Gray/500": "#93979F",
+    "Gray/600": "#555A66",
+    "Gray/700": "#3F434C",
+    "Gray/800": "#2B2E34",
+    "Gray/900": "#191B1F",
+    "Orange/50": "#FFF8F2",
+    "Orange/100": "#FFF4E9",
+    "Orange/200": "#FFE2C2",
+    "Orange/300": "#FFC48C",
+    "Orange/400": "#FF9D4C",
+    "Orange/500": "#FF7A21",
+    "Orange/600": "#E8630F",
+    "Orange/700": "#C6520B",
+    "Orange/800": "#9E4108",
+    "Orange/900": "#6B2C05",
+    "Green/50": "#E9FCF2",
+    "Green/100": "#E8F5EC",
+    "Green/200": "#C8EAD3",
+    "Green/300": "#A5F1B9",
+    "Green/400": "#8FFFB5",
+    "Green/500": "#28A44B",
+    "Green/600": "#218C40",
+    "Green/700": "#197234",
+    "Green/800": "#135A2A",
+    "Green/900": "#0C3F1D",
+    "Red/50": "#FFF1F1",
+    "Red/100": "#FDEAEA",
+    "Red/200": "#FFCCCC",
+    "Red/300": "#FF8282",
+    "Red/400": "#E36868",
+    "Red/500": "#C70101",
+    "Red/600": "#A40101",
+    "Red/700": "#870101",
+    "Red/800": "#6A0101",
+    "Red/900": "#490000"
+  },
+  "gradients": {
+    "Gradient/Primary": {
+      "token": "semantic.color.action.gradientPrimary",
+      "stops": [
+        "#742CCE",
+        "#6B4AFF"
+      ]
+    },
+    "Gradient/Secondary": {
+      "token": "semantic.color.action.gradientSecondary",
+      "stops": [
+        "#742CCE",
+        "#1811A2"
+      ]
+    },
+    "Gradient/Tertiary": {
+      "token": "semantic.color.action.gradientTertiary",
+      "stops": [
+        "#640CD2",
+        "#06007A"
+      ]
+    },
+    "Gradient/Secondary Button": {
+      "token": "semantic.color.action.gradientSecondaryButton",
+      "stops": [
+        "#E3D9FF",
+        "#D8E7FF"
+      ]
+    },
+    "Gradient/Gold": {
+      "token": "semantic.color.action.gradientGold",
+      "stops": [
+        "#A97D2C",
+        "#F8CC79",
+        "#A97D2C"
+      ]
+    },
+    "Gradient/Card (Light)": {
+      "token": "semantic.color.action.gradientCardLight",
+      "stops": [
+        "#6B4AFF@3%",
+        "#6B4AFF@5%"
+      ]
+    },
+    "Gradient/Mint Gradient": {
+      "token": "semantic.color.action.gradientMint",
+      "stops": [
+        "#A5F1B9@20%",
+        "#F0E7FA@5%"
+      ]
+    },
+    "Gradient/Light Purple Gradient": {
+      "token": "semantic.color.action.gradientLightPurple",
+      "stops": [
+        "#F3EAFF@40%",
+        "#FFFFFF@20%"
+      ]
+    },
+    "Gradient/Purple-Green Gradient": {
+      "token": "semantic.color.action.gradientPurpleGreen",
+      "stops": [
+        "#8FFFB5@20%",
+        "#6B4AFF@10%"
+      ]
+    },
+    "Gradient/Purple overlay": {
+      "token": "semantic.color.action.gradientPurpleOverlay",
+      "stops": [
+        "#540EAB@70%",
+        "transparent"
+      ]
+    }
+  },
+  "figmaStyleToToken": {
+    "Blue/50": {
+      "hex": "#F3F5FF",
+      "token": "primitive.color.blue50",
+      "cssVar": "--primitive-color-blue50"
+    },
+    "Blue/100": {
+      "hex": "#E5EAFF",
+      "token": "primitive.color.blue100",
+      "cssVar": "--primitive-color-blue100"
+    },
+    "Blue/200": {
+      "hex": "#C4C7E4",
+      "token": "primitive.color.blue200",
+      "cssVar": "--primitive-color-blue200"
+    },
+    "Blue/300": {
+      "hex": "#9DA4D1",
+      "token": "primitive.color.blue300",
+      "cssVar": "--primitive-color-blue300"
+    },
+    "Blue/400": {
+      "hex": "#6C75B8",
+      "token": "primitive.color.blue400",
+      "cssVar": "--primitive-color-blue400"
+    },
+    "Blue/500 (Text)": {
+      "hex": "#0D1350",
+      "token": "primitive.color.blue500",
+      "cssVar": "--primitive-color-blue500"
+    },
+    "Blue/600": {
+      "hex": "#0A1044",
+      "token": "primitive.color.blue600",
+      "cssVar": "--primitive-color-blue600"
+    },
+    "Blue/700": {
+      "hex": "#080D38",
+      "token": "primitive.color.blue700",
+      "cssVar": "--primitive-color-blue700"
+    },
+    "Blue/800": {
+      "hex": "#050A2C",
+      "token": "primitive.color.blue800",
+      "cssVar": "--primitive-color-blue800"
+    },
+    "Blue/900": {
+      "hex": "#030620",
+      "token": "primitive.color.blue900",
+      "cssVar": "--primitive-color-blue900"
+    },
+    "Purple/50": {
+      "hex": "#F7F6FC",
+      "token": "primitive.color.purple50",
+      "cssVar": "--primitive-color-purple50"
+    },
+    "Purple/100": {
+      "hex": "#F1EBFB",
+      "token": "primitive.color.purple100",
+      "cssVar": "--primitive-color-purple100"
+    },
+    "Purple/200": {
+      "hex": "#E0CFF5",
+      "token": "primitive.color.purple200",
+      "cssVar": "--primitive-color-purple200"
+    },
+    "Purple/300": {
+      "hex": "#DAC3FF",
+      "token": "primitive.color.purple300",
+      "cssVar": "--primitive-color-purple300"
+    },
+    "Purple/400": {
+      "hex": "#985EFF",
+      "token": "primitive.color.purple400",
+      "cssVar": "--primitive-color-purple400"
+    },
+    "Purple/500 (Accent)": {
+      "hex": "#742CCE",
+      "token": "primitive.color.purple500",
+      "cssVar": "--primitive-color-purple500"
+    },
+    "Purple/600": {
+      "hex": "#5B23A0",
+      "token": "primitive.color.purple600",
+      "cssVar": "--primitive-color-purple600"
+    },
+    "Purple/700": {
+      "hex": "#471B75",
+      "token": "primitive.color.purple700",
+      "cssVar": "--primitive-color-purple700"
+    },
+    "Purple/800": {
+      "hex": "#331448",
+      "token": "primitive.color.purple800",
+      "cssVar": "--primitive-color-purple800"
+    },
+    "Purple/900": {
+      "hex": "#1F0E2D",
+      "token": "primitive.color.purple900",
+      "cssVar": "--primitive-color-purple900"
+    },
+    "Gray/0 (White)": {
+      "hex": "#FFFFFF",
+      "token": "primitive.color.gray0",
+      "cssVar": "--primitive-color-gray0"
+    },
+    "Gray/100": {
+      "hex": "#FAFAFA",
+      "token": "primitive.color.gray100",
+      "cssVar": "--primitive-color-gray100"
+    },
+    "Gray/200": {
+      "hex": "#F5F6F7",
+      "token": "primitive.color.gray200",
+      "cssVar": "--primitive-color-gray200"
+    },
+    "Gray/300": {
+      "hex": "#E4E6E9",
+      "token": "primitive.color.gray300",
+      "cssVar": "--primitive-color-gray300"
+    },
+    "Gray/400": {
+      "hex": "#D1D5DA",
+      "token": "primitive.color.gray400",
+      "cssVar": "--primitive-color-gray400"
+    },
+    "Gray/500": {
+      "hex": "#93979F",
+      "token": "primitive.color.gray500",
+      "cssVar": "--primitive-color-gray500"
+    },
+    "Gray/600": {
+      "hex": "#555A66",
+      "token": "primitive.color.gray600",
+      "cssVar": "--primitive-color-gray600"
+    },
+    "Gray/700": {
+      "hex": "#3F434C",
+      "token": "primitive.color.gray700",
+      "cssVar": "--primitive-color-gray700"
+    },
+    "Gray/800": {
+      "hex": "#2B2E34",
+      "token": "primitive.color.gray800",
+      "cssVar": "--primitive-color-gray800"
+    },
+    "Gray/900": {
+      "hex": "#191B1F",
+      "token": "primitive.color.gray900",
+      "cssVar": "--primitive-color-gray900"
+    },
+    "Orange/50": {
+      "hex": "#FFF8F2",
+      "token": "primitive.color.orange50",
+      "cssVar": "--primitive-color-orange50"
+    },
+    "Orange/100": {
+      "hex": "#FFF4E9",
+      "token": "primitive.color.orange100",
+      "cssVar": "--primitive-color-orange100"
+    },
+    "Orange/200": {
+      "hex": "#FFE2C2",
+      "token": "primitive.color.orange200",
+      "cssVar": "--primitive-color-orange200"
+    },
+    "Orange/300": {
+      "hex": "#FFC48C",
+      "token": "primitive.color.orange300",
+      "cssVar": "--primitive-color-orange300"
+    },
+    "Orange/400": {
+      "hex": "#FF9D4C",
+      "token": "primitive.color.orange400",
+      "cssVar": "--primitive-color-orange400"
+    },
+    "Orange/500": {
+      "hex": "#FF7A21",
+      "token": "primitive.color.orange500",
+      "cssVar": "--primitive-color-orange500"
+    },
+    "Orange/600": {
+      "hex": "#E8630F",
+      "token": "primitive.color.orange600",
+      "cssVar": "--primitive-color-orange600"
+    },
+    "Orange/700": {
+      "hex": "#C6520B",
+      "token": "primitive.color.orange700",
+      "cssVar": "--primitive-color-orange700"
+    },
+    "Orange/800": {
+      "hex": "#9E4108",
+      "token": "primitive.color.orange800",
+      "cssVar": "--primitive-color-orange800"
+    },
+    "Orange/900": {
+      "hex": "#6B2C05",
+      "token": "primitive.color.orange900",
+      "cssVar": "--primitive-color-orange900"
+    },
+    "Green/50": {
+      "hex": "#E9FCF2",
+      "token": "primitive.color.green50",
+      "cssVar": "--primitive-color-green50"
+    },
+    "Green/100": {
+      "hex": "#E8F5EC",
+      "token": "primitive.color.green100",
+      "cssVar": "--primitive-color-green100"
+    },
+    "Green/200": {
+      "hex": "#C8EAD3",
+      "token": "primitive.color.green200",
+      "cssVar": "--primitive-color-green200"
+    },
+    "Green/300": {
+      "hex": "#A5F1B9",
+      "token": "primitive.color.green300",
+      "cssVar": "--primitive-color-green300"
+    },
+    "Green/400": {
+      "hex": "#8FFFB5",
+      "token": "primitive.color.green400",
+      "cssVar": "--primitive-color-green400"
+    },
+    "Green/500": {
+      "hex": "#28A44B",
+      "token": "primitive.color.green500",
+      "cssVar": "--primitive-color-green500"
+    },
+    "Green/600": {
+      "hex": "#218C40",
+      "token": "primitive.color.green600",
+      "cssVar": "--primitive-color-green600"
+    },
+    "Green/700": {
+      "hex": "#197234",
+      "token": "primitive.color.green700",
+      "cssVar": "--primitive-color-green700"
+    },
+    "Green/800": {
+      "hex": "#135A2A",
+      "token": "primitive.color.green800",
+      "cssVar": "--primitive-color-green800"
+    },
+    "Green/900": {
+      "hex": "#0C3F1D",
+      "token": "primitive.color.green900",
+      "cssVar": "--primitive-color-green900"
+    },
+    "Red/50": {
+      "hex": "#FFF1F1",
+      "token": "primitive.color.red50",
+      "cssVar": "--primitive-color-red50"
+    },
+    "Red/100": {
+      "hex": "#FDEAEA",
+      "token": "primitive.color.red100",
+      "cssVar": "--primitive-color-red100"
+    },
+    "Red/200": {
+      "hex": "#FFCCCC",
+      "token": "primitive.color.red200",
+      "cssVar": "--primitive-color-red200"
+    },
+    "Red/300": {
+      "hex": "#FF8282",
+      "token": "primitive.color.red300",
+      "cssVar": "--primitive-color-red300"
+    },
+    "Red/400": {
+      "hex": "#E36868",
+      "token": "primitive.color.red400",
+      "cssVar": "--primitive-color-red400"
+    },
+    "Red/500": {
+      "hex": "#C70101",
+      "token": "primitive.color.red500",
+      "cssVar": "--primitive-color-red500"
+    },
+    "Red/600": {
+      "hex": "#A40101",
+      "token": "primitive.color.red600",
+      "cssVar": "--primitive-color-red600"
+    },
+    "Red/700": {
+      "hex": "#870101",
+      "token": "primitive.color.red700",
+      "cssVar": "--primitive-color-red700"
+    },
+    "Red/800": {
+      "hex": "#6A0101",
+      "token": "primitive.color.red800",
+      "cssVar": "--primitive-color-red800"
+    },
+    "Red/900": {
+      "hex": "#490000",
+      "token": "primitive.color.red900",
+      "cssVar": "--primitive-color-red900"
+    }
+  },
+  "verifiedAgainstTokens": true
+}

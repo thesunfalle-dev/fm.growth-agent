@@ -22,9 +22,10 @@ Enable **fast, on-brand marketing landings** assembled from registered blocks, n
 
 ## Visual system (Website Redesign, from Figma)
 
+- Colors: Figma **paint styles** / Color frame — see `color-styles.md`
 - Light canvas (`Gray/0`), soft surfaces (`Gray/100–200`)
 - Primary text navy (`Blue/500 (Text)` `#0D1350`)
-- Accent purple (`Purple/500` `#742CCE` + `Gradient/Primary`)
+- Accent purple (`Purple/500 (Accent)` `#742CCE` + `Gradient/Primary`)
 - Type: **Noto Sans** (display/headings/CTA) + **Roboto** (body/caption)
 - Heading LH ~120–130%; body/caption LH **150%**
 - Spacing: multiples of **4**; content width **1280px**; section gaps **120px** desktop / **60px** mobile
