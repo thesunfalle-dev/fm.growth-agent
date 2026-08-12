@@ -240,17 +240,22 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 5. **Instruments:** 6-up desktop → **2×3** mobile (165).  
 6. **Tier cards:** row desktop → stack (or carousel) mobile.  
 7. **Download bar:** always allow horizontal scroll on mobile.  
-8. **Section padding / gutters:** 120/80 desktop, 60/16 mobile.
+8. **Section padding / gutters:** 120/80 desktop, 60/16 mobile.  
+9. **Comparison tables:** multi-column desktop → **tabs + one panel** mobile.  
+10. **Bento USP:** unequal grid desktop → single-column stack mobile.  
+11. **Market hero CTA:** Primary/**Light** when on dark brand BG.  
+12. **Steps:** horizontal process on desktop may flip to vertical on mobile.
 
 ---
 
 ## Agent / human rules
 
-1. Pick a **recipe** (award / promo / platform) then fill content — don’t invent a new page chrome.  
+1. Pick a **recipe** (award / promo / platform / **market**) then fill content — don’t invent a new page chrome.  
 2. Prefer composing **ready blocks**; only add planned modules when the campaign needs them.  
 3. Keep legal lines (T&Cs, * footnotes on spreads) in content, visible near claims.  
-4. Same DS atoms as homepage; landings are **shorter, offer-shaped** subsets (+ promo-specific modules).  
-5. AU vs EN is copy/legal, not a different layout system.
+4. Same DS atoms as homepage; landings are **shorter, offer- or market-shaped** subsets.  
+5. AU vs EN is copy/legal, not a different layout system.  
+6. Market landings swap **symbol + chart + USP set**; keep structure.
 
 ---
 
@@ -264,5 +269,8 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 
 **C. Platform** (TradingView-like)  
 `hero` → download strip (later) → usp → steps → faq → footer  
+
+**D. Market / instrument** (Gold-like)  
+`hero` (market + chart when ready) → usp → `table` (accounts compare) → steps → footer  
 
 Until review/spread/instrument modules exist, substitute: hero + usp + steps + faq + table if needed.
