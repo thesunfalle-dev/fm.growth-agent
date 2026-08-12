@@ -1,14 +1,15 @@
 import type { LandingDocument } from "@/lib/types";
 
 /**
- * Crypto CFDs landing — USER STORY “Crypto LP”.
- * Sections 1–2 from TZ verbatim; 3–7 empty in TZ → filled with market-recipe
- * modules (GP + current FM crypto page) using Fusion DS blocks only.
+ * Crypto CFDs — USER STORY “Crypto LP”.
+ * Assembled from inventory blocks only (design-system/assembly.md).
+ * Recipe: market MVP — hero → table → features → cta → table → steps → faq → cta → disclaimer.
+ * Figma tables: Crypto CFDs + How we Compare (15276:11158); USP Cards; Step by Steps; FAQ.
  */
 const landing: LandingDocument = {
   slug: "crypto",
   name: "Crypto CFDs",
-  note: "From USER STORY – Crypto LP. Market recipe + TZ sections 1–2.",
+  note: "Market recipe, ready-only blocks. No nested hero table.",
   listed: true,
   status: "draft",
   createdAt: "2026-08-12",
@@ -19,7 +20,7 @@ const landing: LandingDocument = {
       "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more. Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
   },
   blocks: [
-    // —— Section 1 (TZ) ——
+    // —— Hero (TZ §1 pitch; Figma Market Header content subset, no chart) ——
     {
       type: "hero",
       brandBackground: true,
@@ -38,60 +39,70 @@ const landing: LandingDocument = {
         label: "Try a free demo",
         href: "https://hub.fusionmarkets.com/auth/sign-up",
       },
-      proofNote: "Rated by traders on Trustpilot",
-      table: {
-        title: "Crypto CFD spreads",
-        columns: [
-          { id: "pair", header: "Pair", width: "40%" },
-          { id: "spread", header: "From", width: "30%" },
-          { id: "hours", header: "Hours", width: "30%" },
-        ],
-        rows: [
-          {
-            id: "btcusd",
-            cells: {
-              pair: { title: "BTC/USD", meta: "Bitcoin" },
-              spread: "0.04%",
-              hours: "24/7",
-            },
-          },
-          {
-            id: "ethusd",
-            cells: {
-              pair: { title: "ETH/USD", meta: "Ethereum" },
-              spread: "0.09%",
-              hours: "24/7",
-            },
-          },
-          {
-            id: "dogeusd",
-            cells: {
-              pair: { title: "DOGE/USD", meta: "Dogecoin" },
-              spread: "—",
-              hours: "24/7",
-            },
-          },
-          {
-            id: "solusd",
-            cells: {
-              pair: { title: "SOL/USD", meta: "Solana" },
-              spread: "—",
-              hours: "24/7",
-            },
-          },
-          {
-            id: "adausd",
-            cells: {
-              pair: { title: "ADA/USD", meta: "Cardano" },
-              spread: "—",
-              hours: "24/7",
-            },
-          },
-        ],
-      },
     },
 
-    // —— Section 2 (TZ) ——
+    // —— Spreads (separate table block; Figma Markets - Crypto CFDs) ——
+    {
+      type: "table",
+      title: "Crypto CFD spreads",
+      subtitle:
+        "Sample pairs from the campaign brief. Confirm live pricing in the Client Hub or Spreads Tool.",
+      columns: [
+        { id: "pair", header: "Pair", width: "28%" },
+        { id: "name", header: "Name", width: "28%" },
+        { id: "spread", header: "From", width: "22%" },
+        { id: "hours", header: "Hours", width: "22%" },
+      ],
+      rows: [
+        {
+          id: "btcusd",
+          cells: {
+            pair: "BTC/USD",
+            name: "Bitcoin",
+            spread: "0.04%",
+            hours: "24/7",
+          },
+        },
+        {
+          id: "ethusd",
+          cells: {
+            pair: "ETH/USD",
+            name: "Ethereum",
+            spread: "0.09%",
+            hours: "24/7",
+          },
+        },
+        {
+          id: "dogeusd",
+          cells: {
+            pair: "DOGE/USD",
+            name: "Dogecoin",
+            spread: "See live",
+            hours: "24/7",
+          },
+        },
+        {
+          id: "solusd",
+          cells: {
+            pair: "SOL/USD",
+            name: "Solana",
+            spread: "See live",
+            hours: "24/7",
+          },
+        },
+        {
+          id: "adausd",
+          cells: {
+            pair: "ADA/USD",
+            name: "Cardano",
+            spread: "See live",
+            hours: "24/7",
+          },
+        },
+      ],
+    },
+
+    // —— USP (TZ §2; Cards USP / Why Fusion) ——
     {
       type: "features",
       variant: "usp",
@@ -149,7 +160,7 @@ const landing: LandingDocument = {
       },
     },
 
-    // —— Section 3 (TZ empty → market recipe / GP “How we compare”) ——
+    // —— Compare (Figma Markets - Crypto CFDs - How we Compare → flat table) ——
     {
       type: "table",
       title: "How we compare against other crypto providers",
@@ -219,68 +230,7 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— Section 4 (spreads instruments — extends TZ hero table) ——
-    {
-      type: "table",
-      title: "Here’s our crypto spreads",
-      subtitle:
-        "You can’t control the markets, but you can control what you pay to trade them. Sample pairs from the user story; confirm live pricing in the Client Hub or Spreads Tool.",
-      columns: [
-        { id: "pair", header: "Symbol", width: "28%" },
-        { id: "name", header: "Name", width: "28%" },
-        { id: "spread", header: "Spread from", width: "22%" },
-        { id: "hours", header: "Trading hours", width: "22%" },
-      ],
-      rows: [
-        {
-          id: "btc",
-          cells: {
-            pair: "BTC/USD",
-            name: "Bitcoin",
-            spread: "0.04%",
-            hours: "24/7",
-          },
-        },
-        {
-          id: "eth",
-          cells: {
-            pair: "ETH/USD",
-            name: "Ethereum",
-            spread: "0.09%",
-            hours: "24/7",
-          },
-        },
-        {
-          id: "doge",
-          cells: {
-            pair: "DOGE/USD",
-            name: "Dogecoin",
-            spread: "See live",
-            hours: "24/7",
-          },
-        },
-        {
-          id: "sol",
-          cells: {
-            pair: "SOL/USD",
-            name: "Solana",
-            spread: "See live",
-            hours: "24/7",
-          },
-        },
-        {
-          id: "ada",
-          cells: {
-            pair: "ADA/USD",
-            name: "Cardano",
-            spread: "See live",
-            hours: "24/7",
-          },
-        },
-      ],
-    },
-
-    // —— Section 5 (How it works — FM crypto page / market recipe) ——
+    // —— How it works (Sections Step by Steps) ——
     {
       type: "steps",
       title: "How it works",
@@ -305,7 +255,7 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— Section 6 (FAQ — GP crypto adapted to Fusion wording from TZ) ——
+    // —— FAQ (Sections FAQ) ——
     {
       type: "faq",
       title: "Crypto CFDs FAQ",
@@ -339,7 +289,6 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— Section 7 (closing CTA — TZ empty; FM pattern) ——
     {
       type: "cta",
       title: "Ready to start trading?",

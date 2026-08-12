@@ -41,6 +41,7 @@ Enable **fast, on-brand marketing landings** assembled from registered blocks, n
 | `generated/tokens.css` | Runtime CSS variables |
 | `component-inventory.json` | UI primitives |
 | `block-inventory.json` | Landing sections |
+| `assembly.md` | Ready-only Figma → block compose rules |
 | `implementation-contract.md` | Naming + React mapping + raw-value ban |
 | `accessibility-checklist.md` | A11y gates |
 | `responsive-rules.md` | Breakpoints + layout behavior |

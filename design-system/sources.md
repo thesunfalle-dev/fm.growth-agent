@@ -32,6 +32,15 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Docs: `homepage-patterns.md`; responsive notes in `responsive-rules.md`
 - Actor: agent + user
 
+### 2026-08-12 — Ready-only assembly (Figma → inventory)
+
+- Gold EN Market Header / body: `29987:341692` (no inventing hero+table hybrid)
+- Tables: `15276:11158` — labels **Markets - Crypto CFDs**, **Markets - Crypto CFDs - How we Compare**
+- Sections FAQ + Steps: `15313:11090`
+- Cards USP: `15166:10610`
+- Docs: `assembly.md` (authority for compose rules); crypto slug refactored
+- Actor: agent + user
+
 ### 2026-08-12 — Landing composition recipes
 
 - BrokerChooser D/M: `29987:337918` / `29987:342224`
@@ -39,7 +48,7 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - TradingView platform D/M: `29987:340524` / `29987:342673`
 - Gold EN market D/M: `29987:341692` / `29987:342972`
 - Role: campaign landing stacks + shared modules vs homepage
-- Docs: `landing-patterns.md`
+- Docs: `landing-patterns.md` + `assembly.md`
 - Actor: agent + user
 
 ### 2026-08-12 — Cards

@@ -67,7 +67,18 @@ Not all coded yet — foundation covers **markets data table** (header + rows). 
 />
 ```
 
-Landing block: `type: "table"` — see `block-inventory.json`.
+Landing block: `type: "table"` — see `block-inventory.json` and `assembly.md`.
+
+**Never nest a table inside `hero`.** Sequence `hero` then `table`.
+
+Named Figma market tables that map to the same block:
+
+| Figma label (Tables frame) | Content use |
+|----------------------------|-------------|
+| Markets - Crypto CFDs | Symbol / spread rows |
+| Markets - Crypto CFDs - How we Compare | Feature × provider columns (flat) |
+| Markets - Forex / Metals / … | Same markets DataTable foundation |
+| Zero vs Classic / Comparison Table shells | Flatten to one `table` until multi-panel `comparison-table` is built |
 
 ## Status
 

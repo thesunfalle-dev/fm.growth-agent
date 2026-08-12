@@ -60,14 +60,7 @@ a {
   padding-bottom: var(--layout-spacing-section-desktop);
 }
 
-/* Market / offer hero: copy + optional aside table (Gold / Crypto pattern) */
-.ui-hero--split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.95fr);
-  gap: var(--space-10);
-  align-items: center;
-}
-
+/* Hero copy + optional campaign bullets (no nested table — use block type table) */
 .ui-hero__copy {
   min-width: 0;
 }
@@ -106,51 +99,6 @@ a {
 
 .ui-section--brand-bg .ui-hero__bullets li::before {
   background: var(--color-text-on-accent);
-}
-
-.ui-hero__proof {
-  margin: var(--space-4) 0 0;
-  font-size: var(--typography-font-size-c1);
-  color: var(--color-text-muted);
-}
-
-.ui-section--brand-bg .ui-hero__proof {
-  color: color-mix(in oklab, var(--color-text-on-accent) 80%, transparent);
-}
-
-.ui-hero__aside {
-  min-width: 0;
-  background: var(--color-background-canvas);
-  border: var(--border-width-default) solid var(--color-border-default);
-  border-radius: var(--radius-xl);
-  padding: var(--space-5);
-  box-shadow: var(--shadow-card);
-}
-
-.ui-hero__aside-title {
-  margin: 0 0 var(--space-4);
-  font-family: var(--typography-font-family-heading);
-  font-size: var(--typography-font-size-h4);
-  font-weight: var(--typography-font-weight-semibold);
-  color: var(--color-text-primary);
-}
-
-.ui-hero__aside .ui-table-shell {
-  margin: 0;
-  box-shadow: none;
-  border: 0;
-}
-
-@media (max-width: 1024px) {
-  .ui-hero--split {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-
-  /* Mobile market order: copy/CTAs first, table below */
-  .ui-hero__aside {
-    order: 2;
-  }
 }
 
 .ui-section--cta {

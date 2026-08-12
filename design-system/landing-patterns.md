@@ -3,7 +3,7 @@
 **Purpose:** How real **landing pages** are assembled from DS pieces — vs full homepage.  
 Use when shipping a campaign slug. No brief schema: these are **visual recipes** from Figma.
 
-**Related:** `homepage-patterns.md` (site home), `responsive-rules.md`, block inventory.
+**Related:** `assembly.md` (**ready-only compose rules** — read first when shipping a slug), `homepage-patterns.md`, `responsive-rules.md`, `block-inventory.json`.
 
 ---
 
@@ -259,18 +259,23 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 
 ---
 
-## Default MVP slug recipes
+## Default MVP slug recipes (ready inventory only)
+
+See **`assembly.md`** for Figma section → substitute map. Do **not** nest a table inside hero.
 
 **A. Trust / award** (BrokerChooser-like)  
-`hero` → reviews (when built) or skip → usp → steps optional → faq optional → footer  
+`hero` → `features` usp → optional `steps` / `faq` → `cta` → `disclaimer`  
+(reviews / TV spreads / instruments = planned → skip)
 
 **B. Promo offer** (TV Promo-like)  
-`hero` (+ legal) → content/tier cards → steps → usp → footer  
+`hero` → `steps` → `features` usp → `cta` → `disclaimer`  
+(tiers / marquee / instruments = planned → skip)
 
 **C. Platform** (TradingView-like)  
-`hero` → download strip (later) → usp → steps → faq → footer  
+`hero` → `features` usp → `steps` → `faq` → `cta` → `disclaimer`  
+(download bar / checklist = planned → skip)
 
-**D. Market / instrument** (Gold-like)  
-`hero` (market + chart when ready) → usp → `table` (accounts compare) → steps → footer  
+**D. Market / instrument** (Gold-like / crypto)  
+`hero` (+ optional `brandBackground`, no chart) → `table` (spreads) → `features` usp → `cta` → optional `table` (compare) → `steps` → `faq` → `cta` → `disclaimer`  
 
-Until review/spread/instrument modules exist, substitute: hero + usp + steps + faq + table if needed.
+Reference implementation: `landings/crypto/content.ts`.

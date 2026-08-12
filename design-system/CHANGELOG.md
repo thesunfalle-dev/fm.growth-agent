@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-12 — Ready-only assembly contract
+
+- New `assembly.md`: hard rules — compose inventory blocks only; **no nested table in hero**; Figma section → ready substitutes for market / award / promo / platform.
+- Hero props aligned with inventory: `bullets`, `brandBackground`; removed embedded `hero.table` / `proofNote`.
+- `/crypto` rebuilt as pure stack: hero → table → features → cta → table → steps → faq → cta → disclaimer.
+- Figma tables named **Crypto CFDs** / **How we Compare** map to `type: "table"` only.
+- Orientation: `Agents.md` lists `assembly.md`; MVP recipes in `landing-patterns.md` tightened.
+
 ## 2026-08-12 — Landing composition recipes
 
 - Documented campaign landings desktop + mobile: BrokerChooser, TV Promo, TradingView, **Gold EN (market)**.

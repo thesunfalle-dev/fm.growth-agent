@@ -10,17 +10,22 @@
     {
       "type": "hero",
       "status": "provisional",
-      "description": "Primary above-the-fold pitch with optional dual CTAs.",
+      "description": "Primary above-the-fold pitch with optional dual CTAs. No nested table/chart — sequence separate blocks (see assembly.md).",
       "component": "components/blocks/Hero.tsx",
+      "figma": "29987:341692 Market Header (content subset; chart = planned market-hero)",
       "props": {
         "eyebrow": { "type": "string", "required": false },
         "title": { "type": "string", "required": true },
         "subtitle": { "type": "string", "required": false },
+        "bullets": { "type": "array", "required": false, "item": "string" },
         "primaryCta": { "type": "cta", "required": false },
-        "secondaryCta": { "type": "cta", "required": false }
+        "secondaryCta": { "type": "cta", "required": false },
+        "brandBackground": { "type": "boolean", "required": false }
       },
       "contentRules": [
         "Title should be one clear promise; avoid stacking multiple claims.",
+        "Prefer subtitle (one paragraph) when Figma shows a single lead; use bullets only for campaign TZ lists.",
+        "Do not embed table/chart/media props — use type table or planned market-hero / spread-cards.",
         "If performance/cost claims appear, compliance must allow them."
       ],
       "tokenDependencies": ["space", "typography", "semantic.color.text", "semantic.color.action"]

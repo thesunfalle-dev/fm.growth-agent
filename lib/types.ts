@@ -32,23 +32,13 @@ export type LandingBlock =
       eyebrow?: string;
       title: string;
       subtitle?: string;
-      /** Bullet points under H1 (market / offer heroes). */
+      /** Optional short list under H1 (campaign TZ). Prefer subtitle when Figma is one paragraph. */
       bullets?: string[];
-      /** Small line under CTAs (e.g. Trustpilot note). */
-      proofNote?: string;
       primaryCta?: LandingCta;
       secondaryCta?: LandingCta;
-      /** Use shared brand purple background art (Images frame). */
+      /** Shared brand purple BG art (Images frame / Gold Market Header). */
       brandBackground?: boolean;
-      /**
-       * Optional right-column table (e.g. crypto spreads preview).
-       * Desktop: split with copy; mobile: stacks under CTAs.
-       */
-      table?: {
-        title?: string;
-        columns: TableColumnSpec[];
-        rows: TableRowSpec[];
-      };
+      // No nested table/chart — use a following `type: "table"` block (assembly.md).
     }
   | {
       type: "features";

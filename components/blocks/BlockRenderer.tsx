@@ -20,11 +20,9 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 title={block.title}
                 subtitle={block.subtitle}
                 bullets={block.bullets}
-                proofNote={block.proofNote}
                 primaryCta={block.primaryCta}
                 secondaryCta={block.secondaryCta}
                 brandBackground={block.brandBackground}
-                table={block.table}
               />
             );
           case "features":

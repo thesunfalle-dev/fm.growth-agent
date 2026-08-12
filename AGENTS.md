@@ -13,12 +13,13 @@ Primary workflow: **edit → commit → push → deploy to production**. Do not 
 5. `design-system/design-tokens.json`
 6. `design-system/component-inventory.json`
 7. `design-system/block-inventory.json`
-8. `design-system/homepage-patterns.md` (site home assembly + adaptive)
-9. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform)
-10. `design-system/responsive-rules.md`
-11. `design-system/implementation-contract.md`
-12. `design-system/sources.md`
-13. `brand/compliance.md` (before publishing marketing copy)
+8. `design-system/assembly.md` (**ready-only composition** — Figma → inventory; no nested/invented blocks)
+9. `design-system/homepage-patterns.md` (site home assembly + adaptive)
+10. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
+11. `design-system/responsive-rules.md`
+12. `design-system/implementation-contract.md`
+13. `design-system/sources.md`
+14. `brand/compliance.md` (before publishing marketing copy)
 
 If Figma links exist in `design-system/sources.md`, treat them as **upstream design intent**. Repo tokens/blocks remain the **implementation source of truth** until synced and recorded in `design-system/CHANGELOG.md`.
 
