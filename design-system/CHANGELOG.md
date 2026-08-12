@@ -2,9 +2,10 @@
 
 ## 2026-08-12 — Landing composition recipes
 
-- Documented 3 campaign landings (BrokerChooser, TV Promo, TradingView) desktop + mobile.
+- Documented campaign landings desktop + mobile: BrokerChooser, TV Promo, TradingView, **Gold EN (market)**.
 - Docs: `landing-patterns.md` — stacks, shared DNA, adaptive, map to ready/planned blocks.
-- Sources: Figma `29987:337918`…`342673`. Composition only (no new components).
+- Gold adds: market hero + chart, bento USP, Classic vs Zero comparison, horizontal steps.
+- Sources: Figma `29987:337918`…`342972`. Composition only (no new components).
 
 ## 2026-08-12 — Homepage composition reference
 

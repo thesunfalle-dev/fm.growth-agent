@@ -14,25 +14,26 @@ Use when shipping a campaign slug. No brief schema: these are **visual recipes**
 | 1 | **BrokerChooser** (award / trust landing) | [`29987:337918`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-337918) | [`29987:342224`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342224) |
 | 2 | **TradingView Promo / AU** (offer: free TV sub) | [`29987:338113`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-338113) | [`29987:342421`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342421) |
 | 3 | **TradingView** (platform product landing) | [`29987:340524`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-340524) | [`29987:342673`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342673) |
+| 4 | **Gold EN** (market / instrument landing — XAUUSD) | [`29987:341692`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-341692) | [`29987:342972`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342972) |
 
-All share: **Header → body sections → Footer (with Ready CTA)**. Entity/AU copy is content.
+All share: **Header → body sections → Footer (with Ready CTA)**. Entity/AU/EN copy is content.
 
 ---
 
-## Shared landing DNA (all three)
+## Shared landing DNA
 
 | Pattern | Desktop | Mobile |
 |---------|---------|--------|
 | **Chrome** | Header_Desktop 80 | Header_Mobile 57 |
-| **Hero** | Split: copy left + visual right; often **dual CTA** (Primary + Secondary) | Title → **image** → body → **stacked full-width CTAs** |
+| **Hero** | Split: copy left + visual right; often dual CTA; **market** hero may use **Primary/Light** on brand BG + chart card | Title → body → CTA → chart/media (or title → media → copy) |
 | **Section rhythm** | ~120 pad, content ~1280 / gutter 80 | 16 side pad, content 343 |
 | **Spreads / instruments** | Tabs + TV card **row** or instrument row | Tabs overflow + TV **stack**; instruments **2×3 grid** |
-| **USP** | 4 cards equal row (or rail) | Carousel + dots |
-| **Steps** | Vertical (sometimes with side visual on home; on landings often list + dual CTA) | Vertical + dual CTA stack |
+| **USP** | 4 cards equal row, rail, or **bento grid** | Carousel + dots **or** full-width stack |
+| **Steps** | Vertical **or horizontal** (Gold uses horizontal 3-up) | Vertical + dual CTA stack |
 | **Proof** | Reviews rail / Trustpilot block | Same, horizontal review cards |
 | **Footer** | Site footer AU/EN | Mobile footer |
 
-Hero mobile order matches homepage: **visual before CTAs** more often than desktop (BrokerChooser / TV Promo / TV all put image mid-stack before CTAs).
+Hero mobile order often: **visual mid-stack before/around CTAs**. Market pages add **live chart card** (TV-Desktop / TV-Mobile) in the hero.
 
 ---
 
@@ -136,28 +137,75 @@ Platform / product landings (MT4, cTrader, TV):
 
 ---
 
+## Landing 4 — Gold EN (market / instrument product)
+
+**Intent:** Single-market product page (here **Gold CFDs / XAUUSD**). Reusable template for Forex pair, metals, crypto, indices landings — swap symbol, copy, chart, and USP set.
+
+Figma names the mobile frame “TradingView” in places but the **story is gold market**, not the TV platform page.
+
+### Section stack
+
+| # | Section | Blocks / DS |
+|---|---------|-------------|
+| 1 | **Market header** | Brand **BG Image** + gradient overlay + H1 “Gold CFDs” + short pitch + **Primary/Light** CTA + **TV chart card** (Desktop 599×480 / Mobile 343×364) |
+| 2 | **Trade with real advantages** | Centered title + lead + **bento USP grid** (desktop: large feature card + smaller cards; mobile: stacked USP-style cards) |
+| 3 | **Accounts: Classic vs Zero** | Title + lead + **Comparison Table** (desktop multi-column; mobile **tabs** Classic/Zero + single table) + link to Products & Accounts |
+| 4 | **Why trade [market]** | USP cards rail / carousel (gold-specific benefits) |
+| 5 | **Long-form content / education** | Split “Hero” bands: multi-paragraph copy + large image (placeholder lorem in file) |
+| 6 | **Checklist + image** | Image + headline + body + **icon rows** (platform/other icons) — no CTAs required |
+| 7 | **Start trading in 3 steps** | Desktop: **horizontal** steps (3×250); mobile: **vertical** steps |
+| 8 | **Live spreads (market-focused)** | Desktop: copy left + **single/large TV card**; or full spreads tabs rail. Mobile: “Tight spreads 150+” tabs + TV stack |
+| 9 | **Reviews** | Trustpilot + review rail (mobile confirmed) |
+| 10 | Footer | |
+
+### Distinct patterns
+- **Market hero** = purple brand BG + **light primary button** (on dark) + embedded **chart widget card**, not only photo  
+- **Bento USP layout** — unequal card sizes (not only equal 296 USP rail)  
+- **Account comparison table** is a first-class module (Classic vs Zero) with **tabs on mobile**  
+- Steps on desktop can be **horizontal** process (same `steps` component, `orientation: "horizontal"`)  
+- Spreads section can be **single-instrument focus** (gold card) not full multi-market rail  
+- Educational long-copy sections = reusable `content-split` / checklist variants  
+
+### Adaptive notes
+- Market hero: desktop text left + chart right; mobile title → lead → CTA → chart below  
+- Comparison: desktop 2–3 table panels side by side; mobile tab switcher + one table  
+- Bento → stack on mobile  
+- Steps: horizontal → vertical on mobile (already in `steps` foundation)  
+- Live spreads: asymmetric desktop layout (text | card) → full stack mobile  
+
+### Reuse for similar campaigns
+**Market landings** (Gold, Oil, EURUSD, BTC…):  
+`market-hero` (BG + chart + light CTA) → bento/advantages → `comparison-table` (accounts) → usp → optional education splits → steps → spreads (focused or tabs) → reviews → footer.
+
+---
+
 ## Cross-landing comparison
 
-| Building block | BrokerChooser | TV Promo | TradingView |
-|----------------|---------------|----------|-------------|
-| Award / partner mark in hero | ✅ | — | — |
-| Offer + T&Cs in hero | — | ✅ | — |
-| Dual CTA hero | ✅ | ✅ | ✅ |
-| Review rail | ✅ | ✅ | ✅ |
-| Spreads + TV cards | ✅ | ✅ | ✅ |
-| Instrument grid | ✅ | ✅ | — (or elsewhere) |
-| USP cards | ✅ | ✅ | ✅ |
-| Steps / how it works | — | ✅ | ✅ |
-| Funding marquee | — | ✅ | — |
-| Tier / plan cards | — | ✅ | ✅ |
-| Download OS bar | — | — | ✅ |
-| Checklist + image | — | — | ✅ |
-| FAQ | — | — | ✅ |
+| Building block | BrokerChooser | TV Promo | TradingView | Gold (market) |
+|----------------|---------------|----------|-------------|---------------|
+| Award / partner mark in hero | ✅ | — | — | — |
+| Offer + T&Cs in hero | — | ✅ | — | — |
+| Market hero + chart + light CTA | — | — | — | ✅ |
+| Dual CTA hero | ✅ | ✅ | ✅ | single primary typical |
+| Review rail | ✅ | ✅ | ✅ | ✅ |
+| Spreads + TV cards | ✅ | ✅ | ✅ | ✅ (often gold-focused) |
+| Instrument grid | ✅ | ✅ | — | — |
+| USP / bento cards | ✅ | ✅ | ✅ | ✅ + **bento** |
+| Steps / how it works | — | ✅ vertical | ✅ vertical | ✅ **horizontal** desktop |
+| Funding marquee | — | ✅ | — | — |
+| Tier / plan cards | — | ✅ | ✅ | — |
+| Account comparison table | — | — | — | ✅ |
+| Download OS bar | — | — | ✅ | — |
+| Checklist + image | — | — | ✅ | ✅ |
+| Long education splits | — | — | partial | ✅ |
+| FAQ | — | — | ✅ | — |
 
 **Common core for most FM landings:**  
-Header · **Hero (split / mobile reorder)** · **Spreads or instruments** · **USP** · **Steps** (often) · **Reviews** · Footer.
+Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Reviews** · Footer.
 
-**Optional modules:** award mark, promo tiers, marquee, download bar, checklist, FAQ.
+**Recipe families:** award · promo · platform · **market/instrument**.
+
+**Optional modules:** award mark, promo tiers, marquee, download bar, checklist, FAQ, **comparison table**, **bento USP**, **market chart hero**.
 
 ---
 
@@ -167,17 +215,19 @@ Header · **Hero (split / mobile reorder)** · **Spreads or instruments** · **U
 |--------|-----------|-----|
 | Header / footer / footer CTA | ✅ | — |
 | Hero + dual CTA | ✅ partial | media slot; mobile order; partner/award eyebrow; T&Cs link |
-| USP cards | ✅ `features` usp | carousel dots polish |
-| Steps | ✅ `steps` | — |
+| Market hero (BG + light CTA + chart) | partial `brandBackground` | TV chart embed; Primary/Light on dark |
+| USP cards | ✅ `features` usp | carousel dots polish; **bento** layout |
+| Steps | ✅ `steps` vertical/horizontal | — |
 | FAQ | ✅ `faq` | — |
-| Markets table | ✅ `table` | not same as TV quote cards |
+| Markets / comparison table | ✅ `table` foundation | multi-panel Classic vs Zero; mobile tabs |
 | Review rail | planned `testimonials` / `ratings-strip` | review **card** + Trustpilot header |
-| TV / spread cards | planned `spread-cards` | — |
+| TV / spread cards | planned `spread-cards` | single-instrument focus layout |
 | Instruments | planned `instrument-grid` | mobile 2-col |
 | Logo marquee | planned `logo-marquee` | — |
 | Tier / plan cards | planned content cards | icon + title + multi-line body |
 | Download bar | planned | OS icon row |
 | Checklist feature | planned | image + check rows + CTAs |
+| Education split | planned | long multi-paragraph + image |
 
 ---
 

@@ -211,6 +211,30 @@
       "figmaLanding": "29987:340524 TradingView"
     },
     {
+      "type": "market-hero",
+      "status": "planned",
+      "description": "Brand BG + market H1 + Primary/Light + TV chart card (e.g. Gold CFDs)",
+      "figmaLanding": "29987:341692 Gold EN"
+    },
+    {
+      "type": "comparison-table",
+      "status": "planned",
+      "description": "Classic vs Zero (or multi-product) comparison; desktop multi-panel, mobile tabs",
+      "figmaLanding": "29987:341692 Gold EN"
+    },
+    {
+      "type": "bento-usp",
+      "status": "planned",
+      "description": "Unequal USP/feature bento grid (large + small cards)",
+      "figmaLanding": "29987:341692 Gold EN"
+    },
+    {
+      "type": "education-split",
+      "status": "planned",
+      "description": "Long multi-paragraph education band + image (market explainer)",
+      "figmaLanding": "29987:341692 Gold EN"
+    },
+    {
       "type": "stats",
       "status": "planned",
       "description": "Key metrics strip"

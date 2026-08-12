@@ -37,6 +37,7 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - BrokerChooser D/M: `29987:337918` / `29987:342224`
 - TradingView Promo AU D/M: `29987:338113` / `29987:342421`
 - TradingView platform D/M: `29987:340524` / `29987:342673`
+- Gold EN market D/M: `29987:341692` / `29987:342972`
 - Role: campaign landing stacks + shared modules vs homepage
 - Docs: `landing-patterns.md`
 - Actor: agent + user
