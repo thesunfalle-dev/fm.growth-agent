@@ -530,11 +530,12 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-5);
+  gap: 28px; /* Figma Follow us row */
 }
 
 .ui-mkt-footer__social-label {
   font-family: var(--typography-font-family-body);
+  font-weight: var(--typography-font-weight-light);
   font-size: var(--typography-font-size-b3);
   color: var(--color-text-primary);
 }
@@ -549,14 +550,38 @@ a {
   padding: 0;
 }
 
-.ui-mkt-footer__social-list a {
-  font-size: var(--layout-footer-link-size);
-  color: var(--layout-footer-link-color);
+.ui-mkt-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.ui-mkt-footer__social-link:hover {
+  opacity: 0.7;
+}
+
+.ui-mkt-footer__social-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.ui-mkt-footer__tv-badge {
+  display: inline-flex;
+  line-height: 0;
   text-decoration: none;
 }
 
-.ui-mkt-footer__social-list a:hover {
-  color: var(--color-action-primary-default);
+.ui-mkt-footer__tv-badge img {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 .ui-mkt-footer__main-inner {
@@ -569,8 +594,8 @@ a {
 
 .ui-mkt-footer__columns {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-8) var(--space-6);
 }
 
 .ui-mkt-footer__col-title {
@@ -619,7 +644,18 @@ a {
 }
 
 .ui-mkt-footer__help-card--contact {
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
+  gap: var(--space-4);
+}
+
+.ui-mkt-footer__flag {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-top: var(--space-2);
+  border-radius: var(--radius-pill);
+  object-fit: cover;
 }
 
 .ui-mkt-footer__help-title {
@@ -665,7 +701,8 @@ a {
   gap: var(--space-4);
   padding: var(--space-8) 0;
   border-top: var(--border-width-default) solid var(--color-border-default);
-  border-bottom: var(--border-width-default) solid var(--color-border-default);
+  /* Figma: single top rule under link grid; no double bar */
+  border-bottom: 0;
 }
 
 .ui-mkt-footer__copy {
@@ -697,10 +734,14 @@ a {
 
 .ui-mkt-footer__legal {
   padding: var(--space-6) 0 var(--layout-footer-padding-y);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .ui-mkt-footer__legal p {
   margin: 0;
+  font-family: var(--typography-font-family-body);
   font-size: var(--typography-font-size-c2);
   line-height: var(--typography-line-height-body);
   color: var(--layout-footer-muted-color);
@@ -2608,12 +2649,15 @@ a {
   align-items: center;
   justify-content: center;
   height: var(--component-card-usp-media-height); /* 180 */
-  margin: 0;
+  /* Override generic .ui-card__media bottom margin (was causing 20px gap) */
+  margin: 0 !important;
+  padding: 0;
   background: var(--primitive-color-gray100); /* Figma illustration tile */
   border: var(--component-card-border-width) solid var(--component-card-border);
   border-bottom: 0;
   border-radius: var(--component-card-radius) var(--component-card-radius) 0 0;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .ui-card__media--usp .ui-illustration {
@@ -2635,6 +2679,7 @@ a {
   flex-direction: column;
   gap: var(--component-card-footer-gap);
   padding: var(--component-card-padding);
+  margin: 0;
   background: var(--component-card-bg);
   border: var(--component-card-border-width) solid var(--component-card-border);
   border-top: 0;
@@ -2675,7 +2720,8 @@ a {
   font-size: var(--typography-font-size-cta-md);
 }
 
-.ui-card__media {
+/* Generic feature-card media only — USP uses .ui-card__media--usp (no gap) */
+.ui-card__media:not(.ui-card__media--usp) {
   margin: 0 0 var(--space-5);
 }
 

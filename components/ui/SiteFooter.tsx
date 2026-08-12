@@ -5,12 +5,14 @@ import {
   footerColumns,
   footerContact,
   footerLegalLinks,
+  footerLegalParagraphs,
   footerSocial,
+  footerTradingViewBadge,
 } from "@/lib/navigation";
 
 /**
- * Marketing footer — Website Redesign Header & Footer frame 15192:11125.
- * Contact icons: Material Symbols (call, mail_outline, room).
+ * Marketing footer — Figma Website Redesign Footer AU
+ * `24400:154127` / `15866:27010`
  */
 export function SiteFooter() {
   return (
@@ -46,12 +48,38 @@ export function SiteFooter() {
             <ul className="ui-mkt-footer__social-list">
               {footerSocial.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    {item.label}
+                  <a
+                    className="ui-mkt-footer__social-link"
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={item.label}
+                  >
+                    <img
+                      className="ui-mkt-footer__social-icon"
+                      src={item.iconSrc}
+                      alt=""
+                      width={24}
+                      height={24}
+                    />
                   </a>
                 </li>
               ))}
             </ul>
+            <a
+              className="ui-mkt-footer__tv-badge"
+              href={footerTradingViewBadge.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={footerTradingViewBadge.label}
+            >
+              <img
+                src={footerTradingViewBadge.iconSrc}
+                alt={footerTradingViewBadge.label}
+                width={143}
+                height={40}
+              />
+            </a>
           </div>
         </div>
 
@@ -83,7 +111,6 @@ export function SiteFooter() {
               </Button>
             </div>
             <div className="ui-mkt-footer__help-card ui-mkt-footer__help-card--contact">
-              <p className="ui-mkt-footer__help-title">Contact us</p>
               <a
                 className="ui-mkt-footer__help-link"
                 href={`mailto:${footerContact.email}`}
@@ -108,6 +135,13 @@ export function SiteFooter() {
                   ))}
                 </div>
               </div>
+              <img
+                className="ui-mkt-footer__flag"
+                src="/brand/flags/au.svg"
+                alt="Australia"
+                width={24}
+                height={24}
+              />
             </div>
           </aside>
         </div>
@@ -126,14 +160,9 @@ export function SiteFooter() {
         </div>
 
         <div className="ui-mkt-footer__legal">
-          <p>
-            CFDs are complex instruments and come with a high risk of losing
-            money rapidly due to leverage. You should consider whether you
-            understand how CFDs work and whether you can afford to take the high
-            risk of losing your money. This is an internal Growth Agent preview
-            on fm.growth-agent.org and is not an official Fusion Markets
-            publication.
-          </p>
+          {footerLegalParagraphs.map((para) => (
+            <p key={para.slice(0, 48)}>{para}</p>
+          ))}
         </div>
       </div>
     </footer>
