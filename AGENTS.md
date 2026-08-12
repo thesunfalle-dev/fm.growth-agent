@@ -4,26 +4,44 @@ This repository builds **Fusion Markets marketing landings** for `fm.growth-agen
 
 Primary workflow: **edit → commit → push → deploy to production**. Do not treat local preview as the source of truth unless the task says otherwise.
 
+---
+
+## Bootstrap (first message / “ознакомься с проектом”)
+
+If the user asks you to **familiarize yourself with the project**, **onboard**, **read the docs**, or this is a **new session with no prior context**:
+
+1. Open **`ONBOARDING.md`** and follow it **immediately**.
+2. Complete **Tier 1** reads (listed there). For UI/Figma work, also complete **Tier 2**.
+3. Confirm back to the user how you will work (structure vs content, ship path, playbook).
+4. Only then implement.
+
+Same entry for Codex / Claude / Cursor / Grok: `ONBOARDING.md` → this file → playbook.
+
+Claude Code also loads **`CLAUDE.md`** (points here). Codex loads **`AGENTS.md`** (this file).
+
+---
+
 ## Required orientation (read before changing UI or design)
 
-1. `AGENTS.md` (this file)
-2. `docs/IMPLEMENTATION_PLAYBOOK.md` (**process, Figma 1:1, anti-patterns — required for UI work**)
-3. `docs/DECISIONS.md`
-4. `docs/WORKFLOW.md`
-5. `design-system/DESIGN.md`
-6. `design-system/design-tokens.json`
-7. `design-system/component-inventory.json`
-8. `design-system/block-inventory.json`
-9. `design-system/pattern-catalog.md` (**reusable patterns** — every shared Figma screen updates this)
-10. `design-system/page-recipes.md` (full page stacks → pattern order)
-11. `design-system/assembly.md` (compose from inventory; structure vs content)
-12. `design-system/homepage-patterns.md` (site home assembly + adaptive)
-13. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
-14. `design-system/header-footer.md` (SiteHeader / SiteFooter chrome)
-15. `design-system/responsive-rules.md`
-16. `design-system/implementation-contract.md`
-17. `design-system/sources.md`
-18. `brand/compliance.md` (before publishing marketing copy)
+1. `ONBOARDING.md` (bootstrap list)
+2. `AGENTS.md` (this file)
+3. `docs/IMPLEMENTATION_PLAYBOOK.md` (**process, Figma 1:1, anti-patterns — required for UI work**)
+4. `docs/DECISIONS.md`
+5. `docs/WORKFLOW.md`
+6. `design-system/DESIGN.md`
+7. `design-system/design-tokens.json`
+8. `design-system/component-inventory.json`
+9. `design-system/block-inventory.json`
+10. `design-system/pattern-catalog.md` (**reusable patterns** — every shared Figma screen updates this)
+11. `design-system/page-recipes.md` (full page stacks → pattern order)
+12. `design-system/assembly.md` (compose from inventory; structure vs content)
+13. `design-system/homepage-patterns.md` (site home assembly + adaptive)
+14. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
+15. `design-system/header-footer.md` (SiteHeader / SiteFooter chrome)
+16. `design-system/responsive-rules.md`
+17. `design-system/implementation-contract.md`
+18. `design-system/sources.md`
+19. `brand/compliance.md` (before publishing marketing copy)
 
 When the user shares Figma screens: **register patterns** (catalog + inventory + sources/changelog). Do not only “remember” them.
 

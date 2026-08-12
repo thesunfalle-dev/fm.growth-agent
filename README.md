@@ -8,59 +8,72 @@ Internal preview host for **Fusion Markets** marketing landings.
 
 This is **not** the main Growth Agent app (`growth-agent.org`). Separate project, separate deploy.
 
-## For agents & contributors
+---
 
-Start with **`AGENTS.md`**, then:
+## For agents (Claude / Codex / Cursor / Grok)
+
+**If the user says «ознакомься с проектом» / “familiarize yourself with the project”:**
+
+→ Open **`ONBOARDING.md` first** and complete the Tier 1 (and Tier 2 for UI) reading list.  
+→ Then follow **`AGENTS.md`** + **`docs/IMPLEMENTATION_PLAYBOOK.md`**.
+
+| Entry file | Who auto-loads it |
+|------------|-------------------|
+| `ONBOARDING.md` | Manual / any agent told to onboard |
+| `AGENTS.md` | Codex, Grok, many tools |
+| `CLAUDE.md` | Claude Code |
 
 | Doc | Purpose |
 |-----|---------|
+| `docs/IMPLEMENTATION_PLAYBOOK.md` | Process, Figma 1:1, anti-patterns, definition of done |
 | `docs/WORKFLOW.md` | How we ship landings & DS changes |
 | `docs/DECISIONS.md` | Why things are the way they are |
 | `docs/OPEN_QUESTIONS.md` | Unknowns (don’t invent answers) |
-| `design-system/DESIGN.md` | Design policy |
-| `design-system/design-tokens.json` | Visual source of truth |
-| `design-system/block-inventory.json` | Allowed landing sections |
+| `design-system/` | Tokens, inventories, patterns, header/footer |
 
 ```bash
 npm run generate:tokens
 npm run validate:design
-npm run deploy
+npm run build
+# ship: git push main → GitHub Actions → Cloudflare Pages
 ```
+
+**Hard rules (summary):**
+
+- Figma = **structure** only; TZ/brief = **content** only  
+- Only registered block types in landings  
+- Production is SoT for “does it work?”  
+- Social URLs from live fusionmarkets.com; chrome icons from Figma SVGs  
 
 ---
 
 ## Production-first workflow
 
-We **don’t rely on local preview**. Source of truth is GitHub + Cloudflare Pages.
+Source of truth is GitHub + Cloudflare Pages (not local preview alone).
 
-| URL | Status |
+| URL | Notes |
 |-----|--------|
-| https://fm-growth-agent.pages.dev/ | live now |
-| https://fm-growth-agent.pages.dev/demo/ | live now |
-| https://fm.growth-agent.org/{slug}/ | after DNS CNAME (see below) |
+| https://fm.growth-agent.org/{slug}/ | Production landings |
+| https://fm.growth-agent.org/crypto/ | Example market landing |
 
 ### Ship a change
 
 ```bash
-# edit landings / code
-git add . && git commit -m "Add landing …"
-git push
-npm run deploy   # build + wrangler pages deploy → production
+git add . && git commit -m "…"
+git push origin main   # CI deploy when secrets are set
+# or: npm run deploy
 ```
-
-Or: push to `main` and let GitHub Actions deploy (needs secrets once — see Deploy).
 
 ### Add a landing (`/slug`)
 
-1. Copy a folder: `cp -R landings/demo landings/my-campaign-a`
-2. Edit `landings/my-campaign-a/content.ts` (`slug`, `seo`, `blocks`)
-3. Register import in `lib/landings.ts`
-4. Commit, push, `npm run deploy`
-5. Share: `https://fm.growth-agent.org/my-campaign-a/` (or `*.pages.dev` until DNS is ready)
+1. Add `landings/{slug}/content.ts` (inventory block types only; TZ content)
+2. Register in `lib/landings.ts`
+3. Validate, build, push
+4. Share: `https://fm.growth-agent.org/{slug}/`
 
 ### Slug rules
 
-- lowercase kebab-case: `low-cost-forex`, `demo-b`
+- lowercase kebab-case: `low-cost-forex`, `crypto`
 - registered once in `lib/landings.ts`
 - trailing slash in production (`trailingSlash: true`)
 
@@ -69,64 +82,29 @@ Or: push to `main` and let GitHub Actions deploy (needs secrets once — see Dep
 ## Repo layout
 
 ```
+AGENTS.md / CLAUDE.md / ONBOARDING.md   # agent entry
 app/                 # Next.js App Router
-  [slug]/page.tsx    # all landings
-  page.tsx           # internal index
-landings/            # one folder per slug (content source)
-lib/                 # registry + types
-components/          # block renderer (expand with real DS blocks)
-design-system/       # Figma tokens later
-brand/               # voice + compliance notes
-briefs/              # drop marketing briefs here
-templates/brief.md   # brief template
-public/              # robots, _headers for CF Pages
+landings/            # one folder per slug (content)
+lib/                 # registry + types + navigation
+components/          # blocks + ui (header/footer)
+design-system/       # tokens, inventories, patterns
+docs/                # workflow, playbook, decisions
+brand/               # voice + compliance
+public/              # static assets, robots, brand SVGs
 ```
 
 ---
 
-## Deploy (already set up)
+## Deploy
 
 - **Pages project:** `fm-growth-agent`
-- **GitHub:** https://github.com/thesunfalle-dev/fm.growth-agent
-- **Production deploy command:** `npm run deploy` (uses logged-in wrangler)
-
-### Custom domain DNS (one-time, manual)
-
-Custom domain is registered on the Pages project, but DNS write needs a click in the dashboard (API token has no zone edit):
-
-1. Cloudflare → zone **growth-agent.org** → **DNS**
-2. Add record:
-
-   | Type | Name | Target | Proxy |
-   |------|------|--------|-------|
-   | CNAME | `fm` | `fm-growth-agent.pages.dev` | Proxied |
-
-3. Wait 1–2 minutes → https://fm.growth-agent.org/demo/
-
-### Optional: auto-deploy on every `git push`
-
-Workflow: `.github/workflows/deploy.yml`
-
-Add repo secrets:
-
-| Secret | Value |
-|--------|--------|
-| `CLOUDFLARE_ACCOUNT_ID` | `9158da08ff0d2f68f183250a5ab55808` |
-| `CLOUDFLARE_API_TOKEN` | API Token with **Cloudflare Pages — Edit** |
-
-Until secrets exist, use `npm run deploy` after push (same result).
-
----
-
-## Design system / Figma
-
-Live fusionmarkets.com is **Next.js + MUI**, but the new redesign lives in Figma.  
-When you share Figma links, we map tokens into `app/globals.css` / `design-system/` and grow real blocks beyond the current shell (`hero`, `features`, `cta`, `disclaimer`).
+- **GitHub:** push to `main` → `.github/workflows/deploy.yml`
+- Secrets: `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`
 
 ---
 
 ## Security / discretion
 
-- Pages are public-by-URL unless you add Cloudflare Access later
-- Share only specific slug links with marketing
-- Index at `/` is a convenience; set `listed: false` on a landing to hide it from the index (URL still works if known)
+- Pages are public-by-URL unless Cloudflare Access is added
+- Share specific slug links with marketing
+- Index at `/` lists `listed: true` landings only; URL still works if known

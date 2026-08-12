@@ -1,0 +1,18 @@
+---
+description: FM Landings — always-on project rules for Cursor agents
+globs:
+alwaysApply: true
+---
+
+# FM Landings
+
+When the user says to familiarize yourself with the project (or this is a fresh session), **read `ONBOARDING.md` first**, then Tier 1 files listed there (`AGENTS.md`, `docs/IMPLEMENTATION_PLAYBOOK.md`, etc.). Confirm how you will work before large implementations.
+
+Hard rules:
+- Figma = structure only; TZ/brief = content only
+- Inventory-only landing blocks (`design-system/block-inventory.json`)
+- Ship via push to main → production `fm.growth-agent.org/{slug}/`
+- Full process + anti-patterns: `docs/IMPLEMENTATION_PLAYBOOK.md`
+- Social URLs from live fusionmarkets.com; chrome icons from Figma SVGs under `public/brand/`
+- Do not edit `design-system/generated/*`
+- Do not invent answers in `docs/OPEN_QUESTIONS.md`

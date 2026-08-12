@@ -4,6 +4,26 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 ---
 
+## 2026-08-12 — Multi-agent onboarding entrypoints
+
+**Context:** User needs Claude Code, Codex, Cursor, or Grok to fully orient on “ознакомься с проектом” without missing process docs.
+
+**Decision:**
+
+| File | Role |
+|------|------|
+| `ONBOARDING.md` | Canonical bootstrap: trigger phrases + Tier 1/2/3 read order + confirm template |
+| `AGENTS.md` | Codex/Grok primary contract; bootstrap section points to `ONBOARDING.md` |
+| `CLAUDE.md` | Claude Code auto-entry; same rules + read path |
+| `README.md` | Human + agent pointer to onboarding |
+| `.cursor/rules/fm-landings.mdc` | Cursor always-apply rules |
+
+Agents told to familiarize must complete Tier 1 before large implementation.
+
+**Consequences:** One phrase works across tools; process docs stay discoverable.
+
+---
+
 ## 2026-08-12 — Implementation playbook is mandatory agent process
 
 **Context:** Crypto LP iteration exposed repeated process failures: Figma copy used as content, wrong chrome assets (Material vs Figma SVG), invented social URLs, flat footer instead of 3-stack mega layout, CSS cascade gaps, “done” without measuring Figma.
