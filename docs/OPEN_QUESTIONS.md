@@ -12,7 +12,9 @@ Track unknowns instead of inventing answers. Resolve → move summary into `DECI
 - [x] Buttons frame → Primary/Secondary/Text + sizes (Download/BuySell later)
 - [x] Tables frame → rules + markets DataTable foundation (mobile/comparison later)
 - [x] Inputs & Labels → Field, Search, Tabs, chips, Toggle (selectors/dropdown later)
-- [ ] Map Cards / Sections frames 1:1 into components
+- [x] Cards USP foundation + homepage composition map (full card families still partial)
+- [x] Sections FAQ + Steps; homepage shows split/carousel usage
+- [ ] Homepage-only pieces when needed: TV spread cards, logo marquee, instrument tiles, platform accordion, ratings strip
 
 
 ## Product / process

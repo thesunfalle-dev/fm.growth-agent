@@ -151,9 +151,40 @@
   },
   "planned": [
     {
-      "type": "logo-cloud",
+      "type": "logo-marquee",
       "status": "planned",
-      "description": "Social proof logos / partners"
+      "description": "Funding / partner logo strip (homepage funding methods)",
+      "figmaHomepage": "27873:297355"
+    },
+    {
+      "type": "spread-cards",
+      "status": "planned",
+      "description": "Tabs + TV/spread quote cards rail (desktop) / stack (mobile)",
+      "figmaHomepage": "27873:297355"
+    },
+    {
+      "type": "instrument-grid",
+      "status": "planned",
+      "description": "Markets instrument tiles (Forex, Metals, Crypto…)",
+      "figmaHomepage": "27873:297355"
+    },
+    {
+      "type": "platforms",
+      "status": "planned",
+      "description": "Platform tabs + accordion + device mock",
+      "figmaHomepage": "27873:297355"
+    },
+    {
+      "type": "ratings-strip",
+      "status": "planned",
+      "description": "Trustpilot / TV / Google ratings row",
+      "figmaHomepage": "27873:297355"
+    },
+    {
+      "type": "media-carousel",
+      "status": "planned",
+      "description": "Video / awards / proof carousel with dots",
+      "figmaHomepage": "27873:296438"
     },
     {
       "type": "stats",
@@ -161,19 +192,9 @@
       "description": "Key metrics strip"
     },
     {
-      "type": "pricing-compare",
-      "status": "planned",
-      "description": "Cost comparison table"
-    },
-    {
-      "type": "platforms",
-      "status": "planned",
-      "description": "Trading platform showcase"
-    },
-    {
       "type": "testimonials",
       "status": "planned",
-      "description": "Quotes / Trustpilot-style proof"
+      "description": "Quotes / review proof"
     }
   ]
 }

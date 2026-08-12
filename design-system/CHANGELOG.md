@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Homepage composition reference
+
+- Documented AU Desktop + Mobile homepage section map and reuse patterns.
+- Docs: `homepage-patterns.md`; updated `responsive-rules.md` (hero order, rails vs stack).
+- Sources: Figma nodes `27873:297355` / `27873:296438`. No new components — composition only.
+
 ## 2026-08-12 — Cards from Figma
 
 - Ingested frame `15166:10610`: USP “Why Fusion…” cards (learn more on/off, hover, max 4 + scroll).

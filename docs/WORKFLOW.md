@@ -2,13 +2,16 @@
 
 ## Everyday: ship a landing variant
 
-1. Drop brief into `briefs/` (optional but preferred) or paste into the task.
+1. Drop brief into `briefs/` (optional) or paste into the task — **no fixed brief schema** for MVP.
 2. Choose slug (`kebab-case`).
-3. Create `landings/{slug}/content.ts` using only block types from `design-system/block-inventory.json`.
-4. Register in `lib/landings.ts`.
-5. `npm run validate:design && npm run build`
-6. Commit + push + `npm run deploy`
-7. Share `https://fm.growth-agent.org/{slug}/`
+3. Optional: skim `design-system/homepage-patterns.md` for section order / adaptive patterns.
+4. Create `landings/{slug}/content.ts` using only **ready** block types from `design-system/block-inventory.json`.
+5. Register in `lib/landings.ts`.
+6. `npm run validate:design && npm run build`
+7. Commit + push + `npm run deploy`
+8. Share `https://fm.growth-agent.org/{slug}/`
+
+Default MVP stack (subset of homepage): `hero` → `features` (usp) → `steps` → optional `faq` / `table` → footer CTA.
 
 ## Change the design system
 

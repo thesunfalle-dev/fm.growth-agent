@@ -24,6 +24,14 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-12 — Homepage composition (AU) reference
+
+- Desktop: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297355 (`27873:297355`)
+- Mobile: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-296438 (`27873:296438`)
+- Role: page-level section order + adaptive patterns (not a new token frame)
+- Docs: `homepage-patterns.md`; responsive notes in `responsive-rules.md`
+- Actor: agent + user
+
 ### 2026-08-12 — Cards
 
 - File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15166-10610
