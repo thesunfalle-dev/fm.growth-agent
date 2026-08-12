@@ -8,7 +8,7 @@
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
     "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263",
-    "notes": "Marketing website DS. Fonts: Noto Sans (display/headings/CTA) + Roboto (body/caption) only. Plus Jakarta / Lato are not part of this system."
+    "notes": "Website Redesign FM 2.0. Fonts from Typography frame: Noto Sans + Roboto only."
   },
   "primitive": {
     "color": {
@@ -136,11 +136,10 @@
   },
   "typography": {
     "fontFamily": {
-      "display": "var(--font-noto-sans), \"Noto Sans\", ui-sans-serif, system-ui, sans-serif",
-      "heading": "var(--font-noto-sans), \"Noto Sans\", ui-sans-serif, system-ui, sans-serif",
-      "body": "var(--font-roboto), \"Roboto\", ui-sans-serif, system-ui, sans-serif",
-      "sans": "var(--font-roboto), \"Roboto\", ui-sans-serif, system-ui, sans-serif",
-      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+      "display": "var(--font-noto-sans), \"Noto Sans\", sans-serif",
+      "heading": "var(--font-noto-sans), \"Noto Sans\", sans-serif",
+      "body": "var(--font-roboto), \"Roboto\", sans-serif",
+      "sans": "var(--font-roboto), \"Roboto\", sans-serif"
     },
     "fontSize": {
       "display1": "72px",

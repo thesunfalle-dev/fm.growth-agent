@@ -110,7 +110,6 @@ export const tokenNames = [
   "--typography-font-family-heading",
   "--typography-font-family-body",
   "--typography-font-family-sans",
-  "--typography-font-family-mono",
   "--typography-font-size-display1",
   "--typography-font-size-display2",
   "--typography-font-size-h1",
@@ -202,5 +201,5 @@ export const designTokenMeta = {
   "source": "Website Redesign FM 2.0",
   "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
   "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263",
-  "notes": "Marketing website DS. Fonts: Noto Sans (display/headings/CTA) + Roboto (body/caption) only. Plus Jakarta / Lato are not part of this system."
+  "notes": "Website Redesign FM 2.0. Fonts from Typography frame: Noto Sans + Roboto only."
 } as const;

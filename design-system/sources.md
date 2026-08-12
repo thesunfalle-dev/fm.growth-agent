@@ -7,7 +7,6 @@ Everything visual should be traceable. When you change tokens or inventories, no
 | Source | URL / location | Status | Notes |
 |--------|----------------|--------|-------|
 | **Website Redesign FM 2.0** | https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263 | **active SoT** | Marketing site DS. File key `5PQJiXq7xZNGCqV1XNvKro` |
-| Fusion Client Hub Design System | https://www.figma.com/design/JRZk7VKq09NfBamSFcmAst/… | superseded for landings | Hub product UI (Lato) — not marketing site |
 | Live site | https://fusionmarkets.com/ | legacy | Not redesign SoT |
 
 ## Implementation sources in this repo
@@ -29,8 +28,7 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 - File: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14711-15263
 - Frames: Typography, Color, Spacing & Layout (+ paint styles via Plugin API)
-- Fonts: **Noto Sans** + **Roboto** only (weights loaded: Noto 600/700, Roboto 400/700)
-- Supersedes Client Hub / Lato; Plus Jakarta not used
+- Fonts: **Noto Sans** + **Roboto** (design system only)
 - Actor: agent + user
 
 ## How to record a Figma sync

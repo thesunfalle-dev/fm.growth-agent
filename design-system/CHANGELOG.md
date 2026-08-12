@@ -1,15 +1,18 @@
 # Design system changelog
 
+## 2026-08-12 — Fonts: design-system only
+
+- Runtime fonts: **Noto Sans** + **Roboto** only (Website Redesign Typography).
+- Removed Client Hub Lato extract; stripped non-DS text styles from paints dump.
+- Dropped unused `mono` token stack.
+
 ## 2026-08-12 — Switch SoT to Website Redesign FM 2.0
 
-- Corrected upstream: marketing DS is **Website Redesign FM 2.0** (`5PQJiXq7xZNGCqV1XNvKro`), not Client Hub.
-- Typography frame: **Noto Sans** (display/headings/CTA) + **Roboto** (body/caption).
-- Replaced color primitives with Website Redesign Gray/Purple/Blue/Green/Orange/Red scales + gradients.
-- Spacing: multiples of 4; desktop content **1280px**; section gaps **120 / 60**.
-- Fonts loaded via `next/font`: Noto Sans + Roboto (dropped Lato).
-- Documented Plus Jakarta Sans published styles as non-authoritative for this pipeline.
+- Marketing DS: **Website Redesign FM 2.0** (`5PQJiXq7xZNGCqV1XNvKro`).
+- Typography: **Noto Sans** + **Roboto**.
+- Colors, spacing, layout from same file.
 
-**Status after change:** `figma-partial-sync` (website foundations); Buttons/Sections/Cards components still to map.
+**Status after change:** `figma-partial-sync`; Buttons/Sections/Cards still to map.
 
 ## 2026-08-12 — Figma styles ingest (Client Hub)
 

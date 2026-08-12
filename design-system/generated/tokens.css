@@ -106,11 +106,10 @@
   --color-status-danger: var(--primitive-color-red500);
   --color-status-danger-soft: var(--primitive-color-red50);
   --color-status-info: var(--primitive-color-blue400);
-  --typography-font-family-display: var(--font-noto-sans), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
-  --typography-font-family-heading: var(--font-noto-sans), "Noto Sans", ui-sans-serif, system-ui, sans-serif;
-  --typography-font-family-body: var(--font-roboto), "Roboto", ui-sans-serif, system-ui, sans-serif;
-  --typography-font-family-sans: var(--font-roboto), "Roboto", ui-sans-serif, system-ui, sans-serif;
-  --typography-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --typography-font-family-display: var(--font-noto-sans), "Noto Sans", sans-serif;
+  --typography-font-family-heading: var(--font-noto-sans), "Noto Sans", sans-serif;
+  --typography-font-family-body: var(--font-roboto), "Roboto", sans-serif;
+  --typography-font-family-sans: var(--font-roboto), "Roboto", sans-serif;
   --typography-font-size-display1: 72px;
   --typography-font-size-display2: 40px;
   --typography-font-size-h1: 56px;

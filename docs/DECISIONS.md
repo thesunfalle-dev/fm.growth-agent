@@ -8,9 +8,9 @@ Append-only log. Newest first. Each entry: context → decision → consequences
 
 **Context:** Client Hub Figma was provided first by mistake. Correct marketing DS is Website Redesign FM 2.0. Typography frame documents Noto Sans + Roboto.
 
-**Decision:** Marketing landings use **Website Redesign FM 2.0**. Fonts: **Noto Sans** (headings/CTA) + **Roboto** (body) only. No Plus Jakarta, no Lato.
+**Decision:** Marketing landings use **Website Redesign FM 2.0**. Fonts exactly as Typography frame: **Noto Sans** (headings/CTA) + **Roboto** (body).
 
-**Consequences:** Two font families only; load minimal weights used in CSS.
+**Consequences:** Only these two families are loaded and referenced in tokens.
 
 ## 2026-08-12 — Client Hub Figma as interim style SoT (superseded)
 

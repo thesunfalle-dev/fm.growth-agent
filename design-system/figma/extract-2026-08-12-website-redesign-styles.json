@@ -15,9 +15,8 @@
     "sections": "15313:11090"
   },
   "authorityNotes": {
-    "typographyCanvas": "Frame Typography documents Noto Sans (display/headings/CTA) + Roboto (body/caption).",
-    "publishedTextStyles": "Local published styles still include Plus Jakarta Sans heading styles — treat as legacy/alternate. Implementation SoT for marketing site = Typography frame labels (Noto Sans + Roboto).",
-    "previousWrongSource": "Fusion Client Hub Design System (JRZk7VKq09NfBamSFcmAst) — Lato — superseded for this project."
+    "typographyCanvas": "Frame Typography (14711:15263): Noto Sans + Roboto only.",
+    "fonts": ["Noto Sans", "Roboto"]
   },
   "typographyFromFrame": {
     "display": {
