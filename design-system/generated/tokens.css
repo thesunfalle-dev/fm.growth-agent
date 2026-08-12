@@ -215,6 +215,18 @@
   --component-button-sm-gap: 4px;
   --component-button-text-on-primary: var(--primitive-color-gray200);
   --component-button-icon-gap: 4px;
+  --component-icon-family: Material Symbols Outlined;
+  --component-icon-style: outlined;
+  --component-icon-weight: 400;
+  --component-icon-fill: 0;
+  --component-icon-size-sm: 16px;
+  --component-icon-size-md: 24px;
+  --component-icon-size-lg: 32px;
+  --component-icon-default-color: var(--primitive-color-blue500);
+  --component-logo-desktop-width: 123px;
+  --component-logo-desktop-height: 48px;
+  --component-logo-mobile-width: 24px;
+  --component-logo-mobile-height: 28px;
   --component-table-width: 1280px;
   --component-table-max-height: 600px;
   --component-table-padding-x: 24px;

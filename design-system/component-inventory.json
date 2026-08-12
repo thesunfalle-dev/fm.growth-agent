@@ -7,6 +7,30 @@
   },
   "components": [
     {
+      "name": "Icon",
+      "category": "icons",
+      "status": "ready",
+      "path": "components/ui/Icon.tsx",
+      "figma": "14994:6445",
+      "variants": ["material-outlined"],
+      "sizes": ["16", "20", "24", "32"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.icon"],
+      "notes": "Material Symbols ONLY for base UI. Catalog: lib/icons.ts MATERIAL_ICONS."
+    },
+    {
+      "name": "Logo",
+      "category": "brand",
+      "status": "ready",
+      "path": "components/ui/Logo.tsx",
+      "figma": "14994:6445",
+      "variants": ["desktop", "mobile", "auto"],
+      "sizes": ["123x48", "24x28"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.logo", "layout.header.logoHeight"],
+      "notes": "FM_Logo_Desktop / FM_Logo_Mobile from Logos & Icons frame."
+    },
+    {
       "name": "Field",
       "category": "inputs",
       "status": "ready",

@@ -1,0 +1,78 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14994-6445",
+    "frame": { "id": "14994:6445", "name": "Logos & Icons" }
+  },
+  "rule": {
+    "baseIcons": "Material Symbols only",
+    "figmaQuote": "A consistent icon set used across the system for all non-custom icons (Icons not on the Nav Bar). All icons are based on Material Symbols."
+  },
+  "logos": {
+    "FM_Logo_Desktop": { "id": "15368:10679", "width": 123, "height": 48 },
+    "FM_Logo_Mobile": { "id": "15368:10678", "width": 24, "height": 28 }
+  },
+  "materialIcons": {
+    "rowNode": "15188:11176",
+    "size": 24,
+    "style": "Material Symbols Outlined",
+    "names": [
+      "chevron_left",
+      "chevron_right",
+      "west",
+      "east",
+      "expand_less",
+      "expand_more",
+      "language",
+      "menu",
+      "close",
+      "search",
+      "north_east",
+      "south_east",
+      "call",
+      "mail_outline",
+      "check_circle",
+      "room",
+      "error_outline",
+      "info",
+      "access_time",
+      "link",
+      "account_balance",
+      "content_paste_search",
+      "list",
+      "auto_awesome_mosaic",
+      "analytics",
+      "fact_check",
+      "request_page",
+      "desktop_windows",
+      "phone_android",
+      "wysiwyg",
+      "smart_toy"
+    ]
+  },
+  "customSets": {
+    "flags": "planned",
+    "indices": "planned",
+    "crypto": "planned",
+    "metalsCommodities": "planned",
+    "otherPlatformSocial": "planned",
+    "keyIcons": { "sizes": [80, 60, 32], "status": "planned" },
+    "reviewWidgets": "planned",
+    "depositWithdrawal": "planned",
+    "chatbotAi": "planned"
+  },
+  "implementation": {
+    "Icon": "components/ui/Icon.tsx",
+    "Logo": "components/ui/Logo.tsx",
+    "catalog": "lib/icons.ts",
+    "assets": [
+      "public/brand/logo-desktop.svg",
+      "public/brand/logo-mobile.svg",
+      "public/brand/logo-mark.svg",
+      "public/brand/logo-wordmark.svg"
+    ],
+    "tokens": ["component.icon", "component.logo"]
+  }
+}

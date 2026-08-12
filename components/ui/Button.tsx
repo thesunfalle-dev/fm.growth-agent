@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Icon } from "@/components/ui/Icon";
 
 export type ButtonVariant = "primary" | "secondary" | "text";
 export type ButtonSize = "lg" | "md" | "sm";
@@ -8,31 +9,10 @@ type ButtonProps = {
   children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  /** Trailing arrow (text/link style + optional on filled) */
+  /** Trailing Material `east` arrow (text/link style + optional on filled) */
   arrow?: boolean;
   className?: string;
 };
-
-function ArrowIcon() {
-  return (
-    <svg
-      className="ui-btn__arrow"
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M3.333 8h9.334M8.667 4l4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export function Button({
   href,
@@ -52,10 +32,14 @@ export function Button({
     .filter(Boolean)
     .join(" ");
 
+  const iconSize = size === "sm" ? 16 : size === "lg" ? 20 : 18;
+
   return (
     <a className={classes} href={href}>
       <span className="ui-btn__label">{children}</span>
-      {arrow ? <ArrowIcon /> : null}
+      {arrow ? (
+        <Icon name="east" size={iconSize} className="ui-btn__arrow" />
+      ) : null}
     </a>
   );
 }

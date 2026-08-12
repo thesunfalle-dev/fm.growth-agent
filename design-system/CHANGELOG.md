@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-12 — Logos & Icons from Figma
+
+- Ingested frame `14994:6445`. **Hard rule:** base UI icons = **Material Symbols only**.
+- `Icon` + `MATERIAL_ICONS` catalog (`lib/icons.ts`); `Logo` desktop/mobile.
+- Wired Material icons into SiteHeader, SiteFooter contact, SearchInput, Button arrow.
+- Removed hand-drawn `public/brand/icon-*.svg`. Assets: logo-desktop / logo-mobile / mark / wordmark.
+- Docs: `logos-icons.md` + extract JSON. Flags, crypto, key icons, social, deposit planned.
+
 ## 2026-08-12 — Header & Footer from Figma
 
 - Ingested frame `15192:11125`: Header_Desktop (80), Header_Mobile (57), Footer AU structure, CTA band.

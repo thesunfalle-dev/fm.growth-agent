@@ -79,17 +79,15 @@ Fonts in code: **Noto Sans** (nav, CTAs, titles) + **Roboto** (footer links, bod
 
 Nav/footer content lives in `lib/navigation.ts` (not hard-coded in CSS).
 
-## Assets
+## Logos & icons
 
-| File | Role |
-|------|------|
-| `public/brand/logo-mark.svg` | F mark |
-| `public/brand/logo-wordmark.svg` | FUSION MARKETS wordmark |
-| `public/brand/icon-language.svg` | Globe |
-| `public/brand/icon-search.svg` | Mobile search |
-| `public/brand/icon-menu.svg` | Hamburger |
+Use **`Logo`** + **`Icon`** (Material Symbols only). See `logos-icons.md`.
 
-Exported from Figma Header nodes via MCP `download_assets`.
+| Usage | Implementation |
+|-------|----------------|
+| Brand mark | `Logo` → `public/brand/logo-desktop.svg` / `logo-mobile.svg` |
+| language / search / menu | Material: `language`, `search`, `menu` |
+| Footer contact | Material: `mail_outline`, `call`, `room` |
 
 ## Out of scope for landings v0.8
 

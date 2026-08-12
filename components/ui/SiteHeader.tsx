@@ -1,35 +1,18 @@
 import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
+import { Logo } from "@/components/ui/Logo";
 import { primaryNav } from "@/lib/navigation";
 
 /**
  * Marketing site header — Website Redesign Header_Desktop / Header_Mobile.
- * Frame: 15192:11125 · components Header_Desktop 15086:11710, Header_Mobile 15366:10884.
+ * Icons: Material Symbols only (Logos & Icons 14994:6445).
  * Static-export friendly: mobile menu uses details/summary (no client JS).
  */
 export function SiteHeader() {
   return (
     <header className="ui-mkt-header">
       <div className="ui-mkt-header__inner">
-        <a
-          className="ui-mkt-header__logo"
-          href="https://fusionmarkets.com/"
-          aria-label="Fusion Markets"
-        >
-          <img
-            className="ui-mkt-header__logo-mark"
-            src="/brand/logo-mark.svg"
-            alt=""
-            width={34}
-            height={40}
-          />
-          <img
-            className="ui-mkt-header__logo-wordmark"
-            src="/brand/logo-wordmark.svg"
-            alt="Fusion Markets"
-            width={81}
-            height={37}
-          />
-        </a>
+        <Logo variant="auto" className="ui-mkt-header__logo" />
 
         <nav className="ui-mkt-header__nav" aria-label="Primary">
           <ul className="ui-mkt-header__nav-list">
@@ -62,7 +45,7 @@ export function SiteHeader() {
             href="https://fusionmarkets.com/"
             aria-label="Language"
           >
-            <img src="/brand/icon-language.svg" alt="" width={24} height={24} />
+            <Icon name="language" size={24} />
           </a>
         </div>
 
@@ -72,14 +55,14 @@ export function SiteHeader() {
             href="https://fusionmarkets.com/"
             aria-label="Search"
           >
-            <img src="/brand/icon-search.svg" alt="" width={24} height={24} />
+            <Icon name="search" size={24} />
           </a>
           <details className="ui-mkt-header__menu">
             <summary
               className="ui-mkt-header__icon-btn"
               aria-label="Open menu"
             >
-              <img src="/brand/icon-menu.svg" alt="" width={24} height={24} />
+              <Icon name="menu" size={24} />
             </summary>
             <div className="ui-mkt-header__mobile-panel">
               <ul className="ui-mkt-header__mobile-list">

@@ -215,6 +215,18 @@ export const tokenNames = [
   "--component-button-sm-gap",
   "--component-button-text-on-primary",
   "--component-button-icon-gap",
+  "--component-icon-family",
+  "--component-icon-style",
+  "--component-icon-weight",
+  "--component-icon-fill",
+  "--component-icon-size-sm",
+  "--component-icon-size-md",
+  "--component-icon-size-lg",
+  "--component-icon-default-color",
+  "--component-logo-desktop-width",
+  "--component-logo-desktop-height",
+  "--component-logo-mobile-width",
+  "--component-logo-mobile-height",
   "--component-table-width",
   "--component-table-max-height",
   "--component-table-padding-x",
@@ -342,11 +354,11 @@ export type TokenName = (typeof tokenNames)[number];
 export const designTokenMeta = {
   "name": "Fusion Markets Landing Design Tokens",
   "mode": "light",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "status": "figma-partial-sync",
   "updatedAt": "2026-08-12",
   "source": "Website Redesign FM 2.0",
   "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15192-11125",
-  "notes": "Header & Footer frame 15192:11125 — Header_Desktop 80, Header_Mobile 57, Footer AU/EN, CTA band."
+  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14994-6445",
+  "notes": "Logos & Icons 14994:6445 — base UI icons = Material Symbols only; FM logos desktop/mobile."
 } as const;

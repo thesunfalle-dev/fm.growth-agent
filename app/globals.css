@@ -1,4 +1,6 @@
 @import "../design-system/generated/tokens.css";
+/* Base UI icons — Material Symbols only (Figma Logos & Icons 14994:6445) */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block");
 
 *,
 *::before,
@@ -67,6 +69,94 @@ a {
   border-top: var(--border-width-default) solid var(--color-border-default);
 }
 
+/* Logos & Icons (Figma 14994:6445) — Material Symbols only for base UI */
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--component-icon-size-md);
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" var(--icon-opsz, 24);
+  user-select: none;
+}
+
+.ui-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: inherit;
+  vertical-align: middle;
+}
+
+/* Logo — FM_Logo_Desktop 123×48 · FM_Logo_Mobile 24×28 */
+
+.ui-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.ui-logo__desktop,
+.ui-logo__mobile {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.ui-logo--desktop .ui-logo__mobile,
+.ui-logo--mobile .ui-logo__desktop {
+  display: none;
+}
+
+.ui-logo--desktop .ui-logo__desktop {
+  width: 123px;
+  height: 48px;
+}
+
+.ui-logo--mobile .ui-logo__mobile {
+  width: 24px;
+  height: 28px;
+}
+
+/* auto: full logo desktop, mark on small screens */
+.ui-logo--auto .ui-logo__desktop {
+  width: auto;
+  height: var(--layout-header-logo-height);
+}
+
+.ui-logo--auto .ui-logo__mobile {
+  display: none;
+  width: 24px;
+  height: 28px;
+}
+
+@media (max-width: 1024px) {
+  .ui-logo--auto .ui-logo__desktop {
+    display: none;
+  }
+
+  .ui-logo--auto .ui-logo__mobile {
+    display: block;
+  }
+}
+
 /* Marketing Header (Figma Header & Footer 15192:11125) */
 
 .ui-mkt-header {
@@ -90,24 +180,7 @@ a {
 }
 
 .ui-mkt-header__logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
   flex-shrink: 0;
-  height: var(--layout-header-logo-height);
-}
-
-.ui-mkt-header__logo-mark {
-  display: block;
-  height: 100%;
-  width: auto;
-}
-
-.ui-mkt-header__logo-wordmark {
-  display: block;
-  height: 76%;
-  width: auto;
 }
 
 .ui-mkt-header__nav {
@@ -175,12 +248,6 @@ a {
   flex-shrink: 0;
 }
 
-.ui-mkt-header__lang img {
-  display: block;
-  width: 24px;
-  height: 24px;
-}
-
 .ui-mkt-header__mobile {
   display: none;
   margin-left: auto;
@@ -204,13 +271,6 @@ a {
 
 .ui-mkt-header__icon-btn::-webkit-details-marker {
   display: none;
-}
-
-.ui-mkt-header__icon-btn img {
-  display: block;
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
 }
 
 .ui-mkt-header__menu {
@@ -429,6 +489,9 @@ a {
 }
 
 .ui-mkt-footer__help-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   font-size: var(--layout-footer-link-size);
   color: var(--layout-footer-link-color);
   text-decoration: none;
@@ -436,6 +499,13 @@ a {
 
 .ui-mkt-footer__help-link:hover {
   color: var(--color-action-primary-default);
+}
+
+.ui-mkt-footer__address-block {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--layout-footer-link-color);
 }
 
 .ui-mkt-footer__address {
@@ -508,14 +578,6 @@ a {
 
   .ui-mkt-header__inner {
     padding-inline: var(--layout-header-padding-x-mobile);
-  }
-
-  .ui-mkt-header__logo {
-    height: var(--layout-header-logo-height-mobile);
-  }
-
-  .ui-mkt-header__logo-wordmark {
-    display: none;
   }
 
   .ui-mkt-header__mobile {

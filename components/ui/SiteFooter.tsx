@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
+import { Logo } from "@/components/ui/Logo";
 import {
   footerColumns,
   footerContact,
@@ -8,8 +10,7 @@ import {
 
 /**
  * Marketing footer — Website Redesign Header & Footer frame 15192:11125.
- * Structure: CTA band → brand/social → link columns → legal strip → disclaimer.
- * AU/EN legal variants remain content-level; landings use a preview-safe disclaimer.
+ * Contact icons: Material Symbols (call, mail_outline, room).
  */
 export function SiteFooter() {
   return (
@@ -39,26 +40,7 @@ export function SiteFooter() {
 
       <div className="ui-mkt-footer__main">
         <div className="ui-mkt-footer__brand-row">
-          <a
-            className="ui-mkt-header__logo"
-            href="https://fusionmarkets.com/"
-            aria-label="Fusion Markets"
-          >
-            <img
-              className="ui-mkt-header__logo-mark"
-              src="/brand/logo-mark.svg"
-              alt=""
-              width={34}
-              height={40}
-            />
-            <img
-              className="ui-mkt-header__logo-wordmark"
-              src="/brand/logo-wordmark.svg"
-              alt="Fusion Markets"
-              width={81}
-              height={37}
-            />
-          </a>
+          <Logo variant="desktop" />
           <div className="ui-mkt-footer__social">
             <span className="ui-mkt-footer__social-label">Follow us</span>
             <ul className="ui-mkt-footer__social-list">
@@ -106,19 +88,26 @@ export function SiteFooter() {
                 className="ui-mkt-footer__help-link"
                 href={`mailto:${footerContact.email}`}
               >
-                {footerContact.email}
+                <Icon name="mail_outline" size={20} />
+                <span>{footerContact.email}</span>
               </a>
               <a
                 className="ui-mkt-footer__help-link"
                 href={`tel:${footerContact.phone.replace(/\s/g, "")}`}
               >
-                {footerContact.phone}
+                <Icon name="call" size={20} />
+                <span>{footerContact.phone}</span>
               </a>
-              {footerContact.addressLines.map((line) => (
-                <p key={line} className="ui-mkt-footer__address">
-                  {line}
-                </p>
-              ))}
+              <div className="ui-mkt-footer__address-block">
+                <Icon name="room" size={20} />
+                <div>
+                  {footerContact.addressLines.map((line) => (
+                    <p key={line} className="ui-mkt-footer__address">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
             </div>
           </aside>
         </div>

@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15192-11125",
-    "notes": "Header & Footer frame 15192:11125 — Header_Desktop 80, Header_Mobile 57, Footer AU/EN, CTA band."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=14994-6445",
+    "notes": "Logos & Icons 14994:6445 — base UI icons = Material Symbols only; FM logos desktop/mobile."
   },
   "primitive": {
     "color": {
@@ -267,6 +267,22 @@
       },
       "textOnPrimary": "{primitive.color.gray200}",
       "iconGap": "4px"
+    },
+    "icon": {
+      "family": "Material Symbols Outlined",
+      "style": "outlined",
+      "weight": 400,
+      "fill": 0,
+      "sizeSm": "16px",
+      "sizeMd": "24px",
+      "sizeLg": "32px",
+      "defaultColor": "{primitive.color.blue500}"
+    },
+    "logo": {
+      "desktopWidth": "123px",
+      "desktopHeight": "48px",
+      "mobileWidth": "24px",
+      "mobileHeight": "28px"
     },
     "table": {
       "width": "1280px",
