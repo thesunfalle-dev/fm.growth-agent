@@ -192,30 +192,34 @@ export const footerContact = {
   ],
 };
 
-/** Social icons — Figma Footer AU brand row (FB / IG / YT / TG / TikTok) */
+/**
+ * Social icons — Figma Footer AU brand row (FB / IG / YT / TG / TikTok).
+ * Hrefs from live fusionmarkets.com footer (scraped 2026-08-12).
+ */
 export const footerSocial: SocialItem[] = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/FusionMarkets",
+    href: "https://www.facebook.com/FusionMarkets.au/",
     iconSrc: "/brand/social/facebook.svg",
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/fusionmarkets/",
+    href: "https://www.instagram.com/fusionmarketsau/",
     iconSrc: "/brand/social/instagram.svg",
   },
   {
     label: "YouTube",
-    href: "https://www.youtube.com/@fusionmarkets",
+    href: "https://www.youtube.com/channel/UCc9Od022bSt2Z9_Yij4H3Ig/videos",
     iconSrc: "/brand/social/youtube.svg",
   },
   {
     label: "Telegram",
-    href: "https://t.me/fusionmarkets",
+    href: "https://t.me/s/fusionmarkets",
     iconSrc: "/brand/social/telegram.svg",
   },
   {
     label: "TikTok",
+    // Not linked on fusionmarkets.com main footer; keep public handle
     href: "https://www.tiktok.com/@fusionmarkets",
     iconSrc: "/brand/social/tiktok.svg",
   },

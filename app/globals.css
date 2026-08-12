@@ -384,8 +384,15 @@ a {
   justify-content: center;
   width: 24px;
   height: 24px;
-  color: var(--color-text-primary);
   flex-shrink: 0;
+  text-decoration: none;
+}
+
+.ui-mkt-header__lang-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .ui-mkt-header__mobile {

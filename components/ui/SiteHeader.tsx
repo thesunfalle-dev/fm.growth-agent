@@ -45,7 +45,14 @@ export function SiteHeader() {
             href="https://fusionmarkets.com/"
             aria-label="Language"
           >
-            <Icon name="language" size={24} />
+            {/* Figma Header_Desktop Language 14686:11112 — brand SVG, not Material */}
+            <img
+              className="ui-mkt-header__lang-icon"
+              src="/brand/language.svg"
+              alt=""
+              width={24}
+              height={24}
+            />
           </a>
         </div>
 
