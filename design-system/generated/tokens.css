@@ -124,8 +124,8 @@
   --color-status-danger: var(--primitive-color-red500);
   --color-status-danger-soft: var(--primitive-color-red50);
   --color-status-info: var(--primitive-color-blue400);
-  --typography-font-family-display: var(--font-noto-sans), "Noto Sans", sans-serif;
-  --typography-font-family-heading: var(--font-noto-sans), "Noto Sans", sans-serif;
+  --typography-font-family-display: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+  --typography-font-family-heading: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
   --typography-font-family-body: var(--font-roboto), "Roboto", sans-serif;
   --typography-font-family-sans: var(--font-roboto), "Roboto", sans-serif;
   --typography-font-size-display1: 72px;

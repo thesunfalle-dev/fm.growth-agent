@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Typography corrected from Deposit Options Figma
+
+- Re-read Deposit Options Desktop `24400:153833`, including hero text and Footer CTA, with Figma design context.
+- Corrected display, heading, navigation and CTA family from Noto Sans to **Plus Jakarta Sans** (Medium/SemiBold/Bold); body remains **Roboto** (Light for B2/B3 copy, Regular for links/tables).
+- Equity Indices now relies on the shared footer CTA (`SiteFooter`) rather than adding a second, structurally different `cta` block before it. This matches the established market landing composition and shared CTAFooter pattern.
+
 ## 2026-08-12 — Implementation playbook + chrome parity lessons
 
 - Added `docs/IMPLEMENTATION_PLAYBOOK.md`: Figma→code process, measure checklist, asset workflow, ship pipeline, **anti-patterns** from Crypto LP.

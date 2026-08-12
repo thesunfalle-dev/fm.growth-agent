@@ -5,17 +5,17 @@
 
 | Role | Font | Loaded weights |
 |------|------|----------------|
-| Display / Heading / CTA | **Noto Sans** | 600, 700 |
-| Body / Caption | **Roboto** | 400, 700 |
+| Display / Heading / CTA | **Plus Jakarta Sans** | 500, 600, 700 |
+| Body / Caption | **Roboto** | 300, 400, 500, 700 |
 
-## Display — Noto Sans
+## Display — Plus Jakarta Sans
 
 | Style | Size | Weight | Line-height |
 |-------|------|--------|-------------|
 | Display 1 – Desktop | 72 | 600 | 110% |
 | Display 2 – Mobile | 40 | 600 | 120% |
 
-## Heading — Noto Sans
+## Heading — Plus Jakarta Sans
 
 | Style | Size | Weight | Line-height |
 |-------|------|--------|-------------|
@@ -24,7 +24,7 @@
 | Heading 3 | 24 | 500 / 700* | 120% |
 | Heading 4 | 20 | 500–700* | 120% |
 
-\* Full scale in Figma; runtime currently loads 600/700 (what landings use). Add weights when a block needs them.
+\* Full scale in Figma; runtime loads 500/600/700.
 
 ## Body — Roboto
 
@@ -41,7 +41,7 @@
 | Caption 1 | 14 | 150% |
 | Caption 2 | 12 | 150% |
 
-## CTA — Noto Sans
+## CTA — Plus Jakarta Sans
 
 | Style | Size | Weight | Line-height |
 |-------|------|--------|-------------|

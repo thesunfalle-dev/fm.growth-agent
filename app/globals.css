@@ -502,7 +502,7 @@ a {
 
 .ui-mkt-footer__cta-title {
   margin: 0;
-  font-family: var(--typography-font-family-heading); /* Noto Sans (Figma: Plus Jakarta → Noto) */
+  font-family: var(--typography-font-family-heading); /* Plus Jakarta Sans — Figma heading/CTA role */
   font-size: var(--layout-footer-heading-size); /* 48 */
   font-weight: var(--typography-font-weight-semibold); /* 600 */
   line-height: 1.1;

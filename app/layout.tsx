@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Noto_Sans, Roboto } from "next/font/google";
+import { Plus_Jakarta_Sans, Roboto } from "next/font/google";
 import { SiteFooter } from "@/components/ui/SiteFooter";
 import { SiteHeader } from "@/components/ui/SiteHeader";
 import "./material-icons.css";
 import "./globals.css";
 
-// Design system fonts only (Website Redesign Typography frame).
-const notoSans = Noto_Sans({
+// Website Redesign FM 2.0: display, headings, navigation and CTAs use Plus Jakarta Sans.
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
   weight: ["500", "600", "700"],
-  variable: "--font-noto-sans",
+  variable: "--font-plus-jakarta-sans",
   display: "swap",
 });
 
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${notoSans.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${roboto.variable}`}>
       <body className={roboto.className}>
         <SiteHeader />
         <main>{children}</main>

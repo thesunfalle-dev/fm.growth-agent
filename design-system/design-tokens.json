@@ -154,8 +154,8 @@
   },
   "typography": {
     "fontFamily": {
-      "display": "var(--font-noto-sans), \"Noto Sans\", sans-serif",
-      "heading": "var(--font-noto-sans), \"Noto Sans\", sans-serif",
+      "display": "var(--font-plus-jakarta-sans), \"Plus Jakarta Sans\", sans-serif",
+      "heading": "var(--font-plus-jakarta-sans), \"Plus Jakarta Sans\", sans-serif",
       "body": "var(--font-roboto), \"Roboto\", sans-serif",
       "sans": "var(--font-roboto), \"Roboto\", sans-serif"
     },

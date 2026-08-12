@@ -30,6 +30,13 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Decision: `docs/DECISIONS.md` “Figma screens register reusable patterns”
 - Actor: agent + user
 
+### 2026-08-12 — Typography correction from Deposit Options Desktop
+
+- Figma: [Deposit Options - Desktop `24400:153833`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=24400-153833)
+- Verified roles: Plus Jakarta Sans SemiBold for H1 / headings / CTA, Roboto Light for body copy, Roboto Regular for links and table/supporting UI.
+- Applied in `design-tokens.json`, `app/layout.tsx`, and `typography-styles.md`.
+- Actor: agent + user
+
 ### 2026-08-12 — Page batch: Compare + About + Careers + Blog (6 screens)
 
 | Page | Node |
