@@ -178,9 +178,12 @@
     {
       "type": "platforms",
       "status": "planned",
-      "description": "Title + Tabs_Icon (MT4/MT5/TV/cTrader) + body + mock; often with download-bar OS links.",
+      "description": "Title + Tabs_Icon + body + device mock + store buttons. MT5 Overview «Choose Your Platform» is canonical; Products overview / homepage same family.",
       "figmaHomepage": "27873:297355",
-      "figmaPages": ["26258:276027 Products overview platforms"]
+      "figmaPages": [
+        "28610:429747 MT5 Overview Choose Your Platform",
+        "26258:276027 Products overview platforms"
+      ]
     },
     {
       "type": "ratings-strip",
@@ -210,9 +213,13 @@
     {
       "type": "download-bar",
       "status": "planned",
-      "description": "OS/platform download strip (Windows/Mac/Linux/iOS/Android/Web).",
+      "description": "OS download strip or Store download button row (Windows/Mac/Linux/iOS/Android/Web). Full-bleed bar on MT5 Overview; badges in device heroes.",
       "figmaLanding": "29987:340524 TradingView",
-      "figmaPages": ["26258:276027 Products overview"]
+      "figmaPages": [
+        "28610:429714 MT5 Overview Download section",
+        "28758:144345 MT5 Desktop hero stores",
+        "26258:276027 Products overview"
+      ]
     },
     {
       "type": "checklist-feature",
@@ -258,6 +265,18 @@
       "type": "testimonials",
       "status": "planned",
       "description": "Quotes / review proof (alias of review-rail patterns)"
+    },
+    {
+      "type": "icon-feature-grid",
+      "status": "planned",
+      "description": "Material icon + short heading feature mosaic (optional center visual). MAM key features — not isometric USP cards.",
+      "figmaPages": ["31099:361361 MAM Key Features"]
+    },
+    {
+      "type": "notice-band",
+      "status": "planned",
+      "description": "Short mid-page legal/advisory strip (e.g. under DupliTrade hero). Not full disclaimer/footer legal.",
+      "figmaPages": ["31099:361441 DupliTrade notice"]
     }
   ]
 }

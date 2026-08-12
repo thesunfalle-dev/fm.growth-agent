@@ -30,6 +30,21 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Decision: `docs/DECISIONS.md` “Figma screens register reusable patterns”
 - Actor: agent + user
 
+### 2026-08-12 — Page batch: Platforms + ATS (6 screens)
+
+| Page | Node |
+|------|------|
+| MetaTrader 5 - Overview | `28610:429700` |
+| MetaTrader 5 - Desktop | `28758:144345` |
+| MetaTrader 5 - Mobile | `28758:145875` |
+| MetaTrader 5 - Web | `28610:427712` |
+| Multi Account Manager (MAM/PAMM) | `31099:361349` |
+| DupliTrade | `31099:361429` |
+
+- Recipes: P1 platform overview, P2 device subpage, P3 MAM, P4 DupliTrade in `page-recipes.md`
+- New planned patterns: `icon-feature-grid`, `notice-band`; strengthened `download-bar` / `platforms` / `checklist-feature` / `bento-usp`
+- Actor: agent + user
+
 ### 2026-08-12 — Page batch: Markets + Accounts (6 screens)
 
 | Page | Node |

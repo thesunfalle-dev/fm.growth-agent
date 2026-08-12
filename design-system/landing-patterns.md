@@ -133,7 +133,9 @@ Promo / “trade X get Y”:
 
 ### Reuse for similar campaigns
 Platform / product landings (MT4, cTrader, TV):  
-`hero` → `download-bar` → optional tiers → usp → `checklist-feature` → spreads → steps → reviews → `faq` → footer.
+See **`page-recipes.md` recipes P1 (overview) and P2 (Desktop/Mobile/Web device)**.  
+Overview: `hero` → `download-bar` → `platforms` → `bento-usp` → `checklist-feature` → optional `comparison-table` → `features` → `steps` → `faq` → footer.  
+Device: `hero`+stores → `bento-usp` → `checklist-feature` ×n → `faq` → footer.
 
 ---
 

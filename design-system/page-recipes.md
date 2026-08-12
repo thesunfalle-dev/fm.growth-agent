@@ -148,6 +148,114 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 
 ---
 
+## Batch 2026-08-12 — Platforms + ATS tools
+
+| # | Page | Node | URL |
+|---|------|------|-----|
+| 1 | **MetaTrader 5 - Overview** | `28610:429700` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28610-429700) |
+| 2 | **MetaTrader 5 - Desktop** | `28758:144345` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28758-144345) |
+| 3 | **MetaTrader 5 - Mobile** | `28758:145875` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28758-145875) |
+| 4 | **MetaTrader 5 - Web** | `28610:427712` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28610-427712) |
+| 5 | **Multi Account Manager (MAM/PAMM)** | `31099:361349` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31099-361349) |
+| 6 | **DupliTrade** | `31099:361429` | [link](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31099-361429) |
+
+Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / TradingView device pages) with content swap.
+
+---
+
+### Recipe P1 — Platform overview (MT5 Overview)
+
+**Figma:** `28610:429700`  
+**Reuse for:** MT4 Overview, cTrader Overview, TradingView overview-style hubs.
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Platform hero | `hero` | Logo + H1 + long body + dual CTA + device collage |
+| 2 | Download strip | `download-bar` | Full-width: MT5 for Windows/Mac/Linux/iOS/Android/Webtrader (icons + labels) |
+| 3 | Choose your platform | `platforms` | Title + **Tabs_Icon** (Desktop / Mobile / Web) + device mock + body + **Store download button** row |
+| 4 | Platform feature bento | `bento-usp` | “MetaTrader 5 (MT5) Platform” large + small USP cards |
+| 5 | Feature / benefit checklist | `checklist-feature` | “Analyst Views” style: copy + icon rows + visual |
+| 6 | Second device band (e.g. WebTrader) | `platforms` or `checklist-feature` | Device mock + copy variant |
+| 7 | Accounts compare (optional) | `comparison-table` | Classic vs Zero appears on overview |
+| 8 | Why trade [platform] with Fusion | `features` usp | Equal USP rail |
+| 9 | How to get started | `steps` | “MT5 steps block” |
+| 10 | Explore other platforms | `instrument-grid` or link cards | Cross-nav to MT4/TV/… |
+| 11 | FAQs | `faq` | |
+| 12 | Footer | `cta` / footer | |
+
+**Rules:** Overview owns **download-bar + platforms tabs**. Device subpages (P2) reuse benefits without repeating full overview chrome.
+
+---
+
+### Recipe P2 — Platform device subpage (Desktop / Mobile / Web)
+
+**Figma:** Desktop `28758:144345`, Mobile `28758:145875`, Web `28610:427712`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Device hero | `hero` + store CTAs | H1 (“MT5 Desktop/Mobile/WebTrader”) + “Available on …” + body + **Store download buttons** (Web may use Icon+Text+Arrow “open web” link instead) + product visual |
+| 2 | About + feature bento | `bento-usp` | “About MT5 Desktop/Mobile/Web” + USP grid |
+| 3 | Deep feature band (“Pine script” frame name in file) | `checklist-feature` | Image \| headline + icon checklist + store buttons |
+| 4 | Second checklist / analyst band | `checklist-feature` | Optional second pass (Desktop/Mobile; Web may skip one) |
+| 5 | Explore other platforms | cross-link band | Same as overview |
+| 6 | FAQs | `faq` | |
+| 7 | Footer | `cta` / footer | |
+
+**Content knobs only between Desktop vs Mobile vs Web:** OS list, store buttons count (3 vs 2 vs web link), copy, hero image. **Structure is one recipe.**
+
+**Rules:** Do not invent a separate block type per OS. `download-bar` / store buttons = same component family as overview strip and Products overview downloads.
+
+---
+
+### Recipe P3 — ATS / money-manager tool (MAM)
+
+**Figma:** Multi Account Manager `31099:361349`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Tool hero | `hero` | H1 + long pitch + dual CTA + product image |
+| 2 | Key features | `icon-feature-grid` (planned) or `features` | Material icons + short headings around central visual (“Device / WebTrader” frame) |
+| 3 | Footer | `cta` / footer | |
+
+**Rules:** Shorter stack than full platform overview. Icon grid is **not** isometric USP (`features` usp) — Material icon + label/heading cards; register as `icon-feature-grid` when building.
+
+---
+
+### Recipe P4 — Copy-trading / partner tool (DupliTrade)
+
+**Figma:** DupliTrade `31099:361429`
+
+| # | Section | Pattern | Notes |
+|---|---------|---------|--------|
+| 1 | Tool hero | `hero` | Image left + H1 + body + dual CTA |
+| 2 | Legal notice strip | `notice-band` (planned) | Short compliance note under hero (not full footer disclaimer) |
+| 3 | Why [tool] | `bento-usp` / `features` | Large visual + USP card grid |
+| 4 | How to open / register | `steps` | 4 steps + image + primary CTA (“Create an account”) |
+| 5 | Footer | `cta` / footer | |
+
+**Rules:** `notice-band` = reusable micro legal under hero (DupliTrade-style). Full risk text stays `disclaimer` / footer legal.
+
+---
+
+## Pattern frequency — Platforms batch
+
+| Pattern | P1 Overview | P2 Device | P3 MAM | P4 DupliTrade |
+|---------|-------------|-----------|--------|---------------|
+| `hero` | ✅ | ✅ + stores | ✅ | ✅ |
+| `download-bar` | ✅ | store row in hero | — | — |
+| `platforms` (tabs + device) | ✅ | — | — | — |
+| `bento-usp` | ✅ | ✅ | — | ✅ |
+| `features` usp | ✅ | — | — | — |
+| `checklist-feature` | ✅ | ✅ | — | — |
+| `comparison-table` | ✅ | — | — | — |
+| `steps` | ✅ | — | — | ✅ |
+| `faq` | ✅ | ✅ | — | — |
+| `icon-feature-grid` | — | — | ✅ | — |
+| `notice-band` | — | — | — | ✅ |
+| `cta` / footer | ✅ | ✅ | ✅ | ✅ |
+
+---
+
 ## How to extend this file
 
 When the next batch of screens arrives:

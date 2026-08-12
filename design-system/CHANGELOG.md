@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Page batch Platforms + ATS (6 Figma screens)
+
+- Recipes P1–P4: MT5 Overview, MT5 Desktop/Mobile/Web (one device recipe), MAM, DupliTrade.
+- Patterns: store/download family, platforms tabs, bento + checklist on device pages; `icon-feature-grid` (MAM); `notice-band` (DupliTrade).
+- Docs: `page-recipes.md`, `pattern-catalog.md`, inventory planned entries. Docs only.
+
 ## 2026-08-12 — Page batch Markets + Accounts (6 Figma screens)
 
 - Registered full-page recipes: Forex market (M1), Products overview (A1), Zero (A2), Demo (A3), Fusion Pro (A4), Premium (A5) in `page-recipes.md`.
