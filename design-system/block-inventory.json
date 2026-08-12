@@ -171,14 +171,16 @@
     {
       "type": "instrument-grid",
       "status": "planned",
-      "description": "Markets instrument tiles (Forex, Metals, Crypto…)",
-      "figmaHomepage": "27873:297355"
+      "description": "Equal product/market tiles (icon/image + label). Homepage markets; Products overview six tiles; Premium tier tiles reuse shell.",
+      "figmaHomepage": "27873:297355",
+      "figmaPages": ["26258:275741 Products overview", "26258:280335 Premium tiers"]
     },
     {
       "type": "platforms",
       "status": "planned",
-      "description": "Platform tabs + accordion + device mock",
-      "figmaHomepage": "27873:297355"
+      "description": "Title + Tabs_Icon (MT4/MT5/TV/cTrader) + body + mock; often with download-bar OS links.",
+      "figmaHomepage": "27873:297355",
+      "figmaPages": ["26258:276027 Products overview platforms"]
     },
     {
       "type": "ratings-strip",
@@ -201,44 +203,51 @@
     {
       "type": "tier-cards",
       "status": "planned",
-      "description": "Promo plan/tier content cards (icon + title + body); e.g. TV Essentials/Plus/Premium",
-      "figmaLanding": "29987:338113 TV Promo"
+      "description": "Content Card row (icon + title + body): TV promo tiers or Products overview account pair (Content Card 2).",
+      "figmaLanding": "29987:338113 TV Promo",
+      "figmaPages": ["26258:276024 Products overview"]
     },
     {
       "type": "download-bar",
       "status": "planned",
-      "description": "Full-bleed OS/platform download strip under hero (TV for Windows/iOS/…)",
-      "figmaLanding": "29987:340524 TradingView"
+      "description": "OS/platform download strip (Windows/Mac/Linux/iOS/Android/Web).",
+      "figmaLanding": "29987:340524 TradingView",
+      "figmaPages": ["26258:276027 Products overview"]
     },
     {
       "type": "checklist-feature",
       "status": "planned",
-      "description": "Image + headline + check rows + dual CTA",
-      "figmaLanding": "29987:340524 TradingView"
+      "description": "Split: headline + body + icon checklist rows + CTA | image.",
+      "figmaLanding": "29987:340524 TradingView",
+      "figmaPages": ["26258:280418 Premium Analyst Views"]
     },
     {
       "type": "market-hero",
       "status": "planned",
-      "description": "Brand BG + market H1 + Primary/Light + TV chart card (e.g. Gold CFDs)",
-      "figmaLanding": "29987:341692 Gold EN"
+      "description": "Brand BG + market H1 + pitch + Primary/Light + TV chart card. Template for all market product pages.",
+      "figmaLanding": "29987:341692 Gold EN",
+      "figmaPages": ["23570:104257 Forex Market Header"]
     },
     {
       "type": "comparison-table",
       "status": "planned",
-      "description": "Classic vs Zero (or multi-product) comparison; desktop multi-panel, mobile tabs",
-      "figmaLanding": "29987:341692 Gold EN"
+      "description": "Multi-panel Comparison Table: Classic vs Zero, Retail vs Pro; mobile tabs.",
+      "figmaLanding": "29987:341692 Gold EN",
+      "figmaPages": ["27045:302056 Zero Classic vs Zero", "26258:285868 Fusion Pro Retail vs Pro"]
     },
     {
       "type": "bento-usp",
       "status": "planned",
-      "description": "Unequal USP/feature bento grid (large + small cards)",
-      "figmaLanding": "29987:341692 Gold EN"
+      "description": "Unequal USP/feature bento grid (large + small cards).",
+      "figmaLanding": "29987:341692 Gold EN",
+      "figmaPages": ["26258:285528 Fusion Pro Benefits"]
     },
     {
       "type": "education-split",
       "status": "planned",
-      "description": "Long multi-paragraph education band + image (market explainer)",
-      "figmaLanding": "29987:341692 Gold EN"
+      "description": "Two-column explainer: icon+title | paragraphs, or image | long copy.",
+      "figmaLanding": "29987:341692 Gold EN",
+      "figmaPages": ["23570:104154 Forex What is Forex"]
     },
     {
       "type": "stats",

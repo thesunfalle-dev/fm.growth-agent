@@ -39,12 +39,13 @@ For each shared frame/section:
 2. **Match or register** in `design-system/pattern-catalog.md`  
    - same structure → add under **Also seen on**  
    - new structure → new pattern entry (template in that file)
-3. **Structure vs content:** document fixed layout + content props only.
-4. **Rules:** when to use / not use; what must not be substituted (e.g. spreads ≠ markets table).
-5. **Inventory:** update `block-inventory.json` (`type`, props, status, figma node).
-6. **Code** only if shipping now: types + component + BlockRenderer (see “Add a new block type”).
-7. **Provenance:** `sources.md` + `CHANGELOG.md`.
-8. **Reuse check:** next landing with same intent must use the registered `type`, different content only.
+3. If a **full page** was shared: add/update stack in `design-system/page-recipes.md` (section → pattern).
+4. **Structure vs content:** document fixed layout + content props only.
+5. **Rules:** when to use / not use; what must not be substituted (e.g. spreads ≠ markets table).
+6. **Inventory:** update `block-inventory.json` (`type`, props, status, figma node).
+7. **Code** only if shipping now: types + component + BlockRenderer (see “Add a new block type”).
+8. **Provenance:** `sources.md` + `CHANGELOG.md`.
+9. **Reuse check:** next landing with same intent must use the registered `type`, different content only.
 
 Canonical teaching examples (homepage):
 

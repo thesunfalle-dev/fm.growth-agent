@@ -14,13 +14,14 @@ Primary workflow: **edit → commit → push → deploy to production**. Do not 
 6. `design-system/component-inventory.json`
 7. `design-system/block-inventory.json`
 8. `design-system/pattern-catalog.md` (**reusable patterns** — every shared Figma screen updates this)
-9. `design-system/assembly.md` (compose from inventory; structure vs content)
-10. `design-system/homepage-patterns.md` (site home assembly + adaptive)
-11. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
-12. `design-system/responsive-rules.md`
-13. `design-system/implementation-contract.md`
-14. `design-system/sources.md`
-15. `brand/compliance.md` (before publishing marketing copy)
+9. `design-system/page-recipes.md` (full page stacks → pattern order)
+10. `design-system/assembly.md` (compose from inventory; structure vs content)
+11. `design-system/homepage-patterns.md` (site home assembly + adaptive)
+12. `design-system/landing-patterns.md` (campaign landing recipes: award / promo / platform / market)
+13. `design-system/responsive-rules.md`
+14. `design-system/implementation-contract.md`
+15. `design-system/sources.md`
+16. `brand/compliance.md` (before publishing marketing copy)
 
 When the user shares Figma screens: **register patterns** (catalog + inventory + sources/changelog). Do not only “remember” them.
 

@@ -30,6 +30,20 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Decision: `docs/DECISIONS.md` “Figma screens register reusable patterns”
 - Actor: agent + user
 
+### 2026-08-12 — Page batch: Markets + Accounts (6 screens)
+
+| Page | Node |
+|------|------|
+| Forex - Desktop | `23570:104143` |
+| Products and Accounts - Overview | `26258:275741` |
+| Zero Account | `26258:273793` |
+| Demo account | `26258:279143` |
+| Fusion Pro | `26258:285369` |
+| Premium Program | `26258:280335` |
+
+- Docs: `page-recipes.md` (recipes M1, A1–A5); `pattern-catalog.md` full entries for market-hero, education-split, comparison-table, instrument-grid, platforms, download-bar, tier-cards, bento-usp, checklist-feature
+- Actor: agent + user
+
 ### 2026-08-12 — Homepage composition (AU) reference
 
 - Desktop: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297355 (`27873:297355`)

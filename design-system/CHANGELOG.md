@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-12 — Page batch Markets + Accounts (6 Figma screens)
+
+- Registered full-page recipes: Forex market (M1), Products overview (A1), Zero (A2), Demo (A3), Fusion Pro (A4), Premium (A5) in `page-recipes.md`.
+- Expanded `pattern-catalog.md`: market-hero, education-split, comparison-table, instrument-grid, platforms, download-bar, tier-cards, bento-usp, checklist-feature + also-seen-on for existing patterns.
+- Inventory planned entries updated with page node refs.
+- No new React components in this pass — documentation for reuse only.
+
 ## 2026-08-12 — Pattern catalog + screen ingest workflow
 
 - New `pattern-catalog.md`: living registry of reusable patterns (structure, props, rules, Figma canons, also-seen-on).
