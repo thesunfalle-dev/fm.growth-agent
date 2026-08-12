@@ -11,13 +11,18 @@ type FaqProps = {
 };
 
 /**
- * FAQ section block — Sections frame FAQ Desktop/Mobile.
+ * FAQ section — Figma Final Pages FAQs `29987:341618`
+ * Centered column: H2 48 center + 1000px accordion stack.
  */
 export function Faq({ title, items, openFirst = false }: FaqProps) {
   return (
-    <Section id="faq">
-      <Container>
-        {title ? <Heading variant="section">{title}</Heading> : null}
+    <Section id="faq" className="ui-section--faq">
+      <Container className="ui-faq-band">
+        {title ? (
+          <Heading variant="section" className="ui-faq-band__title">
+            {title}
+          </Heading>
+        ) : null}
         <div className="ui-faq-list">
           {items.map((item, index) => (
             <FaqItem

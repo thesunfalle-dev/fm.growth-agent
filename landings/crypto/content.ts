@@ -251,7 +251,7 @@ const landing: LandingDocument = {
     // —— 6. FAQ (M1) ——
     {
       type: "faq",
-      title: "Crypto CFDs FAQ",
+      title: "FAQs",
       openFirst: true,
       items: [
         {

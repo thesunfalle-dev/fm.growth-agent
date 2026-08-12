@@ -1,5 +1,9 @@
 # Design system changelog
 
+## 2026-08-12 — FAQ centered band (Figma 29987:341618)
+
+- FAQ section: center column (H2 48 center + 1000px list), gap 60 title→list — was left-aligned in 1280 container.
+
 ## 2026-08-12 — How it works = horizontal process (Figma 29987:339011)
 
 - Fixed `steps` to match Final Pages process: centered H2 48 + B2 lead, 3-column numbered row (active purple + gray inactive), segment connectors, optional dual CTAs.

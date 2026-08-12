@@ -1379,10 +1379,29 @@ a {
   }
 }
 
-/* FAQ + Steps (Figma Sections 15313:11090) */
+/*
+ * FAQ band — Figma Final Pages FAQs `29987:341618`
+ * items-center column: centered H2 + 1000px accordion (not left in 1280 container)
+ */
+.ui-faq-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-section-mobile); /* 60px title → list */
+}
+
+.ui-faq-band__title {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  font-size: var(--layout-footer-heading-size); /* 48 — Figma H2 */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
 
 .ui-faq-list {
-  max-width: var(--component-faq-max-width);
+  max-width: var(--component-faq-max-width); /* 1000px */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1390,31 +1409,23 @@ a {
   padding: 0;
 }
 
-/* Heading → FAQ when no lead */
-.ui-heading--section + .ui-faq-list {
-  margin-top: var(--layout-spacing-description-to-content-desktop);
-}
-
-.ui-text--lead + .ui-faq-list {
-  margin-top: 0;
-}
-
 .ui-faq {
   border-bottom: var(--border-width-default) solid var(--component-faq-border);
-  padding: 0 0 var(--component-faq-padding-bottom-desktop);
+  padding: 0 0 var(--component-faq-padding-bottom-desktop); /* 32 closed */
   margin: 0;
+  width: 100%;
 }
 
-/* Figma: stacked rows with bottom border only — no extra inter-item gap */
+/* Figma: gap 32 between items (padding-bottom acts as stack spacing) */
 .ui-faq + .ui-faq {
-  margin-top: var(--component-faq-padding-bottom-desktop);
+  margin-top: 0;
   padding-top: 0;
 }
 
 .ui-faq__summary {
   list-style: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* Figma Title row items-center */
   justify-content: space-between;
   gap: var(--component-faq-title-gap);
   cursor: pointer;
@@ -1445,7 +1456,6 @@ a {
   flex-shrink: 0;
   width: var(--component-faq-icon-size);
   height: var(--component-faq-icon-size);
-  margin-top: 2px; /* optical align with 20px Noto Medium */
   color: var(--color-text-primary);
 }
 
@@ -1830,6 +1840,14 @@ a {
 }
 
 @media (max-width: 768px) {
+  .ui-faq-band {
+    gap: var(--space-10);
+  }
+
+  .ui-faq-band__title {
+    font-size: var(--layout-footer-heading-size-mobile);
+  }
+
   .ui-faq {
     padding-bottom: var(--component-faq-padding-bottom-mobile);
   }
