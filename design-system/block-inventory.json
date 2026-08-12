@@ -69,6 +69,47 @@
       "tokenDependencies": ["component.table", "semantic.color"]
     },
     {
+      "type": "steps",
+      "status": "ready",
+      "description": "Step by Steps / how-it-works process (Sections frame).",
+      "component": "components/blocks/StepsBand.tsx",
+      "figma": "15313:11090",
+      "props": {
+        "title": { "type": "string", "required": false },
+        "subtitle": { "type": "string", "required": false },
+        "items": {
+          "type": "array",
+          "required": true,
+          "minItems": 2,
+          "maxItems": 6
+        },
+        "orientation": { "type": "string", "required": false },
+        "mode": { "type": "string", "required": false }
+      },
+      "contentRules": [
+        "Prefer 3 steps; keep titles short and descriptions scannable.",
+        "Use orientation horizontal only for short titles on desktop."
+      ],
+      "tokenDependencies": ["component.step", "layout.spacing"]
+    },
+    {
+      "type": "faq",
+      "status": "ready",
+      "description": "Accordion FAQ list (Sections frame).",
+      "component": "components/blocks/Faq.tsx",
+      "figma": "15313:11090",
+      "props": {
+        "title": { "type": "string", "required": false },
+        "items": { "type": "array", "required": true, "minItems": 1 },
+        "openFirst": { "type": "boolean", "required": false }
+      },
+      "contentRules": [
+        "Questions should match real objections; answers plain language.",
+        "Use approved compliance wording when answering product/risk questions."
+      ],
+      "tokenDependencies": ["component.faq"]
+    },
+    {
       "type": "cta",
       "status": "provisional",
       "description": "Mid or end conversion band.",
@@ -115,19 +156,9 @@
       "description": "Key metrics strip"
     },
     {
-      "type": "faq",
-      "status": "planned",
-      "description": "Accordion FAQ"
-    },
-    {
       "type": "pricing-compare",
       "status": "planned",
       "description": "Cost comparison table"
-    },
-    {
-      "type": "how-it-works",
-      "status": "planned",
-      "description": "3-step process"
     },
     {
       "type": "platforms",

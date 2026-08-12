@@ -63,6 +63,25 @@ export type LandingBlock =
       secondaryCta?: LandingCta;
     }
   | {
+      type: "faq";
+      title?: string;
+      items: Array<{ question: string; answer: string }>;
+      openFirst?: boolean;
+    }
+  | {
+      type: "steps";
+      title?: string;
+      subtitle?: string;
+      items: Array<{
+        title: string;
+        description: string;
+        number?: number | string;
+        active?: boolean;
+      }>;
+      orientation?: "vertical" | "horizontal";
+      mode?: "light" | "dark";
+    }
+  | {
       type: "disclaimer";
       text: string;
     };

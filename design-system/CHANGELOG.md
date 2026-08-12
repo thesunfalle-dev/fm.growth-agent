@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-12 — Sections from Figma
+
+- Ingested frame `15313:11090`: FAQ accordion + Step by Steps (vertical/horizontal, light/dark).
+- UI: `FaqItem`, `Steps`/`Step`; blocks `faq`, `steps` (`Faq`, `StepsBand`).
+- FAQ uses details/summary + Material expand_more/less; steps tokens `component.faq|step`.
+- Demo landing: steps + FAQ samples. Docs: `sections.md` + extract JSON.
+
 ## 2026-08-12 — Images from Figma
 
 - Ingested frame `15235:13486`: 31 isometric illustrations (180px) + shared Background Image.

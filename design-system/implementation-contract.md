@@ -48,9 +48,10 @@ Never hand-edit `design-system/generated/*`.
 | Logo | `components/ui/Logo.tsx` | FM desktop / mobile |
 | Illustration | `components/ui/Illustration.tsx` | isometric brand art (Images frame) |
 | BackgroundImage | `components/ui/BackgroundImage.tsx` | shared purple BG art |
+| FaqItem / Steps | `components/ui/*` | Sections frame FAQ + Step by Steps |
 | Pill | `components/ui/Pill.tsx` | preview chip |
 | Block renderer | `components/blocks/BlockRenderer.tsx` | switches on `type` |
-| hero / features / cta / disclaimer | `components/blocks/*.tsx` | section blocks |
+| hero / features / steps / faq / cta / disclaimer | `components/blocks/*.tsx` | section blocks |
 
 ## Landing document
 

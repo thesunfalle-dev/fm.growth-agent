@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.10.0",
+    "version": "0.11.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-12",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15235-13486",
-    "notes": "Images 15235:13486 — 31 isometric illustrations 180px + shared brand background."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15313-11090",
+    "notes": "Sections 15313:11090 — FAQ accordion + Step by Steps (vertical/horizontal, light)."
   },
   "primitive": {
     "color": {
@@ -295,6 +295,37 @@
     "backgroundImage": {
       "src": "/images/backgrounds/bg-default.png",
       "note": "Shared brand purple art — use consistently for most backgrounds"
+    },
+    "faq": {
+      "border": "{primitive.color.blue100}",
+      "titleSizeDesktop": "20px",
+      "titleSizeMobile": "16px",
+      "bodySize": "16px",
+      "titleGap": "16px",
+      "openGapDesktop": "20px",
+      "openGapMobile": "16px",
+      "paddingBottomDesktop": "32px",
+      "paddingBottomMobile": "24px",
+      "iconSize": "24px",
+      "maxWidth": "1000px"
+    },
+    "step": {
+      "numberSize": "40px",
+      "numberSizeHorizontal": "44px",
+      "numberFontSize": "24px",
+      "numberFontSizeHorizontal": "20px",
+      "titleSizeVertical": "20px",
+      "titleSizeHorizontal": "16px",
+      "bodySizeVertical": "16px",
+      "bodySizeHorizontal": "14px",
+      "titleBodyGap": "8px",
+      "indicatorWidth": "58px",
+      "connectorWidth": "2px",
+      "activeBg": "{primitive.color.purple500}",
+      "inactiveBg": "{primitive.color.purple200}",
+      "inactiveText": "{primitive.color.purple400}",
+      "textOnActive": "{primitive.color.gray0}",
+      "shadowHorizontal": "0 8px 20px -8px rgba(116, 44, 206, 0.55)"
     },
     "table": {
       "width": "1280px",

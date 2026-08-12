@@ -8,14 +8,14 @@ import "./globals.css";
 // Design system fonts only (Website Redesign Typography frame).
 const notoSans = Noto_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["600", "700"],
+  weight: ["500", "600", "700"],
   variable: "--font-noto-sans",
   display: "swap",
 });
 
 const roboto = Roboto({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "700"],
+  weight: ["300", "400", "500", "700"],
   variable: "--font-roboto",
   display: "swap",
 });

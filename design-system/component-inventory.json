@@ -55,6 +55,30 @@
       "notes": "Shared purple background — use consistently for most backgrounds."
     },
     {
+      "name": "FaqItem",
+      "category": "sections",
+      "status": "ready",
+      "path": "components/ui/FaqItem.tsx",
+      "figma": "15313:11090",
+      "variants": ["open", "closed"],
+      "sizes": ["desktop", "mobile"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.faq"],
+      "notes": "details/summary accordion; Material expand_more/less."
+    },
+    {
+      "name": "Steps",
+      "category": "sections",
+      "status": "ready",
+      "path": "components/ui/Steps.tsx",
+      "figma": "15313:11090",
+      "variants": ["vertical", "horizontal", "light", "dark", "active", "inactive"],
+      "sizes": [],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.step"],
+      "notes": "Step by Steps list; pair with StepsBand block."
+    },
+    {
       "name": "Field",
       "category": "inputs",
       "status": "ready",

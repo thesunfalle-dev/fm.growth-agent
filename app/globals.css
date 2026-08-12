@@ -1294,6 +1294,332 @@ a {
   }
 }
 
+/* FAQ + Steps (Figma Sections 15313:11090) */
+
+.ui-faq-list {
+  max-width: var(--component-faq-max-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-faq {
+  border-bottom: var(--border-width-default) solid var(--component-faq-border);
+  padding-bottom: var(--component-faq-padding-bottom-desktop);
+}
+
+.ui-faq + .ui-faq {
+  margin-top: var(--space-6);
+  padding-top: 0;
+}
+
+.ui-faq__summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--component-faq-title-gap);
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+.ui-faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.ui-faq__question {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--typography-font-family-heading);
+  font-size: var(--component-faq-title-size-desktop);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-heading);
+}
+
+.ui-faq__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--color-text-primary);
+}
+
+.ui-faq__icon--open {
+  display: none;
+}
+
+.ui-faq[open] .ui-faq__icon--closed {
+  display: none;
+}
+
+.ui-faq[open] .ui-faq__icon--open {
+  display: inline-flex;
+}
+
+.ui-faq__answer {
+  margin-top: var(--component-faq-open-gap-desktop);
+}
+
+.ui-faq__answer p {
+  margin: 0;
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-faq-body-size);
+  font-weight: var(--typography-font-weight-light);
+  line-height: var(--typography-line-height-body);
+  color: var(--color-text-primary);
+}
+
+/* Steps */
+
+.ui-steps {
+  list-style: none;
+  margin: var(--layout-spacing-description-to-content-desktop) 0 0;
+  padding: 0;
+}
+
+.ui-steps--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 640px;
+}
+
+.ui-step {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-1);
+}
+
+.ui-step__indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--component-step-indicator-width);
+  flex-shrink: 0;
+  padding-inline: var(--space-6);
+}
+
+.ui-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--component-step-number-size);
+  height: var(--component-step-number-size);
+  border-radius: var(--radius-pill);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-step-number-font-size);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ui-step__connector {
+  width: var(--component-step-connector-width);
+  flex: 1;
+  min-height: var(--space-6);
+  margin-top: 0;
+}
+
+.ui-step__body {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-1) var(--space-2) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-step-title-body-gap);
+}
+
+.ui-step__title {
+  margin: 0;
+  font-family: var(--typography-font-family-heading);
+  font-size: var(--component-step-title-size-vertical);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: var(--typography-line-height-heading);
+}
+
+.ui-step__desc {
+  margin: 0;
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-step-body-size-vertical);
+  font-weight: var(--typography-font-weight-light);
+  line-height: var(--typography-line-height-body);
+}
+
+/* Light mode (default) */
+.ui-steps--light .ui-step--active .ui-step__number {
+  background: var(--component-step-active-bg);
+  color: var(--component-step-text-on-active);
+}
+
+.ui-steps--light .ui-step--active .ui-step__connector {
+  background: var(--component-step-active-bg);
+}
+
+.ui-steps--light .ui-step--inactive .ui-step__number {
+  background: var(--component-step-inactive-bg);
+  color: var(--component-step-inactive-text);
+}
+
+.ui-steps--light .ui-step--inactive .ui-step__connector {
+  background: var(--component-step-inactive-bg);
+}
+
+.ui-steps--light .ui-step__title,
+.ui-steps--light .ui-step__desc {
+  color: var(--color-text-primary);
+}
+
+/* Dark mode (on purple/dark surface) */
+.ui-section--steps-dark {
+  background: var(--color-action-primary-default);
+  color: var(--color-text-on-accent);
+}
+
+.ui-section--steps-dark .ui-heading,
+.ui-section--steps-dark .ui-text--lead {
+  color: var(--color-text-on-accent);
+}
+
+.ui-steps--dark .ui-step--active .ui-step__number {
+  background: var(--primitive-color-gray0);
+  color: var(--primitive-color-purple400);
+}
+
+.ui-steps--dark .ui-step--active .ui-step__connector {
+  background: var(--primitive-color-gray0);
+}
+
+.ui-steps--dark .ui-step--inactive .ui-step__number {
+  background: color-mix(in oklab, var(--primitive-color-gray0) 20%, transparent);
+  color: var(--color-text-on-accent);
+}
+
+.ui-steps--dark .ui-step--inactive .ui-step__connector {
+  background: color-mix(in oklab, var(--primitive-color-gray0) 35%, transparent);
+}
+
+.ui-steps--dark .ui-step__title,
+.ui-steps--dark .ui-step__desc {
+  color: var(--color-text-on-accent);
+}
+
+/* Horizontal steps */
+.ui-steps--horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  max-width: none;
+}
+
+.ui-steps--horizontal .ui-step {
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 180px;
+  max-width: 220px;
+  position: relative;
+  text-align: center;
+}
+
+.ui-steps--horizontal .ui-step__indicator {
+  width: auto;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ui-steps--horizontal .ui-step__number {
+  width: var(--component-step-number-size-horizontal);
+  height: var(--component-step-number-size-horizontal);
+  font-size: var(--component-step-number-font-size-horizontal);
+  box-shadow: var(--component-step-shadow-horizontal);
+}
+
+.ui-steps--horizontal .ui-step__connector {
+  display: none;
+}
+
+.ui-steps--horizontal .ui-step:not(.ui-step--last)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--component-step-number-size-horizontal) / 2 - 1px);
+  left: calc(50% + var(--component-step-number-size-horizontal) / 2);
+  width: calc(100% - var(--component-step-number-size-horizontal));
+  height: var(--component-step-connector-width);
+  background: var(--component-step-active-bg);
+  z-index: 0;
+}
+
+.ui-steps--horizontal .ui-step__body {
+  padding: var(--space-5) var(--space-2) 0;
+  align-items: center;
+}
+
+.ui-steps--horizontal .ui-step__title {
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-step-title-size-horizontal);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-body);
+}
+
+.ui-steps--horizontal .ui-step__desc {
+  font-size: var(--component-step-body-size-horizontal);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .ui-faq {
+    padding-bottom: var(--component-faq-padding-bottom-mobile);
+  }
+
+  .ui-faq__question {
+    font-family: var(--typography-font-family-body);
+    font-size: var(--component-faq-title-size-mobile);
+    font-weight: var(--typography-font-weight-medium);
+    line-height: var(--typography-line-height-body);
+  }
+
+  .ui-faq__answer {
+    margin-top: var(--component-faq-open-gap-mobile);
+  }
+
+  .ui-steps--horizontal {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ui-steps--horizontal .ui-step {
+    max-width: none;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .ui-steps--horizontal .ui-step:not(.ui-step--last)::after {
+    display: none;
+  }
+
+  .ui-steps--horizontal .ui-step__indicator {
+    width: var(--component-step-indicator-width);
+    padding-inline: var(--space-6);
+  }
+
+  .ui-steps--horizontal .ui-step__connector {
+    display: block;
+  }
+
+  .ui-steps--horizontal .ui-step__body {
+    align-items: flex-start;
+    padding: var(--space-1) var(--space-2) var(--space-5);
+  }
+
+  .ui-steps--horizontal .ui-step__title {
+    font-family: var(--typography-font-family-heading);
+    font-size: var(--component-step-title-size-vertical);
+    font-weight: var(--typography-font-weight-semibold);
+  }
+
+  .ui-steps--horizontal .ui-step__desc {
+    text-align: left;
+    font-size: var(--component-step-body-size-vertical);
+  }
+}
+
 /* Cards */
 
 /* Illustrations + Background Image (Figma Images 15235:13486) */

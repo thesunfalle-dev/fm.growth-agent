@@ -98,6 +98,51 @@ const landing: LandingDocument = {
       ],
     },
     {
+      type: "steps",
+      title: "Get started in three steps",
+      subtitle: "Sections frame — Step by Steps (vertical, light).",
+      orientation: "vertical",
+      items: [
+        {
+          title: "Create your account",
+          description:
+            "Fill in your personal details in our secure online application. It only takes a few minutes.",
+        },
+        {
+          title: "Verify your identity",
+          description:
+            "We need to confirm your ID. This can be done electronically or by submitting two forms of ID Documentation. 90% of new accounts are approved within the hour.",
+        },
+        {
+          title: "Fund and trade",
+          description:
+            "Deposit with your preferred method and start trading on the platforms you know.",
+        },
+      ],
+    },
+    {
+      type: "faq",
+      title: "FAQ",
+      openFirst: true,
+      items: [
+        {
+          question: "What other products does Fusion Markets offer?",
+          answer:
+            "You can find the list of our trading products including assets like TESLA, BITCOIN, and Gold on our trading conditions page.",
+        },
+        {
+          question: "Can I trade any other Precious Metals?",
+          answer:
+            "Yes — precious metals CFDs are available depending on your account region. See markets for the full list.",
+        },
+        {
+          question: "How fast are accounts approved?",
+          answer:
+            "Most applications are reviewed quickly. 90% of new accounts are approved within the hour when documentation is complete.",
+        },
+      ],
+    },
+    {
       type: "cta",
       title: "Ready for real briefs",
       subtitle: "Drop a brief → generate 2–3 slugs → push → live URLs.",

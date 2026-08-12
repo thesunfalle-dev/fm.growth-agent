@@ -1,8 +1,10 @@
 import { CtaBand } from "@/components/blocks/CtaBand";
 import { Disclaimer } from "@/components/blocks/Disclaimer";
+import { Faq } from "@/components/blocks/Faq";
 import { Features } from "@/components/blocks/Features";
 import { Hero } from "@/components/blocks/Hero";
 import { MarketsTable } from "@/components/blocks/MarketsTable";
+import { StepsBand } from "@/components/blocks/StepsBand";
 import type { LandingBlock } from "@/lib/types";
 
 export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
@@ -33,6 +35,26 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 columns={block.columns}
                 rows={block.rows}
                 scrollable={block.scrollable}
+              />
+            );
+          case "steps":
+            return (
+              <StepsBand
+                key={index}
+                title={block.title}
+                subtitle={block.subtitle}
+                items={block.items}
+                orientation={block.orientation}
+                mode={block.mode}
+              />
+            );
+          case "faq":
+            return (
+              <Faq
+                key={index}
+                title={block.title}
+                items={block.items}
+                openFirst={block.openFirst}
               />
             );
           case "cta":

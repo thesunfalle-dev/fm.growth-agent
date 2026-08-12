@@ -1,0 +1,68 @@
+{
+  "extractedAt": "2026-08-12",
+  "file": {
+    "name": "Website Redesign FM 2.0",
+    "key": "5PQJiXq7xZNGCqV1XNvKro",
+    "url": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15313-11090",
+    "frame": { "id": "15313:11090", "name": "Sections" }
+  },
+  "description": "Page-level components for building structured layouts.",
+  "groups": {
+    "faq": {
+      "desktop": {
+        "closed": "15162:14217",
+        "open": "24824:12478",
+        "width": 1000,
+        "border": "#E5EAFF",
+        "paddingBottom": 32,
+        "title": { "font": "Noto Sans Medium 20 / 130%", "color": "#0D1350" },
+        "answer": { "font": "Roboto Light 16 / 150%", "color": "#0D1350" },
+        "openGap": 20,
+        "titleIconGap": 16,
+        "icons": ["expand_more", "expand_less"]
+      },
+      "mobile": {
+        "closed": "15429:11358",
+        "open": "15429:11359",
+        "width": 343,
+        "paddingBottom": 24,
+        "title": { "font": "Roboto Medium 16 / 150%" },
+        "answer": { "font": "Roboto Light 16 / 150%" },
+        "openGap": 16
+      }
+    },
+    "steps": {
+      "variants": [
+        "Vertical Light On/Off Desktop/Mobile",
+        "Vertical Dark On/Off Desktop/Mobile",
+        "Horizontal Light On/Off Desktop"
+      ],
+      "verticalLightOn": {
+        "example": "18545:48950",
+        "numberSize": 40,
+        "numberBg": "#742CCE",
+        "numberColor": "#FFFFFF",
+        "connector": "2px #742CCE",
+        "title": "Noto Sans SemiBold 20",
+        "body": "Roboto Light 16",
+        "titleBodyGap": 8
+      },
+      "horizontalLightOn": {
+        "example": "28358:173515",
+        "numberSize": 44,
+        "shadow": "0 8px 20px -8px rgba(116,44,206,0.55)",
+        "title": "Roboto Medium 16 center",
+        "body": "Roboto Light 14 center"
+      }
+    }
+  },
+  "implementation": {
+    "FaqItem": "components/ui/FaqItem.tsx",
+    "Faq": "components/blocks/Faq.tsx",
+    "Step": "components/ui/Step.tsx",
+    "Steps": "components/ui/Steps.tsx",
+    "StepsBand": "components/blocks/StepsBand.tsx",
+    "blocks": ["faq", "steps"],
+    "tokens": ["component.faq", "component.step"]
+  }
+}
