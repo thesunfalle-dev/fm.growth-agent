@@ -54,9 +54,54 @@ a {
   padding: var(--layout-spacing-section-desktop) 0;
 }
 
+/*
+ * Page-wide marketing layout (Final Pages):
+ * default sections center titles + content stacks.
+ * Hero stays left-aligned (market brand pitch).
+ */
+.ui-section--default > .ui-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui-section--default .ui-heading--section:not([class*="__title"]) {
+  width: 100%;
+  text-align: center;
+  font-size: var(--layout-footer-heading-size);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--layout-spacing-heading-to-description-desktop);
+}
+
+.ui-section--default .ui-text--lead:not([class*="__subtitle"]) {
+  text-align: center;
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+.ui-section--default .ui-card-grid {
+  justify-content: center;
+  width: 100%;
+}
+
+.ui-section--default .ui-table-shell,
+.ui-section--default .ui-faq-list,
+.ui-section--default .ui-steps,
+.ui-section--default .ui-markets-band,
+.ui-section--default .ui-faq-band,
+.ui-section--default .ui-steps-band {
+  width: 100%;
+}
+
 .ui-section--hero {
   padding-top: var(--space-16);
   padding-bottom: var(--layout-spacing-section-desktop);
+}
+
+.ui-section--hero > .ui-container {
+  display: block;
+  align-items: stretch;
 }
 
 /* Hero copy + optional campaign bullets (no nested table — use block type table) */
@@ -1200,25 +1245,62 @@ a {
   gap: var(--space-4);
 }
 
-/* Tables (Figma Tables 15276:11158 — Markets DataTable) */
+/* Tables (Figma Tables 15276:11158 — Markets DataTable / Crypto_2) */
+
+.ui-markets-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-10); /* ~40 between title block and table */
+  width: 100%;
+}
+
+.ui-markets-band__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+  max-width: 768px;
+  width: 100%;
+}
+
+.ui-markets-band__title {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  text-align: center;
+  font-size: var(--layout-footer-heading-size);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.ui-markets-band__subtitle {
+  margin: 0;
+  max-width: none;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.ui-markets-band__footnote {
+  margin: 0;
+  max-width: 1000px;
+  text-align: center;
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-c1);
+  font-weight: var(--typography-font-weight-regular);
+  line-height: var(--typography-line-height-body);
+  color: var(--color-text-muted);
+}
 
 .ui-table-shell {
   width: 100%;
   max-width: var(--component-table-width);
   margin-inline: auto;
-  border: var(--border-width-default) solid var(--component-table-row-divider);
+  border: none;
   border-radius: var(--radius-lg);
   background: var(--color-background-canvas);
   overflow: hidden;
-}
-
-/* Section title → table when no lead */
-.ui-heading--section + .ui-table-shell {
-  margin-top: var(--layout-spacing-description-to-content-desktop);
-}
-
-.ui-text--lead + .ui-table-shell {
-  margin-top: 0;
 }
 
 .ui-table-shell--scroll {
@@ -1235,7 +1317,7 @@ a {
 
 .ui-table__caption {
   caption-side: top;
-  text-align: left;
+  text-align: center;
   padding: var(--space-4) var(--component-table-padding-x);
   font-family: var(--typography-font-family-heading);
   font-size: var(--typography-font-size-h4);
@@ -1307,10 +1389,50 @@ a {
   text-align: center;
 }
 
+.ui-table__cell--center .ui-table__value {
+  text-align: center;
+}
+
 .ui-table__cell--action {
   width: 10rem;
   text-align: right;
   white-space: nowrap;
+}
+
+/* Header: Symbol + Search (Figma markets header) */
+.ui-table__header-symbol {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.ui-table__header-label {
+  flex-shrink: 0;
+}
+
+.ui-table__search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: 220px;
+  min-height: 34px;
+  padding: 5px 12px;
+  border: var(--border-width-default) solid var(--primitive-color-gray300);
+  border-radius: 10px;
+  background: var(--color-background-canvas);
+  color: var(--component-table-header-text);
+}
+
+.ui-table__search-placeholder {
+  font-size: var(--component-table-cell-font-size);
+  line-height: 1.5;
+  color: var(--component-table-header-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ui-table__value {
@@ -1320,6 +1442,10 @@ a {
   font-weight: var(--typography-font-weight-regular);
   line-height: var(--typography-line-height-body);
   color: var(--component-table-row-text);
+}
+
+.ui-table__value--medium {
+  font-weight: var(--typography-font-weight-medium);
 }
 
 .ui-table__meta {
@@ -1332,12 +1458,61 @@ a {
   color: var(--component-table-row-meta-text);
 }
 
-/* Markets symbol cell: pair title + full name meta (Figma Forex/Crypto rows) */
+/* Markets symbol: icon + title/meta (Crypto_2 / Forex Images+Symbol) */
+.ui-table__symbol-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Figma gap 12 */
+  min-width: 0;
+}
+
+.ui-table__icons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+}
+
+.ui-table__icons--dual {
+  position: relative;
+  width: 43px;
+  height: 24px;
+}
+
+.ui-table__icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: var(--radius-pill);
+}
+
+.ui-table__icons--dual .ui-table__icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+}
+
+.ui-table__icons--dual .ui-table__icon--back {
+  left: 19px;
+  z-index: 0;
+}
+
+.ui-table__icons--dual .ui-table__icon:not(.ui-table__icon--back) {
+  left: 0;
+  z-index: 1;
+}
+
 .ui-table__symbol {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
   justify-content: center;
+  min-width: 0;
+  text-align: left;
 }
 
 .ui-table__sr-only {
@@ -2336,8 +2511,24 @@ a {
     margin-bottom: var(--layout-spacing-heading-to-description-mobile);
   }
 
+  .ui-section--default .ui-heading--section:not([class*="__title"]),
+  .ui-markets-band__title,
+  .ui-faq-band__title,
+  .ui-steps-band__title {
+    font-size: var(--layout-footer-heading-size-mobile);
+  }
+
   .ui-text--lead {
     margin-bottom: var(--layout-spacing-description-to-content-mobile);
+  }
+
+  .ui-table__header-symbol {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .ui-table__search {
+    max-width: 100%;
   }
 
   .index {

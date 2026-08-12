@@ -40,9 +40,11 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 key={index}
                 title={block.title}
                 subtitle={block.subtitle}
+                footnote={block.footnote}
                 columns={block.columns}
                 rows={block.rows}
                 scrollable={block.scrollable}
+                showSearch={block.showSearch}
               />
             );
           case "steps":

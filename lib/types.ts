@@ -15,6 +15,9 @@ export type TableCellSpec =
   | {
       title: string;
       meta?: string;
+      /** Market icon under /public (crypto logo, etc.) */
+      iconSrc?: string;
+      iconSrcSecondary?: string;
     };
 
 export type TableRowSpec = {
@@ -58,9 +61,13 @@ export type LandingBlock =
       type: "table";
       title?: string;
       subtitle?: string;
+      /** Footnote under table (spreads disclaimer). */
+      footnote?: string;
       columns: TableColumnSpec[];
       rows: TableRowSpec[];
       scrollable?: boolean;
+      /** Markets header search (default true for instruments tables). */
+      showSearch?: boolean;
     }
   | {
       type: "cta";

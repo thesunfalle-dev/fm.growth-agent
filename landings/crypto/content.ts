@@ -87,59 +87,96 @@ const landing: LandingDocument = {
       ],
     },
 
-    // —— 3. Instruments table (M1 / Markets DataTable — symbol + meta row pattern) ——
+    // —— 3. Instruments (Figma Crypto_2 + Pricing section 23570:104166 layout) ——
     {
       type: "table",
-      title: "Our crypto CFD instruments",
-      subtitle:
-        "Sample pairs from the campaign brief. Confirm live pricing in the Client Hub or Spreads Tool.",
+      title: "Our Crypto Trading Instruments",
+      showSearch: true,
       columns: [
-        { id: "symbol", header: "Pair", width: "40%" },
-        { id: "spread", header: "From", width: "30%" },
-        { id: "hours", header: "Hours", width: "30%" },
+        { id: "symbol", header: "Symbol", width: "400px", align: "left" },
+        { id: "hours", header: "Trading Hours", width: "200px", align: "center" },
+        {
+          id: "minSpread",
+          header: "Minimum Spread",
+          width: "200px",
+          align: "center",
+        },
+        {
+          id: "avgSpread",
+          header: "Average Spread",
+          width: "200px",
+          align: "center",
+        },
       ],
       rows: [
         {
           id: "btcusd",
           cells: {
-            symbol: { title: "BTC/USD", meta: "Bitcoin" },
-            spread: "0.04%",
+            symbol: {
+              title: "Bitcoin",
+              meta: "Bitcoin / US Dollar",
+              iconSrc: "/images/markets/btc.png",
+            },
             hours: "24/7",
+            minSpread: "0.04%",
+            avgSpread: "See live",
           },
         },
         {
           id: "ethusd",
           cells: {
-            symbol: { title: "ETH/USD", meta: "Ethereum" },
-            spread: "0.09%",
+            symbol: {
+              title: "Ethereum",
+              meta: "Ethereum / US Dollar",
+              iconSrc: "/images/markets/eth.svg",
+            },
             hours: "24/7",
+            minSpread: "0.09%",
+            avgSpread: "See live",
           },
         },
         {
           id: "dogeusd",
           cells: {
-            symbol: { title: "DOGE/USD", meta: "Dogecoin" },
-            spread: "See live",
+            symbol: {
+              title: "Dogecoin",
+              meta: "Dogecoin / US Dollar",
+              iconSrc: "/images/markets/doge.svg",
+            },
             hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
           },
         },
         {
           id: "solusd",
           cells: {
-            symbol: { title: "SOL/USD", meta: "Solana" },
-            spread: "See live",
+            symbol: {
+              title: "Solana",
+              meta: "Solana / US Dollar",
+              iconSrc: "/images/markets/sol.svg",
+            },
             hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
           },
         },
         {
           id: "adausd",
           cells: {
-            symbol: { title: "ADA/USD", meta: "Cardano" },
-            spread: "See live",
+            symbol: {
+              title: "Cardano",
+              meta: "Cardano / US Dollar",
+              iconSrc: "/images/markets/ada.svg",
+            },
             hours: "24/7",
+            minSpread: "See live",
+            avgSpread: "See live",
           },
         },
       ],
+      footnote:
+        "Indicative spreads for this internal preview. Confirm live pricing in the Client Hub or Spreads Tool. Cryptocurrency spreads are not measured in pips.",
     },
 
     // —— 4. Campaign compare (flat table until comparison-table is ready) ——
@@ -148,11 +185,17 @@ const landing: LandingDocument = {
       title: "How we compare against other crypto providers",
       subtitle:
         "Indicative comparison for illustration on this internal preview. Always verify live fees and conditions before trading.",
+      showSearch: false,
       columns: [
-        { id: "feature", header: "Feature", width: "34%" },
-        { id: "fusion", header: "Fusion Markets", width: "22%" },
-        { id: "exchange", header: "Typical AU exchange", width: "22%" },
-        { id: "notes", header: "Notes", width: "22%" },
+        { id: "feature", header: "Feature", width: "34%", align: "left" },
+        { id: "fusion", header: "Fusion Markets", width: "22%", align: "center" },
+        {
+          id: "exchange",
+          header: "Typical AU exchange",
+          width: "22%",
+          align: "center",
+        },
+        { id: "notes", header: "Notes", width: "22%", align: "center" },
       ],
       rows: [
         {

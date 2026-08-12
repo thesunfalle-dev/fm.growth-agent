@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-12 — Markets table + page-wide section centering
+
+- Markets instruments table matches Figma Crypto_2 / Pricing: icon + symbol/meta, Trading Hours / Min / Avg columns, header search, sticky shell, centered section title + footnote.
+- Page-wide: default sections center H2 + content stacks (hero remains left for market pitch).
+- Crypto landing instruments content uses BTC/ETH/DOGE/SOL/ADA icons under `public/images/markets/`.
+
 ## 2026-08-12 — FAQ centered band (Figma 29987:341618)
 
 - FAQ section: center column (H2 48 center + 1000px list), gap 60 title→list — was left-aligned in 1280 container.
