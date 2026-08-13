@@ -299,6 +299,14 @@
       "src": "/images/backgrounds/bg-default.png",
       "note": "Shared brand purple art — use consistently for most backgrounds"
     },
+    "fundingMarquee": {
+      "bandBg": "{primitive.color.blue500}",
+      "titleColor": "{primitive.color.gray0}",
+      "leadColor": "{primitive.color.gray400}",
+      "logoHeight": "48px",
+      "gap": "80px",
+      "fade": "80px"
+    },
     "marketHero": {
       "minHeight": "560px",
       "paddingY": "40px",

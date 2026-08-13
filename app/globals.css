@@ -3136,6 +3136,18 @@ a {
   font-weight: var(--typography-font-weight-semibold);
 }
 
+.ui-section--funding {
+  background: var(--component-funding-marquee-band-bg);
+}
+
+.ui-section--funding .ui-heading--section {
+  color: var(--component-funding-marquee-title-color);
+}
+
+.ui-section--funding .ui-text--lead {
+  color: var(--component-funding-marquee-lead-color);
+}
+
 .ui-funding__header {
   display: grid;
   justify-items: center;
@@ -3148,23 +3160,53 @@ a {
   text-align: center;
 }
 
-.ui-funding__providers {
+.ui-funding-marquee {
+  overflow: hidden;
+  margin-top: var(--space-section-mobile);
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--component-funding-marquee-title-color) var(--component-funding-marquee-fade),
+    var(--component-funding-marquee-title-color) calc(100% - var(--component-funding-marquee-fade)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--component-funding-marquee-title-color) var(--component-funding-marquee-fade),
+    var(--component-funding-marquee-title-color) calc(100% - var(--component-funding-marquee-fade)),
+    transparent
+  );
+}
+
+.ui-funding-marquee:active {
+  cursor: grabbing;
+}
+
+.ui-funding-marquee__track {
   display: flex;
-  flex-wrap: wrap;
+  width: max-content;
+  will-change: transform;
+}
+
+.ui-funding-marquee__list {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--component-market-hero-provider-gap);
+  gap: var(--component-funding-marquee-gap);
   margin: 0;
-  padding: var(--space-10) 0 0;
-  color: var(--color-text-muted);
+  padding: 0 var(--component-funding-marquee-gap) 0 0;
   list-style: none;
 }
 
-.ui-funding__providers li {
-  font-family: var(--typography-font-family-heading);
-  font-size: var(--component-market-hero-provider-size);
-  font-weight: var(--typography-font-weight-semibold);
-  line-height: var(--typography-line-height-heading);
+.ui-funding-marquee__list img {
+  display: block;
+  height: var(--component-funding-marquee-logo-height);
+  width: auto;
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
 
 /* Index */
@@ -3285,8 +3327,9 @@ a {
     padding: var(--space-6);
   }
 
-  .ui-funding__providers {
-    gap: var(--space-6);
+  .ui-funding-marquee__list {
+    gap: var(--space-10);
+    padding-right: var(--space-10);
   }
 
   .ui-heading--display,

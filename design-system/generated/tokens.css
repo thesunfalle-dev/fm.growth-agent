@@ -238,6 +238,12 @@
   --component-illustration-default-size: 180px;
   --component-background-image-src: /images/backgrounds/bg-default.png;
   --component-background-image-note: Shared brand purple art — use consistently for most backgrounds;
+  --component-funding-marquee-band-bg: var(--primitive-color-blue500);
+  --component-funding-marquee-title-color: var(--primitive-color-gray0);
+  --component-funding-marquee-lead-color: var(--primitive-color-gray400);
+  --component-funding-marquee-logo-height: 48px;
+  --component-funding-marquee-gap: 80px;
+  --component-funding-marquee-fade: 80px;
   --component-market-hero-min-height: 560px;
   --component-market-hero-padding-y: 40px;
   --component-market-hero-copy-max-width: 555px;

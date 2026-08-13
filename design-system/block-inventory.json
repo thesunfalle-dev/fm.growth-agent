@@ -197,9 +197,9 @@
     {
       "type": "logo-marquee",
       "status": "ready",
-      "description": "Funding methods section with a shared heading and provider row.",
+      "description": "Funding methods: dark band + infinite wordmark ticker (Figma 28259:298800).",
       "component": "components/blocks/LogoMarquee.tsx",
-      "figma": "24400:153845",
+      "figma": "28259:298800",
       "props": {
         "title": { "type": "string", "required": false },
         "subtitle": { "type": "string", "required": false },

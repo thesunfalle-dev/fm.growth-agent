@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-13 — Funding methods ticker from Figma `28259:298800`
+
+- `logo-marquee` is now the dark Blue/500 band + infinite wordmark ticker (80px gap, edge fade, drag to scrub).
+- Payment logos exported from Figma Deposit & Withdrawals (`colour=off`) into `public/brand/funding/`.
+- Tokens: `component.fundingMarquee`. Equity Indices uses the default provider set.
+
 ## 2026-08-13 — Every shipped block has reusable defaults
 
 - `lib/block-defaults.ts` now covers all ready types: hero, market-hero, features, table, steps, faq, cta, logo-marquee, disclaimer — plus shared CTAs, instrument columns, funding providers, and the CFD warning.

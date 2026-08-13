@@ -194,11 +194,12 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `logo-marquee` |
 | **Intent** | A concise funding-method proof section for campaign and funding pages. |
-| **Structure (fixed)** | Centered H2 + optional lead + wrap-safe provider row. |
-| **Content (props)** | `title`, `subtitle`, `providers[]` |
-| **Canonical Figma** | Deposit Options funding logos `24400:153845` |
-| **Rules** | Providers are content and jurisdiction-specific. Use approved provider artwork when available; never use Figma sample marketing copy. |
-| **Adaptive** | Providers wrap with shared gaps; they never overflow the viewport. |
+| **Structure (fixed)** | Dark Blue/500 band; centered H2 + lead; **infinite logo ticker** (gap 80, opacity 70%, fade edges). Drag to scrub. |
+| **Content (props)** | `title`, `subtitle`, optional `providers[]` (defaults to Figma Deposit & Withdrawals set) |
+| **Canonical Figma** | Our Funding Methods `28259:298800` |
+| **Also seen on** | Homepage funding strip; Equity Indices |
+| **Rules** | Use Figma `colour=off` wordmarks from `public/brand/funding/`. Do not paste Figma sample marketing copy. Prefer default provider set unless TZ lists a subset. |
+| **Adaptive** | Same ticker; tighter gap on mobile. `prefers-reduced-motion` stops auto-scroll (drag still works). |
 
 ---
 

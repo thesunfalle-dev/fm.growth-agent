@@ -36,7 +36,7 @@ Omit a listed default prop in `content.ts` to get the shared chrome.
 | `steps` | How It Works | title, subtitle, `horizontal` | items (sentence-case titles), optional CTAs |
 | `faq` | Accordion Q&A | title **FAQ**, first item open | items. Override title only if TZ names the section |
 | `cta` | Mid-page conversion band | title + Start trading + Try a demo | omit everything for defaults; override if TZ differs |
-| `logo-marquee` | Funding methods | title, subtitle, standard providers | omit for defaults; override providers if TZ lists others |
+| `logo-marquee` | Funding methods | dark band + ticker, Figma wordmarks | omit for defaults; pass `providers` only to subset |
 | `disclaimer` | CFD risk line | standard leverage warning | omit for default; add preview-only notes only when product asks |
 
 ### How to add a landing block

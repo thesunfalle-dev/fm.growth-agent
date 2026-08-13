@@ -1,8 +1,13 @@
 import { Container } from "@/components/ui/Container";
+import { FundingMarquee } from "@/components/ui/FundingMarquee";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { blockDefaults } from "@/lib/block-defaults";
+import {
+  defaultFundingLogoIds,
+  resolveFundingLogos,
+} from "@/lib/funding-logos";
 
 type LogoMarqueeProps = {
   title?: string;
@@ -10,12 +15,14 @@ type LogoMarqueeProps = {
   providers?: string[];
 };
 
-/** Funding-method row; provider labels are supplied by landing content. */
+/** Funding methods — Figma `28259:298800`: dark band + infinite logo ticker. */
 export function LogoMarquee({
   title = blockDefaults.logoMarquee.title,
   subtitle = blockDefaults.logoMarquee.subtitle,
-  providers = [...blockDefaults.logoMarquee.providers],
+  providers,
 }: LogoMarqueeProps) {
+  const logos = resolveFundingLogos(providers?.length ? providers : defaultFundingLogoIds);
+
   return (
     <Section className="ui-section--funding">
       <Container>
@@ -23,10 +30,8 @@ export function LogoMarquee({
           <Heading variant="section">{title}</Heading>
           {subtitle ? <Text variant="lead">{subtitle}</Text> : null}
         </div>
-        <ul className="ui-funding__providers" aria-label="Funding methods">
-          {providers.map((provider) => <li key={provider}>{provider}</li>)}
-        </ul>
       </Container>
+      {logos.length > 0 ? <FundingMarquee logos={logos} /> : null}
     </Section>
   );
 }
