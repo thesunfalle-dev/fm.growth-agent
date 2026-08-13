@@ -26,6 +26,7 @@ const landing: LandingDocument = {
     },
     {
       type: "features",
+      variant: "feature",
       items: [
         {
           title: "Low friction share",

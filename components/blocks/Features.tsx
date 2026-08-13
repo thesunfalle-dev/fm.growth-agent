@@ -11,6 +11,7 @@ import {
   isIllustration,
   type IllustrationName,
 } from "@/lib/illustrations";
+import { blockDefaults } from "@/lib/block-defaults";
 import type { LandingCta } from "@/lib/types";
 
 type FeaturesProps = {
@@ -35,7 +36,7 @@ type FeaturesProps = {
  */
 export function Features({
   title,
-  variant = "feature",
+  variant = blockDefaults.features.variant,
   items,
 }: FeaturesProps) {
   const useUsp = variant === "usp";

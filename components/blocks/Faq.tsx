@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { FaqItem } from "@/components/ui/FaqItem";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { blockDefaults } from "@/lib/block-defaults";
 
 type FaqProps = {
   title?: string;
@@ -14,7 +15,11 @@ type FaqProps = {
  * FAQ section — Figma Final Pages FAQs `29987:341618`
  * Centered column: H2 48 center + 1000px accordion stack.
  */
-export function Faq({ title, items, openFirst = false }: FaqProps) {
+export function Faq({
+  title = blockDefaults.faq.title,
+  items,
+  openFirst = blockDefaults.faq.openFirst,
+}: FaqProps) {
   return (
     <Section id="faq" className="ui-section--faq">
       <Container className="ui-faq-band">

@@ -355,7 +355,6 @@ const landing: LandingDocument = {
     {
       type: "faq",
       title: "Crypto CFDs FAQ",
-      openFirst: true,
       items: [
         {
           question: "How is trading Crypto CFDs different from buying crypto?",

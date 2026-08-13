@@ -111,7 +111,7 @@ export type LandingBlock =
       /** Omit to use block default “Ready to start trading?” */
       title?: string;
       subtitle?: string;
-      primaryCta: LandingCta;
+      primaryCta?: LandingCta;
       secondaryCta?: LandingCta;
     }
   | {
@@ -140,7 +140,8 @@ export type LandingBlock =
     }
   | {
       type: "disclaimer";
-      text: string;
+      /** Omit to use the shared CFD risk warning. */
+      text?: string;
     }
   | {
       /** Funding-method logo row. Provider names are content; visual shell is shared. */
@@ -148,7 +149,7 @@ export type LandingBlock =
       /** Omit to use block default “Our Funding Methods”. */
       title?: string;
       subtitle?: string;
-      providers: string[];
+      providers?: string[];
     };
 
 export type LandingMeta = {

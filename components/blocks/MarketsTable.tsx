@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
+import { blockDefaults } from "@/lib/block-defaults";
 
 type MarketsTableProps = {
   title?: string;
@@ -47,9 +48,9 @@ export function MarketsTable({
   footnote,
   columns,
   rows,
-  scrollable = true,
-  showSearch = true,
-  variant = "markets",
+  scrollable = blockDefaults.table.scrollable,
+  showSearch = blockDefaults.table.showSearch,
+  variant = blockDefaults.table.variant,
 }: MarketsTableProps) {
   const isCompare = variant === "compare";
 

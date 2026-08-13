@@ -115,7 +115,7 @@ Copy when adding a pattern:
 | **Inventory** | `features` (`variant: "usp"` \| `"feature"`) |
 | **Intent** | Fusion unique selling points or simple benefit grid. |
 | **Structure (fixed)** | Section title + USP card grid/rail (illustration + title + body + optional learn more). |
-| **Content (props)** | `title`, `variant`, `items[]` (title, description, illustration, learnMore) |
+| **Content (props)** | `title`, `items[]`. Default `variant` is `usp` (`block-defaults`). |
 | **Canonical Figma** | Cards frame USP `15166:10610`; homepage “Why we’re different” |
 | **Also seen on** | **Crypto CFDs**; **Equity Indices**; Forex / Zero / Demo / Premium; MT5 Overview “Why Trade MT5 with Fusion” (equal rail) |
 | **Rules** | `usp` only for Fusion USPs (Figma rule). >4 items → horizontal scroll desktop; carousel mobile. |
@@ -131,7 +131,7 @@ Copy when adding a pattern:
 | **Inventory** | `faq` |
 | **Intent** | Answer objections; product/risk Q&A. |
 | **Structure (fixed)** | Section title + accordion rows (expand_more/less). |
-| **Content (props)** | `title`, `items[]` (question, answer), `openFirst` |
+| **Content (props)** | `items[]`. Default title **FAQ**, first item open. |
 | **Canonical Figma** | Sections FAQ `15313:11090`; e.g. Forex page FAQ band |
 | **Also seen on** | Forex markets; Zero; Demo; Premium; MT5 Overview + Desktop/Mobile/Web FAQ bands |
 | **Rules** | Compliance wording for product answers. No custom accordion JS — `details`. |
@@ -329,7 +329,7 @@ Copy when adding a pattern:
 | **Inventory** | `disclaimer` |
 | **Intent** | Risk and preview/legal context under marketing content. |
 | **Structure (fixed)** | Muted text band. |
-| **Content (props)** | `text` |
+| **Content (props)** | `text` — omit to use the shared CFD warning |
 | **Canonical Figma** | Footer legal mass + compliance needs |
 | **Rules** | Prefer `brand/compliance.md`; required on external-facing campaign previews. |
 

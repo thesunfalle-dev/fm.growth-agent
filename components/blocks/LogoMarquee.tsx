@@ -7,14 +7,14 @@ import { blockDefaults } from "@/lib/block-defaults";
 type LogoMarqueeProps = {
   title?: string;
   subtitle?: string;
-  providers: string[];
+  providers?: string[];
 };
 
 /** Funding-method row; provider labels are supplied by landing content. */
 export function LogoMarquee({
   title = blockDefaults.logoMarquee.title,
-  subtitle,
-  providers,
+  subtitle = blockDefaults.logoMarquee.subtitle,
+  providers = [...blockDefaults.logoMarquee.providers],
 }: LogoMarqueeProps) {
   return (
     <Section className="ui-section--funding">

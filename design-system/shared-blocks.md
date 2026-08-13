@@ -1,37 +1,68 @@
-# Shared blocks (shipped market landings)
+# Shared block library
 
-**Purpose:** Crypto and Equity Indices are the same **market recipe**. Store each repeating section once, then swap TZ content. Do not fork a second header, footer, hero, USP, table, or How It Works.
+**Purpose:** Every repeating section is stored once. New landings **reuse a registered `type`** and fill TZ content. Do not invent a parallel layout or recase chrome.
 
-**Code:** `lib/block-defaults.ts` + `lib/navigation.ts` + `components/blocks/*` + `components/ui/SiteHeader.tsx` / `SiteFooter.tsx`  
-**Machine contract:** `block-inventory.json`  
-**Page stack:** recipe M1 in `page-recipes.md`
+| Layer | File |
+|-------|------|
+| This index | `design-system/shared-blocks.md` |
+| Defaults (titles, CTAs, columns) | `lib/block-defaults.ts` |
+| Machine contract | `design-system/block-inventory.json` |
+| Types | `lib/types.ts` |
+| Code | `components/blocks/*` + `components/ui/SiteHeader.tsx` / `SiteFooter.tsx` |
+| Patterns | `design-system/pattern-catalog.md` |
+| Market stack | recipe M1 in `page-recipes.md` |
 
 ---
 
-## Always on every market page (chrome + core)
+## Chrome (every page — not in `blocks[]`)
 
-| Intent | Storage | How to reuse |
-|--------|---------|--------------|
-| Site header | `SiteHeader` in `app/layout.tsx` | Already wraps every slug. Nav/hrefs: `lib/navigation.ts`. |
-| Site footer + “Ready to start trading?” | `SiteFooter` in `app/layout.tsx` | Already wraps every slug. CTA chrome: `blockDefaults.cta` + `sharedCtas`. Do **not** add a second end `cta` block. |
-| Market header | `type: "market-hero"` | Same block. Content: eyebrow, H1, lead, optional bullets/quote/trustpilot. Default primary CTA = Start trading. |
-| Why Fusion | `type: "features"`, `variant: "usp"` | Same USP rail. Content: title + items (illustration + copy). |
-| Instruments | `type: "table"` | Same DataTable. Headers from `instrumentsColumns`. Rows/title from TZ. |
-| How It Works | `type: "steps"` | Same process band. Omit `title` / `subtitle` / `orientation` to use defaults. Items + CTAs from TZ. |
-
-## Optional modules (same registered types)
-
-| Intent | Storage | Now on |
+| Intent | Storage | Reuse |
 |--------|---------|--------|
-| How we compare | `type: "table"`, `variant: "compare"` | crypto |
-| FAQ | `type: "faq"` | crypto |
-| Funding methods | `type: "logo-marquee"` | equity-indices |
-
-If a later market landing needs compare / FAQ / funding, **reuse that type**. Do not invent a new section.
+| Site header | `SiteHeader` in `app/layout.tsx` | Nav/hrefs: `lib/navigation.ts`. Never put a header in `content.ts`. |
+| Site footer + Ready CTA | `SiteFooter` in `app/layout.tsx` | CTA chrome: `blockDefaults.cta` + `sharedCtas`. Do not add a second end `cta` unless TZ needs a mid-page band. |
 
 ---
 
-## Shipped stacks
+## Ready / provisional blocks (shippable)
+
+Omit a listed default prop in `content.ts` to get the shared chrome.
+
+| `type` | Intent | Defaults (`lib/block-defaults.ts`) | Content the landing fills |
+|--------|--------|------------------------------------|---------------------------|
+| `hero` | Offer / award / platform pitch | `primaryCta` = Start trading | title, subtitle, optional eyebrow/bullets/secondary |
+| `market-hero` | Market product header (BG + panel) | `primaryCta` = Start trading | eyebrow, title, subtitle, optional bullets/quote/trustpilot/secondary |
+| `features` | Why Fusion / benefits | `variant` = `usp` | title, items (illustration + copy) |
+| `table` | Instruments or compare matrix | `variant` = `markets`, search + scroll on | title, `columns` (use `instrumentsColumns`), rows, optional footnote. Compare: `variant: "compare"` |
+| `steps` | How It Works | title, subtitle, `horizontal` | items (sentence-case titles), optional CTAs |
+| `faq` | Accordion Q&A | title **FAQ**, first item open | items. Override title only if TZ names the section |
+| `cta` | Mid-page conversion band | title + Start trading + Try a demo | omit everything for defaults; override if TZ differs |
+| `logo-marquee` | Funding methods | title, subtitle, standard providers | omit for defaults; override providers if TZ lists others |
+| `disclaimer` | CFD risk line | standard leverage warning | omit for default; add preview-only notes only when product asks |
+
+### How to add a landing block
+
+```ts
+{ type: "steps", items: [/* TZ */] }
+{ type: "faq", items: [/* TZ */] }
+{ type: "logo-marquee" }
+{ type: "cta" }
+{ type: "disclaimer" }
+```
+
+Shared CTAs: `sharedCtas.startTrading` / `tryDemo` / `getLiveAccount`.  
+Shared table headers: `instrumentsColumns` or `defaultInstrumentsColumns`.
+
+---
+
+## Planned types (reserved names — do not invent synonyms)
+
+`spread-cards` · `instrument-grid` · `platforms` · `ratings-strip` · `tier-cards` · `download-bar` · `checklist-feature` · `comparison-table` · `bento-usp` · `education-split` · `testimonials` · `icon-feature-grid` · `notice-band` · `funding-card-grid` · `accordion-table` · `savings-calculator` · `leaderboard` · `calculator-tool` · `spreads-tool` · `tool-cards` · `review-rail` · `awards-strip` · `media-carousel` · `blog-card` · `newsletter-cta` · `jobs-list` · `stats`
+
+If a new Figma section matches one of these, implement that type. Do not create `reviews-v2` or a one-off CSS section.
+
+---
+
+## Shipped market stacks
 
 ```
 crypto:
@@ -41,14 +72,14 @@ equity-indices:
   header → market-hero → features usp → table → logo-marquee → steps → footer
 ```
 
-Shared core: **header · market-hero · features usp · table · steps · footer**.
+Shared core: **header · market-hero · features · table · steps · footer**.
 
 ---
 
 ## Rules
 
-1. New market slug (Gold, Oil, Forex…): copy this core, fill TZ props only.
+1. New slug: pick types from this file only.
 2. Header and footer never go in `landings/*/content.ts`.
-3. Shared CTA labels/hrefs live in `sharedCtas`. Do not paste `hub.fusionmarkets.com` into a landing.
-4. Shared column headers live in `instrumentsColumns`. Add extra columns (e.g. Trading Hours) next to those constants — do not restyle the table.
-5. If two slugs need the same new section, register it in inventory + catalog first, then reuse.
+3. Do not paste `hub.fusionmarkets.com` into a landing — use `sharedCtas`.
+4. Do not recase default H2s per slug.
+5. A new section structure = inventory entry + types + component + this file + changelog, then reuse.

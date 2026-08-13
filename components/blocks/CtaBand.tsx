@@ -9,14 +9,14 @@ import type { LandingCta } from "@/lib/types";
 type CtaBandProps = {
   title?: string;
   subtitle?: string;
-  primaryCta: LandingCta;
+  primaryCta?: LandingCta;
   secondaryCta?: LandingCta;
 };
 
 export function CtaBand({
   title = blockDefaults.cta.title,
   subtitle,
-  primaryCta,
+  primaryCta = blockDefaults.cta.primaryCta,
   secondaryCta,
 }: CtaBandProps) {
   return (

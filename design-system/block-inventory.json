@@ -22,6 +22,9 @@
         "secondaryCta": { "type": "cta", "required": false },
         "brandBackground": { "type": "boolean", "required": false }
       },
+      "defaults": {
+        "primaryCta": "sharedCtas.startTrading"
+      },
       "contentRules": [
         "Title should be one clear promise; avoid stacking multiple claims.",
         "Prefer subtitle (one paragraph) when Figma shows a single lead; use bullets only for campaign TZ lists.",
@@ -45,6 +48,9 @@
         "secondaryCta": { "type": "cta", "required": false },
         "quote": { "type": "marketHeroQuote", "required": false },
         "trustpilot": { "type": "marketHeroTrustpilot", "required": false }
+      },
+      "defaults": {
+        "primaryCta": "sharedCtas.startTrading"
       },
       "contentRules": [
         "Use approved or explicitly illustrative pricing only; label non-live values as indicative.",
@@ -75,7 +81,11 @@
           "maxItems": 8
         }
       },
+      "defaults": {
+        "variant": "usp"
+      },
       "contentRules": [
+        "Default variant is usp. Pass variant feature only for simple benefit cards.",
         "variant usp only for Fusion unique selling points (Figma rule).",
         "USP: prefer 3–4 items; >4 scrolls horizontally.",
         "Keep descriptions scannable (1–3 sentences)."
@@ -95,8 +105,14 @@
         "rows": { "type": "array", "required": true },
         "scrollable": { "type": "boolean", "required": false }
       },
+      "defaults": {
+        "variant": "markets",
+        "showSearch": true,
+        "scrollable": true
+      },
       "contentRules": [
-        "Use for spreads/markets lists. Comparison and accordion tables are separate planned types.",
+        "Use instrumentsColumns / defaultInstrumentsColumns for headers.",
+        "Use for spreads/markets lists. Comparison: variant compare.",
         "Prefer symbol cells as { title, meta } for pair name + description."
       ],
       "tokenDependencies": ["component.table", "semantic.color"]
@@ -146,7 +162,12 @@
         "items": { "type": "array", "required": true, "minItems": 1 },
         "openFirst": { "type": "boolean", "required": false }
       },
+      "defaults": {
+        "title": "FAQ",
+        "openFirst": true
+      },
       "contentRules": [
+        "Section H2 defaults to FAQ. Override only when TZ names the section.",
         "Questions should match real objections; answers plain language.",
         "Use approved compliance wording when answering product/risk questions."
       ],
@@ -160,11 +181,12 @@
       "props": {
         "title": { "type": "string", "required": false },
         "subtitle": { "type": "string", "required": false },
-        "primaryCta": { "type": "cta", "required": true },
+        "primaryCta": { "type": "cta", "required": false },
         "secondaryCta": { "type": "cta", "required": false }
       },
       "defaults": {
-        "title": "Ready to start trading?"
+        "title": "Ready to start trading?",
+        "primaryCta": "sharedCtas.startTrading"
       },
       "contentRules": [
         "Section H2 is owned by the block (default “Ready to start trading?”).",
@@ -181,10 +203,12 @@
       "props": {
         "title": { "type": "string", "required": false },
         "subtitle": { "type": "string", "required": false },
-        "providers": { "type": "array", "required": true, "item": "string", "minItems": 2 }
+        "providers": { "type": "array", "required": false, "item": "string", "minItems": 2 }
       },
       "defaults": {
-        "title": "Our Funding Methods"
+        "title": "Our Funding Methods",
+        "subtitle": "Fund your account securely with a range of convenient payment methods.",
+        "providers": ["VISA", "Apple Pay", "Bank transfer", "Mastercard", "PayPal"]
       },
       "contentRules": [
         "Section H2 is owned by the block (default “Our Funding Methods”).",
@@ -199,9 +223,13 @@
       "description": "Legal / risk footer text. Strongly recommended on every marketing landing.",
       "component": "components/blocks/Disclaimer.tsx",
       "props": {
-        "text": { "type": "string", "required": true }
+        "text": { "type": "string", "required": false }
+      },
+      "defaults": {
+        "text": "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage."
       },
       "contentRules": [
+        "Omit text to use the shared CFD warning in lib/block-defaults.ts.",
         "Prefer approved disclaimer language from brand/compliance.md when available.",
         "Do not omit on campaign pages intended for external sharing."
       ],
@@ -270,13 +298,6 @@
       "description": "Split: headline + body + icon checklist rows + CTA | image.",
       "figmaLanding": "29987:340524 TradingView",
       "figmaPages": ["26258:280418 Premium Analyst Views"]
-    },
-    {
-      "type": "market-hero",
-      "status": "planned",
-      "description": "Brand BG + market H1 + pitch + Primary/Light + TV chart card. Template for all market product pages.",
-      "figmaLanding": "29987:341692 Gold EN",
-      "figmaPages": ["23570:104257 Forex Market Header"]
     },
     {
       "type": "comparison-table",

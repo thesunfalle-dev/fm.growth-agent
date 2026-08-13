@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-13 — Every shipped block has reusable defaults
+
+- `lib/block-defaults.ts` now covers all ready types: hero, market-hero, features, table, steps, faq, cta, logo-marquee, disclaimer — plus shared CTAs, instrument columns, funding providers, and the CFD warning.
+- `design-system/shared-blocks.md` is the reuse index (chrome + ready + reserved planned names).
+- Components apply those defaults. Landings omit chrome props unless TZ overrides them.
+
 ## 2026-08-13 — Market landings reuse one block set
 
 - Recorded the shipped Crypto / Equity Indices reuse map in `design-system/shared-blocks.md`. Core stack: header · market-hero · features usp · instruments table · steps · footer.

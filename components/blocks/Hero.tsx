@@ -5,6 +5,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
+import { blockDefaults } from "@/lib/block-defaults";
 import type { LandingCta } from "@/lib/types";
 
 type HeroProps = {
@@ -26,7 +27,7 @@ export function Hero({
   title,
   subtitle,
   bullets,
-  primaryCta,
+  primaryCta = blockDefaults.hero.primaryCta,
   secondaryCta,
   brandBackground = false,
 }: HeroProps) {

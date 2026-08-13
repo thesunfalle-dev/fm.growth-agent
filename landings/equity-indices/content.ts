@@ -1,4 +1,4 @@
-import { instrumentsColumns, sharedCtas } from "@/lib/block-defaults";
+import { defaultInstrumentsColumns, sharedCtas } from "@/lib/block-defaults";
 import type { LandingDocument } from "@/lib/types";
 
 /** Equity Indices CFDs — content from USER STORY - Equity Indices Landing Page. */
@@ -55,11 +55,7 @@ const landing: LandingDocument = {
       type: "table",
       title: "Our Equity Index CFD Products",
       showSearch: true,
-      columns: [
-        instrumentsColumns.symbol,
-        instrumentsColumns.minimum,
-        instrumentsColumns.average,
-      ],
+      columns: defaultInstrumentsColumns,
       rows: [
         ["AUS200", "0.8", "1.14"], ["CA60", "0.2", "0.35"], ["CHINAH", "1.6", "2.00"],
         ["E35", "2.1", "6.1"], ["EUSTX50", "0.2", "1.31"], ["FRA40", "0.2", "0.93"], ["GER40", "0.8", "1.22"],
@@ -71,8 +67,6 @@ const landing: LandingDocument = {
     },
     {
       type: "logo-marquee",
-      subtitle: "Fund your account securely with a range of convenient payment methods.",
-      providers: ["VISA", "Apple Pay", "Bank transfer", "Mastercard", "PayPal"],
     },
     {
       type: "steps",
