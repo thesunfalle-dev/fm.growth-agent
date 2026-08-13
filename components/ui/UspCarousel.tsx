@@ -52,6 +52,14 @@ export function UspCarousel({ children }: UspCarouselProps) {
     const el = railRef.current;
     if (!el) return;
     updateNav();
+    const compact = window.matchMedia("(max-width: 768px)").matches;
+    if (compact) {
+      const card = el.children[0] as HTMLElement | undefined;
+      if (card) {
+        const left = card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
+        el.scrollLeft = Math.max(left, 0);
+      }
+    }
     el.addEventListener("scroll", updateNav, { passive: true });
     const ro = new ResizeObserver(updateNav);
     ro.observe(el);

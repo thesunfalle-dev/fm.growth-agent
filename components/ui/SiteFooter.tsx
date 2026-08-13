@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/ui/Logo";
 import { blockDefaults, sharedCtas } from "@/lib/block-defaults";
 import {
+  footerColumns,
   footerContact,
   footerLegalLinks,
   footerLegalParagraphs,
@@ -112,6 +114,24 @@ export function SiteFooter() {
                   <FooterGroup key={group.title} group={group} />
                 ))}
               </div>
+            ))}
+          </div>
+
+          <div className="ui-mkt-footer__accordion">
+            {footerColumns.map((group) => (
+              <details key={group.title} className="ui-mkt-footer__acc">
+                <summary className="ui-mkt-footer__acc-summary">
+                  <span>{group.title}</span>
+                  <Icon name="expand_more" size={24} />
+                </summary>
+                <ul className="ui-mkt-footer__link-list">
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
             ))}
           </div>
 

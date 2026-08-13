@@ -290,8 +290,8 @@
     "logo": {
       "desktopWidth": "123px",
       "desktopHeight": "48px",
-      "mobileWidth": "24px",
-      "mobileHeight": "28px"
+      "mobileWidth": "28px",
+      "mobileHeight": "33px"
     },
     "illustration": {
       "sizeSm": "80px",
@@ -393,6 +393,7 @@
         "mobileCenterWidth": "270px",
         "dotHeight": "6px",
         "dotWidth": "24px",
+        "dotIdleWidth": "6px",
         "titleSize": "24px",
         "bodySize": "16px",
         "maxVisible": 4
@@ -506,7 +507,7 @@
       "height": "80px",
       "heightMobile": "57px",
       "paddingX": "80px",
-      "paddingXMobile": "16px",
+      "paddingInlineMobile": "16px",
       "navGap": "40px",
       "actionsGap": "16px",
       "bg": "{primitive.color.gray0}",
@@ -520,7 +521,7 @@
     "footer": {
       "paddingY": "60px",
       "paddingX": "80px",
-      "paddingXMobile": "16px",
+      "paddingInlineMobile": "16px",
       "bg": "{primitive.color.gray0}",
       "linkColor": "{primitive.color.blue500}",
       "mutedColor": "{primitive.color.gray600}",
@@ -539,6 +540,7 @@
       "sectionDesktop": "120px",
       "sectionMobile": "60px",
       "headingToDescriptionDesktop": "24px",
+      "sectionHeadingMobile": "38px",
       "headingToDescriptionMobile": "32px",
       "descriptionToContentDesktop": "40px",
       "descriptionToContentMobile": "24px",

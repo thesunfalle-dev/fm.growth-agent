@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-13 — Mobile header / USP / table / steps / footer bugs
+
+- Header_Mobile Default + Close (`16373:19317`): F mark 28×33, search+menu 24/16; open state hides search and swaps menu → close.
+- USP 375 (`31099:351485`): centered 38 title, 270 snap cards with side peek, idle 6 / active 24 dots.
+- Instruments header (`23267:95457` / Forex-Mobile): Symbol + Search stay on one 54 row; other columns scroll.
+- How It Works (`31099:351494`): no scroll-pin fade on 375; 38 title, 16 lead, 40 discs, full-opacity copy.
+- CTAFooter-Mobile (`15977:21970`): 16 side pad, stacked CTAs without “or”, centered brand, help then accordion links.
+
 ## 2026-08-13 — M1 mobile modes on shipped landings
 
 - Applied the 375 contract to shared blocks used by **crypto** and **equity-indices** (no per-slug CSS).

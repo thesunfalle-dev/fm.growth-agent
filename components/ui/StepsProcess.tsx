@@ -16,8 +16,17 @@ type StepsProcessProps = {
  */
 export function StepsProcess({ items, mode = "light", header, actions }: StepsProcessProps) {
   const pinRef = useRef<HTMLDivElement>(null);
+  const [compact, setCompact] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [fills, setFills] = useState<number[]>(() => items.map(() => 0));
+
+  useEffect(() => {
+    const compactMq = window.matchMedia("(max-width: 768px)"); /* breakpoint.md */
+    const syncCompact = () => setCompact(compactMq.matches);
+    syncCompact();
+    compactMq.addEventListener("change", syncCompact);
+    return () => compactMq.removeEventListener("change", syncCompact);
+  }, []);
 
   useEffect(() => {
     const reduceMq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -106,9 +115,9 @@ export function StepsProcess({ items, mode = "light", header, actions }: StepsPr
             items={items}
             orientation="horizontal"
             mode={mode}
-            activeIndex={activeIndex}
-            fills={fills}
-            className="ui-steps--scroll"
+            activeIndex={compact ? undefined : activeIndex}
+            fills={compact ? undefined : fills}
+            className={compact ? undefined : "ui-steps--scroll"}
           />
           {actions}
         </Container>

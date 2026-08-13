@@ -174,7 +174,7 @@ export function DataTable({
                         <input
                           type="search"
                           className="ui-table__search-input"
-                          placeholder="Search"
+                          placeholder="Search Symbol"
                           value={query}
                           onChange={(e) => setQuery(e.target.value)}
                           autoComplete="off"

@@ -11,10 +11,11 @@ Fonts in code: **Plus Jakarta Sans** (nav, CTAs, titles) + **Roboto** (footer li
 | Component | Figma node | Status in code |
 |-----------|------------|----------------|
 | Header_Desktop | `15086:11710` | **ready** (`SiteHeader`) |
-| Header_Mobile Default | `15366:10884` | **ready** (search + menu) |
-| Header_Mobile Nav Bar close/return | `16373:19318` / `16373:19336` | planned |
+| Header_Mobile Default | `15366:10884` | **ready** (F mark 28×33 + search + menu) |
+| Header_Mobile Nav Bar close | `16373:19318` | **ready** (open menu hides search, shows X) |
+| Header_Mobile Nav Bar return | `16373:19336` | planned (back + close on nested views) |
 | Nav Bar On/Off indicator | `16370:19277` | planned (active underline) |
-| Mobile Menu Dropdown | `15781:20623` | partial (`details` panel) |
+| Mobile Menu Dropdown | `15781:20623` | partial (`details` panel + primary nav) |
 | Footer desktop AU | `15866:27010` / `24400:154127` | **ready** 1:1 stacks (`SiteFooter`) |
 | Footer desktop EN | `23377:111177` | planned (legal content variant) |
 | Footer mobile AU/EN | `15977:21970` / `23368:105447` | responsive layout ready; **CTAFooter-Mobile** measured (`26258:282738`); full accordion planned |
@@ -43,7 +44,7 @@ Fonts in code: **Plus Jakarta Sans** (nav, CTAs, titles) + **Roboto** (footer li
 | Height | **57px** |
 | Horizontal padding | **16px** |
 | Menu items | hidden; **search** + **menu** icons on the right |
-| Logo | mark only (wordmark hidden) |
+| Logo | F mark **28×33** (`logo-mobile.svg`, Header_Mobile `15366:10884`) |
 | Shadow | `0 8px 12px rgba(234, 219, 255, 0.2)` |
 
 ## Desktop footer rules (frame)
@@ -73,7 +74,7 @@ Fonts in code: **Plus Jakarta Sans** (nav, CTAs, titles) + **Roboto** (footer li
 | Horizontal padding | **16px** |
 | Placement | same: below CTA band |
 | CTA band | **CTAFooter-Mobile** (`26258:282738` / `26258:284540`): 2-line title “Ready to Start Trading?” → Primary **343×54** → “or” → Secondary **343×54**. Band height ~**350**. Pad 20 / 16 |
-| Link columns | Accordion planned (`15977:21970`); current code is a stacked responsive layout |
+| Link columns | Accordion (`15977:21970`) — `details` groups, help cards first, 16px side pad |
 | Instance | Homepage `27873:296885`, Forex `23570:104498`, Products `26258:282351`, Zero `26258:282744`, Demo `26258:284546`, Pro `26258:286399` |
 
 **Not every mobile page paints CTAFooter as a sibling** (Products / Pro / Homepage fold it into the Footer instance). Still one `SiteFooter` — do not add a `cta` block to compensate.
@@ -103,7 +104,6 @@ Use **`Logo`** + **`Icon`** (Material Symbols only). See `logos-icons.md`.
 
 - Country flag **switcher** UI (flag mark in contact is shipped)
 - Nav Bar active purple underline component
-- Mobile accordion footer sections
 - Full EN legal variant (`23377:111177`)
 
 ## Agent notes (do not regress)

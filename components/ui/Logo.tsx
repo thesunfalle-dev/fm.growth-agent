@@ -1,7 +1,7 @@
 type LogoProps = {
   /**
    * desktop — full wordmark (123×48)
-   * mobile — F mark only (24×28)
+   * mobile — F mark only (28×33, Header_Mobile)
    * auto — desktop on large screens, mobile mark below 1024px
    */
   variant?: "desktop" | "mobile" | "auto";
@@ -39,8 +39,8 @@ export function Logo({
           className="ui-logo__mobile"
           src="/brand/logo-mobile.svg"
           alt=""
-          width={24}
-          height={28}
+          width={28}
+          height={33}
         />
       )}
     </>

@@ -58,7 +58,7 @@ export function SiteHeader() {
 
         <div className="ui-mkt-header__mobile">
           <a
-            className="ui-mkt-header__icon-btn"
+            className="ui-mkt-header__icon-btn ui-mkt-header__search"
             href="https://fusionmarkets.com/"
             aria-label="Search"
           >
@@ -67,9 +67,10 @@ export function SiteHeader() {
           <details className="ui-mkt-header__menu">
             <summary
               className="ui-mkt-header__icon-btn"
-              aria-label="Open menu"
+              aria-label="Menu"
             >
-              <Icon name="menu" size={24} />
+              <Icon name="menu" size={24} className="ui-mkt-header__icon--menu" />
+              <Icon name="close" size={24} className="ui-mkt-header__icon--close" />
             </summary>
             <div className="ui-mkt-header__mobile-panel">
               <ul className="ui-mkt-header__mobile-list">

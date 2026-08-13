@@ -234,8 +234,8 @@
   --component-icon-default-color: var(--primitive-color-blue500);
   --component-logo-desktop-width: 123px;
   --component-logo-desktop-height: 48px;
-  --component-logo-mobile-width: 24px;
-  --component-logo-mobile-height: 28px;
+  --component-logo-mobile-width: 28px;
+  --component-logo-mobile-height: 33px;
   --component-illustration-size-sm: 80px;
   --component-illustration-size-md: 120px;
   --component-illustration-size-lg: 180px;
@@ -322,6 +322,7 @@
   --component-card-usp-mobile-center-width: 270px;
   --component-card-usp-dot-height: 6px;
   --component-card-usp-dot-width: 24px;
+  --component-card-usp-dot-idle-width: 6px;
   --component-card-usp-title-size: 24px;
   --component-card-usp-body-size: 16px;
   --component-card-usp-max-visible: 4;
@@ -408,7 +409,7 @@
   --layout-header-height: 80px;
   --layout-header-height-mobile: 57px;
   --layout-header-padding-x: 80px;
-  --layout-header-padding-xmobile: 16px;
+  --layout-header-padding-inline-mobile: 16px;
   --layout-header-nav-gap: 40px;
   --layout-header-actions-gap: 16px;
   --layout-header-bg: var(--primitive-color-gray0);
@@ -420,7 +421,7 @@
   --layout-header-logo-height-mobile: 33px;
   --layout-footer-padding-y: 60px;
   --layout-footer-padding-x: 80px;
-  --layout-footer-padding-xmobile: 16px;
+  --layout-footer-padding-inline-mobile: 16px;
   --layout-footer-bg: var(--primitive-color-gray0);
   --layout-footer-link-color: var(--primitive-color-blue500);
   --layout-footer-muted-color: var(--primitive-color-gray600);
@@ -437,6 +438,7 @@
   --layout-spacing-section-desktop: 120px;
   --layout-spacing-section-mobile: 60px;
   --layout-spacing-heading-to-description-desktop: 24px;
+  --layout-spacing-section-heading-mobile: 38px;
   --layout-spacing-heading-to-description-mobile: 32px;
   --layout-spacing-description-to-content-desktop: 40px;
   --layout-spacing-description-to-content-mobile: 24px;
