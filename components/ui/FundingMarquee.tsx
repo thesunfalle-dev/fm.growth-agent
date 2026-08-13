@@ -14,19 +14,24 @@ type FundingMarqueeProps = {
 export function FundingMarquee({ logos }: FundingMarqueeProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
+  const speedRef = useRef(0.55);
+  const hoverRef = useRef(false);
   const dragRef = useRef<{ pointer: number; origin: number } | null>(null);
-  const pausedRef = useRef(false);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const cruise = 0.55;
+    const hoverCrawl = 0.12;
     let frame = 0;
 
     const tick = () => {
-      if (!reduceMotion && !pausedRef.current && !dragRef.current) {
-        offsetRef.current -= 0.55;
+      const target = reduceMotion || dragRef.current ? 0 : hoverRef.current ? hoverCrawl : cruise;
+      speedRef.current += (target - speedRef.current) * 0.06;
+      if (!dragRef.current) {
+        offsetRef.current -= speedRef.current;
       }
       const loop = track.scrollWidth / 2;
       if (loop > 0) {
@@ -45,10 +50,10 @@ export function FundingMarquee({ logos }: FundingMarqueeProps) {
     <div
       className="ui-funding-marquee"
       onPointerEnter={() => {
-        pausedRef.current = true;
+        hoverRef.current = true;
       }}
       onPointerLeave={() => {
-        pausedRef.current = false;
+        hoverRef.current = false;
         dragRef.current = null;
       }}
       onPointerDown={(event) => {

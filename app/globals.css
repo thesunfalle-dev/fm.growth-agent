@@ -3188,6 +3188,7 @@ a {
 
 .ui-funding-marquee__track {
   display: flex;
+  gap: var(--component-funding-marquee-gap);
   width: max-content;
   will-change: transform;
 }
@@ -3197,8 +3198,12 @@ a {
   align-items: center;
   gap: var(--component-funding-marquee-gap);
   margin: 0;
-  padding: 0 var(--component-funding-marquee-gap) 0 0;
+  padding: 0;
   list-style: none;
+}
+
+.ui-funding-marquee__list li {
+  flex: 0 0 auto;
 }
 
 .ui-funding-marquee__list img {
@@ -3327,9 +3332,9 @@ a {
     padding: var(--space-6);
   }
 
+  .ui-funding-marquee__track,
   .ui-funding-marquee__list {
     gap: var(--space-10);
-    padding-right: var(--space-10);
   }
 
   .ui-heading--display,
