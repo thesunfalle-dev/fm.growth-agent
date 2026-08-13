@@ -99,10 +99,10 @@ Copy when adding a pattern:
 | **Inventory** | `steps` |
 | **Intent** | Explain signup / product process in 2–6 steps. |
 | **Structure (fixed)** | H2 + lead + **Step** instances (number + title + body). Homepage desktop: **split** (copy left, steps + dual CTA right) + optional side visual. Horizontal steps on some market pages (Gold). |
-| **Content (props)** | `title`, `subtitle`, `items[]`, `orientation`, `mode`, optional CTAs / image later |
-| **Canonical Figma** | Homepage [How it Works - 5 `31517:366918`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31517-366918); Sections frame Step by Steps `15313:11090` |
-| **Also seen on** | Zero / Demo how-to; MT5 Overview steps; DupliTrade open account; **Fusion+ How it Works** (steps + Tabs_Text + device mock — Copier/Master pages) |
-| **Rules** | One `steps` type; change **content** and `orientation`, not a new “how-it-works-v2” block. |
+| **Content (props)** | `subtitle`, `items[]` (sentence-case titles), optional CTAs. `title` / `orientation` default from `lib/block-defaults.ts`. |
+| **Canonical Figma** | Final Pages process [How It Works `29987:339011`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-339011); homepage split [How it Works - 5 `31517:366918`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31517-366918) |
+| **Also seen on** | Crypto / Equity Indices market landings; Zero / Demo how-to; MT5 Overview; DupliTrade; Fusion+ |
+| **Rules** | One `steps` type. **H2 “How It Works” is block chrome** — omit `title` in landings unless TZ names the section differently. Step titles: sentence case. Do not fork a second layout or recase the H2 per slug. |
 | **Adaptive** | Horizontal desktop may collapse to vertical on mobile. |
 
 ---

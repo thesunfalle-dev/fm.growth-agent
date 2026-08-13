@@ -37,11 +37,13 @@ More screens will extend this map; the rule stays: **spot the repeating block �
 
 1. **Homepage first.** Before designing a section, find the same intent on homepage (or Final Pages reuse of that component). Copy that structure.
 2. **Compose, don’t invent.** Only `type` values listed under `blocks` in `block-inventory.json` may appear in `landings/*/content.ts`.
-3. **No nested blocks.** Do not embed a `table` (or any other section) inside `hero`. Sequence separate blocks instead.
-4. **Props stay in inventory.** Content goes in props; if a prop is missing, extend inventory — don’t freestyle CSS in content files.
-5. **Planned ≠ shippable.** Gaps (e.g. TV spread rail) stay planned until built; temporary substitutes must be labeled as substitutes, not “the same block”.
-6. **Recipes are stacks of types**, not free CSS. Visual polish lives in `components/blocks/*` + tokens.
-7. **Figma structure + inventory code.** Structure from Figma; shippable types from inventory.
+3. **The block is the source of truth.** Once a section is registered, every landing reuses that component + its defaults (`lib/block-defaults.ts`). Do not recase the default H2, add per-slug CSS, or fork a second “How It Works v2”.
+4. **Omit chrome props to reuse defaults.** Example: `type: "steps"` without `title` renders **How It Works**. Override only when TZ names the section differently.
+5. **No nested blocks.** Do not embed a `table` (or any other section) inside `hero`. Sequence separate blocks instead.
+6. **Props stay in inventory.** Content goes in props; if a prop is missing, extend inventory — don’t freestyle CSS in content files.
+7. **Planned ≠ shippable.** Gaps (e.g. TV spread rail) stay planned until built; temporary substitutes must be labeled as substitutes, not “the same block”.
+8. **Recipes are stacks of types**, not free CSS. Visual polish lives in `components/blocks/*` + tokens.
+9. **Figma structure + inventory code.** Structure from Figma; shippable types from inventory.
 
 ---
 

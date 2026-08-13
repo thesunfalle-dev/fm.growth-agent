@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-13 — Block chrome is shared (How It Works first)
+
+- Added `lib/block-defaults.ts`: default H2s for `steps` (“How It Works”), `logo-marquee` (“Our Funding Methods”), `cta` (“Ready to start trading?”).
+- Crypto and Equity now omit those titles and use the block default. Equity step titles are sentence case, same convention as Crypto / Figma `29987:339011`.
+- Assembly + inventory: landings reuse the registered block; they do not recase chrome or invent a parallel layout.
+
 ## 2026-08-13 — Market landings share one hero/table chrome
 
 - Market Header panel is now the Figma TV-card slot: 599×480, 32px quote value, 40px vertical section pad. Crypto and Equity both fill that slot (BTC min spread from TZ; Equity keeps its approved indicative quote).

@@ -2,15 +2,20 @@ import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
+import { blockDefaults } from "@/lib/block-defaults";
 
 type LogoMarqueeProps = {
-  title: string;
+  title?: string;
   subtitle?: string;
   providers: string[];
 };
 
 /** Funding-method row; provider labels are supplied by landing content. */
-export function LogoMarquee({ title, subtitle, providers }: LogoMarqueeProps) {
+export function LogoMarquee({
+  title = blockDefaults.logoMarquee.title,
+  subtitle,
+  providers,
+}: LogoMarqueeProps) {
   return (
     <Section className="ui-section--funding">
       <Container>

@@ -71,19 +71,16 @@ const landing: LandingDocument = {
     },
     {
       type: "logo-marquee",
-      title: "Our Funding Methods",
       subtitle: "Fund your account securely with a range of convenient payment methods.",
       providers: ["VISA", "Apple Pay", "Bank transfer", "Mastercard", "PayPal"],
     },
     {
       type: "steps",
-      title: "How It Works",
       subtitle: "Opening a trading account with Fusion Markets is simple:",
-      orientation: "horizontal",
       items: [
-        { title: "Enter Personal Details", description: "Fill in your personal details in our secure online application.", active: true },
-        { title: "Verify Your Identity", description: "Confirm your ID electronically or by submitting supporting documents." },
-        { title: "Start Trading", description: "Fund your account and start trading equity index CFDs." },
+        { title: "Enter personal details", description: "Fill in your personal details in our secure online application.", active: true },
+        { title: "Verify your identity", description: "Confirm your ID electronically or by submitting supporting documents." },
+        { title: "Start trading", description: "Fund your account and start trading equity index CFDs." },
       ],
       primaryCta: { label: "Try a free demo", href: "https://hub.fusionmarkets.com/auth/sign-up" },
       secondaryCta: { label: "Get a live account", href: "https://hub.fusionmarkets.com/auth/sign-up" },

@@ -4,6 +4,7 @@ import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Steps, type StepItem } from "@/components/ui/Steps";
 import { Text } from "@/components/ui/Text";
+import { blockDefaults } from "@/lib/block-defaults";
 import type { LandingCta } from "@/lib/types";
 
 type StepsBandProps = {
@@ -27,10 +28,10 @@ type StepsBandProps = {
  * @see https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-339011
  */
 export function StepsBand({
-  title,
+  title = blockDefaults.steps.title,
   subtitle,
   items,
-  orientation = "horizontal",
+  orientation = blockDefaults.steps.orientation,
   mode = "light",
   primaryCta,
   secondaryCta,

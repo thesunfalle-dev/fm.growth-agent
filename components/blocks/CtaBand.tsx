@@ -3,16 +3,22 @@ import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
+import { blockDefaults } from "@/lib/block-defaults";
 import type { LandingCta } from "@/lib/types";
 
 type CtaBandProps = {
-  title: string;
+  title?: string;
   subtitle?: string;
   primaryCta: LandingCta;
   secondaryCta?: LandingCta;
 };
 
-export function CtaBand({ title, subtitle, primaryCta, secondaryCta }: CtaBandProps) {
+export function CtaBand({
+  title = blockDefaults.cta.title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+}: CtaBandProps) {
   return (
     <Section variant="cta">
       <Container narrow>

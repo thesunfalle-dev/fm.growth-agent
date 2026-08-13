@@ -296,6 +296,7 @@ Use as a **pre-merge self-review**. Each row = something that already shipped wr
 | 15 | Fake “Growth Agent preview” legal as main disclaimer | Use FM-style legal stack unless product requires internal note |
 | 16 | Declared done from one screenshot | Measure + multi-section + prod hard refresh |
 | 17 | Assumed Always-approve = can always write | Host may still force read-only Ask mode — user toggles; agent explains difference |
+| 18 | Recased shared H2 per slug (`How it works` vs `How It Works`) so the same block looked like different type | Block chrome lives in `lib/block-defaults.ts`. Omit `title` on `steps` / `logo-marquee` / `cta`. Step titles: sentence case. |
 
 ---
 

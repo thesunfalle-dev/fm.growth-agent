@@ -343,9 +343,7 @@ const landing: LandingDocument = {
     // —— 5. Steps process structure; onboarding copy for this campaign ——
     {
       type: "steps",
-      title: "How it works",
       subtitle: "Opening a trading account with Fusion Markets is simple:",
-      orientation: "horizontal",
       items: [
         {
           title: "Create your account",

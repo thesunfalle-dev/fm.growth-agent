@@ -121,7 +121,13 @@
         "primaryCta": { "type": "cta", "required": false },
         "secondaryCta": { "type": "cta", "required": false }
       },
+      "defaults": {
+        "title": "How It Works",
+        "orientation": "horizontal"
+      },
       "contentRules": [
+        "Section H2 is owned by the block (default “How It Works”). Landings omit title unless TZ has a different heading.",
+        "Step item titles use sentence case. Do not Title Case them per slug.",
         "Default orientation is horizontal (centered H2 + 3 columns + dual CTA).",
         "Prefer 3 steps; short titles; first step active purple, rest inactive gray.",
         "Vertical only when Figma shows left timeline."
@@ -151,12 +157,18 @@
       "description": "Mid or end conversion band.",
       "component": "components/blocks/CtaBand.tsx",
       "props": {
-        "title": { "type": "string", "required": true },
+        "title": { "type": "string", "required": false },
         "subtitle": { "type": "string", "required": false },
         "primaryCta": { "type": "cta", "required": true },
         "secondaryCta": { "type": "cta", "required": false }
       },
-      "contentRules": ["One dominant action; secondary is optional and quieter."],
+      "defaults": {
+        "title": "Ready to start trading?"
+      },
+      "contentRules": [
+        "Section H2 is owned by the block (default “Ready to start trading?”).",
+        "One dominant action; secondary is optional and quieter."
+      ],
       "tokenDependencies": ["semantic.color.action", "typography", "space"]
     },
     {
@@ -166,11 +178,15 @@
       "component": "components/blocks/LogoMarquee.tsx",
       "figma": "24400:153845",
       "props": {
-        "title": { "type": "string", "required": true },
+        "title": { "type": "string", "required": false },
         "subtitle": { "type": "string", "required": false },
         "providers": { "type": "array", "required": true, "item": "string", "minItems": 2 }
       },
+      "defaults": {
+        "title": "Our Funding Methods"
+      },
       "contentRules": [
+        "Section H2 is owned by the block (default “Our Funding Methods”).",
         "Use only funding methods confirmed for the landing's target jurisdiction.",
         "Replace provider text with approved brand assets when the asset bundle is available."
       ],

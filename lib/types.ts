@@ -108,7 +108,8 @@ export type LandingBlock =
     }
   | {
       type: "cta";
-      title: string;
+      /** Omit to use block default “Ready to start trading?” */
+      title?: string;
       subtitle?: string;
       primaryCta: LandingCta;
       secondaryCta?: LandingCta;
@@ -121,6 +122,7 @@ export type LandingBlock =
     }
   | {
       type: "steps";
+      /** Omit to use block default “How It Works”. */
       title?: string;
       subtitle?: string;
       items: Array<{
@@ -143,7 +145,8 @@ export type LandingBlock =
   | {
       /** Funding-method logo row. Provider names are content; visual shell is shared. */
       type: "logo-marquee";
-      title: string;
+      /** Omit to use block default “Our Funding Methods”. */
+      title?: string;
       subtitle?: string;
       providers: string[];
     };
