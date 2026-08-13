@@ -68,18 +68,36 @@ These three are the teaching examples for “same block, different content”:
 
 | # | Section (intent) | Figma pieces | Repo today | Reuse notes |
 |---|------------------|--------------|------------|-------------|
-| 0 | Chrome | Header_Desktop / Header_Mobile | `SiteHeader` | Sticky; Material menu/search on mobile |
-| 1 | Hero | H1 + lead + primary CTA + hero visual/animation | `hero` + optional `brandBackground` | **Mobile reorders** (see below) |
-| 2 | Social proof | Trustpilot / TV / Google ratings; video/award tiles | — | `ratings-strip`, media carousel planned |
-| 3 | **Our spreads** | Tabs + TV_Card row / mobile stack | `spread-cards` planned | Canonical: `27873:297368` — **not** markets table |
-| 4 | Why different | USP cards rail | `features` + `variant: "usp"` | Desktop scroll if >4; mobile **carousel + dots** |
-| 5 | **How it works** | Title + vertical steps + dual CTAs + device visual | `steps` | Canonical: `31517:366918` split |
-| 6 | Funding methods | Logo marquee | — | `logo-marquee` planned |
-| 7 | Markets / lowest cost | Instrument cards row | instrument sizes only | `instrument` cards planned |
-| 8 | Platforms | Tabs + copy + Accordion cards + mock | — | accordion + platform section planned |
-| 9 | Download / apps | Store / platform downloads | — | planned |
-| 10 | Reviews / video | Awards, video, social | — | planned |
-| 11 | **Ready to start** + footer | CTAFooter + mega footer | `SiteFooter` + `cta` | Canonical CTA: top of Footer instance |
+| 0 | Chrome | Header_Desktop / Header_Mobile | `SiteHeader` | Sticky; Material menu/search on mobile. Header **57** / pad **16** |
+| 1 | Hero | H1 + lead + primary CTA + hero visual/animation | `hero` + optional `brandBackground` | **Mobile reorders** (P7). Compact centered Primary **162×44** — not full-bleed |
+| 2 | Social proof | Trustpilot / TV / Google ratings; video/award tiles | — | Mobile: ratings **overflow-x**; video 343×190 then award 343×190 + **Navigate** dots. `ratings-strip` + `media-carousel` planned |
+| 3 | **Our spreads** | Tabs + TV_Card row / mobile stack | `spread-cards` planned | Canonical: `27873:297368` — **not** markets table. Mobile: Tabs_Text overflow + **4× TV_Card-Mobile 343×118** |
+| 4 | Why different | USP cards rail | `features` + `variant: "usp"` | Desktop scroll if >4; mobile **carousel**: peek 250 / center 270 + dots |
+| 5 | **How it works** | Title + vertical steps + dual CTAs + device visual | `steps` | Canonical: `31517:366918` split. Mobile: title → phones visual → vertical steps → full-width dual CTA |
+| 6 | Funding methods | Logo marquee | `logo-marquee` | Mobile visible instance `28673:314863`: dark band, **two staggered logo rows** |
+| 7 | Markets / lowest cost | Instrument cards | `instrument-grid` planned | Mobile **2×3**, tiles **165×165**, gap 12 |
+| 8 | Platforms | Tabs + copy + Accordion cards + mock | `platforms` planned | Mobile: Tabs_Icon overflow → mock → body → accordion 343 |
+| 9 | Download / apps | Store / platform downloads | `download-bar` planned | Full-bleed **375×69**, horizontal scroll (sits under platforms) |
+| 10 | Reviews / video | Awards, video, social | planned | Bundled with §2 on mobile homepage |
+| 11 | **Ready to start** + footer | CTAFooter + mega footer | `SiteFooter` + `cta` | Mobile Footer instance `27873:296885` (~3068). CTA band = `CTAFooter-Mobile` when present |
+
+### Mobile AU stack (375 × ~10073) — measured `27873:296438`
+
+```text
+iOS chrome (Figma mock, skip)
+→ Header_Mobile 57
+→ hero (title → visual → compact CTA → lead)
+→ ratings overflow + video/award stack
+→ spread-cards (tabs overflow + TV stack)
+→ features usp carousel
+→ steps (visual + vertical + dual full-width CTA)
+→ logo-marquee (2-row ticker)
+→ instrument-grid 2×3
+→ platforms + download-bar
+→ Mobile Footer
+```
+
+Same **types** as desktop. Only layout mode and hero order change.
 
 Copy, entity (AU/EN), and which instruments appear are **content**, not new block types.
 

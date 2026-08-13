@@ -2749,6 +2749,13 @@ a {
     background: var(--component-step-inactive-bg);
   }
 
+  .ui-steps--scroll .ui-step--upcoming .ui-step__body,
+  .ui-steps--scroll .ui-step--done .ui-step__body,
+  .ui-steps--scroll .ui-step--current .ui-step__body {
+    opacity: 1;
+    transform: none;
+  }
+
   /* 375: static vertical process — do not pin / scroll-jack */
   .ui-steps-pin {
     height: auto;

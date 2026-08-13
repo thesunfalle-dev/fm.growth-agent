@@ -56,7 +56,7 @@ Shared table headers: `instrumentsColumns` or `defaultInstrumentsColumns`.
 
 ## Planned types (reserved names — do not invent synonyms)
 
-`spread-cards` · `instrument-grid` · `platforms` · `ratings-strip` · `tier-cards` · `download-bar` · `checklist-feature` · `comparison-table` · `bento-usp` · `education-split` · `testimonials` · `icon-feature-grid` · `notice-band` · `funding-card-grid` · `accordion-table` · `savings-calculator` · `leaderboard` · `calculator-tool` · `spreads-tool` · `tool-cards` · `review-rail` · `awards-strip` · `media-carousel` · `blog-card` · `newsletter-cta` · `jobs-list` · `stats`
+`spread-cards` · `instrument-grid` · `platforms` · `ratings-strip` · `tier-cards` · `download-bar` · `checklist-feature` · `comparison-table` · `bento-usp` · `education-split` · `testimonials` · `icon-feature-grid` · `notice-band` · `funding-card-grid` · `accordion-table` · `savings-calculator` · `leaderboard` · `calculator-tool` · `spreads-tool` · `tool-cards` · `review-rail` · `platform-crossnav` · `awards-strip` · `media-carousel` · `blog-card` · `newsletter-cta` · `jobs-list` · `stats`
 
 If a new Figma section matches one of these, implement that type. Do not create `reviews-v2` or a one-off CSS section.
 
@@ -73,6 +73,22 @@ equity-indices:
 ```
 
 Shared core: **header · market-hero · features · table · steps · footer**.
+
+### Shipped M1 mobile (375)
+
+Same types. Layout modes from `responsive-rules.md`, applied in shared CSS:
+
+| Block | Mobile mode on crypto / equity |
+|-------|--------------------------------|
+| Header | 57, mark-only, search + menu |
+| `market-hero` | stack; hug Primary/Light (~44); secondary hidden; quotes/TV slot 364 |
+| `features` usp | snap rail 250 + **Navigate dots** (desktop keeps arrows) |
+| `table` | 343 shell, sticky symbol, row 80, horizontal scroll |
+| `table` compare | horizontal scroll (not tabs — still one matrix) |
+| `logo-marquee` | same ticker, tighter gap |
+| `steps` | vertical + full-width dual CTA |
+| `faq` | 343 accordion, first open |
+| Footer CTA | 2-line title + stacked Primary / or / Secondary |
 
 ---
 

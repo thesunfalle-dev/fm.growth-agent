@@ -17,7 +17,7 @@ Fonts in code: **Plus Jakarta Sans** (nav, CTAs, titles) + **Roboto** (footer li
 | Mobile Menu Dropdown | `15781:20623` | partial (`details` panel) |
 | Footer desktop AU | `15866:27010` / `24400:154127` | **ready** 1:1 stacks (`SiteFooter`) |
 | Footer desktop EN | `23377:111177` | planned (legal content variant) |
-| Footer mobile AU/EN | `15977:21970` / `23368:105447` | responsive layout ready; full accordion planned |
+| Footer mobile AU/EN | `15977:21970` / `23368:105447` | responsive layout ready; **CTAFooter-Mobile** measured (`26258:282738`); full accordion planned |
 | Social icon set + TV badge | in footer | **ready** (SVG icons + TV badge) |
 
 ## Desktop header rules (frame)
@@ -72,6 +72,11 @@ Fonts in code: **Plus Jakarta Sans** (nav, CTAs, titles) + **Roboto** (footer li
 | Vertical padding | **60px** |
 | Horizontal padding | **16px** |
 | Placement | same: below CTA band |
+| CTA band | **CTAFooter-Mobile** (`26258:282738` / `26258:284540`): 2-line title “Ready to Start Trading?” → Primary **343×54** → “or” → Secondary **343×54**. Band height ~**350**. Pad 20 / 16 |
+| Link columns | Accordion planned (`15977:21970`); current code is a stacked responsive layout |
+| Instance | Homepage `27873:296885`, Forex `23570:104498`, Products `26258:282351`, Zero `26258:282744`, Demo `26258:284546`, Pro `26258:286399` |
+
+**Not every mobile page paints CTAFooter as a sibling** (Products / Pro / Homepage fold it into the Footer instance). Still one `SiteFooter` — do not add a `cta` block to compensate.
 
 ## Components
 

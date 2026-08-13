@@ -21,6 +21,33 @@ Same recipes as the desktop Markets + Accounts family. **Do not add new `type`s.
 
 Premium Program mobile is **not** in this batch.
 
+### Batch 2026-08-13b — Platforms + campaign landings (375)
+
+| # | Page | Node | Desktop twin | Recipe |
+|---|------|------|--------------|--------|
+| 1 | **MetaTrader 5 - Overview** | `28610:431315` | `28610:429700` | **P1** |
+| 2 | **MetaTrader 5 - Desktop** | `28610:433653` | `28758:144345` | **P2** |
+| 3 | **MetaTrader 5 - Web** | `28610:436099` | `28610:427712` | **P2** |
+| 4 | **BrokerChooser** | `29987:342224` | `29987:337918` | award landing |
+| 5 | **TradingView Promo / AU** | `29987:342421` | `29987:338113` | promo landing |
+| 6 | **TradingView** | `29987:342673` | `29987:340524` | platform landing |
+
+MT5 **device-Mobile** subpage (`28758:145875`) is **not** in this drop — treat it as P2 with store-button count = 2 (iOS/Android).
+
+### Batch 2026-08-13c — Funding / Conditions / About
+
+| # | Page (Figma name) | Node | What it actually is |
+|---|-------------------|------|---------------------|
+| 1 | Deposit Options - Desktop | `24400:153833` | **F1** canonical (already registered) |
+| 2 | Withdrawal Options - All Collapsed | `24400:157450` | **F1** (already registered) |
+| 3 | Deposit Options - Desktop | `24400:153171` | **F1 + Search** variant |
+| 4 | Trading Conditions / All Products | `25136:208578` | **C1** desktop (already registered) |
+| 5 | “Withdrawal Options - Mobile” | `25136:199688` | **C1 mobile** (name is wrong) |
+| 6 | Who We Are - Mobile | `29665:154696` | **A6** |
+| 7 | Why Fusion - AU Mobile | `29665:155074` | **A7** |
+
+Deposit / Withdrawal **375 frames are still missing**.
+
 **Cross-cutting 375 rules** live in `responsive-rules.md`. Per-recipe mobile stacks are under each recipe below.
 
 ---
@@ -245,7 +272,7 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 
 ### Recipe P1 — Platform overview (MT5 Overview)
 
-**Figma:** `28610:429700`  
+**Figma:** Desktop `28610:429700` / Mobile `28610:431315` (375 × 14100)  
 **Reuse for:** MT4 Overview, cTrader Overview, TradingView overview-style hubs.
 
 | # | Section | Pattern | Notes |
@@ -263,13 +290,30 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 | 11 | FAQs | `faq` | |
 | 12 | Footer | `cta` / footer | |
 
-**Rules:** Overview owns **download-bar + platforms tabs**. Device subpages (P2) reuse benefits without repeating full overview chrome.
+**Mobile (`28610:431315`):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Platform hero | `hero` | **Visual 280 → logo 32 + H1 → dual CTA 343×44 → long body**. Same family as account hero (visual first, CTAs before body) |
+| 2 | Download strip | `download-bar` | Full-bleed **375×69**, icon+label overflow (iOS / Android / Windows / Mac / Web) |
+| 3 | Choose your platform | `platforms` | Device mock 343 → **Tabs_Icon overflow** (Desktop/Mobile/Web) → H2 + body → **Store download buttons 343×40 stacked** (3 on Desktop tab) |
+| 4 | Platform features | `bento-usp` / `icon-feature-grid` | Featured visual USP **343×343** + compact icon+heading rows **343×70–100** (icon 24 left of title). Not the equal-USP carousel |
+| 5 | Checklist / Analyst | `checklist-feature` | Illustration 335 → H2 + body → **5 icon rows** → Primary 335×44. Second pass (Layout/6) repeats image + 4 icon rows |
+| 6 | Compare MT5 vs MT4 | `comparison-table` | H2 → **2 Tabs_Icon** + Comparison Table 343 (same as Zero vs Classic) |
+| 7 | Why trade MT5 | `features` usp | Title → **carousel** 250/270/250 + dots |
+| 8 | Reasons / accordion | `platforms` accordion | Mock + body + AccordionCard stack 343 |
+| 9 | How to open | `steps` | H2 + lead → **4 vertical steps** (not 3) |
+| 10 | Explore other platforms | `platform-crossnav` | **Platform Card carousel**: peek ~279 / center **320×518** + Navigate dots |
+| 11 | FAQs | `faq` | Centered “FAQs” + FAQ-Mobile |
+| 12 | Footer | footer | `Mobile Footer` |
+
+**Rules:** Overview owns **download-bar + platforms tabs**. Device subpages (P2) reuse benefits without repeating full overview chrome. `platform-crossnav` is **not** `instrument-grid` (different card: device mock + name + CTA).
 
 ---
 
 ### Recipe P2 — Platform device subpage (Desktop / Mobile / Web)
 
-**Figma:** Desktop `28758:144345`, Mobile `28758:145875`, Web `28610:427712`
+**Figma:** Desktop `28758:144345` / mobile `28610:433653`; Web `28610:427712` / mobile `28610:436099`; device-Mobile `28758:145875` (not in this drop).
 
 | # | Section | Pattern | Notes |
 |---|---------|---------|--------|
@@ -280,6 +324,18 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 | 5 | Explore other platforms | cross-link band | Same as overview |
 | 6 | FAQs | `faq` | |
 | 7 | Footer | `cta` / footer | |
+
+**Mobile P2 (`28610:433653` Desktop device; `28610:436099` Web — same skeleton):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Device hero | `hero` + store row | **Visual 280 → H1 + “Available on …” → Store download buttons 343×40 stacked** (Desktop = 3: Windows / Mac / Linux) → long body. Web swaps store row for a single open-web CTA |
+| 2 | About + features | `bento-usp` | Title + lead → featured USP **343×376** (copy + visual) then compact cards **343×128–176** stacked |
+| 3 | Checklist + stores | `checklist-feature` | Illustration 335 → H2 → icon rows → **2 store buttons 335×40** |
+| 4 | Second checklist | `checklist-feature` | Illustration → H2 + body → 5 icon rows → Primary 335×44 (Web may skip) |
+| 5 | Explore other platforms | `platform-crossnav` | Same Platform Card carousel as P1 |
+| 6 | FAQs | `faq` | FAQ-Mobile, first open |
+| 7 | Footer | footer | `Mobile Footer` |
 
 **Content knobs only between Desktop vs Mobile vs Web:** OS list, store buttons count (3 vs 2 vs web link), copy, hero image. **Structure is one recipe.**
 
@@ -375,28 +431,32 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 
 ### Recipe F1 — Funding methods (Deposit / Withdrawal)
 
-**Figma:** Deposit `24400:153833`, Withdrawal `24400:157450`  
-**Same structure; content + card set differs.**
+**Figma:** Deposit `24400:153833` (canonical) / Deposit **+ search** `24400:153171`; Withdrawal `24400:157450`  
+**Same structure; content + card set differs.** Search on the card grid is an optional prop, not a second recipe.
 
 | # | Section | Pattern | Notes |
 |---|---------|---------|--------|
 | 1 | Funding hero | `hero` + **funding logos** | H1 (“Our Deposit/Withdrawal Methods”) + multi-paragraph body + note lines + **Deposit & Withdrawals logo row** + Primary CTA + illustration |
-| 2 | Explore options | `funding-card-grid` (planned) | Title + lead + multi-row **Desktop Funding** cards (method logo, limits, time, notes) |
-| 3 | Process note (withdrawal) | `education-split` or short `notice-band` | “Simple & Secure Process” when present |
-| 4 | Information / FAQ | `faq` | “Information about Deposits/Withdrawals” |
-| 5 | Optional mid CTA | `cta` | |
+| 2 | Explore options | `funding-card-grid` (planned) | Title + lead + optional **Search bar 948×48** (`24400:153171`) + multi-row **Desktop Funding** cards (305×470, 4-col) |
+| 3 | Process note (withdrawal) | `education-split` or short `notice-band` | “Simple & Secure Process” — **hidden** on the All Collapsed withdrawal frame |
+| 4 | Information accordion | `education-split` + accordion | “Information about Deposits/Withdrawals”: title + lead **\|** AccordionCard column (not the page FAQ) |
+| 5 | FAQs | `faq` | Separate band after Information |
 | 6 | Footer | `cta` / footer | |
 
 **Rules:**  
 - Funding **cards** ≠ USP cards ≠ instrument tiles. Component: Desktop Funding.  
 - Hero logos = same family as homepage **logo-marquee** / deposit icons (content: method set).  
-- Deposit vs Withdrawal share recipe F1; only copy + card data change. Collapsed/expanded card state is UI, not a new type.
+- Deposit vs Withdrawal share recipe F1; only copy + card data change. Collapsed/expanded card state is UI, not a new type.  
+- **Search** is optional on `funding-card-grid`. `24400:153833` has no search; `24400:153171` does.  
+- Deposit / Withdrawal **mobile frames are not in this drop**.
+
+---
 
 ---
 
 ### Recipe C1 — Trading conditions hub / tabbed tables
 
-**Figma:** All Trading Products `25136:208578`, Commission Rates on Zero `25234:235840`  
+**Figma:** All Trading Products Desktop `25136:208578` / Mobile `25136:199688` *(Figma name “Withdrawal Options - Mobile” — content is C1)*; Commission Rates on Zero `25234:235840`  
 **Also applies to:** Session Time, Contract Spec, Margins, Spreads tool pages (same hub chrome).
 
 | # | Section | Pattern | Notes |
@@ -412,6 +472,16 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 - Accordion-wrapping-table is **not** plain `faq` (though it reuses FAQ-Desktop chrome for expand). Prefer pattern `accordion-table` = FAQ shell + nested DataTable.  
 - Commission/session/spec tables = `table` with different column schemas (already in Tables frame).  
 - Do not rebuild a new conditions layout per tab.
+
+**Mobile (`25136:199688`, 375 × 5214):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Conditions hero | `hero` | **Visual 280 → H1 → two body blocks** with inline Spreads Tool / Broker Comparison links. **No CTA** |
+| 2 | Explore | Tabs + `accordion-table` | H2 + lead → **Tabs_Text overflow-x (662)** → first category **open** (title + Forex-Mobile 343, header 54 / rows 80, inner scroll) → remaining categories **collapsed FAQ-Desktop 343×58** |
+| 3 | Footer | footer | `Mobile Footer` |
+
+Treat the Figma frame name as a label error. Do not register a withdrawal recipe from this node.
 
 ---
 
@@ -564,7 +634,7 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 
 ### Recipe A6 — Who We Are (brand story)
 
-**Figma:** `29665:152363`
+**Figma:** Desktop `29665:152363` / Mobile `29665:154696`
 
 | # | Section | Pattern | Notes |
 |---|---------|---------|--------|
@@ -575,13 +645,27 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 | 5 | FAQs (optional) | `faq` | |
 | 6 | Footer | `cta` / footer | |
 
-**Rules:** Story pages stack **education-split** + hero variants; don’t invent free-form layouts.
+**Mobile (`29665:154696`, 375 × 8929):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Brand hero | `hero` | **Visual 280×200 → H1 + long body**. Primary is **hidden** — story hero, no CTA |
+| 2 | Founder quote | `testimonials` / quote band | Quote 343 + avatar **65** + name/title |
+| 3 | Our Mission | `tier-cards` / content card + dots | Title + lead → **Content Card 343×371** (illustration 180 + heading + body) + Navigate — carousel if more slides |
+| 4 | Our Vision | `education-split` | Title + long copy only |
+| 5 | Our Values | `features` usp | Title + lead → **USP carousel** 256 / 270 / 256 + dots |
+| 6 | Our Story | `education-split` | H2 → image **280×210** → two long paragraphs |
+| 7 | Our Community | `media-carousel` | Title + lead → **Careers Carousel 280** + peek 260 + dots |
+| 8 | FAQs | `faq` | FAQ-Mobile, first open |
+| 9 | Footer | footer | `Mobile Footer` |
+
+**Rules:** Story pages stack **education-split** + hero variants; don’t invent free-form layouts. Values use the equal-USP carousel, not the Why Fusion stacked bento.
 
 ---
 
 ### Recipe A7 — Why Fusion (brand USP)
 
-**Figma:** `29665:152206`
+**Figma:** Desktop `29665:152206` / Mobile `29665:155074`
 
 | # | Section | Pattern | Notes |
 |---|---------|---------|--------|
@@ -590,7 +674,16 @@ Same platform-device recipe applies to **MT4** Desktop/Mobile (and cTrader / Tra
 | 3 | Trust / regulation | `features` or trust strip | e.g. ASIC mention |
 | 4 | Footer | `cta` / footer | |
 
-**Rules:** Equal rail on other pages = `features` usp; this page’s unequal grid = `bento-usp`. Same USP card atoms.
+**Mobile (`29665:155074`, 375 × 6561):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Brand hero | `hero` | **Image 266×250 → H1 → long body**. No CTA (hidden) |
+| 2 | Why choose Fusion | `bento-usp` | **Full-width stack**, not carousel: featured card **343×374** (image + title + body) then compact cards **343×144–242**. Same atoms as Fusion Pro compact USP |
+| 3 | Our Licenses | `tier-cards` / trust card | Title + lead → **one Content Card 343×372** (flag 32 + regulator name + body) + footnote. Extra flag art peeks the card |
+| 4 | Footer | footer | `Mobile Footer` |
+
+**Rules:** Equal rail on other pages = `features` usp; this page’s unequal grid = `bento-usp`. Same USP card atoms. Do **not** turn A7 into the Who We Are values carousel.
 
 ---
 

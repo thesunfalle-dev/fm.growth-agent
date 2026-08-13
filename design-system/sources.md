@@ -24,6 +24,36 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-13 — Funding / Conditions / About (mix D+M)
+
+| Page | Node | Note |
+|------|------|------|
+| Deposit Options - Desktop | `24400:153833` | F1 already registered |
+| Withdrawal Options - All Collapsed | `24400:157450` | F1 already registered |
+| Deposit Options - Desktop (+ Search) | `24400:153171` | F1 variant: Search bar on card grid |
+| Trading Conditions / All Products | `25136:208578` | C1 already registered |
+| “Withdrawal Options - Mobile” | `25136:199688` | **C1 mobile** (Figma name wrong) |
+| Who We Are - Mobile | `29665:154696` | A6 |
+| Why Fusion - AU Mobile | `29665:155074` | A7 |
+
+- Deposit/Withdrawal 375 still missing.
+- Actor: agent + user
+
+### 2026-08-13 — Mobile 375 ingest (platforms + campaign landings)
+
+| Page | Node |
+|------|------|
+| MetaTrader 5 - Overview | `28610:431315` |
+| MetaTrader 5 - Desktop | `28610:433653` |
+| MetaTrader 5 - Web | `28610:436099` |
+| BrokerChooser | `29987:342224` |
+| TradingView Promo / AU | `29987:342421` |
+| TradingView | `29987:342673` |
+
+- Recipes P1 / P2 + award / promo / platform landings. New planned type `platform-crossnav` (Platform Card carousel).
+- Hero orders extended: campaign title→visual→body→CTA; P2 store-button stack.
+- Actor: agent + user
+
 ### 2026-08-13 — Mobile 375 ingest (homepage + markets + accounts)
 
 | Page | Node |

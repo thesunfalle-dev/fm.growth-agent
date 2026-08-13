@@ -40,7 +40,7 @@ Components: `components/ui/DataTable.tsx` (+ cells helpers)
 
 Not all coded yet — foundation covers **markets data table** (header + rows). Full catalog in extract:
 
-- Markets: Forex, Metals, Indices, Energy, Crypto, US Shares (+ mobile)
+- Markets: Forex, Metals, Indices, Energy, Crypto, US Shares (+ **Forex-Mobile** 343 / header 54 / rows 80 — see `responsive-rules.md`)
 - Conditions: Commission, Session Time, Contract Spec, Margin & Leverage
 - Comparison / Zero vs Classic / Pro criteria
 - Partner charts, Refer a Friend

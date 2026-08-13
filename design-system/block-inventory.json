@@ -403,6 +403,12 @@
       "figmaPages": ["29665:153626 What others say"]
     },
     {
+      "type": "platform-crossnav",
+      "status": "planned",
+      "description": "Explore other platforms: Platform Card carousel (device mock + name + CTA). Not instrument-grid tiles.",
+      "figmaPages": ["28610:432230 MT5 Overview Explore our other Platforms"]
+    },
+    {
       "type": "awards-strip",
       "status": "planned",
       "description": "Award crests marquee and/or award spotlight cards with year tabs.",

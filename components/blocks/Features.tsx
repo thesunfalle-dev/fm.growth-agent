@@ -32,7 +32,7 @@ type FeaturesProps = {
 
 /**
  * USP / features section.
- * Why Trade… SoT: soft purple band + USP carousel (max 4 visible, edge-bleed + arrows).
+ * Why Trade… SoT: soft purple band + USP carousel (desktop arrows; 375 dots).
  */
 export function Features({
   title,

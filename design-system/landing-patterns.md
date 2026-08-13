@@ -25,7 +25,7 @@ All share: **Header → body sections → Footer (with Ready CTA)**. Entity/AU/E
 | Pattern | Desktop | Mobile |
 |---------|---------|--------|
 | **Chrome** | Header_Desktop 80 | Header_Mobile 57 |
-| **Hero** | Split: copy left + visual right; often dual CTA; **market** hero may use **Primary/Light** on brand BG + chart card | Title → body → CTA → chart/media (or title → media → copy) |
+| **Hero** | Split: copy left + visual right; often dual CTA; **market** hero may use **Primary/Light** on brand BG + chart card | **Recipe-specific** — home title→visual→compact CTA; account visual→title→full-width CTA; market title→lead→hug Light CTA→343×364 slot |
 | **Section rhythm** | ~120 pad, content ~1280 / gutter 80 | 16 side pad, content 343 |
 | **Spreads / instruments** | Tabs + TV card **row** or instrument row | Tabs overflow + TV **stack**; instruments **2×3 grid** |
 | **USP** | 4 cards equal row, rail, or **bento grid** | Carousel + dots **or** full-width stack |
@@ -54,12 +54,14 @@ Hero mobile order often: **visual mid-stack before/around CTAs**. Market pages a
 
 **No** How it works, funding marquee, platform accordion on this page (leaner than homepage/TV).
 
-### Adaptive notes
-- Hero: partner mark above title; image 540×531 desktop / 280×275 mobile  
-- Dual CTA: side-by-side 224px desktop → full width 343 stack mobile  
-- Reviews: desktop multi-card rail; mobile same rail, narrower cards (~280)  
-- Spreads: same as homepage pattern (row vs stack)  
-- Instruments: desktop 6-up; mobile **2-col grid** 165×165  
+### Adaptive notes (measured `29987:342224`)
+- Hero: partner mark **215×28** → H1 → image **280×275** → body → dual CTA **343×40** stacked  
+- Reviews: title + lead → Trustpilot header → **review cards 280×322** horizontal overflow (no wrap)  
+- Spreads: Tabs_Text overflow + **5× TV_Card-Mobile 343×118** + link + **compact Primary 163×44 centered** (not full-bleed)  
+- Instruments: **2×3** 165×165, gap 12  
+- USP: carousel peek 256 / center 270 + dots  
+- No steps / FAQ / download bar on this landing  
+- Footer: `Mobile Footer` only  
 
 ### Reuse for similar campaigns
 Award / “as seen on BrokerChooser / review site” landings:  
@@ -90,10 +92,15 @@ Award / “as seen on BrokerChooser / review site” landings:
 - **Tier cards** = content cards with Material/leading icon (`upcoming`, `insights`, `star_rate` style) — not USP illustrations  
 - Promo has **repeat dual CTA** after tiers (mobile)  
 
-### Adaptive notes
-- Hero mobile: title → image → offer text + T&Cs → CTAs  
-- Tier cards: desktop 3-col; mobile full-width stack  
-- Rest = homepage-like rails/grids  
+### Adaptive notes (measured `29987:342421`)
+- Hero: **H1 → image 280×222 → offer body + T&Cs link → dual CTA 343×40**. Title first (not account visual-first)  
+- Tier cards: **full stack** of 3 Content Cards 343 (294 / 270 / 270) + dual CTA under the stack. **Not** a carousel on the promo page  
+- Spreads: same TV stack as homepage (5 cards)  
+- Steps: vertical 3 + dual CTA 343  
+- Funding: same 2-row overflowing logo ticker as homepage  
+- Instruments: 2×3 165  
+- No USP carousel / reviews / FAQ on this promo  
+- Footer: `Mobile Footer`  
 
 ### Reuse for similar campaigns
 Promo / “trade X get Y”:  
@@ -126,10 +133,17 @@ Promo / “trade X get Y”:
 - Fullest stack of the three; closest to homepage depth + platform focus  
 - FAQ at end before footer (landing-specific vs pure promo)  
 
-### Adaptive notes
-- Download bar always full bleed; mobile = horizontal icon+label scroller  
-- Feature checklist: desktop likely image | content; mobile image on top then list  
-- Subscription options on mobile: cards + **Navigate dots** (carousel) on full TV page  
+### Adaptive notes (measured `29987:342673`)
+- Hero: **H1 → image 280×280 → body → dual CTA 343×40** (title first)  
+- Download bar: full-bleed 375×69, TV for iOS/Android/Web/Windows/Mac/Linux  
+- Tiers: **one card + Navigate dots** (carousel) + dual CTA under the band — different from promo’s 3-card stack  
+- Why TV: USP carousel 250 / 270 / 250 + dots  
+- Checklist: image 335×251 → H2 + body → check rows → dual CTA 335×54  
+- Spreads: Tabs_Text overflow + 5× TV_Card-Mobile  
+- Steps: vertical 3 + dual CTA  
+- Reviews: same rail as BrokerChooser (280 cards, overflow)  
+- FAQ: accordion 335 (file uses FAQ-Desktop instances at mobile width)  
+- Footer: `Mobile Footer`  
 
 ### Reuse for similar campaigns
 Platform / product landings (MT4, cTrader, TV):  
@@ -235,18 +249,20 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 
 ## Adaptive checklist (landings)
 
-1. **Hero:** desktop split; mobile title → media → copy → full-width CTAs (dual stack).  
-2. **Dual CTA:** never squeeze two half-buttons on 375 — stack.  
-3. **Card rails (USP, reviews):** horizontal snap + arrows/dots on small screens.  
-4. **Quote/TV cards:** stack on mobile, row on desktop.  
-5. **Instruments:** 6-up desktop → **2×3** mobile (165).  
-6. **Tier cards:** row desktop → stack (or carousel) mobile.  
-7. **Download bar:** always allow horizontal scroll on mobile.  
-8. **Section padding / gutters:** 120/80 desktop, 60/16 mobile.  
-9. **Comparison tables:** multi-column desktop → **tabs + one panel** mobile.  
-10. **Bento USP:** unequal grid desktop → single-column stack mobile.  
-11. **Market hero CTA:** Primary/**Light** when on dark brand BG.  
-12. **Steps:** horizontal process on desktop may flip to vertical on mobile.
+Measured 2026-08-13 — full contract in `responsive-rules.md`.
+
+1. **Hero is not one order.** Home: title → visual → **compact** CTA → lead. Account / MT5 overview: **visual → title → full-width CTA stack → body**. Market: title → lead → hug Light CTA → 343×364 slot. **Campaign (award/promo/TV):** title (optional partner) → visual → body (+ T&Cs) → full-width dual CTA.  
+2. **Dual CTA:** never squeeze two half-buttons on 375 — stack 343. Homepage hero is the exception (single 162 centered).  
+3. **Equal USP rails:** snap carousel (peek 250 / center 270) + dots. **Compact benefit lists** stack 343×134.  
+4. **Quote/TV cards:** stack 343×118 on mobile, row on desktop.  
+5. **Instruments:** 6-up desktop → **2×3** mobile (**165×165**, gap 12).  
+6. **Tier cards:** row desktop → stack 335 mobile.  
+7. **Download bar:** full-bleed 375×69, horizontal scroll.  
+8. **Section padding / gutters:** 120/80 desktop, **60/16** mobile (content **343**).  
+9. **Comparison:** Zero = **tabs + one panel**; Pro = **two stacked tables**, no tabs.  
+10. **Bento USP:** unequal grid desktop → illustration + stacked compact cards.  
+11. **Market hero CTA:** Primary/**Light**, **hug width** (~163), not 343.  
+12. **Steps:** any desktop orientation → **vertical** on 375.
 
 ---
 

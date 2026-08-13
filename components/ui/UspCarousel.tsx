@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Children,
   useCallback,
   useEffect,
   useRef,
@@ -14,13 +15,15 @@ type UspCarouselProps = {
 };
 
 /**
- * USP card rail — Figma Final Pages `29987:341441`
- * Horizontal scroll, cards peek off the right edge, prev/next arrows bottom-left.
+ * USP card rail — desktop arrows (Figma `29987:341441`);
+ * mobile snap + Navigate dots (Forex / homepage 375).
  */
 export function UspCarousel({ children }: UspCarouselProps) {
   const railRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
+  const [active, setActive] = useState(0);
+  const count = Children.count(children);
 
   const updateNav = useCallback(() => {
     const el = railRef.current;
@@ -29,6 +32,20 @@ export function UspCarousel({ children }: UspCarouselProps) {
     const left = el.scrollLeft;
     setCanPrev(left > 4);
     setCanNext(left < max - 4);
+
+    const midpoint = left + el.clientWidth / 2;
+    let best = 0;
+    let bestDist = Number.POSITIVE_INFINITY;
+    Array.from(el.children).forEach((child, index) => {
+      const card = child as HTMLElement;
+      const center = card.offsetLeft + card.offsetWidth / 2;
+      const dist = Math.abs(center - midpoint);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = index;
+      }
+    });
+    setActive(best);
   }, []);
 
   useEffect(() => {
@@ -54,6 +71,14 @@ export function UspCarousel({ children }: UspCarouselProps) {
       ? card.getBoundingClientRect().width + 24
       : el.clientWidth * 0.75;
     el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  const scrollToIndex = (index: number) => {
+    const el = railRef.current;
+    const card = el?.children[index] as HTMLElement | undefined;
+    if (!el || !card) return;
+    const left = card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
+    el.scrollTo({ left: Math.max(left, 0), behavior: "smooth" });
   };
 
   return (
@@ -87,6 +112,25 @@ export function UspCarousel({ children }: UspCarouselProps) {
           <Icon name="east" size={24} />
         </button>
       </div>
+      {count > 1 ? (
+        <div className="ui-usp-carousel__dots" role="tablist" aria-label="USP cards">
+          {Array.from({ length: count }, (_, index) => (
+            <button
+              key={index}
+              type="button"
+              role="tab"
+              aria-selected={index === active}
+              aria-label={`Show card ${index + 1}`}
+              className={
+                index === active
+                  ? "ui-usp-carousel__dot ui-usp-carousel__dot--on"
+                  : "ui-usp-carousel__dot"
+              }
+              onClick={() => scrollToIndex(index)}
+            />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
