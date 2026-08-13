@@ -178,7 +178,7 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `market-hero` |
 | **Intent** | Above-the-fold for a single market (Forex, Crypto, Gold…). |
-| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; optional right indicative market card and rating summary. |
+| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **599×480** indicative card (TV-card slot; live chart still planned) and optional rating summary. |
 | **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; optional `quote` and `trustpilot` summary. A live chart remains a separate future integration. |
 | **Canonical Figma** | Forex Market Header `23570:104257`; Gold EN `29987:341692`; Crypto CFDs page same family |
 | **Also seen on** | Metals / Indices / Energy / US Share market pages |

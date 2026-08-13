@@ -59,7 +59,18 @@ export function MarketHero({
                     <span>{quote.period}</span>
                   </div>
                   <strong>{quote.price}</strong>
-                  <span className={`ui-market-hero__change ui-market-hero__change--${quote.tone ?? "positive"}`}>{quote.change}</span>
+                  {quote.change ? (
+                    <span
+                      className={[
+                        "ui-market-hero__change",
+                        quote.tone ? `ui-market-hero__change--${quote.tone}` : "",
+                      ]
+                        .filter(Boolean)
+                        .join(" ")}
+                    >
+                      {quote.change}
+                    </span>
+                  ) : null}
                 </div>
               ) : null}
               {trustpilot ? (

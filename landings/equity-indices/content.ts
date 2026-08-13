@@ -56,14 +56,17 @@ const landing: LandingDocument = {
       title: "Our Equity Index CFD Products",
       showSearch: true,
       columns: [
-        { id: "symbol", header: "Symbol", align: "left" },
-        { id: "minimum", header: "Minimum Spread", align: "center" },
-        { id: "average", header: "Average Spread", align: "center" },
+        { id: "symbol", header: "Symbol", width: "400px", align: "left" },
+        { id: "minimum", header: "Minimum Spread", width: "200px", align: "center" },
+        { id: "average", header: "Average Spread", width: "200px", align: "center" },
       ],
       rows: [
         ["AUS200", "0.8", "1.14"], ["CA60", "0.2", "0.35"], ["CHINAH", "1.6", "2.00"],
         ["E35", "2.1", "6.1"], ["EUSTX50", "0.2", "1.31"], ["FRA40", "0.2", "0.93"], ["GER40", "0.8", "1.22"],
-      ].map(([symbol, minimum, average]) => ({ id: symbol.toLowerCase(), cells: { symbol, minimum, average } })),
+      ].map(([symbol, minimum, average]) => ({
+        id: symbol.toLowerCase(),
+        cells: { symbol: { title: symbol }, minimum, average },
+      })),
       footnote: "Illustrative preview spreads only. Confirm live pricing in the Client Hub or Spreads Tool before trading.",
     },
     {

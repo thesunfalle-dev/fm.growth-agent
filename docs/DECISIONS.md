@@ -85,11 +85,19 @@ Agents told to familiarize must complete Tier 1 before large implementation.
 
 **Consequences:** More documentation when screens arrive; reusable blocks accumulate instead of per-slug freestyle.
 
+## 2026-08-13 — Plus Jakarta Sans is the heading/CTA family
+
+**Context:** An earlier Typography-frame read recorded Noto Sans. Deposit Options Desktop `24400:153833` and Market Header `23570:104257` use **Plus Jakarta Sans** for display, headings, nav and CTA; Roboto remains body.
+
+**Decision:** Headings/CTA/nav = **Plus Jakarta Sans**. Body/captions/tables = **Roboto**. This supersedes the Noto Sans pair from the same-day Website Redesign entry below.
+
+**Consequences:** `layout.tsx` loads Plus Jakarta + Roboto only. Agents must not “correct” one landing back to Noto.
+
 ## 2026-08-12 — Website Redesign FM 2.0 is marketing SoT
 
 **Context:** Client Hub Figma was provided first by mistake. Correct marketing DS is Website Redesign FM 2.0. Typography frame documents Noto Sans + Roboto.
 
-**Decision:** Marketing landings use **Website Redesign FM 2.0**. Fonts exactly as Typography frame: **Noto Sans** (headings/CTA) + **Roboto** (body).
+**Decision:** Marketing landings use **Website Redesign FM 2.0**. ~~Fonts exactly as Typography frame: **Noto Sans** (headings/CTA) + **Roboto** (body).~~ **Superseded 2026-08-13** — headings/CTA are Plus Jakarta Sans; body stays Roboto.
 
 **Consequences:** Only these two families are loaded and referenced in tokens.
 

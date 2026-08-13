@@ -33,7 +33,7 @@ export type TableRowSpec = {
 export type MarketHeroQuote = {
   label: string;
   price: string;
-  change: string;
+  change?: string;
   period: string;
   tone?: "positive" | "negative";
 };

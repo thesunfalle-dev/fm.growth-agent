@@ -239,6 +239,7 @@ export const tokenNames = [
   "--component-background-image-src",
   "--component-background-image-note",
   "--component-market-hero-min-height",
+  "--component-market-hero-padding-y",
   "--component-market-hero-copy-max-width",
   "--component-market-hero-lead-max-width",
   "--component-market-hero-panel-width",

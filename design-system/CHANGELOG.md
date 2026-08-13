@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-13 — Market landings share one hero/table chrome
+
+- Market Header panel is now the Figma TV-card slot: 599×480, 32px quote value, 40px vertical section pad. Crypto and Equity both fill that slot (BTC min spread from TZ; Equity keeps its approved indicative quote).
+- Market-hero copy uses one stack gap (24 / 40 to CTA). Optional bullets inherit lead type (Roboto Light 20) instead of a second B3 scale.
+- Equity instruments table uses the same symbol-cell anatomy as Crypto (title cell + shared column widths). No invented index names or icons.
+- Recorded Plus Jakarta + Roboto as the heading/body pair in DECISIONS + playbook so landings cannot drift back to Noto.
+
 ## 2026-08-13 — Shared market landing foundation
 
 - Added ready `market-hero` block from Market Header `23570:104257`: a common brand-background hero, 60px display title, 20px lead, shared CTA row, and optional indicative market/rating panel.

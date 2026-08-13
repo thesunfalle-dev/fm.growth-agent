@@ -38,6 +38,12 @@ const landing: LandingDocument = {
         label: "Try a free demo",
         href: "https://hub.fusionmarkets.com/auth/sign-up",
       },
+      quote: {
+        label: "Bitcoin",
+        price: "0.04%",
+        change: "Minimum spread",
+        period: "Indicative",
+      },
     },
 
     // —— 2. USP card structure (Figma); 6 points from TZ ——

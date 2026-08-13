@@ -300,14 +300,15 @@
       "note": "Shared brand purple art — use consistently for most backgrounds"
     },
     "marketHero": {
-      "minHeight": "510px",
+      "minHeight": "560px",
+      "paddingY": "40px",
       "copyMaxWidth": "555px",
       "leadMaxWidth": "431px",
       "panelWidth": "599px",
-      "panelMinHeight": "240px",
+      "panelMinHeight": "480px",
       "panelRadius": "24px",
       "panelPadding": "40px",
-      "quoteValueSize": "40px",
+      "quoteValueSize": "32px",
       "providerGap": "40px",
       "providerSize": "20px"
     },

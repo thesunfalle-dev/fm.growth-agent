@@ -238,14 +238,15 @@
   --component-illustration-default-size: 180px;
   --component-background-image-src: /images/backgrounds/bg-default.png;
   --component-background-image-note: Shared brand purple art — use consistently for most backgrounds;
-  --component-market-hero-min-height: 510px;
+  --component-market-hero-min-height: 560px;
+  --component-market-hero-padding-y: 40px;
   --component-market-hero-copy-max-width: 555px;
   --component-market-hero-lead-max-width: 431px;
   --component-market-hero-panel-width: 599px;
-  --component-market-hero-panel-min-height: 240px;
+  --component-market-hero-panel-min-height: 480px;
   --component-market-hero-panel-radius: 24px;
   --component-market-hero-panel-padding: 40px;
-  --component-market-hero-quote-value-size: 40px;
+  --component-market-hero-quote-value-size: 32px;
   --component-market-hero-provider-gap: 40px;
   --component-market-hero-provider-size: 20px;
   --component-faq-border: var(--primitive-color-blue100);

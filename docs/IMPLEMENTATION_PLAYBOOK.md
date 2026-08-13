@@ -119,12 +119,12 @@ From Figma (design context or inspect):
 
 ### Fonts
 
-| Figma often shows | Repo uses |
-|-------------------|-----------|
-| Plus Jakarta Sans | **Noto Sans** (headings / CTA) |
-| Roboto | **Roboto** (body / links) |
+| Role | Repo uses |
+|------|-----------|
+| Display / headings / CTA / nav | **Plus Jakarta Sans** (500/600/700) |
+| Body / captions / tables | **Roboto** (300/400/500/700) |
 
-Do **not** load Plus Jakarta unless a decision record changes `DECISIONS.md`. Document “Noto substitutes Jakarta” when comparing.
+Do **not** load Noto Sans or invent a third family. Deposit Options / Market Header Figma is Plus Jakarta + Roboto.
 
 ### Colors
 
