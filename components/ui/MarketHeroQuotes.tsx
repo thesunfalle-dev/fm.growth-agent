@@ -69,7 +69,6 @@ export function MarketHeroQuotes({ rows }: { rows: MarketHeroQuoteRow[] }) {
 
   useEffect(() => {
     setLive(initial);
-    setActiveId(initial[0]?.id ?? "");
   }, [initial]);
 
   useEffect(() => {
@@ -95,7 +94,7 @@ export function MarketHeroQuotes({ rows }: { rows: MarketHeroQuoteRow[] }) {
   const priceKey = `${active.id}-${armed ? active.bid : "seed"}`;
 
   return (
-    <div className="ui-tv-card">
+    <div className="ui-tv-card" data-tab-mode="manual">
       <div className="ui-tv-card__quote">
         <div className="ui-tv-card__pair">
           {active.iconSrc || active.iconSrcSecondary ? (
