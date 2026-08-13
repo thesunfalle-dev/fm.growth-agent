@@ -4,7 +4,7 @@
 
 Extract: `figma/extract-2026-08-12-header-footer.json`
 
-Fonts in code: **Noto Sans** (nav, CTAs, titles) + **Roboto** (footer links, body). Plus Jakarta Sans appears in Figma published styles and is **ignored**.
+Fonts in code: **Plus Jakarta Sans** (nav, CTAs, titles) + **Roboto** (footer links, body). Header and footer are global chrome — one `SiteHeader` / `SiteFooter` for every slug.
 
 ## Catalog
 

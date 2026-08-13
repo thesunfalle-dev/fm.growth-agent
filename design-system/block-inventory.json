@@ -123,6 +123,7 @@
       },
       "defaults": {
         "title": "How It Works",
+        "subtitle": "Opening a trading account with Fusion Markets is simple:",
         "orientation": "horizontal"
       },
       "contentRules": [

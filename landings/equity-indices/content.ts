@@ -1,3 +1,4 @@
+import { instrumentsColumns, sharedCtas } from "@/lib/block-defaults";
 import type { LandingDocument } from "@/lib/types";
 
 /** Equity Indices CFDs — content from USER STORY - Equity Indices Landing Page. */
@@ -24,7 +25,6 @@ const landing: LandingDocument = {
         "Take advantage of our tight spreads",
         "No deposit fees and no minimum account size",
       ],
-      primaryCta: { label: "Start trading", href: "https://hub.fusionmarkets.com/auth/sign-up" },
       quote: {
         label: "US500",
         price: "5,214.6",
@@ -56,9 +56,9 @@ const landing: LandingDocument = {
       title: "Our Equity Index CFD Products",
       showSearch: true,
       columns: [
-        { id: "symbol", header: "Symbol", width: "400px", align: "left" },
-        { id: "minimum", header: "Minimum Spread", width: "200px", align: "center" },
-        { id: "average", header: "Average Spread", width: "200px", align: "center" },
+        instrumentsColumns.symbol,
+        instrumentsColumns.minimum,
+        instrumentsColumns.average,
       ],
       rows: [
         ["AUS200", "0.8", "1.14"], ["CA60", "0.2", "0.35"], ["CHINAH", "1.6", "2.00"],
@@ -76,14 +76,13 @@ const landing: LandingDocument = {
     },
     {
       type: "steps",
-      subtitle: "Opening a trading account with Fusion Markets is simple:",
       items: [
         { title: "Enter personal details", description: "Fill in your personal details in our secure online application.", active: true },
         { title: "Verify your identity", description: "Confirm your ID electronically or by submitting supporting documents." },
         { title: "Start trading", description: "Fund your account and start trading equity index CFDs." },
       ],
-      primaryCta: { label: "Try a free demo", href: "https://hub.fusionmarkets.com/auth/sign-up" },
-      secondaryCta: { label: "Get a live account", href: "https://hub.fusionmarkets.com/auth/sign-up" },
+      primaryCta: sharedCtas.tryDemo,
+      secondaryCta: sharedCtas.getLiveAccount,
     },
   ],
 };

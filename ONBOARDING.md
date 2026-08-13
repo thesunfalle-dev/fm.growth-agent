@@ -26,13 +26,14 @@
 
 | # | File | Why |
 |---|------|-----|
-| 8 | `design-system/pattern-catalog.md` | Reusable section patterns |
-| 9 | `design-system/landing-patterns.md` | Campaign recipes (market/crypto stack) |
-| 10 | `design-system/page-recipes.md` | Full page stacks |
-| 11 | `design-system/header-footer.md` | SiteHeader / SiteFooter chrome |
-| 12 | `design-system/implementation-contract.md` | Token-only styling rules |
-| 13 | `design-system/sources.md` | Figma provenance |
-| 14 | `brand/compliance.md` | Claims / legal before publish copy |
+| 8 | `design-system/shared-blocks.md` | What crypto / indices already share — reuse before inventing |
+| 9 | `design-system/pattern-catalog.md` | Reusable section patterns |
+| 10 | `design-system/landing-patterns.md` | Campaign recipes (market/crypto stack) |
+| 11 | `design-system/page-recipes.md` | Full page stacks |
+| 12 | `design-system/header-footer.md` | SiteHeader / SiteFooter chrome |
+| 13 | `design-system/implementation-contract.md` | Token-only styling rules |
+| 14 | `design-system/sources.md` | Figma provenance |
+| 15 | `brand/compliance.md` | Claims / legal before publish copy |
 
 ## Tier 3 — when the task touches them
 

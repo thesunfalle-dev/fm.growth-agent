@@ -26,22 +26,26 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 ### Recipe M1 — Market product (Forex template)
 
 **Figma:** Forex - Desktop `23570:104143`  
-**Reuse for:** Crypto CFDs, Metals, Indices, Energy, US Share (same skeleton).
+**Reuse for:** Crypto CFDs, Metals, Indices, Energy, US Share (same skeleton).  
+**Shipped:** `landings/crypto`, `landings/equity-indices` — see `shared-blocks.md`.
 
 | # | Section (intent) | Pattern `type` | Structure notes |
 |---|------------------|----------------|-----------------|
-| 0 | Chrome | header/footer | Header_Desktop |
-| 1 | Market header | `market-hero` | BG Image + H1 + pitch + **Primary/Light** + **TV-Desktop** chart card |
-| 2 | What is [market]? | `education-split` | Icon/Key Icons + title **\|** multi-paragraph body (Layout / 3) |
-| 3 | Why trade [market] | `features` usp | 4× USP Cards - Desktop row |
-| 4 | Our … instruments | `table` + tabs | H2 + **Tabs_Text** + Markets DataTable (Forex-Desktop rows) + footnote |
-| 5 | FAQs | `faq` | FAQ-Desktop accordion |
-| 6 | Ready to start + mega footer | `cta` / footer | Footer instance (CTAFooter) |
+| 0 | Chrome | `SiteHeader` / `SiteFooter` | Always from `layout.tsx`. Never in `content.ts`. |
+| 1 | Market header | `market-hero` | BG Image + H1 + pitch + **Primary/Light** + 599×480 indicative panel (TV chart still planned) |
+| 2 | Why trade [market] | `features` usp | USP rail / carousel |
+| 3 | Our … instruments | `table` | Shared `instrumentsColumns` + TZ rows. Optional extra col (hours). |
+| 4 | How we compare | `table` compare | Optional. Crypto only today. |
+| 5 | Funding methods | `logo-marquee` | Optional. Equity only today. |
+| 6 | How It Works | `steps` | Default H2 + subtitle from `block-defaults`. |
+| 7 | FAQs | `faq` | Optional. Crypto only today. |
+| 8 | Ready to start + mega footer | footer CTA | Lives on `SiteFooter`. Do not add a second `cta` block. |
 
 **Rules:**  
 - Spreads-on-home (`spread-cards` TV cards) ≠ this instruments **table**.  
 - Hero is **market-hero**, not plain centered products hero.  
-- Content only: symbol list, FAQ Q&As, market name in titles.
+- Content only: symbol list, FAQ Q&As, market name in titles.  
+- Optional modules stay registered types — do not invent a parallel section.
 
 ---
 

@@ -29,7 +29,7 @@ type StepsBandProps = {
  */
 export function StepsBand({
   title = blockDefaults.steps.title,
-  subtitle,
+  subtitle = blockDefaults.steps.subtitle,
   items,
   orientation = blockDefaults.steps.orientation,
   mode = "light",

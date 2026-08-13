@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/ui/Logo";
-import { primaryNav } from "@/lib/navigation";
+import { hubSignIn, hubSignUp, primaryNav } from "@/lib/navigation";
 
 /**
  * Marketing site header — Website Redesign Header_Desktop / Header_Mobile.
@@ -29,12 +29,12 @@ export function SiteHeader() {
         <div className="ui-mkt-header__actions">
           <a
             className="ui-mkt-header__login"
-            href="https://hub.fusionmarkets.com/auth/sign-in"
+            href={hubSignIn}
           >
             Log In
           </a>
           <Button
-            href="https://hub.fusionmarkets.com/auth/sign-up"
+            href={hubSignUp}
             variant="primary"
             size="md"
           >
@@ -81,14 +81,14 @@ export function SiteHeader() {
               </ul>
               <div className="ui-mkt-header__mobile-actions">
                 <Button
-                  href="https://hub.fusionmarkets.com/auth/sign-in"
+                  href={hubSignIn}
                   variant="secondary"
                   size="md"
                 >
                   Log In
                 </Button>
                 <Button
-                  href="https://hub.fusionmarkets.com/auth/sign-up"
+                  href={hubSignUp}
                   variant="primary"
                   size="md"
                 >

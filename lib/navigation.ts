@@ -34,7 +34,10 @@ export const primaryNav: NavItem[] = [
 ];
 
 const fm = "https://fusionmarkets.com";
-const hub = "https://hub.fusionmarkets.com";
+export const hubUrl = "https://hub.fusionmarkets.com";
+const hub = hubUrl;
+export const hubSignIn = `${hub}/auth/sign-in`;
+export const hubSignUp = `${hub}/auth/sign-up`;
 
 /** Column 1 — Accounts / Markets / Tools / Conditions & Funding */
 export const footerStack1: FooterStack = [

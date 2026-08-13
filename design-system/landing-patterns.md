@@ -277,8 +277,9 @@ See **`assembly.md`** for Figma section → substitute map. Do **not** nest a ta
 `hero` → `features` usp → `steps` → `faq` → `cta` → `disclaimer`  
 (download bar / checklist = planned → skip)
 
-**D. Market / instrument** (M1 Forex template / Gold / crypto)  
-`hero` (`brandBackground`, Primary/Light primary, no chart) → `features` usp → `table` (instruments) → optional `table` (compare) → optional `steps` → `faq` → `disclaimer`  
-Footer CTAFooter covers “Ready to start” (skip duplicate end `cta`).
+**D. Market / instrument** (M1 Forex template / Gold / crypto / indices)  
+`market-hero` → `features` usp → `table` (instruments) → optional `table` compare → optional `logo-marquee` → `steps` → optional `faq`  
+Header + footer CTAFooter are global chrome (skip duplicate end `cta`).
 
-Reference implementation: `landings/crypto/content.ts`.
+Reuse map: `design-system/shared-blocks.md`.  
+Reference implementations: `landings/crypto/content.ts`, `landings/equity-indices/content.ts`.

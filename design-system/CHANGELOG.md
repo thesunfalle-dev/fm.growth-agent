@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-13 — Market landings reuse one block set
+
+- Recorded the shipped Crypto / Equity Indices reuse map in `design-system/shared-blocks.md`. Core stack: header · market-hero · features usp · instruments table · steps · footer.
+- Optional modules stay registered types: compare + FAQ (crypto), logo-marquee (equity).
+- Shared CTAs, hub URLs, and instruments column headers live in `lib/block-defaults.ts` / `lib/navigation.ts`. Header, footer, and both landings consume those defaults instead of pasting hrefs.
+
 ## 2026-08-13 — Block chrome is shared (How It Works first)
 
 - Added `lib/block-defaults.ts`: default H2s for `steps` (“How It Works”), `logo-marquee` (“Our Funding Methods”), `cta` (“Ready to start trading?”).

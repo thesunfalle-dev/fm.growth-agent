@@ -5,6 +5,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
+import { blockDefaults } from "@/lib/block-defaults";
 import type { LandingCta, MarketHeroQuote, MarketHeroTrustpilot } from "@/lib/types";
 
 type MarketHeroProps = {
@@ -24,7 +25,7 @@ export function MarketHero({
   title,
   subtitle,
   bullets,
-  primaryCta,
+  primaryCta = blockDefaults.marketHero.primaryCta,
   secondaryCta,
   quote,
   trustpilot,

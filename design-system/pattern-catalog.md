@@ -117,7 +117,7 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Section title + USP card grid/rail (illustration + title + body + optional learn more). |
 | **Content (props)** | `title`, `variant`, `items[]` (title, description, illustration, learnMore) |
 | **Canonical Figma** | Cards frame USP `15166:10610`; homepage “Why we’re different” |
-| **Also seen on** | Forex / Zero / Demo / Premium; MT5 Overview “Why Trade MT5 with Fusion” (equal rail) |
+| **Also seen on** | **Crypto CFDs**; **Equity Indices**; Forex / Zero / Demo / Premium; MT5 Overview “Why Trade MT5 with Fusion” (equal rail) |
 | **Rules** | `usp` only for Fusion USPs (Figma rule). >4 items → horizontal scroll desktop; carousel mobile. |
 | **Adaptive** | Rail / carousel per homepage patterns. |
 
@@ -149,7 +149,7 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Header + rows (DataTable), optional title/subtitle, scroll rules from Tables frame. |
 | **Content (props)** | `title`, `subtitle`, `columns`, `rows` |
 | **Canonical Figma** | Tables `15276:11158`; Commission Zero; **Margins & Leverage** `25317:260703`; **Contract Spec** `25136:201435` |
-| **Also seen on** | Market product pages; all Trading Conditions tab panels |
+| **Also seen on** | **Crypto** instruments + compare; **Equity Indices** instruments; Trading Conditions tab panels |
 | **Rules** | **Different from `spread-cards` / `spreads-tool`.** Expandable margin rows = table row variants (dropdown), not a new type. Stack multiple tables on one panel when Figma does (retail + pro). Wrap in accordion → `accordion-table`. |
 | **Adaptive** | Sticky header / max height scroll; mobile layouts planned for specialized tables. |
 
@@ -181,7 +181,7 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **599×480** indicative card (TV-card slot; live chart still planned) and optional rating summary. |
 | **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; optional `quote` and `trustpilot` summary. A live chart remains a separate future integration. |
 | **Canonical Figma** | Forex Market Header `23570:104257`; Gold EN `29987:341692`; Crypto CFDs page same family |
-| **Also seen on** | Metals / Indices / Energy / US Share market pages |
+| **Also seen on** | **Crypto CFDs**; **Equity Indices**; Metals / Energy / US Share market pages |
 | **Rules** | Same structure for every market; swap content + chart only. Do not embed instruments table in hero. |
 | **Adaptive** | Desktop: text left / chart right. Mobile: title → lead → CTA → chart. |
 

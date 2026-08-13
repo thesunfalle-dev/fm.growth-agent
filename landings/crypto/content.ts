@@ -1,3 +1,4 @@
+import { instrumentsColumns, sharedCtas } from "@/lib/block-defaults";
 import type { LandingDocument } from "@/lib/types";
 
 /**
@@ -30,14 +31,7 @@ const landing: LandingDocument = {
       title: "Trade Crypto CFDs No Commission",
       subtitle:
         "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more. Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
-      primaryCta: {
-        label: "Start trading",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
-      secondaryCta: {
-        label: "Try a free demo",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
+      secondaryCta: sharedCtas.tryDemo,
       quote: {
         label: "Bitcoin",
         price: "0.04%",
@@ -97,20 +91,10 @@ const landing: LandingDocument = {
       title: "Our crypto CFD instruments",
       showSearch: true,
       columns: [
-        { id: "symbol", header: "Symbol", width: "400px", align: "left" },
-        { id: "hours", header: "Trading Hours", width: "200px", align: "center" },
-        {
-          id: "minSpread",
-          header: "Minimum Spread",
-          width: "200px",
-          align: "center",
-        },
-        {
-          id: "avgSpread",
-          header: "Average Spread",
-          width: "200px",
-          align: "center",
-        },
+        instrumentsColumns.symbol,
+        instrumentsColumns.hours,
+        instrumentsColumns.minimum,
+        instrumentsColumns.average,
       ],
       rows: [
         {
@@ -122,8 +106,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/btc.png",
             },
             hours: "24/7",
-            minSpread: "0.04%",
-            avgSpread: "See live",
+            minimum: "0.04%",
+            average: "See live",
           },
         },
         {
@@ -135,8 +119,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/eth.svg",
             },
             hours: "24/7",
-            minSpread: "0.09%",
-            avgSpread: "See live",
+            minimum: "0.09%",
+            average: "See live",
           },
         },
         {
@@ -148,8 +132,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/doge.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -161,8 +145,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/sol.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -174,8 +158,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/ada.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         // Extra example rows so the instruments table scrolls (demo data)
@@ -188,8 +172,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/xrp.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -201,8 +185,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/ltc.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -214,8 +198,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/avax.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -227,8 +211,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/dot.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -240,8 +224,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/link.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -253,8 +237,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/matic.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
         {
@@ -266,8 +250,8 @@ const landing: LandingDocument = {
               iconSrc: "/images/markets/bnb.svg",
             },
             hours: "24/7",
-            minSpread: "See live",
-            avgSpread: "See live",
+            minimum: "See live",
+            average: "See live",
           },
         },
       ],
@@ -343,7 +327,6 @@ const landing: LandingDocument = {
     // —— 5. Steps process structure; onboarding copy for this campaign ——
     {
       type: "steps",
-      subtitle: "Opening a trading account with Fusion Markets is simple:",
       items: [
         {
           title: "Create your account",
@@ -364,14 +347,8 @@ const landing: LandingDocument = {
           active: false,
         },
       ],
-      primaryCta: {
-        label: "Start trading",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
-      secondaryCta: {
-        label: "Try a free demo",
-        href: "https://hub.fusionmarkets.com/auth/sign-up",
-      },
+      primaryCta: sharedCtas.startTrading,
+      secondaryCta: sharedCtas.tryDemo,
     },
 
     // —— 6. FAQ structure; Q&A from TZ ——

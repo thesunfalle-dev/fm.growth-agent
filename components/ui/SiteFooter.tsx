@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { blockDefaults, sharedCtas } from "@/lib/block-defaults";
 import {
   footerContact,
   footerLegalLinks,
@@ -37,22 +38,22 @@ export function SiteFooter() {
       {/* CTAFooter-Desktop — h~264, pad 80 outer / 40 inner content */}
       <div className="ui-mkt-footer__cta">
         <div className="ui-mkt-footer__cta-inner">
-          <h2 className="ui-mkt-footer__cta-title">Ready to start trading?</h2>
+          <h2 className="ui-mkt-footer__cta-title">{blockDefaults.cta.title}</h2>
           <div className="ui-mkt-footer__cta-actions">
             <Button
-              href="https://hub.fusionmarkets.com/auth/sign-up"
+              href={sharedCtas.startTrading.href}
               variant="primary"
               size="lg"
             >
-              Start trading
+              {sharedCtas.startTrading.label}
             </Button>
             <span className="ui-mkt-footer__or">or</span>
             <Button
-              href="https://hub.fusionmarkets.com/auth/sign-up"
+              href={sharedCtas.tryDemo.href}
               variant="secondary"
               size="lg"
             >
-              Try a free demo
+              {sharedCtas.tryDemo.label}
             </Button>
           </div>
         </div>
