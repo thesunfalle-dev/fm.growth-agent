@@ -1,9 +1,9 @@
 {
   "meta": {
     "name": "FM Landings Block Inventory",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "status": "provisional-shell",
-    "updatedAt": "2026-08-12",
+    "updatedAt": "2026-08-13",
     "notes": "Agents may only assemble landings from these block types until inventory expands."
   },
   "blocks": [
@@ -29,6 +29,29 @@
         "If performance/cost claims appear, compliance must allow them."
       ],
       "tokenDependencies": ["space", "typography", "semantic.color.text", "semantic.color.action"]
+    },
+    {
+      "type": "market-hero",
+      "status": "ready",
+      "description": "Market Header: structured market landing hero with an optional indicative quote panel and Trustpilot summary.",
+      "component": "components/blocks/MarketHero.tsx",
+      "figma": "23570:104257",
+      "props": {
+        "eyebrow": { "type": "string", "required": false },
+        "title": { "type": "string", "required": true },
+        "subtitle": { "type": "string", "required": false },
+        "bullets": { "type": "array", "required": false, "item": "string" },
+        "primaryCta": { "type": "cta", "required": false },
+        "secondaryCta": { "type": "cta", "required": false },
+        "quote": { "type": "marketHeroQuote", "required": false },
+        "trustpilot": { "type": "marketHeroTrustpilot", "required": false }
+      },
+      "contentRules": [
+        "Use approved or explicitly illustrative pricing only; label non-live values as indicative.",
+        "Validate rating and review count freshness before public campaign use.",
+        "Keep market copy in the landing content document; do not use Figma sample marketing copy."
+      ],
+      "tokenDependencies": ["component.marketHero", "typography", "semantic.color.background", "semantic.color.action"]
     },
     {
       "type": "features",
@@ -137,6 +160,23 @@
       "tokenDependencies": ["semantic.color.action", "typography", "space"]
     },
     {
+      "type": "logo-marquee",
+      "status": "ready",
+      "description": "Funding methods section with a shared heading and provider row.",
+      "component": "components/blocks/LogoMarquee.tsx",
+      "figma": "24400:153845",
+      "props": {
+        "title": { "type": "string", "required": true },
+        "subtitle": { "type": "string", "required": false },
+        "providers": { "type": "array", "required": true, "item": "string", "minItems": 2 }
+      },
+      "contentRules": [
+        "Use only funding methods confirmed for the landing's target jurisdiction.",
+        "Replace provider text with approved brand assets when the asset bundle is available."
+      ],
+      "tokenDependencies": ["component.marketHero", "typography", "space", "semantic.color.text"]
+    },
+    {
       "type": "disclaimer",
       "status": "provisional",
       "description": "Legal / risk footer text. Strongly recommended on every marketing landing.",
@@ -158,13 +198,6 @@
     }
   },
   "planned": [
-    {
-      "type": "logo-marquee",
-      "status": "planned",
-      "description": "Funding / partner logo strip (homepage funding methods; also Deposit/Withdrawal hero logo row).",
-      "figmaHomepage": "27873:297355",
-      "figmaPages": ["24400:153845 Deposit hero logos", "24400:157463 Withdrawal hero logos"]
-    },
     {
       "type": "spread-cards",
       "status": "planned",

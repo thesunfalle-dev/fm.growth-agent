@@ -2,9 +2,9 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.12.0",
+    "version": "0.13.0",
     "status": "figma-partial-sync",
-    "updatedAt": "2026-08-12",
+    "updatedAt": "2026-08-13",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
     "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=15166-10610",
@@ -102,7 +102,10 @@
         "surfaceHover": "{primitive.color.gray200}",
         "surfaceMuted": "{primitive.color.gray200}",
         "glowPrimary": "{primitive.color.purple50}",
-        "glowSecondary": "{primitive.color.blue50}"
+        "glowSecondary": "{primitive.color.blue50}",
+        "marketHeroPanel": "color-mix(in oklab, {primitive.color.blue900} 30%, transparent)",
+        "marketHeroLine": "color-mix(in oklab, {primitive.color.gray0} 24%, transparent)",
+        "marketHeroRating": "{primitive.color.green400}"
       },
       "text": {
         "primary": "{primitive.color.blue500}",
@@ -295,6 +298,18 @@
     "backgroundImage": {
       "src": "/images/backgrounds/bg-default.png",
       "note": "Shared brand purple art — use consistently for most backgrounds"
+    },
+    "marketHero": {
+      "minHeight": "510px",
+      "copyMaxWidth": "555px",
+      "leadMaxWidth": "431px",
+      "panelWidth": "599px",
+      "panelMinHeight": "240px",
+      "panelRadius": "24px",
+      "panelPadding": "40px",
+      "quoteValueSize": "40px",
+      "providerGap": "40px",
+      "providerSize": "20px"
     },
     "faq": {
       "border": "{primitive.color.blue100}",

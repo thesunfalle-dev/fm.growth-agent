@@ -16,7 +16,7 @@ const landing: LandingDocument = {
   listed: true,
   status: "draft",
   createdAt: "2026-08-12",
-  updatedAt: "2026-08-12",
+  updatedAt: "2026-08-13",
   seo: {
     title: "Trade Crypto CFDs — No Commission | Fusion Markets",
     description:
@@ -25,8 +25,7 @@ const landing: LandingDocument = {
   blocks: [
     // —— 1. Market hero structure; pitch from TZ ——
     {
-      type: "hero",
-      brandBackground: true,
+      type: "market-hero",
       eyebrow: "Crypto CFDs",
       title: "Trade Crypto CFDs No Commission",
       subtitle:

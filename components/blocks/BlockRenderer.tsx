@@ -4,6 +4,8 @@ import { Faq } from "@/components/blocks/Faq";
 import { Features } from "@/components/blocks/Features";
 import { Hero } from "@/components/blocks/Hero";
 import { MarketsTable } from "@/components/blocks/MarketsTable";
+import { MarketHero } from "@/components/blocks/MarketHero";
+import { LogoMarquee } from "@/components/blocks/LogoMarquee";
 import { StepsBand } from "@/components/blocks/StepsBand";
 import type { LandingBlock } from "@/lib/types";
 
@@ -23,6 +25,20 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 primaryCta={block.primaryCta}
                 secondaryCta={block.secondaryCta}
                 brandBackground={block.brandBackground}
+              />
+            );
+          case "market-hero":
+            return (
+              <MarketHero
+                key={index}
+                eyebrow={block.eyebrow}
+                title={block.title}
+                subtitle={block.subtitle}
+                bullets={block.bullets}
+                primaryCta={block.primaryCta}
+                secondaryCta={block.secondaryCta}
+                quote={block.quote}
+                trustpilot={block.trustpilot}
               />
             );
           case "features":
@@ -82,6 +98,15 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
             );
           case "disclaimer":
             return <Disclaimer key={index} text={block.text} />;
+          case "logo-marquee":
+            return (
+              <LogoMarquee
+                key={index}
+                title={block.title}
+                subtitle={block.subtitle}
+                providers={block.providers}
+              />
+            );
           default:
             return null;
         }

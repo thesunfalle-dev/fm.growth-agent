@@ -24,6 +24,13 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-13 — Market header and funding methods
+
+- Figma: Market Header [`23570:104257`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=23570-104257) and Deposit Options funding logos [`24400:153845`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=24400-153845).
+- Measured and applied: desktop market heading 60/110%, lead 20/150%, 599px rounded panel, and 40px provider cadence.
+- Registered ready `market-hero` / `logo-marquee` in the inventory and pattern catalog. Provider wordmarks are a temporary offline-safe rendering; retrieve and validate the approved asset set before replacing them with logo artwork.
+- Actor: agent + user
+
 ### 2026-08-12 — Pattern catalog (reuse registry)
 
 - Doc: `pattern-catalog.md` — every shared Figma screen registers patterns/rules/blocks

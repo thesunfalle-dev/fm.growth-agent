@@ -8,15 +8,14 @@ const landing: LandingDocument = {
   listed: true,
   status: "draft",
   createdAt: "2026-08-12",
-  updatedAt: "2026-08-12",
+  updatedAt: "2026-08-13",
   seo: {
     title: "Trade Equity Indices CFDs — $0 Commission | Fusion Markets",
     description: "Trade CFDs on world-leading equity indices with $0 commission.",
   },
   blocks: [
     {
-      type: "hero",
-      brandBackground: true,
+      type: "market-hero",
       eyebrow: "Equity Indices CFDs",
       title: "Trade CFDs on world’s top equity indices with $0 commission",
       subtitle: "Trade the S&P 500, NASDAQ, Hang Seng and more.",
@@ -26,6 +25,18 @@ const landing: LandingDocument = {
         "No deposit fees and no minimum account size",
       ],
       primaryCta: { label: "Start trading", href: "https://hub.fusionmarkets.com/auth/sign-up" },
+      quote: {
+        label: "US500",
+        price: "5,214.6",
+        change: "+0.42%",
+        period: "Indicative pricing",
+        tone: "positive",
+      },
+      trustpilot: {
+        label: "Trustpilot",
+        rating: "4.8",
+        reviews: "7.2k reviews",
+      },
     },
     {
       type: "features",
@@ -54,6 +65,12 @@ const landing: LandingDocument = {
         ["E35", "2.1", "6.1"], ["EUSTX50", "0.2", "1.31"], ["FRA40", "0.2", "0.93"], ["GER40", "0.8", "1.22"],
       ].map(([symbol, minimum, average]) => ({ id: symbol.toLowerCase(), cells: { symbol, minimum, average } })),
       footnote: "Illustrative preview spreads only. Confirm live pricing in the Client Hub or Spreads Tool before trading.",
+    },
+    {
+      type: "logo-marquee",
+      title: "Our Funding Methods",
+      subtitle: "Fund your account securely with a range of convenient payment methods.",
+      providers: ["VISA", "Apple Pay", "Bank transfer", "Mastercard", "PayPal"],
     },
     {
       type: "steps",

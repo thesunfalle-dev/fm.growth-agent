@@ -30,6 +30,20 @@ export type TableRowSpec = {
   action?: LandingCta;
 };
 
+export type MarketHeroQuote = {
+  label: string;
+  price: string;
+  change: string;
+  period: string;
+  tone?: "positive" | "negative";
+};
+
+export type MarketHeroTrustpilot = {
+  label: string;
+  rating: string;
+  reviews: string;
+};
+
 /** Brand illustration key from lib/illustrations.ts (Images frame). */
 export type IllustrationKey = string;
 
@@ -46,6 +60,20 @@ export type LandingBlock =
       /** Shared brand purple BG art (Images frame / Gold Market Header). */
       brandBackground?: boolean;
       // No nested table/chart — use a following `type: "table"` block (assembly.md).
+    }
+  | {
+      /** Market Header — shared hero foundation for market campaign landings. */
+      type: "market-hero";
+      eyebrow?: string;
+      title: string;
+      subtitle?: string;
+      bullets?: string[];
+      primaryCta?: LandingCta;
+      secondaryCta?: LandingCta;
+      /** Optional indicative instrument card. Values must come from the brief or approved source. */
+      quote?: MarketHeroQuote;
+      /** Optional review summary; validate rating freshness before a public campaign launch. */
+      trustpilot?: MarketHeroTrustpilot;
     }
   | {
       type: "features";
@@ -111,6 +139,13 @@ export type LandingBlock =
   | {
       type: "disclaimer";
       text: string;
+    }
+  | {
+      /** Funding-method logo row. Provider names are content; visual shell is shared. */
+      type: "logo-marquee";
+      title: string;
+      subtitle?: string;
+      providers: string[];
     };
 
 export type LandingMeta = {

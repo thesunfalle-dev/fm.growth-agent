@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-13 — Shared market landing foundation
+
+- Added ready `market-hero` block from Market Header `23570:104257`: a common brand-background hero, 60px display title, 20px lead, shared CTA row, and optional indicative market/rating panel.
+- Added ready `logo-marquee` block from Funding logos `24400:153845`: shared title/lead and responsive funding-method row.
+- Moved Crypto and Equity Indices to the same `market-hero` composition. Equity now uses the reusable indicative quote and rating options, and its approved funding section is assembled from `logo-marquee`.
+- Added `component.marketHero` and semantic panel/rating tokens. Provider names remain text until the approved payment-logo asset bundle can be retrieved; no Figma sample marketing copy was transferred.
+
 ## 2026-08-12 — Typography corrected from Deposit Options Figma
 
 - Re-read Deposit Options Desktop `24400:153833`, including hero text and Footer CTA, with Figma design context.

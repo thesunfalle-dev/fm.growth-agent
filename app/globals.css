@@ -2991,6 +2991,135 @@ a {
   -webkit-text-fill-color: var(--color-text-on-accent);
 }
 
+/* Market Header — Figma 23570:104257. Values are sourced from component.marketHero tokens. */
+.ui-section--market-hero {
+  min-height: var(--component-market-hero-min-height);
+}
+
+.ui-section--market-hero .ui-container {
+  display: flex !important;
+  align-items: center;
+  min-height: var(--component-market-hero-min-height);
+}
+
+.ui-market-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, var(--component-market-hero-copy-max-width)) minmax(0, var(--component-market-hero-panel-width));
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+.ui-market-hero__copy {
+  min-width: 0;
+  max-width: var(--component-market-hero-copy-max-width);
+}
+
+.ui-market-hero__copy .ui-text--lead {
+  max-width: var(--component-market-hero-lead-max-width);
+}
+
+.ui-market-hero__panel {
+  display: grid;
+  align-content: end;
+  gap: var(--space-10);
+  width: 100%;
+  min-height: var(--component-market-hero-panel-min-height);
+  padding: var(--component-market-hero-panel-padding);
+  border: var(--border-width-default) solid var(--color-background-market-hero-line);
+  border-radius: var(--component-market-hero-panel-radius);
+  background: var(--color-background-market-hero-panel);
+  box-shadow: var(--shadow-card);
+}
+
+.ui-market-hero__quote {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.ui-market-hero__quote-top,
+.ui-market-hero__rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-b3);
+  font-weight: var(--typography-font-weight-regular);
+  line-height: var(--typography-line-height-body);
+}
+
+.ui-market-hero__quote-top {
+  color: var(--color-text-on-accent);
+}
+
+.ui-market-hero__quote strong {
+  font-family: var(--typography-font-family-heading);
+  font-size: var(--component-market-hero-quote-value-size);
+  font-weight: var(--typography-font-weight-bold);
+  line-height: var(--typography-line-height-display);
+}
+
+.ui-market-hero__change {
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-b3);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-body);
+}
+
+.ui-market-hero__change--positive,
+.ui-market-hero__stars {
+  color: var(--color-background-market-hero-rating);
+}
+
+.ui-market-hero__change--negative {
+  color: var(--color-status-danger-soft);
+}
+
+.ui-market-hero__rating {
+  padding-top: var(--space-5);
+  border-top: var(--border-width-default) solid var(--color-background-market-hero-line);
+  color: var(--color-text-on-accent);
+}
+
+.ui-market-hero__rating-name {
+  font-family: var(--typography-font-family-heading);
+  font-weight: var(--typography-font-weight-semibold);
+}
+
+.ui-funding__header {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.ui-funding__header .ui-text--lead {
+  max-width: var(--layout-container-narrow);
+  text-align: center;
+}
+
+.ui-funding__providers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-market-hero-provider-gap);
+  margin: 0;
+  padding: var(--space-10) 0 0;
+  color: var(--color-text-muted);
+  list-style: none;
+}
+
+.ui-funding__providers li {
+  font-family: var(--typography-font-family-heading);
+  font-size: var(--component-market-hero-provider-size);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: var(--typography-line-height-heading);
+}
+
 /* Index */
 
 .index {
@@ -3085,6 +3214,25 @@ a {
   .ui-section--hero {
     padding-top: var(--space-10);
     padding-bottom: var(--layout-spacing-section-mobile);
+  }
+
+  /* breakpoint.md — 768px */
+  .ui-section--market-hero .ui-container {
+    min-height: 0;
+  }
+
+  .ui-market-hero__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-10);
+  }
+
+  .ui-market-hero__panel {
+    min-height: 0;
+    padding: var(--space-6);
+  }
+
+  .ui-funding__providers {
+    gap: var(--space-6);
   }
 
   .ui-heading--display,

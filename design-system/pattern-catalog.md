@@ -162,7 +162,7 @@ Copy when adding a pattern:
 | **Status** | provisional |
 | **Inventory** | `hero` |
 | **Intent** | Above-the-fold pitch + CTA(s). |
-| **Structure (fixed)** | Eyebrow? + H1 + lead/bullets + primary/secondary CTA; optional brand BG. Market hero may add chart later (`market-hero` planned). |
+| **Structure (fixed)** | Eyebrow? + H1 + lead/bullets + primary/secondary CTA; optional brand BG. Market pages use the ready `market-hero` variant. |
 | **Content (props)** | `eyebrow`, `title`, `subtitle`, `bullets`, CTAs, `brandBackground` |
 | **Canonical Figma** | Homepage hero; account heroes; platform device heroes |
 | **Also seen on** | Accounts; Premium; Products; MT5 pages; MAM; DupliTrade; **Fusion+**; **Deposit/Withdrawal**; **Trading Conditions** hub |
@@ -175,15 +175,30 @@ Copy when adding a pattern:
 
 | Field | Value |
 |-------|--------|
-| **Status** | planned |
+| **Status** | ready |
 | **Inventory** | `market-hero` |
 | **Intent** | Above-the-fold for a single market (Forex, Crypto, Gold…). |
-| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **TV-Desktop** / TV-Mobile chart card. |
-| **Content (props)** | `title`, `subtitle`, `primaryCta`, optional secondary; chart symbol/config later |
+| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; optional right indicative market card and rating summary. |
+| **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; optional `quote` and `trustpilot` summary. A live chart remains a separate future integration. |
 | **Canonical Figma** | Forex Market Header `23570:104257`; Gold EN `29987:341692`; Crypto CFDs page same family |
 | **Also seen on** | Metals / Indices / Energy / US Share market pages |
 | **Rules** | Same structure for every market; swap content + chart only. Do not embed instruments table in hero. |
 | **Adaptive** | Desktop: text left / chart right. Mobile: title → lead → CTA → chart. |
+
+---
+
+### `logo-marquee` — Funding methods
+
+| Field | Value |
+|-------|--------|
+| **Status** | ready |
+| **Inventory** | `logo-marquee` |
+| **Intent** | A concise funding-method proof section for campaign and funding pages. |
+| **Structure (fixed)** | Centered H2 + optional lead + wrap-safe provider row. |
+| **Content (props)** | `title`, `subtitle`, `providers[]` |
+| **Canonical Figma** | Deposit Options funding logos `24400:153845` |
+| **Rules** | Providers are content and jurisdiction-specific. Use approved provider artwork when available; never use Figma sample marketing copy. |
+| **Adaptive** | Providers wrap with shared gaps; they never overflow the viewport. |
 
 ---
 
@@ -553,7 +568,6 @@ Copy when adding a pattern:
 | type | Intent sketch | Typical Figma |
 |------|---------------|---------------|
 | `ratings-strip` | Trustpilot / TV / Google compact row | Homepage social proof (lighter than full review-rail) |
-| `logo-marquee` | Funding methods logos | Homepage funding; Deposit/Withdrawal heroes |
 | `platform-crossnav` | “Explore our other Platforms” | MT5 device pages |
 | `expert-ratings` | Third-party review site scores | What others say “Reviews from the Experts” |
 

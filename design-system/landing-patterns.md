@@ -225,7 +225,7 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 | Review rail | planned `testimonials` / `ratings-strip` | review **card** + Trustpilot header |
 | TV / spread cards | planned `spread-cards` | single-instrument focus layout |
 | Instruments | planned `instrument-grid` | mobile 2-col |
-| Logo marquee | planned `logo-marquee` | — |
+| Logo marquee | ✅ `logo-marquee` | Provider text until approved payment assets are available |
 | Tier / plan cards | planned content cards | icon + title + multi-line body |
 | Download bar | planned | OS icon row |
 | Checklist feature | planned | image + check rows + CTAs |
