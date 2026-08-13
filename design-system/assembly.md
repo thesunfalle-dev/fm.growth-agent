@@ -78,7 +78,7 @@ Registered props (keep inventory + `lib/types.ts` + `Hero.tsx` aligned):
 
 **Forbidden on hero (do not re-add without inventory + planned type):**
 
-- Embedded `table` / chart / TV card as a hero prop → use next `table` block, or planned `market-hero` / `spread-cards`
+- Embedded markets `table` / DataTable as a hero prop → sequence a following `table` block. The compact 5-row quotes widget is a `market-hero` panel, not a `table` block.
 - Arbitrary media slots, download bars, review widgets
 
 ---

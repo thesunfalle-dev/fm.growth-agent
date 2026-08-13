@@ -44,6 +44,7 @@ export const blockDefaults = {
   },
   marketHero: {
     primaryCta: sharedCtas.startTrading,
+    quoteAction: { label: "Trade", href: hubSignUp } satisfies LandingCta,
   },
   features: {
     variant: "usp" as const,

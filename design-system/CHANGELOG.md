@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-13 — Market Header quotes table
+
+- Replaced the single-quote sketch in `market-hero` with a compact 5-row quotes widget (Instrument / Bid / Ask / Spread / Trade).
+- Bid and Ask tick every 5s with up/down color + slide animation (`prefers-reduced-motion` disables motion, numbers still update).
+- Crypto and Equity fill the same panel with page-themed symbols. Values are indicative animation seeds, not a live feed.
+- Tokens: `component.marketHero` quotes metrics, semantic tick/trade colors, `motion.duration.emphasis`.
+
 ## 2026-08-13 — Funding methods ticker from Figma `28259:298800`
 
 - `logo-marquee` is now the dark Blue/500 band + infinite wordmark ticker (80px gap, edge fade, drag to scrub).

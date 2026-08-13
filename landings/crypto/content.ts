@@ -32,12 +32,13 @@ const landing: LandingDocument = {
       subtitle:
         "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more. Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
       secondaryCta: sharedCtas.tryDemo,
-      quote: {
-        label: "Bitcoin",
-        price: "0.04%",
-        change: "Minimum spread",
-        period: "Indicative",
-      },
+      quotes: [
+        { id: "btcusd", symbol: "BTCUSD", bid: 67240.5, ask: 67267.8, digits: 1 },
+        { id: "ethusd", symbol: "ETHUSD", bid: 3512.4, ask: 3515.6, digits: 2 },
+        { id: "dogeusd", symbol: "DOGEUSD", bid: 0.16842, ask: 0.16861, digits: 5 },
+        { id: "solusd", symbol: "SOLUSD", bid: 182.14, ask: 182.29, digits: 2 },
+        { id: "adausd", symbol: "ADAUSD", bid: 0.6914, ask: 0.6922, digits: 4 },
+      ],
     },
 
     // —— 2. USP card structure (Figma); 6 points from TZ ——

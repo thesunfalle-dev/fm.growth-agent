@@ -87,8 +87,12 @@
   --color-background-glow-primary: var(--primitive-color-purple50);
   --color-background-glow-secondary: var(--primitive-color-blue50);
   --color-background-market-hero-panel: color-mix(in oklab, var(--primitive-color-blue900) 30%, transparent);
+  --color-background-market-hero-quotes: color-mix(in oklab, var(--primitive-color-blue900) 78%, var(--primitive-color-purple900));
   --color-background-market-hero-line: color-mix(in oklab, var(--primitive-color-gray0) 24%, transparent);
   --color-background-market-hero-rating: var(--primitive-color-green400);
+  --color-background-market-hero-tick-up: var(--primitive-color-green300);
+  --color-background-market-hero-tick-down: var(--primitive-color-red300);
+  --color-background-market-hero-trade: var(--primitive-color-green400);
   --color-text-primary: var(--primitive-color-blue500);
   --color-text-secondary: var(--primitive-color-blue600);
   --color-text-muted: var(--primitive-color-gray500);
@@ -252,6 +256,12 @@
   --component-market-hero-panel-min-height: 480px;
   --component-market-hero-panel-radius: 24px;
   --component-market-hero-panel-padding: 40px;
+  --component-market-hero-quotes-padding: 16px;
+  --component-market-hero-quotes-header-size: 14px;
+  --component-market-hero-quotes-row-min-height: 72px;
+  --component-market-hero-quotes-symbol-size: 16px;
+  --component-market-hero-quotes-price-size: 16px;
+  --component-market-hero-quotes-action-width: 96px;
   --component-market-hero-quote-value-size: 32px;
   --component-market-hero-provider-gap: 40px;
   --component-market-hero-provider-size: 20px;
@@ -421,7 +431,9 @@
   --breakpoint-xl: 1280px;
   --motion-duration-fast: 150ms;
   --motion-duration-default: 200ms;
+  --motion-duration-emphasis: 700ms;
   --motion-easing-standard: ease;
+  --motion-easing-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
   --z-index-base: 0;
   --z-index-sticky: 10;
   --z-index-header: 10;

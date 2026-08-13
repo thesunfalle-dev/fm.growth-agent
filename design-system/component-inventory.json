@@ -148,6 +148,18 @@
       "notes": "Foundation markets table: sticky header, 600px scroll, 54/78 heights. Mobile layouts & comparison tables planned."
     },
     {
+      "name": "MarketHeroQuotes",
+      "category": "data",
+      "status": "ready",
+      "path": "components/ui/MarketHeroQuotes.tsx",
+      "figma": "23570:104257",
+      "variants": ["up", "down"],
+      "sizes": ["desktop", "mobile"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.marketHero", "semantic.color.background", "motion"],
+      "notes": "Indicative 5-row quotes table for the Market Header panel. Not the markets DataTable."
+    },
+    {
       "name": "Button",
       "category": "actions",
       "status": "ready",

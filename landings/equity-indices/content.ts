@@ -25,18 +25,13 @@ const landing: LandingDocument = {
         "Take advantage of our tight spreads",
         "No deposit fees and no minimum account size",
       ],
-      quote: {
-        label: "US500",
-        price: "5,214.6",
-        change: "+0.42%",
-        period: "Indicative pricing",
-        tone: "positive",
-      },
-      trustpilot: {
-        label: "Trustpilot",
-        rating: "4.8",
-        reviews: "7.2k reviews",
-      },
+      quotes: [
+        { id: "us500", symbol: "US500", bid: 5482.6, ask: 5483.4, digits: 1 },
+        { id: "nas100", symbol: "NAS100", bid: 19620.4, ask: 19622.1, digits: 1 },
+        { id: "aus200", symbol: "AUS200", bid: 8214.8, ask: 8215.6, digits: 1 },
+        { id: "ger40", symbol: "GER40", bid: 18540.2, ask: 18541.5, digits: 1 },
+        { id: "hk50", symbol: "HK50", bid: 17680.0, ask: 17682.4, digits: 1 },
+      ],
     },
     {
       type: "features",

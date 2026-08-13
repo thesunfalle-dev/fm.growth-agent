@@ -3,10 +3,16 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
+import { MarketHeroQuotes } from "@/components/ui/MarketHeroQuotes";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { blockDefaults } from "@/lib/block-defaults";
-import type { LandingCta, MarketHeroQuote, MarketHeroTrustpilot } from "@/lib/types";
+import type {
+  LandingCta,
+  MarketHeroQuote,
+  MarketHeroQuoteRow,
+  MarketHeroTrustpilot,
+} from "@/lib/types";
 
 type MarketHeroProps = {
   eyebrow?: string;
@@ -15,6 +21,7 @@ type MarketHeroProps = {
   bullets?: string[];
   primaryCta?: LandingCta;
   secondaryCta?: LandingCta;
+  quotes?: MarketHeroQuoteRow[];
   quote?: MarketHeroQuote;
   trustpilot?: MarketHeroTrustpilot;
 };
@@ -27,9 +34,12 @@ export function MarketHero({
   bullets,
   primaryCta = blockDefaults.marketHero.primaryCta,
   secondaryCta,
+  quotes,
   quote,
   trustpilot,
 }: MarketHeroProps) {
+  const showQuotes = Boolean(quotes?.length);
+  const showSummary = !showQuotes && Boolean(quote || trustpilot);
   return (
     <Section variant="hero" className="ui-section--brand-bg ui-section--market-hero">
       <BackgroundImage variant="decorative" />
@@ -51,7 +61,11 @@ export function MarketHero({
               </div>
             ) : null}
           </div>
-          {quote || trustpilot ? (
+          {showQuotes ? (
+            <aside className="ui-market-hero__panel ui-market-hero__panel--quotes" aria-label="Indicative quotes">
+              <MarketHeroQuotes rows={quotes ?? []} />
+            </aside>
+          ) : showSummary ? (
             <aside className="ui-market-hero__panel" aria-label="Market summary">
               {quote ? (
                 <div className="ui-market-hero__quote">

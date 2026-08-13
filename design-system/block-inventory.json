@@ -36,7 +36,7 @@
     {
       "type": "market-hero",
       "status": "ready",
-      "description": "Market Header: structured market landing hero with an optional indicative quote panel and Trustpilot summary.",
+      "description": "Market Header: brand hero with a compact 5-row indicative quotes table in the right panel.",
       "component": "components/blocks/MarketHero.tsx",
       "figma": "23570:104257",
       "props": {
@@ -46,6 +46,7 @@
         "bullets": { "type": "array", "required": false, "item": "string" },
         "primaryCta": { "type": "cta", "required": false },
         "secondaryCta": { "type": "cta", "required": false },
+        "quotes": { "type": "marketHeroQuoteRow[]", "required": false },
         "quote": { "type": "marketHeroQuote", "required": false },
         "trustpilot": { "type": "marketHeroTrustpilot", "required": false }
       },
@@ -53,7 +54,9 @@
         "primaryCta": "sharedCtas.startTrading"
       },
       "contentRules": [
-        "Use approved or explicitly illustrative pricing only; label non-live values as indicative.",
+        "Prefer quotes[]: five instruments themed to the landing (not Figma Forex sample pairs).",
+        "Bid/ask values are indicative animation seeds, not a live feed — do not present them as live prices.",
+        "Use approved or explicitly illustrative pricing only.",
         "Validate rating and review count freshness before public campaign use.",
         "Keep market copy in the landing content document; do not use Figma sample marketing copy."
       ],

@@ -38,6 +38,17 @@ export type MarketHeroQuote = {
   tone?: "positive" | "negative";
 };
 
+export type MarketHeroQuoteRow = {
+  id: string;
+  symbol: string;
+  /** Indicative seed for the animated ticker — not a live feed. */
+  bid: number;
+  ask: number;
+  /** Decimal places for bid / ask. */
+  digits: number;
+  action?: LandingCta;
+};
+
 export type MarketHeroTrustpilot = {
   label: string;
   rating: string;
@@ -70,6 +81,8 @@ export type LandingBlock =
       bullets?: string[];
       primaryCta?: LandingCta;
       secondaryCta?: LandingCta;
+      /** Compact 5-row quotes widget in the Market Header panel. */
+      quotes?: MarketHeroQuoteRow[];
       /** Optional indicative instrument card. Values must come from the brief or approved source. */
       quote?: MarketHeroQuote;
       /** Optional review summary; validate rating freshness before a public campaign launch. */

@@ -178,12 +178,12 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `market-hero` |
 | **Intent** | Above-the-fold for a single market (Forex, Crypto, Gold…). |
-| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **599×480** indicative card (TV-card slot; live chart still planned) and optional rating summary. |
-| **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; optional `quote` and `trustpilot` summary. A live chart remains a separate future integration. |
-| **Canonical Figma** | Forex Market Header `23570:104257`; Gold EN `29987:341692`; Crypto CFDs page same family |
+| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **599×480** panel = compact **5-row quotes table** (Instrument / Bid / Ask / Spread / Trade). Bid/Ask tick every 5s. |
+| **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; `quotes[]` (5 instruments themed to the page). Optional legacy `quote` / `trustpilot` if no quotes. |
+| **Canonical Figma** | Forex Market Header `23570:104257` (panel chrome); quotes widget is the shipped panel fill (not a live TV embed). |
 | **Also seen on** | **Crypto CFDs**; **Equity Indices**; Metals / Energy / US Share market pages |
-| **Rules** | Same structure for every market; swap content + chart only. Do not embed instruments table in hero. |
-| **Adaptive** | Desktop: text left / chart right. Mobile: title → lead → CTA → chart. |
+| **Rules** | Same structure for every market; swap copy + the five symbols only. This panel is **not** the markets `table` block — do not nest DataTable here. Prices are indicative animation seeds. |
+| **Adaptive** | Desktop: text left / quotes right. Mobile: title → lead → CTA → quotes (Spread + Trade drop so Bid/Ask stay readable; Start trading remains above). |
 
 ---
 

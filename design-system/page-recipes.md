@@ -32,7 +32,7 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | # | Section (intent) | Pattern `type` | Structure notes |
 |---|------------------|----------------|-----------------|
 | 0 | Chrome | `SiteHeader` / `SiteFooter` | Always from `layout.tsx`. Never in `content.ts`. |
-| 1 | Market header | `market-hero` | BG Image + H1 + pitch + **Primary/Light** + 599×480 indicative panel (TV chart still planned) |
+| 1 | Market header | `market-hero` | BG Image + H1 + pitch + **Primary/Light** + 599×480 **quotes table** (5 themed instruments; Bid/Ask tick) |
 | 2 | Why trade [market] | `features` usp | USP rail / carousel |
 | 3 | Our … instruments | `table` | Shared `instrumentsColumns` + TZ rows. Optional extra col (hours). |
 | 4 | How we compare | `table` compare | Optional. Crypto only today. |

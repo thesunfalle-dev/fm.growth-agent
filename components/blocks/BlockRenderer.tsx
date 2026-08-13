@@ -37,6 +37,7 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 bullets={block.bullets}
                 primaryCta={block.primaryCta}
                 secondaryCta={block.secondaryCta}
+                quotes={block.quotes}
                 quote={block.quote}
                 trustpilot={block.trustpilot}
               />

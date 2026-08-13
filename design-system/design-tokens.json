@@ -2,7 +2,7 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.13.0",
+    "version": "0.14.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-13",
     "source": "Website Redesign FM 2.0",
@@ -104,8 +104,12 @@
         "glowPrimary": "{primitive.color.purple50}",
         "glowSecondary": "{primitive.color.blue50}",
         "marketHeroPanel": "color-mix(in oklab, {primitive.color.blue900} 30%, transparent)",
+        "marketHeroQuotes": "color-mix(in oklab, {primitive.color.blue900} 78%, {primitive.color.purple900})",
         "marketHeroLine": "color-mix(in oklab, {primitive.color.gray0} 24%, transparent)",
-        "marketHeroRating": "{primitive.color.green400}"
+        "marketHeroRating": "{primitive.color.green400}",
+        "marketHeroTickUp": "{primitive.color.green300}",
+        "marketHeroTickDown": "{primitive.color.red300}",
+        "marketHeroTrade": "{primitive.color.green400}"
       },
       "text": {
         "primary": "{primitive.color.blue500}",
@@ -316,6 +320,12 @@
       "panelMinHeight": "480px",
       "panelRadius": "24px",
       "panelPadding": "40px",
+      "quotesPadding": "16px",
+      "quotesHeaderSize": "14px",
+      "quotesRowMinHeight": "72px",
+      "quotesSymbolSize": "16px",
+      "quotesPriceSize": "16px",
+      "quotesActionWidth": "96px",
       "quoteValueSize": "32px",
       "providerGap": "40px",
       "providerSize": "20px"
@@ -528,10 +538,12 @@
   "motion": {
     "duration": {
       "fast": "150ms",
-      "default": "200ms"
+      "default": "200ms",
+      "emphasis": "700ms"
     },
     "easing": {
-      "standard": "ease"
+      "standard": "ease",
+      "emphasized": "cubic-bezier(0.22, 1, 0.36, 1)"
     }
   },
   "zIndex": {
