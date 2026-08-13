@@ -62,7 +62,7 @@ export function MarketHero({
             ) : null}
           </div>
           {showQuotes ? (
-            <aside className="ui-market-hero__panel ui-market-hero__panel--quotes" aria-label="Indicative quotes">
+            <aside className="ui-market-hero__panel ui-market-hero__panel--tv" aria-label="Indicative chart">
               <MarketHeroQuotes rows={quotes ?? []} />
             </aside>
           ) : showSummary ? (

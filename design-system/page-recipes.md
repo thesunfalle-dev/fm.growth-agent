@@ -2,7 +2,26 @@
 
 **Purpose:** When a full Figma page is shared, record the **ordered section stack** and which **patterns** each section uses. Content (copy, symbols, CTAs) changes; the recipe stays.
 
-**Related:** `pattern-catalog.md` (block structure), `landing-patterns.md` (campaign families), `assembly.md`.
+**Related:** `pattern-catalog.md` (block structure), `landing-patterns.md` (campaign families), `assembly.md`, `responsive-rules.md` (375 contract).
+
+---
+
+## Batch 2026-08-13 — Mobile counterparts (375)
+
+Same recipes as the desktop Markets + Accounts family. **Do not add new `type`s.** Recorded so agents implement layout modes instead of inventing mobile-only blocks.
+
+| # | Page (Figma name) | Node | Desktop twin | Recipe |
+|---|-------------------|------|--------------|--------|
+| 1 | **Mobile - AU** (homepage) | `27873:296438` | `27873:297355` | see `homepage-patterns.md` |
+| 2 | **Forex - Mobile** | `23570:104433` | `23570:104143` | **M1** |
+| 3 | **Partners Overview - Mobile** *(content = Products & Accounts)* | `26258:282017` | `26258:275741` | **A1** |
+| 4 | **Zero Account - Mobile** | `26258:282352` | `26258:273793` | **A2** |
+| 5 | **Demo Account** | `26258:284389` | `26258:279143` | **A3** |
+| 6 | **Fusion Pro** | `26258:285898` | `26258:285369` | **A4** |
+
+Premium Program mobile is **not** in this batch.
+
+**Cross-cutting 375 rules** live in `responsive-rules.md`. Per-recipe mobile stacks are under each recipe below.
 
 ---
 
@@ -32,7 +51,7 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | # | Section (intent) | Pattern `type` | Structure notes |
 |---|------------------|----------------|-----------------|
 | 0 | Chrome | `SiteHeader` / `SiteFooter` | Always from `layout.tsx`. Never in `content.ts`. |
-| 1 | Market header | `market-hero` | BG Image + H1 + pitch + **Primary/Light** + 599×480 **quotes table** (5 themed instruments; Bid/Ask tick) |
+| 1 | Market header | `market-hero` | BG Image + H1 + pitch + **Primary/Light** + **TV chart card** 599×480 (5 themed instruments) |
 | 2 | Why trade [market] | `features` usp | USP rail / carousel |
 | 3 | Our … instruments | `table` | Shared `instrumentsColumns` + TZ rows. Optional extra col (hours). |
 | 4 | How we compare | `table` compare | Optional. Crypto only today. |
@@ -41,11 +60,24 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | 7 | FAQs | `faq` | Optional. Crypto only today. |
 | 8 | Ready to start + mega footer | footer CTA | Lives on `SiteFooter`. Do not add a second `cta` block. |
 
+**Mobile (Forex `23570:104433`, 375 × 7894):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 0 | Chrome | `Header_Mobile` 57 + `Mobile Footer` | Header sits on the brand-BG hero (after Figma iOS chrome 94 — skip chrome) |
+| 1 | Market header | `market-hero` | Full-bleed BG + gradient. Order: **H1 → lead → Primary/Light 163×44 (hug) → TV-Mobile 343×364**. Not the homepage title→visual order |
+| 2 | What is Forex | `education-split` | Single column: 60 icon → H2 → two body paragraphs. No side-by-side |
+| 3 | Why trade [market] | `features` usp | Title + lead → **carousel** (peek 250 / center 270) → Navigate dots |
+| 4 | Our instruments | `table` | H2 → Tabs_Text **overflow-x** → Forex-Mobile 343 (header 54, rows 80, inner scroll). “Show more” hidden in this frame |
+| 5 | FAQs | `faq` | Centered “FAQs” + FAQ-Mobile 343, first open |
+| 6 | Footer | footer CTA | `Mobile Footer` instance (no separate mid-page `cta`) |
+
 **Rules:**  
 - Spreads-on-home (`spread-cards` TV cards) ≠ this instruments **table**.  
 - Hero is **market-hero**, not plain centered products hero.  
 - Content only: symbol list, FAQ Q&As, market name in titles.  
-- Optional modules stay registered types — do not invent a parallel section.
+- Optional modules stay registered types — do not invent a parallel section.  
+- Mobile market hero keeps a **hug-width** Light CTA; do not stretch it to 343.
 
 ---
 
@@ -61,13 +93,23 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | 4 | Range of trading platforms | `platforms` | **Tabs_Icon** (MT4/MT5/TV/cTrader) + body + **download-bar** OS links |
 | 5 | Footer | `cta` / footer | |
 
-**Rules:** Instrument tiles = same component family as homepage “lowest cost” markets row. Platform block reuses homepage/platform landing pattern, not a one-off.
+**Mobile (Figma name “Partners Overview - Mobile” `26258:282017` — same A1 stack):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Products hero | `hero` | **Visual first** (illustration 343×220) → H1 → lead → Primary/Dark **203×54** (hug, not full-bleed) |
+| 2 | Lowest costs | `instrument-grid` | Title + lead → **2×3** tiles **165×165**, gap 12 |
+| 3 | Account types | `tier-cards` | Title + long lead → **stacked** Content Card 2 ×2 (335, gap ~32) |
+| 4 | Platforms | `platforms` + `download-bar` | Title + lead → Tabs_Icon **overflow-x** → mock 246×250 → body → accordion 343 → full-bleed download bar 375×69 scroll |
+| 5 | Footer | footer | `Mobile Footer` (no extra CTAFooter on this frame) |
+
+**Rules:** Instrument tiles = same component family as homepage “lowest cost” markets row. Platform block reuses homepage/platform landing pattern, not a one-off. The Figma frame is misnamed “Partners Overview”; treat it as **Products & Accounts**.
 
 ---
 
 ### Recipe A2 — Account product page (Zero)
 
-**Figma:** Zero Account `26258:273793`  
+**Figma:** Zero Account `26258:273793` / Mobile `26258:282352`  
 **Also:** Classic Account (same family; swap content). Demo is A3.
 
 | # | Section | Pattern | Notes |
@@ -79,6 +121,19 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | 5 | How to create [account] | `steps` | “How to - 1” + vertical steps (+ dual CTA often) |
 | 6 | FAQs | `faq` | |
 | 7 | Footer | `cta` / footer | |
+
+**Mobile (`26258:282352`, 375 × 10717):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Account hero | `hero` | **Visual → H1 → dual CTA 343×40 stacked → long body**. Pad 20 / content 343 |
+| 2 | What it means | compact `features` | Title + lead → **featured visual card 343×353** then **6× USP 343×134** stacked (gap 16). Not a carousel |
+| 3 | Why choose Zero | `features` usp | Title + long lead → **carousel** (250 / 270 / 250) + dots |
+| 4 | Zero vs Classic | `comparison-table` | H2 → **2 Tabs_Icon** (Zero / Classic) → one Comparison Table **343** |
+| 5 | Mid education | `education-split` | H2 → illustration → long copy (no CTA) |
+| 6 | How to create | `steps` | H2 + long lead → device mock → **vertical** steps → **single** Primary 343×54 |
+| 7 | FAQs | `faq` | Left title + FAQ-Mobile, first open |
+| 8 | Ready + footer | `CTAFooter-Mobile` + `Mobile Footer` | Title 2-line → Primary 343×54 → or → Secondary 343×54 |
 
 ---
 
@@ -95,13 +150,23 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | 5 | FAQs | `faq` | |
 | 6 | Footer | `cta` / footer | |
 
-**Rules:** Same `steps` + `features` + `faq` as Zero; **no** comparison-table required.
+**Mobile (`26258:284389`, 375 × 6946):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Demo hero | `hero` | **Visual → H1 → dual CTA 335×40 stacked → long body**. Same order as Zero |
+| 2 | Benefits | `features` usp | Title only (lead hidden) → **carousel** + wide Navigate dots |
+| 3 | How to create demo | `steps` | H2 + long lead → device mock → vertical steps → single Primary 343×54 |
+| 4 | FAQs | `faq` | FAQ-Mobile, first open |
+| 5 | Ready + footer | `CTAFooter-Mobile` + `Mobile Footer` | Same as Zero |
+
+**Rules:** Same `steps` + `features` + `faq` as Zero; **no** comparison-table required. Demo has **no** compact stacked-USP band — only the carousel.
 
 ---
 
 ### Recipe A4 — Fusion Pro (wholesale / eligibility)
 
-**Figma:** Fusion Pro `26258:285369`
+**Figma:** Fusion Pro `26258:285369` / Mobile `26258:285898`
 
 | # | Section | Pattern | Notes |
 |---|---------|---------|--------|
@@ -111,6 +176,17 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | 4 | Retail vs Pro | `comparison-table` | Comparison Table - No Hover / multi criteria |
 | 5 | Related product (e.g. Swap Free) | content band / `features` | Cross-sell section |
 | 6 | Footer | `cta` / footer | |
+
+**Mobile (`26258:285898`, 375 × 9559):**
+
+| # | Section | Pattern | Mobile structure |
+|---|---------|---------|------------------|
+| 1 | Pro hero | `hero` | **Visual → H1 → single Primary 335×44 → lead**. No secondary |
+| 2 | Benefits | compact `features` / `bento-usp` | H2 → illustration 280×196 → **6× USP 343×134** stacked. Desktop bento **collapses to stack**, not carousel |
+| 3 | Important considerations | `education-split` + icon rows | H2 + lead → illustration → **3 icon+text rows** (24px icon, 16 gap) → long additional note. Hidden Content Cards in file = unused variants |
+| 4 | Retail vs Pro | `comparison-table` | H2 → **two stacked** Pro Table - Mobile (Compare Max. Leverage, then Other Criteria). **No tabs** on this page |
+| 5 | Become a Pro | `table` / eligibility | Title + lead → Become a Pro Table 343 + Navigate dots + long legal note |
+| 6 | Footer | footer | `Mobile Footer` (no CTAFooter on this frame) |
 
 ---
 

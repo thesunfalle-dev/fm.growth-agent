@@ -26,11 +26,11 @@ const landing: LandingDocument = {
         "No deposit fees and no minimum account size",
       ],
       quotes: [
-        { id: "us500", symbol: "US500", bid: 5482.6, ask: 5483.4, digits: 1 },
-        { id: "nas100", symbol: "NAS100", bid: 19620.4, ask: 19622.1, digits: 1 },
-        { id: "aus200", symbol: "AUS200", bid: 8214.8, ask: 8215.6, digits: 1 },
-        { id: "ger40", symbol: "GER40", bid: 18540.2, ask: 18541.5, digits: 1 },
-        { id: "hk50", symbol: "HK50", bid: 17680.0, ask: 17682.4, digits: 1 },
+        { id: "us500", symbol: "US500", label: "S&P 500", bid: 5482.6, ask: 5483.4, digits: 1 },
+        { id: "nas100", symbol: "NAS100", label: "NASDAQ 100", bid: 19620.4, ask: 19622.1, digits: 1 },
+        { id: "aus200", symbol: "AUS200", label: "Australia 200", bid: 8214.8, ask: 8215.6, digits: 1 },
+        { id: "ger40", symbol: "GER40", label: "Germany 40", bid: 18540.2, ask: 18541.5, digits: 1 },
+        { id: "hk50", symbol: "HK50", label: "Hang Seng 50", bid: 17680.0, ask: 17682.4, digits: 1 },
       ],
     },
     {

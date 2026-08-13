@@ -41,11 +41,17 @@ export type MarketHeroQuote = {
 export type MarketHeroQuoteRow = {
   id: string;
   symbol: string;
+  /** Human pair name shown on the TV card, e.g. "Bitcoin". */
+  label?: string;
   /** Indicative seed for the animated ticker — not a live feed. */
   bid: number;
   ask: number;
   /** Decimal places for bid / ask. */
   digits: number;
+  quoteCurrency?: string;
+  iconSrc?: string;
+  iconSrcSecondary?: string;
+  period?: string;
   action?: LandingCta;
 };
 
@@ -81,7 +87,7 @@ export type LandingBlock =
       bullets?: string[];
       primaryCta?: LandingCta;
       secondaryCta?: LandingCta;
-      /** Compact 5-row quotes widget in the Market Header panel. */
+      /** Instruments for the Market Header TV chart card (Figma 15303:14755). */
       quotes?: MarketHeroQuoteRow[];
       /** Optional indicative instrument card. Values must come from the brief or approved source. */
       quote?: MarketHeroQuote;

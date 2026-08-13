@@ -1,11 +1,17 @@
 # Design system changelog
 
-## 2026-08-13 — Market Header quotes table
+## 2026-08-13 — Mobile 375 counterparts (homepage + markets + accounts)
 
-- Replaced the single-quote sketch in `market-hero` with a compact 5-row quotes widget (Instrument / Bid / Ask / Spread / Trade).
-- Bid and Ask tick every 5s with up/down color + slide animation (`prefers-reduced-motion` disables motion, numbers still update).
-- Crypto and Equity fill the same panel with page-themed symbols. Values are indicative animation seeds, not a live feed.
-- Tokens: `component.marketHero` quotes metrics, semantic tick/trade colors, `motion.duration.emphasis`.
+- Ingested six mobile frames: Homepage AU `27873:296438`, Forex `23570:104433`, Products (Figma name “Partners Overview”) `26258:282017`, Zero `26258:282352`, Demo `26258:284389`, Fusion Pro `26258:285898`.
+- Recorded layout **modes** on existing types — no `hero-mobile` / `usp-mobile` types.
+- 375 contract in `responsive-rules.md`: content 343, header 57, CTAFooter-Mobile 343×54 stack, USP carousel vs compact stack, instrument 2×3 165, TV cards 343×118, market slot 343×364, comparison tabs vs stacked Pro tables.
+- Hero orders differ by recipe (home / market / account). Measured Adaptive rows in `pattern-catalog.md`; mobile stacks on recipes M1 and A1–A4.
+
+## 2026-08-13 — Market Header uses Figma TV chart card
+
+- Market-hero panel is now **TV-Desktop / TV-Mobile** from TradingView Chart cards `17172:52853` (`15303:14755` / `15433:12419`): glass 599×480 card, pair + price, 5 symbol chips, timeframe, chart line, TradingView badge.
+- Crypto uses Logo state (market icons); Equity uses Text state. Pair rotates and the price ticks every 5s. Not a live TradingView embed.
+- Assets: `public/brand/tv-card/chart-line.svg` and `tradingview-badge.svg` exported from the Figma card.
 
 ## 2026-08-13 — Funding methods ticker from Figma `28259:298800`
 

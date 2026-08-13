@@ -36,9 +36,9 @@
     {
       "type": "market-hero",
       "status": "ready",
-      "description": "Market Header: brand hero with a compact 5-row indicative quotes table in the right panel.",
+      "description": "Market Header: brand hero with the Figma TV chart card (pair, price, 5 symbols, chart) in the right panel.",
       "component": "components/blocks/MarketHero.tsx",
-      "figma": "23570:104257",
+      "figma": "23570:104257 / 17172:52853",
       "props": {
         "eyebrow": { "type": "string", "required": false },
         "title": { "type": "string", "required": true },

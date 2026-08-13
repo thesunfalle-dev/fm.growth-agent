@@ -33,11 +33,11 @@ const landing: LandingDocument = {
         "Trade CFDs on Bitcoin, Ethereum, Dogecoin and more. Bitcoin spreads from 0.04% and 0.09% for ETH. No deposit fees and no minimum account size.",
       secondaryCta: sharedCtas.tryDemo,
       quotes: [
-        { id: "btcusd", symbol: "BTCUSD", bid: 67240.5, ask: 67267.8, digits: 1 },
-        { id: "ethusd", symbol: "ETHUSD", bid: 3512.4, ask: 3515.6, digits: 2 },
-        { id: "dogeusd", symbol: "DOGEUSD", bid: 0.16842, ask: 0.16861, digits: 5 },
-        { id: "solusd", symbol: "SOLUSD", bid: 182.14, ask: 182.29, digits: 2 },
-        { id: "adausd", symbol: "ADAUSD", bid: 0.6914, ask: 0.6922, digits: 4 },
+        { id: "btcusd", symbol: "BTCUSD", label: "Bitcoin", bid: 67240.5, ask: 67267.8, digits: 1, iconSrc: "/images/markets/btc.png" },
+        { id: "ethusd", symbol: "ETHUSD", label: "Ethereum", bid: 3512.4, ask: 3515.6, digits: 2, iconSrc: "/images/markets/eth.svg" },
+        { id: "dogeusd", symbol: "DOGEUSD", label: "Dogecoin", bid: 0.16842, ask: 0.16861, digits: 5, iconSrc: "/images/markets/doge.svg" },
+        { id: "solusd", symbol: "SOLUSD", label: "Solana", bid: 182.14, ask: 182.29, digits: 2, iconSrc: "/images/markets/sol.svg" },
+        { id: "adausd", symbol: "ADAUSD", label: "Cardano", bid: 0.6914, ask: 0.6922, digits: 4, iconSrc: "/images/markets/ada.svg" },
       ],
     },
 

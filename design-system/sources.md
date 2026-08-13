@@ -24,6 +24,28 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-13 — Mobile 375 ingest (homepage + markets + accounts)
+
+| Page | Node |
+|------|------|
+| Mobile - AU (homepage) | `27873:296438` |
+| Forex - Mobile | `23570:104433` |
+| Partners Overview - Mobile (= Products A1) | `26258:282017` |
+| Zero Account - Mobile | `26258:282352` |
+| Demo Account | `26258:284389` |
+| Fusion Pro | `26258:285898` |
+
+- Structure only. Same recipes as desktop (homepage + M1 + A1–A4). No new block types.
+- Docs: `responsive-rules.md` (375 contract), `page-recipes.md` mobile stacks, `pattern-catalog.md` Adaptive, `homepage-patterns.md`, `header-footer.md` CTAFooter-Mobile.
+- Premium mobile not in this batch.
+- Actor: agent + user
+
+### 2026-08-13 — TradingView Chart cards
+
+- Figma: TradingView Chart cards [`17172:52853`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=17172-52853) — TV-Desktop `15303:14755` (599×480), TV-Mobile `15433:12419` (343×364).
+- Used as the Market Header right panel. Chart line + light TradingView wordmark exported to `public/brand/tv-card/`.
+- Actor: agent + user
+
 ### 2026-08-13 — Market header and funding methods
 
 - Figma: Market Header [`23570:104257`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=23570-104257) and Deposit Options funding logos [`24400:153845`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=24400-153845).
