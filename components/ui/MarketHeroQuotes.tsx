@@ -73,17 +73,10 @@ export function MarketHeroQuotes({ rows }: { rows: MarketHeroQuoteRow[] }) {
   }, [initial]);
 
   useEffect(() => {
-    if (initial.length < 2) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (initial.length === 0) return;
     const id = window.setInterval(() => {
       setArmed(true);
       setLive((current) => current.map(nextQuote));
-      if (!reduce) {
-        setActiveId((current) => {
-          const index = initial.findIndex((row) => row.id === current);
-          return initial[(index + 1) % initial.length]?.id ?? current;
-        });
-      }
     }, TICK_MS);
     return () => window.clearInterval(id);
   }, [initial]);

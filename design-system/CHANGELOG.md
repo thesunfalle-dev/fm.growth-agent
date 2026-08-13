@@ -1,5 +1,21 @@
 # Design system changelog
 
+## 2026-08-13 — Funding / Conditions / About (D+M mix)
+
+- Re-confirmed F1 Deposit `24400:153833` and Withdrawal `24400:157450`. New F1 variant `24400:153171` adds optional Search 948 on `funding-card-grid`.
+- C1 mobile is `25136:199688` (Figma misnames it Withdrawal). Tabs overflow + accordion-table: first Forex-Mobile open, rest collapsed 58.
+- Who We Are mobile `29665:154696` (A6): story hero without CTA; founder quote; Mission card+dots; Values USP carousel; Story image+copy; Community media carousel.
+- Why Fusion mobile `29665:155074` (A7): stacked bento (featured 374 + compact cards), not carousel; Licenses content card + flag.
+- Deposit/Withdrawal **375 frames still not ingested**.
+
+## 2026-08-13 — Mobile 375 platforms + campaign landings
+
+- Ingested MT5 Overview `28610:431315`, MT5 Desktop `28610:433653`, MT5 Web `28610:436099`, BrokerChooser `29987:342224`, TV Promo `29987:342421`, TradingView `29987:342673`.
+- Same types. New planned `platform-crossnav` (Platform Card carousel 320 + dots) — not instrument tiles.
+- Campaign hero order: title → 280 visual → body → dual 343 CTA. P2 hero: visual → H1 → store buttons 343×40 stacked.
+- Tier cards: promo **stacks** 3; full TV page **carousels** 1 + dots. Review rail: 280×322 overflow.
+- Compare MT5 vs MT4 reuses `comparison-table` tabs + one panel.
+
 ## 2026-08-13 — Mobile 375 counterparts (homepage + markets + accounts)
 
 - Ingested six mobile frames: Homepage AU `27873:296438`, Forex `23570:104433`, Products (Figma name “Partners Overview”) `26258:282017`, Zero `26258:282352`, Demo `26258:284389`, Fusion Pro `26258:285898`.
@@ -10,7 +26,7 @@
 ## 2026-08-13 — Market Header uses Figma TV chart card
 
 - Market-hero panel is now **TV-Desktop / TV-Mobile** from TradingView Chart cards `17172:52853` (`15303:14755` / `15433:12419`): glass 599×480 card, pair + price, 5 symbol chips, timeframe, chart line, TradingView badge.
-- Crypto uses Logo state (market icons); Equity uses Text state. Pair rotates and the price ticks every 5s. Not a live TradingView embed.
+- Crypto uses Logo state (market icons); Equity uses Text state. Tabs change only on click; the price still ticks every 5s. Not a live TradingView embed.
 - Assets: `public/brand/tv-card/chart-line.svg` and `tradingview-badge.svg` exported from the Figma card.
 
 ## 2026-08-13 — Funding methods ticker from Figma `28259:298800`

@@ -14,7 +14,7 @@ When a new screen is shared, agents **do not only “look”** — they **regist
 
 Related: `page-recipes.md` (full page stacks), `homepage-patterns.md`, `landing-patterns.md`, `assembly.md`.
 
-**Last page batches:** … + Conditions/tools + Compare/About/Careers/Blog + **Mobile 375 counterparts (homepage, Forex, Products, Zero, Demo, Pro)** → `page-recipes.md` + `responsive-rules.md`.
+**Last page batches:** … + **Mobile 375** homepage/markets/accounts + **Mobile 375b** MT5 P1/P2 + BrokerChooser + TV Promo + TradingView → `page-recipes.md` + `landing-patterns.md` + `responsive-rules.md`.
 
 ---
 
@@ -167,7 +167,7 @@ Copy when adding a pattern:
 | **Canonical Figma** | Homepage hero; account heroes; platform device heroes |
 | **Also seen on** | Accounts; Premium; Products; MT5 pages; MAM; DupliTrade; **Fusion+**; **Deposit/Withdrawal**; **Trading Conditions** hub |
 | **Rules** | Market pages with BG + chart → `market-hero`. Platform device heroes may include **Store download button** row (content: OS targets) or Icon+Text+Arrow web CTA — same `hero` type, optional props. No nested table. |
-| **Adaptive** | One type, three mobile orders — see `responsive-rules.md`. **Home:** title → visual → compact centered Primary 162×44 → lead. **Account/product (Zero, Demo, Pro, Products):** visual first → title → full-width CTA stack → body. **Never** a second `hero-mobile` type. |
+| **Adaptive** | One type, several mobile orders — see `responsive-rules.md`. **Home:** title → visual → compact centered Primary 162×44 → lead. **Account / MT5 overview:** visual first → title → full-width CTA stack → body. **Campaign (award/promo/TV):** title (+ partner) → visual 280 → body → dual CTA. **Story / conditions (Who We Are, Why Fusion, C1):** visual → title → body, **CTA omitted**. **Never** a second `hero-mobile` type. |
 
 ---
 
@@ -178,7 +178,7 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `market-hero` |
 | **Intent** | Above-the-fold for a single market (Forex, Crypto, Gold…). |
-| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **TV-Desktop card 599×480** (`17172:52853` / `15303:14755`): pair + price + change, 5 symbol chips, timeframe, chart, TradingView badge. Pair rotates / price ticks every 5s. |
+| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **TV-Desktop card 599×480** (`17172:52853` / `15303:14755`): pair + price + change, 5 symbol chips, timeframe, chart, TradingView badge. Tabs change on click only; price ticks every 5s. |
 | **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; `quotes[]` (5 instruments themed to the page, optional `label` / `iconSrc`). Optional legacy `quote` / `trustpilot` if no quotes. |
 | **Canonical Figma** | Market Header `23570:104257`; TV card family **TradingView Chart cards** `17172:52853` (Desktop `15303:14755`, Mobile `15433:12419`). |
 | **Also seen on** | **Crypto CFDs**; **Equity Indices**; Metals / Energy / US Share market pages; **Forex Mobile** `23570:104433` |
@@ -215,7 +215,7 @@ Copy when adding a pattern:
 | **Canonical Figma** | Forex Layout / 3 “What is Forex Trading?” `23570:104154` |
 | **Also seen on** | Premium intro copy split; Pro considerations; Gold education heroes; **Forex Mobile** `23570:104458`; Zero mid-band; Fusion Pro “Important Considerations” |
 | **Rules** | Structure shared; length of paragraphs is content. Not a USP grid. |
-| **Adaptive** | Desktop split → mobile **stack**. Forex: 60 icon → H2 → paragraphs. Pro: H2 + lead → illustration → **3 icon+text rows** (24px icon) → long note. |
+| **Adaptive** | Desktop split → mobile **stack**. Forex: 60 icon → H2 → paragraphs. Pro: H2 + lead → illustration → **3 icon+text rows** (24px icon) → long note. Who We Are story: H2 → image 280×210 → paragraphs. Vision = title + copy only. |
 
 ---
 
@@ -229,7 +229,7 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Multi-panel **Comparison Table** (description column + product panels); mobile tabs + one panel. |
 | **Content (props)** | `title`, `subtitle`, `columns`/`panels`, row labels + cells, footnote link |
 | **Canonical Figma** | Zero “Classic vs Zero” `27045:302056`; Pro “Retail vs Pro”; Gold Classic vs Zero; Tables frame Comparison |
-| **Also seen on** | Account / Pro pages; **MT5 Overview** also includes Classic vs Zero band; Zero Mobile `26258:282520`; Fusion Pro Mobile `26258:286364` |
+| **Also seen on** | Account / Pro pages; **MT5 Overview** Classic vs Zero **and** Compare MT5 vs MT4 `28758:159573`; Zero Mobile `26258:282520`; Fusion Pro Mobile `26258:286364` |
 | **Rules** | **Not** the same as markets `table` (instruments). Do not flatten into free-form cards if Figma uses Comparison Table. |
 | **Adaptive** | **Zero:** 2 Tabs_Icon (Zero / Classic) + **one** Comparison Table 343. **Pro:** **no tabs** — two sequential Pro Table - Mobile (leverage, then other criteria). Same type; panel count is content. |
 
@@ -279,7 +279,7 @@ Copy when adding a pattern:
 | **Canonical Figma** | MT5 Overview Download section `28610:429714`; Products overview; store buttons in MT5 Desktop/Mobile heroes |
 | **Also seen on** | TradingView platform landing; all platform device heroes; Homepage + Products mobile (375×69 bar) |
 | **Rules** | Reuse strip/badges; don’t invent per-page download grids. WebTrader may use text+arrow CTA instead of store badge. |
-| **Adaptive** | Always **full-bleed 375×69**; icon + label row **horizontal scroll**. Never wrap to 2 columns. |
+| **Adaptive** | Always **full-bleed 375×69**; icon + label row **horizontal scroll**. Never wrap to 2 columns. **Store download button** variant: **343×40** stacked, gap 16 (P2 heroes, under `platforms` tabs). Count is content (3 / 2 / 1). |
 
 ---
 
@@ -294,7 +294,7 @@ Copy when adding a pattern:
 | **Content (props)** | `title`, `items[]` (icon, title, body, link?) |
 | **Canonical Figma** | Products overview pair cards `26258:276024`; TV Promo tier cards |
 | **Rules** | Not USP isometric cards (`features` usp). Not instrument tiles. |
-| **Adaptive** | Desktop 2–3 col → mobile **stack** 335, gap ~32 (Products Mobile). |
+| **Adaptive** | Desktop 2–3 col. Mobile: **Promo stacks all 3** (343). **Full TV platform carousels** one card + Navigate dots + dual CTA. Products overview still stacks Content Card 2. |
 
 ---
 
@@ -310,7 +310,7 @@ Copy when adding a pattern:
 | **Canonical Figma** | Gold bento; Fusion Pro Benefits; MT5 “About MT5 Desktop/Mobile” Layout/396 bento; MT5 Overview platform features |
 | **Also seen on** | DupliTrade Why grid (visual + cards); platform device “About” sections; Fusion Pro Mobile benefits `26258:286057` |
 | **Rules** | Prefer equal `features` usp when Figma shows equal 4-up; use bento only when layout is unequal. |
-| **Adaptive** | Unequal desktop bento → mobile **illustration + stacked compact USP 343×134** (Fusion Pro). Not the equal-USP carousel. |
+| **Adaptive** | Unequal desktop bento → mobile **stack**, not carousel. Fusion Pro: illustration + compact 343×134. **Why Fusion A7:** featured **343×374** then compact **343×144–242**. Who We Are **Values** stay the equal-USP carousel instead. |
 
 ---
 
@@ -384,7 +384,8 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Section title + lead + multi-row grid of **Desktop Funding** cards (logo, method name, metadata rows, optional expand). |
 | **Content (props)** | `title`, `subtitle`, `items[]` (logo, name, fields…), deposit vs withdrawal mode |
 | **Canonical Figma** | Deposit “Explore our Deposit options” `24400:154073`; Withdrawal options grid |
-| **Rules** | Not USP cards. Not instrument tiles. Same card component for deposit and withdrawal; content differs. |
+| **Rules** | Not USP cards. Not instrument tiles. Same card component for deposit and withdrawal; content differs. Optional **Search** (`24400:153171`) is a prop, not a second type. |
+| **Adaptive** | Desktop: 4-col **305×470**, gap 20. Search 948 when present. Mobile funding page **not ingested yet**. |
 
 ---
 
@@ -398,8 +399,9 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Accordion chrome (FAQ-Desktop expand) + embedded **DataTable** (Forex-Desktop rows) when open; sibling categories collapsed. |
 | **Content (props)** | `title`, `subtitle`, `tabs?`, `sections[]` (label, columns, rows) |
 | **Canonical Figma** | Trading Conditions All Products `25136:208578`; **Session Time** `25136:208357` |
-| **Also seen on** | Other conditions tabs that nest tables under expanders |
+| **Also seen on** | Other conditions tabs that nest tables under expanders; **C1 Mobile** `25136:199688` |
 | **Rules** | Reuse table row atoms. Not free-form FAQ. Hub tabs switch domain (products / commissions / margins / session / contract…). |
+| **Adaptive** | Tabs_Text **overflow-x**. First category **open** with nested **Forex-Mobile 343** (header 54 / rows 80 + scroll). Other categories **collapsed 343×58**. Same type as desktop accordion. |
 
 ---
 
@@ -485,6 +487,7 @@ Copy when adding a pattern:
 | **Content (props)** | Summary metrics, `items[]` reviews |
 | **Canonical Figma** | What others say `29665:153626`; BrokerChooser; homepage reviews |
 | **Rules** | Same rail on award landings and about/proof pages. |
+| **Adaptive** | Title + lead → Trustpilot header → **review cards 280×322** horizontal overflow (BrokerChooser `29987:342253`, TradingView `29987:342803`). Do not wrap to a 1-col stack. |
 
 ---
 
@@ -512,7 +515,9 @@ Copy when adding a pattern:
 | **Structure (fixed)** | Full-bleed or section carousel + Navigate dots/arrows. |
 | **Content (props)** | `slides[]` (image, caption) |
 | **Canonical Figma** | Careers hero carousel `29637:142845`; homepage mobile media |
+| **Also seen on** | Who We Are Community `29665:159249` |
 | **Rules** | Presentation only; not a content card grid. |
+| **Adaptive** | Mobile: center slide **280** + peek **260** + Navigate dots (Who We Are Community). |
 
 ---
 
@@ -574,10 +579,27 @@ Copy when adding a pattern:
 
 ## Planned (named, not fully detailed yet)
 
+### `platform-crossnav` — Explore other platforms
+
+| Field | Value |
+|-------|--------|
+| **Status** | planned |
+| **Inventory** | `platform-crossnav` |
+| **Intent** | Cross-link to sibling platforms (MT4 / MT5 / TV / cTrader). |
+| **Structure (fixed)** | H2 + **Platform Card** rail (device mock + name + short pitch + CTA). |
+| **Content (props)** | `title`, `items[]` (platform, image, href) |
+| **Canonical Figma** | MT5 Overview mobile “Explore our other Platforms” `28610:432230` |
+| **Also seen on** | MT5 Desktop / Web / device pages |
+| **Rules** | **Not** `instrument-grid` (165 market tiles) and **not** `platforms` (tabs + accordion). One card family for cross-nav. |
+| **Adaptive** | Desktop row. Mobile: **snap carousel** — peek ~279 / center **320×518** + Navigate dots. |
+
+---
+
+## Planned (named, not fully detailed yet)
+
 | type | Intent sketch | Typical Figma |
 |------|---------------|---------------|
 | `ratings-strip` | Trustpilot / TV / Google compact row | Homepage social proof (lighter than full review-rail) |
-| `platform-crossnav` | “Explore our other Platforms” | MT5 device pages |
 | `expert-ratings` | Third-party review site scores | What others say “Reviews from the Experts” |
 
 ---
@@ -609,6 +631,7 @@ Copy when adding a pattern:
 | Q&A accordion | `faq` |
 | Ready to start trading | `cta` |
 | Risk line | `disclaimer` |
+| Explore other platforms (device cards) | `platform-crossnav` |
 | Platform overview vs device | recipes **P1** / **P2** |
 | Fusion+ Copier/Master | recipe **T1** |
 | Deposit/Withdrawal | recipe **F1** |
