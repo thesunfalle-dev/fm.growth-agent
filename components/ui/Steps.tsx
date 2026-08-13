@@ -17,6 +17,10 @@ type StepsProps = {
   orientation?: "vertical" | "horizontal";
   /** light | dark surface (dark = text on purple/dark band). */
   mode?: "light" | "dark";
+  /** When set, overrides per-item `active` for scroll-driven process. */
+  activeIndex?: number;
+  /** Connector fill 0–1 per step (scroll-driven). */
+  fills?: number[];
   className?: string;
 };
 
@@ -27,6 +31,8 @@ export function Steps({
   items,
   orientation = "vertical",
   mode = "light",
+  activeIndex,
+  fills,
   className = "",
 }: StepsProps) {
   const classes = [
@@ -41,7 +47,14 @@ export function Steps({
   return (
     <ol className={classes}>
       {items.map((item, index) => {
-        // Horizontal process (Figma): first step active (purple), rest inactive (gray)
+        const scrolled = typeof activeIndex === "number";
+        const state = !scrolled
+          ? undefined
+          : index < activeIndex
+            ? "done"
+            : index === activeIndex
+              ? "current"
+              : "upcoming";
         const defaultActive =
           orientation === "horizontal" ? index === 0 : true;
         return (
@@ -50,7 +63,9 @@ export function Steps({
             number={item.number ?? index + 1}
             title={item.title}
             description={item.description}
-            active={item.active ?? defaultActive}
+            active={scrolled ? index <= activeIndex : item.active ?? defaultActive}
+            state={state}
+            fill={fills?.[index]}
             last={index === items.length - 1}
           />
         );

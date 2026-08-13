@@ -304,6 +304,7 @@
   --component-step-inactive-text: var(--primitive-color-purple400);
   --component-step-text-on-active: var(--primitive-color-gray0);
   --component-step-shadow-horizontal: 0 8px 20px -8px rgba(116, 44, 206, 0.55);
+  --component-step-scroll-per-step: 90vh;
   --component-card-radius: 16px;
   --component-card-border: var(--primitive-color-gray300);
   --component-card-border-width: 0.5px;
@@ -318,6 +319,9 @@
   --component-card-usp-min-height: 364px;
   --component-card-usp-media-height: 180px;
   --component-card-usp-mobile-width: 250px;
+  --component-card-usp-mobile-center-width: 270px;
+  --component-card-usp-dot-height: 6px;
+  --component-card-usp-dot-width: 24px;
   --component-card-usp-title-size: 24px;
   --component-card-usp-body-size: 16px;
   --component-card-usp-max-visible: 4;
@@ -331,6 +335,7 @@
   --component-table-padding-x: 24px;
   --component-table-header-height: 54px;
   --component-table-row-min-height: 78px;
+  --component-table-row-min-height-mobile: 80px;
   --component-table-row-padding-y: 16px;
   --component-table-header-bg: var(--primitive-color-gray200);
   --component-table-header-text: var(--primitive-color-gray600);

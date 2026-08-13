@@ -103,7 +103,7 @@ Copy when adding a pattern:
 | **Canonical Figma** | Final Pages process [How It Works `29987:339011`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-339011); homepage split [How it Works - 5 `31517:366918`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31517-366918) |
 | **Also seen on** | Crypto / Equity Indices market landings; Zero / Demo how-to; MT5 Overview; DupliTrade; Fusion+ |
 | **Rules** | One `steps` type. **H2 “How It Works” is block chrome** — omit `title` in landings unless TZ names the section differently. Step titles: sentence case. Do not fork a second layout or recase the H2 per slug. |
-| **Adaptive** | Horizontal desktop **always** becomes vertical on 375. Homepage (`27873:296748`): title + lead → device visual → vertical steps → dual CTA **343** stacked, gap 20. Account how-to (Zero/Demo): title + long lead → device mock → vertical steps → **single** Primary 343×54. |
+| **Adaptive** | Horizontal desktop **always** becomes vertical on 375. Market process pins while you scroll: steps activate 1 → 2 → 3, then the page continues. Homepage (`27873:296748`): title + lead → device visual → vertical steps → dual CTA **343** stacked, gap 20. Account how-to (Zero/Demo): title + long lead → device mock → vertical steps → **single** Primary 343×54. |
 
 ---
 
@@ -119,7 +119,7 @@ Copy when adding a pattern:
 | **Canonical Figma** | Cards frame USP `15166:10610`; homepage “Why we’re different” |
 | **Also seen on** | **Crypto CFDs**; **Equity Indices**; Forex / Zero / Demo / Premium; MT5 Overview “Why Trade MT5 with Fusion” (equal rail) |
 | **Rules** | `usp` only for Fusion USPs (Figma rule). >4 items → horizontal scroll desktop; carousel mobile. |
-| **Adaptive** | **Equal USP rail** → mobile **snap carousel**: peek cards **250×470**, center **270×500**, Navigate dots (Homepage, Forex, Zero “Why”, Demo). **Compact benefit list** → mobile **stack 343×134** gap 16, optional featured visual on top (Zero “What it means”, Fusion Pro benefits). Do not force one mobile mode on both. |
+| **Adaptive** | **Equal USP rail** → mobile **snap carousel**: cards **250**, snap-center, **Navigate dots** (shipped). Desktop keeps peek rail + arrows. **Compact benefit list** → mobile **stack 343×134** (not yet a separate Features mode). |
 
 ---
 

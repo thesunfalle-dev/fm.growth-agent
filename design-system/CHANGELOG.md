@@ -1,5 +1,18 @@
 # Design system changelog
 
+## 2026-08-13 — M1 mobile modes on shipped landings
+
+- Applied the 375 contract to shared blocks used by **crypto** and **equity-indices** (no per-slug CSS).
+- USP rail: Navigate dots on small screens; desktop arrows unchanged. Tokens: `card.usp.mobileCenterWidth`, `dotWidth`, `dotHeight`.
+- Market hero: hug Light CTA, hide secondary, keep 364 panel.
+- Instruments table: sticky symbol + row 80 + horizontal scroll. Compare matrix scrolls.
+- Steps + footer CTA stack full-width. Footer CTA band stacks from the header mobile breakpoint.
+
+## 2026-08-13 — How It Works scrolls through steps
+
+- Horizontal `steps` (market How It Works) pins in the viewport and plays steps 1 → 2 → 3 as you scroll: number fills, connector draws, copy fades in.
+- `prefers-reduced-motion` keeps the static Figma row. Vertical-only steps are unchanged.
+
 ## 2026-08-13 — Funding / Conditions / About (D+M mix)
 
 - Re-confirmed F1 Deposit `24400:153833` and Withdrawal `24400:157450`. New F1 variant `24400:153171` adds optional Search 948 on `funding-card-grid`.

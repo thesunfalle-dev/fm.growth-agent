@@ -2,7 +2,7 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.15.0",
+    "version": "0.16.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-13",
     "source": "Website Redesign FM 2.0",
@@ -371,7 +371,8 @@
       "inactiveBg": "{primitive.color.purple200}",
       "inactiveText": "{primitive.color.purple400}",
       "textOnActive": "{primitive.color.gray0}",
-      "shadowHorizontal": "0 8px 20px -8px rgba(116, 44, 206, 0.55)"
+      "shadowHorizontal": "0 8px 20px -8px rgba(116, 44, 206, 0.55)",
+      "scrollPerStep": "90vh"
     },
     "card": {
       "radius": "16px",
@@ -389,6 +390,9 @@
         "minHeight": "364px",
         "mediaHeight": "180px",
         "mobileWidth": "250px",
+        "mobileCenterWidth": "270px",
+        "dotHeight": "6px",
+        "dotWidth": "24px",
         "titleSize": "24px",
         "bodySize": "16px",
         "maxVisible": 4
@@ -409,6 +413,7 @@
       "paddingX": "24px",
       "headerHeight": "54px",
       "rowMinHeight": "78px",
+      "rowMinHeightMobile": "80px",
       "rowPaddingY": "16px",
       "headerBg": "{primitive.color.gray200}",
       "headerText": "{primitive.color.gray600}",

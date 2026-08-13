@@ -1,9 +1,15 @@
+import type { CSSProperties } from "react";
+
 type StepProps = {
   number: number | string;
   title: string;
   description: string;
   /** Active (filled purple) vs inactive (muted). */
   active?: boolean;
+  /** Scroll-driven role. */
+  state?: "current" | "done" | "upcoming";
+  /** Connector fill 0–1. */
+  fill?: number;
   /** Hide trailing connector (last vertical step). */
   last?: boolean;
   className?: string;
@@ -18,12 +24,15 @@ export function Step({
   title,
   description,
   active = true,
+  state,
+  fill,
   last = false,
   className = "",
 }: StepProps) {
   const classes = [
     "ui-step",
     active ? "ui-step--active" : "ui-step--inactive",
+    state ? `ui-step--${state}` : "",
     last ? "ui-step--last" : "",
     className,
   ]
@@ -31,7 +40,15 @@ export function Step({
     .join(" ");
 
   return (
-    <li className={classes}>
+    <li
+      className={classes}
+      aria-current={state === "current" ? "step" : undefined}
+      style={
+        typeof fill === "number"
+          ? ({ "--step-fill": String(fill) } as CSSProperties)
+          : undefined
+      }
+    >
       <div className="ui-step__indicator" aria-hidden="true">
         <span className="ui-step__number">{number}</span>
         {!last ? <span className="ui-step__connector" /> : null}

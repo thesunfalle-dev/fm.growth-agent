@@ -76,7 +76,7 @@
       "sizes": [],
       "requiredStates": ["default"],
       "tokenDependencies": ["component.step"],
-      "notes": "Step by Steps list; pair with StepsBand block."
+      "notes": "Step by Steps list; pair with StepsBand. Horizontal process uses StepsProcess for scroll-pinned 1→2→3."
     },
     {
       "name": "Field",
