@@ -1,5 +1,18 @@
 # Design system changelog
 
+## 2026-08-14 — Hide header on scroll, infinite USP, table header only
+
+- Header (desktop + mobile) slides away on downward scroll and returns on a small upward move. Stays put while the mobile menu is open.
+- USP rail loops both ways: always a centered card (270), sides 250, scale interpolates while dragging. No edge.
+- Markets table: header row stays sticky; first column is not pinned. Body scrolls under the header.
+
+## 2026-08-14 — Crypto market-hero atmosphere
+
+- `market-hero` accepts `atmosphere`: `brand` (default purple BG art) or `crypto` (light field + coin constellation).
+- `CryptoCoinField`: coins fly in from left/right, then hover. High-res SVGs in `public/images/coins/`. TV card keeps the shared glass styles.
+- Tokens: `component.coinField`, `color.background.cryptoField*`, `zIndex.content`.
+- Crypto landing uses the new atmosphere; Equity Indices stays on brand art.
+
 ## 2026-08-14 — Header motion, USP 3-up, sticky symbol, steps rhythm
 
 - Header icons optically centered; search link no underline. Menu opens/closes with height + fade + icon rotate.

@@ -4,6 +4,7 @@ import {
   Children,
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type ReactNode,
@@ -14,79 +15,172 @@ type UspCarouselProps = {
   children: ReactNode;
 };
 
+const LOOP_COPIES = 3;
+/** Center card 270 / side 250 — Figma Why Trade `23570:105158`. */
+const CENTER_SCALE = 270 / 250;
+
 /**
  * USP card rail — desktop arrows (Figma `29987:341441`);
- * mobile snap + Navigate dots (Forex / homepage 375).
+ * mobile infinite snap: always a 270 center card, 250 peeks, loop both ways.
  */
 export function UspCarousel({ children }: UspCarouselProps) {
+  const items = useMemo(() => Children.toArray(children), [children]);
+  const count = items.length;
+  const looping = count > 1;
   const railRef = useRef<HTMLDivElement>(null);
+  const jumping = useRef(false);
+  const [active, setActive] = useState(0);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
-  const [active, setActive] = useState(0);
-  const count = Children.count(children);
 
-  const updateNav = useCallback(() => {
+  const slots = useMemo(() => {
+    const copies = looping ? LOOP_COPIES : 1;
+    const nodes: ReactNode[] = [];
+    for (let copy = 0; copy < copies; copy += 1) {
+      items.forEach((child, index) => {
+        nodes.push(
+          <div
+            key={`${copy}-${index}`}
+            className="ui-usp-card-slot"
+            data-index={index}
+          >
+            {child}
+          </div>,
+        );
+      });
+    }
+    return nodes;
+  }, [items, looping]);
+
+  const applyScale = useCallback(() => {
     const el = railRef.current;
     if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    const left = el.scrollLeft;
-    setCanPrev(left > 4);
-    setCanNext(left < max - 4);
+    const kids = Array.from(el.children) as HTMLElement[];
+    if (!kids.length) return;
 
-    const midpoint = left + el.clientWidth / 2;
+    const mid = el.scrollLeft + el.clientWidth / 2;
+    const styles = getComputedStyle(el);
+    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    const step = kids[0].offsetWidth + gap;
+
     let best = 0;
     let bestDist = Number.POSITIVE_INFINITY;
-    Array.from(el.children).forEach((child, index) => {
-      const card = child as HTMLElement;
-      const center = card.offsetLeft + card.offsetWidth / 2;
-      const dist = Math.abs(center - midpoint);
+    const compact = window.matchMedia("(max-width: 768px)").matches;
+    kids.forEach((slot, index) => {
+      const center = slot.offsetLeft + slot.offsetWidth / 2;
+      const dist = Math.abs(center - mid);
+      const t = Math.max(0, 1 - dist / step);
+      if (compact) {
+        const scale = 1 + (CENTER_SCALE - 1) * t;
+        slot.style.transform = `scale(${scale})`;
+      } else {
+        slot.style.transform = "";
+      }
+      slot.classList.toggle("ui-usp-card-slot--on", t > 0.55);
       if (dist < bestDist) {
         bestDist = dist;
         best = index;
       }
     });
-    setActive(best);
+
+    const logical = Number(kids[best]?.dataset.index ?? 0);
+    setActive(logical);
+
+    if (looping) {
+      setCanPrev(true);
+      setCanNext(true);
+    } else {
+      const max = el.scrollWidth - el.clientWidth;
+      setCanPrev(el.scrollLeft > 4);
+      setCanNext(el.scrollLeft < max - 4);
+    }
+  }, [looping]);
+
+  const wrapIfNeeded = useCallback(() => {
+    const el = railRef.current;
+    if (!el || !looping || jumping.current) return;
+    const first = el.children[0] as HTMLElement | undefined;
+    if (!first) return;
+    const styles = getComputedStyle(el);
+    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    const setWidth = (first.offsetWidth + gap) * count;
+    if (setWidth <= 0) return;
+    if (el.scrollLeft < setWidth * 0.5) {
+      jumping.current = true;
+      el.style.scrollSnapType = "none";
+      el.scrollLeft += setWidth;
+      el.style.scrollSnapType = "";
+      jumping.current = false;
+    } else if (el.scrollLeft > setWidth * 1.5) {
+      jumping.current = true;
+      el.style.scrollSnapType = "none";
+      el.scrollLeft -= setWidth;
+      el.style.scrollSnapType = "";
+      jumping.current = false;
+    }
+  }, [count, looping]);
+
+  const centerSlot = useCallback((slot: HTMLElement, smooth: boolean) => {
+    const el = railRef.current;
+    if (!el) return;
+    const left = slot.offsetLeft - (el.clientWidth - slot.offsetWidth) / 2;
+    el.scrollTo({ left, behavior: smooth ? "smooth" : "auto" });
   }, []);
 
   useEffect(() => {
     const el = railRef.current;
     if (!el) return;
-    updateNav();
-    const compact = window.matchMedia("(max-width: 768px)").matches;
-    if (compact) {
-      const card = el.children[0] as HTMLElement | undefined;
-      if (card) {
-        const left = card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
-        el.scrollLeft = Math.max(left, 0);
-      }
+
+    if (looping) {
+      const start = el.children[count] as HTMLElement | undefined;
+      if (start) centerSlot(start, false);
     }
-    el.addEventListener("scroll", updateNav, { passive: true });
-    const ro = new ResizeObserver(updateNav);
-    ro.observe(el);
-    window.addEventListener("resize", updateNav);
-    return () => {
-      el.removeEventListener("scroll", updateNav);
-      ro.disconnect();
-      window.removeEventListener("resize", updateNav);
+
+    applyScale();
+
+    const onScroll = () => {
+      if (jumping.current) return;
+      wrapIfNeeded();
+      applyScale();
     };
-  }, [updateNav, children]);
+    el.addEventListener("scroll", onScroll, { passive: true });
+    const ro = new ResizeObserver(() => {
+      applyScale();
+    });
+    ro.observe(el);
+    window.addEventListener("resize", applyScale);
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      ro.disconnect();
+      window.removeEventListener("resize", applyScale);
+    };
+  }, [applyScale, centerSlot, count, looping, wrapIfNeeded]);
 
   const scrollByCard = (dir: -1 | 1) => {
-    const el = railRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>(":scope > *");
-    const step = card
-      ? card.getBoundingClientRect().width + 24
-      : el.clientWidth * 0.75;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
+    const next = looping
+      ? (active + dir + count) % count
+      : Math.min(count - 1, Math.max(0, active + dir));
+    scrollToIndex(next);
   };
 
-  const scrollToIndex = (index: number) => {
+  const scrollToIndex = (logical: number) => {
     const el = railRef.current;
-    const card = el?.children[index] as HTMLElement | undefined;
-    if (!el || !card) return;
-    const left = card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2;
-    el.scrollTo({ left: Math.max(left, 0), behavior: "smooth" });
+    if (!el) return;
+    const kids = Array.from(el.children) as HTMLElement[];
+    const mid = el.scrollLeft + el.clientWidth / 2;
+    const matches = kids.filter((slot) => Number(slot.dataset.index) === logical);
+    if (!matches.length) return;
+    let target = matches[0];
+    let best = Number.POSITIVE_INFINITY;
+    matches.forEach((slot) => {
+      const center = slot.offsetLeft + slot.offsetWidth / 2;
+      const dist = Math.abs(center - mid);
+      if (dist < best) {
+        best = dist;
+        target = slot;
+      }
+    });
+    centerSlot(target, true);
   };
 
   return (
@@ -97,17 +191,7 @@ export function UspCarousel({ children }: UspCarouselProps) {
           className="ui-card-grid ui-card-grid--usp ui-usp-carousel__rail"
           data-max-visible={4}
         >
-          {Children.map(children, (child, index) => (
-            <div
-              className={
-                index === active
-                  ? "ui-usp-card-slot ui-usp-card-slot--on"
-                  : "ui-usp-card-slot"
-              }
-            >
-              {child}
-            </div>
-          ))}
+          {slots}
         </div>
       </div>
       <div className="ui-usp-carousel__nav" role="group" aria-label="Card navigation">

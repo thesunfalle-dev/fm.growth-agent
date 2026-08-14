@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { SiteHeaderMobile } from "@/components/ui/SiteHeaderMobile";
@@ -5,11 +8,42 @@ import { hubSignIn, hubSignUp, primaryNav } from "@/lib/navigation";
 
 /**
  * Marketing site header — Website Redesign Header_Desktop / Header_Mobile.
- * Icons: Material Symbols only (Logos & Icons 14994:6445).
+ * Hides on downward scroll; returns on a small upward move.
  */
 export function SiteHeader() {
+  const [away, setAway] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    lastY.current = window.scrollY;
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        if (menuOpen) {
+          setAway(false);
+          lastY.current = window.scrollY;
+          return;
+        }
+        const y = window.scrollY;
+        const delta = y - lastY.current;
+        if (y < 12) setAway(false);
+        else if (delta > 8) setAway(true);
+        else if (delta < -4) setAway(false);
+        lastY.current = y;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [menuOpen]);
+
   return (
-    <header className="ui-mkt-header">
+    <header className={away ? "ui-mkt-header is-away" : "ui-mkt-header"}>
       <div className="ui-mkt-header__inner">
         <Logo variant="auto" className="ui-mkt-header__logo" />
 
@@ -55,7 +89,7 @@ export function SiteHeader() {
           </a>
         </div>
 
-        <SiteHeaderMobile />
+        <SiteHeaderMobile onOpenChange={setMenuOpen} />
       </div>
     </header>
   );

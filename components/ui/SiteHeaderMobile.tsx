@@ -5,17 +5,26 @@ import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { hubSignIn, hubSignUp, primaryNav } from "@/lib/navigation";
 
+type SiteHeaderMobileProps = {
+  onOpenChange?: (open: boolean) => void;
+};
+
 /**
  * Header_Mobile Default / Close — search + menu, smooth panel.
  */
-export function SiteHeaderMobile() {
+export function SiteHeaderMobile({ onOpenChange }: SiteHeaderMobileProps) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
+
+  const setMenu = (next: boolean) => {
+    setOpen(next);
+    onOpenChange?.(next);
+  };
 
   useEffect(() => {
     if (!open) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") setMenu(false);
     };
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
@@ -43,7 +52,7 @@ export function SiteHeaderMobile() {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls={panelId}
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => setMenu(!open)}
       >
         <Icon name="menu" size={24} className="ui-mkt-header__icon--menu" />
         <Icon name="close" size={24} className="ui-mkt-header__icon--close" />
