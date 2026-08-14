@@ -89,12 +89,7 @@ export function StepsProcess({ items, mode = "light", header, actions }: StepsPr
       ref={pinRef}
       className="ui-steps-pin"
       data-active-step={compact ? undefined : activeIndex + 1}
-      style={
-        {
-          "--steps-count": String(items.length),
-          height: `${Math.max(items.length, 2) * 100}vh`,
-        } as CSSProperties
-      }
+      style={{ "--steps-count": String(items.length) } as CSSProperties}
     >
       <div className="ui-steps-pin__sticky">
         <Container className="ui-steps-band">

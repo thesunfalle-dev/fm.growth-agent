@@ -2554,7 +2554,7 @@ a {
 }
 
 .ui-steps-pin {
-  height: 300vh;
+  height: calc(var(--steps-count, 3) * 100vh);
 }
 
 .ui-steps-pin__sticky {

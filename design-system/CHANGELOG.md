@@ -1,5 +1,9 @@
 # Design system changelog
 
+## 2026-08-14 — How It Works no longer eats the page on 375
+
+- Pin height is CSS `calc(var(--steps-count) * 100vh)` so the 768 `height: auto` rule can win. Inline 300vh had buried FAQ + footer under a white void.
+
 ## 2026-08-14 — USP mobile sizes from homepage Why we’re different
 
 - SoT `27873:296738`: center card **270×500**, sides **256×388**, gap 32, ~20px peek.
