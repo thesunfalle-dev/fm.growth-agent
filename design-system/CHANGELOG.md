@@ -1,5 +1,10 @@
 # Design system changelog
 
+## 2026-08-14 — USP desktop vs mobile, stable swipe
+
+- Desktop rail is finite again (arrows, one copy). Loop + morph only below 768.
+- Mobile wrap waits for scroll settle so snaps don’t stall mid-card. Size morph is `scale` on a fixed 270×500 card so copy doesn’t reflow.
+
 ## 2026-08-14 — How It Works no longer eats the page on 375
 
 - Pin height is CSS `calc(var(--steps-count) * 100vh)` so the 768 `height: auto` rule can win. Inline 300vh had buried FAQ + footer under a white void.
@@ -18,7 +23,7 @@
 ## 2026-08-14 — Crypto market-hero atmosphere
 
 - `market-hero` accepts `atmosphere`: `brand` (default purple BG art) or `crypto` (light field + coin constellation).
-- `CryptoCoinField`: coins fly in from left/right, then hover. High-res SVGs in `public/images/coins/`. TV card keeps the shared glass styles.
+- `CryptoCoinField`: coins fly in from left/right, then hover. 3D Fusion-style coins in `public/images/coins/` (Homepage Animation `27873:297359`). Light quotes card on the crypto field.
 - Tokens: `component.coinField`, `color.background.cryptoField*`, `zIndex.content`.
 - Crypto landing uses the new atmosphere; Equity Indices stays on brand art.
 

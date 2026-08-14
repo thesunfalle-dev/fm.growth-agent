@@ -4,6 +4,7 @@ import {
   Children,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -16,6 +17,7 @@ type UspCarouselProps = {
 };
 
 const LOOP_COPIES = 3;
+const COMPACT_MQ = "(max-width: 768px)";
 /** Homepage Why we’re different `27873:296738`: center 270×500, sides 256×388. */
 const SIDE_WIDTH = 256;
 const CENTER_WIDTH = 270;
@@ -23,18 +25,22 @@ const SIDE_HEIGHT = 388;
 const CENTER_HEIGHT = 500;
 
 /**
- * USP card rail — desktop arrows (Figma `29987:341441`);
- * mobile infinite snap: 270×500 center, 256×388 sides, ~20px peek, loop.
+ * USP rail.
+ * Desktop: finite row + arrows (Figma `29987:341441`).
+ * Mobile: infinite snap, 270×500 center / 256×388 sides, wrap after settle.
  */
 export function UspCarousel({ children }: UspCarouselProps) {
   const items = useMemo(() => Children.toArray(children), [children]);
   const count = items.length;
-  const looping = count > 1;
   const railRef = useRef<HTMLDivElement>(null);
   const jumping = useRef(false);
+  const settleTimer = useRef(0);
+  const [compact, setCompact] = useState(false);
   const [active, setActive] = useState(0);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
+
+  const looping = compact && count > 1;
 
   const slots = useMemo(() => {
     const copies = looping ? LOOP_COPIES : 1;
@@ -55,32 +61,40 @@ export function UspCarousel({ children }: UspCarouselProps) {
     return nodes;
   }, [items, looping]);
 
-  const applyScale = useCallback(() => {
+  const stepSize = (el: HTMLElement) => {
+    const first = el.children[0] as HTMLElement | undefined;
+    if (!first) return 0;
+    const styles = getComputedStyle(el);
+    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    return first.offsetWidth + gap;
+  };
+
+  const morphCards = useCallback(() => {
     const el = railRef.current;
     if (!el) return;
     const kids = Array.from(el.children) as HTMLElement[];
     if (!kids.length) return;
 
     const mid = el.scrollLeft + el.clientWidth / 2;
-    const styles = getComputedStyle(el);
-    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
-    const step = kids[0].offsetWidth + gap;
-
+    const step = stepSize(el) || 1;
     let best = 0;
     let bestDist = Number.POSITIVE_INFINITY;
-    const compact = window.matchMedia("(max-width: 768px)").matches;
+
     kids.forEach((slot, index) => {
       const center = slot.offsetLeft + slot.offsetWidth / 2;
       const dist = Math.abs(center - mid);
       const t = Math.max(0, 1 - dist / step);
       const card = slot.firstElementChild as HTMLElement | null;
-      slot.style.transform = "";
-      if (compact && card) {
-        card.style.width = `${SIDE_WIDTH + (CENTER_WIDTH - SIDE_WIDTH) * t}px`;
-        card.style.height = `${SIDE_HEIGHT + (CENTER_HEIGHT - SIDE_HEIGHT) * t}px`;
-      } else if (card) {
+      if (card) {
         card.style.width = "";
         card.style.height = "";
+        if (compact) {
+          const sx = SIDE_WIDTH / CENTER_WIDTH + (1 - SIDE_WIDTH / CENTER_WIDTH) * t;
+          const sy = SIDE_HEIGHT / CENTER_HEIGHT + (1 - SIDE_HEIGHT / CENTER_HEIGHT) * t;
+          card.style.transform = `scale(${sx}, ${sy})`;
+        } else {
+          card.style.transform = "";
+        }
       }
       slot.classList.toggle("ui-usp-card-slot--on", t > 0.55);
       if (dist < bestDist) {
@@ -89,8 +103,7 @@ export function UspCarousel({ children }: UspCarouselProps) {
       }
     });
 
-    const logical = Number(kids[best]?.dataset.index ?? 0);
-    setActive(logical);
+    setActive(Number(kids[best]?.dataset.index ?? 0));
 
     if (looping) {
       setCanPrev(true);
@@ -100,37 +113,44 @@ export function UspCarousel({ children }: UspCarouselProps) {
       setCanPrev(el.scrollLeft > 4);
       setCanNext(el.scrollLeft < max - 4);
     }
-  }, [looping]);
+  }, [compact, looping]);
 
   const wrapIfNeeded = useCallback(() => {
     const el = railRef.current;
     if (!el || !looping || jumping.current) return;
-    const first = el.children[0] as HTMLElement | undefined;
-    if (!first) return;
-    const styles = getComputedStyle(el);
-    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
-    const setWidth = (first.offsetWidth + gap) * count;
+    const step = stepSize(el);
+    const setWidth = step * count;
     if (setWidth <= 0) return;
-    if (el.scrollLeft < setWidth * 0.5) {
-      jumping.current = true;
-      el.style.scrollSnapType = "none";
-      el.scrollLeft += setWidth;
-      el.style.scrollSnapType = "";
+
+    let shift = 0;
+    if (el.scrollLeft < setWidth * 0.5) shift = setWidth;
+    else if (el.scrollLeft > setWidth * 1.5) shift = -setWidth;
+    if (!shift) return;
+
+    jumping.current = true;
+    const snap = el.style.scrollSnapType;
+    el.style.scrollSnapType = "none";
+    el.scrollLeft += shift;
+    requestAnimationFrame(() => {
+      el.style.scrollSnapType = snap;
       jumping.current = false;
-    } else if (el.scrollLeft > setWidth * 1.5) {
-      jumping.current = true;
-      el.style.scrollSnapType = "none";
-      el.scrollLeft -= setWidth;
-      el.style.scrollSnapType = "";
-      jumping.current = false;
-    }
-  }, [count, looping]);
+      morphCards();
+    });
+  }, [count, looping, morphCards]);
 
   const centerSlot = useCallback((slot: HTMLElement, smooth: boolean) => {
     const el = railRef.current;
     if (!el) return;
     const left = slot.offsetLeft - (el.clientWidth - slot.offsetWidth) / 2;
     el.scrollTo({ left, behavior: smooth ? "smooth" : "auto" });
+  }, []);
+
+  useLayoutEffect(() => {
+    const mq = window.matchMedia(COMPACT_MQ);
+    const sync = () => setCompact(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
   }, []);
 
   useEffect(() => {
@@ -140,27 +160,38 @@ export function UspCarousel({ children }: UspCarouselProps) {
     if (looping) {
       const start = el.children[count] as HTMLElement | undefined;
       if (start) centerSlot(start, false);
+    } else {
+      el.scrollLeft = 0;
     }
 
-    applyScale();
+    morphCards();
+
+    const onSettled = () => {
+      if (jumping.current) return;
+      wrapIfNeeded();
+      morphCards();
+    };
 
     const onScroll = () => {
       if (jumping.current) return;
-      wrapIfNeeded();
-      applyScale();
+      morphCards();
+      window.clearTimeout(settleTimer.current);
+      settleTimer.current = window.setTimeout(onSettled, 80);
     };
+
     el.addEventListener("scroll", onScroll, { passive: true });
-    const ro = new ResizeObserver(() => {
-      applyScale();
-    });
+    el.addEventListener("scrollend", onSettled);
+    const ro = new ResizeObserver(() => morphCards());
     ro.observe(el);
-    window.addEventListener("resize", applyScale);
+    window.addEventListener("resize", morphCards);
     return () => {
       el.removeEventListener("scroll", onScroll);
+      el.removeEventListener("scrollend", onSettled);
+      window.clearTimeout(settleTimer.current);
       ro.disconnect();
-      window.removeEventListener("resize", applyScale);
+      window.removeEventListener("resize", morphCards);
     };
-  }, [applyScale, centerSlot, count, looping, wrapIfNeeded]);
+  }, [centerSlot, count, looping, morphCards, wrapIfNeeded]);
 
   const scrollByCard = (dir: -1 | 1) => {
     const next = looping
@@ -190,7 +221,7 @@ export function UspCarousel({ children }: UspCarouselProps) {
   };
 
   return (
-    <div className="ui-usp-carousel">
+    <div className={compact ? "ui-usp-carousel is-compact" : "ui-usp-carousel"}>
       <div className="ui-usp-carousel__bleed">
         <div
           ref={railRef}
