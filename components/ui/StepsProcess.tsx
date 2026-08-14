@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
 import { Container } from "@/components/ui/Container";
 import { Steps, type StepItem } from "@/components/ui/Steps";
 
@@ -28,18 +35,27 @@ export function StepsProcess({ items, mode = "light", header, actions }: StepsPr
     return () => compactMq.removeEventListener("change", syncCompact);
   }, []);
 
-  useEffect(() => {
-    const reduceMq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const compactMq = window.matchMedia("(max-width: 768px)"); /* breakpoint.md */
-    if (reduceMq.matches || compactMq.matches || items.length < 2) return;
-
+  useLayoutEffect(() => {
     const pin = pinRef.current;
     if (!pin) return;
+    if (compact || items.length < 2) return;
 
     let frame = 0;
-    const mobileQuery = window.matchMedia("(max-width: 768px)");
+    const last = items.length - 1;
 
-    const apply = (index: number, flow: number) => {
+    const updatePinned = () => {
+      const stickyTop =
+        parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue("--layout-header-height"),
+        ) || 80;
+      const rect = pin.getBoundingClientRect();
+      const travel = Math.max(pin.offsetHeight - window.innerHeight + stickyTop, 1);
+      const scrolled = Math.min(Math.max(-rect.top + stickyTop, 0), travel);
+      const progress = scrolled / travel;
+      const usable = Math.min(1, progress / 0.75);
+      const scaled = usable * last;
+      const index = Math.min(last, Math.floor(scaled + 1e-4));
+      const flow = index >= last ? 1 : Math.min(1, Math.max(0, scaled - index));
       setActiveIndex(index);
       setFills(
         items.map((_, itemIndex) => {
@@ -50,63 +66,35 @@ export function StepsProcess({ items, mode = "light", header, actions }: StepsPr
       );
     };
 
-    const updatePinned = () => {
-      const desktopHeader =
-        parseFloat(
-          getComputedStyle(document.documentElement).getPropertyValue("--layout-header-height"),
-        ) || 80;
-      const stickyTop = desktopHeader;
-      const rect = pin.getBoundingClientRect();
-      const travel = pin.offsetHeight - window.innerHeight + stickyTop;
-      const scrolled = Math.min(Math.max(-rect.top + stickyTop, 0), Math.max(travel, 1));
-      const progress = travel <= 0 ? 0 : scrolled / travel;
-      const scaled = progress * items.length;
-      const index = Math.min(items.length - 1, Math.floor(scaled));
-      const flow = index >= items.length - 1 ? 1 : Math.min(1, Math.max(0, scaled - index));
-      apply(index, flow);
-    };
-
-    const updateMobile = () => {
-      const steps = [...pin.querySelectorAll<HTMLElement>(".ui-step")];
-      if (!steps.length) return;
-      const marker = window.innerHeight * 0.45;
-      let index = 0;
-      steps.forEach((step, itemIndex) => {
-        if (step.getBoundingClientRect().top <= marker) index = itemIndex;
-      });
-      apply(index, 1);
-    };
-
-    const update = () => {
-      if (mobileQuery.matches) updateMobile();
-      else updatePinned();
-    };
-
     const onScroll = () => {
       if (frame) return;
       frame = window.requestAnimationFrame(() => {
         frame = 0;
-        update();
+        updatePinned();
       });
     };
 
-    update();
+    updatePinned();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
-    mobileQuery.addEventListener("change", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
-      mobileQuery.removeEventListener("change", onScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [items.length]);
+  }, [compact, items]);
 
   return (
     <div
       ref={pinRef}
       className="ui-steps-pin"
-      style={{ "--steps-count": items.length } as CSSProperties}
+      data-active-step={compact ? undefined : activeIndex + 1}
+      style={
+        {
+          "--steps-count": String(items.length),
+          height: `${Math.max(items.length, 2) * 100}vh`,
+        } as CSSProperties
+      }
     >
       <div className="ui-steps-pin__sticky">
         <Container className="ui-steps-band">

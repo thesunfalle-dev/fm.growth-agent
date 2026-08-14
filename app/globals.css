@@ -97,8 +97,9 @@ a {
   overflow-x: clip;
 }
 
-/* Full-bleed brand hero — no side gutters / edge crop */
-.ui-section--hero.ui-section--brand-bg {
+/* Full-bleed brand / atmosphere hero — no side gutters / edge crop */
+.ui-section--hero.ui-section--brand-bg,
+.ui-section--hero.ui-section--crypto-field {
   width: 100%;
   max-width: none;
   margin: 0;
@@ -308,6 +309,15 @@ a {
   background: var(--layout-header-bg);
   height: var(--layout-header-height);
   box-shadow: var(--shadow-header);
+  transition:
+    transform var(--motion-duration-emphasis) var(--motion-easing-emphasized),
+    box-shadow var(--motion-duration-default) var(--motion-easing-standard);
+}
+
+.ui-mkt-header.is-away {
+  transform: translate3d(0, -100%, 0);
+  box-shadow: none;
+  pointer-events: none;
 }
 
 .ui-mkt-header__inner {
@@ -2137,9 +2147,8 @@ a {
   .ui-table-shell,
   .ui-table-shell--scroll {
     border-radius: var(--radius-md);
-    overflow-x: auto;
-    overflow-y: visible;
-    max-height: none;
+    overflow: auto;
+    max-height: var(--component-table-max-height);
   }
 
   .ui-table {
@@ -2151,30 +2160,10 @@ a {
     height: var(--component-table-row-min-height-mobile);
   }
 
-  /* thead sticky-top breaks sticky-left on the first header cell */
   .ui-table__head {
-    position: static;
-  }
-
-  .ui-table__row--header .ui-table__cell:first-child,
-  .ui-table__row--body .ui-table__cell:first-child {
     position: sticky;
-    left: 0;
+    top: 0;
     z-index: 2;
-    box-shadow: 8px 0 12px -8px color-mix(in oklab, var(--primitive-color-blue500) 18%, transparent);
-  }
-
-  .ui-table__row--header .ui-table__cell:first-child {
-    z-index: 3;
-    background: var(--component-table-header-bg);
-  }
-
-  .ui-table__row--body .ui-table__cell:first-child {
-    background: var(--color-background-canvas);
-  }
-
-  .ui-table__row--body:hover .ui-table__cell:first-child {
-    background: var(--component-table-row-hover-bg);
   }
 
   .ui-table__cell--action {
@@ -2565,9 +2554,7 @@ a {
 }
 
 .ui-steps-pin {
-  height: calc(
-    var(--component-step-scroll-per-step) * max(var(--steps-count, 3) - 1, 1) + 140vh
-  );
+  height: 300vh;
 }
 
 .ui-steps-pin__sticky {
@@ -3407,6 +3394,191 @@ a {
   -webkit-text-fill-color: var(--color-text-on-accent);
 }
 
+/* Crypto atmosphere — light field + floating coins (not the purple BG art) */
+.ui-section--crypto-field {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-crypto-field);
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+.ui-section--crypto-field .ui-container {
+  position: relative;
+  z-index: var(--z-index-content);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
+.ui-section--crypto-field .ui-market-hero__panel--tv {
+  background: var(--color-background-crypto-field-panel);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.ui-coin-field {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-index-base);
+  pointer-events: none;
+  overflow: hidden;
+  --px: 0;
+  --py: 0;
+}
+
+.ui-coin-field__orb {
+  position: absolute;
+  border-radius: var(--radius-pill);
+  filter: blur(var(--space-20));
+  opacity: 0.9;
+  animation: ui-coin-orb var(--component-coin-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+}
+
+.ui-coin-field__orb--a {
+  width: var(--component-coin-field-orb-size);
+  height: var(--component-coin-field-orb-size);
+  left: -8%;
+  top: -18%;
+  background: var(--color-background-crypto-field-glow-a);
+}
+
+.ui-coin-field__orb--b {
+  width: var(--component-coin-field-orb-size);
+  height: var(--component-coin-field-orb-size);
+  right: -6%;
+  bottom: -22%;
+  background: var(--color-background-crypto-field-glow-b);
+  animation-delay: calc(var(--component-coin-field-duration-drift) * -0.4);
+}
+
+.ui-coin-field__coin {
+  position: absolute;
+  left: var(--coin-x);
+  top: var(--coin-y);
+  width: var(--component-coin-field-size-md);
+  height: var(--component-coin-field-size-md);
+  animation: ui-coin-enter var(--component-coin-field-duration-enter) var(--motion-easing-emphasized) both;
+}
+
+.ui-coin-field__coin--xs {
+  width: var(--component-coin-field-size-xs);
+  height: var(--component-coin-field-size-xs);
+}
+
+.ui-coin-field__coin--sm {
+  width: var(--component-coin-field-size-sm);
+  height: var(--component-coin-field-size-sm);
+}
+
+.ui-coin-field__coin--md {
+  width: var(--component-coin-field-size-md);
+  height: var(--component-coin-field-size-md);
+}
+
+.ui-coin-field__coin--lg {
+  width: var(--component-coin-field-size-lg);
+  height: var(--component-coin-field-size-lg);
+}
+
+.ui-coin-field__coin--xl {
+  width: var(--component-coin-field-size-xl);
+  height: var(--component-coin-field-size-xl);
+}
+
+.ui-coin-field__coin--full {
+  --coin-opacity: var(--component-coin-field-opacity);
+}
+
+.ui-coin-field__coin--soft {
+  --coin-opacity: var(--component-coin-field-opacity-soft);
+}
+
+.ui-coin-field__coin[data-slot="1"] { --coin-x: -3.5%; --coin-y: 8%; }
+.ui-coin-field__coin[data-slot="2"] { --coin-x: -3%; --coin-y: 72%; }
+.ui-coin-field__coin[data-slot="3"] { --coin-x: 47%; --coin-y: 1%; }
+.ui-coin-field__coin[data-slot="4"] { --coin-x: 44%; --coin-y: 86%; }
+.ui-coin-field__coin[data-slot="5"] { --coin-x: 88.5%; --coin-y: 7%; }
+.ui-coin-field__coin[data-slot="6"] { --coin-x: 88.5%; --coin-y: 70%; }
+.ui-coin-field__coin[data-slot="7"] { --coin-x: 48%; --coin-y: 14%; }
+.ui-coin-field__coin[data-slot="8"] { --coin-x: 79%; --coin-y: 1%; }
+
+.ui-coin-field__float {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: ui-coin-float var(--float-duration, var(--component-coin-field-duration-drift))
+    var(--motion-easing-standard) infinite;
+}
+
+.ui-coin-field__disc {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--color-background-canvas);
+  box-shadow: var(--component-coin-field-shadow), var(--component-coin-field-ring);
+  transform: translate3d(
+    calc(var(--px) * var(--component-coin-field-parallax) * var(--depth, 1)),
+    calc(var(--py) * var(--component-coin-field-parallax) * var(--depth, 1)),
+    0
+  );
+  transition: transform var(--motion-duration-emphasis) var(--motion-easing-emphasized);
+}
+
+.ui-coin-field__disc::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    155deg,
+    var(--component-coin-field-highlight) 0%,
+    transparent 46%
+  );
+  pointer-events: none;
+}
+
+.ui-coin-field__disc img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes ui-coin-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.62) translate3d(0, var(--space-6), 0);
+  }
+  to {
+    opacity: var(--coin-opacity, 1);
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ui-coin-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--tilt-a, -4deg));
+  }
+  50% {
+    transform: translate3d(var(--float-x, 0), var(--float-y, var(--component-coin-field-float)), 0)
+      rotate(var(--tilt-b, 4deg));
+  }
+}
+
+@keyframes ui-coin-orb {
+  0%,
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate3d(var(--space-4), calc(var(--space-6) * -1), 0);
+  }
+}
+
 /* Market Header — Figma 23570:104257. Values are sourced from component.marketHero tokens. */
 .ui-section--hero.ui-section--market-hero {
   min-height: var(--component-market-hero-min-height);
@@ -3997,6 +4169,21 @@ a {
   .ui-steps--scroll .ui-step__number {
     transition: none;
   }
+
+  .ui-coin-field__coin,
+  .ui-coin-field__float,
+  .ui-coin-field__orb {
+    animation: none;
+  }
+
+  .ui-coin-field__coin {
+    opacity: var(--coin-opacity, 1);
+  }
+
+  .ui-coin-field__disc {
+    transform: none;
+    transition: none;
+  }
 }
 
 /* breakpoint.md — 768px */
@@ -4024,6 +4211,41 @@ a {
   .ui-market-hero__layout {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-10);
+  }
+
+  .ui-coin-field__coin--low {
+    display: none;
+  }
+
+  .ui-coin-field__coin--xl,
+  .ui-coin-field__coin--lg {
+    width: var(--component-coin-field-size-md);
+    height: var(--component-coin-field-size-md);
+  }
+
+  .ui-coin-field__coin[data-slot="1"] {
+    --coin-x: -10%;
+    --coin-y: -6%;
+  }
+
+  .ui-coin-field__coin[data-slot="2"] {
+    --coin-x: -12%;
+    --coin-y: 46%;
+  }
+
+  .ui-coin-field__coin[data-slot="5"] {
+    --coin-x: 82%;
+    --coin-y: -8%;
+  }
+
+  .ui-coin-field__coin[data-slot="6"] {
+    --coin-x: 80%;
+    --coin-y: 42%;
+  }
+
+  .ui-coin-field__orb {
+    width: var(--component-coin-field-orb-size-sm);
+    height: var(--component-coin-field-orb-size-sm);
   }
 
   /* M1 375: title → lead → hug Light CTA → 343×364 slot. Hide extra CTA. */
@@ -4182,13 +4404,8 @@ a {
     min-width: var(--component-card-usp-mobile-width);
     max-width: var(--component-card-usp-mobile-width);
     scroll-snap-align: center;
-    transform: scale(1);
     transform-origin: center center;
-    transition: transform var(--motion-duration-emphasis) var(--motion-easing-emphasized);
-  }
-
-  .ui-usp-card-slot--on {
-    transform: scale(1.08);
+    will-change: transform;
   }
 
   .ui-usp-carousel__dot {
