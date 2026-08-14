@@ -97,7 +97,17 @@ export function UspCarousel({ children }: UspCarouselProps) {
           className="ui-card-grid ui-card-grid--usp ui-usp-carousel__rail"
           data-max-visible={4}
         >
-          {children}
+          {Children.map(children, (child, index) => (
+            <div
+              className={
+                index === active
+                  ? "ui-usp-card-slot ui-usp-card-slot--on"
+                  : "ui-usp-card-slot"
+              }
+            >
+              {child}
+            </div>
+          ))}
         </div>
       </div>
       <div className="ui-usp-carousel__nav" role="group" aria-label="Card navigation">

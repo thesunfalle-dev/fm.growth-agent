@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-14 — Header motion, USP 3-up, sticky symbol, steps rhythm
+
+- Header icons optically centered; search link no underline. Menu opens/closes with height + fade + icon rotate.
+- USP 375 (`23570:105158`): 270 center / 250 side scale, full-bleed rail, Navigate 36×6 bar + 6px dots gap 12.
+- Markets table: first column stays sticky on horizontal scroll (thead no longer sticky-top on 375).
+- How It Works: title→lead 16; discs 32 / 16 on compact.
+
 ## 2026-08-13 — Mobile header / USP / table / steps / footer bugs
 
 - Header_Mobile Default + Close (`16373:19317`): F mark 28×33, search+menu 24/16; open state hides search and swaps menu → close.

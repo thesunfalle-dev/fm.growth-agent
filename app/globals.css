@@ -405,6 +405,7 @@ a {
   align-self: center;
   height: 24px;
   gap: var(--layout-header-actions-gap);
+  transition: gap var(--motion-duration-default) var(--motion-easing-emphasized);
 }
 
 .ui-mkt-header__icon-btn {
@@ -465,12 +466,20 @@ a {
 }
 
 .ui-mkt-header__search {
+  width: 24px;
+  overflow: hidden;
   transition:
     opacity var(--motion-duration-default) var(--motion-easing-standard),
+    width var(--motion-duration-default) var(--motion-easing-emphasized),
     transform var(--motion-duration-default) var(--motion-easing-emphasized);
 }
 
+.ui-mkt-header__mobile.is-open {
+  gap: 0;
+}
+
 .ui-mkt-header__mobile.is-open .ui-mkt-header__search {
+  width: 0;
   opacity: 0;
   transform: scale(0.8);
   pointer-events: none;
@@ -4160,26 +4169,26 @@ a {
   .ui-section--usp .ui-usp-carousel__rail,
   .ui-section--usp .ui-card-grid--usp {
     align-items: center;
-    padding-left: calc((100vw - var(--component-card-usp-mobile-center-width)) / 2);
-    padding-right: calc((100vw - var(--component-card-usp-mobile-center-width)) / 2);
-    scroll-padding-inline: calc((100vw - var(--component-card-usp-mobile-center-width)) / 2);
+    padding-left: calc((100vw - var(--component-card-usp-mobile-width)) / 2);
+    padding-right: calc((100vw - var(--component-card-usp-mobile-width)) / 2);
+    scroll-padding-inline: calc((100vw - var(--component-card-usp-mobile-width)) / 2);
     gap: var(--space-6);
   }
 
   .ui-usp-carousel__rail > *,
   .ui-card-grid--usp > *,
   .ui-usp-card-slot {
-    width: var(--component-card-usp-mobile-center-width);
-    min-width: var(--component-card-usp-mobile-center-width);
-    max-width: var(--component-card-usp-mobile-center-width);
+    width: var(--component-card-usp-mobile-width);
+    min-width: var(--component-card-usp-mobile-width);
+    max-width: var(--component-card-usp-mobile-width);
     scroll-snap-align: center;
-    transform: scale(0.926);
+    transform: scale(1);
     transform-origin: center center;
     transition: transform var(--motion-duration-emphasis) var(--motion-easing-emphasized);
   }
 
   .ui-usp-card-slot--on {
-    transform: scale(1);
+    transform: scale(1.08);
   }
 
   .ui-usp-carousel__dot {

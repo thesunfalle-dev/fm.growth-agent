@@ -289,8 +289,10 @@
   --component-faq-icon-size: 24px;
   --component-faq-max-width: 1000px;
   --component-step-number-size: 40px;
+  --component-step-number-size-mobile: 32px;
   --component-step-number-size-horizontal: 44px;
   --component-step-number-font-size: 24px;
+  --component-step-number-font-size-mobile: 16px;
   --component-step-number-font-size-horizontal: 20px;
   --component-step-title-size-vertical: 20px;
   --component-step-title-size-horizontal: 16px;
@@ -321,8 +323,9 @@
   --component-card-usp-mobile-width: 250px;
   --component-card-usp-mobile-center-width: 270px;
   --component-card-usp-dot-height: 6px;
-  --component-card-usp-dot-width: 24px;
+  --component-card-usp-dot-width: 36px;
   --component-card-usp-dot-idle-width: 6px;
+  --component-card-usp-dot-gap: 12px;
   --component-card-usp-title-size: 24px;
   --component-card-usp-body-size: 16px;
   --component-card-usp-max-visible: 4;

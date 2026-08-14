@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/Button";
-import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/ui/Logo";
+import { SiteHeaderMobile } from "@/components/ui/SiteHeaderMobile";
 import { hubSignIn, hubSignUp, primaryNav } from "@/lib/navigation";
 
 /**
  * Marketing site header — Website Redesign Header_Desktop / Header_Mobile.
  * Icons: Material Symbols only (Logos & Icons 14994:6445).
- * Static-export friendly: mobile menu uses details/summary (no client JS).
  */
 export function SiteHeader() {
   return (
@@ -56,52 +55,7 @@ export function SiteHeader() {
           </a>
         </div>
 
-        <div className="ui-mkt-header__mobile">
-          <a
-            className="ui-mkt-header__icon-btn ui-mkt-header__search"
-            href="https://fusionmarkets.com/"
-            aria-label="Search"
-          >
-            <Icon name="search" size={24} />
-          </a>
-          <details className="ui-mkt-header__menu">
-            <summary
-              className="ui-mkt-header__icon-btn"
-              aria-label="Menu"
-            >
-              <Icon name="menu" size={24} className="ui-mkt-header__icon--menu" />
-              <Icon name="close" size={24} className="ui-mkt-header__icon--close" />
-            </summary>
-            <div className="ui-mkt-header__mobile-panel">
-              <ul className="ui-mkt-header__mobile-list">
-                {primaryNav.map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href}>{item.label}</a>
-                  </li>
-                ))}
-              </ul>
-              <div className="ui-mkt-header__mobile-actions">
-                <Button
-                  href={hubSignIn}
-                  variant="secondary"
-                  size="md"
-                >
-                  Log In
-                </Button>
-                <Button
-                  href={hubSignUp}
-                  variant="primary"
-                  size="md"
-                >
-                  Start Trading
-                </Button>
-              </div>
-              <p className="ui-mkt-header__preview-note">
-                Internal preview · noindex
-              </p>
-            </div>
-          </details>
-        </div>
+        <SiteHeaderMobile />
       </div>
     </header>
   );
