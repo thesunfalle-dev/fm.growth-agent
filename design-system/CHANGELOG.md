@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-14 — Crypto hero atmosphere
+
+- `market-hero` `atmosphere: crypto` replaces the purple BG with a light field and 3D Fusion-style coins (Homepage Animation `27873:297359`).
+- Coins fly in from the sides, then hover. Quotes card on this atmosphere is a light surface.
+- Equity Indices stays on brand art.
+
 ## 2026-08-14 — USP desktop vs mobile, stable swipe
 
 - Desktop rail is finite again (arrows, one copy). Loop + morph only below 768.

@@ -27,6 +27,7 @@ const landing: LandingDocument = {
     // —— 1. Market hero structure; pitch from TZ ——
     {
       type: "market-hero",
+      atmosphere: "crypto",
       eyebrow: "Crypto CFDs",
       title: "Trade Crypto CFDs No Commission",
       subtitle:

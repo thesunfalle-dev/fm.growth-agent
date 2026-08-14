@@ -93,6 +93,11 @@ export type LandingBlock =
       quote?: MarketHeroQuote;
       /** Optional review summary; validate rating freshness before a public campaign launch. */
       trustpilot?: MarketHeroTrustpilot;
+      /**
+       * brand — shared purple Market Header art (default).
+       * crypto — light field + floating coin atmosphere (crypto landing).
+       */
+      atmosphere?: "brand" | "crypto";
     }
   | {
       type: "features";

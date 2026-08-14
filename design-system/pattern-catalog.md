@@ -178,11 +178,11 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `market-hero` |
 | **Intent** | Above-the-fold for a single market (Forex, Crypto, Gold…). |
-| **Structure (fixed)** | Full-bleed brand **BG Image** + gradient; H1 + short pitch; **Primary/Light**; right **TV-Desktop card 599×480** (`17172:52853` / `15303:14755`): pair + price + change, 5 symbol chips, timeframe, chart, TradingView badge. Tabs change on click only; price ticks every 5s. |
-| **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; `quotes[]` (5 instruments themed to the page, optional `label` / `iconSrc`). Optional legacy `quote` / `trustpilot` if no quotes. |
+| **Structure (fixed)** | Full-bleed atmosphere + H1 + short pitch + CTA; right **TV-Desktop card 599×480** (`17172:52853` / `15303:14755`): pair + price + change, 5 symbol chips, timeframe, chart, TradingView badge. Tabs change on click only; price ticks every 5s. |
+| **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; `quotes[]` (5 instruments themed to the page, optional `label` / `iconSrc`). Optional `atmosphere` (`brand` default / `crypto`). Optional legacy `quote` / `trustpilot` if no quotes. |
 | **Canonical Figma** | Market Header `23570:104257`; TV card family **TradingView Chart cards** `17172:52853` (Desktop `15303:14755`, Mobile `15433:12419`). |
 | **Also seen on** | **Crypto CFDs**; **Equity Indices**; Metals / Energy / US Share market pages; **Forex Mobile** `23570:104433` |
-| **Rules** | Same card for every market; swap copy + the five symbols / icons only. Not a live TradingView embed and not the markets `table` block. Prices are indicative animation seeds. |
+| **Rules** | Same card for every market; swap copy + the five symbols / icons only. Default `atmosphere: brand` keeps the purple BG art. `atmosphere: crypto` is the light coin field — do not apply it to non-crypto pages. Not a live TradingView embed and not the markets `table` block. Prices are indicative animation seeds. |
 | **Adaptive** | Desktop: text left / TV-Desktop 599×480. Mobile Forex `23570:104433`: title → lead → Primary/Light 163×44 (hug) → TV-Mobile 343×364. Symbol chips may scroll. |
 
 ---

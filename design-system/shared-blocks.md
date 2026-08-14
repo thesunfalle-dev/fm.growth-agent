@@ -30,7 +30,7 @@ Omit a listed default prop in `content.ts` to get the shared chrome.
 | `type` | Intent | Defaults (`lib/block-defaults.ts`) | Content the landing fills |
 |--------|--------|------------------------------------|---------------------------|
 | `hero` | Offer / award / platform pitch | `primaryCta` = Start trading | title, subtitle, optional eyebrow/bullets/secondary |
-| `market-hero` | Market product header (BG + TV card) | `primaryCta` = Start trading | eyebrow, title, subtitle, `quotes[]` (5 instruments + optional icons), optional bullets/secondary |
+| `market-hero` | Market product header (BG + TV card) | `primaryCta` = Start trading, `atmosphere` = brand | eyebrow, title, subtitle, `quotes[]`, optional `atmosphere: "crypto"`, optional bullets/secondary |
 | `features` | Why Fusion / benefits | `variant` = `usp` | title, items (illustration + copy) |
 | `table` | Instruments or compare matrix | `variant` = `markets`, search + scroll on | title, `columns` (use `instrumentsColumns`), rows, optional footnote. Compare: `variant: "compare"` |
 | `steps` | How It Works | title, subtitle, `horizontal` | items (sentence-case titles), optional CTAs |

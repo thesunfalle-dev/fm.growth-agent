@@ -3537,8 +3537,8 @@ a {
   --coin-opacity: var(--component-coin-field-opacity-soft);
 }
 
-.ui-coin-field__coin[data-slot="1"] { --coin-x: 0%; --coin-y: 6%; }
-.ui-coin-field__coin[data-slot="2"] { --coin-x: 0%; --coin-y: 74%; }
+.ui-coin-field__coin[data-slot="1"] { --coin-x: -3%; --coin-y: 4%; }
+.ui-coin-field__coin[data-slot="2"] { --coin-x: -4%; --coin-y: 76%; }
 .ui-coin-field__coin[data-slot="3"] { --coin-x: 11%; --coin-y: 0%; }
 .ui-coin-field__coin[data-slot="4"] { --coin-x: 17%; --coin-y: 87%; }
 .ui-coin-field__coin[data-slot="5"] { --coin-x: 91%; --coin-y: 7%; }

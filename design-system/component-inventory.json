@@ -55,6 +55,18 @@
       "notes": "Shared purple background — use consistently for most backgrounds."
     },
     {
+      "name": "CryptoCoinField",
+      "category": "media",
+      "status": "ready",
+      "path": "components/ui/CryptoCoinField.tsx",
+      "figma": "",
+      "variants": ["crypto"],
+      "sizes": ["xs", "sm", "md", "lg", "xl"],
+      "requiredStates": ["default", "reduced-motion"],
+      "tokenDependencies": ["component.coinField", "semantic.color.background"],
+      "notes": "Optional market-hero atmosphere. Light field + floating market icons. Not a Figma chrome replacement — campaign-only."
+    },
+    {
       "name": "FaqItem",
       "category": "sections",
       "status": "ready",

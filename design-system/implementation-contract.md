@@ -48,6 +48,7 @@ Never hand-edit `design-system/generated/*`.
 | Logo | `components/ui/Logo.tsx` | FM desktop / mobile |
 | Illustration | `components/ui/Illustration.tsx` | isometric brand art (Images frame) |
 | BackgroundImage | `components/ui/BackgroundImage.tsx` | shared purple BG art |
+| CryptoCoinField | `components/ui/CryptoCoinField.tsx` | crypto market-hero atmosphere |
 | FaqItem / Steps | `components/ui/*` | Sections frame FAQ + Step by Steps |
 | Pill | `components/ui/Pill.tsx` | preview chip |
 | Block renderer | `components/blocks/BlockRenderer.tsx` | switches on `type` |

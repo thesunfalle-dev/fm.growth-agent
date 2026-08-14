@@ -48,17 +48,20 @@
         "secondaryCta": { "type": "cta", "required": false },
         "quotes": { "type": "marketHeroQuoteRow[]", "required": false },
         "quote": { "type": "marketHeroQuote", "required": false },
-        "trustpilot": { "type": "marketHeroTrustpilot", "required": false }
+        "trustpilot": { "type": "marketHeroTrustpilot", "required": false },
+        "atmosphere": { "type": "string", "required": false }
       },
       "defaults": {
-        "primaryCta": "sharedCtas.startTrading"
+        "primaryCta": "sharedCtas.startTrading",
+        "atmosphere": "brand"
       },
       "contentRules": [
         "Prefer quotes[]: five instruments themed to the landing (not Figma Forex sample pairs).",
         "Bid/ask values are indicative animation seeds, not a live feed — do not present them as live prices.",
         "Use approved or explicitly illustrative pricing only.",
         "Validate rating and review count freshness before public campaign use.",
-        "Keep market copy in the landing content document; do not use Figma sample marketing copy."
+        "Keep market copy in the landing content document; do not use Figma sample marketing copy.",
+        "atmosphere brand is the default purple Market Header. Use atmosphere crypto only on crypto campaign pages."
       ],
       "tokenDependencies": ["component.marketHero", "typography", "semantic.color.background", "semantic.color.action"]
     },

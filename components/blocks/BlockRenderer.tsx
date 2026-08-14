@@ -40,6 +40,7 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 quotes={block.quotes}
                 quote={block.quote}
                 trustpilot={block.trustpilot}
+                atmosphere={block.atmosphere}
               />
             );
           case "features":
