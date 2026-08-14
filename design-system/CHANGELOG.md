@@ -1,5 +1,10 @@
 # Design system changelog
 
+## 2026-08-14 — USP mobile sizes from homepage Why we’re different
+
+- SoT `27873:296738`: center card **270×500**, sides **256×388**, gap 32, ~20px peek.
+- Grow/shrink via width/height (not `transform: scale`) so radius stays and the gray media tile no longer flashes.
+
 ## 2026-08-14 — Hide header on scroll, infinite USP, table header only
 
 - Header (desktop + mobile) slides away on downward scroll and returns on a small upward move. Stays put while the mobile menu is open.

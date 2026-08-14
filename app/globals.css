@@ -3184,9 +3184,10 @@ a {
   padding: 0;
   border: 0;
   box-shadow: none;
-  background: transparent;
+  background: var(--component-card-bg);
   border-radius: var(--component-card-radius);
   overflow: hidden;
+  isolation: isolate;
   transition: box-shadow var(--motion-duration-default) var(--motion-easing-standard);
 }
 
@@ -3408,13 +3409,22 @@ a {
 .ui-section--crypto-field .ui-container {
   position: relative;
   z-index: var(--z-index-content);
+  isolation: isolate;
   padding-top: var(--space-4);
   padding-bottom: var(--space-4);
+  pointer-events: auto;
 }
 
+/*
+ * Shared TV glass is 18% purple900 — readable only on the brand purple band.
+ * On the light crypto field, keep the same purple recipe so type/tabs stay as designed.
+ */
 .ui-section--crypto-field .ui-market-hero__panel--tv {
-  background: var(--color-background-crypto-field-panel);
-  box-shadow: var(--shadow-card-hover);
+  background: color-mix(
+    in oklab,
+    var(--primitive-color-purple600) 82%,
+    var(--primitive-color-purple900)
+  );
 }
 
 .ui-coin-field {
@@ -3458,7 +3468,13 @@ a {
   top: var(--coin-y);
   width: var(--component-coin-field-size-md);
   height: var(--component-coin-field-size-md);
-  animation: ui-coin-enter var(--component-coin-field-duration-enter) var(--motion-easing-emphasized) both;
+  opacity: var(--coin-opacity, 1);
+  animation: ui-coin-enter-left var(--component-coin-field-duration-enter) var(--motion-easing-emphasized) backwards;
+  animation-delay: var(--enter-delay, 0ms);
+}
+
+.ui-coin-field__coin[data-side="right"] {
+  animation-name: ui-coin-enter-right;
 }
 
 .ui-coin-field__coin--xs {
@@ -3494,21 +3510,22 @@ a {
   --coin-opacity: var(--component-coin-field-opacity-soft);
 }
 
-.ui-coin-field__coin[data-slot="1"] { --coin-x: -3.5%; --coin-y: 8%; }
-.ui-coin-field__coin[data-slot="2"] { --coin-x: -3%; --coin-y: 72%; }
-.ui-coin-field__coin[data-slot="3"] { --coin-x: 47%; --coin-y: 1%; }
-.ui-coin-field__coin[data-slot="4"] { --coin-x: 44%; --coin-y: 86%; }
-.ui-coin-field__coin[data-slot="5"] { --coin-x: 88.5%; --coin-y: 7%; }
-.ui-coin-field__coin[data-slot="6"] { --coin-x: 88.5%; --coin-y: 70%; }
-.ui-coin-field__coin[data-slot="7"] { --coin-x: 48%; --coin-y: 14%; }
-.ui-coin-field__coin[data-slot="8"] { --coin-x: 79%; --coin-y: 1%; }
+.ui-coin-field__coin[data-slot="1"] { --coin-x: 0%; --coin-y: 6%; }
+.ui-coin-field__coin[data-slot="2"] { --coin-x: 0%; --coin-y: 74%; }
+.ui-coin-field__coin[data-slot="3"] { --coin-x: 11%; --coin-y: 0%; }
+.ui-coin-field__coin[data-slot="4"] { --coin-x: 17%; --coin-y: 87%; }
+.ui-coin-field__coin[data-slot="5"] { --coin-x: 91%; --coin-y: 7%; }
+.ui-coin-field__coin[data-slot="6"] { --coin-x: 90%; --coin-y: 71%; }
+.ui-coin-field__coin[data-slot="7"] { --coin-x: 76%; --coin-y: 0%; }
+.ui-coin-field__coin[data-slot="8"] { --coin-x: 78%; --coin-y: 87%; }
 
 .ui-coin-field__float {
   display: block;
   width: 100%;
   height: 100%;
   animation: ui-coin-float var(--float-duration, var(--component-coin-field-duration-drift))
-    var(--motion-easing-standard) infinite;
+    var(--motion-easing-standard)
+    calc(var(--enter-delay, 0ms) + var(--component-coin-field-duration-enter)) infinite;
 }
 
 .ui-coin-field__disc {
@@ -3544,17 +3561,36 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
-@keyframes ui-coin-enter {
+@keyframes ui-coin-enter-left {
   from {
     opacity: 0;
-    transform: scale(0.62) translate3d(0, var(--space-6), 0);
+    transform: translate3d(calc(var(--component-coin-field-enter-travel) * -1), var(--space-8), 0)
+      scale(0.55) rotate(-18deg);
+  }
+  62% {
+    opacity: 1;
   }
   to {
     opacity: var(--coin-opacity, 1);
-    transform: scale(1) translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes ui-coin-enter-right {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--component-coin-field-enter-travel), var(--space-8), 0)
+      scale(0.55) rotate(18deg);
+  }
+  62% {
+    opacity: 1;
+  }
+  to {
+    opacity: var(--coin-opacity, 1);
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
   }
 }
 
@@ -3563,9 +3599,25 @@ a {
   100% {
     transform: translate3d(0, 0, 0) rotate(var(--tilt-a, -4deg));
   }
+  25% {
+    transform: translate3d(var(--float-x, 0), calc(var(--float-y, var(--component-coin-field-float)) * -0.35), 0)
+      rotate(calc(var(--tilt-b, 4deg) * 0.4));
+  }
   50% {
-    transform: translate3d(var(--float-x, 0), var(--float-y, var(--component-coin-field-float)), 0)
+    transform: translate3d(
+        calc(var(--float-x, 0) * -0.35),
+        var(--float-y, var(--component-coin-field-float)),
+        0
+      )
       rotate(var(--tilt-b, 4deg));
+  }
+  75% {
+    transform: translate3d(
+        calc(var(--float-x, 0) * 0.45),
+        calc(var(--float-y, var(--component-coin-field-float)) * 0.2),
+        0
+      )
+      rotate(calc(var(--tilt-a, -4deg) * 0.35));
   }
 }
 
@@ -4380,32 +4432,53 @@ a {
     gap: var(--component-card-usp-dot-gap);
   }
 
-  /* Why Trade 23570:105158 — 270 center, 250 sides, scroll both ways */
+  /* Why we’re different 27873:296738 — 270×500 center, 256×388 sides, ~20 peek */
   .ui-usp-carousel__bleed {
     width: 100vw;
     max-width: none;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    overflow: visible;
+    background: transparent;
   }
 
   .ui-section--usp .ui-usp-carousel__rail,
   .ui-section--usp .ui-card-grid--usp {
     align-items: center;
-    padding-left: calc((100vw - var(--component-card-usp-mobile-width)) / 2);
-    padding-right: calc((100vw - var(--component-card-usp-mobile-width)) / 2);
-    scroll-padding-inline: calc((100vw - var(--component-card-usp-mobile-width)) / 2);
-    gap: var(--space-6);
+    min-height: var(--component-card-usp-mobile-center-height);
+    padding-left: calc((100vw - var(--component-card-usp-mobile-center-width)) / 2);
+    padding-right: calc((100vw - var(--component-card-usp-mobile-center-width)) / 2);
+    scroll-padding-inline: calc((100vw - var(--component-card-usp-mobile-center-width)) / 2);
+    gap: var(--space-8);
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: transparent;
   }
 
   .ui-usp-carousel__rail > *,
   .ui-card-grid--usp > *,
   .ui-usp-card-slot {
-    width: var(--component-card-usp-mobile-width);
-    min-width: var(--component-card-usp-mobile-width);
-    max-width: var(--component-card-usp-mobile-width);
+    width: var(--component-card-usp-mobile-center-width);
+    min-width: var(--component-card-usp-mobile-center-width);
+    max-width: var(--component-card-usp-mobile-center-width);
+    height: var(--component-card-usp-mobile-center-height);
+    min-height: var(--component-card-usp-mobile-center-height);
+    align-self: center;
     scroll-snap-align: center;
-    transform-origin: center center;
-    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+
+  .ui-usp-card-slot > .ui-card--usp {
+    width: var(--component-card-usp-mobile-width);
+    height: var(--component-card-usp-mobile-side-height);
+    min-height: 0;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: var(--component-card-radius);
+    background: var(--component-card-bg);
   }
 
   .ui-usp-carousel__dot {

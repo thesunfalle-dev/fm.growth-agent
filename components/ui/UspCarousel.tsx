@@ -16,12 +16,15 @@ type UspCarouselProps = {
 };
 
 const LOOP_COPIES = 3;
-/** Center card 270 / side 250 — Figma Why Trade `23570:105158`. */
-const CENTER_SCALE = 270 / 250;
+/** Homepage Why we’re different `27873:296738`: center 270×500, sides 256×388. */
+const SIDE_WIDTH = 256;
+const CENTER_WIDTH = 270;
+const SIDE_HEIGHT = 388;
+const CENTER_HEIGHT = 500;
 
 /**
  * USP card rail — desktop arrows (Figma `29987:341441`);
- * mobile infinite snap: always a 270 center card, 250 peeks, loop both ways.
+ * mobile infinite snap: 270×500 center, 256×388 sides, ~20px peek, loop.
  */
 export function UspCarousel({ children }: UspCarouselProps) {
   const items = useMemo(() => Children.toArray(children), [children]);
@@ -70,11 +73,14 @@ export function UspCarousel({ children }: UspCarouselProps) {
       const center = slot.offsetLeft + slot.offsetWidth / 2;
       const dist = Math.abs(center - mid);
       const t = Math.max(0, 1 - dist / step);
-      if (compact) {
-        const scale = 1 + (CENTER_SCALE - 1) * t;
-        slot.style.transform = `scale(${scale})`;
-      } else {
-        slot.style.transform = "";
+      const card = slot.firstElementChild as HTMLElement | null;
+      slot.style.transform = "";
+      if (compact && card) {
+        card.style.width = `${SIDE_WIDTH + (CENTER_WIDTH - SIDE_WIDTH) * t}px`;
+        card.style.height = `${SIDE_HEIGHT + (CENTER_HEIGHT - SIDE_HEIGHT) * t}px`;
+      } else if (card) {
+        card.style.width = "";
+        card.style.height = "";
       }
       slot.classList.toggle("ui-usp-card-slot--on", t > 0.55);
       if (dist < bestDist) {
