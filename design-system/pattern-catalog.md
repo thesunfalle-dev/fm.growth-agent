@@ -476,18 +476,19 @@ Copy when adding a pattern:
 
 ---
 
-### `review-rail` — Trustpilot / review cards
+### `reviews` — Reviews from Real Traders
 
 | Field | Value |
 |-------|--------|
-| **Status** | planned |
-| **Inventory** | `review-rail` |
-| **Intent** | Social proof quotes from traders. |
-| **Structure (fixed)** | Trustpilot (or similar) summary + horizontal **review cards** (avatar, name, date, stars, quote) + arrows. |
-| **Content (props)** | Summary metrics, `items[]` reviews |
-| **Canonical Figma** | What others say `29665:153626`; BrokerChooser; homepage reviews |
-| **Rules** | Same rail on award landings and about/proof pages. |
-| **Adaptive** | Title + lead → Trustpilot header → **review cards 280×322** horizontal overflow (BrokerChooser `29987:342253`, TradingView `29987:342803`). Do not wrap to a 1-col stack. |
+| **Status** | ready |
+| **Inventory** | `reviews` (planned names `review-rail` / `testimonials` map here) |
+| **Intent** | Social proof quotes from traders, immediately before FAQ on market landings. |
+| **Structure (fixed)** | Left H2 + lead → Trustpilot mark + “Excellent” + 5 stars + rating/count → horizontal **review cards** (avatar, name, date, stars, quote) → plain arrows. Cards peek off the right edge. |
+| **Content (props)** | `title`, `subtitle`, `summary` (label / rating / count / href), `items[]`. Omit to use `lib/block-defaults.ts`. |
+| **Canonical Figma** | Desktop [`29987:342098`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342098); Mobile [`29987:343348`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-343348) |
+| **Also seen on** | BrokerChooser; TradingView; Gold EN; What others say `29665:153626` |
+| **Rules** | One type. Do not invent a second testimonials layout. Trustpilot **href** from live `fusionmarkets.com`. Refresh rating/count before a public campaign. Default quotes are Figma rail fillers until TZ supplies live reviews. |
+| **Adaptive** | Desktop: 370×274 cards, gap 24, score on one row. Mobile (`29987:343348`): title 32 left → lead → Trustpilot → Excellent+stars then count on the next line → cards **280** gap 12, overflow, **arrows stay** (not dots). Never wrap to a 1-col stack. |
 
 ---
 

@@ -52,7 +52,7 @@ Never hand-edit `design-system/generated/*`.
 | FaqItem / Steps | `components/ui/*` | Sections frame FAQ + Step by Steps |
 | Pill | `components/ui/Pill.tsx` | preview chip |
 | Block renderer | `components/blocks/BlockRenderer.tsx` | switches on `type` |
-| hero / features / table / steps / faq / cta / disclaimer | `components/blocks/*.tsx` | section blocks only — see `assembly.md` |
+| hero / features / table / steps / reviews / faq / cta / disclaimer | `components/blocks/*.tsx` | section blocks only — see `assembly.md` |
 
 
 ## Landing document

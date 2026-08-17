@@ -74,6 +74,7 @@ const landing: LandingDocument = {
       primaryCta: sharedCtas.tryDemo,
       secondaryCta: sharedCtas.getLiveAccount,
     },
+    { type: "reviews" },
   ],
 };
 

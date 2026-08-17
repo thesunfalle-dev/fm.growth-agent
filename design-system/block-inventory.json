@@ -1,9 +1,9 @@
 {
   "meta": {
     "name": "FM Landings Block Inventory",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "status": "provisional-shell",
-    "updatedAt": "2026-08-13",
+    "updatedAt": "2026-08-17",
     "notes": "Agents may only assemble landings from these block types until inventory expands."
   },
   "blocks": [
@@ -156,6 +156,44 @@
         "Vertical only when Figma shows left timeline."
       ],
       "tokenDependencies": ["component.step", "layout.spacing", "semantic.color.action"]
+    },
+    {
+      "type": "reviews",
+      "status": "ready",
+      "description": "Reviews from Real Traders: Trustpilot summary + horizontal review-card rail + arrows.",
+      "component": "components/blocks/Reviews.tsx",
+      "figma": "29987:342098 / 29987:343348",
+      "props": {
+        "title": { "type": "string", "required": false },
+        "subtitle": { "type": "string", "required": false },
+        "summary": { "type": "reviewsSummary", "required": false },
+        "items": {
+          "type": "array",
+          "required": false,
+          "item": {
+            "id": { "type": "string", "required": true },
+            "name": { "type": "string", "required": true },
+            "date": { "type": "string", "required": true },
+            "quote": { "type": "string", "required": true },
+            "rating": { "type": "number", "required": false },
+            "avatarSrc": { "type": "string", "required": false }
+          },
+          "minItems": 2
+        }
+      },
+      "defaults": {
+        "title": "Reviews from Real Traders",
+        "subtitle": "We're proud to serve our clients all around the world. Here's what hundreds had to say about us.",
+        "summary": "blockDefaults.reviews.summary"
+      },
+      "contentRules": [
+        "Section H2 is owned by the block (default “Reviews from Real Traders”). Landings omit title unless TZ names the section.",
+        "Omit items to reuse the shared default quotes in lib/block-defaults.ts.",
+        "Do not paste extra Figma sample reviewers when TZ supplies real Trustpilot quotes.",
+        "Validate rating and review-count freshness before a public campaign launch.",
+        "This is the shipped name for the planned review-rail / testimonials pattern."
+      ],
+      "tokenDependencies": ["component.reviews", "typography", "semantic.color.text"]
     },
     {
       "type": "faq",
@@ -329,7 +367,7 @@
     {
       "type": "testimonials",
       "status": "planned",
-      "description": "Quotes / review proof (alias of review-rail / employee quote bands)"
+      "description": "Employee / founder quote bands only. Trader Trustpilot rail ships as type reviews."
     },
     {
       "type": "icon-feature-grid",
@@ -401,9 +439,7 @@
     {
       "type": "review-rail",
       "status": "planned",
-      "description": "Trustpilot summary + review cards rail (avatar, stars, quote).",
-      "figmaLanding": "29987:337918 BrokerChooser",
-      "figmaPages": ["29665:153626 What others say"]
+      "description": "Do not use. Shipped as type reviews (29987:342098 / 29987:343348)."
     },
     {
       "type": "platform-crossnav",

@@ -34,6 +34,7 @@ Omit a listed default prop in `content.ts` to get the shared chrome.
 | `features` | Why Fusion / benefits | `variant` = `usp` | title, items (illustration + copy) |
 | `table` | Instruments or compare matrix | `variant` = `markets`, search + scroll on | title, `columns` (use `instrumentsColumns`), rows, optional footnote. Compare: `variant: "compare"` |
 | `steps` | How It Works | title, subtitle, `horizontal` | items (sentence-case titles), optional CTAs |
+| `reviews` | Trustpilot + review cards | title, lead, 4.8 / 7.2k, default quotes | omit for defaults; pass `items` when TZ has live reviews |
 | `faq` | Accordion Q&A | title **FAQ**, first item open | items. Override title only if TZ names the section |
 | `cta` | Mid-page conversion band | title + Start trading + Try a demo | omit everything for defaults; override if TZ differs |
 | `logo-marquee` | Funding methods | dark band + ticker, Figma wordmarks | omit for defaults; pass `providers` only to subset |
@@ -56,7 +57,7 @@ Shared table headers: `instrumentsColumns` or `defaultInstrumentsColumns`.
 
 ## Planned types (reserved names — do not invent synonyms)
 
-`spread-cards` · `instrument-grid` · `platforms` · `ratings-strip` · `tier-cards` · `download-bar` · `checklist-feature` · `comparison-table` · `bento-usp` · `education-split` · `testimonials` · `icon-feature-grid` · `notice-band` · `funding-card-grid` · `accordion-table` · `savings-calculator` · `leaderboard` · `calculator-tool` · `spreads-tool` · `tool-cards` · `review-rail` · `platform-crossnav` · `awards-strip` · `media-carousel` · `blog-card` · `newsletter-cta` · `jobs-list` · `stats`
+`spread-cards` · `instrument-grid` · `platforms` · `ratings-strip` · `tier-cards` · `download-bar` · `checklist-feature` · `comparison-table` · `bento-usp` · `education-split` · `testimonials` · `icon-feature-grid` · `notice-band` · `funding-card-grid` · `accordion-table` · `savings-calculator` · `leaderboard` · `calculator-tool` · `spreads-tool` · `tool-cards` · `platform-crossnav` · `awards-strip` · `media-carousel` · `blog-card` · `newsletter-cta` · `jobs-list` · `stats`
 
 If a new Figma section matches one of these, implement that type. Do not create `reviews-v2` or a one-off CSS section.
 
@@ -66,10 +67,10 @@ If a new Figma section matches one of these, implement that type. Do not create 
 
 ```
 crypto:
-  header → market-hero → features usp → table → table compare → steps → faq → footer
+  header → market-hero → features usp → table → table compare → steps → reviews → faq → footer
 
 equity-indices:
-  header → market-hero → features usp → table → logo-marquee → steps → footer
+  header → market-hero → features usp → table → logo-marquee → steps → reviews → footer
 ```
 
 Shared core: **header · market-hero · features · table · steps · footer**.
@@ -87,6 +88,7 @@ Same types. Layout modes from `responsive-rules.md`, applied in shared CSS:
 | `table` compare | horizontal scroll (not tabs — still one matrix) |
 | `logo-marquee` | same ticker, tighter gap |
 | `steps` | vertical + full-width dual CTA |
+| `reviews` | 280 cards + arrows, score stacks |
 | `faq` | 343 accordion, first open |
 | Footer CTA | 2-line title + stacked Primary / or / Secondary |
 

@@ -314,6 +314,18 @@
       "notes": "Website Redesign footer foundation; simplified columns vs full mega-footer AU/EN."
     },
     {
+      "name": "ReviewRail",
+      "category": "media",
+      "status": "ready",
+      "path": "components/ui/ReviewRail.tsx",
+      "figma": "29987:342098",
+      "variants": ["desktop", "mobile"],
+      "sizes": ["370x274", "280"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.reviews"],
+      "notes": "Trustpilot review-card rail. Used by the reviews block. Desktop arrows + bleed; mobile 280 cards, arrows stay."
+    },
+    {
       "name": "Pill",
       "category": "status",
       "status": "provisional",

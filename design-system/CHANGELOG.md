@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-17 — Reviews from Real Traders
+
+- New ready block `reviews` (Figma desktop `29987:342098`, mobile `29987:343348`): Trustpilot header + horizontal review-card rail + arrows.
+- Planned `review-rail` ships as this type. Insert before `faq` on crypto / demo; after steps on equity-indices.
+- Assets in `public/brand/trustpilot/`. Default title, score, and quotes live in `lib/block-defaults.ts` — refresh rating/count and quotes from Trustpilot before a public campaign.
+
 ## 2026-08-17 — Equity indices hero atmosphere
 
 - `market-hero` `atmosphere: indices`: light field, globe mesh, one infinite ticker pinned to the bottom of the hero.
