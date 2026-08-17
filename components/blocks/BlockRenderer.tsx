@@ -6,6 +6,7 @@ import { Hero } from "@/components/blocks/Hero";
 import { MarketsTable } from "@/components/blocks/MarketsTable";
 import { MarketHero } from "@/components/blocks/MarketHero";
 import { LogoMarquee } from "@/components/blocks/LogoMarquee";
+import { Platforms } from "@/components/blocks/Platforms";
 import { Reviews } from "@/components/blocks/Reviews";
 import { SpreadCards } from "@/components/blocks/SpreadCards";
 import { StepsBand } from "@/components/blocks/StepsBand";
@@ -135,6 +136,15 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 title={block.title}
                 subtitle={block.subtitle}
                 providers={block.providers}
+              />
+            );
+          case "platforms":
+            return (
+              <Platforms
+                key={index}
+                title={block.title}
+                subtitle={block.subtitle}
+                items={block.items}
               />
             );
           default:

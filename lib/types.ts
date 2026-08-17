@@ -230,6 +230,24 @@ export type LandingBlock =
       title?: string;
       subtitle?: string;
       providers?: string[];
+    }
+  | {
+      /** Choose Your Platform — Tabs_Icon + device mock + panel (Figma 28610:429747). */
+      type: "platforms";
+      /** Omit to use block default “Choose Your Platform”. */
+      title?: string;
+      subtitle?: string;
+      items: Array<{
+        id: string;
+        label: string;
+        /** Material Symbols name from lib/icons.ts */
+        icon?: string;
+        title: string;
+        body?: string;
+        bullets?: string[];
+        imageSrc?: string;
+        primaryCta?: LandingCta;
+      }>;
     };
 
 export type LandingMeta = {

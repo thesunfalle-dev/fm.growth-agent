@@ -40,7 +40,7 @@ language  menu  close  search  north_east  south_east
 call  mail_outline  check_circle  room  error_outline  info
 access_time  link  account_balance  content_paste_search  list
 auto_awesome_mosaic  analytics  fact_check  request_page
-desktop_windows  phone_android  wysiwyg  smart_toy
+desktop_windows  phone_android  web_asset  wysiwyg  smart_toy
 ```
 
 Source: Figma frame row `15188:11176`.

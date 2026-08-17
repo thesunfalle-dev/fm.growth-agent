@@ -39,6 +39,7 @@ export const MATERIAL_ICONS = [
   "request_page",
   "desktop_windows",
   "phone_android",
+  "web_asset",
   "wysiwyg",
   "smart_toy",
 ] as const;

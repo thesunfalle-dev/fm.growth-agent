@@ -143,6 +143,7 @@ a {
 .ui-section--default .ui-features-band,
 .ui-section--default .ui-reviews-band,
 .ui-section--default .ui-spread-cards,
+.ui-section--default .ui-platforms,
 .ui-section--default .ui-compare-shell {
   width: 100%;
   max-width: 100%;
@@ -1576,6 +1577,36 @@ a {
 .ui-tabs--purple .ui-tab--active {
   background: var(--component-tab-active-bg);
   color: var(--component-tab-active-text);
+}
+
+/* Tabs_Icon — Figma 28610:429753 / 28709:146375 */
+.ui-tabs--icon {
+  flex-wrap: nowrap;
+  gap: var(--component-platforms-tab-gap);
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.ui-tabs--icon .ui-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-platforms-tab-icon-gap);
+  flex-shrink: 0;
+  background: var(--component-platforms-inactive-bg);
+  color: var(--component-platforms-inactive-text);
+  font-weight: var(--typography-font-weight-regular);
+  white-space: nowrap;
+}
+
+.ui-tabs--icon .ui-tab--active {
+  background: var(--component-platforms-active-bg);
+  color: var(--component-tab-active-text);
+  font-weight: var(--typography-font-weight-bold);
+}
+
+.ui-tabs--icon .ui-icon {
+  color: inherit;
 }
 
 /* Blog / category chips */
@@ -5124,6 +5155,106 @@ a {
   }
 }
 
+/* Choose Your Platform — Figma 28610:429747 */
+.ui-platforms {
+  display: grid;
+  grid-template-columns: minmax(0, var(--component-platforms-device-width)) minmax(0, 1fr);
+  grid-template-areas:
+    "intro intro"
+    "tabs tabs"
+    "media copy";
+  column-gap: var(--component-platforms-panel-gap);
+  row-gap: var(--component-platforms-section-gap);
+  align-items: center;
+  width: 100%;
+}
+
+.ui-platforms__intro {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--component-platforms-intro-gap);
+  width: 100%;
+  text-align: center;
+}
+
+.ui-section--default.ui-section--platforms .ui-heading--section,
+.ui-section--platforms .ui-heading--section,
+.ui-section--default .ui-platforms .ui-heading--section {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  text-align: center;
+}
+
+.ui-platforms__intro .ui-text--lead {
+  margin: 0;
+  max-width: 48rem;
+}
+
+.ui-platforms__tabs {
+  grid-area: tabs;
+  justify-content: center;
+}
+
+.ui-platforms__media {
+  grid-area: media;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ui-platforms__device {
+  display: block;
+  width: 100%;
+  max-width: var(--component-platforms-device-width);
+  height: auto;
+  aspect-ratio: 500 / 375;
+}
+
+.ui-platforms__copy {
+  grid-area: copy;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--component-platforms-copy-gap);
+  min-width: 0;
+}
+
+.ui-platforms__name {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--typography-font-family-heading);
+  font-size: var(--component-platforms-name-size);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.ui-platforms__body {
+  margin: 0;
+  max-width: none;
+  text-align: left;
+  color: var(--color-text-primary);
+  font-size: var(--component-platforms-body-size);
+}
+
+.ui-platforms__list {
+  margin: 0;
+  padding: 0 0 0 1.2em;
+  color: var(--color-text-primary);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-platforms-body-size);
+  font-weight: var(--typography-font-weight-light);
+  line-height: var(--typography-line-height-body);
+}
+
+.ui-platforms__list li + li {
+  margin-top: var(--space-2);
+}
+
 /* breakpoint.md — 768px */
 @media (max-width: 768px) {
   .ui-section {
@@ -5571,8 +5702,53 @@ a {
   .ui-markets-band__title,
   .ui-faq-band__title,
   .ui-steps-band__title,
-  .ui-features-band__title {
+  .ui-features-band__title,
+  .ui-section--platforms .ui-heading--section {
     font-size: var(--layout-spacing-section-heading-mobile);
+  }
+
+  /* Figma 28610:431359 — mock → tabs → panel */
+  .ui-platforms {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "media"
+      "tabs"
+      "copy";
+    row-gap: var(--component-platforms-section-gap-mobile);
+    justify-items: center;
+  }
+
+  .ui-platforms__tabs {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .ui-tabs--icon {
+    gap: var(--component-platforms-tab-gap-mobile);
+  }
+
+  .ui-tabs--icon .ui-tab {
+    font-size: var(--component-platforms-tab-font-size-mobile);
+  }
+
+  .ui-platforms__device {
+    max-width: var(--component-platforms-device-width-mobile);
+  }
+
+  .ui-platforms__copy {
+    width: 100%;
+    gap: var(--component-platforms-copy-gap-mobile);
+  }
+
+  .ui-platforms__body,
+  .ui-platforms__list {
+    font-size: var(--component-platforms-body-size-mobile);
+  }
+
+  .ui-platforms__copy .ui-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .ui-section--default .ui-reviews-band__title,

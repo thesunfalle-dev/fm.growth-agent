@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.20.0",
+    "version": "0.21.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-17",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-341476",
-    "notes": "Spread cards 29987:341476 / 29987:342771 — tabs + TV_Card rail / mobile stack."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28610-429747",
+    "notes": "Platforms 28610:429747 / 28610:431359 — title + Tabs_Icon + device mock + panel."
   },
   "primitive": {
     "color": {
@@ -453,6 +453,28 @@
       "tabGapMobile": "6px",
       "tradeRadius": "10px",
       "toolSize": "16px"
+    },
+    "platforms": {
+      "introGap": "24px",
+      "sectionGap": "70px",
+      "sectionGapMobile": "32px",
+      "panelGap": "70px",
+      "copyGap": "24px",
+      "copyGapMobile": "16px",
+      "deviceWidth": "500px",
+      "deviceHeight": "375px",
+      "deviceWidthMobile": "343px",
+      "deviceHeightMobile": "257px",
+      "tabGap": "12px",
+      "tabGapMobile": "6px",
+      "tabIconGap": "8px",
+      "tabFontSizeMobile": "14px",
+      "activeBg": "{primitive.color.purple300}",
+      "inactiveBg": "{primitive.color.gray200}",
+      "inactiveText": "{primitive.color.gray500}",
+      "nameSize": "32px",
+      "bodySize": "20px",
+      "bodySizeMobile": "16px"
     },
     "faq": {
       "border": "{primitive.color.blue100}",

@@ -40,6 +40,7 @@ Omit a listed default prop in `content.ts` to get the shared chrome.
 | `cta` | Mid-page conversion band | title + Start trading + Try a demo | omit everything for defaults; override if TZ differs |
 | `logo-marquee` | Funding methods | dark band + ticker, Figma wordmarks | omit for defaults; pass `providers` only to subset |
 | `disclaimer` | CFD risk line | standard leverage warning | omit for default; add preview-only notes only when product asks |
+| `platforms` | Choose Your Platform | title “Choose Your Platform” + shared devices art | title/subtitle, `items[]` (tab, icon, bullets, CTA) |
 
 ### How to add a landing block
 
@@ -61,7 +62,7 @@ Shared table headers: `instrumentsColumns` or `defaultInstrumentsColumns`.
 
 ## Planned types (reserved names — do not invent synonyms)
 
-`instrument-grid` · `platforms` · `ratings-strip` · `tier-cards` · `download-bar` · `checklist-feature` · `comparison-table` · `bento-usp` · `education-split` · `testimonials` · `icon-feature-grid` · `notice-band` · `funding-card-grid` · `accordion-table` · `savings-calculator` · `leaderboard` · `calculator-tool` · `spreads-tool` · `tool-cards` · `platform-crossnav` · `awards-strip` · `media-carousel` · `blog-card` · `newsletter-cta` · `jobs-list` · `stats`
+`instrument-grid` · `ratings-strip` · `tier-cards` · `download-bar` · `checklist-feature` · `comparison-table` · `bento-usp` · `education-split` · `testimonials` · `icon-feature-grid` · `notice-band` · `funding-card-grid` · `accordion-table` · `savings-calculator` · `leaderboard` · `calculator-tool` · `spreads-tool` · `tool-cards` · `platform-crossnav` · `awards-strip` · `media-carousel` · `blog-card` · `newsletter-cta` · `jobs-list` · `stats`
 
 If a new Figma section matches one of these, implement that type. Do not create `reviews-v2` or a one-off CSS section.
 

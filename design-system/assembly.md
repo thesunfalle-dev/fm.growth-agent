@@ -62,6 +62,7 @@ More screens will extend this map; the rule stays: **spot the repeating block â†
 | `logo-marquee` | ready | Our Funding Methods `28259:298800` | Funding wordmark ticker |
 | `cta` | provisional | Mid/end conversion bands | Repeat conversion |
 | `disclaimer` | provisional | Compliance | Risk / preview legal |
+| `platforms` | ready | Choose Your Platform `28610:429747` / `28610:431359` | Tabs_Icon + device mock + platform panel |
 
 Chrome (not in `blocks[]`): `SiteHeader`, `SiteFooter` â€” always present around the stack.
 

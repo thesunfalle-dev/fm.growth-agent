@@ -20,9 +20,6 @@ Current live references:
 - Hero quotes table: energy + soft pairs (XTIUSD, XBRUSD, XNGUSD, WHEAT, SOYBN)
 - USP title + 6 TZ cards
 - Instruments list from TZ examples + live Energy page names (spreads not in TZ → “See live”)
+- Platforms: MT4 / MT5 / cTrader tabs + TZ bullets + Start trading CTAs (Figma Choose Your Platform structure)
 - Funding methods, How it works, reviews, FAQ from live Energy page
 - End CTA lives on SiteFooter
-
-## Not shipped
-
-- Planned `platforms` block (“Choose your trading platform” / MT4 / MT5 / cTrader tabs). Ready-only substitute was skipped so the page stays on market recipe M1.

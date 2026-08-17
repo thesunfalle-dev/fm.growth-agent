@@ -54,7 +54,7 @@ Never hand-edit `design-system/generated/*`.
 | FaqItem / Steps | `components/ui/*` | Sections frame FAQ + Step by Steps |
 | Pill | `components/ui/Pill.tsx` | preview chip |
 | Block renderer | `components/blocks/BlockRenderer.tsx` | switches on `type` |
-| hero / market-hero / features / table / steps / reviews / spread-cards / faq / cta / logo-marquee / disclaimer | `components/blocks/*.tsx` | section blocks only — see `assembly.md` |
+| hero / market-hero / features / table / steps / reviews / spread-cards / faq / cta / logo-marquee / platforms / disclaimer | `components/blocks/*.tsx` | section blocks only — see `assembly.md` |
 
 
 ## Landing document

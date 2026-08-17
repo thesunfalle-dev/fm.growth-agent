@@ -129,6 +129,10 @@ export const blockDefaults = {
     subtitle: "Fund your account securely with a range of convenient payment methods.",
     providers: defaultFundingProviders,
   },
+  platforms: {
+    title: "Choose Your Platform",
+    imageSrc: "/images/platforms/devices.svg",
+  },
   disclaimer: {
     text: defaultDisclaimer,
   },

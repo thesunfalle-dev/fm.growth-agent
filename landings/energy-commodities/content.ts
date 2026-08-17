@@ -8,10 +8,8 @@ import type { LandingDocument } from "@/lib/types";
  * Structure (layout, block types): Figma DS / recipe M1 only.
  * Content (copy, numbers, which rows): TZ + live FM Energy page. Never Figma sample copy.
  *
- * Stack: market-hero brand → features usp → instruments table →
+ * Stack: market-hero brand → features usp → platforms → instruments table →
  * logo-marquee → steps → reviews → faq (site footer CTA below).
- *
- * Planned `platforms` (“Choose your trading platform”) is skipped until that type is ready.
  */
 const landing: LandingDocument = {
   slug: "energy-commodities",
@@ -87,6 +85,51 @@ const landing: LandingDocument = {
           illustration: "support",
           description:
             "We’re here to help you all day, every day. The markets don’t sleep, so neither do we!",
+        },
+      ],
+    },
+    {
+      type: "platforms",
+      title: "Choose your trading platform",
+      subtitle:
+        "Trade on your MetaTrader 4, MetaTrader 5, cTrader or Myfxbook AutoTrade with your Fusion Markets login.",
+      items: [
+        {
+          id: "mt4",
+          label: "MetaTrader 4",
+          icon: "desktop_windows",
+          title: "MetaTrader 4",
+          bullets: [
+            "Trade on your phone, tablet, desktop or web browser",
+            "Develop and run EAs using MQL4",
+            "Choose from 1000s of trading tools to plug into MT4",
+            "Backtesting for more robust Expert Advisors",
+          ],
+          primaryCta: { label: "Start trading with MetaTrader 4", href: sharedCtas.startTrading.href },
+        },
+        {
+          id: "mt5",
+          label: "MetaTrader 5",
+          icon: "analytics",
+          title: "MetaTrader 5",
+          bullets: [
+            "Trade Forex, Stocks, Futures and CFDs",
+            "Faster processing speeds",
+            "Built-in Virtual Private Server (VPS)",
+          ],
+          primaryCta: { label: "Start trading with MetaTrader 5", href: sharedCtas.startTrading.href },
+        },
+        {
+          id: "ctrader",
+          label: "cTrader",
+          icon: "wysiwyg",
+          title: "cTrader",
+          bullets: [
+            "Advanced trading features including advanced market depth options",
+            "26 time frames",
+            "Over 70 built in indicators",
+          ],
+          primaryCta: { label: "Start trading with cTrader", href: sharedCtas.startTrading.href },
         },
       ],
     },

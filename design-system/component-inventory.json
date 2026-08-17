@@ -131,11 +131,11 @@
       "status": "provisional",
       "path": "components/ui/Tabs.tsx",
       "figma": "14382:8478",
-      "variants": ["white", "purple"],
+      "variants": ["white", "purple", "icon"],
       "sizes": ["md"],
       "requiredStates": ["active", "inactive"],
-      "tokenDependencies": ["component.tab"],
-      "notes": "Text tabs foundation. Icon tabs / multi-surface BGs planned."
+      "tokenDependencies": ["component.tab", "component.platforms"],
+      "notes": "Tabs_Text + Tabs_Icon (Figma 28610:429753). Icon tabs use Material Symbols."
     },
     {
       "name": "LabelChip",

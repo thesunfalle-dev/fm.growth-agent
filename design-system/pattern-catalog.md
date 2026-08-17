@@ -255,15 +255,15 @@ Copy when adding a pattern:
 
 | Field | Value |
 |-------|--------|
-| **Status** | planned |
+| **Status** | ready |
 | **Inventory** | `platforms` |
-| **Intent** | Switch platforms (MT4/MT5/TV/cTrader) with copy + visuals + downloads. |
-| **Structure (fixed)** | Title + lead + **Tabs_Icon** + platform body + optional mock + **download-bar** OS links. |
-| **Content (props)** | Tabs labels, per-tab title/body/media, download targets |
-| **Canonical Figma** | MT5 Overview “Choose Your Platform” `28610:429747` (Tabs_Icon + device + stores); Products overview `26258:276027`; homepage platforms |
-| **Also seen on** | Platform overviews (MT4/MT5/TV/cTrader hubs); Homepage Mobile `27873:296842`; Products Mobile `26258:282302` |
-| **Rules** | One platforms pattern; tab content is props. Pair with `download-bar` when OS strip present. Device **subpages** (Desktop/Mobile/Web) use recipe P2 — not a second platforms type. |
-| **Adaptive** | Title + lead → **Tabs_Icon overflow-x** (do not wrap) → mock → body → accordion 343 → `download-bar`. |
+| **Intent** | Switch platforms (MT4/MT5/TV/cTrader) with copy + visuals + CTA. |
+| **Structure (fixed)** | Title + lead + **Tabs_Icon** + device mock + panel (H3 + body/bullets + primary CTA). |
+| **Content (props)** | `title`, `subtitle`, `items[]` (label, icon, title, body/bullets, imageSrc, primaryCta) |
+| **Canonical Figma** | Desktop [`28610:429747`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28610-429747) · mobile [`28610:431359`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28610-431359) |
+| **Also seen on** | **Energy and Soft Commodities** (MT4 / MT5 / cTrader TZ tabs); Products overview `26258:276027`; homepage platforms |
+| **Rules** | One `platforms` type. Figma MT5 Desktop/Mobile/Web sample copy is structure only. Campaign tabs and bullets come from TZ. Store badges stay a later prop — use `primaryCta` when TZ says Start trading. Device subpages (P2) are not a second type. |
+| **Adaptive** | Desktop: title + lead + tabs, then device left / panel right (gap 70). Mobile 375: title + lead → mock 343 → Tabs_Icon overflow-x → panel + full-width CTA. |
 
 ---
 

@@ -24,6 +24,16 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-17 — Choose Your Platform
+
+| Page | Node | Note |
+|------|------|------|
+| MT5 Overview Choose Your Platform | `28610:429747` | Desktop: H2 + Tabs_Icon + 500×375 devices + panel |
+| Layout / 4 mobile | `28610:431359` | Mock 343 → Tabs_Icon overflow → panel + store stack |
+
+- Structure only. Energy & Soft Commodities fills TZ platforms (MT4 / MT5 / cTrader) and Start trading CTAs.
+- Actor: agent + user
+
 ### 2026-08-17 — Lock reusable market recipes
 
 - Crypto + Equity Indices finalized as the two M1 reference landings.

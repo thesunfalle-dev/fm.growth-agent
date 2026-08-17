@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-17 — Platforms block (Choose Your Platform)
+
+- `platforms` is ready: desktop `28610:429747` (title + Tabs_Icon + device left / panel right), mobile `28610:431359` (mock → tabs → panel).
+- Energy landing fills MT4 / MT5 / cTrader from TZ. Figma MT5 Desktop sample copy is structure only.
+- Shared devices illustration: `public/images/platforms/devices.svg`.
+- Inventory `block-inventory.json` **0.5.0**. Tokens **0.21.0**.
+
 ## 2026-08-17 — Lock crypto + equity-indices as reusable recipes
 
 - Both slugs are `status: review` and the canonical M1 market recipes. New market pages reuse these types; swap TZ content only.

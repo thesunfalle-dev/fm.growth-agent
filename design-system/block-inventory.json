@@ -1,10 +1,10 @@
 {
   "meta": {
     "name": "FM Landings Block Inventory",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "status": "provisional-shell",
     "updatedAt": "2026-08-17",
-    "notes": "Locked MVP set: crypto + equity-indices. Assemble new market landings from ready types only."
+    "notes": "Locked MVP set + ready platforms. Assemble new market landings from ready types only."
   },
   "blocks": [
     {
@@ -296,6 +296,43 @@
       "tokenDependencies": ["component.marketHero", "typography", "space", "semantic.color.text"]
     },
     {
+      "type": "platforms",
+      "status": "ready",
+      "description": "Title + Tabs_Icon + device mock + platform body + CTA. Canonical: MT5 Overview Choose Your Platform.",
+      "component": "components/blocks/Platforms.tsx",
+      "figma": "28610:429747 / 28610:431359",
+      "props": {
+        "title": { "type": "string", "required": false },
+        "subtitle": { "type": "string", "required": false },
+        "items": {
+          "type": "array",
+          "required": true,
+          "minItems": 2,
+          "maxItems": 6,
+          "item": {
+            "id": { "type": "string", "required": true },
+            "label": { "type": "string", "required": true },
+            "icon": { "type": "string", "required": false },
+            "title": { "type": "string", "required": true },
+            "body": { "type": "string", "required": false },
+            "bullets": { "type": "array", "required": false, "item": "string" },
+            "imageSrc": { "type": "string", "required": false },
+            "primaryCta": { "type": "cta", "required": false }
+          }
+        }
+      },
+      "defaults": {
+        "title": "Choose Your Platform"
+      },
+      "contentRules": [
+        "Section H2 defaults to “Choose Your Platform”. Override when TZ names the section.",
+        "Tab labels and panel copy are TZ / brief only — do not paste Figma MT5 Desktop sample text onto another campaign.",
+        "Omit imageSrc to reuse the shared devices illustration.",
+        "Store download badges stay a later prop. Use primaryCta when TZ asks for Start trading."
+      ],
+      "tokenDependencies": ["component.platforms", "component.tab", "typography", "semantic.color.action"]
+    },
+    {
       "type": "disclaimer",
       "status": "provisional",
       "description": "Legal / risk footer text. Strongly recommended on every marketing landing.",
@@ -327,16 +364,6 @@
       "description": "Equal product/market tiles (icon/image + label). Homepage markets; Products overview six tiles; Premium tier tiles reuse shell.",
       "figmaHomepage": "27873:297355",
       "figmaPages": ["26258:275741 Products overview", "26258:280335 Premium tiers"]
-    },
-    {
-      "type": "platforms",
-      "status": "planned",
-      "description": "Title + Tabs_Icon + body + device mock + store buttons. MT5 Overview «Choose Your Platform» is canonical; Products overview / homepage same family.",
-      "figmaHomepage": "27873:297355",
-      "figmaPages": [
-        "28610:429747 MT5 Overview Choose Your Platform",
-        "26258:276027 Products overview platforms"
-      ]
     },
     {
       "type": "ratings-strip",
