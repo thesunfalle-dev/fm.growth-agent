@@ -6,6 +6,7 @@ import { Hero } from "@/components/blocks/Hero";
 import { MarketsTable } from "@/components/blocks/MarketsTable";
 import { MarketHero } from "@/components/blocks/MarketHero";
 import { LogoMarquee } from "@/components/blocks/LogoMarquee";
+import { Reviews } from "@/components/blocks/Reviews";
 import { StepsBand } from "@/components/blocks/StepsBand";
 import type { LandingBlock } from "@/lib/types";
 
@@ -77,6 +78,16 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 mode={block.mode}
                 primaryCta={block.primaryCta}
                 secondaryCta={block.secondaryCta}
+              />
+            );
+          case "reviews":
+            return (
+              <Reviews
+                key={index}
+                title={block.title}
+                subtitle={block.subtitle}
+                summary={block.summary}
+                items={block.items}
               />
             );
           case "faq":

@@ -8,7 +8,7 @@ import type { LandingDocument } from "@/lib/types";
  * Content (copy, numbers, which rows/cards): TZ / user story only — never Figma placeholder text.
  *
  * Stack (ready-only): hero brand BG → features usp → instruments table →
- * compare matrix → steps → faq (site footer CTA below).
+ * compare matrix → steps → reviews → faq (site footer CTA below).
  */
 const landing: LandingDocument = {
   slug: "crypto",
@@ -352,6 +352,8 @@ const landing: LandingDocument = {
       primaryCta: sharedCtas.startTrading,
       secondaryCta: sharedCtas.tryDemo,
     },
+
+    { type: "reviews" },
 
     // —— 6. FAQ structure; Q&A from TZ ——
     {

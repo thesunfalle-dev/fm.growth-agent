@@ -1,5 +1,5 @@
 import { hubSignUp } from "@/lib/navigation";
-import type { LandingCta, TableColumnSpec } from "@/lib/types";
+import type { LandingCta, ReviewItem, ReviewsSummary, TableColumnSpec } from "@/lib/types";
 
 /**
  * Shared block chrome — source of truth for every registered block.
@@ -35,6 +35,44 @@ export const defaultFundingProviders = [
   "PayPal",
 ] as const;
 
+export const defaultReviewItems = [
+  {
+    id: "support",
+    name: "BruceWayne001",
+    date: "2 Nov",
+    quote:
+      "Fusion Markets has a fantastic management and support...all suggestions and questions become answered satisfying and if there are problems they get solved quick as possible and very friendly.",
+  },
+  {
+    id: "platforms",
+    name: "BruceWayne001",
+    date: "2 Nov",
+    quote:
+      "I am very satisfied with Fusion Markets. I have a small spread and a 1/500 account. They are very fair and kind and I have never had any problems with them. I really liked that they have three platforms that I have used and it is very easy to transfer money and trade from one to another. All in all, after 11 years of trading, I can say that I give them a clean five stars and I think I will have a long cooperation with them.",
+  },
+  {
+    id: "platforms-2",
+    name: "BruceWayne001",
+    date: "2 Nov",
+    quote:
+      "I am very satisfied with Fusion Markets. I have a small spread and a 1/500 account. They are very fair and kind and I have never had any problems with them. I really liked that they have three platforms that I have used and it is very easy to transfer money and trade from one to another. All in all, after 11 years of trading, I can say that I give them a clean five stars and I think I will have a long cooperation with them.",
+  },
+  {
+    id: "platforms-3",
+    name: "BruceWayne001",
+    date: "2 Nov",
+    quote:
+      "I am very satisfied with Fusion Markets. I have a small spread and a 1/500 account. They are very fair and kind and I have never had any problems with them. I really liked that they have three platforms that I have used and it is very easy to transfer money and trade from one to another. All in all, after 11 years of trading, I can say that I give them a clean five stars and I think I will have a long cooperation with them.",
+  },
+] as const satisfies ReviewItem[];
+
+export const defaultReviewsSummary = {
+  label: "Excellent",
+  rating: "4.8",
+  count: "7.2k",
+  href: "https://www.trustpilot.com/review/fusionmarkets.com",
+} as const satisfies ReviewsSummary;
+
 export const defaultDisclaimer =
   "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.";
 
@@ -58,6 +96,13 @@ export const blockDefaults = {
     title: "How It Works",
     subtitle: "Opening a trading account with Fusion Markets is simple:",
     orientation: "horizontal" as const,
+  },
+  reviews: {
+    title: "Reviews from Real Traders",
+    subtitle:
+      "We're proud to serve our clients all around the world. Here's what hundreds had to say about us.",
+    summary: defaultReviewsSummary,
+    items: defaultReviewItems,
   },
   faq: {
     title: "FAQ",

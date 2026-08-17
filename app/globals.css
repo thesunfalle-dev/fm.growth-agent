@@ -3643,6 +3643,138 @@ a {
   }
 }
 
+.ui-indices-field {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-index-base);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ui-section--indices-field .ui-container {
+  padding-bottom: calc(var(--component-indices-field-tape-height) + var(--space-6));
+}
+
+.ui-indices-field__orb {
+  position: absolute;
+  border-radius: var(--radius-pill);
+  filter: blur(var(--space-20));
+  opacity: 0.9;
+  animation: ui-coin-orb var(--component-indices-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+}
+
+.ui-indices-field__orb--a {
+  width: var(--component-coin-field-orb-size);
+  height: var(--component-coin-field-orb-size);
+  left: -10%;
+  top: -18%;
+  background: var(--color-background-indices-field-glow-a);
+}
+
+.ui-indices-field__orb--b {
+  width: var(--component-coin-field-orb-size);
+  height: var(--component-coin-field-orb-size);
+  right: -8%;
+  bottom: 8%;
+  background: var(--color-background-indices-field-glow-b);
+  animation-delay: calc(var(--component-indices-field-duration-drift) * -0.35);
+}
+
+.ui-indices-field__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--primitive-color-blue100) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primitive-color-blue100) 1px, transparent 1px);
+  background-size: var(--space-16) var(--space-16);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, var(--primitive-color-gray0) 0%, transparent 78%);
+  opacity: 0.45;
+  transform: perspective(var(--component-indices-field-grid-perspective)) rotateX(58deg) translate3d(0, 18%, 0);
+  transform-origin: center 20%;
+}
+
+.ui-indices-field__globe {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(92vw, 920px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: 0.38;
+  animation: ui-index-globe var(--component-indices-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+}
+
+.ui-indices-field__tape {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index-content);
+  overflow: hidden;
+  height: var(--component-indices-field-tape-height);
+  background: var(--primitive-color-blue50);
+  border-top: var(--border-width-default) solid var(--primitive-color-blue100);
+}
+
+.ui-indices-ticker {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: ui-index-ticker var(--component-indices-field-ticker-duration) linear infinite;
+}
+
+.ui-indices-ticker__track {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: var(--component-indices-field-tape-gap);
+  height: 100%;
+  padding-right: var(--component-indices-field-tape-gap);
+}
+
+.ui-indices-ticker__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  white-space: nowrap;
+  color: var(--color-text-primary);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-c1);
+}
+
+.ui-indices-ticker__item b {
+  font-family: var(--typography-font-family-heading);
+  font-weight: var(--typography-font-weight-semibold);
+}
+
+.ui-indices-ticker__item em {
+  font-style: normal;
+  color: var(--primitive-color-green600);
+}
+
+.ui-indices-ticker__item--down em {
+  color: var(--primitive-color-red500);
+}
+
+@keyframes ui-index-ticker {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes ui-index-globe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-4deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(4deg);
+  }
+}
+
 /* Market Header — Figma 23570:104257. Values are sourced from component.marketHero tokens. */
 .ui-section--hero.ui-section--market-hero {
   min-height: var(--component-market-hero-min-height);
@@ -4248,6 +4380,12 @@ a {
     transform: none;
     transition: none;
   }
+
+  .ui-indices-ticker,
+  .ui-indices-field__orb,
+  .ui-indices-field__globe {
+    animation: none;
+  }
 }
 
 /* breakpoint.md — 768px */
@@ -4310,6 +4448,11 @@ a {
   .ui-coin-field__orb {
     width: var(--component-coin-field-orb-size-sm);
     height: var(--component-coin-field-orb-size-sm);
+  }
+
+  .ui-indices-field__globe {
+    width: 140%;
+    opacity: 0.28;
   }
 
   /* M1 375: title → lead → hug Light CTA → 343×364 slot. Hide extra CTA. */

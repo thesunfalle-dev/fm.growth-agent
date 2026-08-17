@@ -61,6 +61,22 @@ export type MarketHeroTrustpilot = {
   reviews: string;
 };
 
+export type ReviewItem = {
+  id: string;
+  name: string;
+  date: string;
+  quote: string;
+  rating?: number;
+  avatarSrc?: string;
+};
+
+export type ReviewsSummary = {
+  label: string;
+  rating: string;
+  count: string;
+  href?: string;
+};
+
 /** Brand illustration key from lib/illustrations.ts (Images frame). */
 export type IllustrationKey = string;
 
@@ -95,9 +111,10 @@ export type LandingBlock =
       trustpilot?: MarketHeroTrustpilot;
       /**
        * brand — shared purple Market Header art (default).
-       * crypto — light field + floating coin atmosphere (crypto landing).
+       * crypto — light field + floating coin atmosphere.
+       * indices — light field + globe mesh + bottom ticker.
        */
-      atmosphere?: "brand" | "crypto";
+      atmosphere?: "brand" | "crypto" | "indices";
     }
   | {
       type: "features";
@@ -166,6 +183,13 @@ export type LandingBlock =
       type: "disclaimer";
       /** Omit to use the shared CFD risk warning. */
       text?: string;
+    }
+  | {
+      type: "reviews";
+      title?: string;
+      subtitle?: string;
+      summary?: ReviewsSummary;
+      items?: ReviewItem[];
     }
   | {
       /** Funding-method logo row. Provider names are content; visual shell is shared. */

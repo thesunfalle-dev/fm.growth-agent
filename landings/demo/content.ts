@@ -130,6 +130,7 @@ const landing: LandingDocument = {
         },
       ],
     },
+    { type: "reviews" },
     {
       type: "faq",
       title: "FAQ",

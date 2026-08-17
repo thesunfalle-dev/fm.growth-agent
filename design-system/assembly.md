@@ -56,6 +56,7 @@ More screens will extend this map; the rule stays: **spot the repeating block �
 | `table` | provisional | Tables `15276:11158` (markets rows + compare shells) | Spreads lists, “how we compare”, account rows |
 | `steps` | ready | Sections `15313:11090` Step by Steps | How it works |
 | `faq` | ready | Sections `15313:11090` FAQ | Objections |
+| `reviews` | ready | Reviews from Real Traders `29987:342098` | Trustpilot + review-card rail |
 | `cta` | provisional | Mid/end conversion bands | Repeat conversion |
 | `disclaimer` | provisional | Compliance | Risk / preview legal |
 
@@ -96,13 +97,13 @@ Registered props (keep inventory + `lib/types.ts` + `Hero.tsx` aligned):
 | Education split / checklist Hero | `education-split` / `checklist-feature` | **skip** or short `cta` |
 | Start trading steps | Step by Steps | `steps` |
 | Live / our spreads (TV cards) | `spread-cards` (planned) — **same as homepage Our spreads** | Until built: skip or **labeled** temporary substitute; do not pretend markets `table` is the same pattern |
-| Reviews | `review-rail` (planned) | **skip** (or one line in hero `subtitle`) |
+| Reviews | `reviews` | Trustpilot + rail before FAQ |
 | Footer | chrome | `SiteFooter` |
 
 **Default market MVP stack (aligned to recipe M1, ready-only):**
 
 ```text
-hero (brandBackground) → features (usp) → table (instruments) → table (compare, optional) → steps (optional) → faq → disclaimer
+hero (brandBackground) → features (usp) → table (instruments) → table (compare, optional) → steps (optional) → reviews → faq → disclaimer
 ```
 
 End conversion band is **SiteFooter CTAFooter** — do not stack mid/end `cta` blocks unless the campaign needs an extra mid-page band.
@@ -112,7 +113,7 @@ End conversion band is **SiteFooter CTAFooter** — do not stack mid/end `cta` b
 | Figma section | Ready-only substitute |
 |---------------|------------------------|
 | Award hero + image | `hero` (eyebrow = partner name; **no** award image until media block) |
-| Reviews rail | **skip** |
+| Reviews rail | `reviews` |
 | Here’s our spreads (TV cards) | `table` or **skip** |
 | Instrument tiles | **skip** (`instrument-grid` planned) |
 | Why we’re different | `features` usp |

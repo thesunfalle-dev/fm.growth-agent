@@ -17,6 +17,7 @@ const landing: LandingDocument = {
   blocks: [
     {
       type: "market-hero",
+      atmosphere: "indices",
       eyebrow: "Equity Indices CFDs",
       title: "Trade CFDs on world’s top equity indices with $0 commission",
       subtitle: "Trade the S&P 500, NASDAQ, Hang Seng and more.",

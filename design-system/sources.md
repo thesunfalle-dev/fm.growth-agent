@@ -24,6 +24,19 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-17 — Reviews from Real Traders
+
+| Page | Node | Note |
+|------|------|------|
+| Reviews desktop | `29987:342098` | Gold / Final Pages rail |
+| Reviews mobile | `29987:343348` | Same structure; 280 cards; arrows stay |
+
+- Trustpilot mark, wordmark, star tiles, and default avatar exported to `public/brand/trustpilot/`.
+- Rating chrome `4.8 | 7.2k` is the Figma value — refresh from live Trustpilot before campaign launch.
+- Actor: agent + user
+
+
+
 ### 2026-08-13 — Funding / Conditions / About (mix D+M)
 
 | Page | Node | Note |

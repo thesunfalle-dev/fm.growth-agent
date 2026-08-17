@@ -1,5 +1,10 @@
 # Design system changelog
 
+## 2026-08-17 — Equity indices hero atmosphere
+
+- `market-hero` `atmosphere: indices`: light field, globe mesh, one infinite ticker pinned to the bottom of the hero.
+- Shared light quotes card with crypto. Ticker values are decorative.
+
 ## 2026-08-14 — Crypto hero atmosphere
 
 - `market-hero` `atmosphere: crypto` replaces the purple BG with a light field and 3D Fusion-style coins (Homepage Animation `27873:297359`).

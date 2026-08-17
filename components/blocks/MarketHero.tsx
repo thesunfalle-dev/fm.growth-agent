@@ -2,6 +2,7 @@ import { BackgroundImage } from "@/components/ui/BackgroundImage";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CryptoCoinField } from "@/components/ui/CryptoCoinField";
+import { IndicesField } from "@/components/ui/IndicesField";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { MarketHeroQuotes } from "@/components/ui/MarketHeroQuotes";
@@ -25,7 +26,7 @@ type MarketHeroProps = {
   quotes?: MarketHeroQuoteRow[];
   quote?: MarketHeroQuote;
   trustpilot?: MarketHeroTrustpilot;
-  atmosphere?: "brand" | "crypto";
+  atmosphere?: "brand" | "crypto" | "indices";
 };
 
 /** Shared Market Header shell based on the Figma market-header composition. */
@@ -44,19 +45,23 @@ export function MarketHero({
   const showQuotes = Boolean(quotes?.length);
   const showSummary = !showQuotes && Boolean(quote || trustpilot);
   const isCryptoField = atmosphere === "crypto";
+  const isIndicesField = atmosphere === "indices";
+  const isLightField = isCryptoField || isIndicesField;
   return (
     <Section
       variant="hero"
       className={[
         "ui-section--market-hero",
-        isCryptoField ? "ui-section--crypto-field" : "ui-section--brand-bg",
-      ].join(" ")}
+        isLightField ? "ui-section--light-field" : "ui-section--brand-bg",
+        isCryptoField ? "ui-section--crypto-field" : "",
+        isIndicesField ? "ui-section--indices-field" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
-      {isCryptoField ? (
-        <CryptoCoinField />
-      ) : (
-        <BackgroundImage variant="decorative" />
-      )}
+      {isCryptoField ? <CryptoCoinField /> : null}
+      {isIndicesField ? <IndicesField /> : null}
+      {!isLightField ? <BackgroundImage variant="decorative" /> : null}
       <Container>
         <div className="ui-market-hero__layout">
           <div className="ui-market-hero__copy">
@@ -70,7 +75,7 @@ export function MarketHero({
             ) : null}
             {primaryCta || secondaryCta ? (
               <div className="ui-cta-row">
-                {primaryCta ? <Button href={primaryCta.href} variant={isCryptoField ? "primary" : "primaryLight"} size="lg">{primaryCta.label}</Button> : null}
+                {primaryCta ? <Button href={primaryCta.href} variant={isLightField ? "primary" : "primaryLight"} size="lg">{primaryCta.label}</Button> : null}
                 {secondaryCta ? <Button href={secondaryCta.href} variant="secondary" size="lg">{secondaryCta.label}</Button> : null}
               </div>
             ) : null}

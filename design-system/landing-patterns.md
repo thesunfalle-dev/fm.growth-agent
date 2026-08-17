@@ -236,7 +236,7 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 | Steps | ✅ `steps` vertical/horizontal | — |
 | FAQ | ✅ `faq` | — |
 | Markets / comparison table | ✅ `table` foundation | multi-panel Classic vs Zero; mobile tabs |
-| Review rail | planned `testimonials` / `ratings-strip` | review **card** + Trustpilot header |
+| Review rail | ✅ `reviews` | Trustpilot header + 370/280 cards + arrows |
 | TV / spread cards | planned `spread-cards` | single-instrument focus layout |
 | Instruments | planned `instrument-grid` | mobile 2-col |
 | Logo marquee | ✅ `logo-marquee` | Provider text until approved payment assets are available |
@@ -282,8 +282,8 @@ Measured 2026-08-13 — full contract in `responsive-rules.md`.
 See **`assembly.md`** for Figma section → substitute map. Do **not** nest a table inside hero.
 
 **A. Trust / award** (BrokerChooser-like)  
-`hero` → `features` usp → optional `steps` / `faq` → `cta` → `disclaimer`  
-(reviews / TV spreads / instruments = planned → skip)
+`hero` → `features` usp → optional `steps` / `reviews` / `faq` → `cta` → `disclaimer`  
+(TV spreads / instruments = planned → skip)
 
 **B. Promo offer** (TV Promo-like)  
 `hero` → `steps` → `features` usp → `cta` → `disclaimer`  
@@ -294,7 +294,7 @@ See **`assembly.md`** for Figma section → substitute map. Do **not** nest a ta
 (download bar / checklist = planned → skip)
 
 **D. Market / instrument** (M1 Forex template / Gold / crypto / indices)  
-`market-hero` → `features` usp → `table` (instruments) → optional `table` compare → optional `logo-marquee` → `steps` → optional `faq`  
+`market-hero` → `features` usp → `table` (instruments) → optional `table` compare → optional `logo-marquee` → `steps` → `reviews` → optional `faq`  
 Header + footer CTAFooter are global chrome (skip duplicate end `cta`).
 
 Reuse map: `design-system/shared-blocks.md`.  

@@ -84,8 +84,9 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | 4 | How we compare | `table` compare | Optional. Crypto only today. |
 | 5 | Funding methods | `logo-marquee` | Optional. Equity only today. |
 | 6 | How It Works | `steps` | Default H2 + subtitle from `block-defaults`. |
-| 7 | FAQs | `faq` | Optional. Crypto only today. |
-| 8 | Ready to start + mega footer | footer CTA | Lives on `SiteFooter`. Do not add a second `cta` block. |
+| 7 | Reviews from Real Traders | `reviews` | Trustpilot + card rail. Defaults from `block-defaults`. |
+| 8 | FAQs | `faq` | Optional. Crypto only today. |
+| 9 | Ready to start + mega footer | footer CTA | Lives on `SiteFooter`. Do not add a second `cta` block. |
 
 **Mobile (Forex `23570:104433`, 375 × 7894):**
 
