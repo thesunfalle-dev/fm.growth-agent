@@ -102,163 +102,114 @@ const landing: LandingDocument = {
         {
           id: "btcusd",
           cells: {
-            symbol: {
-              title: "Bitcoin",
-              meta: "BTC/USD",
-              iconSrc: "/images/markets/btc.png",
-            },
+            symbol: { title: "Bitcoin", meta: "BTC/USD", iconSrc: "/images/markets/btc.png" },
             hours: "24/7",
-            minimum: "0.04%",
-            average: "See live",
+            minimum: "14",
+            average: "18.97",
           },
         },
         {
           id: "ethusd",
           cells: {
-            symbol: {
-              title: "Ethereum",
-              meta: "ETH/USD",
-              iconSrc: "/images/markets/eth.svg",
-            },
+            symbol: { title: "Ethereum", meta: "ETH/USD", iconSrc: "/images/markets/eth.svg" },
             hours: "24/7",
-            minimum: "0.09%",
-            average: "See live",
+            minimum: "2.37",
+            average: "2.9",
           },
         },
         {
           id: "dogeusd",
           cells: {
-            symbol: {
-              title: "Dogecoin",
-              meta: "DOGE/USD",
-              iconSrc: "/images/markets/doge.svg",
-            },
+            symbol: { title: "Dogecoin", meta: "DOGE/USD", iconSrc: "/images/markets/doge.svg" },
             hours: "24/7",
-            minimum: "See live",
-            average: "See live",
+            minimum: "0.0",
+            average: "0.0",
           },
         },
         {
           id: "solusd",
           cells: {
-            symbol: {
-              title: "Solana",
-              meta: "SOL/USD",
-              iconSrc: "/images/markets/sol.svg",
-            },
+            symbol: { title: "Solana", meta: "SOL/USD", iconSrc: "/images/markets/sol.svg" },
             hours: "24/7",
-            minimum: "See live",
-            average: "See live",
+            minimum: "0.14",
+            average: "0.16",
           },
         },
         {
           id: "adausd",
           cells: {
-            symbol: {
-              title: "Cardano",
-              meta: "ADA/USD",
-              iconSrc: "/images/markets/ada.svg",
-            },
+            symbol: { title: "Cardano", meta: "ADA/USD", iconSrc: "/images/markets/ada.svg" },
             hours: "24/7",
-            minimum: "See live",
-            average: "See live",
-          },
-        },
-        // Extra example rows so the instruments table scrolls (demo data)
-        {
-          id: "xrpusd",
-          cells: {
-            symbol: {
-              title: "XRP",
-              meta: "XRP/USD",
-              iconSrc: "/images/markets/xrp.svg",
-            },
-            hours: "24/7",
-            minimum: "See live",
-            average: "See live",
-          },
-        },
-        {
-          id: "ltcusd",
-          cells: {
-            symbol: {
-              title: "Litecoin",
-              meta: "LTC/USD",
-              iconSrc: "/images/markets/ltc.svg",
-            },
-            hours: "24/7",
-            minimum: "See live",
-            average: "See live",
+            minimum: "0.0",
+            average: "0.0",
           },
         },
         {
           id: "avaxusd",
           cells: {
-            symbol: {
-              title: "Avalanche",
-              meta: "AVAX/USD",
-              iconSrc: "/images/markets/avax.svg",
-            },
+            symbol: { title: "Avalanche", meta: "AVAX/USD", iconSrc: "/images/markets/avax.svg" },
             hours: "24/7",
-            minimum: "See live",
-            average: "See live",
+            minimum: "0.03",
+            average: "0.03",
           },
         },
         {
           id: "dotusd",
           cells: {
-            symbol: {
-              title: "Polkadot",
-              meta: "DOT/USD",
-              iconSrc: "/images/markets/dot.svg",
-            },
+            symbol: { title: "Polkadot", meta: "DOT/USD", iconSrc: "/images/markets/dot.svg" },
             hours: "24/7",
-            minimum: "See live",
-            average: "See live",
+            minimum: "0.03",
+            average: "0.03",
           },
         },
         {
-          id: "linkusd",
+          id: "bchusd",
           cells: {
-            symbol: {
-              title: "Chainlink",
-              meta: "LINK/USD",
-              iconSrc: "/images/markets/link.svg",
-            },
+            symbol: { title: "Bitcoin Cash", meta: "BCH/USD" },
             hours: "24/7",
-            minimum: "See live",
-            average: "See live",
-          },
-        },
-        {
-          id: "maticusd",
-          cells: {
-            symbol: {
-              title: "Polygon",
-              meta: "MATIC/USD",
-              iconSrc: "/images/markets/matic.svg",
-            },
-            hours: "24/7",
-            minimum: "See live",
-            average: "See live",
+            minimum: "1.08",
+            average: "1.51",
           },
         },
         {
           id: "bnbusd",
           cells: {
-            symbol: {
-              title: "BNB",
-              meta: "BNB/USD",
-              iconSrc: "/images/markets/bnb.svg",
-            },
+            symbol: { title: "BNB", meta: "BNB/USD", iconSrc: "/images/markets/bnb.svg" },
             hours: "24/7",
-            minimum: "See live",
-            average: "See live",
+            minimum: "0.7",
+            average: "0.91",
+          },
+        },
+        {
+          id: "maticusd",
+          cells: {
+            symbol: { title: "Polygon", meta: "MATIC/USD", iconSrc: "/images/markets/matic.svg" },
+            hours: "24/7",
+            minimum: "0.0",
+            average: "0.0",
+          },
+        },
+        {
+          id: "xlmusd",
+          cells: {
+            symbol: { title: "Stellar", meta: "XLM/USD" },
+            hours: "24/7",
+            minimum: "0.0",
+            average: "0.0",
+          },
+        },
+        {
+          id: "starlnkusd",
+          cells: {
+            symbol: { title: "Chainlink", meta: "LNK/USD", iconSrc: "/images/markets/link.svg" },
+            hours: "24/7",
+            minimum: "0.03",
+            average: "0.03",
           },
         },
       ],
       footnote:
-        "Sample pairs for this campaign preview. Confirm live pricing in the Client Hub or Spreads Tool.",
+        "Minimum and average spreads from Fusion Markets trading conditions. Indicative; confirm live pricing in the Client Hub or Spreads Tool.",
     },
 
     // —— 4. Compare matrix structure; columns/rows from TZ (not Figma sample competitors) ——

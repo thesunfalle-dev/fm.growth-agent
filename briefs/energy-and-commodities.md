@@ -19,7 +19,7 @@ Current live references:
 - Hero bullets: $0 brokerage; Oil / Natural Gas / Wheat / Soybeans; no deposit fees / no min account; MT4, MT5 or cTrader
 - Hero quotes table: energy + soft pairs (XTIUSD, XBRUSD, XNGUSD, WHEAT, SOYBN)
 - USP title + 6 TZ cards
-- Instruments list from TZ examples + live Energy page names (spreads not in TZ → “See live”)
+- Instruments list from Fusion trading conditions (min/avg spreads, official symbols)
 - Platforms: MT4 / MT5 / cTrader tabs + TZ bullets + Start trading CTAs (Figma Choose Your Platform structure)
 - Funding methods, How it works, reviews, FAQ from live Energy page
 - End CTA lives on SiteFooter
