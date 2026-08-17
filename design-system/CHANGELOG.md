@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-17 — Platforms tab switch + adaptive
+
+- Panel titles stay put: all tab panels share one grid cell sized to the tallest copy.
+- Tabs_Icon reserves Bold label width so the row doesn’t shift.
+- Stack below 1200 (tablet). 375 keeps Figma order: mock → tabs → panel.
+
 ## 2026-08-17 — Platforms block (Choose Your Platform)
 
 - `platforms` is ready: desktop `28610:429747` (title + Tabs_Icon + device left / panel right), mobile `28610:431359` (mock → tabs → panel).

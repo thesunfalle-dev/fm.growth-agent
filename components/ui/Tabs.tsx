@@ -48,7 +48,7 @@ export function Tabs({
             onClick={() => onChange?.(item.id)}
           >
             {item.icon ? <Icon name={item.icon} size={24} /> : null}
-            <span>{item.label}</span>
+            <span data-label={item.label}>{item.label}</span>
           </button>
         );
       })}

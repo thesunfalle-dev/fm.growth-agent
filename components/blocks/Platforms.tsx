@@ -72,24 +72,41 @@ export function Platforms({
             className="ui-platforms__tabs"
           />
           <div className="ui-platforms__copy">
-            <h3 className="ui-platforms__name">{active.title}</h3>
-            {active.body ? (
-              <Text variant="lead" className="ui-platforms__body">
-                {active.body}
-              </Text>
-            ) : null}
-            {active.bullets?.length ? (
-              <ul className="ui-platforms__list">
-                {active.bullets.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            ) : null}
-            {active.primaryCta ? (
-              <Button href={active.primaryCta.href} variant="primary" size="lg">
-                {active.primaryCta.label}
-              </Button>
-            ) : null}
+            {items.map((item) => {
+              const isActive = item.id === active.id;
+              return (
+                <div
+                  key={item.id}
+                  className={
+                    isActive
+                      ? "ui-platforms__panel is-active"
+                      : "ui-platforms__panel"
+                  }
+                  role="tabpanel"
+                  aria-hidden={!isActive}
+                  inert={!isActive ? true : undefined}
+                >
+                  <h3 className="ui-platforms__name">{item.title}</h3>
+                  {item.body ? (
+                    <Text variant="lead" className="ui-platforms__body">
+                      {item.body}
+                    </Text>
+                  ) : null}
+                  {item.bullets?.length ? (
+                    <ul className="ui-platforms__list">
+                      {item.bullets.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {item.primaryCta ? (
+                    <Button href={item.primaryCta.href} variant="primary" size="lg">
+                      {item.primaryCta.label}
+                    </Button>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
         </div>
       </Container>

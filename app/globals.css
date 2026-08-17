@@ -1585,6 +1585,11 @@ a {
   gap: var(--component-platforms-tab-gap);
   overflow-x: auto;
   max-width: 100%;
+  scrollbar-width: none;
+}
+
+.ui-tabs--icon::-webkit-scrollbar {
+  display: none;
 }
 
 .ui-tabs--icon .ui-tab {
@@ -1597,6 +1602,23 @@ a {
   color: var(--component-platforms-inactive-text);
   font-weight: var(--typography-font-weight-regular);
   white-space: nowrap;
+}
+
+.ui-tabs--icon .ui-tab > span {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Reserve Bold width so labels don’t shift when a tab activates */
+.ui-tabs--icon .ui-tab > span::after {
+  content: attr(data-label);
+  height: 0;
+  overflow: hidden;
+  font-weight: var(--typography-font-weight-bold);
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
 }
 
 .ui-tabs--icon .ui-tab--active {
@@ -5165,7 +5187,7 @@ a {
     "media copy";
   column-gap: var(--component-platforms-panel-gap);
   row-gap: var(--component-platforms-section-gap);
-  align-items: center;
+  align-items: start;
   width: 100%;
 }
 
@@ -5216,11 +5238,23 @@ a {
 
 .ui-platforms__copy {
   grid-area: copy;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+}
+
+.ui-platforms__panel {
+  grid-area: 1 / 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--component-platforms-copy-gap);
   min-width: 0;
+}
+
+.ui-platforms__panel:not(.is-active) {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .ui-platforms__name {
@@ -5243,7 +5277,7 @@ a {
 
 .ui-platforms__list {
   margin: 0;
-  padding: 0 0 0 1.2em;
+  padding: 0 0 0 var(--space-5);
   color: var(--color-text-primary);
   font-family: var(--typography-font-family-body);
   font-size: var(--component-platforms-body-size);
@@ -5253,6 +5287,25 @@ a {
 
 .ui-platforms__list li + li {
   margin-top: var(--space-2);
+}
+
+/* Below Figma desktop 1280 the 500+70 split is too tight — stack. */
+@media (max-width: 1199px) {
+  .ui-platforms {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "tabs"
+      "media"
+      "copy";
+    row-gap: var(--component-platforms-section-gap-mobile);
+    justify-items: center;
+  }
+
+  .ui-platforms__tabs,
+  .ui-platforms__copy {
+    width: 100%;
+  }
 }
 
 /* breakpoint.md — 768px */
@@ -5709,19 +5762,15 @@ a {
 
   /* Figma 28610:431359 — mock → tabs → panel */
   .ui-platforms {
-    grid-template-columns: 1fr;
     grid-template-areas:
       "intro"
       "media"
       "tabs"
       "copy";
-    row-gap: var(--component-platforms-section-gap-mobile);
-    justify-items: center;
   }
 
   .ui-platforms__tabs {
     justify-content: flex-start;
-    width: 100%;
   }
 
   .ui-tabs--icon {
@@ -5736,8 +5785,7 @@ a {
     max-width: var(--component-platforms-device-width-mobile);
   }
 
-  .ui-platforms__copy {
-    width: 100%;
+  .ui-platforms__panel {
     gap: var(--component-platforms-copy-gap-mobile);
   }
 
