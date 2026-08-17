@@ -3729,19 +3729,81 @@ a {
   transform-origin: 70% 20%;
 }
 
-.ui-indices-field__globe {
-  --globe-x: -22%;
+.ui-indices-field__planet {
+  --globe-x: -18%;
   --globe-y: -50%;
   position: absolute;
-  left: 62%;
+  left: 66%;
   top: 50%;
-  width: min(58vw, 720px);
-  height: auto;
-  max-height: none;
+  width: min(46vw, 560px);
   transform: translate(var(--globe-x), var(--globe-y));
+  animation: ui-index-globe var(--component-indices-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+}
+
+.ui-indices-field__globe {
+  display: block;
+  width: 100%;
+  height: auto;
   opacity: 0.96;
   filter: drop-shadow(var(--component-indices-field-shadow));
-  animation: ui-index-globe var(--component-indices-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+}
+
+.ui-indices-field__orbit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.ui-indices-field__chip {
+  --chip-travel: var(--space-16);
+  position: absolute;
+  left: var(--chip-x);
+  top: var(--chip-y);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: var(--component-indices-field-chip-width);
+  padding: var(--component-indices-field-chip-pad);
+  border: var(--border-width-default) solid var(--primitive-color-purple200);
+  border-radius: var(--radius-xl);
+  background: var(--primitive-color-purple100);
+  box-shadow: var(--component-indices-field-shadow);
+  color: var(--color-text-primary);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-c1);
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  animation:
+    ui-index-chip-enter var(--component-indices-field-duration-enter) var(--motion-easing-emphasized) both,
+    ui-index-chip-float var(--component-indices-field-duration-drift) var(--motion-easing-standard) infinite;
+  animation-delay: var(--enter-delay), calc(var(--enter-delay) + var(--component-indices-field-duration-enter));
+}
+
+.ui-indices-field__chip img {
+  display: block;
+  width: var(--space-5);
+  height: var(--space-5);
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+}
+
+.ui-indices-field__chip b {
+  font-family: var(--typography-font-family-heading);
+  font-weight: var(--typography-font-weight-semibold);
+}
+
+.ui-indices-field__chip em {
+  margin-left: auto;
+  font-style: normal;
+  color: var(--primitive-color-green600);
+}
+
+.ui-indices-field__chip--down em {
+  color: var(--primitive-color-red500);
 }
 
 .ui-indices-field__tape {
@@ -3807,10 +3869,31 @@ a {
 @keyframes ui-index-globe {
   0%,
   100% {
-    transform: translate(var(--globe-x), var(--globe-y)) rotate(-2deg);
+    transform: translate(var(--globe-x), var(--globe-y));
   }
   50% {
-    transform: translate(var(--globe-x), calc(var(--globe-y) - var(--space-2))) rotate(2deg);
+    transform: translate(var(--globe-x), calc(var(--globe-y) - var(--space-2)));
+  }
+}
+
+@keyframes ui-index-chip-enter {
+  from {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--chip-travel)), -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes ui-index-chip-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(calc(-50% + var(--space-1)), calc(-50% - var(--space-2)));
   }
 }
 
@@ -4952,8 +5035,13 @@ a {
 
   .ui-indices-ticker,
   .ui-indices-field__orb,
-  .ui-indices-field__globe {
+  .ui-indices-field__planet,
+  .ui-indices-field__chip {
     animation: none;
+  }
+
+  .ui-indices-field__orbit {
+    display: none;
   }
 }
 
@@ -5098,7 +5186,8 @@ a {
     height: var(--component-coin-field-orb-size-sm);
   }
 
-  .ui-indices-field__globe {
+  .ui-indices-field__planet,
+  .ui-indices-field__chip {
     display: none;
   }
 
