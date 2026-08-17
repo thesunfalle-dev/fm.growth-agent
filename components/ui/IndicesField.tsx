@@ -38,10 +38,14 @@ export function IndicesField() {
           height={866}
           draggable={false}
         />
-        <svg className="ui-indices-field__orbit" viewBox="0 0 100 86" preserveAspectRatio="none">
+        <svg
+          className="ui-indices-field__orbit"
+          viewBox="0 0 1004 866"
+          preserveAspectRatio="xMidYMid meet"
+        >
           <defs>
-            <filter id="ui-indices-dot-glow" x="-80%" y="-80%" width="260%" height="260%">
-              <feGaussianBlur stdDeviation="1.1" result="blur" />
+            <filter id="ui-indices-dot-glow" x="-120%" y="-120%" width="340%" height="340%">
+              <feGaussianBlur stdDeviation="7" result="blur" />
               <feMerge>
                 <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
@@ -50,19 +54,34 @@ export function IndicesField() {
           </defs>
           <path
             id="ui-indices-eq"
-            d="M 13 44 C 35 51 69 53 88 49 C 69 42 35 40 13 44"
+            d="M 56 377 C 220 445 400 500 560 534 C 680 552 780 554 828 548"
             fill="none"
           />
-          <g opacity="0.4">
-            <circle r="1.8" fill="var(--primitive-color-purple300)" />
-            <animateMotion dur="8s" repeatCount="indefinite" begin="-1.2s">
+          <g opacity="0.35">
+            <circle r="9" fill="var(--primitive-color-purple300)" />
+            <animateMotion
+              dur="7s"
+              repeatCount="indefinite"
+              calcMode="linear"
+              keyPoints="0;1;0"
+              keyTimes="0;0.5;1"
+              begin="-0.9s"
+              rotate="0"
+            >
               <mpath href="#ui-indices-eq" />
             </animateMotion>
           </g>
           <g filter="url(#ui-indices-dot-glow)">
-            <circle r="2.15" fill="var(--primitive-color-purple400)" />
-            <circle r="0.85" fill="var(--primitive-color-gray0)" />
-            <animateMotion dur="8s" repeatCount="indefinite">
+            <circle r="11" fill="var(--primitive-color-purple400)" />
+            <circle r="4.5" fill="var(--primitive-color-gray0)" />
+            <animateMotion
+              dur="7s"
+              repeatCount="indefinite"
+              calcMode="linear"
+              keyPoints="0;1;0"
+              keyTimes="0;0.5;1"
+              rotate="0"
+            >
               <mpath href="#ui-indices-eq" />
             </animateMotion>
           </g>
