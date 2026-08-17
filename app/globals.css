@@ -5186,8 +5186,21 @@ a {
     height: var(--component-coin-field-orb-size-sm);
   }
 
-  .ui-indices-field__planet,
   .ui-indices-field__chip {
+    display: none;
+  }
+
+  .ui-indices-field__planet {
+    left: auto;
+    right: 0;
+    top: 36%;
+    width: min(68vw, 260px);
+    --globe-x: 58%;
+    --globe-y: -38%;
+    opacity: 0.78;
+  }
+
+  .ui-indices-field__orbit {
     display: none;
   }
 
