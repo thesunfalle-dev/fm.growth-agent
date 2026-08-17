@@ -4971,8 +4971,8 @@ a {
   }
 
   .ui-spread-quotes__stack {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--component-spread-cards-mobile-stack-gap);
     width: 100%;
   }
@@ -5263,8 +5263,8 @@ a {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: var(--component-spread-cards-mobile-width);
-    margin-inline: auto;
+    max-width: none;
+    margin-inline: 0;
     border: var(--border-width-default) solid var(--primitive-color-blue100);
     border-radius: var(--component-spread-cards-card-radius);
     background: var(--color-background-canvas);
