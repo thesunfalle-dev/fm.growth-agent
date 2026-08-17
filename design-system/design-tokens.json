@@ -451,7 +451,8 @@
       "tabPadX": "24px",
       "tabGap": "12px",
       "tabGapMobile": "6px",
-      "tradeRadius": "10px"
+      "tradeRadius": "10px",
+      "toolSize": "16px"
     },
     "faq": {
       "border": "{primitive.color.blue100}",

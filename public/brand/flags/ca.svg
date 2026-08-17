@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <defs><clipPath id="caClip"><circle cx="12" cy="12" r="12"/></clipPath></defs>
+  <g clip-path="url(#caClip)">
+    <rect width="6" height="24" fill="#FF0000"/>
+    <rect x="6" width="12" height="24" fill="#fff"/>
+    <rect x="18" width="6" height="24" fill="#FF0000"/>
+    <path d="M12 6.2 L12.8 9.2 L16 9.2 L13.6 11.1 L14.5 14.2 L12 12.4 L9.5 14.2 L10.4 11.1 L8 9.2 L11.2 9.2 Z" fill="#FF0000"/>
+  </g>
+</svg>

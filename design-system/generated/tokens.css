@@ -380,6 +380,7 @@
   --component-spread-cards-tab-gap: 12px;
   --component-spread-cards-tab-gap-mobile: 6px;
   --component-spread-cards-trade-radius: 10px;
+  --component-spread-cards-tool-size: 16px;
   --component-faq-border: var(--primitive-color-blue100);
   --component-faq-title-size-desktop: 20px;
   --component-faq-title-size-mobile: 16px;

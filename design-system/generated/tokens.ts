@@ -380,6 +380,7 @@ export const tokenNames = [
   "--component-spread-cards-tab-gap",
   "--component-spread-cards-tab-gap-mobile",
   "--component-spread-cards-trade-radius",
+  "--component-spread-cards-tool-size",
   "--component-faq-border",
   "--component-faq-title-size-desktop",
   "--component-faq-title-size-mobile",

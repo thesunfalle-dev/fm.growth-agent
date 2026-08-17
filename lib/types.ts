@@ -90,8 +90,8 @@ export type SpreadQuoteCard = {
   trend?: number;
   iconSrc?: string;
   iconSrcSecondary?: string;
-  /** Tab id this card belongs to (besides Popular). */
-  tab?: string;
+  /** Tabs this card appears on, e.g. Popular + US. */
+  tabs?: string[];
   action?: LandingCta;
 };
 

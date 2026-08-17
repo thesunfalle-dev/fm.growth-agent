@@ -87,10 +87,13 @@ export function SpreadQuotes({
   }, [initial]);
 
   const fallbackAction = blockDefaults.spreadCards.action;
-  const visible = live.filter((card) => {
-    if (!tabs?.length || tab === POPULAR) return true;
-    return card.tab === tab;
-  });
+  const visible = live
+    .filter((card) => {
+      if (!tabs?.length) return true;
+      if (card.tabs?.length) return card.tabs.includes(tab);
+      return tab === POPULAR;
+    })
+    .slice(0, 5);
 
   if (visible.length === 0) return null;
 

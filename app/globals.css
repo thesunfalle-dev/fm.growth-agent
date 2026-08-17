@@ -4566,7 +4566,7 @@ a {
   margin: 0;
   color: var(--color-text-primary);
   font-family: var(--typography-font-family-body);
-  font-size: var(--typography-font-size-b1);
+  font-size: var(--component-spread-cards-tool-size);
   font-weight: var(--typography-font-weight-light);
   line-height: var(--typography-line-height-body);
   text-align: center;
@@ -4957,6 +4957,85 @@ a {
   }
 }
 
+/* Spreads rail → stack before cards crush (Figma 250 cards need ~1280) */
+@media (max-width: 1199px) {
+  .ui-spread-quotes__desktop {
+    display: none;
+  }
+
+  .ui-spread-quotes__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--component-spread-cards-inner-gap);
+    width: 100%;
+  }
+
+  .ui-spread-quotes__stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--component-spread-cards-mobile-stack-gap);
+    width: 100%;
+  }
+
+  .ui-spread-quote--mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    border: var(--border-width-default) solid var(--primitive-color-blue100);
+    border-radius: var(--component-spread-cards-card-radius);
+    background: var(--color-background-canvas);
+    overflow: hidden;
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__head {
+    justify-content: space-between;
+    min-height: var(--component-spread-cards-mobile-header-height);
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+    border-bottom: var(--border-width-default) solid var(--primitive-color-blue50);
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__pair {
+    flex-direction: row;
+    gap: var(--space-3);
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__mark {
+    width: var(--component-spread-cards-icon-size-mobile);
+    height: var(--component-spread-cards-icon-size-mobile);
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__symbol {
+    font-size: var(--typography-font-size-b3);
+    text-align: left;
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__grid {
+    display: flex;
+    justify-content: space-between;
+    min-height: var(--component-spread-cards-mobile-row-height);
+    padding: var(--space-2) var(--space-1);
+    gap: 0;
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__metric {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: var(--space-2) var(--space-3);
+    box-sizing: border-box;
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__label {
+    font-size: var(--typography-font-size-c1);
+  }
+
+  .ui-spread-quote--mobile .ui-spread-quote__value {
+    font-size: var(--typography-font-size-b3);
+  }
+}
+
 /* breakpoint.md — 768px */
 @media (max-width: 768px) {
   .ui-section {
@@ -5173,6 +5252,11 @@ a {
     display: flex;
     flex-direction: column;
     gap: var(--component-spread-cards-inner-gap);
+  }
+
+  .ui-spread-quotes__stack {
+    display: flex;
+    flex-direction: column;
   }
 
   .ui-spread-quote--mobile {

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <defs><clipPath id="cnClip"><circle cx="12" cy="12" r="12"/></clipPath></defs>
+  <g clip-path="url(#cnClip)">
+    <rect width="24" height="24" fill="#DE2910"/>
+    <g fill="#FFDE00">
+      <path d="M6 3.2 L6.9 5.8 L9.6 5.8 L7.4 7.4 L8.2 10 L6 8.4 L3.8 10 L4.6 7.4 L2.4 5.8 L5.1 5.8 Z"/>
+      <circle cx="11.2" cy="3.8" r="0.7"/>
+      <circle cx="13.2" cy="5.6" r="0.7"/>
+      <circle cx="13.2" cy="8.2" r="0.7"/>
+      <circle cx="11.2" cy="10" r="0.7"/>
+    </g>
+  </g>
+</svg>

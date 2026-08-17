@@ -219,7 +219,7 @@
       "contentRules": [
         "Figma Gold/Forex pairs are structure only. Cards and copy must match the landing market.",
         "Do not paste EURUSD / gold sample quotes onto an indices or crypto page.",
-        "Desktop shows the filtered rail. Mobile stacks the same cards.",
+        "Each tab shows at most five cards. Mark membership with cards[].tabs.",
         "Omit tabs when the landing has a single market group.",
         "Values are indicative preview seeds, not a live feed."
       ],
