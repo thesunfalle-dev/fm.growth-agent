@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.18.0",
+    "version": "0.19.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-17",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342098",
-    "notes": "Reviews rail 29987:342098 / 29987:343348 — Trustpilot header + review cards."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342067",
+    "notes": "Spread cards 29987:342067 / 29987:342771 — market live-spreads split + mobile TV stack."
   },
   "primitive": {
     "color": {
@@ -421,6 +421,34 @@
       "scoreGap": "20px",
       "navWidth": "64px",
       "navHeight": "17px"
+    },
+    "spreadCards": {
+      "copyWidth": "600px",
+      "copyGap": "24px",
+      "copyGapMobile": "20px",
+      "cardWidth": "333px",
+      "cardHeight": "480px",
+      "cardRadius": "20px",
+      "cardPad": "40px",
+      "innerGap": "32px",
+      "iconSize": "40px",
+      "iconSizeMobile": "24px",
+      "iconOverlap": "10px",
+      "iconOverlapMobile": "5px",
+      "symbolSize": "32px",
+      "labelSize": "16px",
+      "valueSize": "24px",
+      "mobileWidth": "343px",
+      "mobileStackGap": "16px",
+      "mobileHeaderHeight": "60px",
+      "mobileRowHeight": "58px",
+      "mobileColWidth": "80px",
+      "mobileSpreadWidth": "70px",
+      "tabHeight": "44px",
+      "tabRadius": "28px",
+      "tabPadX": "24px",
+      "tabGap": "6px",
+      "tradeRadius": "12px"
     },
     "faq": {
       "border": "{primitive.color.blue100}",

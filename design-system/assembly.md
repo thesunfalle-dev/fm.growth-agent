@@ -25,7 +25,7 @@ Examples from homepage (same design everywhere, data changes):
 
 | Intent on any page | Canonical Figma | Inventory |
 |--------------------|-----------------|-----------|
-| “Our / here’s our / tight spreads” | [Our spreads](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) tabs + TV_Card rail | `spread-cards` (planned) — **not** invent a different table layout |
+| “Our / here’s our / tight spreads” | [Our spreads](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) tabs + TV_Card rail; market split [`29987:342067`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342067) | `spread-cards` — **not** invent a different table layout |
 | “Ready to start trading?” | [CTAFooter](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297571) on Footer | `cta` / footer band |
 | “How it works” | [How it Works - 5](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=31517-366918) split + steps | `steps` |
 

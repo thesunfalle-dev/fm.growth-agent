@@ -70,7 +70,7 @@ crypto:
   header → market-hero → features usp → table → table compare → steps → reviews → faq → footer
 
 equity-indices:
-  header → market-hero → features usp → table → logo-marquee → steps → reviews → footer
+  header → market-hero → features usp → table → logo-marquee → steps → spread-cards → reviews → footer
 ```
 
 Shared core: **header · market-hero · features · table · steps · footer**.

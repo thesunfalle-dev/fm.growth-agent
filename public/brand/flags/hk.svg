@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <defs><clipPath id="hkClip"><circle cx="12" cy="12" r="12"/></clipPath></defs>
+  <g clip-path="url(#hkClip)">
+    <rect width="24" height="24" fill="#DE2910"/>
+    <g fill="#fff" transform="translate(12 12)">
+      <path d="M0-5.2 L0.7-1.6 L0-1.2 L-0.7-1.6 Z"/>
+      <path d="M0-5.2 L0.7-1.6 L0-1.2 L-0.7-1.6 Z" transform="rotate(72)"/>
+      <path d="M0-5.2 L0.7-1.6 L0-1.2 L-0.7-1.6 Z" transform="rotate(144)"/>
+      <path d="M0-5.2 L0.7-1.6 L0-1.2 L-0.7-1.6 Z" transform="rotate(216)"/>
+      <path d="M0-5.2 L0.7-1.6 L0-1.2 L-0.7-1.6 Z" transform="rotate(288)"/>
+    </g>
+  </g>
+</svg>

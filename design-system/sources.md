@@ -24,6 +24,17 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-17 — Spread cards (live quotes)
+
+| Page | Node | Note |
+|------|------|------|
+| Live spreads desktop | `29987:342067` | Copy 600 + TV_Card-Desktop 333×480 |
+| Live spreads mobile | `29987:342771` | Tabs_Text + TV_Card-Mobile stack |
+
+- Structure only. Equity Indices fills index symbols and TZ copy.
+- Trade CTA → Client Hub sign-up. Tool link → live `fusionmarkets.com/Trading/Forex-cfd-spreads`.
+- Actor: agent + user
+
 ### 2026-08-17 — Reviews from Real Traders
 
 | Page | Node | Note |

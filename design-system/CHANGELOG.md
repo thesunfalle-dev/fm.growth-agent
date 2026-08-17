@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-17 — Spread cards (live quotes)
+
+- `spread-cards` is ready: desktop copy + TV_Card (`29987:342067`), mobile tabs + TV_Card stack (`29987:342771`).
+- Equity Indices uses index instruments (US500 / NAS100 / AUS200 / GER40 / HK50), not Figma gold/EURUSD sample copy.
+- Market-hero quotes card removed on indices so the globe can sit in the open right field.
+
 ## 2026-08-17 — Reviews from Real Traders
 
 - New ready block `reviews` (Figma desktop `29987:342098`, mobile `29987:343348`): Trustpilot header + horizontal review-card rail + arrows.

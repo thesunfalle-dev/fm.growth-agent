@@ -196,6 +196,36 @@
       "tokenDependencies": ["component.reviews", "typography", "semantic.color.text"]
     },
     {
+      "type": "spread-cards",
+      "status": "ready",
+      "description": "Market live-spreads proof: desktop copy + one TV_Card; mobile Tabs_Text + TV_Card stack.",
+      "component": "components/blocks/SpreadCards.tsx",
+      "figma": "29987:342067 / 29987:342771",
+      "props": {
+        "title": { "type": "string", "required": true },
+        "subtitle": { "type": "string", "required": false },
+        "toolPrefix": { "type": "string", "required": false },
+        "toolLink": { "type": "cta", "required": false },
+        "tabs": { "type": "string[]", "required": false },
+        "featuredId": { "type": "string", "required": false },
+        "cards": { "type": "spreadQuoteCard[]", "required": true, "minItems": 1 },
+        "actionLabel": { "type": "string", "required": false }
+      },
+      "defaults": {
+        "toolPrefix": "blockDefaults.spreadCards.toolPrefix",
+        "toolLink": "blockDefaults.spreadCards.toolLink",
+        "actionLabel": "Trade"
+      },
+      "contentRules": [
+        "Figma Gold/Forex pairs are structure only. Cards and copy must match the landing market.",
+        "Do not paste EURUSD / gold sample quotes onto an indices or crypto page.",
+        "Desktop shows featuredId (or the first card). Mobile stacks the filtered tab.",
+        "Omit tabs when the landing has a single market group.",
+        "Values are indicative preview seeds, not a live feed."
+      ],
+      "tokenDependencies": ["component.spreadCards", "typography", "semantic.color.text"]
+    },
+    {
       "type": "faq",
       "status": "ready",
       "description": "Accordion FAQ list (Sections frame).",
@@ -289,10 +319,10 @@
   "planned": [
     {
       "type": "spread-cards",
-      "status": "planned",
-      "description": "Homepage «Our spreads»: H2 + lead + Tabs_Text + TV_Card rail (desktop) / stack (mobile) + Spreads Tool link. Content varies (pairs/tabs); structure is fixed. Same block on promo/market landings.",
+      "status": "ready",
+      "description": "Shipped as ready block. Homepage rail 27873:297368 can reuse the same type with tabs + multiple cards; market landings use the 29987:342067 split.",
       "figmaHomepage": "27873:297368",
-      "figmaNotes": "Not the same as Markets DataTable (type table). Do not implement as a one-off table in content."
+      "figmaNotes": "Not the same as Markets DataTable (type table)."
     },
     {
       "type": "instrument-grid",

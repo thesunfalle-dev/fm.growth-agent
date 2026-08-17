@@ -314,6 +314,18 @@
       "notes": "Website Redesign footer foundation; simplified columns vs full mega-footer AU/EN."
     },
     {
+      "name": "SpreadQuoteCard",
+      "category": "media",
+      "status": "ready",
+      "path": "components/ui/SpreadQuoteCard.tsx",
+      "figma": "29987:342067",
+      "variants": ["desktop", "mobile"],
+      "sizes": ["333x480", "343"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.spreadCards"],
+      "notes": "TV_Card for live spreads. Desktop 333×480; mobile header + bid/ask/spread/trend row."
+    },
+    {
       "name": "ReviewRail",
       "category": "media",
       "status": "ready",

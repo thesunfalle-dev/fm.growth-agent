@@ -7,6 +7,7 @@ import { MarketsTable } from "@/components/blocks/MarketsTable";
 import { MarketHero } from "@/components/blocks/MarketHero";
 import { LogoMarquee } from "@/components/blocks/LogoMarquee";
 import { Reviews } from "@/components/blocks/Reviews";
+import { SpreadCards } from "@/components/blocks/SpreadCards";
 import { StepsBand } from "@/components/blocks/StepsBand";
 import type { LandingBlock } from "@/lib/types";
 
@@ -88,6 +89,20 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 subtitle={block.subtitle}
                 summary={block.summary}
                 items={block.items}
+              />
+            );
+          case "spread-cards":
+            return (
+              <SpreadCards
+                key={index}
+                title={block.title}
+                subtitle={block.subtitle}
+                toolPrefix={block.toolPrefix}
+                toolLink={block.toolLink}
+                tabs={block.tabs}
+                featuredId={block.featuredId}
+                cards={block.cards}
+                actionLabel={block.actionLabel}
               />
             );
           case "faq":

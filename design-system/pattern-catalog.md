@@ -63,15 +63,15 @@ Copy when adding a pattern:
 
 | Field | Value |
 |-------|--------|
-| **Status** | planned |
+| **Status** | ready |
 | **Inventory** | `spread-cards` |
 | **Intent** | Show live-style spreads / quotes for one or more markets; prove low cost. |
-| **Structure (fixed)** | Section: H2 + lead → `Tabs_Text` (market switcher) → horizontal **TV_Card** rail (desktop) / stack (mobile) → optional link to Spreads Tool. |
-| **Content (props)** | `title`, `subtitle`, `tabs[]`, default tab, `cards[]` (symbol, bid/ask/spread, trade href), `footerLink` |
-| **Canonical Figma** | Homepage AU [Our spreads `27873:297368`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) |
-| **Also seen on** | BrokerChooser “Here’s our spreads”; TV Promo tight spreads; Gold live spreads (often single TV card focus) |
-| **Rules** | Same block when intent is “spreads with quote cards”. **Not** Markets DataTable (`table`) on Forex “Our … Instruments”. Until coded: skip or temporary substitute **must be labeled**, never claimed as this pattern. |
-| **Adaptive** | Desktop: card row (overflow ok). Mobile (`27873:296719`): Tabs_Text **overflow-x** (do not wrap) + **stack** `TV_Card-Mobile` **343×118**, gap 16 + footer link. Never carousel these cards. |
+| **Structure (fixed)** | Market landing desktop: H2 + lead + Spreads Tool link \| **one TV_Card-Desktop 333×480**. Mobile: H2 + lead → `Tabs_Text` overflow → **stack** `TV_Card-Mobile` (bid/ask/spread/trend + Trade). Homepage rail (tabs + several desktop cards) is the same type with more cards. |
+| **Content (props)** | `title`, `subtitle`, `toolLink`, `tabs[]`, `featuredId`, `cards[]` (symbol, bid/ask/spread/trend, flags, trade href) |
+| **Canonical Figma** | Market live spreads desktop [`29987:342067`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342067) · mobile [`29987:342771`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342771). Homepage rail: [`27873:297368`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) |
+| **Also seen on** | **Equity Indices** (index symbols, not Figma gold/EURUSD sample); BrokerChooser; TV Promo; Gold |
+| **Rules** | Same block when intent is “spreads with quote cards”. **Not** Markets DataTable (`table`). Never paste Figma Gold/Forex sample pairs onto another market page. |
+| **Adaptive** | Desktop: copy left + featured card. Mobile: centered copy + tabs overflow-x + stacked 343 cards, gap 16. Never carousel these cards. |
 
 ---
 

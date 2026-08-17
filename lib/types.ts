@@ -77,6 +77,24 @@ export type ReviewsSummary = {
   href?: string;
 };
 
+export type SpreadQuoteCard = {
+  id: string;
+  symbol: string;
+  /** Indicative seed — not a live feed. */
+  bid: number;
+  ask: number;
+  digits: number;
+  /** If omitted, ask − bid. */
+  spread?: number;
+  /** Decorative percent move. */
+  trend?: number;
+  iconSrc?: string;
+  iconSrcSecondary?: string;
+  /** Tab id this card belongs to (besides Popular). */
+  tab?: string;
+  action?: LandingCta;
+};
+
 /** Brand illustration key from lib/illustrations.ts (Images frame). */
 export type IllustrationKey = string;
 
@@ -190,6 +208,18 @@ export type LandingBlock =
       subtitle?: string;
       summary?: ReviewsSummary;
       items?: ReviewItem[];
+    }
+  | {
+      /** Live-spreads proof: desktop copy + TV_Card, mobile tabs + TV_Card stack. */
+      type: "spread-cards";
+      title: string;
+      subtitle?: string;
+      toolPrefix?: string;
+      toolLink?: LandingCta;
+      tabs?: string[];
+      featuredId?: string;
+      cards: SpreadQuoteCard[];
+      actionLabel?: string;
     }
   | {
       /** Funding-method logo row. Provider names are content; visual shell is shared. */

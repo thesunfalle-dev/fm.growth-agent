@@ -237,7 +237,7 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 | FAQ | ✅ `faq` | — |
 | Markets / comparison table | ✅ `table` foundation | multi-panel Classic vs Zero; mobile tabs |
 | Review rail | ✅ `reviews` | Trustpilot header + 370/280 cards + arrows |
-| TV / spread cards | planned `spread-cards` | single-instrument focus layout |
+| TV / spread cards | ✅ `spread-cards` | desktop split + mobile stack |
 | Instruments | planned `instrument-grid` | mobile 2-col |
 | Logo marquee | ✅ `logo-marquee` | Provider text until approved payment assets are available |
 | Tier / plan cards | planned content cards | icon + title + multi-line body |
