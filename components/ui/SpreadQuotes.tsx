@@ -55,7 +55,6 @@ function toView(card: LiveCard, fallbackAction: LandingCta): SpreadQuoteView {
 export function SpreadQuotes({
   cards,
   tabs,
-  featuredId,
   actionLabel = blockDefaults.spreadCards.actionLabel,
 }: {
   cards: SpreadQuoteCardSpec[];
@@ -88,39 +87,45 @@ export function SpreadQuotes({
   }, [initial]);
 
   const fallbackAction = blockDefaults.spreadCards.action;
-  const featured = live.find((card) => card.id === featuredId) ?? live[0];
   const visible = live.filter((card) => {
     if (!tabs?.length || tab === POPULAR) return true;
     return card.tab === tab;
   });
 
-  if (!featured) return null;
+  if (visible.length === 0) return null;
 
   return (
     <div className="ui-spread-quotes">
+      {tabs?.length ? (
+        <div className="ui-spread-tabs" role="tablist" aria-label="Instruments">
+          {tabs.map((item) => {
+            const on = item === tab;
+            return (
+              <button
+                key={item}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                className={on ? "ui-spread-tabs__tab ui-spread-tabs__tab--on" : "ui-spread-tabs__tab"}
+                onClick={() => setTab(item)}
+              >
+                {item}
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
       <div className="ui-spread-quotes__desktop">
-        <SpreadQuoteCard quote={toView(featured, fallbackAction)} variant="desktop" actionLabel={actionLabel} />
+        {visible.map((card) => (
+          <SpreadQuoteCard
+            key={card.id}
+            quote={toView(card, fallbackAction)}
+            variant="desktop"
+            actionLabel={actionLabel}
+          />
+        ))}
       </div>
       <div className="ui-spread-quotes__mobile">
-        {tabs?.length ? (
-          <div className="ui-spread-tabs" role="tablist" aria-label="Instruments">
-            {tabs.map((item) => {
-              const on = item === tab;
-              return (
-                <button
-                  key={item}
-                  type="button"
-                  role="tab"
-                  aria-selected={on}
-                  className={on ? "ui-spread-tabs__tab ui-spread-tabs__tab--on" : "ui-spread-tabs__tab"}
-                  onClick={() => setTab(item)}
-                >
-                  {item}
-                </button>
-              );
-            })}
-          </div>
-        ) : null}
         <div className="ui-spread-quotes__stack">
           {visible.map((card) => (
             <SpreadQuoteCard

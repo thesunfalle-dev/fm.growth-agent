@@ -210,16 +210,18 @@ export type LandingBlock =
       items?: ReviewItem[];
     }
   | {
-      /** Live-spreads proof: desktop copy + TV_Card, mobile tabs + TV_Card stack. */
+      /** Live-spreads proof: centered title + tabs + TV_Card rail / mobile stack. */
       type: "spread-cards";
       title: string;
       subtitle?: string;
       toolPrefix?: string;
+      toolSuffix?: string;
       toolLink?: LandingCta;
       tabs?: string[];
       featuredId?: string;
       cards: SpreadQuoteCard[];
       actionLabel?: string;
+      primaryCta?: LandingCta;
     }
   | {
       /** Funding-method logo row. Provider names are content; visual shell is shared. */

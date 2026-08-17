@@ -28,7 +28,7 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 | Page | Node | Note |
 |------|------|------|
-| Live spreads desktop | `29987:342067` | Copy 600 + TV_Card-Desktop 333×480 |
+| Live spreads desktop | `29987:341476` | Centered title + tabs + 5× TV_Card 250×360 |
 | Live spreads mobile | `29987:342771` | Tabs_Text + TV_Card-Mobile stack |
 
 - Structure only. Equity Indices fills index symbols and TZ copy.

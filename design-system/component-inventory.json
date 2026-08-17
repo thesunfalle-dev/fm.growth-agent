@@ -318,9 +318,9 @@
       "category": "media",
       "status": "ready",
       "path": "components/ui/SpreadQuoteCard.tsx",
-      "figma": "29987:342067",
+      "figma": "29987:341476",
       "variants": ["desktop", "mobile"],
-      "sizes": ["333x480", "343"],
+      "sizes": ["250x360", "343"],
       "requiredStates": ["default"],
       "tokenDependencies": ["component.spreadCards"],
       "notes": "TV_Card for live spreads. Desktop 333×480; mobile header + bid/ask/spread/trend row."

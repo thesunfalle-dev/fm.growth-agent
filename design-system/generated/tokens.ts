@@ -354,11 +354,13 @@ export const tokenNames = [
   "--component-spread-cards-copy-width",
   "--component-spread-cards-copy-gap",
   "--component-spread-cards-copy-gap-mobile",
+  "--component-spread-cards-section-gap",
   "--component-spread-cards-card-width",
   "--component-spread-cards-card-height",
   "--component-spread-cards-card-radius",
   "--component-spread-cards-card-pad",
   "--component-spread-cards-inner-gap",
+  "--component-spread-cards-rail-gap",
   "--component-spread-cards-icon-size",
   "--component-spread-cards-icon-size-mobile",
   "--component-spread-cards-icon-overlap",
@@ -376,6 +378,7 @@ export const tokenNames = [
   "--component-spread-cards-tab-radius",
   "--component-spread-cards-tab-pad-x",
   "--component-spread-cards-tab-gap",
+  "--component-spread-cards-tab-gap-mobile",
   "--component-spread-cards-trade-radius",
   "--component-faq-border",
   "--component-faq-title-size-desktop",
@@ -569,11 +572,11 @@ export type TokenName = (typeof tokenNames)[number];
 export const designTokenMeta = {
   "name": "Fusion Markets Landing Design Tokens",
   "mode": "light",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "status": "figma-partial-sync",
   "updatedAt": "2026-08-17",
   "source": "Website Redesign FM 2.0",
   "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342067",
-  "notes": "Spread cards 29987:342067 / 29987:342771 — market live-spreads split + mobile TV stack."
+  "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-341476",
+  "notes": "Spread cards 29987:341476 / 29987:342771 — tabs + TV_Card rail / mobile stack."
 } as const;

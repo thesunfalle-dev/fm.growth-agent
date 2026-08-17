@@ -2,7 +2,7 @@
 
 ## 2026-08-17 — Spread cards (live quotes)
 
-- `spread-cards` is ready: desktop copy + TV_Card (`29987:342067`), mobile tabs + TV_Card stack (`29987:342771`).
+- `spread-cards` is ready: desktop title + tabs + TV_Card rail (`29987:341476`), mobile tabs + TV_Card stack (`29987:342771`).
 - Equity Indices uses index instruments (US500 / NAS100 / AUS200 / GER40 / HK50), not Figma gold/EURUSD sample copy.
 - Market-hero quotes card removed on indices so the globe can sit in the open right field.
 

@@ -67,7 +67,7 @@ function Metric({
       >
         {value}
         {trend && tone && tone !== "flat" ? (
-          <Icon name={tone === "down" ? "south_east" : "north_east"} size={16} />
+          <Icon name={tone === "down" ? "trending_down" : "trending_up"} size={20} />
         ) : null}
       </span>
     </div>
@@ -85,7 +85,7 @@ export function SpreadQuoteCard({
 }) {
   const trendTone = quote.trend < 0 ? "down" : quote.trend > 0 ? "up" : "flat";
   const signedTrend = `${quote.trend < 0 ? "−" : ""}${Math.abs(quote.trend).toFixed(2)}%`;
-  const iconSize = variant === "desktop" ? 40 : 24;
+  const iconSize = variant === "desktop" ? 32 : 24;
 
   return (
     <article
@@ -113,7 +113,7 @@ export function SpreadQuoteCard({
       </div>
 
       {variant === "desktop" ? (
-        <Button href={quote.action.href} variant="secondary" size="lg" className="ui-spread-quote__trade">
+        <Button href={quote.action.href} variant="secondary" size="md" className="ui-spread-quote__trade">
           {actionLabel}
         </Button>
       ) : null}

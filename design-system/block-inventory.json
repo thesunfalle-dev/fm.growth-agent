@@ -198,9 +198,9 @@
     {
       "type": "spread-cards",
       "status": "ready",
-      "description": "Market live-spreads proof: desktop copy + one TV_Card; mobile Tabs_Text + TV_Card stack.",
+      "description": "Market live-spreads proof: centered title + Tabs_Text + TV_Card rail; mobile stack.",
       "component": "components/blocks/SpreadCards.tsx",
-      "figma": "29987:342067 / 29987:342771",
+      "figma": "29987:341476 / 29987:342771",
       "props": {
         "title": { "type": "string", "required": true },
         "subtitle": { "type": "string", "required": false },
@@ -219,7 +219,7 @@
       "contentRules": [
         "Figma Gold/Forex pairs are structure only. Cards and copy must match the landing market.",
         "Do not paste EURUSD / gold sample quotes onto an indices or crypto page.",
-        "Desktop shows featuredId (or the first card). Mobile stacks the filtered tab.",
+        "Desktop shows the filtered rail. Mobile stacks the same cards.",
         "Omit tabs when the landing has a single market group.",
         "Values are indicative preview seeds, not a live feed."
       ],

@@ -66,12 +66,12 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `spread-cards` |
 | **Intent** | Show live-style spreads / quotes for one or more markets; prove low cost. |
-| **Structure (fixed)** | Market landing desktop: H2 + lead + Spreads Tool link \| **one TV_Card-Desktop 333×480**. Mobile: H2 + lead → `Tabs_Text` overflow → **stack** `TV_Card-Mobile` (bid/ask/spread/trend + Trade). Homepage rail (tabs + several desktop cards) is the same type with more cards. |
-| **Content (props)** | `title`, `subtitle`, `toolLink`, `tabs[]`, `featuredId`, `cards[]` (symbol, bid/ask/spread/trend, flags, trade href) |
-| **Canonical Figma** | Market live spreads desktop [`29987:342067`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342067) · mobile [`29987:342771`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342771). Homepage rail: [`27873:297368`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) |
-| **Also seen on** | **Equity Indices** (index symbols, not Figma gold/EURUSD sample); BrokerChooser; TV Promo; Gold |
+| **Structure (fixed)** | Centered H2 + lead → `Tabs_Text` → desktop **TV_Card rail 250×360** (gap 20) / mobile **TV_Card stack** → Spreads Tool line → primary CTA. |
+| **Content (props)** | `title`, `subtitle`, `toolLink`, `tabs[]`, `cards[]` (symbol, bid/ask/spread/trend, flags, trade href), `primaryCta` |
+| **Canonical Figma** | Desktop [`29987:341476`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-341476) · mobile [`29987:342771`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342771). Homepage rail: [`27873:297368`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) |
+| **Also seen on** | **Equity Indices** (index symbols, not Figma EURUSD sample); BrokerChooser; TV Promo; Gold |
 | **Rules** | Same block when intent is “spreads with quote cards”. **Not** Markets DataTable (`table`). Never paste Figma Gold/Forex sample pairs onto another market page. |
-| **Adaptive** | Desktop: copy left + featured card. Mobile: centered copy + tabs overflow-x + stacked 343 cards, gap 16. Never carousel these cards. |
+| **Adaptive** | Desktop: centered copy + tabs + 5-card row. Mobile: centered copy + tabs overflow-x + stacked 343 cards, gap 16. Never carousel these cards. |
 
 ---
 

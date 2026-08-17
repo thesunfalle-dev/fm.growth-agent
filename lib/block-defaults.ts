@@ -105,13 +105,15 @@ export const blockDefaults = {
     items: defaultReviewItems,
   },
   spreadCards: {
-    toolPrefix: "You can also view historical spreads data using this",
+    toolPrefix: "Visit our",
+    toolSuffix: "and see our spreads for yourself.",
     toolLink: {
-      label: "Live Spreads Tool",
+      label: "Spreads Tool",
       href: "https://fusionmarkets.com/Trading/Forex-cfd-spreads",
     } satisfies LandingCta,
     actionLabel: "Trade",
     action: { label: "Trade", href: hubSignUp } satisfies LandingCta,
+    primaryCta: sharedCtas.startTrading,
   },
   faq: {
     title: "FAQ",

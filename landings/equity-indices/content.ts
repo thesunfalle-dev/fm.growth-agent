@@ -69,10 +69,9 @@ const landing: LandingDocument = {
     },
     {
       type: "spread-cards",
-      title: "See our Index Live Spreads",
+      title: "Here’s Our Spreads",
       subtitle:
         "Trade CFDs on the S&P 500, NASDAQ, Hang Seng and more with $0 commission and tight spreads.",
-      featuredId: "us500",
       tabs: ["Popular", "US", "Europe", "Asia-Pacific"],
       cards: [
         {

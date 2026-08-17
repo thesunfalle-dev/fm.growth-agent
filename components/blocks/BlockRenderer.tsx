@@ -98,11 +98,13 @@ export function BlockRenderer({ blocks }: { blocks: LandingBlock[] }) {
                 title={block.title}
                 subtitle={block.subtitle}
                 toolPrefix={block.toolPrefix}
+                toolSuffix={block.toolSuffix}
                 toolLink={block.toolLink}
                 tabs={block.tabs}
                 featuredId={block.featuredId}
                 cards={block.cards}
                 actionLabel={block.actionLabel}
+                primaryCta={block.primaryCta}
               />
             );
           case "faq":

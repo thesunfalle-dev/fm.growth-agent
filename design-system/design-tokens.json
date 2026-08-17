@@ -2,13 +2,13 @@
   "meta": {
     "name": "Fusion Markets Landing Design Tokens",
     "mode": "light",
-    "version": "0.19.0",
+    "version": "0.20.0",
     "status": "figma-partial-sync",
     "updatedAt": "2026-08-17",
     "source": "Website Redesign FM 2.0",
     "sourceFileKey": "5PQJiXq7xZNGCqV1XNvKro",
-    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342067",
-    "notes": "Spread cards 29987:342067 / 29987:342771 — market live-spreads split + mobile TV stack."
+    "sourceUrl": "https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-341476",
+    "notes": "Spread cards 29987:341476 / 29987:342771 — tabs + TV_Card rail / mobile stack."
   },
   "primitive": {
     "color": {
@@ -423,21 +423,23 @@
       "navHeight": "17px"
     },
     "spreadCards": {
-      "copyWidth": "600px",
+      "copyWidth": "715px",
       "copyGap": "24px",
       "copyGapMobile": "20px",
-      "cardWidth": "333px",
-      "cardHeight": "480px",
+      "sectionGap": "40px",
+      "cardWidth": "250px",
+      "cardHeight": "360px",
       "cardRadius": "20px",
-      "cardPad": "40px",
-      "innerGap": "32px",
-      "iconSize": "40px",
+      "cardPad": "24px",
+      "innerGap": "20px",
+      "railGap": "20px",
+      "iconSize": "32px",
       "iconSizeMobile": "24px",
       "iconOverlap": "10px",
       "iconOverlapMobile": "5px",
-      "symbolSize": "32px",
-      "labelSize": "16px",
-      "valueSize": "24px",
+      "symbolSize": "24px",
+      "labelSize": "14px",
+      "valueSize": "20px",
       "mobileWidth": "343px",
       "mobileStackGap": "16px",
       "mobileHeaderHeight": "60px",
@@ -447,8 +449,9 @@
       "tabHeight": "44px",
       "tabRadius": "28px",
       "tabPadX": "24px",
-      "tabGap": "6px",
-      "tradeRadius": "12px"
+      "tabGap": "12px",
+      "tabGapMobile": "6px",
+      "tradeRadius": "10px"
     },
     "faq": {
       "border": "{primitive.color.blue100}",

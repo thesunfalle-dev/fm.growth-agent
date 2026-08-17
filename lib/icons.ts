@@ -20,6 +20,8 @@ export const MATERIAL_ICONS = [
   "search",
   "north_east",
   "south_east",
+  "trending_up",
+  "trending_down",
   "call",
   "mail_outline",
   "check_circle",

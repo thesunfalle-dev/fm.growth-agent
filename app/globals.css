@@ -4532,18 +4532,19 @@ a {
 
 .ui-spread-cards {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-12);
+  gap: var(--component-spread-cards-section-gap);
   width: 100%;
 }
 
 .ui-spread-cards__copy {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--component-spread-cards-copy-gap);
   width: min(100%, var(--component-spread-cards-copy-width));
+  text-align: center;
 }
 
 .ui-section--default.ui-section--spread-cards .ui-heading--section,
@@ -4552,13 +4553,13 @@ a {
   margin: 0;
   width: 100%;
   max-width: none;
-  text-align: left;
+  text-align: center;
 }
 
 .ui-spread-cards__copy .ui-text--lead {
   margin: 0;
   max-width: none;
-  text-align: left;
+  text-align: center;
 }
 
 .ui-spread-cards__tool {
@@ -4568,29 +4569,51 @@ a {
   font-size: var(--typography-font-size-b1);
   font-weight: var(--typography-font-weight-light);
   line-height: var(--typography-line-height-body);
+  text-align: center;
 }
 
 .ui-spread-cards__tool a {
   color: var(--primitive-color-purple500);
-  font-weight: var(--typography-font-weight-medium);
+  font-family: var(--typography-font-family-heading);
+  font-weight: var(--typography-font-weight-semibold);
   text-decoration: underline;
 }
 
 .ui-spread-quotes {
-  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--component-spread-cards-section-gap);
+  width: 100%;
+}
+
+.ui-spread-quotes__desktop {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: var(--component-spread-cards-rail-gap);
+  width: 100%;
 }
 
 .ui-spread-quotes__mobile {
   display: none;
 }
 
+.ui-spread-tabs {
+  justify-content: center;
+}
+
 .ui-spread-quote--desktop {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   gap: var(--component-spread-cards-inner-gap);
+  flex: 1 1 0;
   width: var(--component-spread-cards-card-width);
+  max-width: var(--component-spread-cards-card-width);
+  min-width: 0;
   min-height: var(--component-spread-cards-card-height);
   padding: var(--component-spread-cards-card-pad);
   border: var(--border-width-default) solid var(--primitive-color-gray300);
@@ -4685,7 +4708,7 @@ a {
 }
 
 .ui-spread-quote__trade {
-  width: 100%;
+  width: auto;
   border-radius: var(--component-spread-cards-trade-radius);
 }
 
@@ -5114,9 +5137,12 @@ a {
   }
 
   .ui-spread-cards {
-    flex-direction: column;
-    align-items: stretch;
     gap: var(--space-8);
+  }
+
+  .ui-spread-tabs {
+    justify-content: flex-start;
+    gap: var(--component-spread-cards-tab-gap-mobile);
   }
 
   .ui-spread-cards__copy {
