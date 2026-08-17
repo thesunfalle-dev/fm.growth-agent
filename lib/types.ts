@@ -3,6 +3,14 @@ export type LandingCta = {
   href: string;
 };
 
+export type PlatformStoreId = "mac" | "windows" | "linux";
+
+export type PlatformStore = {
+  id: string;
+  store: PlatformStoreId;
+  href: string;
+};
+
 export type TableColumnSpec = {
   id: string;
   header: string;
@@ -247,6 +255,8 @@ export type LandingBlock =
         bullets?: string[];
         imageSrc?: string;
         primaryCta?: LandingCta;
+        /** Figma Store download buttons (Mac / Windows / Linux). Hrefs from live Fusion. */
+        stores?: PlatformStore[];
       }>;
     };
 

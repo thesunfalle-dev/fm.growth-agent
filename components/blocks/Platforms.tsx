@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { StoreDownloadButton } from "@/components/ui/StoreDownloadButton";
 import { Tabs } from "@/components/ui/Tabs";
 import { Text } from "@/components/ui/Text";
 import { blockDefaults } from "@/lib/block-defaults";
 import { isMaterialIcon } from "@/lib/icons";
-import type { LandingCta } from "@/lib/types";
+import type { LandingCta, PlatformStore } from "@/lib/types";
 
 export type PlatformItem = {
   id: string;
@@ -20,6 +21,7 @@ export type PlatformItem = {
   bullets?: string[];
   imageSrc?: string;
   primaryCta?: LandingCta;
+  stores?: PlatformStore[];
 };
 
 type PlatformsProps = {
@@ -99,7 +101,17 @@ export function Platforms({
                       ))}
                     </ul>
                   ) : null}
-                  {item.primaryCta ? (
+                  {item.stores?.length ? (
+                    <div className="ui-platforms__stores">
+                      {item.stores.map((store) => (
+                        <StoreDownloadButton
+                          key={store.id}
+                          store={store.store}
+                          href={store.href}
+                        />
+                      ))}
+                    </div>
+                  ) : item.primaryCta ? (
                     <Button href={item.primaryCta.href} variant="primary" size="lg">
                       {item.primaryCta.label}
                     </Button>

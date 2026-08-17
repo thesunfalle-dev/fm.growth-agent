@@ -39,6 +39,7 @@ Never hand-edit `design-system/generated/*`.
 | Inventory item | Module | Notes |
 |----------------|--------|-------|
 | Button | `components/ui/Button.tsx` | primary / secondary; link-friendly |
+| StoreDownloadButton | `components/ui/StoreDownloadButton.tsx` | Figma Mac / Windows / Linux store badge |
 | Container | `components/ui/Container.tsx` | default / narrow |
 | Section | `components/ui/Section.tsx` | section chrome |
 | Card / UspCard / CardGrid | `components/ui/*` | Cards frame USP + shells |

@@ -1,5 +1,12 @@
 # Design system changelog
 
+## 2026-08-17 — Platforms store download buttons
+
+- Figma Store download button (`28610:429962`): Download + For MacOS / Windows / Linux, 144×48 desktop, 343×40 stacked on 375.
+- Icons exported to `public/brand/stores/`. Hrefs from live Fusion MT4 / MT5 / cTrader pages. Linux omitted — not listed on live Fusion.
+- Energy landing uses these instead of the Start trading fallback.
+- Tokens **0.22.0**.
+
 ## 2026-08-17 — Platforms tab switch + adaptive
 
 - Panel titles stay put: all tab panels share one grid cell sized to the tallest copy.

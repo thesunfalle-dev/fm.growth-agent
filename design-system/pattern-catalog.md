@@ -262,7 +262,7 @@ Copy when adding a pattern:
 | **Content (props)** | `title`, `subtitle`, `items[]` (label, icon, title, body/bullets, imageSrc, primaryCta) |
 | **Canonical Figma** | Desktop [`28610:429747`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28610-429747) · mobile [`28610:431359`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=28610-431359) |
 | **Also seen on** | **Energy and Soft Commodities** (MT4 / MT5 / cTrader TZ tabs); Products overview `26258:276027`; homepage platforms |
-| **Rules** | One `platforms` type. Figma MT5 Desktop/Mobile/Web sample copy is structure only. Campaign tabs and bullets come from TZ. Store badges stay a later prop — use `primaryCta` when TZ says Start trading. Device subpages (P2) are not a second type. |
+| **Rules** | One `platforms` type. Figma MT5 Desktop/Mobile/Web sample copy is structure only. Campaign tabs and bullets come from TZ. Actions are Figma Store download buttons; hrefs from live Fusion. `primaryCta` only if TZ has no OS downloads. Device subpages (P2) are not a second type. |
 | **Adaptive** | ≥1200: title + lead + tabs, then device left / panel right (gap 70). 768–1199: stack, tabs stay under the title. 375: title + lead → mock 343 → Tabs_Icon overflow-x → panel + full-width CTA. |
 
 ---

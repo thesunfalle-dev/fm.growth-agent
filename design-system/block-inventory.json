@@ -317,7 +317,8 @@
             "body": { "type": "string", "required": false },
             "bullets": { "type": "array", "required": false, "item": "string" },
             "imageSrc": { "type": "string", "required": false },
-            "primaryCta": { "type": "cta", "required": false }
+            "primaryCta": { "type": "cta", "required": false },
+            "stores": { "type": "platformStore[]", "required": false }
           }
         }
       },
@@ -328,7 +329,8 @@
         "Section H2 defaults to “Choose Your Platform”. Override when TZ names the section.",
         "Tab labels and panel copy are TZ / brief only — do not paste Figma MT5 Desktop sample text onto another campaign.",
         "Omit imageSrc to reuse the shared devices illustration.",
-        "Store download badges stay a later prop. Use primaryCta when TZ asks for Start trading."
+        "Prefer Figma Store download buttons (stores[]) with live Fusion hrefs. primaryCta is a fallback when TZ has no OS downloads.",
+        "Do not invent Linux or other OS links that are missing from fusionmarkets.com."
       ],
       "tokenDependencies": ["component.platforms", "component.tab", "typography", "semantic.color.action"]
     },

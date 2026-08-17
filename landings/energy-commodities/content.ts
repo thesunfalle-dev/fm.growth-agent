@@ -1,4 +1,5 @@
 import { defaultInstrumentsColumns, sharedCtas } from "@/lib/block-defaults";
+import { platformStores } from "@/lib/platform-stores";
 import type { LandingDocument } from "@/lib/types";
 
 /**
@@ -105,7 +106,7 @@ const landing: LandingDocument = {
             "Choose from 1000s of trading tools to plug into MT4",
             "Backtesting for more robust Expert Advisors",
           ],
-          primaryCta: { label: "Start trading with MetaTrader 4", href: sharedCtas.startTrading.href },
+          stores: [...platformStores.mt4],
         },
         {
           id: "mt5",
@@ -117,7 +118,7 @@ const landing: LandingDocument = {
             "Faster processing speeds",
             "Built-in Virtual Private Server (VPS)",
           ],
-          primaryCta: { label: "Start trading with MetaTrader 5", href: sharedCtas.startTrading.href },
+          stores: [...platformStores.mt5],
         },
         {
           id: "ctrader",
@@ -129,7 +130,7 @@ const landing: LandingDocument = {
             "26 time frames",
             "Over 70 built in indicators",
           ],
-          primaryCta: { label: "Start trading with cTrader", href: sharedCtas.startTrading.href },
+          stores: [...platformStores.ctrader],
         },
       ],
     },

@@ -138,6 +138,18 @@
       "notes": "Tabs_Text + Tabs_Icon (Figma 28610:429753). Icon tabs use Material Symbols."
     },
     {
+      "name": "StoreDownloadButton",
+      "category": "actions",
+      "status": "ready",
+      "path": "components/ui/StoreDownloadButton.tsx",
+      "figma": "28610:429962",
+      "variants": ["mac", "windows", "linux"],
+      "sizes": ["144x48", "343x40"],
+      "requiredStates": ["default"],
+      "tokenDependencies": ["component.platforms"],
+      "notes": "Figma Store download button. Icons from Figma export in public/brand/stores/. Hrefs from live Fusion."
+    },
+    {
       "name": "LabelChip",
       "category": "status",
       "status": "provisional",

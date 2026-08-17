@@ -401,6 +401,16 @@
   --component-platforms-name-size: 32px;
   --component-platforms-body-size: 20px;
   --component-platforms-body-size-mobile: 16px;
+  --component-platforms-store-width: 144px;
+  --component-platforms-store-height: 48px;
+  --component-platforms-store-height-mobile: 40px;
+  --component-platforms-store-radius: 8px;
+  --component-platforms-store-gap: 16px;
+  --component-platforms-store-icon: 24px;
+  --component-platforms-store-eyebrow-size: 12px;
+  --component-platforms-store-label-size: 16px;
+  --component-platforms-store-border: var(--primitive-color-blue900);
+  --component-platforms-store-text: var(--primitive-color-blue900);
   --component-faq-border: var(--primitive-color-blue100);
   --component-faq-title-size-desktop: 20px;
   --component-faq-title-size-mobile: 16px;

@@ -5289,6 +5289,72 @@ a {
   margin-top: var(--space-2);
 }
 
+.ui-platforms__stores {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--component-platforms-store-gap);
+}
+
+.ui-store-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  width: auto;
+  min-width: var(--component-platforms-store-width);
+  height: var(--component-platforms-store-height);
+  padding: 0 var(--space-3);
+  border: var(--border-width-default) solid var(--component-platforms-store-border);
+  border-radius: var(--component-platforms-store-radius);
+  background: var(--primitive-color-gray0);
+  color: var(--component-platforms-store-text);
+  text-decoration: none;
+}
+
+.ui-store-btn--linux {
+  flex-direction: row-reverse;
+}
+
+.ui-store-btn__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.ui-store-btn__eyebrow {
+  font-family: var(--typography-font-family-heading);
+  font-size: var(--component-platforms-store-eyebrow-size);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: 1;
+}
+
+.ui-store-btn__label {
+  font-family: var(--typography-font-family-heading);
+  font-size: var(--component-platforms-store-label-size);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.ui-store-btn__icon {
+  display: block;
+  flex-shrink: 0;
+  width: var(--component-platforms-store-icon);
+  height: var(--component-platforms-store-icon);
+  overflow: hidden;
+}
+
+.ui-store-btn__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* Below Figma desktop 1280 the 500+70 split is too tight — stack. */
 @media (max-width: 1199px) {
   .ui-platforms {
@@ -5797,6 +5863,16 @@ a {
   .ui-platforms__copy .ui-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .ui-platforms__stores {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ui-store-btn {
+    width: 100%;
+    height: var(--component-platforms-store-height-mobile);
   }
 
   .ui-section--default .ui-reviews-band__title,
