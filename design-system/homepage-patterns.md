@@ -32,7 +32,7 @@ When you see the same intent on a market/promo page, map it back to the homepage
 
 These three are the teaching examples for “same block, different content”:
 
-### 1. Our spreads → planned block `spread-cards`
+### 1. Our spreads → ready block `spread-cards`
 
 | | |
 |--|--|
@@ -40,7 +40,7 @@ These three are the teaching examples for “same block, different content”:
 | **Structure** | H2 + lead → `Tabs_Text` (market switcher) → horizontal **TV_Card-Desktop** rail (bid/ask/spread + Trade) → footer link to Spreads Tool |
 | **Content knobs** | Title/lead text; tab labels + default tab; card symbols/prices/spreads; link label/href |
 | **Also on** | BrokerChooser, TV Promo, Gold (sometimes single-instrument), crypto TZ “our spreads” |
-| **Repo** | `spread-cards` **planned**. Do **not** substitute a full markets `table` and call it the same block — different DS piece (Tables frame vs TV cards). Temporary substitute only with explicit note. |
+| **Repo** | `spread-cards` **ready** (`SpreadCards` + `SpreadQuoteCard`). Do **not** substitute a full markets `table` and call it the same block — different DS piece (Tables frame vs TV cards). Shipped on Equity Indices. |
 
 ### 2. Ready to start trading? → `cta` / footer CTA band
 
@@ -71,7 +71,7 @@ These three are the teaching examples for “same block, different content”:
 | 0 | Chrome | Header_Desktop / Header_Mobile | `SiteHeader` | Sticky; Material menu/search on mobile. Header **57** / pad **16** |
 | 1 | Hero | H1 + lead + primary CTA + hero visual/animation | `hero` + optional `brandBackground` | **Mobile reorders** (P7). Compact centered Primary **162×44** — not full-bleed |
 | 2 | Social proof | Trustpilot / TV / Google ratings; video/award tiles | — | Mobile: ratings **overflow-x**; video 343×190 then award 343×190 + **Navigate** dots. `ratings-strip` + `media-carousel` planned |
-| 3 | **Our spreads** | Tabs + TV_Card row / mobile stack | `spread-cards` planned | Canonical: `27873:297368` — **not** markets table. Mobile: Tabs_Text overflow + **4× TV_Card-Mobile 343×118** |
+| 3 | **Our spreads** | Tabs + TV_Card row / mobile stack | `spread-cards` ready | Canonical: `27873:297368` / landings `29987:341476`. Below 1200: **one card per row**, full content width. |
 | 4 | Why different | USP cards rail | `features` + `variant: "usp"` | Desktop scroll if >4; mobile **carousel**: peek 250 / center 270 + dots |
 | 5 | **How it works** | Title + vertical steps + dual CTAs + device visual | `steps` | Canonical: `31517:366918` split. Mobile: title → phones visual → vertical steps → full-width dual CTA |
 | 6 | Funding methods | Logo marquee | `logo-marquee` | Mobile visible instance `28673:314863`: dark band, **two staggered logo rows** |

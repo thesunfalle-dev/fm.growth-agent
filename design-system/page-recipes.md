@@ -73,20 +73,21 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 
 **Figma:** Forex - Desktop `23570:104143`  
 **Reuse for:** Crypto CFDs, Metals, Indices, Energy, US Share (same skeleton).  
-**Shipped:** `landings/crypto`, `landings/equity-indices` — see `shared-blocks.md`.
+**Shipped (locked 2026-08-17):** `landings/crypto`, `landings/equity-indices` — see `shared-blocks.md`.
 
 | # | Section (intent) | Pattern `type` | Structure notes |
 |---|------------------|----------------|-----------------|
 | 0 | Chrome | `SiteHeader` / `SiteFooter` | Always from `layout.tsx`. Never in `content.ts`. |
-| 1 | Market header | `market-hero` | BG Image + H1 + pitch + **Primary/Light** + **TV chart card** 599×480 (5 themed instruments) |
+| 1 | Market header | `market-hero` | `atmosphere`: `brand` (purple + TV card), `crypto` (light + coins + quotes), `indices` (light + globe + chips + ticker, **no quotes**). |
 | 2 | Why trade [market] | `features` usp | USP rail / carousel |
 | 3 | Our … instruments | `table` | Shared `instrumentsColumns` + TZ rows. Optional extra col (hours). |
 | 4 | How we compare | `table` compare | Optional. Crypto only today. |
 | 5 | Funding methods | `logo-marquee` | Optional. Equity only today. |
 | 6 | How It Works | `steps` | Default H2 + subtitle from `block-defaults`. |
-| 7 | Reviews from Real Traders | `reviews` | Trustpilot + card rail. Defaults from `block-defaults`. |
-| 8 | FAQs | `faq` | Optional. Crypto only today. |
-| 9 | Ready to start + mega footer | footer CTA | Lives on `SiteFooter`. Do not add a second `cta` block. |
+| 7 | Here’s Our Spreads | `spread-cards` | Optional. Indices only today (when quotes are **not** in the hero). Tabs + 5 TV cards. |
+| 8 | Reviews from Real Traders | `reviews` | Trustpilot + card rail. Defaults from `block-defaults`. |
+| 9 | FAQs | `faq` | Optional. Crypto only today. |
+| 10 | Ready to start + mega footer | footer CTA | Lives on `SiteFooter`. Do not add a second `cta` block. |
 
 **Mobile (Forex `23570:104433`, 375 × 7894):**
 
@@ -103,9 +104,11 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 **Rules:**  
 - Spreads-on-home (`spread-cards` TV cards) ≠ this instruments **table**.  
 - Hero is **market-hero**, not plain centered products hero.  
+- Put quotes **either** in the hero (`quotes[]` on crypto/brand) **or** in `spread-cards` (indices) — not both.  
 - Content only: symbol list, FAQ Q&As, market name in titles.  
 - Optional modules stay registered types — do not invent a parallel section.  
-- Mobile market hero keeps a **hug-width** Light CTA; do not stretch it to 343.
+- Mobile market hero keeps a **hug-width** Light CTA; do not stretch it to 343.  
+- Indices mobile: peek the globe from the right; hide chips. `spread-cards` is one card per row at every width below 1200.
 
 ---
 

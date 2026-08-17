@@ -1,9 +1,9 @@
 {
   "meta": {
     "name": "FM Landings Component Inventory",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "status": "provisional-shell",
-    "updatedAt": "2026-08-12"
+    "updatedAt": "2026-08-17"
   },
   "components": [
     {
@@ -64,7 +64,19 @@
       "sizes": ["xs", "sm", "md", "lg", "xl"],
       "requiredStates": ["default", "reduced-motion"],
       "tokenDependencies": ["component.coinField", "semantic.color.background"],
-      "notes": "Optional market-hero atmosphere. Light field + floating market icons. Not a Figma chrome replacement — campaign-only."
+      "notes": "market-hero atmosphere: crypto. Light field + 3D coins (public/images/coins). Not a Figma chrome replacement."
+    },
+    {
+      "name": "IndicesField",
+      "category": "media",
+      "status": "ready",
+      "path": "components/ui/IndicesField.tsx",
+      "figma": "",
+      "variants": ["indices"],
+      "sizes": ["desktop", "mobile"],
+      "requiredStates": ["default", "reduced-motion"],
+      "tokenDependencies": ["component.indicesField", "semantic.color.background"],
+      "notes": "market-hero atmosphere: indices. Globe (public/images/indices/globe-v2.png) + equator spark + chips. Mobile: chips hidden, globe peeks from the right. Ticker is IndicesTicker in MarketHero."
     },
     {
       "name": "FaqItem",
@@ -323,7 +335,7 @@
       "sizes": ["250x360", "343"],
       "requiredStates": ["default"],
       "tokenDependencies": ["component.spreadCards"],
-      "notes": "TV_Card for live spreads. Desktop 333×480; mobile header + bid/ask/spread/trend row."
+      "notes": "TV_Card for live spreads. Desktop 250×360 rail; below 1200 a single full-width stacked card (never 2-up)."
     },
     {
       "name": "ReviewRail",

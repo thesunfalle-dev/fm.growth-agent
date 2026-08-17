@@ -191,7 +191,7 @@ Figma names the mobile frame “TradingView” in places but the **story is gold
 
 ### Reuse for similar campaigns
 **Market landings** (Gold, Oil, EURUSD, BTC…):  
-`market-hero` (BG + chart + light CTA) → bento/advantages → `comparison-table` (accounts) → usp → optional education splits → steps → spreads (focused or tabs) → reviews → footer.
+`market-hero` → `features` usp → `table` → optional compare / marquee → `steps` → optional `spread-cards` → `reviews` → optional `faq`. See locked crypto / indices stacks in `shared-blocks.md`.
 
 ---
 
@@ -231,13 +231,13 @@ Header · **Hero** · **USP** · **Steps** (often) · **Spreads/proof** · **Rev
 |--------|-----------|-----|
 | Header / footer / footer CTA | ✅ | — |
 | Hero + dual CTA | ✅ partial | media slot; mobile order; partner/award eyebrow; T&Cs link |
-| Market hero (BG + light CTA + chart) | partial `brandBackground` | TV chart embed; Primary/Light on dark |
+| Market hero (BG + light CTA + chart) | ✅ `market-hero` | atmospheres `brand` / `crypto` / `indices` |
 | USP cards | ✅ `features` usp | carousel dots polish; **bento** layout |
 | Steps | ✅ `steps` vertical/horizontal | — |
 | FAQ | ✅ `faq` | — |
 | Markets / comparison table | ✅ `table` foundation | multi-panel Classic vs Zero; mobile tabs |
 | Review rail | ✅ `reviews` | Trustpilot header + 370/280 cards + arrows |
-| TV / spread cards | ✅ `spread-cards` | desktop split + mobile stack |
+| TV / spread cards | ✅ `spread-cards` | ≥1200 5-col rail; below 1200 single-column stack |
 | Instruments | planned `instrument-grid` | mobile 2-col |
 | Logo marquee | ✅ `logo-marquee` | Provider text until approved payment assets are available |
 | Tier / plan cards | planned content cards | icon + title + multi-line body |
@@ -254,7 +254,7 @@ Measured 2026-08-13 — full contract in `responsive-rules.md`.
 1. **Hero is not one order.** Home: title → visual → **compact** CTA → lead. Account / MT5 overview: **visual → title → full-width CTA stack → body**. Market: title → lead → hug Light CTA → 343×364 slot. **Campaign (award/promo/TV):** title (optional partner) → visual → body (+ T&Cs) → full-width dual CTA.  
 2. **Dual CTA:** never squeeze two half-buttons on 375 — stack 343. Homepage hero is the exception (single 162 centered).  
 3. **Equal USP rails:** snap carousel (peek 250 / center 270) + dots. **Compact benefit lists** stack 343×134.  
-4. **Quote/TV cards:** stack 343×118 on mobile, row on desktop.  
+4. **Quote/TV cards:** ≥1200 5-col 250×360 rail; below 1200 one full-width stacked card (never 2-up). Homepage compact 343×118 is the same type, different card size.  
 5. **Instruments:** 6-up desktop → **2×3** mobile (**165×165**, gap 12).  
 6. **Tier cards:** row desktop → stack 335 mobile.  
 7. **Download bar:** full-bleed 375×69, horizontal scroll.  
@@ -294,7 +294,12 @@ See **`assembly.md`** for Figma section → substitute map. Do **not** nest a ta
 (download bar / checklist = planned → skip)
 
 **D. Market / instrument** (M1 Forex template / Gold / crypto / indices)  
-`market-hero` → `features` usp → `table` (instruments) → optional `table` compare → optional `logo-marquee` → `steps` → `reviews` → optional `faq`  
+`market-hero` → `features` usp → `table` (instruments) → optional `table` compare → optional `logo-marquee` → `steps` → optional `spread-cards` → `reviews` → optional `faq`  
+
+Locked references (2026-08-17):
+- **Crypto:** `atmosphere: "crypto"` + `quotes[]` in the hero. No `spread-cards`.
+- **Equity Indices:** `atmosphere: "indices"` (no hero quotes) + `spread-cards` above reviews.
+
 Header + footer CTAFooter are global chrome (skip duplicate end `cta`).
 
 Reuse map: `design-system/shared-blocks.md`.  

@@ -24,6 +24,14 @@ Everything visual should be traceable. When you change tokens or inventories, no
 
 `meta.status = figma-partial-sync` (Website Redesign FM 2.0)
 
+### 2026-08-17 — Lock reusable market recipes
+
+- Crypto + Equity Indices finalized as the two M1 reference landings.
+- `market-hero` atmospheres: `crypto` (coins + white quotes), `indices` (globe-v2 + chips + ticker, no quotes).
+- `spread-cards` ready from Here’s Our Spreads `29987:341476` / `29987:342771`.
+- Docs + inventories updated so later slugs assemble from ready types only.
+- Actor: agent + user
+
 ### 2026-08-17 — Spread cards (live quotes)
 
 | Page | Node | Note |
@@ -198,7 +206,7 @@ Everything visual should be traceable. When you change tokens or inventories, no
 - Desktop: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297355 (`27873:297355`)
 - Mobile: https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-296438 (`27873:296438`)
 - Canonical blocks (structure fixed, content varies):
-  - Our spreads: `27873:297368` → planned `spread-cards` (TV_Card + tabs)
+  - Our spreads: `27873:297368` → ready `spread-cards` (TV_Card + tabs)
   - Ready to start / CTAFooter: `27873:297571` → footer CTA / `cta`
   - How it works: `31517:366918` → `steps` (split + CTAs)
 - Role: primary reuse catalog for landings

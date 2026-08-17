@@ -1,15 +1,23 @@
 import { defaultInstrumentsColumns, sharedCtas } from "@/lib/block-defaults";
 import type { LandingDocument } from "@/lib/types";
 
-/** Equity Indices CFDs — content from USER STORY - Equity Indices Landing Page. */
+/**
+ * Equity Indices CFDs — USER STORY / TZ.
+ *
+ * Structure (layout, block types): Figma DS / recipes only.
+ * Content (copy, numbers, which rows/cards): TZ / user story only — never Figma placeholder text.
+ *
+ * Stack (locked): market-hero indices → features usp → instruments table →
+ * logo-marquee → steps → spread-cards → reviews (site footer CTA below).
+ */
 const landing: LandingDocument = {
   slug: "equity-indices",
   name: "Equity Indices CFDs",
-  note: "M1 market landing. Spread values are illustrative placeholders approved for this preview.",
+  note: "Canonical market recipe with indices atmosphere + spread-cards. Reuse types only; swap TZ content.",
   listed: true,
-  status: "draft",
+  status: "review",
   createdAt: "2026-08-12",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-17",
   seo: {
     title: "Trade Equity Indices CFDs — $0 Commission | Fusion Markets",
     description: "Trade CFDs on world-leading equity indices with $0 commission.",

@@ -16,7 +16,7 @@ Component: `components/ui/Button.tsx`
 | **Secondary** | Transparent fill, border `Gradient/Primary`, label gradient Primary | Fill `Gradient/Secondary Button`, border Primary; pressed label uses Tertiary gradient |
 | **Text / Link** | Text only, Noto SemiBold 14–16, optional icon gap **4px** | Darker / pressed purple |
 
-**When:** Use **Primary/Light** on brand/dark heroes (`brandBackground`, planned `market-hero`). `Hero` auto-selects it for the primary CTA when `brandBackground` is true.
+**When:** Use **Primary/Light** on brand/dark heroes (`brandBackground`, `market-hero` atmosphere `brand`). `Hero` auto-selects it for the primary CTA when `brandBackground` is true. Light-field atmospheres (`crypto`, `indices`) use the default primary.
 
 ## Sizes (guidelines + component measurements)
 

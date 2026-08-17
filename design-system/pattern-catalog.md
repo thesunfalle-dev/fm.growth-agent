@@ -71,7 +71,7 @@ Copy when adding a pattern:
 | **Canonical Figma** | Desktop [`29987:341476`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-341476) · mobile [`29987:342771`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=29987-342771). Homepage rail: [`27873:297368`](https://www.figma.com/design/5PQJiXq7xZNGCqV1XNvKro/Website-Redesign-FM-2.0?node-id=27873-297368) |
 | **Also seen on** | **Equity Indices** (index symbols, not Figma EURUSD sample); BrokerChooser; TV Promo; Gold |
 | **Rules** | Same block when intent is “spreads with quote cards”. **Not** Markets DataTable (`table`). Never paste Figma Gold/Forex sample pairs onto another market page. |
-| **Adaptive** | Desktop: centered copy + tabs + 5-card row. Mobile: centered copy + tabs overflow-x + stacked 343 cards, gap 16. Never carousel these cards. |
+| **Adaptive** | ≥1200: centered copy + tabs + 5-card 250×360 rail. **Below 1200 (tablet + mobile): one full-width stacked TV_Card — never 2-up.** Tabs overflow-x. Never carousel these cards. |
 
 ---
 
@@ -178,12 +178,12 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `market-hero` |
 | **Intent** | Above-the-fold for a single market (Forex, Crypto, Gold…). |
-| **Structure (fixed)** | Full-bleed atmosphere + H1 + short pitch + CTA; right **TV-Desktop card 599×480** (`17172:52853` / `15303:14755`): pair + price + change, 5 symbol chips, timeframe, chart, TradingView badge. Tabs change on click only; price ticks every 5s. |
-| **Content (props)** | `eyebrow`, `title`, `subtitle`, optional bullets, CTAs; `quotes[]` (5 instruments themed to the page, optional `label` / `iconSrc`). Optional `atmosphere` (`brand` default / `crypto`). Optional legacy `quote` / `trustpilot` if no quotes. |
-| **Canonical Figma** | Market Header `23570:104257`; TV card family **TradingView Chart cards** `17172:52853` (Desktop `15303:14755`, Mobile `15433:12419`). |
-| **Also seen on** | **Crypto CFDs**; **Equity Indices**; Metals / Energy / US Share market pages; **Forex Mobile** `23570:104433` |
-| **Rules** | Same card for every market; swap copy + the five symbols / icons only. Default `atmosphere: brand` keeps the purple BG art. `atmosphere: crypto` is the light coin field — do not apply it to non-crypto pages. Not a live TradingView embed and not the markets `table` block. Prices are indicative animation seeds. |
-| **Adaptive** | Desktop: text left / TV-Desktop 599×480. Mobile Forex `23570:104433`: title → lead → Primary/Light 163×44 (hug) → TV-Mobile 343×364. Symbol chips may scroll. |
+| **Structure (fixed)** | Full-bleed atmosphere + H1 + short pitch + CTA. Atmosphere `brand`: right **TV-Desktop card 599×480**. Atmosphere `crypto`: light field + 3D coins + white quotes card. Atmosphere `indices`: light field + globe + chips + in-flow ticker, **no quotes card**. |
+| **Content (props)** | `eyebrow`, `title`, `subtitle` or bullets, CTAs; `quotes[]` (5 themed instruments — omit on `indices`); `atmosphere`: `brand` / `crypto` / `indices`. Optional legacy `quote` / `trustpilot` if no quotes. |
+| **Canonical Figma** | Market Header `23570:104257`; TV card family **TradingView Chart cards** `17172:52853` (Desktop `15303:14755`, Mobile `15433:12419`). Light-field atmospheres are campaign art, not Figma chrome. |
+| **Also seen on** | **Crypto CFDs** (`crypto`); **Equity Indices** (`indices`); Metals / Energy / US Share (`brand` unless a themed field exists) |
+| **Rules** | Reuse the type; pick one atmosphere. Do not apply `crypto` to non-crypto pages or `indices` to non-index pages. Indices hero never includes `quotes[]` — use `spread-cards` later. Not a live TradingView embed and not the markets `table` block. Prices are indicative animation seeds. |
+| **Adaptive** | Desktop: text left / field right. Crypto mobile: title → lead → hug CTA → white quotes 343×364. Indices mobile: same copy stack; chips hidden; globe peeks from the right; ticker stays at the bottom of the block (not the viewport). |
 
 ---
 
@@ -609,7 +609,7 @@ Copy when adding a pattern:
 
 | If the section is about… | Pattern `type` |
 |--------------------------|----------------|
-| Market page top (BG + chart + light CTA) | `market-hero` |
+| Market page top (BG + chart + light CTA) | `market-hero` (`atmosphere` brand / crypto / indices) |
 | Account / offer / program top pitch | `hero` |
 | Quote cards / “our spreads” | `spread-cards` |
 | Instruments list with tabs | `table` |

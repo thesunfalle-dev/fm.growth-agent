@@ -1,5 +1,13 @@
 # Design system changelog
 
+## 2026-08-17 — Lock crypto + equity-indices as reusable recipes
+
+- Both slugs are `status: review` and the canonical M1 market recipes. New market pages reuse these types; swap TZ content only.
+- Ready set: `market-hero` (atmospheres `brand` / `crypto` / `indices`), `features` usp, `table`, `steps`, `reviews`, `spread-cards`, `faq`, `logo-marquee`.
+- `IndicesField` registered in `component-inventory.json`. Globe asset is `public/images/indices/globe-v2.png` (no Saturn ring; equator spark sampled from the purple stripe).
+- Docs: `shared-blocks.md`, `page-recipes.md` M1, `pattern-catalog.md`, `assembly.md`, `landing-patterns.md` recipe D.
+- Inventory `block-inventory.json` **0.4.0**. Component inventory **0.2.0**.
+
 ## 2026-08-17 — Spread cards (live quotes)
 
 - `spread-cards` is ready: desktop title + tabs + TV_Card rail (`29987:341476`), mobile tabs + TV_Card stack (`29987:342771`).

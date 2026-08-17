@@ -1,10 +1,10 @@
 {
   "meta": {
     "name": "FM Landings Block Inventory",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "status": "provisional-shell",
     "updatedAt": "2026-08-17",
-    "notes": "Agents may only assemble landings from these block types until inventory expands."
+    "notes": "Locked MVP set: crypto + equity-indices. Assemble new market landings from ready types only."
   },
   "blocks": [
     {
@@ -12,7 +12,7 @@
       "status": "provisional",
       "description": "Primary above-the-fold pitch with optional dual CTAs. No nested table/chart — sequence separate blocks (see assembly.md).",
       "component": "components/blocks/Hero.tsx",
-      "figma": "29987:341692 Market Header (content subset; chart = planned market-hero)",
+      "figma": "29987:341692 Market Header (content subset; chart = ready market-hero)",
       "props": {
         "eyebrow": { "type": "string", "required": false },
         "title": { "type": "string", "required": true },
@@ -28,7 +28,7 @@
       "contentRules": [
         "Title should be one clear promise; avoid stacking multiple claims.",
         "Prefer subtitle (one paragraph) when Figma shows a single lead; use bullets only for campaign TZ lists.",
-        "Do not embed table/chart/media props — use type table or planned market-hero / spread-cards.",
+        "Do not embed table/chart/media props — use type table, market-hero, or spread-cards.",
         "If performance/cost claims appear, compliance must allow them."
       ],
       "tokenDependencies": ["space", "typography", "semantic.color.text", "semantic.color.action"]
@@ -36,7 +36,7 @@
     {
       "type": "market-hero",
       "status": "ready",
-      "description": "Market Header: brand hero with the Figma TV chart card (pair, price, 5 symbols, chart) in the right panel.",
+      "description": "Market Header with atmosphere variants: brand (purple + TV card), crypto (light field + coins + quotes card), indices (light field + globe + chips + ticker, no quotes card).",
       "component": "components/blocks/MarketHero.tsx",
       "figma": "23570:104257 / 17172:52853",
       "props": {
@@ -61,7 +61,7 @@
         "Use approved or explicitly illustrative pricing only.",
         "Validate rating and review count freshness before public campaign use.",
         "Keep market copy in the landing content document; do not use Figma sample marketing copy.",
-        "atmosphere brand is the default purple Market Header. Use atmosphere crypto only on crypto campaign pages."
+        "atmosphere: brand = purple Market Header; crypto = light field + coins + quotes card; indices = light field + globe + chips + ticker (no quotes card)."
       ],
       "tokenDependencies": ["component.marketHero", "typography", "semantic.color.background", "semantic.color.action"]
     },
@@ -205,16 +205,20 @@
         "title": { "type": "string", "required": true },
         "subtitle": { "type": "string", "required": false },
         "toolPrefix": { "type": "string", "required": false },
+        "toolSuffix": { "type": "string", "required": false },
         "toolLink": { "type": "cta", "required": false },
         "tabs": { "type": "string[]", "required": false },
         "featuredId": { "type": "string", "required": false },
         "cards": { "type": "spreadQuoteCard[]", "required": true, "minItems": 1 },
-        "actionLabel": { "type": "string", "required": false }
+        "actionLabel": { "type": "string", "required": false },
+        "primaryCta": { "type": "cta", "required": false }
       },
       "defaults": {
         "toolPrefix": "blockDefaults.spreadCards.toolPrefix",
+        "toolSuffix": "blockDefaults.spreadCards.toolSuffix",
         "toolLink": "blockDefaults.spreadCards.toolLink",
-        "actionLabel": "Trade"
+        "actionLabel": "Trade",
+        "primaryCta": "sharedCtas.startTrading"
       },
       "contentRules": [
         "Figma Gold/Forex pairs are structure only. Cards and copy must match the landing market.",
@@ -317,13 +321,6 @@
     }
   },
   "planned": [
-    {
-      "type": "spread-cards",
-      "status": "ready",
-      "description": "Shipped as ready block. Homepage rail 27873:297368 can reuse the same type with tabs + multiple cards; market landings use the 29987:342067 split.",
-      "figmaHomepage": "27873:297368",
-      "figmaNotes": "Not the same as Markets DataTable (type table)."
-    },
     {
       "type": "instrument-grid",
       "status": "planned",

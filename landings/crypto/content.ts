@@ -7,17 +7,17 @@ import type { LandingDocument } from "@/lib/types";
  * Structure (layout, block types): Figma DS / recipes only.
  * Content (copy, numbers, which rows/cards): TZ / user story only — never Figma placeholder text.
  *
- * Stack (ready-only): hero brand BG → features usp → instruments table →
+ * Stack (locked): market-hero crypto → features usp → instruments table →
  * compare matrix → steps → reviews → faq (site footer CTA below).
  */
 const landing: LandingDocument = {
   slug: "crypto",
   name: "Crypto CFDs",
-  note: "M1 structure + TZ content. Figma = layout only.",
+  note: "Canonical market recipe. Reuse types only; swap TZ content.",
   listed: true,
-  status: "draft",
+  status: "review",
   createdAt: "2026-08-12",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-17",
   seo: {
     title: "Trade Crypto CFDs — No Commission | Fusion Markets",
     description:

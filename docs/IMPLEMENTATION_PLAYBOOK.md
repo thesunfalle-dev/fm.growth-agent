@@ -145,15 +145,20 @@ Map Figma names to tokens:
 
 ## 4. Landing block recipes (market / crypto)
 
-Canonical market stack (see `landing-patterns.md`):
+Canonical market stack (locked 2026-08-17 — see `shared-blocks.md` and `landing-patterns.md` recipe D):
 
-1. `hero` + `brandBackground: true`
+1. `market-hero` + `atmosphere`: `brand` | `crypto` | `indices`
 2. `features` + `variant: "usp"` (max 4 visible → horizontal rail + nav if more)
 3. `table` instruments (`showSearch`, scrollable shell)
-4. `table` + `variant: "compare"` (optional)
-5. `steps` horizontal process
-6. `faq`
-7. Site footer (global) — not a content disclaimer inventing “Growth Agent preview” unless product asks
+4. `table` + `variant: "compare"` (optional — crypto)
+5. `logo-marquee` (optional — indices)
+6. `steps` horizontal process
+7. `spread-cards` (optional — when quotes are **not** in the hero)
+8. `reviews`
+9. `faq` (optional — crypto)
+10. Site footer (global) — not a content disclaimer inventing “Growth Agent preview” unless product asks
+
+Reference slugs: `landings/crypto/content.ts`, `landings/equity-indices/content.ts`.
 
 ---
 

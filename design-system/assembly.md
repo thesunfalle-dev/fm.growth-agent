@@ -41,7 +41,7 @@ More screens will extend this map; the rule stays: **spot the repeating block �
 4. **Omit chrome props to reuse defaults.** Example: `type: "steps"` without `title` renders **How It Works**. Override only when TZ names the section differently.
 5. **No nested blocks.** Do not embed a `table` (or any other section) inside `hero`. Sequence separate blocks instead.
 6. **Props stay in inventory.** Content goes in props; if a prop is missing, extend inventory — don’t freestyle CSS in content files.
-7. **Planned ≠ shippable.** Gaps (e.g. TV spread rail) stay planned until built; temporary substitutes must be labeled as substitutes, not “the same block”.
+7. **Planned ≠ shippable.** Gaps stay planned until built; temporary substitutes must be labeled as substitutes, not “the same block”. `market-hero` and `spread-cards` are ready.
 8. **Recipes are stacks of types**, not free CSS. Visual polish lives in `components/blocks/*` + tokens.
 9. **Figma structure + inventory code.** Structure from Figma; shippable types from inventory.
 
@@ -52,11 +52,14 @@ More screens will extend this map; the rule stays: **spot the repeating block �
 | `type` | Status | Figma source | Use for |
 |--------|--------|--------------|---------|
 | `hero` | provisional | Market Header / award-offer heroes (content subset) | Above-the-fold pitch + CTAs |
+| `market-hero` | ready | Market Header `23570:104257` + atmospheres | Market product header (`brand` / `crypto` / `indices`) |
 | `features` | ready | Cards `15166:10610` USP | Why Fusion / benefits (`variant: "usp"` \| `"feature"`) |
 | `table` | provisional | Tables `15276:11158` (markets rows + compare shells) | Spreads lists, “how we compare”, account rows |
 | `steps` | ready | Sections `15313:11090` Step by Steps | How it works |
 | `faq` | ready | Sections `15313:11090` FAQ | Objections |
 | `reviews` | ready | Reviews from Real Traders `29987:342098` | Trustpilot + review-card rail |
+| `spread-cards` | ready | Here’s Our Spreads `29987:341476` / `29987:342771` | Tabs + TV_Card rail (not the instruments table) |
+| `logo-marquee` | ready | Our Funding Methods `28259:298800` | Funding wordmark ticker |
 | `cta` | provisional | Mid/end conversion bands | Repeat conversion |
 | `disclaimer` | provisional | Compliance | Risk / preview legal |
 
@@ -90,20 +93,20 @@ Registered props (keep inventory + `lib/types.ts` + `Hero.tsx` aligned):
 
 | Figma section | Ideal module | Ready-only substitute |
 |---------------|--------------|------------------------|
-| Market Header (BG + H1 + pitch + Primary/Light + TV chart) | `market-hero` (planned) | `hero` + `brandBackground` + dual/single CTA (**no chart**) |
+| Market Header (BG + H1 + pitch + Primary/Light + TV chart) | `market-hero` | Pick `atmosphere`: `brand` / `crypto` / `indices`. Do not fall back to plain `hero`. |
 | Bento / advantages | `bento-usp` (planned) | `features` `variant: "usp"` |
 | Classic vs Zero comparison | `comparison-table` (planned multi-panel) | single `table` (flat columns) |
 | Why trade [market] USP rail | USP cards | `features` usp |
 | Education split / checklist Hero | `education-split` / `checklist-feature` | **skip** or short `cta` |
 | Start trading steps | Step by Steps | `steps` |
-| Live / our spreads (TV cards) | `spread-cards` (planned) — **same as homepage Our spreads** | Until built: skip or **labeled** temporary substitute; do not pretend markets `table` is the same pattern |
+| Live / our spreads (TV cards) | `spread-cards` — **same as homepage Our spreads** | Do not pretend markets `table` is the same pattern |
 | Reviews | `reviews` | Trustpilot + rail before FAQ |
 | Footer | chrome | `SiteFooter` |
 
-**Default market MVP stack (aligned to recipe M1, ready-only):**
+**Default market MVP stack (aligned to recipe M1 — locked crypto / indices):**
 
 ```text
-hero (brandBackground) → features (usp) → table (instruments) → table (compare, optional) → steps (optional) → reviews → faq → disclaimer
+market-hero → features (usp) → table (instruments) → optional table compare → optional logo-marquee → steps → optional spread-cards → reviews → optional faq
 ```
 
 End conversion band is **SiteFooter CTAFooter** — do not stack mid/end `cta` blocks unless the campaign needs an extra mid-page band.
@@ -114,7 +117,7 @@ End conversion band is **SiteFooter CTAFooter** — do not stack mid/end `cta` b
 |---------------|------------------------|
 | Award hero + image | `hero` (eyebrow = partner name; **no** award image until media block) |
 | Reviews rail | `reviews` |
-| Here’s our spreads (TV cards) | `table` or **skip** |
+| Here’s our spreads (TV cards) | `spread-cards` |
 | Instrument tiles | **skip** (`instrument-grid` planned) |
 | Why we’re different | `features` usp |
 
@@ -126,7 +129,7 @@ End conversion band is **SiteFooter CTAFooter** — do not stack mid/end `cta` b
 |---------------|------------------------|
 | Offer hero | `hero` (legal T&Cs → `subtitle` or link in copy) |
 | Tier cards | **skip** (`tier-cards` planned) |
-| Spreads TV | `table` or skip |
+| Spreads TV | `spread-cards` |
 | How it works | `steps` |
 | Funding marquee | skip |
 | Instruments / USP / reviews | `features` usp; reviews skip |

@@ -48,11 +48,13 @@ Never hand-edit `design-system/generated/*`.
 | Logo | `components/ui/Logo.tsx` | FM desktop / mobile |
 | Illustration | `components/ui/Illustration.tsx` | isometric brand art (Images frame) |
 | BackgroundImage | `components/ui/BackgroundImage.tsx` | shared purple BG art |
-| CryptoCoinField | `components/ui/CryptoCoinField.tsx` | crypto market-hero atmosphere |
+| CryptoCoinField | `components/ui/CryptoCoinField.tsx` | market-hero atmosphere: crypto |
+| IndicesField | `components/ui/IndicesField.tsx` | market-hero atmosphere: indices (globe + chips + ticker) |
+| SpreadQuoteCard | `components/ui/SpreadQuoteCard.tsx` | TV_Card atom for spread-cards |
 | FaqItem / Steps | `components/ui/*` | Sections frame FAQ + Step by Steps |
 | Pill | `components/ui/Pill.tsx` | preview chip |
 | Block renderer | `components/blocks/BlockRenderer.tsx` | switches on `type` |
-| hero / features / table / steps / reviews / faq / cta / disclaimer | `components/blocks/*.tsx` | section blocks only — see `assembly.md` |
+| hero / market-hero / features / table / steps / reviews / spread-cards / faq / cta / logo-marquee / disclaimer | `components/blocks/*.tsx` | section blocks only — see `assembly.md` |
 
 
 ## Landing document

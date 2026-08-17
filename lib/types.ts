@@ -129,8 +129,8 @@ export type LandingBlock =
       trustpilot?: MarketHeroTrustpilot;
       /**
        * brand — shared purple Market Header art (default).
-       * crypto — light field + floating coin atmosphere.
-       * indices — light field + globe mesh + bottom ticker.
+       * crypto — light field + 3D coins + white quotes card.
+       * indices — light field + globe + chips + in-flow ticker (no quotes card).
        */
       atmosphere?: "brand" | "crypto" | "indices";
     }
