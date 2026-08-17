@@ -32,7 +32,7 @@ export function IndicesField() {
       <div className="ui-indices-field__planet">
         <img
           className="ui-indices-field__globe"
-          src="/images/indices/globe.png"
+          src="/images/indices/globe-v2.png"
           alt=""
           width={1004}
           height={866}
