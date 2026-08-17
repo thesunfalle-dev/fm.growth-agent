@@ -99,7 +99,8 @@ a {
 
 /* Full-bleed brand / atmosphere hero — no side gutters / edge crop */
 .ui-section--hero.ui-section--brand-bg,
-.ui-section--hero.ui-section--crypto-field {
+.ui-section--hero.ui-section--crypto-field,
+.ui-section--hero.ui-section--light-field {
   width: 100%;
   max-width: none;
   margin: 0;
@@ -3396,7 +3397,8 @@ a {
   -webkit-text-fill-color: var(--color-text-on-accent);
 }
 
-/* Crypto atmosphere — light field + floating coins (not the purple BG art) */
+/* Light market atmospheres — crypto coins / indices globe (not the purple BG art) */
+.ui-section--light-field,
 .ui-section--crypto-field {
   position: relative;
   overflow: hidden;
@@ -3407,6 +3409,7 @@ a {
   margin-inline: 0;
 }
 
+.ui-section--light-field .ui-container,
 .ui-section--crypto-field .ui-container {
   position: relative;
   z-index: var(--z-index-content);
@@ -3416,41 +3419,54 @@ a {
   pointer-events: auto;
 }
 
-/* Light quotes card — brand TV chrome restyled for the white crypto field. */
+.ui-section--light-field .ui-market-hero__panel--tv,
 .ui-section--crypto-field .ui-market-hero__panel--tv {
   background: var(--color-background-canvas);
   border-color: var(--primitive-color-purple200);
   box-shadow: var(--shadow-card);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
+.ui-section--light-field .ui-tv-card,
+.ui-section--light-field .ui-tv-card__axis-label,
 .ui-section--crypto-field .ui-tv-card,
 .ui-section--crypto-field .ui-tv-card__axis-label {
   color: var(--color-text-primary);
 }
 
+.ui-section--light-field .ui-tv-card__symbol,
+.ui-section--light-field .ui-tv-card__time,
 .ui-section--crypto-field .ui-tv-card__symbol,
 .ui-section--crypto-field .ui-tv-card__time {
   color: var(--color-text-secondary);
 }
 
+.ui-section--light-field .ui-tv-card__symbol--on,
+.ui-section--light-field .ui-tv-card__time--on,
 .ui-section--crypto-field .ui-tv-card__symbol--on,
 .ui-section--crypto-field .ui-tv-card__time--on {
   color: var(--primitive-color-gray0);
 }
 
+.ui-section--light-field .ui-tv-card__axis-line,
 .ui-section--crypto-field .ui-tv-card__axis-line {
   background: var(--primitive-color-blue100);
 }
 
+.ui-section--light-field .ui-tv-card__change--up,
+.ui-section--light-field .ui-tv-card__period,
 .ui-section--crypto-field .ui-tv-card__change--up,
 .ui-section--crypto-field .ui-tv-card__period {
   color: var(--primitive-color-green600);
 }
 
+.ui-section--light-field .ui-tv-card__change--down,
 .ui-section--crypto-field .ui-tv-card__change--down {
   color: var(--primitive-color-red500);
 }
 
+.ui-section--light-field .ui-tv-card__mark,
 .ui-section--crypto-field .ui-tv-card__mark {
   background: var(--primitive-color-purple50);
 }
@@ -3652,8 +3668,16 @@ a {
   overflow: hidden;
 }
 
+.ui-section--hero.ui-section--indices-field {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
 .ui-section--indices-field .ui-container {
-  padding-bottom: calc(var(--component-indices-field-tape-height) + var(--space-6));
+  flex: 0 0 auto;
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-16);
 }
 
 .ui-indices-field__orb {
@@ -3681,37 +3705,50 @@ a {
   animation-delay: calc(var(--component-indices-field-duration-drift) * -0.35);
 }
 
+.ui-indices-field__orb--c {
+  width: var(--component-coin-field-orb-size-sm);
+  height: var(--component-coin-field-orb-size-sm);
+  right: 6%;
+  top: 18%;
+  background: var(--primitive-color-purple100);
+  animation-delay: calc(var(--component-indices-field-duration-drift) * -0.6);
+}
+
 .ui-indices-field__grid {
   position: absolute;
-  inset: 0;
+  inset: auto 0 0 28%;
+  height: 72%;
   background-image:
     linear-gradient(var(--primitive-color-blue100) 1px, transparent 1px),
     linear-gradient(90deg, var(--primitive-color-blue100) 1px, transparent 1px);
   background-size: var(--space-16) var(--space-16);
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, var(--primitive-color-gray0) 0%, transparent 78%);
-  opacity: 0.45;
+  mask-image: radial-gradient(ellipse 70% 80% at 70% 40%, var(--primitive-color-gray0) 0%, transparent 78%);
+  opacity: 0.32;
   transform: perspective(var(--component-indices-field-grid-perspective)) rotateX(58deg) translate3d(0, 18%, 0);
-  transform-origin: center 20%;
+  transform-origin: 70% 20%;
 }
 
 .ui-indices-field__globe {
+  --globe-x: -22%;
+  --globe-y: -50%;
   position: absolute;
-  left: 50%;
-  top: 46%;
-  width: min(92vw, 920px);
+  left: 62%;
+  top: 50%;
+  width: min(58vw, 720px);
   height: auto;
-  transform: translate(-50%, -50%);
-  opacity: 0.38;
+  max-height: none;
+  transform: translate(var(--globe-x), var(--globe-y));
+  opacity: 0.96;
+  filter: drop-shadow(var(--component-indices-field-shadow));
   animation: ui-index-globe var(--component-indices-field-duration-drift-slow) var(--motion-easing-standard) infinite;
 }
 
 .ui-indices-field__tape {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   z-index: var(--z-index-content);
+  flex: 0 0 auto;
   overflow: hidden;
+  width: 100%;
   height: var(--component-indices-field-tape-height);
   background: var(--primitive-color-blue50);
   border-top: var(--border-width-default) solid var(--primitive-color-blue100);
@@ -3769,10 +3806,10 @@ a {
 @keyframes ui-index-globe {
   0%,
   100% {
-    transform: translate(-50%, -50%) rotate(-4deg);
+    transform: translate(var(--globe-x), var(--globe-y)) rotate(-2deg);
   }
   50% {
-    transform: translate(-50%, -50%) rotate(4deg);
+    transform: translate(var(--globe-x), calc(var(--globe-y) - var(--space-2))) rotate(2deg);
   }
 }
 
@@ -3790,6 +3827,16 @@ a {
     var(--component-market-hero-min-height) - var(--component-market-hero-padding-y) -
       var(--component-market-hero-padding-y)
   );
+}
+
+/* Indices: hug copy+card so the ticker sits at the end of block 1, not the fold */
+.ui-section--hero.ui-section--market-hero.ui-section--indices-field {
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+.ui-section--market-hero.ui-section--indices-field .ui-container {
+  min-height: 0;
 }
 
 .ui-market-hero__layout {
@@ -3874,6 +3921,17 @@ a {
   backdrop-filter: blur(var(--component-market-hero-panel-blur));
   -webkit-backdrop-filter: blur(var(--component-market-hero-panel-blur));
   box-shadow: none;
+}
+
+/* Same solid white quotes card as crypto — must win over the frosted brand panel */
+.ui-section--light-field .ui-market-hero__panel--tv,
+.ui-section--crypto-field .ui-market-hero__panel--tv,
+.ui-section--indices-field .ui-market-hero__panel--tv {
+  background: var(--color-background-canvas);
+  border-color: var(--primitive-color-purple200);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .ui-tv-card {
@@ -4728,8 +4786,7 @@ a {
   }
 
   .ui-indices-field__globe {
-    width: 140%;
-    opacity: 0.28;
+    display: none;
   }
 
   /* M1 375: title → lead → hug Light CTA → 343×364 slot. Hide extra CTA. */

@@ -8,8 +8,8 @@
 
 ## 2026-08-17 — Equity indices hero atmosphere
 
-- `market-hero` `atmosphere: indices`: light field, globe mesh, one infinite ticker pinned to the bottom of the hero.
-- Shared light quotes card with crypto. Ticker values are decorative.
+- `market-hero` `atmosphere: indices`: light field, 3D globe (`public/images/indices/globe.png`), one infinite ticker in-flow at the bottom of the hero (not the viewport).
+- Shared solid white quotes card with crypto. Ticker values are decorative.
 
 ## 2026-08-14 — Crypto hero atmosphere
 

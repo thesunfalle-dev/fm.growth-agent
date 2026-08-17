@@ -2,7 +2,7 @@ import { BackgroundImage } from "@/components/ui/BackgroundImage";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CryptoCoinField } from "@/components/ui/CryptoCoinField";
-import { IndicesField } from "@/components/ui/IndicesField";
+import { IndicesField, IndicesTicker } from "@/components/ui/IndicesField";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { MarketHeroQuotes } from "@/components/ui/MarketHeroQuotes";
@@ -119,6 +119,7 @@ export function MarketHero({
           ) : null}
         </div>
       </Container>
+      {isIndicesField ? <IndicesTicker /> : null}
     </Section>
   );
 }
