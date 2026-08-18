@@ -88,7 +88,7 @@
       "sizes": ["xs", "sm", "md", "lg", "xl"],
       "requiredStates": ["default", "reduced-motion"],
       "tokenDependencies": ["component.energyField", "semantic.color.background"],
-      "notes": "market-hero atmosphere: energy. Full-bleed gradient mesh + industrial oil barrel (oil-v2); gas/wheat/soy orbit it. Product stills, not toy props. No ticker, no quotes card."
+      "notes": "market-hero atmosphere: energy. Full-bleed gradient mesh + industrial oil barrel (oil-v2); coffee/wheat/soy orbit it. Product stills, not toy props. No ticker, no quotes card."
     },
     {
       "name": "FaqItem",

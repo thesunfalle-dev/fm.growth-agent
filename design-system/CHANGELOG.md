@@ -1,5 +1,9 @@
 # Design system changelog
 
+## 2026-08-18 — Energy orbit: coffee instead of gas cylinder
+
+- Propane tank dropped from the hero still-life. Coffee beans (`coffee-v2.png`) take that orbit. Barrel + wheat + soy stay.
+
 ## 2026-08-18 — Energy props match coin product language
 
 - Replaced toy-painted barrel / cartoon flame / gift-bow wheat / tagged soy with industrial stills: brushed steel drum + thin purple rim, full propane cylinder, twine-bound wheat, hessian sack. Cache-bust `*-v2.png`.

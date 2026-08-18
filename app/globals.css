@@ -3907,7 +3907,7 @@ a {
   animation: ui-energy-sat-sway var(--component-energy-field-duration-drift) var(--motion-easing-standard) infinite;
 }
 
-.ui-energy-well__sat--gas {
+.ui-energy-well__sat--coffee {
   width: var(--component-energy-field-size-xl);
   height: var(--component-energy-field-size-xl);
   offset-path: ellipse(54% 34% at 50% 52%);
@@ -5363,7 +5363,7 @@ a {
     animation: none;
   }
 
-  .ui-energy-well__sat--gas {
+  .ui-energy-well__sat--coffee {
     offset-distance: 12%;
   }
 
@@ -5762,7 +5762,7 @@ a {
     height: var(--component-energy-field-size-xl);
   }
 
-  .ui-energy-well__sat--gas {
+  .ui-energy-well__sat--coffee {
     width: var(--component-energy-field-size-sm);
     height: var(--component-energy-field-size-sm);
   }

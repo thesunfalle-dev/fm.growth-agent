@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 
 const SATELLITES = [
   {
-    id: "gas",
-    src: "/images/energy/gas-v2.png",
-    label: "Natural gas",
+    id: "coffee",
+    src: "/images/energy/coffee-v2.png",
+    label: "Coffee",
     duration: "22s",
     delay: "0s",
     dir: "normal",
@@ -31,7 +31,7 @@ const SATELLITES = [
 
 /**
  * Energy atmosphere — light field mesh + right-rail still-life.
- * A large oil barrel sits in the centre; gas, wheat and soy orbit it.
+ * A large oil barrel sits in the centre; coffee, wheat and soy orbit it.
  * Not the crypto scatter, not the indices globe, not a HUD well.
  */
 export function EnergyField() {
