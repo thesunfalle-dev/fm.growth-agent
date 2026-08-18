@@ -2,47 +2,50 @@
 
 import { useEffect, useRef } from "react";
 
-const ITEMS = [
-  {
-    id: "oil",
-    src: "/images/energy/oil.png",
-    label: "Crude oil",
-    from: "8%",
-    duration: "18s",
-    dir: "normal",
-  },
+const SATELLITES = [
   {
     id: "gas",
     src: "/images/energy/gas.png",
     label: "Natural gas",
-    from: "42%",
-    duration: "24s",
-    dir: "reverse",
+    duration: "22s",
+    delay: "0s",
+    dir: "normal",
   },
   {
     id: "wheat",
     src: "/images/energy/wheat.png",
     label: "Wheat",
-    from: "70%",
     duration: "30s",
-    dir: "normal",
+    delay: "-10s",
+    dir: "reverse",
   },
   {
     id: "soy",
     src: "/images/energy/soy.png",
     label: "Soybeans",
-    from: "18%",
-    duration: "21s",
-    dir: "reverse",
+    duration: "26s",
+    delay: "-17s",
+    dir: "normal",
   },
 ] as const;
 
 /**
- * Energy well — a right-rail still-life.
- * Four commodities ride elliptical paths around a pulsing core.
- * Not the crypto scatter and not the indices globe/ticker.
+ * Energy atmosphere — light field mesh + right-rail still-life.
+ * A large oil barrel sits in the centre; gas, wheat and soy orbit it.
+ * Not the crypto scatter, not the indices globe, not a HUD well.
  */
 export function EnergyField() {
+  return (
+    <div className="ui-energy-field" aria-hidden="true">
+      <span className="ui-energy-field__orb ui-energy-field__orb--a" />
+      <span className="ui-energy-field__orb ui-energy-field__orb--b" />
+      <span className="ui-energy-field__orb ui-energy-field__orb--c" />
+      <span className="ui-energy-field__orb ui-energy-field__orb--d" />
+    </div>
+  );
+}
+
+export function EnergyWell() {
   const wellRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -66,8 +69,8 @@ export function EnergyField() {
       const box = well.getBoundingClientRect();
       const x = ((event.clientX - box.left) / box.width - 0.5) * 2;
       const y = ((event.clientY - box.top) / box.height - 0.5) * 2;
-      well.style.setProperty("--well-y", `${(x * 7).toFixed(2)}deg`);
-      well.style.setProperty("--well-x", `${(y * -5).toFixed(2)}deg`);
+      well.style.setProperty("--well-y", `${(x * 8).toFixed(2)}deg`);
+      well.style.setProperty("--well-x", `${(y * -6).toFixed(2)}deg`);
     };
 
     reset();
@@ -82,24 +85,25 @@ export function EnergyField() {
   return (
     <div className="ui-energy-well" ref={wellRef} aria-hidden="true">
       <div className="ui-energy-well__scene">
-        <span className="ui-energy-well__floor" />
-        <span className="ui-energy-well__ring ui-energy-well__ring--outer" />
-        <span className="ui-energy-well__ring ui-energy-well__ring--inner" />
-        <span className="ui-energy-well__core" />
-        <span className="ui-energy-well__drop" />
-        {ITEMS.map((item) => (
+        <span className="ui-energy-well__halo" />
+        <span className="ui-energy-well__glow ui-energy-well__glow--warm" />
+        <span className="ui-energy-well__glow ui-energy-well__glow--cool" />
+        {SATELLITES.map((item) => (
           <span
             key={item.id}
-            className={`ui-energy-well__item ui-energy-well__item--${item.id}`}
+            className={`ui-energy-well__sat ui-energy-well__sat--${item.id}`}
             style={{
-              ["--orbit-from" as string]: item.from,
               ["--orbit-dur" as string]: item.duration,
+              ["--orbit-delay" as string]: item.delay,
               ["--orbit-dir" as string]: item.dir,
             }}
           >
             <img src={item.src} alt="" width={320} height={320} draggable={false} />
           </span>
         ))}
+        <span className="ui-energy-well__barrel">
+          <img src="/images/energy/oil.png" alt="" width={640} height={640} draggable={false} />
+        </span>
       </div>
     </div>
   );

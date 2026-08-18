@@ -69,6 +69,27 @@ export function UspCarousel({ children }: UspCarouselProps) {
     return first.offsetWidth + gap;
   };
 
+  /** Extra end-pad so 6 cards have two full one-card steps (bleed rail is wider than 4 cards). */
+  const padDesktopRail = useCallback(() => {
+    const el = railRef.current;
+    if (!el) return;
+    if (looping) {
+      el.style.paddingRight = "";
+      return;
+    }
+    const first = el.children[0] as HTMLElement | undefined;
+    if (!first) return;
+    const styles = getComputedStyle(el);
+    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    const step = first.offsetWidth + gap;
+    if (step <= 0) return;
+    const content = count * first.offsetWidth + Math.max(0, count - 1) * gap;
+    const visible = Math.max(1, Math.floor(el.clientWidth / step));
+    const neededMax = Math.max(0, count - visible) * step;
+    const pad = Math.max(0, neededMax - (content - el.clientWidth));
+    el.style.paddingRight = `${pad}px`;
+  }, [count, looping]);
+
   const morphCards = useCallback(() => {
     const el = railRef.current;
     if (!el) return;
@@ -157,6 +178,8 @@ export function UspCarousel({ children }: UspCarouselProps) {
     const el = railRef.current;
     if (!el) return;
 
+    padDesktopRail();
+
     if (looping) {
       const start = el.children[count] as HTMLElement | undefined;
       if (start) centerSlot(start, false);
@@ -181,23 +204,42 @@ export function UspCarousel({ children }: UspCarouselProps) {
 
     el.addEventListener("scroll", onScroll, { passive: true });
     el.addEventListener("scrollend", onSettled);
-    const ro = new ResizeObserver(() => morphCards());
+    const onResize = () => {
+      padDesktopRail();
+      morphCards();
+    };
+    const ro = new ResizeObserver(onResize);
     ro.observe(el);
-    window.addEventListener("resize", morphCards);
+    window.addEventListener("resize", onResize);
     return () => {
       el.removeEventListener("scroll", onScroll);
       el.removeEventListener("scrollend", onSettled);
       window.clearTimeout(settleTimer.current);
       ro.disconnect();
-      window.removeEventListener("resize", morphCards);
+      window.removeEventListener("resize", onResize);
     };
-  }, [centerSlot, count, looping, morphCards, wrapIfNeeded]);
+  }, [centerSlot, count, looping, morphCards, padDesktopRail, wrapIfNeeded]);
 
   const scrollByCard = (dir: -1 | 1) => {
-    const next = looping
-      ? (active + dir + count) % count
-      : Math.min(count - 1, Math.max(0, active + dir));
-    scrollToIndex(next);
+    const el = railRef.current;
+    if (!el) return;
+
+    // Desktop rail: advance one card from the current start snap.
+    // Do not center the "active" (viewport-mid) card — with 4 visible
+    // cards that jumps 2–3 positions and feels random.
+    if (!looping) {
+      const step = stepSize(el);
+      if (step <= 0) return;
+      const current = Math.round(el.scrollLeft / step);
+      const maxScroll = Math.max(0, el.scrollWidth - el.clientWidth);
+      const maxIndex = Math.max(0, Math.round(maxScroll / step));
+      const next = Math.min(maxIndex, Math.max(0, current + dir));
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      el.scrollTo({ left: next * step, behavior: reduce ? "auto" : "smooth" });
+      return;
+    }
+
+    scrollToIndex((active + dir + count) % count);
   };
 
   const scrollToIndex = (logical: number) => {
@@ -237,7 +279,7 @@ export function UspCarousel({ children }: UspCarouselProps) {
           className="ui-usp-carousel__btn"
           onClick={() => scrollByCard(-1)}
           disabled={!canPrev}
-          aria-label="Previous cards"
+          aria-label="Previous card"
         >
           <Icon name="west" size={24} />
         </button>
@@ -246,7 +288,7 @@ export function UspCarousel({ children }: UspCarouselProps) {
           className="ui-usp-carousel__btn"
           onClick={() => scrollByCard(1)}
           disabled={!canNext}
-          aria-label="Next cards"
+          aria-label="Next card"
         >
           <Icon name="east" size={24} />
         </button>

@@ -158,7 +158,7 @@ Canonical market stack (locked 2026-08-17 — see `shared-blocks.md` and `landin
 9. `faq` (optional — crypto)
 10. Site footer (global) — not a content disclaimer inventing “Growth Agent preview” unless product asks
 
-Reference slugs: `landings/crypto/content.ts`, `landings/equity-indices/content.ts`.
+Reference slugs: `landings/crypto/content.ts`, `landings/equity-indices/content.ts`, `landings/energy-commodities/content.ts`.
 
 ---
 

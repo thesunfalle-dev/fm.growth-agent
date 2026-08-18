@@ -2,7 +2,7 @@ import { BackgroundImage } from "@/components/ui/BackgroundImage";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CryptoCoinField } from "@/components/ui/CryptoCoinField";
-import { EnergyField } from "@/components/ui/EnergyField";
+import { EnergyField, EnergyWell } from "@/components/ui/EnergyField";
 import { IndicesField, IndicesTicker } from "@/components/ui/IndicesField";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
@@ -64,6 +64,7 @@ export function MarketHero({
     >
       {isCryptoField ? <CryptoCoinField /> : null}
       {isIndicesField ? <IndicesField /> : null}
+      {isEnergyField ? <EnergyField /> : null}
       {!isLightField ? <BackgroundImage variant="decorative" /> : null}
       <Container>
         <div className="ui-market-hero__layout">
@@ -85,7 +86,7 @@ export function MarketHero({
           </div>
           {isEnergyField ? (
             <aside className="ui-market-hero__stage" aria-hidden="true">
-              <EnergyField />
+              <EnergyWell />
             </aside>
           ) : showQuotes && quotes ? (
             <aside className="ui-market-hero__panel ui-market-hero__panel--tv" aria-label="Indicative chart">

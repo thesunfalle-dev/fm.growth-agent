@@ -1,5 +1,18 @@
 # Design system changelog
 
+## 2026-08-18 — Distinct trader reviews + missing market icons
+
+- Reviews defaults: four distinct named quotes (Trustpilot BruceWayne001 + verified TradingView trader reviews). No repeated Figma filler name.
+- Crypto table: BCH and XLM marks (`public/images/markets/bch.svg`, `xlm.svg`).
+- Indices table: flag marks, including NL for NETH25.
+- Energy table: 32px commodity marks (oil / gas / wheat / soy / corn / coffee / cotton / cocoa / sugar).
+
+## 2026-08-18 — Energy barrel hero + spreads rail
+
+- Energy atmosphere: large still-life oil barrel in the right rail; gas, wheat and soy orbit it. Full-bleed warm/violet gradient mesh. No HUD core, rings, or drop.
+- Energy landing now uses `spread-cards` (“Here’s Our Spreads”) for the former hero quotes. Tabs Popular / Energy / Soft.
+- Tokens **0.24.0**.
+
 ## 2026-08-18 — USP rail steps one card; mobile markets table fits 343
 
 - Desktop USP arrows advance exactly one card from the current start snap (no longer center the mid-viewport card). End padding lets 6 cards make two full steps.

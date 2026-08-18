@@ -44,32 +44,32 @@ export const defaultReviewItems = [
       "Fusion Markets has a fantastic management and support...all suggestions and questions become answered satisfying and if there are problems they get solved quick as possible and very friendly.",
   },
   {
-    id: "platforms",
-    name: "BruceWayne001",
-    date: "2 Nov",
+    id: "execution",
+    name: "salemhaddad34",
+    date: "11 Aug",
     quote:
-      "I am very satisfied with Fusion Markets. I have a small spread and a 1/500 account. They are very fair and kind and I have never had any problems with them. I really liked that they have three platforms that I have used and it is very easy to transfer money and trade from one to another. All in all, after 11 years of trading, I can say that I give them a clean five stars and I think I will have a long cooperation with them.",
+      "I've been trading with Fusion Markets for about 3 years now and honestly, I've had a great experience. Good execution, competitive spreads, and withdrawals have been smooth. Never had any major issues. Definitely recommend them.",
   },
   {
-    id: "platforms-2",
-    name: "BruceWayne001",
-    date: "2 Nov",
+    id: "gold",
+    name: "mcyassie",
+    date: "14 Aug",
     quote:
-      "I am very satisfied with Fusion Markets. I have a small spread and a 1/500 account. They are very fair and kind and I have never had any problems with them. I really liked that they have three platforms that I have used and it is very easy to transfer money and trade from one to another. All in all, after 11 years of trading, I can say that I give them a clean five stars and I think I will have a long cooperation with them.",
+      "I've been trading with Fusion Markets for a while now and what keeps me here is simple: low spreads + fast execution. As a gold trader, I need tight spreads during news and Fusion delivers. Platform is clean, withdrawals are smooth, and support actually replies.",
   },
   {
-    id: "platforms-3",
-    name: "BruceWayne001",
-    date: "2 Nov",
+    id: "helpdesk",
+    name: "ransuliman",
+    date: "13 Aug",
     quote:
-      "I am very satisfied with Fusion Markets. I have a small spread and a 1/500 account. They are very fair and kind and I have never had any problems with them. I really liked that they have three platforms that I have used and it is very easy to transfer money and trade from one to another. All in all, after 11 years of trading, I can say that I give them a clean five stars and I think I will have a long cooperation with them.",
+      "Excellent experience with Fusion Markets customer support. I had an issue accessing my funded trading account through TradingView, and Brian was extremely helpful, professional, and patient throughout the process.",
   },
 ] as const satisfies ReviewItem[];
 
 export const defaultReviewsSummary = {
   label: "Excellent",
-  rating: "4.8",
-  count: "7.2k",
+  rating: "4.5",
+  count: "1.7k",
   href: "https://www.trustpilot.com/review/fusionmarkets.com",
 } as const satisfies ReviewsSummary;
 

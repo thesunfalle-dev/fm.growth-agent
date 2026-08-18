@@ -10,12 +10,12 @@ import type { LandingDocument } from "@/lib/types";
  * Content (copy, numbers, which rows): TZ + live FM Energy page. Never Figma sample copy.
  *
  * Stack: market-hero energy → features usp → platforms → instruments table →
- * logo-marquee → steps → reviews → faq (site footer CTA below).
+ * logo-marquee → steps → spread-cards → reviews → faq (site footer CTA below).
  */
 const landing: LandingDocument = {
   slug: "energy-commodities",
   name: "Energy and Soft Commodities",
-  note: "Market recipe M1 with energy well hero. TZ 2026-08-17.",
+  note: "Market recipe M1 with energy barrel hero + spread-cards. TZ 2026-08-17.",
   listed: true,
   status: "review",
   createdAt: "2026-08-17",
@@ -133,17 +133,17 @@ const landing: LandingDocument = {
       showSearch: true,
       columns: defaultInstrumentsColumns,
       rows: [
-        { id: "xtiusd", cells: { symbol: { title: "West Texas Intermediate", meta: "XTIUSD" }, minimum: "1", average: "2.86" } },
-        { id: "xbrusd", cells: { symbol: { title: "UK Oil (Brent)", meta: "XBRUSD" }, minimum: "1", average: "3.31" } },
-        { id: "xngusd", cells: { symbol: { title: "Natural Gas", meta: "XNGUSD" }, minimum: "6.0", average: "7.39" } },
-        { id: "wheat", cells: { symbol: { title: "Wheat", meta: "WHEAT" }, minimum: "3.00", average: "6.27" } },
-        { id: "soybean", cells: { symbol: { title: "Soybeans", meta: "SOYBEAN" }, minimum: "5", average: "8.26" } },
-        { id: "corn", cells: { symbol: { title: "Corn", meta: "CORN" }, minimum: "3", average: "5.77" } },
-        { id: "cofara", cells: { symbol: { title: "Coffee Arabica", meta: "COFARA" }, minimum: "1", average: "2.17" } },
-        { id: "cofrob", cells: { symbol: { title: "Coffee Robusta", meta: "COFROB" }, minimum: "5.00", average: "29.40" } },
-        { id: "cotton", cells: { symbol: { title: "Cotton", meta: "COTTON" }, minimum: "6", average: "9.03" } },
-        { id: "uscocoa", cells: { symbol: { title: "US Cocoa", meta: "USCOCOA" }, minimum: "25.00", average: "62.06" } },
-        { id: "sugarraw", cells: { symbol: { title: "Raw Sugar", meta: "SUGARRAW" }, minimum: "2", average: "3.23" } },
+        { id: "xtiusd", cells: { symbol: { title: "West Texas Intermediate", meta: "XTIUSD", iconSrc: "/images/markets/oil.svg" }, minimum: "1", average: "2.86" } },
+        { id: "xbrusd", cells: { symbol: { title: "UK Oil (Brent)", meta: "XBRUSD", iconSrc: "/images/markets/oil.svg" }, minimum: "1", average: "3.31" } },
+        { id: "xngusd", cells: { symbol: { title: "Natural Gas", meta: "XNGUSD", iconSrc: "/images/markets/gas.svg" }, minimum: "6.0", average: "7.39" } },
+        { id: "wheat", cells: { symbol: { title: "Wheat", meta: "WHEAT", iconSrc: "/images/markets/wheat.svg" }, minimum: "3.00", average: "6.27" } },
+        { id: "soybean", cells: { symbol: { title: "Soybeans", meta: "SOYBEAN", iconSrc: "/images/markets/soy.svg" }, minimum: "5", average: "8.26" } },
+        { id: "corn", cells: { symbol: { title: "Corn", meta: "CORN", iconSrc: "/images/markets/corn.svg" }, minimum: "3", average: "5.77" } },
+        { id: "cofara", cells: { symbol: { title: "Coffee Arabica", meta: "COFARA", iconSrc: "/images/markets/coffee.svg" }, minimum: "1", average: "2.17" } },
+        { id: "cofrob", cells: { symbol: { title: "Coffee Robusta", meta: "COFROB", iconSrc: "/images/markets/coffee.svg" }, minimum: "5.00", average: "29.40" } },
+        { id: "cotton", cells: { symbol: { title: "Cotton", meta: "COTTON", iconSrc: "/images/markets/cotton.svg" }, minimum: "6", average: "9.03" } },
+        { id: "uscocoa", cells: { symbol: { title: "US Cocoa", meta: "USCOCOA", iconSrc: "/images/markets/cocoa.svg" }, minimum: "25.00", average: "62.06" } },
+        { id: "sugarraw", cells: { symbol: { title: "Raw Sugar", meta: "SUGARRAW", iconSrc: "/images/markets/sugar.svg" }, minimum: "2", average: "3.23" } },
       ],
       footnote:
         "Minimum and average spreads from Fusion Markets trading conditions. Indicative; confirm live pricing in the Client Hub or Spreads Tool.",
@@ -171,6 +171,23 @@ const landing: LandingDocument = {
       ],
       primaryCta: sharedCtas.tryDemo,
       secondaryCta: sharedCtas.getLiveAccount,
+    },
+    {
+      type: "spread-cards",
+      title: "Here’s Our Spreads",
+      subtitle:
+        "Trade CFDs on Oil, Natural Gas, Wheat, Soybeans and more with $0 commission and tight spreads.",
+      tabs: ["Popular", "Energy", "Soft"],
+      cards: [
+        { id: "xtiusd", symbol: "XTIUSD", bid: 78.42, ask: 78.45, digits: 2, trend: 0.28, iconSrc: "/images/markets/oil.svg", tabs: ["Popular", "Energy"] },
+        { id: "xbrusd", symbol: "XBRUSD", bid: 82.16, ask: 82.19, digits: 2, trend: 0.19, iconSrc: "/images/markets/oil.svg", tabs: ["Popular", "Energy"] },
+        { id: "xngusd", symbol: "XNGUSD", bid: 3.214, ask: 3.221, digits: 3, trend: -0.16, iconSrc: "/images/markets/gas.svg", tabs: ["Popular", "Energy"] },
+        { id: "wheat", symbol: "WHEAT", bid: 548.2, ask: 548.6, digits: 1, trend: 0.22, iconSrc: "/images/markets/wheat.svg", tabs: ["Popular", "Soft"] },
+        { id: "soybean", symbol: "SOYBEAN", bid: 1042.4, ask: 1043.0, digits: 1, trend: 0.11, iconSrc: "/images/markets/soy.svg", tabs: ["Popular", "Soft"] },
+        { id: "corn", symbol: "CORN", bid: 432.4, ask: 432.8, digits: 1, trend: 0.14, iconSrc: "/images/markets/corn.svg", tabs: ["Soft"] },
+        { id: "cofara", symbol: "COFARA", bid: 228.15, ask: 228.45, digits: 2, trend: 0.38, iconSrc: "/images/markets/coffee.svg", tabs: ["Soft"] },
+        { id: "sugarraw", symbol: "SUGARRAW", bid: 19.42, ask: 19.48, digits: 2, trend: -0.11, iconSrc: "/images/markets/sugar.svg", tabs: ["Soft"] },
+      ],
     },
     { type: "reviews" },
     {

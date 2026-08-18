@@ -51,7 +51,7 @@ Never hand-edit `design-system/generated/*`.
 | BackgroundImage | `components/ui/BackgroundImage.tsx` | shared purple BG art |
 | CryptoCoinField | `components/ui/CryptoCoinField.tsx` | market-hero atmosphere: crypto |
 | IndicesField | `components/ui/IndicesField.tsx` | market-hero atmosphere: indices (globe + chips + ticker) |
-| EnergyField | `components/ui/EnergyField.tsx` | market-hero atmosphere: energy (commodity props + ticker) |
+| EnergyField | `components/ui/EnergyField.tsx` | market-hero atmosphere: energy (gradient mesh + barrel well) |
 | SpreadQuoteCard | `components/ui/SpreadQuoteCard.tsx` | TV_Card atom for spread-cards |
 | FaqItem / Steps | `components/ui/*` | Sections frame FAQ + Step by Steps |
 | Pill | `components/ui/Pill.tsx` | preview chip |

@@ -70,7 +70,30 @@ const landing: LandingDocument = {
         ["USDX", "0.01", "0.02"],
       ].map(([symbol, minimum, average]) => ({
         id: symbol.toLowerCase(),
-        cells: { symbol: { title: symbol }, minimum, average },
+        cells: {
+          symbol: {
+            title: symbol,
+            iconSrc: {
+              AUS200: "/brand/flags/au.svg",
+              CA60: "/brand/flags/ca.svg",
+              CHINAH: "/brand/flags/cn.svg",
+              E35: "/brand/flags/es.svg",
+              EUSTX50: "/brand/flags/eu.svg",
+              FRA40: "/brand/flags/fr.svg",
+              GER40: "/brand/flags/de.svg",
+              HK50: "/brand/flags/hk.svg",
+              JPN225: "/brand/flags/jp.svg",
+              NAS100: "/brand/flags/us.svg",
+              NETH25: "/brand/flags/nl.svg",
+              UK100: "/brand/flags/gb.svg",
+              US30: "/brand/flags/us.svg",
+              US500: "/brand/flags/us.svg",
+              USDX: "/brand/flags/us.svg",
+            }[symbol],
+          },
+          minimum,
+          average,
+        },
       })),
       footnote:
         "Minimum and average spreads from Fusion Markets trading conditions. Indicative; confirm live pricing in the Client Hub or Spreads Tool.",

@@ -178,11 +178,11 @@ Copy when adding a pattern:
 | **Status** | ready |
 | **Inventory** | `market-hero` |
 | **Intent** | Above-the-fold for a single market (Forex, Crypto, Gold…). |
-| **Structure (fixed)** | Full-bleed atmosphere + H1 + short pitch + CTA. Atmosphere `brand`: right **TV-Desktop card 599×480**. Atmosphere `crypto`: light field + 3D coins + white quotes card. Atmosphere `indices`: light field + globe + chips + in-flow ticker, **no quotes card**. Atmosphere `energy`: light field + right-rail well (orbiting oil/gas/wheat/soy). |
+| **Structure (fixed)** | Full-bleed atmosphere + H1 + short pitch + CTA. Atmosphere `brand`: right **TV-Desktop card 599×480**. Atmosphere `crypto`: light field + 3D coins + white quotes card. Atmosphere `indices`: light field + globe + chips + in-flow ticker, **no quotes card**. Atmosphere `energy`: light field + gradient mesh + large oil barrel with orbiting commodities, **no quotes card**. |
 | **Content (props)** | `eyebrow`, `title`, `subtitle` or bullets, CTAs; `quotes[]` (5 themed instruments — omit on `indices`); `atmosphere`: `brand` / `crypto` / `indices` / `energy`. Optional legacy `quote` / `trustpilot` if no quotes. |
 | **Canonical Figma** | Market Header `23570:104257`; TV card family **TradingView Chart cards** `17172:52853` (Desktop `15303:14755`, Mobile `15433:12419`). Light-field atmospheres are campaign art, not Figma chrome. |
 | **Also seen on** | **Crypto CFDs** (`crypto`); **Equity Indices** (`indices`); **Energy and Soft Commodities** (`energy`); Metals / US Share (`brand` unless a themed field exists) |
-| **Rules** | Reuse the type; pick one atmosphere. Do not apply `crypto` to non-crypto pages or `indices` to non-index pages. Energy uses the well, not coins/globe/ticker, and omits the hero quotes card. Indices hero never includes `quotes[]` — use `spread-cards` later. Not a live TradingView embed and not the markets `table` block. Prices are indicative animation seeds. |
+| **Rules** | Reuse the type; pick one atmosphere. Do not apply `crypto` to non-crypto pages or `indices` to non-index pages. Energy uses the barrel scene, not coins/globe/ticker, and omits the hero quotes card — use `spread-cards` later. Indices hero never includes `quotes[]` — use `spread-cards` later. Not a live TradingView embed and not the markets `table` block. Prices are indicative animation seeds. |
 | **Adaptive** | Desktop: text left / field right. Crypto mobile: title → lead → hug CTA → white quotes 343×364. Indices mobile: same copy stack; chips hidden; globe peeks from the right; ticker stays at the bottom of the block (not the viewport). Energy mobile: well stacks above the copy. |
 
 ---

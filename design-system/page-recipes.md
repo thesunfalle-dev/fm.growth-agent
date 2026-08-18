@@ -78,13 +78,13 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 | # | Section (intent) | Pattern `type` | Structure notes |
 |---|------------------|----------------|-----------------|
 | 0 | Chrome | `SiteHeader` / `SiteFooter` | Always from `layout.tsx`. Never in `content.ts`. |
-| 1 | Market header | `market-hero` | `atmosphere`: `brand` (purple + TV card), `crypto` (light + coins + quotes), `indices` (light + globe + chips + ticker, **no quotes**). |
+| 1 | Market header | `market-hero` | `atmosphere`: `brand` (purple + TV card), `crypto` (light + coins + quotes), `indices` (light + globe + chips + ticker, **no quotes**), `energy` (light + barrel + orbits, **no quotes**). |
 | 2 | Why trade [market] | `features` usp | USP rail / carousel |
 | 3 | Our … instruments | `table` | Shared `instrumentsColumns` + TZ rows. Optional extra col (hours). |
 | 4 | How we compare | `table` compare | Optional. Crypto only today. |
 | 5 | Funding methods | `logo-marquee` | Optional. Equity only today. |
 | 6 | How It Works | `steps` | Default H2 + subtitle from `block-defaults`. |
-| 7 | Here’s Our Spreads | `spread-cards` | Optional. Indices only today (when quotes are **not** in the hero). Tabs + 5 TV cards. |
+| 7 | Here’s Our Spreads | `spread-cards` | Optional. Indices + Energy (when quotes are **not** in the hero). Tabs + TV cards. |
 | 8 | Reviews from Real Traders | `reviews` | Trustpilot + card rail. Defaults from `block-defaults`. |
 | 9 | FAQs | `faq` | Optional. Crypto only today. |
 | 10 | Ready to start + mega footer | footer CTA | Lives on `SiteFooter`. Do not add a second `cta` block. |
@@ -104,7 +104,7 @@ Same market stack as Forex applies to Metals / Indices / Energy / Crypto CFDs / 
 **Rules:**  
 - Spreads-on-home (`spread-cards` TV cards) ≠ this instruments **table**.  
 - Hero is **market-hero**, not plain centered products hero.  
-- Put quotes **either** in the hero (`quotes[]` on crypto/brand) **or** in `spread-cards` (indices) — not both.  
+- Put quotes **either** in the hero (`quotes[]` on crypto/brand) **or** in `spread-cards` (indices / energy) — not both.  
 - Content only: symbol list, FAQ Q&As, market name in titles.  
 - Optional modules stay registered types — do not invent a parallel section.  
 - Mobile market hero keeps a **hug-width** Light CTA; do not stretch it to 343.  

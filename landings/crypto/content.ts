@@ -165,7 +165,7 @@ const landing: LandingDocument = {
         {
           id: "bchusd",
           cells: {
-            symbol: { title: "Bitcoin Cash", meta: "BCH/USD" },
+            symbol: { title: "Bitcoin Cash", meta: "BCH/USD", iconSrc: "/images/markets/bch.svg" },
             hours: "24/7",
             minimum: "1.08",
             average: "1.51",
@@ -192,7 +192,7 @@ const landing: LandingDocument = {
         {
           id: "xlmusd",
           cells: {
-            symbol: { title: "Stellar", meta: "XLM/USD" },
+            symbol: { title: "Stellar", meta: "XLM/USD", iconSrc: "/images/markets/xlm.svg" },
             hours: "24/7",
             minimum: "0.0",
             average: "0.0",

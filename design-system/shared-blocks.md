@@ -78,6 +78,9 @@ crypto (quotes in the hero):
 
 equity-indices (quotes as a later rail):
   header → market-hero (atmosphere: indices) → features usp → table → logo-marquee → steps → spread-cards → reviews → footer
+
+energy-commodities (quotes as a later rail):
+  header → market-hero (atmosphere: energy) → features usp → platforms → table → logo-marquee → steps → spread-cards → reviews → faq → footer
 ```
 
 Shared core: **header · market-hero · features · table · steps · reviews · footer**.
@@ -89,7 +92,7 @@ Shared core: **header · market-hero · features · table · steps · reviews ·
 | `brand` | Purple Market Header art | TV chart card 599×480 | yes (`quotes[]`) | Default / Forex-like |
 | `crypto` | Light field + `CryptoCoinField` | White TV quotes card | yes (`quotes[]`, 5 themed instruments) | Crypto / coin markets |
 | `indices` | Light field + `IndicesField` | Globe + chips + in-flow ticker | **no** — use `spread-cards` later | Indices / global markets |
-| `energy` | Light field | Right-rail commodity well (orbiting props + core) | **no** — instruments stay in the table | Energy / soft commodities |
+| `energy` | Light field + gradient mesh | Right-rail oil barrel + orbiting commodities | **no** — use `spread-cards` later | Energy / soft commodities |
 
 Do not mix: indices hero never gets a quotes card; crypto never gets the globe; energy never uses the coin scatter, globe, or ticker.
 

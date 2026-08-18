@@ -3744,34 +3744,62 @@ a {
 
 .ui-section--hero.ui-section--energy-field {
   background-color: var(--color-background-energy-field);
+  background-image:
+    radial-gradient(ellipse 70% 55% at 12% 18%, var(--color-background-energy-field-glow-a) 0%, transparent 68%),
+    radial-gradient(ellipse 55% 60% at 88% 12%, var(--color-background-energy-field-glow-b) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 45% at 72% 88%, var(--color-background-energy-field-glow-c) 0%, transparent 72%),
+    radial-gradient(ellipse 40% 50% at 8% 82%, var(--color-background-energy-field-glow-d) 0%, transparent 68%);
 }
 
-.ui-section--energy-field::before,
-.ui-section--energy-field::after {
-  content: "";
+.ui-energy-field {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-index-base);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ui-energy-field__orb {
   position: absolute;
   border-radius: var(--radius-pill);
-  pointer-events: none;
-  z-index: var(--z-index-base);
   filter: blur(var(--space-20));
+  opacity: 0.88;
   animation: ui-coin-orb var(--component-energy-field-duration-drift-slow) var(--motion-easing-standard) infinite;
 }
 
-.ui-section--energy-field::before {
+.ui-energy-field__orb--a {
   width: var(--component-energy-field-orb-size);
   height: var(--component-energy-field-orb-size);
-  left: -12%;
-  top: -28%;
-  background: var(--color-background-energy-field-glow-a);
+  left: -16%;
+  top: -24%;
+  background: var(--color-background-energy-field-glow-c);
 }
 
-.ui-section--energy-field::after {
+.ui-energy-field__orb--b {
   width: var(--component-energy-field-orb-size);
   height: var(--component-energy-field-orb-size);
-  right: -10%;
-  bottom: -30%;
+  right: -14%;
+  top: -18%;
   background: var(--color-background-energy-field-glow-b);
-  animation-delay: calc(var(--component-energy-field-duration-drift) * -0.45);
+  animation-delay: calc(var(--component-energy-field-duration-drift) * -0.35);
+}
+
+.ui-energy-field__orb--c {
+  width: var(--component-energy-field-orb-size-sm);
+  height: var(--component-energy-field-orb-size-sm);
+  left: 28%;
+  bottom: -22%;
+  background: var(--color-background-energy-field-glow-a);
+  animation-delay: calc(var(--component-energy-field-duration-drift) * -0.7);
+}
+
+.ui-energy-field__orb--d {
+  width: var(--component-energy-field-orb-size-sm);
+  height: var(--component-energy-field-orb-size-sm);
+  right: 18%;
+  bottom: -8%;
+  background: var(--color-background-energy-field-glow-d);
+  animation-delay: calc(var(--component-energy-field-duration-drift-slow) * -0.2);
 }
 
 .ui-market-hero__stage {
@@ -3798,164 +3826,167 @@ a {
   aspect-ratio: 560 / 500;
 }
 
-.ui-energy-well__floor {
-  position: absolute;
-  left: 12%;
-  right: 12%;
-  top: 48%;
-  height: 42%;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    var(--color-background-energy-field-glow-a) 0%,
-    transparent 72%
-  );
-  opacity: 0.9;
-}
-
-.ui-energy-well__ring {
+.ui-energy-well__halo {
   position: absolute;
   left: 50%;
-  top: 50%;
-  border: var(--border-width-default) solid var(--primitive-color-purple300);
+  top: 68%;
+  width: 78%;
+  height: 28%;
   border-radius: 50%;
-  transform: translate(-50%, -50%) rotateX(66deg);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-background-energy-field-glow-c) 0%,
+    var(--color-background-energy-field-glow-a) 38%,
+    transparent 72%
+  );
+  filter: blur(var(--space-4));
+  opacity: 0.95;
+  animation: ui-energy-halo var(--component-energy-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+}
+
+.ui-energy-well__glow {
+  position: absolute;
+  border-radius: var(--radius-pill);
+  filter: blur(var(--space-16));
   pointer-events: none;
 }
 
-.ui-energy-well__ring--outer {
-  width: 86%;
-  height: 52%;
+.ui-energy-well__glow--warm {
+  left: 18%;
+  top: 22%;
+  width: 52%;
+  height: 46%;
+  background: var(--color-background-energy-field-glow-c);
   opacity: 0.55;
-  animation: ui-energy-ring var(--component-energy-field-duration-drift-slow) linear infinite;
+  animation: ui-coin-orb var(--component-energy-field-duration-drift) var(--motion-easing-standard) infinite;
 }
 
-.ui-energy-well__ring--inner {
+.ui-energy-well__glow--cool {
+  right: 8%;
+  bottom: 18%;
   width: 48%;
-  height: 28%;
-  border-color: var(--primitive-color-orange300);
-  opacity: 0.7;
-  animation: ui-energy-ring var(--component-energy-field-duration-drift) linear infinite reverse;
+  height: 42%;
+  background: var(--color-background-energy-field-glow-b);
+  opacity: 0.5;
+  animation: ui-coin-orb var(--component-energy-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+  animation-delay: calc(var(--component-energy-field-duration-drift) * -0.5);
 }
 
-.ui-energy-well__core {
+.ui-energy-well__barrel {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: var(--component-energy-field-size-md);
-  height: var(--component-energy-field-size-md);
-  border-radius: var(--radius-pill);
+  z-index: 3;
+  width: var(--component-energy-field-size-hero);
+  height: var(--component-energy-field-size-hero);
   transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    var(--primitive-color-orange400) 0%,
-    var(--primitive-color-purple500) 42%,
-    transparent 70%
-  );
-  filter: blur(var(--space-2));
-  animation: ui-energy-core var(--component-energy-field-duration-drift-fast) var(--motion-easing-standard) infinite;
-}
-
-.ui-energy-well__drop {
-  position: absolute;
-  left: 50%;
-  top: 22%;
-  width: var(--space-3);
-  height: var(--space-4);
-  border-radius: 50% 50% 45% 45%;
-  background: var(--primitive-color-purple500);
-  transform: translateX(-50%);
-  animation: ui-energy-drop 2.6s var(--motion-easing-emphasized) infinite;
-}
-
-.ui-energy-well__item {
-  position: absolute;
-  inset: 0;
-  width: var(--component-energy-field-size-lg);
-  height: var(--component-energy-field-size-lg);
-  offset-rotate: 0deg;
-  offset-anchor: center;
-  animation: ui-energy-orbit var(--orbit-dur, 20s) linear infinite;
-  animation-direction: var(--orbit-dir, normal);
   filter: drop-shadow(var(--component-energy-field-shadow));
+  animation: ui-energy-barrel var(--component-energy-field-duration-drift-slow) var(--motion-easing-standard) infinite;
 }
 
-.ui-energy-well__item img {
+.ui-energy-well__barrel img,
+.ui-energy-well__sat img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.ui-energy-well__item--oil {
+.ui-energy-well__sat {
+  position: absolute;
+  inset: 0;
+  offset-rotate: 0deg;
+  offset-anchor: center;
+  animation: ui-energy-orbit var(--orbit-dur, 24s) linear var(--orbit-delay, 0s) infinite;
+  animation-direction: var(--orbit-dir, normal);
+  filter: drop-shadow(var(--component-energy-field-shadow));
+}
+
+.ui-energy-well__sat img {
+  animation: ui-energy-sat-sway var(--component-energy-field-duration-drift) var(--motion-easing-standard) infinite;
+}
+
+.ui-energy-well__sat--gas {
   width: var(--component-energy-field-size-xl);
   height: var(--component-energy-field-size-xl);
-  offset-path: ellipse(28% 16% at 50% 52%);
+  offset-path: ellipse(54% 34% at 50% 52%);
 }
 
-.ui-energy-well__item--gas {
+.ui-energy-well__sat--wheat {
   width: var(--component-energy-field-size-lg);
   height: var(--component-energy-field-size-lg);
-  offset-path: ellipse(37% 21% at 50% 52%);
+  offset-path: ellipse(46% 40% at 50% 48%);
 }
 
-.ui-energy-well__item--wheat {
-  width: var(--component-energy-field-size-md);
-  height: var(--component-energy-field-size-md);
-  offset-path: ellipse(45% 26% at 50% 52%);
-}
-
-.ui-energy-well__item--soy {
-  width: var(--component-energy-field-size-md);
-  height: var(--component-energy-field-size-md);
-  offset-path: ellipse(33% 18% at 50% 52%);
+.ui-energy-well__sat--soy {
+  width: var(--component-energy-field-size-lg);
+  height: var(--component-energy-field-size-lg);
+  offset-path: ellipse(40% 22% at 50% 58%);
 }
 
 @keyframes ui-energy-orbit {
-  from {
-    offset-distance: var(--orbit-from, 0%);
+  0% {
+    offset-distance: 0%;
+    transform: scale(0.9);
+    z-index: 2;
+    opacity: 0.92;
   }
-  to {
-    offset-distance: calc(var(--orbit-from, 0%) + 100%);
+  25% {
+    offset-distance: 25%;
+    transform: scale(1.12);
+    z-index: 4;
+    opacity: 1;
+  }
+  50% {
+    offset-distance: 50%;
+    transform: scale(0.88);
+    z-index: 2;
+    opacity: 0.9;
+  }
+  75% {
+    offset-distance: 75%;
+    transform: scale(0.62);
+    z-index: 1;
+    opacity: 0.72;
+  }
+  100% {
+    offset-distance: 100%;
+    transform: scale(0.9);
+    z-index: 2;
+    opacity: 0.92;
   }
 }
 
-@keyframes ui-energy-ring {
-  from {
-    transform: translate(-50%, -50%) rotateX(66deg) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotateX(66deg) rotate(360deg);
-  }
-}
-
-@keyframes ui-energy-core {
+@keyframes ui-energy-barrel {
   0%,
   100% {
-    opacity: 0.55;
-    transform: translate(-50%, -50%) scale(0.92);
+    transform: translate(-50%, -50%) rotate(-2deg) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(2deg) translateY(calc(var(--component-energy-field-float) * -0.45));
+  }
+}
+
+@keyframes ui-energy-sat-sway {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes ui-energy-halo {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(0.96);
   }
   50% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.12);
-  }
-}
-
-@keyframes ui-energy-drop {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0) scale(0.45);
-  }
-  18% {
-    opacity: 1;
-  }
-  78% {
-    opacity: 1;
-    transform: translate(-50%, var(--component-energy-field-size-xl)) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, calc(var(--component-energy-field-size-xl) + var(--space-4))) scale(0.2);
+    transform: translate(-50%, -50%) scale(1.06);
   }
 }
 
@@ -5323,13 +5354,25 @@ a {
     animation: none;
   }
 
-  .ui-energy-well__item,
-  .ui-energy-well__ring,
-  .ui-energy-well__core,
-  .ui-energy-well__drop,
-  .ui-section--energy-field::before,
-  .ui-section--energy-field::after {
+  .ui-energy-field__orb,
+  .ui-energy-well__sat,
+  .ui-energy-well__sat img,
+  .ui-energy-well__barrel,
+  .ui-energy-well__halo,
+  .ui-energy-well__glow {
     animation: none;
+  }
+
+  .ui-energy-well__sat--gas {
+    offset-distance: 12%;
+  }
+
+  .ui-energy-well__sat--wheat {
+    offset-distance: 58%;
+  }
+
+  .ui-energy-well__sat--soy {
+    offset-distance: 82%;
   }
 
   .ui-coin-field__coin {
@@ -5714,16 +5757,25 @@ a {
     order: -1;
   }
 
-  .ui-energy-well__item--oil {
-    width: var(--component-energy-field-size-lg);
-    height: var(--component-energy-field-size-lg);
+  .ui-energy-well__barrel {
+    width: var(--component-energy-field-size-xl);
+    height: var(--component-energy-field-size-xl);
   }
 
-  .ui-energy-well__item--gas,
-  .ui-energy-well__item--wheat,
-  .ui-energy-well__item--soy {
+  .ui-energy-well__sat--gas {
     width: var(--component-energy-field-size-sm);
     height: var(--component-energy-field-size-sm);
+  }
+
+  .ui-energy-well__sat--wheat,
+  .ui-energy-well__sat--soy {
+    width: var(--component-energy-field-size-xs);
+    height: var(--component-energy-field-size-xs);
+  }
+
+  .ui-energy-field__orb {
+    width: var(--component-energy-field-orb-size-sm);
+    height: var(--component-energy-field-orb-size-sm);
   }
 
   /* M1 375: title → lead → hug Light CTA → 343×364 slot. Hide extra CTA. */

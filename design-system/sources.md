@@ -61,7 +61,8 @@ Everything visual should be traceable. When you change tokens or inventories, no
 | Reviews mobile | `29987:343348` | Same structure; 280 cards; arrows stay |
 
 - Trustpilot mark, wordmark, star tiles, and default avatar exported to `public/brand/trustpilot/`.
-- Rating chrome `4.8 | 7.2k` is the Figma value — refresh from live Trustpilot before campaign launch.
+- Rating chrome refreshed 2026-08-18 from live fusionmarkets.com TrustBox: `4.5 | 1.7k` (1728 reviews). Figma frame still shows 4.8 / 7.2k.
+- Review cards 2026-08-18: BruceWayne001 stays as the known Trustpilot quote; three further cards use named TradingView broker reviews (`salemhaddad34`, `mcyassie`, `ransuliman`) because the Trustpilot widget is not scrapeable here and the live Energy page has no quote list.
 - Actor: agent + user
 
 
