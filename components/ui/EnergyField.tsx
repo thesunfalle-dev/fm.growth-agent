@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 const SATELLITES = [
   {
     id: "gas",
-    src: "/images/energy/gas.png",
+    src: "/images/energy/gas-v2.png",
     label: "Natural gas",
     duration: "22s",
     delay: "0s",
@@ -13,7 +13,7 @@ const SATELLITES = [
   },
   {
     id: "wheat",
-    src: "/images/energy/wheat.png",
+    src: "/images/energy/wheat-v2.png",
     label: "Wheat",
     duration: "30s",
     delay: "-10s",
@@ -21,7 +21,7 @@ const SATELLITES = [
   },
   {
     id: "soy",
-    src: "/images/energy/soy.png",
+    src: "/images/energy/soy-v2.png",
     label: "Soybeans",
     duration: "26s",
     delay: "-17s",
@@ -102,7 +102,7 @@ export function EnergyWell() {
           </span>
         ))}
         <span className="ui-energy-well__barrel">
-          <img src="/images/energy/oil.png" alt="" width={640} height={640} draggable={false} />
+          <img src="/images/energy/oil-v2.png" alt="" width={640} height={640} draggable={false} />
         </span>
       </div>
     </div>

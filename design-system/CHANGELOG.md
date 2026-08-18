@@ -1,5 +1,9 @@
 # Design system changelog
 
+## 2026-08-18 — Energy props match coin product language
+
+- Replaced toy-painted barrel / cartoon flame / gift-bow wheat / tagged soy with industrial stills: brushed steel drum + thin purple rim, full propane cylinder, twine-bound wheat, hessian sack. Cache-bust `*-v2.png`.
+
 ## 2026-08-18 — Distinct trader reviews + missing market icons
 
 - Reviews defaults: four distinct named quotes (Trustpilot BruceWayne001 + verified TradingView trader reviews). No repeated Figma filler name.
