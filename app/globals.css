@@ -100,6 +100,7 @@ a {
 /* Full-bleed brand / atmosphere hero — no side gutters / edge crop */
 .ui-section--hero.ui-section--brand-bg,
 .ui-section--hero.ui-section--crypto-field,
+.ui-section--hero.ui-section--energy-field,
 .ui-section--hero.ui-section--light-field {
   width: 100%;
   max-width: none;
@@ -3453,7 +3454,8 @@ a {
 
 /* Light market atmospheres — crypto coins / indices globe (not the purple BG art) */
 .ui-section--light-field,
-.ui-section--crypto-field {
+.ui-section--crypto-field,
+.ui-section--energy-field {
   position: relative;
   overflow: hidden;
   color: var(--color-text-primary);
@@ -3464,7 +3466,8 @@ a {
 }
 
 .ui-section--light-field .ui-container,
-.ui-section--crypto-field .ui-container {
+.ui-section--crypto-field .ui-container,
+.ui-section--energy-field .ui-container {
   position: relative;
   z-index: var(--z-index-content);
   isolation: isolate;
@@ -3474,7 +3477,8 @@ a {
 }
 
 .ui-section--light-field .ui-market-hero__panel--tv,
-.ui-section--crypto-field .ui-market-hero__panel--tv {
+.ui-section--crypto-field .ui-market-hero__panel--tv,
+.ui-section--energy-field .ui-market-hero__panel--tv {
   background: var(--color-background-canvas);
   border-color: var(--primitive-color-purple200);
   box-shadow: var(--shadow-card);
@@ -3485,7 +3489,9 @@ a {
 .ui-section--light-field .ui-tv-card,
 .ui-section--light-field .ui-tv-card__axis-label,
 .ui-section--crypto-field .ui-tv-card,
-.ui-section--crypto-field .ui-tv-card__axis-label {
+.ui-section--crypto-field .ui-tv-card__axis-label,
+.ui-section--energy-field .ui-tv-card,
+.ui-section--energy-field .ui-tv-card__axis-label {
   color: var(--color-text-primary);
 }
 
@@ -3711,6 +3717,210 @@ a {
   }
   50% {
     transform: scale(1.08) translate3d(var(--space-4), calc(var(--space-6) * -1), 0);
+  }
+}
+
+.ui-energy-field {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-index-base);
+  pointer-events: none;
+  overflow: hidden;
+  --px: 0;
+  --py: 0;
+}
+
+.ui-section--hero.ui-section--energy-field {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background-energy-field);
+}
+
+.ui-energy-field__orb {
+  position: absolute;
+  border-radius: var(--radius-pill);
+  filter: blur(var(--space-20));
+  opacity: 0.92;
+  animation: ui-coin-orb var(--component-energy-field-duration-drift-slow) var(--motion-easing-standard) infinite;
+}
+
+.ui-energy-field__orb--a {
+  width: var(--component-energy-field-orb-size);
+  height: var(--component-energy-field-orb-size);
+  left: -10%;
+  top: -20%;
+  background: var(--color-background-energy-field-glow-a);
+}
+
+.ui-energy-field__orb--b {
+  width: var(--component-energy-field-orb-size);
+  height: var(--component-energy-field-orb-size);
+  right: -8%;
+  bottom: -24%;
+  background: var(--color-background-energy-field-glow-b);
+  animation-delay: calc(var(--component-energy-field-duration-drift) * -0.4);
+}
+
+.ui-energy-field__heat {
+  position: absolute;
+  left: 8%;
+  bottom: 12%;
+  width: var(--component-energy-field-size-xl);
+  height: var(--component-energy-field-size-xl);
+  border-radius: var(--radius-pill);
+  background: var(--color-background-energy-field-glow-a);
+  filter: blur(var(--space-16));
+  opacity: 0.55;
+  animation: ui-energy-heat var(--component-energy-field-duration-drift) var(--motion-easing-standard) infinite;
+}
+
+.ui-energy-field__prop {
+  position: absolute;
+  left: var(--prop-x);
+  top: var(--prop-y);
+  width: var(--component-energy-field-size-md);
+  height: var(--component-energy-field-size-md);
+  opacity: var(--prop-opacity, 1);
+  animation: ui-coin-enter-left var(--component-energy-field-duration-enter) var(--motion-easing-emphasized) backwards;
+  animation-delay: var(--enter-delay, 0ms);
+}
+
+.ui-energy-field__prop[data-side="right"] {
+  animation-name: ui-coin-enter-right;
+}
+
+.ui-energy-field__prop--xs {
+  width: var(--component-energy-field-size-xs);
+  height: var(--component-energy-field-size-xs);
+}
+
+.ui-energy-field__prop--sm {
+  width: var(--component-energy-field-size-sm);
+  height: var(--component-energy-field-size-sm);
+}
+
+.ui-energy-field__prop--md {
+  width: var(--component-energy-field-size-md);
+  height: var(--component-energy-field-size-md);
+}
+
+.ui-energy-field__prop--lg {
+  width: var(--component-energy-field-size-lg);
+  height: var(--component-energy-field-size-lg);
+}
+
+.ui-energy-field__prop--xl {
+  width: var(--component-energy-field-size-xl);
+  height: var(--component-energy-field-size-xl);
+}
+
+.ui-energy-field__prop--full {
+  --prop-opacity: var(--component-energy-field-opacity);
+}
+
+.ui-energy-field__prop--soft {
+  --prop-opacity: var(--component-energy-field-opacity-soft);
+}
+
+.ui-energy-field__prop[data-slot="1"] { --prop-x: -4%; --prop-y: 6%; }
+.ui-energy-field__prop[data-slot="2"] { --prop-x: -2%; --prop-y: 72%; }
+.ui-energy-field__prop[data-slot="3"] { --prop-x: 14%; --prop-y: -2%; }
+.ui-energy-field__prop[data-slot="4"] { --prop-x: 16%; --prop-y: 86%; }
+.ui-energy-field__prop[data-slot="5"] { --prop-x: 90%; --prop-y: 4%; }
+.ui-energy-field__prop[data-slot="6"] { --prop-x: 88%; --prop-y: 68%; }
+.ui-energy-field__prop[data-slot="7"] { --prop-x: 76%; --prop-y: -4%; }
+.ui-energy-field__prop[data-slot="8"] { --prop-x: 78%; --prop-y: 86%; }
+
+.ui-energy-field__float {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: ui-coin-float var(--float-duration, var(--component-energy-field-duration-drift))
+    var(--motion-easing-standard)
+    calc(var(--enter-delay, 0ms) + var(--component-energy-field-duration-enter)) infinite;
+}
+
+.ui-energy-field__disc {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(
+    calc(var(--px) * var(--component-energy-field-parallax) * var(--depth, 1)),
+    calc(var(--py) * var(--component-energy-field-parallax) * var(--depth, 1)),
+    0
+  );
+  transition: transform var(--motion-duration-emphasis) var(--motion-easing-emphasized);
+  filter: drop-shadow(var(--component-energy-field-shadow));
+}
+
+.ui-energy-field__disc img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ui-energy-field__tape {
+  position: relative;
+  z-index: var(--z-index-content);
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 100%;
+  height: var(--component-energy-field-tape-height);
+  background: var(--color-background-energy-tape);
+  border-top: var(--border-width-default) solid var(--primitive-color-orange200);
+}
+
+.ui-energy-ticker {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: ui-index-ticker var(--component-energy-field-ticker-duration) linear infinite;
+}
+
+.ui-energy-ticker__track {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: var(--component-energy-field-tape-gap);
+  height: 100%;
+  padding-right: var(--component-energy-field-tape-gap);
+}
+
+.ui-energy-ticker__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  white-space: nowrap;
+  color: var(--color-text-primary);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-c1);
+}
+
+.ui-energy-ticker__item b {
+  font-family: var(--typography-font-family-heading);
+  font-weight: var(--typography-font-weight-semibold);
+}
+
+.ui-energy-ticker__item em {
+  font-style: normal;
+  color: var(--primitive-color-green600);
+}
+
+.ui-energy-ticker__item--down em {
+  color: var(--primitive-color-red500);
+}
+
+@keyframes ui-energy-heat {
+  0%,
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2) translate3d(var(--space-3), calc(var(--space-4) * -1), 0);
+    opacity: 0.7;
   }
 }
 
@@ -3967,12 +4177,14 @@ a {
 }
 
 /* Indices: hug copy+card so the ticker sits at the end of block 1, not the fold */
-.ui-section--hero.ui-section--market-hero.ui-section--indices-field {
+.ui-section--hero.ui-section--market-hero.ui-section--indices-field,
+.ui-section--hero.ui-section--market-hero.ui-section--energy-field {
   min-height: 0;
   padding-bottom: 0;
 }
 
-.ui-section--market-hero.ui-section--indices-field .ui-container {
+.ui-section--market-hero.ui-section--indices-field .ui-container,
+.ui-section--market-hero.ui-section--energy-field .ui-container {
   min-height: 0;
 }
 
@@ -4063,7 +4275,8 @@ a {
 /* Same solid white quotes card as crypto — must win over the frosted brand panel */
 .ui-section--light-field .ui-market-hero__panel--tv,
 .ui-section--crypto-field .ui-market-hero__panel--tv,
-.ui-section--indices-field .ui-market-hero__panel--tv {
+.ui-section--indices-field .ui-market-hero__panel--tv,
+.ui-section--energy-field .ui-market-hero__panel--tv {
   background: var(--color-background-canvas);
   border-color: var(--primitive-color-purple200);
   box-shadow: var(--shadow-card);
@@ -5077,6 +5290,14 @@ a {
     animation: none;
   }
 
+  .ui-energy-field__prop,
+  .ui-energy-field__float,
+  .ui-energy-field__orb,
+  .ui-energy-field__heat,
+  .ui-energy-ticker {
+    animation: none;
+  }
+
   .ui-coin-field__coin {
     opacity: var(--coin-opacity, 1);
   }
@@ -5451,6 +5672,39 @@ a {
   }
 
   .ui-indices-field__orbit {
+    display: none;
+  }
+
+  .ui-energy-field__prop--xl,
+  .ui-energy-field__prop--lg {
+    width: var(--component-energy-field-size-md);
+    height: var(--component-energy-field-size-md);
+  }
+
+  .ui-energy-field__prop[data-slot="1"] {
+    --prop-x: -12%;
+    --prop-y: -4%;
+  }
+
+  .ui-energy-field__prop[data-slot="2"] {
+    --prop-x: -14%;
+    --prop-y: 48%;
+  }
+
+  .ui-energy-field__prop[data-slot="5"] {
+    --prop-x: 82%;
+    --prop-y: -8%;
+  }
+
+  .ui-energy-field__prop[data-slot="6"] {
+    --prop-x: 84%;
+    --prop-y: 78%;
+  }
+
+  .ui-energy-field__prop[data-slot="3"],
+  .ui-energy-field__prop[data-slot="4"],
+  .ui-energy-field__prop[data-slot="7"],
+  .ui-energy-field__prop[data-slot="8"] {
     display: none;
   }
 

@@ -79,6 +79,18 @@
       "notes": "market-hero atmosphere: indices. Globe (public/images/indices/globe-v2.png) + equator spark + chips. Mobile: chips hidden, globe peeks from the right. Ticker is IndicesTicker in MarketHero."
     },
     {
+      "name": "EnergyField",
+      "category": "media",
+      "status": "ready",
+      "path": "components/ui/EnergyField.tsx",
+      "figma": "",
+      "variants": ["energy"],
+      "sizes": ["xs", "sm", "md", "lg", "xl"],
+      "requiredStates": ["default", "reduced-motion"],
+      "tokenDependencies": ["component.energyField", "semantic.color.background"],
+      "notes": "market-hero atmosphere: energy. Light field + 3D commodity props (public/images/energy) + in-flow ticker. Quotes card stays. Not a Figma chrome replacement."
+    },
+    {
       "name": "FaqItem",
       "category": "sections",
       "status": "ready",

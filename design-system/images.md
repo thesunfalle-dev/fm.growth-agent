@@ -69,5 +69,5 @@ Hero with brand background: light type + primary/secondary CTAs over purple art.
 1. Need UI chrome glyph → `Icon` (Material).  
 2. Need feature/marketing visual → `Illustration` from catalog.  
 3. Prefer shared `BackgroundImage` for purple section fills; avoid inventing new gradients as SoT backgrounds.  
-   Exception: `market-hero` `atmosphere: "crypto"` uses `CryptoCoinField`; `atmosphere: "indices"` uses `IndicesField` (`public/images/indices/globe-v2.png`).  
+   Exception: `market-hero` `atmosphere: "crypto"` uses `CryptoCoinField`; `atmosphere: "indices"` uses `IndicesField` (`public/images/indices/globe-v2.png`); `atmosphere: "energy"` uses `EnergyField` (`public/images/energy`).  
 4. New illustration names only if they appear in Figma Component 9.

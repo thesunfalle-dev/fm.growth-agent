@@ -139,8 +139,9 @@ export type LandingBlock =
        * brand — shared purple Market Header art (default).
        * crypto — light field + 3D coins + white quotes card.
        * indices — light field + globe + chips + in-flow ticker (no quotes card).
+       * energy — light field + commodity props + ticker + quotes card.
        */
-      atmosphere?: "brand" | "crypto" | "indices";
+      atmosphere?: "brand" | "crypto" | "indices" | "energy";
     }
   | {
       type: "features";

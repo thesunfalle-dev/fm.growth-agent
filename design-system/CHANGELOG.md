@@ -1,5 +1,11 @@
 # Design system changelog
 
+## 2026-08-17 — Energy market-hero atmosphere
+
+- `market-hero` `atmosphere: energy`: light field, 3D oil / gas / wheat / soy props (`public/images/energy`), warm + purple orbs, in-flow commodity ticker.
+- Quotes card stays (same as crypto). Energy landing uses this instead of brand purple art.
+- Tokens **0.23.0**.
+
 ## 2026-08-17 — Platforms store download buttons
 
 - Figma Store download button (`28610:429962`): Download + For MacOS / Windows / Linux, 144×48 desktop, 343×40 stacked on 375.

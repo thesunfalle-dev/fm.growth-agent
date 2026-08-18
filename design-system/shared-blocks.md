@@ -30,7 +30,7 @@ Omit a listed default prop in `content.ts` to get the shared chrome.
 | `type` | Intent | Defaults (`lib/block-defaults.ts`) | Content the landing fills |
 |--------|--------|------------------------------------|---------------------------|
 | `hero` | Offer / award / platform pitch | `primaryCta` = Start trading | title, subtitle, optional eyebrow/bullets/secondary |
-| `market-hero` | Market product header | `primaryCta` = Start trading, `atmosphere` = brand | eyebrow, title, subtitle or bullets, optional `quotes[]`, `atmosphere`: `brand` / `crypto` / `indices` |
+| `market-hero` | Market product header | `primaryCta` = Start trading, `atmosphere` = brand | eyebrow, title, subtitle or bullets, optional `quotes[]`, `atmosphere`: `brand` / `crypto` / `indices` / `energy` |
 | `features` | Why Fusion / benefits | `variant` = `usp` | title, items (illustration + copy) |
 | `table` | Instruments or compare matrix | `variant` = `markets`, search + scroll on | title, `columns` (use `instrumentsColumns`), rows, optional footnote. Compare: `variant: "compare"` |
 | `steps` | How It Works | title, subtitle, `horizontal` | items (sentence-case titles), optional CTAs |
@@ -89,8 +89,9 @@ Shared core: **header · market-hero · features · table · steps · reviews ·
 | `brand` | Purple Market Header art | TV chart card 599×480 | yes (`quotes[]`) | Default / Forex-like |
 | `crypto` | Light field + `CryptoCoinField` | White TV quotes card | yes (`quotes[]`, 5 themed instruments) | Crypto / coin markets |
 | `indices` | Light field + `IndicesField` | Globe + chips + in-flow ticker | **no** — use `spread-cards` later | Indices / global markets |
+| `energy` | Light field + `EnergyField` | Commodity props + in-flow ticker | yes (`quotes[]`) | Energy / soft commodities |
 
-Do not mix: indices hero never gets a quotes card; crypto never gets the globe.
+Do not mix: indices hero never gets a quotes card; crypto never gets the globe; energy never uses the coin or globe fields.
 
 ### `spread-cards` reuse
 

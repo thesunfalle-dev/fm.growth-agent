@@ -9,13 +9,13 @@ import type { LandingDocument } from "@/lib/types";
  * Structure (layout, block types): Figma DS / recipe M1 only.
  * Content (copy, numbers, which rows): TZ + live FM Energy page. Never Figma sample copy.
  *
- * Stack: market-hero brand → features usp → platforms → instruments table →
+ * Stack: market-hero energy → features usp → platforms → instruments table →
  * logo-marquee → steps → reviews → faq (site footer CTA below).
  */
 const landing: LandingDocument = {
   slug: "energy-commodities",
   name: "Energy and Soft Commodities",
-  note: "Market recipe M1 with brand atmosphere. Quotes in the hero. TZ 2026-08-17.",
+  note: "Market recipe M1 with energy atmosphere + quotes in the hero. TZ 2026-08-17.",
   listed: true,
   status: "review",
   createdAt: "2026-08-17",
@@ -28,7 +28,7 @@ const landing: LandingDocument = {
   blocks: [
     {
       type: "market-hero",
-      atmosphere: "brand",
+      atmosphere: "energy",
       eyebrow: "Energy and Soft Commodities",
       title: "Pay $0 Commission on Commodity CFDs",
       bullets: [

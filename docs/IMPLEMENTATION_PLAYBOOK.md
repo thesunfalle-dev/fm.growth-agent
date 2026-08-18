@@ -147,7 +147,7 @@ Map Figma names to tokens:
 
 Canonical market stack (locked 2026-08-17 — see `shared-blocks.md` and `landing-patterns.md` recipe D):
 
-1. `market-hero` + `atmosphere`: `brand` | `crypto` | `indices`
+1. `market-hero` + `atmosphere`: `brand` | `crypto` | `indices` | `energy`
 2. `features` + `variant: "usp"` (max 4 visible → horizontal rail + nav if more)
 3. `table` instruments (`showSearch`, scrollable shell)
 4. `table` + `variant: "compare"` (optional — crypto)

@@ -2,6 +2,7 @@ import { BackgroundImage } from "@/components/ui/BackgroundImage";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CryptoCoinField } from "@/components/ui/CryptoCoinField";
+import { EnergyField, EnergyTicker } from "@/components/ui/EnergyField";
 import { IndicesField, IndicesTicker } from "@/components/ui/IndicesField";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
@@ -26,7 +27,7 @@ type MarketHeroProps = {
   quotes?: MarketHeroQuoteRow[];
   quote?: MarketHeroQuote;
   trustpilot?: MarketHeroTrustpilot;
-  atmosphere?: "brand" | "crypto" | "indices";
+  atmosphere?: "brand" | "crypto" | "indices" | "energy";
 };
 
 /** Shared Market Header shell based on the Figma market-header composition. */
@@ -46,7 +47,8 @@ export function MarketHero({
   const showSummary = !showQuotes && Boolean(quote || trustpilot);
   const isCryptoField = atmosphere === "crypto";
   const isIndicesField = atmosphere === "indices";
-  const isLightField = isCryptoField || isIndicesField;
+  const isEnergyField = atmosphere === "energy";
+  const isLightField = isCryptoField || isIndicesField || isEnergyField;
   return (
     <Section
       variant="hero"
@@ -55,12 +57,14 @@ export function MarketHero({
         isLightField ? "ui-section--light-field" : "ui-section--brand-bg",
         isCryptoField ? "ui-section--crypto-field" : "",
         isIndicesField ? "ui-section--indices-field" : "",
+        isEnergyField ? "ui-section--energy-field" : "",
       ]
         .filter(Boolean)
         .join(" ")}
     >
       {isCryptoField ? <CryptoCoinField /> : null}
       {isIndicesField ? <IndicesField /> : null}
+      {isEnergyField ? <EnergyField /> : null}
       {!isLightField ? <BackgroundImage variant="decorative" /> : null}
       <Container>
         <div className="ui-market-hero__layout">
@@ -120,6 +124,7 @@ export function MarketHero({
         </div>
       </Container>
       {isIndicesField ? <IndicesTicker /> : null}
+      {isEnergyField ? <EnergyTicker /> : null}
     </Section>
   );
 }
