@@ -19,7 +19,7 @@ const landing: LandingDocument = {
   listed: true,
   status: "review",
   createdAt: "2026-08-17",
-  updatedAt: "2026-08-17",
+  updatedAt: "2026-08-18",
   seo: {
     title: "Pay $0 Commission on Commodity CFDs | Fusion Markets",
     description:
