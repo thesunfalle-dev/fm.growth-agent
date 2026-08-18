@@ -15,7 +15,7 @@ import type { LandingDocument } from "@/lib/types";
 const landing: LandingDocument = {
   slug: "energy-commodities",
   name: "Energy and Soft Commodities",
-  note: "Market recipe M1 with energy atmosphere + quotes in the hero. TZ 2026-08-17.",
+  note: "Market recipe M1 with energy well hero. TZ 2026-08-17.",
   listed: true,
   status: "review",
   createdAt: "2026-08-17",
@@ -38,13 +38,6 @@ const landing: LandingDocument = {
         "MT4, MT5 or cTrader platforms",
       ],
       secondaryCta: sharedCtas.tryDemo,
-      quotes: [
-        { id: "xtiusd", symbol: "XTIUSD", label: "WTI Crude Oil", bid: 78.42, ask: 78.45, digits: 2 },
-        { id: "xbrusd", symbol: "XBRUSD", label: "Brent Crude Oil", bid: 82.16, ask: 82.19, digits: 2 },
-        { id: "xngusd", symbol: "XNGUSD", label: "Natural Gas", bid: 3.214, ask: 3.221, digits: 3 },
-        { id: "wheat", symbol: "WHEAT", label: "Wheat", bid: 548.2, ask: 548.6, digits: 1 },
-        { id: "soybn", symbol: "SOYBN", label: "Soybeans", bid: 1042.4, ask: 1043.0, digits: 1 },
-      ],
     },
     {
       type: "features",

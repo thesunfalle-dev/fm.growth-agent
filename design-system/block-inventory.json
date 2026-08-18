@@ -36,7 +36,7 @@
     {
       "type": "market-hero",
       "status": "ready",
-      "description": "Market Header with atmosphere variants: brand (purple + TV card), crypto (light field + coins + quotes card), indices (light field + globe + chips + ticker, no quotes card), energy (light field + commodity props + ticker + quotes card).",
+      "description": "Market Header with atmosphere variants: brand (purple + TV card), crypto (light field + coins + quotes card), indices (light field + globe + chips + ticker, no quotes card), energy (light field + orbiting commodity well, no quotes card).",
       "component": "components/blocks/MarketHero.tsx",
       "figma": "23570:104257 / 17172:52853",
       "props": {

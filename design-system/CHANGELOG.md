@@ -1,9 +1,15 @@
 # Design system changelog
 
-## 2026-08-17 — Energy market-hero atmosphere
+## 2026-08-18 — USP rail steps one card; mobile markets table fits 343
 
-- `market-hero` `atmosphere: energy`: light field, 3D oil / gas / wheat / soy props (`public/images/energy`), warm + purple orbs, in-flow commodity ticker.
-- Quotes card stays (same as crypto). Energy landing uses this instead of brand purple art.
+- Desktop USP arrows advance exactly one card from the current start snap (no longer center the mid-viewport card). End padding lets 6 cards make two full steps.
+- Mobile markets table stays in the 343 column (no 520px min-width / 400px symbol col). Search keeps a compact field.
+- Reviews defaults: drop duplicate BruceWayne filler cards; Trustpilot chrome 4.5 / 1.7k from live fusionmarkets.com (2026-08-18).
+
+## 2026-08-17 — Energy well hero
+
+- Energy atmosphere is a right-rail **well**: four commodity props ride elliptical orbits around a pulsing core and falling drop. No ticker, no corner scatter, no quotes card.
+- Pointer tilts the well. Mobile: well stacks above copy.
 - Tokens **0.23.0**.
 
 ## 2026-08-17 — Platforms store download buttons

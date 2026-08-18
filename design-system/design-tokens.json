@@ -416,6 +416,9 @@
       "tickerDuration": "34s",
       "tapeHeight": "36px",
       "tapeGap": "40px",
+      "wellWidth": "560px",
+      "wellHeight": "500px",
+      "gridPerspective": "900px",
       "shadow": "0 14px 32px rgba(13, 19, 80, 0.14)",
       "opacity": "0.96",
       "opacitySoft": "0.72"

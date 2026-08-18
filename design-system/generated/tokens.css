@@ -346,6 +346,9 @@
   --component-energy-field-ticker-duration: 34s;
   --component-energy-field-tape-height: 36px;
   --component-energy-field-tape-gap: 40px;
+  --component-energy-field-well-width: 560px;
+  --component-energy-field-well-height: 500px;
+  --component-energy-field-grid-perspective: 900px;
   --component-energy-field-shadow: 0 14px 32px rgba(13, 19, 80, 0.14);
   --component-energy-field-opacity: 0.96;
   --component-energy-field-opacity-soft: 0.72;

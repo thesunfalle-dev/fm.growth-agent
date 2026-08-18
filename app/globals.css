@@ -2208,9 +2208,31 @@ a {
     max-height: var(--component-table-max-height);
   }
 
+  /* Forex-Mobile 343: fit the content column. Do not keep the 520px desktop min-width. */
   .ui-table {
-    table-layout: auto;
-    min-width: 32.5rem; /* keep numeric cols readable — Forex-Mobile 343 shell */
+    table-layout: fixed;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .ui-table__cell {
+    width: auto !important; /* beat inline desktop col widths (400px symbol) */
+  }
+
+  .ui-table__cell:first-child {
+    width: 40% !important;
+  }
+
+  .ui-table__header-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .ui-table__row--body {
@@ -3720,207 +3742,220 @@ a {
   }
 }
 
-.ui-energy-field {
-  position: absolute;
-  inset: 0;
-  z-index: var(--z-index-base);
-  pointer-events: none;
-  overflow: hidden;
-  --px: 0;
-  --py: 0;
-}
-
 .ui-section--hero.ui-section--energy-field {
-  display: flex;
-  flex-direction: column;
   background-color: var(--color-background-energy-field);
 }
 
-.ui-energy-field__orb {
+.ui-section--energy-field::before,
+.ui-section--energy-field::after {
+  content: "";
   position: absolute;
   border-radius: var(--radius-pill);
+  pointer-events: none;
+  z-index: var(--z-index-base);
   filter: blur(var(--space-20));
-  opacity: 0.92;
   animation: ui-coin-orb var(--component-energy-field-duration-drift-slow) var(--motion-easing-standard) infinite;
 }
 
-.ui-energy-field__orb--a {
+.ui-section--energy-field::before {
   width: var(--component-energy-field-orb-size);
   height: var(--component-energy-field-orb-size);
-  left: -10%;
-  top: -20%;
+  left: -12%;
+  top: -28%;
   background: var(--color-background-energy-field-glow-a);
 }
 
-.ui-energy-field__orb--b {
+.ui-section--energy-field::after {
   width: var(--component-energy-field-orb-size);
   height: var(--component-energy-field-orb-size);
-  right: -8%;
-  bottom: -24%;
+  right: -10%;
+  bottom: -30%;
   background: var(--color-background-energy-field-glow-b);
-  animation-delay: calc(var(--component-energy-field-duration-drift) * -0.4);
+  animation-delay: calc(var(--component-energy-field-duration-drift) * -0.45);
 }
 
-.ui-energy-field__heat {
+.ui-market-hero__stage {
+  position: relative;
+  z-index: var(--z-index-content);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--component-energy-field-well-height);
+}
+
+.ui-energy-well {
+  width: min(100%, var(--component-energy-field-well-width));
+  transform: perspective(var(--component-energy-field-grid-perspective))
+    rotateX(var(--well-x, 0deg)) rotateY(var(--well-y, 0deg));
+  transform-style: preserve-3d;
+  transition: transform var(--motion-duration-emphasis) var(--motion-easing-emphasized);
+}
+
+.ui-energy-well__scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 560 / 500;
+}
+
+.ui-energy-well__floor {
   position: absolute;
-  left: 8%;
-  bottom: 12%;
-  width: var(--component-energy-field-size-xl);
-  height: var(--component-energy-field-size-xl);
-  border-radius: var(--radius-pill);
-  background: var(--color-background-energy-field-glow-a);
-  filter: blur(var(--space-16));
+  left: 12%;
+  right: 12%;
+  top: 48%;
+  height: 42%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-background-energy-field-glow-a) 0%,
+    transparent 72%
+  );
+  opacity: 0.9;
+}
+
+.ui-energy-well__ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: var(--border-width-default) solid var(--primitive-color-purple300);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(66deg);
+  pointer-events: none;
+}
+
+.ui-energy-well__ring--outer {
+  width: 86%;
+  height: 52%;
   opacity: 0.55;
-  animation: ui-energy-heat var(--component-energy-field-duration-drift) var(--motion-easing-standard) infinite;
+  animation: ui-energy-ring var(--component-energy-field-duration-drift-slow) linear infinite;
 }
 
-.ui-energy-field__prop {
+.ui-energy-well__ring--inner {
+  width: 48%;
+  height: 28%;
+  border-color: var(--primitive-color-orange300);
+  opacity: 0.7;
+  animation: ui-energy-ring var(--component-energy-field-duration-drift) linear infinite reverse;
+}
+
+.ui-energy-well__core {
   position: absolute;
-  left: var(--prop-x);
-  top: var(--prop-y);
+  left: 50%;
+  top: 50%;
   width: var(--component-energy-field-size-md);
   height: var(--component-energy-field-size-md);
-  opacity: var(--prop-opacity, 1);
-  animation: ui-coin-enter-left var(--component-energy-field-duration-enter) var(--motion-easing-emphasized) backwards;
-  animation-delay: var(--enter-delay, 0ms);
+  border-radius: var(--radius-pill);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    var(--primitive-color-orange400) 0%,
+    var(--primitive-color-purple500) 42%,
+    transparent 70%
+  );
+  filter: blur(var(--space-2));
+  animation: ui-energy-core var(--component-energy-field-duration-drift-fast) var(--motion-easing-standard) infinite;
 }
 
-.ui-energy-field__prop[data-side="right"] {
-  animation-name: ui-coin-enter-right;
+.ui-energy-well__drop {
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  width: var(--space-3);
+  height: var(--space-4);
+  border-radius: 50% 50% 45% 45%;
+  background: var(--primitive-color-purple500);
+  transform: translateX(-50%);
+  animation: ui-energy-drop 2.6s var(--motion-easing-emphasized) infinite;
 }
 
-.ui-energy-field__prop--xs {
-  width: var(--component-energy-field-size-xs);
-  height: var(--component-energy-field-size-xs);
-}
-
-.ui-energy-field__prop--sm {
-  width: var(--component-energy-field-size-sm);
-  height: var(--component-energy-field-size-sm);
-}
-
-.ui-energy-field__prop--md {
-  width: var(--component-energy-field-size-md);
-  height: var(--component-energy-field-size-md);
-}
-
-.ui-energy-field__prop--lg {
+.ui-energy-well__item {
+  position: absolute;
+  inset: 0;
   width: var(--component-energy-field-size-lg);
   height: var(--component-energy-field-size-lg);
-}
-
-.ui-energy-field__prop--xl {
-  width: var(--component-energy-field-size-xl);
-  height: var(--component-energy-field-size-xl);
-}
-
-.ui-energy-field__prop--full {
-  --prop-opacity: var(--component-energy-field-opacity);
-}
-
-.ui-energy-field__prop--soft {
-  --prop-opacity: var(--component-energy-field-opacity-soft);
-}
-
-.ui-energy-field__prop[data-slot="1"] { --prop-x: -4%; --prop-y: 6%; }
-.ui-energy-field__prop[data-slot="2"] { --prop-x: -2%; --prop-y: 72%; }
-.ui-energy-field__prop[data-slot="3"] { --prop-x: 14%; --prop-y: -2%; }
-.ui-energy-field__prop[data-slot="4"] { --prop-x: 16%; --prop-y: 86%; }
-.ui-energy-field__prop[data-slot="5"] { --prop-x: 90%; --prop-y: 4%; }
-.ui-energy-field__prop[data-slot="6"] { --prop-x: 88%; --prop-y: 68%; }
-.ui-energy-field__prop[data-slot="7"] { --prop-x: 76%; --prop-y: -4%; }
-.ui-energy-field__prop[data-slot="8"] { --prop-x: 78%; --prop-y: 86%; }
-
-.ui-energy-field__float {
-  display: block;
-  width: 100%;
-  height: 100%;
-  animation: ui-coin-float var(--float-duration, var(--component-energy-field-duration-drift))
-    var(--motion-easing-standard)
-    calc(var(--enter-delay, 0ms) + var(--component-energy-field-duration-enter)) infinite;
-}
-
-.ui-energy-field__disc {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  transform: translate3d(
-    calc(var(--px) * var(--component-energy-field-parallax) * var(--depth, 1)),
-    calc(var(--py) * var(--component-energy-field-parallax) * var(--depth, 1)),
-    0
-  );
-  transition: transform var(--motion-duration-emphasis) var(--motion-easing-emphasized);
+  offset-rotate: 0deg;
+  offset-anchor: center;
+  animation: ui-energy-orbit var(--orbit-dur, 20s) linear infinite;
+  animation-direction: var(--orbit-dir, normal);
   filter: drop-shadow(var(--component-energy-field-shadow));
 }
 
-.ui-energy-field__disc img {
+.ui-energy-well__item img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.ui-energy-field__tape {
-  position: relative;
-  z-index: var(--z-index-content);
-  flex: 0 0 auto;
-  overflow: hidden;
-  width: 100%;
-  height: var(--component-energy-field-tape-height);
-  background: var(--color-background-energy-tape);
-  border-top: var(--border-width-default) solid var(--primitive-color-orange200);
+.ui-energy-well__item--oil {
+  width: var(--component-energy-field-size-xl);
+  height: var(--component-energy-field-size-xl);
+  offset-path: ellipse(28% 16% at 50% 52%);
 }
 
-.ui-energy-ticker {
-  display: flex;
-  width: max-content;
-  height: 100%;
-  animation: ui-index-ticker var(--component-energy-field-ticker-duration) linear infinite;
+.ui-energy-well__item--gas {
+  width: var(--component-energy-field-size-lg);
+  height: var(--component-energy-field-size-lg);
+  offset-path: ellipse(37% 21% at 50% 52%);
 }
 
-.ui-energy-ticker__track {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  gap: var(--component-energy-field-tape-gap);
-  height: 100%;
-  padding-right: var(--component-energy-field-tape-gap);
+.ui-energy-well__item--wheat {
+  width: var(--component-energy-field-size-md);
+  height: var(--component-energy-field-size-md);
+  offset-path: ellipse(45% 26% at 50% 52%);
 }
 
-.ui-energy-ticker__item {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
-  white-space: nowrap;
-  color: var(--color-text-primary);
-  font-family: var(--typography-font-family-body);
-  font-size: var(--typography-font-size-c1);
+.ui-energy-well__item--soy {
+  width: var(--component-energy-field-size-md);
+  height: var(--component-energy-field-size-md);
+  offset-path: ellipse(33% 18% at 50% 52%);
 }
 
-.ui-energy-ticker__item b {
-  font-family: var(--typography-font-family-heading);
-  font-weight: var(--typography-font-weight-semibold);
+@keyframes ui-energy-orbit {
+  from {
+    offset-distance: var(--orbit-from, 0%);
+  }
+  to {
+    offset-distance: calc(var(--orbit-from, 0%) + 100%);
+  }
 }
 
-.ui-energy-ticker__item em {
-  font-style: normal;
-  color: var(--primitive-color-green600);
+@keyframes ui-energy-ring {
+  from {
+    transform: translate(-50%, -50%) rotateX(66deg) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateX(66deg) rotate(360deg);
+  }
 }
 
-.ui-energy-ticker__item--down em {
-  color: var(--primitive-color-red500);
-}
-
-@keyframes ui-energy-heat {
+@keyframes ui-energy-core {
   0%,
   100% {
-    transform: scale(1) translate3d(0, 0, 0);
-    opacity: 0.4;
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.92);
   }
   50% {
-    transform: scale(1.2) translate3d(var(--space-3), calc(var(--space-4) * -1), 0);
-    opacity: 0.7;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+@keyframes ui-energy-drop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.45);
+  }
+  18% {
+    opacity: 1;
+  }
+  78% {
+    opacity: 1;
+    transform: translate(-50%, var(--component-energy-field-size-xl)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(var(--component-energy-field-size-xl) + var(--space-4))) scale(0.2);
   }
 }
 
@@ -4177,14 +4212,12 @@ a {
 }
 
 /* Indices: hug copy+card so the ticker sits at the end of block 1, not the fold */
-.ui-section--hero.ui-section--market-hero.ui-section--indices-field,
-.ui-section--hero.ui-section--market-hero.ui-section--energy-field {
+.ui-section--hero.ui-section--market-hero.ui-section--indices-field {
   min-height: 0;
   padding-bottom: 0;
 }
 
-.ui-section--market-hero.ui-section--indices-field .ui-container,
-.ui-section--market-hero.ui-section--energy-field .ui-container {
+.ui-section--market-hero.ui-section--indices-field .ui-container {
   min-height: 0;
 }
 
@@ -5290,11 +5323,12 @@ a {
     animation: none;
   }
 
-  .ui-energy-field__prop,
-  .ui-energy-field__float,
-  .ui-energy-field__orb,
-  .ui-energy-field__heat,
-  .ui-energy-ticker {
+  .ui-energy-well__item,
+  .ui-energy-well__ring,
+  .ui-energy-well__core,
+  .ui-energy-well__drop,
+  .ui-section--energy-field::before,
+  .ui-section--energy-field::after {
     animation: none;
   }
 
@@ -5675,37 +5709,21 @@ a {
     display: none;
   }
 
-  .ui-energy-field__prop--xl,
-  .ui-energy-field__prop--lg {
-    width: var(--component-energy-field-size-md);
-    height: var(--component-energy-field-size-md);
+  .ui-market-hero__stage {
+    min-height: 0;
+    order: -1;
   }
 
-  .ui-energy-field__prop[data-slot="1"] {
-    --prop-x: -12%;
-    --prop-y: -4%;
+  .ui-energy-well__item--oil {
+    width: var(--component-energy-field-size-lg);
+    height: var(--component-energy-field-size-lg);
   }
 
-  .ui-energy-field__prop[data-slot="2"] {
-    --prop-x: -14%;
-    --prop-y: 48%;
-  }
-
-  .ui-energy-field__prop[data-slot="5"] {
-    --prop-x: 82%;
-    --prop-y: -8%;
-  }
-
-  .ui-energy-field__prop[data-slot="6"] {
-    --prop-x: 84%;
-    --prop-y: 78%;
-  }
-
-  .ui-energy-field__prop[data-slot="3"],
-  .ui-energy-field__prop[data-slot="4"],
-  .ui-energy-field__prop[data-slot="7"],
-  .ui-energy-field__prop[data-slot="8"] {
-    display: none;
+  .ui-energy-well__item--gas,
+  .ui-energy-well__item--wheat,
+  .ui-energy-well__item--soy {
+    width: var(--component-energy-field-size-sm);
+    height: var(--component-energy-field-size-sm);
   }
 
   /* M1 375: title → lead → hug Light CTA → 343×364 slot. Hide extra CTA. */
@@ -5974,18 +5992,23 @@ a {
   .ui-table__header-symbol {
     flex-wrap: nowrap;
     gap: var(--space-2);
-    min-width: 13.5rem;
+    min-width: 0;
   }
 
   .ui-table__search {
     max-width: none;
     flex: 1 1 auto;
-    min-width: 8.5rem;
+    min-width: 0;
+    padding-inline: var(--space-2);
+  }
+
+  .ui-table__search .ui-icon {
+    display: none;
   }
 
   .ui-table__row--header .ui-table__cell:first-child {
-    min-width: 15.5rem;
-    width: 15.5rem;
+    min-width: 0;
+    width: 40% !important;
   }
 
   /* After desktop USP nav rule — 375 uses dots, not arrows */

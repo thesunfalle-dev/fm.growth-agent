@@ -34,7 +34,7 @@ Omit a listed default prop in `content.ts` to get the shared chrome.
 | `features` | Why Fusion / benefits | `variant` = `usp` | title, items (illustration + copy) |
 | `table` | Instruments or compare matrix | `variant` = `markets`, search + scroll on | title, `columns` (use `instrumentsColumns`), rows, optional footnote. Compare: `variant: "compare"` |
 | `steps` | How It Works | title, subtitle, `horizontal` | items (sentence-case titles), optional CTAs |
-| `reviews` | Trustpilot + review cards | title, lead, 4.8 / 7.2k, default quotes | omit for defaults; pass `items` when TZ has live reviews |
+| `reviews` | Trustpilot + review cards | title, lead, 4.5 / 1.7k, default quotes | omit for defaults; pass `items` when TZ has live reviews |
 | `spread-cards` | Here’s Our Spreads (TV cards) | toolPrefix / toolSuffix / toolLink, `actionLabel` Trade, `primaryCta` | title, subtitle, `tabs[]`, `cards[]` with `cards[].tabs` (max 5 per tab) |
 | `faq` | Accordion Q&A | title **FAQ**, first item open | items. Override title only if TZ names the section |
 | `cta` | Mid-page conversion band | title + Start trading + Try a demo | omit everything for defaults; override if TZ differs |
@@ -89,9 +89,9 @@ Shared core: **header · market-hero · features · table · steps · reviews ·
 | `brand` | Purple Market Header art | TV chart card 599×480 | yes (`quotes[]`) | Default / Forex-like |
 | `crypto` | Light field + `CryptoCoinField` | White TV quotes card | yes (`quotes[]`, 5 themed instruments) | Crypto / coin markets |
 | `indices` | Light field + `IndicesField` | Globe + chips + in-flow ticker | **no** — use `spread-cards` later | Indices / global markets |
-| `energy` | Light field + `EnergyField` | Commodity props + in-flow ticker | yes (`quotes[]`) | Energy / soft commodities |
+| `energy` | Light field | Right-rail commodity well (orbiting props + core) | **no** — instruments stay in the table | Energy / soft commodities |
 
-Do not mix: indices hero never gets a quotes card; crypto never gets the globe; energy never uses the coin or globe fields.
+Do not mix: indices hero never gets a quotes card; crypto never gets the globe; energy never uses the coin scatter, globe, or ticker.
 
 ### `spread-cards` reuse
 

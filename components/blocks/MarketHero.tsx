@@ -2,7 +2,7 @@ import { BackgroundImage } from "@/components/ui/BackgroundImage";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { CryptoCoinField } from "@/components/ui/CryptoCoinField";
-import { EnergyField, EnergyTicker } from "@/components/ui/EnergyField";
+import { EnergyField } from "@/components/ui/EnergyField";
 import { IndicesField, IndicesTicker } from "@/components/ui/IndicesField";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
@@ -43,7 +43,7 @@ export function MarketHero({
   trustpilot,
   atmosphere = "brand",
 }: MarketHeroProps) {
-  const showQuotes = Boolean(quotes?.length);
+  const showQuotes = Boolean(quotes?.length) && atmosphere !== "energy";
   const showSummary = !showQuotes && Boolean(quote || trustpilot);
   const isCryptoField = atmosphere === "crypto";
   const isIndicesField = atmosphere === "indices";
@@ -64,7 +64,6 @@ export function MarketHero({
     >
       {isCryptoField ? <CryptoCoinField /> : null}
       {isIndicesField ? <IndicesField /> : null}
-      {isEnergyField ? <EnergyField /> : null}
       {!isLightField ? <BackgroundImage variant="decorative" /> : null}
       <Container>
         <div className="ui-market-hero__layout">
@@ -84,7 +83,11 @@ export function MarketHero({
               </div>
             ) : null}
           </div>
-          {showQuotes && quotes ? (
+          {isEnergyField ? (
+            <aside className="ui-market-hero__stage" aria-hidden="true">
+              <EnergyField />
+            </aside>
+          ) : showQuotes && quotes ? (
             <aside className="ui-market-hero__panel ui-market-hero__panel--tv" aria-label="Indicative chart">
               <MarketHeroQuotes rows={quotes} />
             </aside>
@@ -124,7 +127,6 @@ export function MarketHero({
         </div>
       </Container>
       {isIndicesField ? <IndicesTicker /> : null}
-      {isEnergyField ? <EnergyTicker /> : null}
     </Section>
   );
 }
