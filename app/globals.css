@@ -3879,7 +3879,7 @@ a {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 1;
+  z-index: 2;
   width: var(--component-energy-field-size-hero);
   height: var(--component-energy-field-size-hero);
   transform: translate(-50%, -50%);
@@ -3899,10 +3899,10 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   width: var(--component-energy-field-size-lg);
   height: var(--component-energy-field-size-lg);
-  offset-path: ellipse(38% 26% at 50% 52%);
+  offset-path: ellipse(38% 36% at 50% 52%);
   offset-rotate: 0deg;
   offset-anchor: center;
   animation: ui-energy-orbit var(--component-energy-field-ticker-duration) linear var(--orbit-delay, 0s) infinite;
@@ -3917,11 +3917,40 @@ a {
 }
 
 @keyframes ui-energy-orbit {
-  from {
+  0% {
     offset-distance: 0%;
+    z-index: 3;
+    transform: scale(0.96);
   }
-  to {
+  25% {
+    offset-distance: 25%;
+    z-index: 3;
+    transform: scale(1);
+  }
+  49.9% {
+    offset-distance: 49.9%;
+    z-index: 3;
+    transform: scale(0.96);
+  }
+  50% {
+    offset-distance: 50%;
+    z-index: 1;
+    transform: scale(0.96);
+  }
+  75% {
+    offset-distance: 75%;
+    z-index: 1;
+    transform: scale(0.88);
+  }
+  99.9% {
+    offset-distance: 99.9%;
+    z-index: 1;
+    transform: scale(0.96);
+  }
+  100% {
     offset-distance: 100%;
+    z-index: 3;
+    transform: scale(0.96);
   }
 }
 

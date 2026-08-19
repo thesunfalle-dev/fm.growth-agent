@@ -1,5 +1,9 @@
 # Design system changelog
 
+## 2026-08-18 — Energy props pass behind the barrel at the top
+
+- Layer flips at the left/right of the ring so the top of the orbit sits behind the drum and the bottom stays in front.
+
 ## 2026-08-18 — Energy orbit stays in front of the barrel
 
 - Satellites no longer drop behind the drum (that snap-hid them at mid-orbit). Compact coffee heap `coffee-v3.png`.
