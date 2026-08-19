@@ -1,5 +1,9 @@
 # Design system changelog
 
+## 2026-08-18 — Energy orbit is one ring, no right-edge crop
+
+- Coffee / wheat / soy share one ellipse around the barrel, same speed, even spacing. Coffee stays inside the rail.
+
 ## 2026-08-18 — Energy orbit: coffee instead of gas cylinder
 
 - Propane tank dropped from the hero still-life. Coffee beans (`coffee-v2.png`) take that orbit. Barrel + wheat + soy stay.

@@ -7,25 +7,19 @@ const SATELLITES = [
     id: "coffee",
     src: "/images/energy/coffee-v2.png",
     label: "Coffee",
-    duration: "22s",
     delay: "0s",
-    dir: "normal",
   },
   {
     id: "wheat",
     src: "/images/energy/wheat-v2.png",
     label: "Wheat",
-    duration: "30s",
-    delay: "-10s",
-    dir: "reverse",
+    delay: "-8s",
   },
   {
     id: "soy",
     src: "/images/energy/soy-v2.png",
     label: "Soybeans",
-    duration: "26s",
-    delay: "-17s",
-    dir: "normal",
+    delay: "-16s",
   },
 ] as const;
 
@@ -93,9 +87,7 @@ export function EnergyWell() {
             key={item.id}
             className={`ui-energy-well__sat ui-energy-well__sat--${item.id}`}
             style={{
-              ["--orbit-dur" as string]: item.duration,
               ["--orbit-delay" as string]: item.delay,
-              ["--orbit-dir" as string]: item.dir,
             }}
           >
             <img src={item.src} alt="" width={320} height={320} draggable={false} />

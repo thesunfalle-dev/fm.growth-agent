@@ -3810,10 +3810,12 @@ a {
   justify-content: center;
   width: 100%;
   min-height: var(--component-energy-field-well-height);
+  overflow: visible;
 }
 
 .ui-energy-well {
   width: min(100%, var(--component-energy-field-well-width));
+  overflow: visible;
   transform: perspective(var(--component-energy-field-grid-perspective))
     rotateX(var(--well-x, 0deg)) rotateY(var(--well-y, 0deg));
   transform-style: preserve-3d;
@@ -3895,66 +3897,49 @@ a {
 
 .ui-energy-well__sat {
   position: absolute;
-  inset: 0;
+  left: 0;
+  top: 0;
+  width: var(--component-energy-field-size-lg);
+  height: var(--component-energy-field-size-lg);
+  offset-path: ellipse(34% 20% at 50% 54%);
   offset-rotate: 0deg;
   offset-anchor: center;
-  animation: ui-energy-orbit var(--orbit-dur, 24s) linear var(--orbit-delay, 0s) infinite;
-  animation-direction: var(--orbit-dir, normal);
+  animation: ui-energy-orbit var(--component-energy-field-ticker-duration) linear var(--orbit-delay, 0s) infinite;
   filter: drop-shadow(var(--component-energy-field-shadow));
 }
 
-.ui-energy-well__sat img {
-  animation: ui-energy-sat-sway var(--component-energy-field-duration-drift) var(--motion-easing-standard) infinite;
-}
-
-.ui-energy-well__sat--coffee {
-  width: var(--component-energy-field-size-xl);
-  height: var(--component-energy-field-size-xl);
-  offset-path: ellipse(54% 34% at 50% 52%);
-}
-
-.ui-energy-well__sat--wheat {
-  width: var(--component-energy-field-size-lg);
-  height: var(--component-energy-field-size-lg);
-  offset-path: ellipse(46% 40% at 50% 48%);
-}
-
+.ui-energy-well__sat--coffee,
+.ui-energy-well__sat--wheat,
 .ui-energy-well__sat--soy {
   width: var(--component-energy-field-size-lg);
   height: var(--component-energy-field-size-lg);
-  offset-path: ellipse(40% 22% at 50% 58%);
 }
 
 @keyframes ui-energy-orbit {
   0% {
     offset-distance: 0%;
-    transform: scale(0.9);
+    transform: scale(0.94);
     z-index: 2;
-    opacity: 0.92;
   }
   25% {
     offset-distance: 25%;
-    transform: scale(1.12);
+    transform: scale(1.04);
     z-index: 4;
-    opacity: 1;
   }
   50% {
     offset-distance: 50%;
-    transform: scale(0.88);
+    transform: scale(0.94);
     z-index: 2;
-    opacity: 0.9;
   }
   75% {
     offset-distance: 75%;
-    transform: scale(0.62);
+    transform: scale(0.78);
     z-index: 1;
-    opacity: 0.72;
   }
   100% {
     offset-distance: 100%;
-    transform: scale(0.9);
+    transform: scale(0.94);
     z-index: 2;
-    opacity: 0.92;
   }
 }
 
@@ -3965,16 +3950,6 @@ a {
   }
   50% {
     transform: translate(-50%, -50%) rotate(2deg) translateY(calc(var(--component-energy-field-float) * -0.45));
-  }
-}
-
-@keyframes ui-energy-sat-sway {
-  0%,
-  100% {
-    transform: rotate(-6deg);
-  }
-  50% {
-    transform: rotate(8deg);
   }
 }
 
@@ -5364,15 +5339,15 @@ a {
   }
 
   .ui-energy-well__sat--coffee {
-    offset-distance: 12%;
+    offset-distance: 0%;
   }
 
   .ui-energy-well__sat--wheat {
-    offset-distance: 58%;
+    offset-distance: 33%;
   }
 
   .ui-energy-well__sat--soy {
-    offset-distance: 82%;
+    offset-distance: 66%;
   }
 
   .ui-coin-field__coin {
@@ -5762,15 +5737,9 @@ a {
     height: var(--component-energy-field-size-xl);
   }
 
-  .ui-energy-well__sat--coffee {
+  .ui-energy-well__sat {
     width: var(--component-energy-field-size-sm);
     height: var(--component-energy-field-size-sm);
-  }
-
-  .ui-energy-well__sat--wheat,
-  .ui-energy-well__sat--soy {
-    width: var(--component-energy-field-size-xs);
-    height: var(--component-energy-field-size-xs);
   }
 
   .ui-energy-field__orb {
