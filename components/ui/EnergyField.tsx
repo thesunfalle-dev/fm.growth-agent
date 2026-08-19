@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 const SATELLITES = [
   {
     id: "coffee",
-    src: "/images/energy/coffee-v2.png",
+    src: "/images/energy/coffee-v3.png",
     label: "Coffee",
     delay: "0s",
   },

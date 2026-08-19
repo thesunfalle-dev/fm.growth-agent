@@ -1,5 +1,9 @@
 # Design system changelog
 
+## 2026-08-18 — Energy orbit stays in front of the barrel
+
+- Satellites no longer drop behind the drum (that snap-hid them at mid-orbit). Compact coffee heap `coffee-v3.png`.
+
 ## 2026-08-18 — Energy orbit is one ring, no right-edge crop
 
 - Coffee / wheat / soy share one ellipse around the barrel, same speed, even spacing. Coffee stays inside the rail.
